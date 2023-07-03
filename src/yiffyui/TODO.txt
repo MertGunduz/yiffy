@@ -1,0 +1,7 @@
+TODO: TIV-NCURSES UI
+
+
+[]  []  [] -> IMAGES
+[]  []  [] -> IMAGES
+[]  []  [] -> IMAGES
+[][][][][] -> DOWNMENU LIKE NANO

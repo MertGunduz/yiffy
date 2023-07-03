@@ -1,0 +1,7 @@
+-gcc
+-make
+-cmake
+-terminal image viewer
+-curl
+-ncurses
+-aria2 (FOR THE ANONYMOUS DOWNLOAD)

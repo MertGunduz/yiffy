@@ -1,0 +1,9 @@
+=========================
+= ONE ARGUMENT COMMANDS =
+=========================
+
+1= yiffy --help
+2= yiffy --version
+3= yiffy --github
+4= yiffy --website
+5= yiffy --config
