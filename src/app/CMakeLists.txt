@@ -18,3 +18,5 @@ target_compile_options(yiffy PRIVATE
     -Wstrict-overflow=5
     -Wcast-align
 )
+
+target_link_libraries(yiffy yiffy-messages)

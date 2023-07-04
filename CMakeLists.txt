@@ -1,5 +1,12 @@
+# VERSION
 cmake_minimum_required(VERSION 3.15)
 
+# PROJECT 
 project(yiffy VERSION 1.0.0 LANGUAGES C CXX)
 
+# SOURCE CODE DIRECTORY
 add_subdirectory(src)
+
+# C STANDARD
+set(CMAKE_C_STANDARD 17)
+set(CMAKE_C_STANDARD_REQUIRED True)

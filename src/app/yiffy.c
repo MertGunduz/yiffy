@@ -2,10 +2,13 @@
 #include <stdbool.h>
 #include <string.h>
 
+#include "../yiffymessages/yiffy-messages.h"
+
 #define FOUND          true
 #define NOT_FOUND      false
 #define NO_ON_OFF      false
 #define ARGC_QTY_ERROR false
+#define NO_ARG_VALUE   false
 
 static bool argumentVerify(int argumentCount, char *arguments[]);
 
@@ -13,7 +16,10 @@ int main(int argc, char *argv[])
 {
     if (argumentVerify(argc, argv))
     {
-        fprintf(stdout, "|X|\n");
+        if (strcmp(argv[1], "--help") == 0)
+        {
+            fprintf(stdout, "HELP MENU\n");
+        }
     }
 }
 
@@ -38,12 +44,13 @@ static bool argumentVerify(int argumentCount, char *arguments[])
                 }
                 else
                 {
-                    // on-off message
+                    onOffMessage(arguments[2]);
                     return NO_ON_OFF; /* return false; */
                 }
             }
         }
 
+        unrecognizedArgumentMessage(arguments[1]);
         return NOT_FOUND; /* return false; */
     }
     else if (argumentCount == 2)
@@ -56,10 +63,18 @@ static bool argumentVerify(int argumentCount, char *arguments[])
             }
         }
 
+        for (long unsigned int i = 0; i < sizeof(twoArguments) / sizeof(twoArguments[0]); i++)
+        {
+            noArgumentValueMessage(arguments[1]);
+            return NO_ARG_VALUE; /* return false; */
+        }
+        
+        unrecognizedArgumentMessage(arguments[1]);
         return NOT_FOUND; /* return false; */
     }
     else
     {
+        fprintf(stdout, "output --help menu, because user entered 0 arguments or too much!\n");
         return ARGC_QTY_ERROR; /* return false; */
     }
 }
