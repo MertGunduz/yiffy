@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 static bool argumentVerify(int argumentCount, char *arguments[])
 {
     char *oneArguments[] = {"--help", "--version", "--github", "--website", "--config"};
-    char *twoArguments[] = {"--website-generation", "--proxy", "--anonymous-download"};
+    char *twoArguments[] = {"--website-generation", "--proxy", "--anonymous-download", "--nsfw"};
 
     if (argumentCount == 3)
     {
@@ -65,8 +65,11 @@ static bool argumentVerify(int argumentCount, char *arguments[])
 
         for (long unsigned int i = 0; i < sizeof(twoArguments) / sizeof(twoArguments[0]); i++)
         {
-            noArgumentValueMessage(arguments[1]);
-            return NO_ARG_VALUE; /* return false; */
+            if (strcmp(arguments[1], twoArguments[i]) == 0)
+            {
+                noArgumentValueMessage(arguments[1]);
+                return NO_ARG_VALUE; /* return false; */
+            }
         }
         
         unrecognizedArgumentMessage(arguments[1]);
@@ -74,7 +77,7 @@ static bool argumentVerify(int argumentCount, char *arguments[])
     }
     else
     {
-        fprintf(stdout, "output --help menu, because user entered 0 arguments or too much!\n");
+        argcErrorMessage(argumentCount);
         return ARGC_QTY_ERROR; /* return false; */
     }
 }
