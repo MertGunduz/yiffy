@@ -4,11 +4,12 @@
 
 #include "../yiffymessages/yiffy-messages.h"
 
-#define FOUND          true
-#define NOT_FOUND      false
-#define NO_ON_OFF      false
-#define ARGC_QTY_ERROR false
-#define NO_ARG_VALUE   false
+#define FOUND           true
+#define NOT_FOUND       false
+#define NO_ON_OFF       false
+#define ARGC_QTY_ERROR  false
+#define NO_ARG_VALUE    false
+#define EXTRA_ARG_VALUE false
 
 static bool argumentVerify(int argumentCount, char *arguments[]);
 
@@ -47,6 +48,15 @@ static bool argumentVerify(int argumentCount, char *arguments[])
                     onOffMessage(arguments[2]);
                     return NO_ON_OFF; /* return false; */
                 }
+            }
+        }
+
+        for (long unsigned int i = 0; i < sizeof(oneArguments) / sizeof(oneArguments[0]); i++)
+        {
+            if (strcmp(arguments[1], oneArguments[i]) == 0)
+            {
+                extraArgumentErrorMessage(arguments[1]);
+                return EXTRA_ARG_VALUE; /* return false; */
             }
         }
 
