@@ -21,6 +21,46 @@ int main(int argc, char *argv[])
         {
             fprintf(stdout, "HELP MENU\n");
         }
+        else if (strcmp(argv[1], "--version") == 0)
+        {
+            fprintf(stdout, "VERSION MENU\n");
+        }
+        else if (strcmp(argv[1], "--github") == 0)
+        {
+            fprintf(stdout, "GITHUB MENU\n");
+        }    
+        else if (strcmp(argv[1], "--website") == 0)
+        {
+            fprintf(stdout, "WEBSITE MENU\n");
+        }
+        else if (strcmp(argv[1], "--config") == 0)
+        {
+            fprintf(stdout, "CONFIG MENU\n");
+        }
+        else if (strcmp(argv[1], "--export") == 0)
+        {
+            fprintf(stdout, "EXPORT MENU\n");
+        }
+        else if (strcmp(argv[1], "--import") == 0)
+        {
+            fprintf(stdout, "IMPORT MENU\n");
+        }
+        else if (strcmp(argv[1], "--website-generation") == 0)
+        {
+            fprintf(stdout, "WEB GEN MENU\n");
+        }
+        else if (strcmp(argv[1], "--proxy") == 0)
+        {
+            fprintf(stdout, "PROXY MENU\n");
+        }
+        else if (strcmp(argv[1], "--anonymous-download") == 0)
+        {
+            fprintf(stdout, "ANONYMOUS DOWNLOAD MENU\n");
+        }
+        else if (strcmp(argv[1], "--nsfw") == 0)
+        {
+            fprintf(stdout, "NSFW MENU\n");
+        }
     }
 }
 
@@ -30,7 +70,7 @@ int main(int argc, char *argv[])
 /// @return true or false (bool)
 static bool argumentVerify(int argumentCount, char *arguments[])
 {
-    char *oneArguments[] = {"--help", "--version", "--github", "--website", "--config"};
+    char *oneArguments[] = {"--help", "--version", "--github", "--website", "--config", "--export", "--import"};
     char *twoArguments[] = {"--website-generation", "--proxy", "--anonymous-download", "--nsfw"};
 
     if (argumentCount == 3)
