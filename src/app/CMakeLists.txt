@@ -1,5 +1,7 @@
+# CREATING THE BINARY FILE
 add_executable(yiffy yiffy.c)
 
+#GCC OPTIONS
 target_compile_options(yiffy PRIVATE
     -Wall
     -Wextra
@@ -19,4 +21,8 @@ target_compile_options(yiffy PRIVATE
     -Wcast-align
 )
 
+# LINK THE LIBRARIES
 target_link_libraries(yiffy yiffy-messages)
+
+# INSTALL THE EXECUTABLE TO USR/BIN
+install(TARGETS yiffy DESTINATION /usr/bin)

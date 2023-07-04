@@ -4,12 +4,12 @@
 
 #include "../yiffymessages/yiffy-messages.h"
 
-#define FOUND           true
-#define NOT_FOUND       false
-#define NO_ON_OFF       false
-#define ARGC_QTY_ERROR  false
-#define NO_ARG_VALUE    false
-#define EXTRA_ARG_VALUE false
+#define RECOGNIZED_ARGUMENT   true
+#define UNRECOGNIZED_ARGUMENT false
+#define MISSING_ON_OFF        false
+#define ARGC_QTY_ERROR        false
+#define NO_ARG_VALUE          false
+#define EXTRA_ARG_VALUE       false
 
 static bool argumentVerify(int argumentCount, char *arguments[]);
 
@@ -62,6 +62,8 @@ int main(int argc, char *argv[])
             fprintf(stdout, "NSFW MENU\n");
         }
     }
+
+    return 0;
 }
 
 /// @brief checks the argument count and arguments, if they are in the wanted format returns true 
@@ -81,12 +83,12 @@ static bool argumentVerify(int argumentCount, char *arguments[])
             {
                 if (strcmp(arguments[2], "on") == 0 || strcmp(arguments[2], "off") == 0)
                 {
-                    return FOUND; /* return true; */
+                    return RECOGNIZED_ARGUMENT; /* return true; */
                 }
                 else
                 {
                     onOffMessage(arguments[2]);
-                    return NO_ON_OFF; /* return false; */
+                    return MISSING_ON_OFF; /* return false; */
                 }
             }
         }
@@ -101,7 +103,7 @@ static bool argumentVerify(int argumentCount, char *arguments[])
         }
 
         unrecognizedArgumentMessage(arguments[1]);
-        return NOT_FOUND; /* return false; */
+        return UNRECOGNIZED_ARGUMENT; /* return false; */
     }
     else if (argumentCount == 2)
     {
@@ -109,7 +111,7 @@ static bool argumentVerify(int argumentCount, char *arguments[])
         {
             if (strcmp(arguments[1], oneArguments[i]) == 0)
             {
-                return FOUND; /* return true; */
+                return RECOGNIZED_ARGUMENT; /* return true; */
             }
         }
 
@@ -123,7 +125,7 @@ static bool argumentVerify(int argumentCount, char *arguments[])
         }
         
         unrecognizedArgumentMessage(arguments[1]);
-        return NOT_FOUND; /* return false; */
+        return UNRECOGNIZED_ARGUMENT; /* return false; */
     }
     else
     {
