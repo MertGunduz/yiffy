@@ -68,46 +68,71 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">yiffy.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>the main application file of yiffy  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="../../de/d35/yiffy-messages_8h_source.html">../yiffymessages/yiffy-messages.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../dd/d14/yiffy-request_8h_source.html">../yiffyrequest/yiffy-request.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for yiffy.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d3/d20/yiffy_8c__incl.png" border="0" usemap="#asrc_2app_2yiffy_8c" alt=""/></div>
 <map name="asrc_2app_2yiffy_8c" id="asrc_2app_2yiffy_8c">
-<area shape="rect" title=" " alt="" coords="82,5,193,32"/>
-<area shape="rect" title=" " alt="" coords="5,80,72,107"/>
-<area shape="rect" title=" " alt="" coords="96,80,179,107"/>
-<area shape="rect" title=" " alt="" coords="203,80,274,107"/>
+<area shape="rect" title="the main application file of yiffy" alt="" coords="222,5,333,32"/>
+<area shape="rect" title=" " alt="" coords="108,169,175,196"/>
+<area shape="rect" title=" " alt="" coords="433,87,516,114"/>
+<area shape="rect" title=" " alt="" coords="242,169,313,196"/>
+<area shape="rect" href="../../de/d35/yiffy-messages_8h.html" title="the message output header for yiffy" alt="" coords="196,80,359,121"/>
+<area shape="rect" href="../../dd/d14/yiffy-request_8h.html" title=" " alt="" coords="26,80,171,121"/>
+<area shape="rect" title=" " alt="" coords="13,169,83,196"/>
 </map>
 </div>
 </div>
 <p><a href="../../dc/dc0/yiffy_8c_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db9/structmenuOption.html">menuOption</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">the general struct for handling the arguments by using function pointers  <a href="../../dd/db9/structmenuOption.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a841b291dedf074d07299e089dc0722e6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dc0/yiffy_8c.html#a841b291dedf074d07299e089dc0722e6">FOUND</a>&#160;&#160;&#160;true</td></tr>
-<tr class="separator:a841b291dedf074d07299e089dc0722e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33bfc1f995233887a0414369c36936b8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dc0/yiffy_8c.html#a33bfc1f995233887a0414369c36936b8">NOT_FOUND</a>&#160;&#160;&#160;false</td></tr>
-<tr class="separator:a33bfc1f995233887a0414369c36936b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54fc76a94cd9d6058b41a6c94bcf0618"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dc0/yiffy_8c.html#a54fc76a94cd9d6058b41a6c94bcf0618">NO_ON_OFF</a>&#160;&#160;&#160;false</td></tr>
-<tr class="separator:a54fc76a94cd9d6058b41a6c94bcf0618"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae19e91650edc7366559a74767d6e0075"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dc0/yiffy_8c.html#ae19e91650edc7366559a74767d6e0075">RECOGNIZED_ARGUMENT</a>&#160;&#160;&#160;true</td></tr>
+<tr class="separator:ae19e91650edc7366559a74767d6e0075"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a129246daa0c427b2108d7844650e5cf4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dc0/yiffy_8c.html#a129246daa0c427b2108d7844650e5cf4">UNRECOGNIZED_ARGUMENT</a>&#160;&#160;&#160;false</td></tr>
+<tr class="separator:a129246daa0c427b2108d7844650e5cf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e8078dd597c541b6090e1e1ffd437e5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dc0/yiffy_8c.html#a9e8078dd597c541b6090e1e1ffd437e5">MISSING_ON_OFF</a>&#160;&#160;&#160;false</td></tr>
+<tr class="separator:a9e8078dd597c541b6090e1e1ffd437e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a667329addeab5d6f7d3f18fc38bd9b90"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dc0/yiffy_8c.html#a667329addeab5d6f7d3f18fc38bd9b90">ARGC_QTY_ERROR</a>&#160;&#160;&#160;false</td></tr>
 <tr class="separator:a667329addeab5d6f7d3f18fc38bd9b90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f24a1abca37046fc42297fdefe88335"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dc0/yiffy_8c.html#a7f24a1abca37046fc42297fdefe88335">NO_ARG_VALUE</a>&#160;&#160;&#160;false</td></tr>
+<tr class="separator:a7f24a1abca37046fc42297fdefe88335"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6520bb9916f161d340bb3aea747415db"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dc0/yiffy_8c.html#a6520bb9916f161d340bb3aea747415db">EXTRA_ARG_VALUE</a>&#160;&#160;&#160;false</td></tr>
+<tr class="separator:a6520bb9916f161d340bb3aea747415db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dc0/yiffy_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main</a> (int argc, char *argv[])</td></tr>
 <tr class="separator:a0ddf1224851353fc92bfbff6f499fa97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>the main application file of yiffy </p>
+<dl class="section author"><dt>Author</dt><dd>Mehmet Mert Gunduz</dd></dl>
+<dl class="section date"><dt>Date</dt><dd>21/07/2023 </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="../../dc/dc0/yiffy_8c_source.html">yiffy.c</a>.</p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a667329addeab5d6f7d3f18fc38bd9b90"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a667329addeab5d6f7d3f18fc38bd9b90">&#9670;&nbsp;</a></span>ARGC_QTY_ERROR</h2>
 
@@ -120,55 +145,87 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dc/dc0/yiffy_8c_source.html#l00008">8</a> of file <a class="el" href="../../dc/dc0/yiffy_8c_source.html">yiffy.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/dc0/yiffy_8c_source.html#l00022">22</a> of file <a class="el" href="../../dc/dc0/yiffy_8c_source.html">yiffy.c</a>.</p>
 
 </div>
 </div>
-<a id="a841b291dedf074d07299e089dc0722e6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a841b291dedf074d07299e089dc0722e6">&#9670;&nbsp;</a></span>FOUND</h2>
+<a id="a6520bb9916f161d340bb3aea747415db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6520bb9916f161d340bb3aea747415db">&#9670;&nbsp;</a></span>EXTRA_ARG_VALUE</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define FOUND&#160;&#160;&#160;true</td>
+          <td class="memname">#define EXTRA_ARG_VALUE&#160;&#160;&#160;false</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dc/dc0/yiffy_8c_source.html#l00005">5</a> of file <a class="el" href="../../dc/dc0/yiffy_8c_source.html">yiffy.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/dc0/yiffy_8c_source.html#l00024">24</a> of file <a class="el" href="../../dc/dc0/yiffy_8c_source.html">yiffy.c</a>.</p>
 
 </div>
 </div>
-<a id="a54fc76a94cd9d6058b41a6c94bcf0618"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a54fc76a94cd9d6058b41a6c94bcf0618">&#9670;&nbsp;</a></span>NO_ON_OFF</h2>
+<a id="a9e8078dd597c541b6090e1e1ffd437e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e8078dd597c541b6090e1e1ffd437e5">&#9670;&nbsp;</a></span>MISSING_ON_OFF</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define NO_ON_OFF&#160;&#160;&#160;false</td>
+          <td class="memname">#define MISSING_ON_OFF&#160;&#160;&#160;false</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dc/dc0/yiffy_8c_source.html#l00007">7</a> of file <a class="el" href="../../dc/dc0/yiffy_8c_source.html">yiffy.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/dc0/yiffy_8c_source.html#l00021">21</a> of file <a class="el" href="../../dc/dc0/yiffy_8c_source.html">yiffy.c</a>.</p>
 
 </div>
 </div>
-<a id="a33bfc1f995233887a0414369c36936b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a33bfc1f995233887a0414369c36936b8">&#9670;&nbsp;</a></span>NOT_FOUND</h2>
+<a id="a7f24a1abca37046fc42297fdefe88335"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f24a1abca37046fc42297fdefe88335">&#9670;&nbsp;</a></span>NO_ARG_VALUE</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define NOT_FOUND&#160;&#160;&#160;false</td>
+          <td class="memname">#define NO_ARG_VALUE&#160;&#160;&#160;false</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dc/dc0/yiffy_8c_source.html#l00006">6</a> of file <a class="el" href="../../dc/dc0/yiffy_8c_source.html">yiffy.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/dc0/yiffy_8c_source.html#l00023">23</a> of file <a class="el" href="../../dc/dc0/yiffy_8c_source.html">yiffy.c</a>.</p>
+
+</div>
+</div>
+<a id="ae19e91650edc7366559a74767d6e0075"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae19e91650edc7366559a74767d6e0075">&#9670;&nbsp;</a></span>RECOGNIZED_ARGUMENT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RECOGNIZED_ARGUMENT&#160;&#160;&#160;true</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../dc/dc0/yiffy_8c_source.html#l00019">19</a> of file <a class="el" href="../../dc/dc0/yiffy_8c_source.html">yiffy.c</a>.</p>
+
+</div>
+</div>
+<a id="a129246daa0c427b2108d7844650e5cf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a129246daa0c427b2108d7844650e5cf4">&#9670;&nbsp;</a></span>UNRECOGNIZED_ARGUMENT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define UNRECOGNIZED_ARGUMENT&#160;&#160;&#160;false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../dc/dc0/yiffy_8c_source.html#l00020">20</a> of file <a class="el" href="../../dc/dc0/yiffy_8c_source.html">yiffy.c</a>.</p>
 
 </div>
 </div>
@@ -199,7 +256,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dc/dc0/yiffy_8c_source.html#l00012">12</a> of file <a class="el" href="../../dc/dc0/yiffy_8c_source.html">yiffy.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/dc0/yiffy_8c_source.html#l00061">61</a> of file <a class="el" href="../../dc/dc0/yiffy_8c_source.html">yiffy.c</a>.</p>
 
 </div>
 </div>

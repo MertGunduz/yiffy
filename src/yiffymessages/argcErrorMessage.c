@@ -1,5 +1,17 @@
+/**
+ * @file argcErrorMessage.c
+ * 
+ * @brief evaluates the argument count and gives information if it is not in the requested format
+ * 
+ * @author Mehmet Mert Gunduz 
+ * 
+ * @date 21/07/2023
+*/
+
 #include "yiffy-messages.h"
 
+/// @brief evaluates the argument count and gives information if it is not in the requested format
+/// @param argc 
 void argcErrorMessage(int argc)
 {
     if (argc == 1)

@@ -1,3 +1,14 @@
+/**
+ * @file yiffy.c
+ * 
+ * @brief the main application file of yiffy
+ * 
+ * @author Mehmet Mert Gunduz 
+ * 
+ * @date 21/07/2023
+*/
+
+
 #include <stdio.h>
 #include <stdbool.h>
 #include <string.h>
@@ -25,6 +36,7 @@ static void showProxyMenu();
 static void showNSFWMenu();
 static void showRequestMenu();
 
+/// @brief the general struct for handling the arguments by using function pointers
 struct menuOption
 {
     const char *option;
@@ -130,46 +142,57 @@ static bool argumentVerify(int argumentCount, char *arguments[])
     }
 }
 
+/// @brief outputs help menu
 static void showHelpMenu() {
     fprintf(stdout, "HELP MENU\n");
 }
 
+/// @brief outputs version
 static void showVersionMenu() {
     fprintf(stdout, "VERSION MENU\n");
 }
 
+/// @brief outputs github project source code url
 static void showGithubMenu() {
     fprintf(stdout, "GITHUB MENU\n");
 }
 
+/// @brief outputs website url
 static void showWebsiteMenu() {
     fprintf(stdout, "WEBSITE MENU\n");
 }
 
+/// @brief outputs configurations
 static void showConfigMenu() {
     fprintf(stdout, "CONFIG MENU\n");
 }
 
+/// @brief exports the app data as a string
 static void showExportMenu() {
     fprintf(stdout, "EXPORT MENU\n");
 }
 
+/// @brief imports the string and creates app data
 static void showImportMenu() {
     fprintf(stdout, "IMPORT MENU\n");
 }
 
+/// @brief opens/closes web generation system
 static void showWebGenMenu() {
     fprintf(stdout, "WEB GEN MENU\n");
 }
 
+/// @brief opens/closes proxy
 static void showProxyMenu() {
     fprintf(stdout, "PROXY MENU\n");
 }
 
+/// @brief opens/closes nsfw option
 static void showNSFWMenu() {
     fprintf(stdout, "NSFW MENU\n");
 }
 
+/// @brief sends request and gets data from e621/926
 static void showRequestMenu() {
     char *response = e621Request();
 

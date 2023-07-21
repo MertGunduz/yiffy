@@ -1,0 +1,152 @@
+\hypertarget{yiffy-messages_8h}{}\doxysection{src/yiffymessages/yiffy-\/messages.h File Reference}
+\label{yiffy-messages_8h}\index{src/yiffymessages/yiffy-\/messages.h@{src/yiffymessages/yiffy-\/messages.h}}
+
+
+the message output header for yiffy  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+Include dependency graph for yiffy-\/messages.h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{d4/d8a/yiffy-messages_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d76/yiffy-messages_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{yiffy-messages_8h_a98ea61cc699732ffc205c5cce8674455}{on\+Off\+Message}} (char $\ast$argument)
+\begin{DoxyCompactList}\small\item\em outputs the correct argument value (on/off) for specified arguments \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{yiffy-messages_8h_ab77033d8b672ad2a270de7f823842fe6}{unrecognized\+Argument\+Message}} (char $\ast$argument)
+\begin{DoxyCompactList}\small\item\em gives information and outputs the command prompted by the user when it is not defined as a valid argument \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{yiffy-messages_8h_a81c685b666239e7dfe3cc98ab6249b55}{no\+Argument\+Value\+Message}} (char $\ast$argument)
+\begin{DoxyCompactList}\small\item\em outputs the correct prompt format when there is no argument value \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{yiffy-messages_8h_a9beeda8ebe8f084dbc596d0639eaf9b3}{argc\+Error\+Message}} (int argc)
+\begin{DoxyCompactList}\small\item\em evaluates the argument count and gives information if it is not in the requested format \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{yiffy-messages_8h_aeeb39a1ff7f4fc6fbc7ab03e373edb55}{extra\+Argument\+Error\+Message}} (char $\ast$argument)
+\begin{DoxyCompactList}\small\item\em outputs the format for the argument when there is additional argument \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+the message output header for yiffy 
+
+\begin{DoxyAuthor}{Author}
+Mehmet Mert Gunduz
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+21/07/2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{yiffy-messages_8h_a9beeda8ebe8f084dbc596d0639eaf9b3}\label{yiffy-messages_8h_a9beeda8ebe8f084dbc596d0639eaf9b3}} 
+\index{yiffy-\/messages.h@{yiffy-\/messages.h}!argcErrorMessage@{argcErrorMessage}}
+\index{argcErrorMessage@{argcErrorMessage}!yiffy-\/messages.h@{yiffy-\/messages.h}}
+\doxysubsubsection{\texorpdfstring{argcErrorMessage()}{argcErrorMessage()}}
+{\footnotesize\ttfamily void argc\+Error\+Message (\begin{DoxyParamCaption}\item[{int}]{argc }\end{DoxyParamCaption})}
+
+
+
+evaluates the argument count and gives information if it is not in the requested format 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 15 of file argc\+Error\+Message.\+c.
+
+\mbox{\Hypertarget{yiffy-messages_8h_aeeb39a1ff7f4fc6fbc7ab03e373edb55}\label{yiffy-messages_8h_aeeb39a1ff7f4fc6fbc7ab03e373edb55}} 
+\index{yiffy-\/messages.h@{yiffy-\/messages.h}!extraArgumentErrorMessage@{extraArgumentErrorMessage}}
+\index{extraArgumentErrorMessage@{extraArgumentErrorMessage}!yiffy-\/messages.h@{yiffy-\/messages.h}}
+\doxysubsubsection{\texorpdfstring{extraArgumentErrorMessage()}{extraArgumentErrorMessage()}}
+{\footnotesize\ttfamily void extra\+Argument\+Error\+Message (\begin{DoxyParamCaption}\item[{char $\ast$}]{argument }\end{DoxyParamCaption})}
+
+
+
+outputs the format for the argument when there is additional argument 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argument} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 15 of file extra\+Argument\+Error\+Message.\+c.
+
+\mbox{\Hypertarget{yiffy-messages_8h_a81c685b666239e7dfe3cc98ab6249b55}\label{yiffy-messages_8h_a81c685b666239e7dfe3cc98ab6249b55}} 
+\index{yiffy-\/messages.h@{yiffy-\/messages.h}!noArgumentValueMessage@{noArgumentValueMessage}}
+\index{noArgumentValueMessage@{noArgumentValueMessage}!yiffy-\/messages.h@{yiffy-\/messages.h}}
+\doxysubsubsection{\texorpdfstring{noArgumentValueMessage()}{noArgumentValueMessage()}}
+{\footnotesize\ttfamily void no\+Argument\+Value\+Message (\begin{DoxyParamCaption}\item[{char $\ast$}]{argument }\end{DoxyParamCaption})}
+
+
+
+outputs the correct prompt format when there is no argument value 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argument} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 15 of file no\+Argument\+Value\+Message.\+c.
+
+\mbox{\Hypertarget{yiffy-messages_8h_a98ea61cc699732ffc205c5cce8674455}\label{yiffy-messages_8h_a98ea61cc699732ffc205c5cce8674455}} 
+\index{yiffy-\/messages.h@{yiffy-\/messages.h}!onOffMessage@{onOffMessage}}
+\index{onOffMessage@{onOffMessage}!yiffy-\/messages.h@{yiffy-\/messages.h}}
+\doxysubsubsection{\texorpdfstring{onOffMessage()}{onOffMessage()}}
+{\footnotesize\ttfamily void on\+Off\+Message (\begin{DoxyParamCaption}\item[{char $\ast$}]{argument }\end{DoxyParamCaption})}
+
+
+
+outputs the correct argument value (on/off) for specified arguments 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argument} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 15 of file on\+Off\+Message.\+c.
+
+\mbox{\Hypertarget{yiffy-messages_8h_ab77033d8b672ad2a270de7f823842fe6}\label{yiffy-messages_8h_ab77033d8b672ad2a270de7f823842fe6}} 
+\index{yiffy-\/messages.h@{yiffy-\/messages.h}!unrecognizedArgumentMessage@{unrecognizedArgumentMessage}}
+\index{unrecognizedArgumentMessage@{unrecognizedArgumentMessage}!yiffy-\/messages.h@{yiffy-\/messages.h}}
+\doxysubsubsection{\texorpdfstring{unrecognizedArgumentMessage()}{unrecognizedArgumentMessage()}}
+{\footnotesize\ttfamily void unrecognized\+Argument\+Message (\begin{DoxyParamCaption}\item[{char $\ast$}]{argument }\end{DoxyParamCaption})}
+
+
+
+gives information and outputs the command prompted by the user when it is not defined as a valid argument 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argument} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 15 of file unrecognized\+Argument\+Message.\+c.
+

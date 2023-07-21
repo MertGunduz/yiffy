@@ -1,7 +1,17 @@
-#include <string.h>
+/**
+ * @file noArgumentValueMessage.c
+ * 
+ * @brief outputs the correct prompt format when there is no argument value 
+ * 
+ * @author Mehmet Mert Gunduz 
+ * 
+ * @date 21/07/2023
+*/
 
 #include "yiffy-messages.h"
 
+/// @brief outputs the correct prompt format when there is no argument value 
+/// @param argument 
 void noArgumentValueMessage(char *argument)
 {
     if (strcmp(argument, "--website-generation") == 0 || strcmp(argument, "--proxy") == 0 || strcmp(argument, "--nsfw") == 0)

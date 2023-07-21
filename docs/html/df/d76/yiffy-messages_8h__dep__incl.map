@@ -1,0 +1,9 @@
+<map id="src/yiffymessages/yiffy&#45;messages.h" name="src/yiffymessages/yiffy&#45;messages.h">
+<area shape="rect" id="node1" title="the message output header for yiffy" alt="" coords="530,5,703,47"/>
+<area shape="rect" id="node2" href="$dc/dc0/yiffy_8c.html" title="the main application file of yiffy" alt="" coords="5,102,116,129"/>
+<area shape="rect" id="node3" href="$d9/d23/argcErrorMessage_8c.html" title="evaluates the argument count and gives information if it is not in the requested format" alt="" coords="141,95,343,136"/>
+<area shape="rect" id="node4" href="$d3/d8c/extraArgumentErrorMessage_8c.html" title="outputs the format for the argument when there is additional argument" alt="" coords="367,95,610,136"/>
+<area shape="rect" id="node5" href="$d9/da4/noArgumentValueMessage_8c.html" title="outputs the correct prompt format when there is no argument value" alt="" coords="634,95,858,136"/>
+<area shape="rect" id="node6" href="$d3/d67/onOffMessage_8c.html" title="outputs the correct argument value (on/off) for specified arguments" alt="" coords="882,102,1130,129"/>
+<area shape="rect" id="node7" href="$dc/db5/unrecognizedArgumentMessage_8c.html" title="gives information and outputs the command prompted by the user when it is not defined as a valid argu..." alt="" coords="1155,95,1385,136"/>
+</map>

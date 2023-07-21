@@ -1,32 +1,59 @@
 \hypertarget{yiffy_8c}{}\doxysection{src/app/yiffy.c File Reference}
 \label{yiffy_8c}\index{src/app/yiffy.c@{src/app/yiffy.c}}
+
+
+the main application file of yiffy  
+
+
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include $<$stdbool.\+h$>$}\newline
 {\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../yiffymessages/yiffy-\/messages.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../yiffyrequest/yiffy-\/request.\+h\char`\"{}}\newline
 Include dependency graph for yiffy.\+c\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=282pt]{d3/d20/yiffy_8c__incl}
+\includegraphics[width=350pt]{d3/d20/yiffy_8c__incl}
 \end{center}
 \end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structmenuOption}{menu\+Option}}
+\begin{DoxyCompactList}\small\item\em the general struct for handling the arguments by using function pointers \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \mbox{\hyperlink{yiffy_8c_a841b291dedf074d07299e089dc0722e6}{FOUND}}~true
+\#define \mbox{\hyperlink{yiffy_8c_ae19e91650edc7366559a74767d6e0075}{RECOGNIZED\+\_\+\+ARGUMENT}}~true
 \item 
-\#define \mbox{\hyperlink{yiffy_8c_a33bfc1f995233887a0414369c36936b8}{NOT\+\_\+\+FOUND}}~false
+\#define \mbox{\hyperlink{yiffy_8c_a129246daa0c427b2108d7844650e5cf4}{UNRECOGNIZED\+\_\+\+ARGUMENT}}~false
 \item 
-\#define \mbox{\hyperlink{yiffy_8c_a54fc76a94cd9d6058b41a6c94bcf0618}{NO\+\_\+\+ON\+\_\+\+OFF}}~false
+\#define \mbox{\hyperlink{yiffy_8c_a9e8078dd597c541b6090e1e1ffd437e5}{MISSING\+\_\+\+ON\+\_\+\+OFF}}~false
 \item 
 \#define \mbox{\hyperlink{yiffy_8c_a667329addeab5d6f7d3f18fc38bd9b90}{ARGC\+\_\+\+QTY\+\_\+\+ERROR}}~false
+\item 
+\#define \mbox{\hyperlink{yiffy_8c_a7f24a1abca37046fc42297fdefe88335}{NO\+\_\+\+ARG\+\_\+\+VALUE}}~false
+\item 
+\#define \mbox{\hyperlink{yiffy_8c_a6520bb9916f161d340bb3aea747415db}{EXTRA\+\_\+\+ARG\+\_\+\+VALUE}}~false
 \end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{yiffy_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+the main application file of yiffy 
+
+\begin{DoxyAuthor}{Author}
+Mehmet Mert Gunduz
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+21/07/2023 
+\end{DoxyDate}
 
 
 \doxysubsection{Macro Definition Documentation}
@@ -38,37 +65,57 @@ int \mbox{\hyperlink{yiffy_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int arg
 
 
 
-Definition at line 8 of file yiffy.\+c.
+Definition at line 22 of file yiffy.\+c.
 
-\mbox{\Hypertarget{yiffy_8c_a841b291dedf074d07299e089dc0722e6}\label{yiffy_8c_a841b291dedf074d07299e089dc0722e6}} 
-\index{yiffy.c@{yiffy.c}!FOUND@{FOUND}}
-\index{FOUND@{FOUND}!yiffy.c@{yiffy.c}}
-\doxysubsubsection{\texorpdfstring{FOUND}{FOUND}}
-{\footnotesize\ttfamily \#define FOUND~true}
-
-
-
-Definition at line 5 of file yiffy.\+c.
-
-\mbox{\Hypertarget{yiffy_8c_a54fc76a94cd9d6058b41a6c94bcf0618}\label{yiffy_8c_a54fc76a94cd9d6058b41a6c94bcf0618}} 
-\index{yiffy.c@{yiffy.c}!NO\_ON\_OFF@{NO\_ON\_OFF}}
-\index{NO\_ON\_OFF@{NO\_ON\_OFF}!yiffy.c@{yiffy.c}}
-\doxysubsubsection{\texorpdfstring{NO\_ON\_OFF}{NO\_ON\_OFF}}
-{\footnotesize\ttfamily \#define NO\+\_\+\+ON\+\_\+\+OFF~false}
+\mbox{\Hypertarget{yiffy_8c_a6520bb9916f161d340bb3aea747415db}\label{yiffy_8c_a6520bb9916f161d340bb3aea747415db}} 
+\index{yiffy.c@{yiffy.c}!EXTRA\_ARG\_VALUE@{EXTRA\_ARG\_VALUE}}
+\index{EXTRA\_ARG\_VALUE@{EXTRA\_ARG\_VALUE}!yiffy.c@{yiffy.c}}
+\doxysubsubsection{\texorpdfstring{EXTRA\_ARG\_VALUE}{EXTRA\_ARG\_VALUE}}
+{\footnotesize\ttfamily \#define EXTRA\+\_\+\+ARG\+\_\+\+VALUE~false}
 
 
 
-Definition at line 7 of file yiffy.\+c.
+Definition at line 24 of file yiffy.\+c.
 
-\mbox{\Hypertarget{yiffy_8c_a33bfc1f995233887a0414369c36936b8}\label{yiffy_8c_a33bfc1f995233887a0414369c36936b8}} 
-\index{yiffy.c@{yiffy.c}!NOT\_FOUND@{NOT\_FOUND}}
-\index{NOT\_FOUND@{NOT\_FOUND}!yiffy.c@{yiffy.c}}
-\doxysubsubsection{\texorpdfstring{NOT\_FOUND}{NOT\_FOUND}}
-{\footnotesize\ttfamily \#define NOT\+\_\+\+FOUND~false}
+\mbox{\Hypertarget{yiffy_8c_a9e8078dd597c541b6090e1e1ffd437e5}\label{yiffy_8c_a9e8078dd597c541b6090e1e1ffd437e5}} 
+\index{yiffy.c@{yiffy.c}!MISSING\_ON\_OFF@{MISSING\_ON\_OFF}}
+\index{MISSING\_ON\_OFF@{MISSING\_ON\_OFF}!yiffy.c@{yiffy.c}}
+\doxysubsubsection{\texorpdfstring{MISSING\_ON\_OFF}{MISSING\_ON\_OFF}}
+{\footnotesize\ttfamily \#define MISSING\+\_\+\+ON\+\_\+\+OFF~false}
 
 
 
-Definition at line 6 of file yiffy.\+c.
+Definition at line 21 of file yiffy.\+c.
+
+\mbox{\Hypertarget{yiffy_8c_a7f24a1abca37046fc42297fdefe88335}\label{yiffy_8c_a7f24a1abca37046fc42297fdefe88335}} 
+\index{yiffy.c@{yiffy.c}!NO\_ARG\_VALUE@{NO\_ARG\_VALUE}}
+\index{NO\_ARG\_VALUE@{NO\_ARG\_VALUE}!yiffy.c@{yiffy.c}}
+\doxysubsubsection{\texorpdfstring{NO\_ARG\_VALUE}{NO\_ARG\_VALUE}}
+{\footnotesize\ttfamily \#define NO\+\_\+\+ARG\+\_\+\+VALUE~false}
+
+
+
+Definition at line 23 of file yiffy.\+c.
+
+\mbox{\Hypertarget{yiffy_8c_ae19e91650edc7366559a74767d6e0075}\label{yiffy_8c_ae19e91650edc7366559a74767d6e0075}} 
+\index{yiffy.c@{yiffy.c}!RECOGNIZED\_ARGUMENT@{RECOGNIZED\_ARGUMENT}}
+\index{RECOGNIZED\_ARGUMENT@{RECOGNIZED\_ARGUMENT}!yiffy.c@{yiffy.c}}
+\doxysubsubsection{\texorpdfstring{RECOGNIZED\_ARGUMENT}{RECOGNIZED\_ARGUMENT}}
+{\footnotesize\ttfamily \#define RECOGNIZED\+\_\+\+ARGUMENT~true}
+
+
+
+Definition at line 19 of file yiffy.\+c.
+
+\mbox{\Hypertarget{yiffy_8c_a129246daa0c427b2108d7844650e5cf4}\label{yiffy_8c_a129246daa0c427b2108d7844650e5cf4}} 
+\index{yiffy.c@{yiffy.c}!UNRECOGNIZED\_ARGUMENT@{UNRECOGNIZED\_ARGUMENT}}
+\index{UNRECOGNIZED\_ARGUMENT@{UNRECOGNIZED\_ARGUMENT}!yiffy.c@{yiffy.c}}
+\doxysubsubsection{\texorpdfstring{UNRECOGNIZED\_ARGUMENT}{UNRECOGNIZED\_ARGUMENT}}
+{\footnotesize\ttfamily \#define UNRECOGNIZED\+\_\+\+ARGUMENT~false}
+
+
+
+Definition at line 20 of file yiffy.\+c.
 
 
 
@@ -81,5 +128,5 @@ Definition at line 6 of file yiffy.\+c.
 
 
 
-Definition at line 12 of file yiffy.\+c.
+Definition at line 61 of file yiffy.\+c.
 
