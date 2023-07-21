@@ -2,5 +2,5 @@
 
 void unrecognizedArgumentMessage(char *argument)
 {
-    fprintf(stderr, "yiffy: error: unrecognized command line argument: \"%s\".\n", argument);
+    fprintf(stderr, "yiffy: unrecognized command line argument: \"%s\".\n", argument);
 }

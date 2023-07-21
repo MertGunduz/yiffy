@@ -3,6 +3,7 @@
 #include <string.h>
 
 #include "../yiffymessages/yiffy-messages.h"
+#include "../yiffyrequest/yiffy-request.h"
 
 #define RECOGNIZED_ARGUMENT   true
 #define UNRECOGNIZED_ARGUMENT false
@@ -21,8 +22,8 @@ static void showExportMenu();
 static void showImportMenu();
 static void showWebGenMenu();
 static void showProxyMenu();
-static void showAnonymousDownloadMenu();
 static void showNSFWMenu();
+static void showRequestMenu();
 
 struct menuOption
 {
@@ -41,8 +42,8 @@ static struct menuOption menuOptions[] =
     {"--import", showImportMenu},
     {"--website-generation", showWebGenMenu},
     {"--proxy", showProxyMenu},
-    {"--anonymous-download", showAnonymousDownloadMenu},
     {"--nsfw", showNSFWMenu},
+    {"--tags", showRequestMenu}
 };
 
 int main(int argc, char *argv[])
@@ -68,7 +69,7 @@ int main(int argc, char *argv[])
 static bool argumentVerify(int argumentCount, char *arguments[])
 {
     char *oneArguments[] = {"--help", "--version", "--github", "--website", "--config", "--export", "--import"};
-    char *twoArguments[] = {"--website-generation", "--proxy", "--anonymous-download", "--nsfw"};
+    char *twoArguments[] = {"--website-generation", "--proxy", "--nsfw", "--tags"};
 
     if (argumentCount == 3)
     {
@@ -76,7 +77,7 @@ static bool argumentVerify(int argumentCount, char *arguments[])
         {
             if (strcmp(arguments[1], twoArguments[i]) == 0)
             {
-                if (strcmp(arguments[2], "on") == 0 || strcmp(arguments[2], "off") == 0)
+                if (strcmp(arguments[2], "on") == 0 || strcmp(arguments[2], "off") == 0 || strcmp(arguments[1], "--tags") == 0)
                 {
                     return RECOGNIZED_ARGUMENT; /* return true; */
                 }
@@ -165,10 +166,12 @@ static void showProxyMenu() {
     fprintf(stdout, "PROXY MENU\n");
 }
 
-static void showAnonymousDownloadMenu() {
-    fprintf(stdout, "ANONYMOUS DOWNLOAD MENU\n");
-}
-
 static void showNSFWMenu() {
     fprintf(stdout, "NSFW MENU\n");
+}
+
+static void showRequestMenu() {
+    char *response = e621Request();
+
+    fprintf(stdout, "%s\n", response);
 }
