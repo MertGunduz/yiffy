@@ -43,7 +43,7 @@ static struct menuOption menuOptions[] =
     {"--website-generation", showWebGenMenu},
     {"--proxy", showProxyMenu},
     {"--nsfw", showNSFWMenu},
-    {"--tags", showRequestMenu}
+    {"--search", showRequestMenu}
 };
 
 int main(int argc, char *argv[])
@@ -69,7 +69,7 @@ int main(int argc, char *argv[])
 static bool argumentVerify(int argumentCount, char *arguments[])
 {
     char *oneArguments[] = {"--help", "--version", "--github", "--website", "--config", "--export", "--import"};
-    char *twoArguments[] = {"--website-generation", "--proxy", "--nsfw", "--tags"};
+    char *twoArguments[] = {"--website-generation", "--proxy", "--nsfw", "--search"};
 
     if (argumentCount == 3)
     {
@@ -77,7 +77,7 @@ static bool argumentVerify(int argumentCount, char *arguments[])
         {
             if (strcmp(arguments[1], twoArguments[i]) == 0)
             {
-                if (strcmp(arguments[2], "on") == 0 || strcmp(arguments[2], "off") == 0 || strcmp(arguments[1], "--tags") == 0)
+                if (strcmp(arguments[2], "on") == 0 || strcmp(arguments[2], "off") == 0 || strcmp(arguments[1], "--search") == 0)
                 {
                     return RECOGNIZED_ARGUMENT; /* return true; */
                 }
