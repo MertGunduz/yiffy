@@ -12,54 +12,49 @@
 #define EXTRA_ARG_VALUE       false
 
 static bool argumentVerify(int argumentCount, char *arguments[]);
+static void showHelpMenu();
+static void showVersionMenu();
+static void showGithubMenu();
+static void showWebsiteMenu();
+static void showConfigMenu();
+static void showExportMenu();
+static void showImportMenu();
+static void showWebGenMenu();
+static void showProxyMenu();
+static void showAnonymousDownloadMenu();
+static void showNSFWMenu();
+
+struct menuOption
+{
+    const char *option;
+    void (*function)();
+};
+
+static struct menuOption menuOptions[] =
+{
+    {"--help", showHelpMenu},
+    {"--version", showVersionMenu},
+    {"--github", showGithubMenu},
+    {"--website", showWebsiteMenu},
+    {"--config", showConfigMenu},
+    {"--export", showExportMenu},
+    {"--import", showImportMenu},
+    {"--website-generation", showWebGenMenu},
+    {"--proxy", showProxyMenu},
+    {"--anonymous-download", showAnonymousDownloadMenu},
+    {"--nsfw", showNSFWMenu},
+};
 
 int main(int argc, char *argv[])
 {
     if (argumentVerify(argc, argv))
     {
-        if (strcmp(argv[1], "--help") == 0)
-        {
-            fprintf(stdout, "HELP MENU\n");
-        }
-        else if (strcmp(argv[1], "--version") == 0)
-        {
-            fprintf(stdout, "VERSION MENU\n");
-        }
-        else if (strcmp(argv[1], "--github") == 0)
-        {
-            fprintf(stdout, "GITHUB MENU\n");
-        }    
-        else if (strcmp(argv[1], "--website") == 0)
-        {
-            fprintf(stdout, "WEBSITE MENU\n");
-        }
-        else if (strcmp(argv[1], "--config") == 0)
-        {
-            fprintf(stdout, "CONFIG MENU\n");
-        }
-        else if (strcmp(argv[1], "--export") == 0)
-        {
-            fprintf(stdout, "EXPORT MENU\n");
-        }
-        else if (strcmp(argv[1], "--import") == 0)
-        {
-            fprintf(stdout, "IMPORT MENU\n");
-        }
-        else if (strcmp(argv[1], "--website-generation") == 0)
-        {
-            fprintf(stdout, "WEB GEN MENU\n");
-        }
-        else if (strcmp(argv[1], "--proxy") == 0)
-        {
-            fprintf(stdout, "PROXY MENU\n");
-        }
-        else if (strcmp(argv[1], "--anonymous-download") == 0)
-        {
-            fprintf(stdout, "ANONYMOUS DOWNLOAD MENU\n");
-        }
-        else if (strcmp(argv[1], "--nsfw") == 0)
-        {
-            fprintf(stdout, "NSFW MENU\n");
+        for (long unsigned int i = 0; i < sizeof(menuOptions) / sizeof(menuOptions[0]); i++) {
+            if (strcmp(argv[1], menuOptions[i].option) == 0) {
+                void (*menuFunc)() = menuOptions[i].function;
+                menuFunc();
+                break;
+            }
         }
     }
 
@@ -132,4 +127,48 @@ static bool argumentVerify(int argumentCount, char *arguments[])
         argcErrorMessage(argumentCount);
         return ARGC_QTY_ERROR; /* return false; */
     }
+}
+
+static void showHelpMenu() {
+    fprintf(stdout, "HELP MENU\n");
+}
+
+static void showVersionMenu() {
+    fprintf(stdout, "VERSION MENU\n");
+}
+
+static void showGithubMenu() {
+    fprintf(stdout, "GITHUB MENU\n");
+}
+
+static void showWebsiteMenu() {
+    fprintf(stdout, "WEBSITE MENU\n");
+}
+
+static void showConfigMenu() {
+    fprintf(stdout, "CONFIG MENU\n");
+}
+
+static void showExportMenu() {
+    fprintf(stdout, "EXPORT MENU\n");
+}
+
+static void showImportMenu() {
+    fprintf(stdout, "IMPORT MENU\n");
+}
+
+static void showWebGenMenu() {
+    fprintf(stdout, "WEB GEN MENU\n");
+}
+
+static void showProxyMenu() {
+    fprintf(stdout, "PROXY MENU\n");
+}
+
+static void showAnonymousDownloadMenu() {
+    fprintf(stdout, "ANONYMOUS DOWNLOAD MENU\n");
+}
+
+static void showNSFWMenu() {
+    fprintf(stdout, "NSFW MENU\n");
 }
