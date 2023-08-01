@@ -13,7 +13,9 @@
 /// @brief sends request to e621 with the specified tags and takes response
 /// @param tags 
 /// @return the request url
-char *e621Request(char *tags)
+char *e621Request(char *tagString)
 {
+
     
+    return tagString; 
 }

@@ -5,6 +5,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-char *e621Request();
+char *e621Request(char *tagString);
 
 #endif /* YIFFY_REQUEST_H */

@@ -29,18 +29,18 @@ static void showVersionMenu();
 static void showGithubMenu();
 static void showWebsiteMenu();
 static void showConfigMenu();
-static void showExportMenu();
-static void showImportMenu();
-static void showWebGenMenu();
-static void showProxyMenu();
-static void showNSFWMenu();
-static void showRequestMenu();
+static void exportLocalData();
+static void importLocalData();
+static void changeWebGenerationMode(char *onOff);
+static void changeProxyMode(char *onOff);
+static void changeAdultMode(char *onOff);
+static void useYiffy(char *tagString);
 
 /// @brief the general struct for handling the arguments by using function pointers
 struct menuOption
 {
     const char *option;
-    void (*function)();
+    void (*function)(char *argv);
 };
 
 static struct menuOption menuOptions[] =
@@ -50,22 +50,44 @@ static struct menuOption menuOptions[] =
     {"--github", showGithubMenu},
     {"--website", showWebsiteMenu},
     {"--config", showConfigMenu},
-    {"--export", showExportMenu},
-    {"--import", showImportMenu},
-    {"--website-generation", showWebGenMenu},
-    {"--proxy", showProxyMenu},
-    {"--nsfw", showNSFWMenu},
-    {"--search", showRequestMenu}
+    {"--export", exportLocalData},
+    {"--import", importLocalData},
+    {"--website-generation", changeWebGenerationMode},
+    {"--proxy", changeProxyMode},
+    {"--nsfw", changeAdultMode},
+    {"--search", useYiffy}
 };
 
 int main(int argc, char *argv[])
 {
     if (argumentVerify(argc, argv))
     {
-        for (long unsigned int i = 0; i < sizeof(menuOptions) / sizeof(menuOptions[0]); i++) {
-            if (strcmp(argv[1], menuOptions[i].option) == 0) {
-                void (*menuFunc)() = menuOptions[i].function;
-                menuFunc();
+        for (long unsigned int i = 0; i < sizeof(menuOptions) / sizeof(menuOptions[0]); i++) 
+        {
+            if (strcmp(argv[1], menuOptions[i].option) == 0) 
+            {
+                void (*menuFunc)(char *argv) = menuOptions[i].function;
+
+                if (strcmp(menuOptions[i].option, "--search") == 0) /* THIRD ARGUMENT: tags [yiffy --search "blush+fox+male"]*/
+                {
+                    menuFunc(argv[2]);
+                }
+                else if (strcmp(menuOptions[i].option, "--nsfw") == 0) /* THIRD ARGUMENT: on/off [yiffy --nsfw on]*/
+                {
+                    changeProxyMode(argv[2]);
+                }
+                else if (strcmp(menuOptions[i].option, "--proxy") == 0) /* THIRD ARGUMENT: on/off [yiffy --proxy on]*/
+                {
+                    changeProxyMode(argv[2]);
+                }
+                else if (strcmp(menuOptions[i].option, "--website-generation") == 0) /* THIRD ARGUMENT: on/off [yiffy --website-generation on] */
+                {
+                    changeWebGenerationMode(argv[2]);
+                }
+                else /* NO THIRD ARGUMENT */
+                {
+                    menuFunc(NULL);
+                }
                 break;
             }
         }
@@ -168,33 +190,32 @@ static void showConfigMenu() {
 }
 
 /// @brief exports the app data as a string
-static void showExportMenu() {
+static void exportLocalData() {
     fprintf(stdout, "EXPORT MENU\n");
 }
 
 /// @brief imports the string and creates app data
-static void showImportMenu() {
+static void importLocalData() {
     fprintf(stdout, "IMPORT MENU\n");
 }
 
 /// @brief opens/closes web generation system
-static void showWebGenMenu() {
-    fprintf(stdout, "WEB GEN MENU\n");
+static void changeWebGenerationMode(char *onOff) {
+    fprintf(stdout, "WEB GEN MENU %s\n", onOff);
 }
 
 /// @brief opens/closes proxy
-static void showProxyMenu() {
-    fprintf(stdout, "PROXY MENU\n");
+static void changeProxyMode(char *onOff) {
+    fprintf(stdout, "PROXY MENU%s\n", onOff);
 }
 
 /// @brief opens/closes nsfw option
-static void showNSFWMenu() {
-    fprintf(stdout, "NSFW MENU\n");
+static void changeAdultMode(char *onOff) {
+    fprintf(stdout, "NSFW MENU%s\n", onOff);
 }
 
 /// @brief sends request and gets data from e621/926
-static void showRequestMenu() {
-    char *response = e621Request();
-
-    fprintf(stdout, "%s\n", response);
+static void useYiffy(char *tagString) {
+    char *data = e621Request(tagString);
+    fprintf(stdout, "%s\n", data);
 }
