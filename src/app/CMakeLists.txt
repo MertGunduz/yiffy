@@ -22,7 +22,7 @@ target_compile_options(yiffy PRIVATE
 )
 
 # LINK THE LIBRARIES
-target_link_libraries(yiffy yiffy-messages yiffy-request)
+target_link_libraries(yiffy yiffy-messages yiffy-search yiffy-text-menus)
 
 # INSTALL THE EXECUTABLE TO USR/BIN
 install(TARGETS yiffy DESTINATION /usr/bin)

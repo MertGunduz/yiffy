@@ -8,13 +8,13 @@
  * @date 21/07/2023
 */
 
-
 #include <stdio.h>
 #include <stdbool.h>
 #include <string.h>
 
 #include "../yiffymessages/yiffy-messages.h"
-#include "../yiffyrequest/yiffy-request.h"
+#include "../yiffysearch/yiffy-search.h"
+#include "../yiffytextmenus/yiffy-text-menus.h"
 
 #define RECOGNIZED_ARGUMENT   true
 #define UNRECOGNIZED_ARGUMENT false
@@ -171,17 +171,17 @@ static void showHelpMenu() {
 
 /// @brief outputs version
 static void showVersionMenu() {
-    fprintf(stdout, "VERSION MENU\n");
+    showVersion();
 }
 
 /// @brief outputs github project source code url
 static void showGithubMenu() {
-    fprintf(stdout, "GITHUB MENU\n");
+    showGithub();
 }
 
 /// @brief outputs website url
 static void showWebsiteMenu() {
-    fprintf(stdout, "WEBSITE MENU\n");
+    showWebsite();
 }
 
 /// @brief outputs configurations
