@@ -12,10 +12,13 @@
 #define YIFFY_TEXT_MENUS_H
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 void showWebsite();
 void showVersion();
 void showGithub();
 void showHelp();
+void showConfig();
 
 #endif /* YIFFY_TEXT_MENUS_H */

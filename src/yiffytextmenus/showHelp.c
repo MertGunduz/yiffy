@@ -26,7 +26,7 @@ void showHelp()
     fprintf(stdout, "--version          output the version menu\n");
     fprintf(stdout, "--github           output the github menu\n");
     fprintf(stdout, "--website          output the website menu\n");
-    fprintf(stdout, "--config           output the configuration menu\n");
+    fprintf(stdout, "--config           output the configuration menu\n\n");
 
     fprintf(stdout, "yiffy local data import-export arguments\n");
     fprintf(stdout, "----------------------------------------\n");

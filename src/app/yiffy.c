@@ -186,7 +186,7 @@ static void showWebsiteMenu() {
 
 /// @brief outputs configurations
 static void showConfigMenu() {
-    fprintf(stdout, "CONFIG MENU\n");
+    showConfig();
 }
 
 /// @brief exports the app data as a string
