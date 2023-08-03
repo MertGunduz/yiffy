@@ -52,7 +52,7 @@ static struct menuOption menuOptions[] =
     {"--config", showConfigMenu},
     {"--export", exportLocalData},
     {"--import", importLocalData},
-    {"--website-generation", changeWebGenerationMode},
+    {"--wgen", changeWebGenerationMode},
     {"--proxy", changeProxyMode},
     {"--nsfw", changeAdultMode},
     {"--search", useYiffy}
@@ -80,7 +80,7 @@ int main(int argc, char *argv[])
                 {
                     changeProxyMode(argv[2]);
                 }
-                else if (strcmp(menuOptions[i].option, "--website-generation") == 0) /* THIRD ARGUMENT: on/off [yiffy --website-generation on] */
+                else if (strcmp(menuOptions[i].option, "--wgen") == 0) /* THIRD ARGUMENT: on/off [yiffy --wgen on] */
                 {
                     changeWebGenerationMode(argv[2]);
                 }
@@ -103,7 +103,7 @@ int main(int argc, char *argv[])
 static bool argumentVerify(int argumentCount, char *arguments[])
 {
     char *oneArguments[] = {"--help", "--version", "--github", "--website", "--config", "--export", "--import"};
-    char *twoArguments[] = {"--website-generation", "--proxy", "--nsfw", "--search"};
+    char *twoArguments[] = {"--wgen", "--proxy", "--nsfw", "--search"};
 
     if (argumentCount == 3)
     {
@@ -166,7 +166,7 @@ static bool argumentVerify(int argumentCount, char *arguments[])
 
 /// @brief outputs help menu
 static void showHelpMenu() {
-    fprintf(stdout, "HELP MENU\n");
+    showHelp();
 }
 
 /// @brief outputs version

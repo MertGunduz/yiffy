@@ -10,6 +10,7 @@
 
 #include "yiffy-text-menus.h"
 
+/// @brief shows help menu
 void showHelp()
 {
     fprintf(stdout, "usage: yiffy [OPTION]\n");
@@ -34,7 +35,7 @@ void showHelp()
 
     fprintf(stdout, "yiffy configuration and settings arguments\n");
     fprintf(stdout, "------------------------------------------\n");
-    fprintf(stdout, "--nsfw [ON/OFF]    imports the data to program\n");
-    fprintf(stdout, "--proxy [ON/OFF]   imports the data to program\n");
-    fprintf(stdout, "--wgen [ON/OFF]    imports the data to program\n");
+    fprintf(stdout, "--nsfw [ON/OFF]    switches to nsfw/sfw options\n");
+    fprintf(stdout, "--proxy [ON/OFF]   switches to proxy/non-proxy option\n");
+    fprintf(stdout, "--wgen [ON/OFF]    switches to wgen/non-wgen option\n");
 }

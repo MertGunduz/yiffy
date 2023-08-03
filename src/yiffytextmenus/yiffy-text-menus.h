@@ -16,5 +16,6 @@
 void showWebsite();
 void showVersion();
 void showGithub();
+void showHelp();
 
 #endif /* YIFFY_TEXT_MENUS_H */
