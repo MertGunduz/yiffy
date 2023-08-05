@@ -44,8 +44,7 @@ void showConfig()
     fscanf(configurationFile, "%s", buffer);
 
     /* write the text ui */
-    fprintf(stdout, "current yiffy configurations\n");
-    fprintf(stdout, "----------------------------\n");
+    fprintfH(stdout, "current yiffy configurations");
 
     /* tokenize the configuration string */
     char *token = strtok(buffer, ":");

@@ -14,6 +14,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "../yiffyui/yiffy-ui.h"
 
 void showWebsite();
 void showVersion();
