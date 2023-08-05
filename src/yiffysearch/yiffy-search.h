@@ -14,6 +14,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
+#include "../yiffymessages/yiffy-messages.h"
 
 char *e621Request(char *tagString);
 

@@ -1,11 +1,11 @@
 /**
- * @file
+ * @file showConfig.c
  * 
- * @brief
+ * @brief shows the configurations
  * 
- * @author
+ * @author Mehmet Mert Gunduz
  * 
- * @date
+ * @date 05/08/2023
 */
 
 #define MAX_FILE_PATH 256
@@ -13,7 +13,7 @@
 
 #include "yiffy-text-menus.h"
 
-/// @brief shows the configurations did by the user
+/// @brief shows the configurations
 void showConfig()
 {
     /* file path and line buffer */
@@ -23,9 +23,10 @@ void showConfig()
     /* take the home directory of the current user */
     char *home_directory = getenv("HOME");
 
-    if (home_directory == NULL) {
-        // error message function
-        fprintf(stderr, "Error getting home directory\n");
+    if (home_directory == NULL) 
+    {
+        homeNotFoundErrorMessage();
+        exit(1);
     }
 
     /* create the file path */
@@ -36,8 +37,8 @@ void showConfig()
 
     if (configurationFile == NULL)
     {
-        // error message function
-        perror("Error opening file");
+        fileOpenErrorMessage();
+        exit(1);
     }
 
     /* read and the content */

@@ -19,5 +19,7 @@ void unrecognizedArgumentMessage(char *argument);
 void noArgumentValueMessage(char *argument);
 void argcErrorMessage(int argc);
 void extraArgumentErrorMessage(char *argument);
+void homeNotFoundErrorMessage();
+void fileOpenErrorMessage();
 
 #endif /* YIFFY_MESSAGES_H */

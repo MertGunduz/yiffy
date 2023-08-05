@@ -6,6 +6,7 @@
         "yiffy-messages.h": "c",
         "stdlib.h": "c",
         "*.tcc": "c",
-        "yiffy-text-menus.h": "c"
+        "yiffy-text-menus.h": "c",
+        "yiffy-search.h": "c"
     }
 }

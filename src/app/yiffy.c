@@ -165,57 +165,68 @@ static bool argumentVerify(int argumentCount, char *arguments[])
 }
 
 /// @brief outputs help menu
-static void showHelpMenu() {
+static void showHelpMenu() 
+{
     showHelp();
 }
 
 /// @brief outputs version
-static void showVersionMenu() {
+static void showVersionMenu() 
+{
     showVersion();
 }
 
 /// @brief outputs github project source code url
-static void showGithubMenu() {
+static void showGithubMenu() 
+{
     showGithub();
 }
 
 /// @brief outputs website url
-static void showWebsiteMenu() {
+static void showWebsiteMenu() 
+{
     showWebsite();
 }
 
 /// @brief outputs configurations
-static void showConfigMenu() {
+static void showConfigMenu() 
+{
     showConfig();
 }
 
 /// @brief exports the app data as a string
-static void exportLocalData() {
+static void exportLocalData() 
+{
     fprintf(stdout, "EXPORT MENU\n");
 }
 
 /// @brief imports the string and creates app data
-static void importLocalData() {
+static void importLocalData() 
+{
     fprintf(stdout, "IMPORT MENU\n");
 }
 
 /// @brief opens/closes web generation system
-static void changeWebGenerationMode(char *onOff) {
+static void changeWebGenerationMode(char *onOff) 
+{
     fprintf(stdout, "WEB GEN MENU %s\n", onOff);
 }
 
 /// @brief opens/closes proxy
-static void changeProxyMode(char *onOff) {
+static void changeProxyMode(char *onOff) 
+{
     fprintf(stdout, "PROXY MENU%s\n", onOff);
 }
 
 /// @brief opens/closes nsfw option
-static void changeAdultMode(char *onOff) {
+static void changeAdultMode(char *onOff) 
+{
     fprintf(stdout, "NSFW MENU%s\n", onOff);
 }
 
 /// @brief sends request and gets data from e621/926
-static void useYiffy(char *tagString) {
+static void useYiffy(char *tagString) 
+{
     char *data = e621Request(tagString);
     fprintf(stdout, "%s\n", data);
 }
