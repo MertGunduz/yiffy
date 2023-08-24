@@ -6,6 +6,7 @@ set(SOURCES
     extraArgumentErrorMessage.c
     homeNotFoundErrorMessage.c
     fileOpenErrorMessage.c
+    noJsonResponseErrorMessage.c
 )
 
 add_library(yiffy-messages STATIC ${SOURCES})

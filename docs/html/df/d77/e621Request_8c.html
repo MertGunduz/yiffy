@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>yiffy: src/yiffyrequest/e621Request.c File Reference</title>
+<title>yiffy: src/yiffysearch/e621Request.c File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -63,11 +63,12 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_d2e4471c68f8f1e92cc57912c01bb275.html">yiffyrequest</a></li>  </ul>
+<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_5d1ce5c2ebfd61763d8f5edf0b55fa27.html">yiffysearch</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">e621Request.c File Reference</div>  </div>
@@ -76,27 +77,36 @@ $(function() {
 
 <p>sends request to e621 with the specified tags and takes response  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="../../dd/d14/yiffy-request_8h_source.html">yiffy-request.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="../../dc/d88/yiffy-search_8h_source.html">yiffy-search.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for e621Request.c:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d0/df9/e621Request_8c__incl.png" border="0" usemap="#asrc_2yiffyrequest_2e621Request_8c" alt=""/></div>
-<map name="asrc_2yiffyrequest_2e621Request_8c" id="asrc_2yiffyrequest_2e621Request_8c">
-<area shape="rect" title="sends request to e621 with the specified tags and takes response" alt="" coords="21,5,243,32"/>
-<area shape="rect" href="../../dd/d14/yiffy-request_8h.html" title=" " alt="" coords="73,80,191,107"/>
-<area shape="rect" title=" " alt="" coords="5,155,72,181"/>
-<area shape="rect" title=" " alt="" coords="97,155,167,181"/>
-<area shape="rect" title=" " alt="" coords="191,155,262,181"/>
+<div class="center"><img src="../../d0/df9/e621Request_8c__incl.png" border="0" usemap="#asrc_2yiffysearch_2e621Request_8c" alt=""/></div>
+<map name="asrc_2yiffysearch_2e621Request_8c" id="asrc_2yiffysearch_2e621Request_8c">
+<area shape="rect" title="sends request to e621 with the specified tags and takes response" alt="" coords="94,5,311,32"/>
+<area shape="rect" href="../../dc/d88/yiffy-search_8h.html" title="the general search and use header for yiffy" alt="" coords="147,80,258,107"/>
+<area shape="rect" title=" " alt="" coords="92,244,158,271"/>
+<area shape="rect" title=" " alt="" coords="26,162,96,189"/>
+<area shape="rect" title=" " alt="" coords="243,244,314,271"/>
+<area shape="rect" title=" " alt="" coords="308,162,390,189"/>
+<area shape="rect" href="../../de/d35/yiffy-messages_8h.html" title="the message output header for yiffy" alt="" coords="121,155,284,196"/>
 </map>
 </div>
 </div>
 <p><a href="../../df/d77/e621Request_8c_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a263efd24d550124313df51247f07457a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d77/e621Request_8c.html#a263efd24d550124313df51247f07457a">MAX_FILE_PATH</a>&#160;&#160;&#160;256</td></tr>
+<tr class="separator:a263efd24d550124313df51247f07457a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4d796b98c583d49e83adabd74a63bf6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d77/e621Request_8c.html#ad4d796b98c583d49e83adabd74a63bf6">MAX_BUFFER_SIZE</a>&#160;&#160;&#160;512</td></tr>
+<tr class="separator:ad4d796b98c583d49e83adabd74a63bf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aee8a2a68b341fc87e86c902426a932f6"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d77/e621Request_8c.html#aee8a2a68b341fc87e86c902426a932f6">e621Request</a> (char *tags)</td></tr>
-<tr class="memdesc:aee8a2a68b341fc87e86c902426a932f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">sends request to e621 with the specified tags and takes response  <a href="../../df/d77/e621Request_8c.html#aee8a2a68b341fc87e86c902426a932f6">More...</a><br /></td></tr>
-<tr class="separator:aee8a2a68b341fc87e86c902426a932f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36f93f01763cb9cb93d6624f30c5da2e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d77/e621Request_8c.html#a36f93f01763cb9cb93d6624f30c5da2e">e621Request</a> (char *tagString)</td></tr>
+<tr class="memdesc:a36f93f01763cb9cb93d6624f30c5da2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">sends request to e621 with the specified tags and takes response  <a href="../../df/d77/e621Request_8c.html#a36f93f01763cb9cb93d6624f30c5da2e">More...</a><br /></td></tr>
+<tr class="separator:a36f93f01763cb9cb93d6624f30c5da2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>sends request to e621 with the specified tags and takes response </p>
@@ -104,18 +114,51 @@ Functions</h2></td></tr>
 <dl class="section date"><dt>Date</dt><dd>21/07/2023 </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="../../df/d77/e621Request_8c_source.html">e621Request.c</a>.</p>
-</div><h2 class="groupheader">Function Documentation</h2>
-<a id="aee8a2a68b341fc87e86c902426a932f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aee8a2a68b341fc87e86c902426a932f6">&#9670;&nbsp;</a></span>e621Request()</h2>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ad4d796b98c583d49e83adabd74a63bf6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4d796b98c583d49e83adabd74a63bf6">&#9670;&nbsp;</a></span>MAX_BUFFER_SIZE</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">char* e621Request </td>
+          <td class="memname">#define MAX_BUFFER_SIZE&#160;&#160;&#160;512</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/d77/e621Request_8c_source.html#l00012">12</a> of file <a class="el" href="../../df/d77/e621Request_8c_source.html">e621Request.c</a>.</p>
+
+</div>
+</div>
+<a id="a263efd24d550124313df51247f07457a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a263efd24d550124313df51247f07457a">&#9670;&nbsp;</a></span>MAX_FILE_PATH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_FILE_PATH&#160;&#160;&#160;256</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/d77/e621Request_8c_source.html#l00011">11</a> of file <a class="el" href="../../df/d77/e621Request_8c_source.html">e621Request.c</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a36f93f01763cb9cb93d6624f30c5da2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36f93f01763cb9cb93d6624f30c5da2e">&#9670;&nbsp;</a></span>e621Request()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int e621Request </td>
           <td>(</td>
           <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>tags</em></td><td>)</td>
+          <td class="paramname"><em>tagString</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -130,7 +173,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the request url </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d77/e621Request_8c_source.html#l00016">16</a> of file <a class="el" href="../../df/d77/e621Request_8c_source.html">e621Request.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d77/e621Request_8c_source.html#l00019">19</a> of file <a class="el" href="../../df/d77/e621Request_8c_source.html">e621Request.c</a>.</p>
 
 </div>
 </div>

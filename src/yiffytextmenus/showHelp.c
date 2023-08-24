@@ -32,6 +32,5 @@ void showHelp()
 
     fprintfH(stdout, "yiffy configuration and settings arguments");
     fprintf(stdout, "--nsfw [ON/OFF]    switches to nsfw/sfw options\n");
-    fprintf(stdout, "--proxy [ON/OFF]   switches to proxy/non-proxy option\n");
     fprintf(stdout, "--wgen [ON/OFF]    switches to wgen/non-wgen option\n");
 }

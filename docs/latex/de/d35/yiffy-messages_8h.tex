@@ -7,8 +7,7 @@ the message output header for yiffy
 
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include $<$string.\+h$>$}\newline
-Include dependency graph for yiffy-\/messages.h\+:
-\nopagebreak
+Include dependency graph for yiffy-\/messages.h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -35,7 +34,13 @@ void \mbox{\hyperlink{yiffy-messages_8h_a81c685b666239e7dfe3cc98ab6249b55}{no\+A
 void \mbox{\hyperlink{yiffy-messages_8h_a9beeda8ebe8f084dbc596d0639eaf9b3}{argc\+Error\+Message}} (int argc)
 \begin{DoxyCompactList}\small\item\em evaluates the argument count and gives information if it is not in the requested format \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{yiffy-messages_8h_aeeb39a1ff7f4fc6fbc7ab03e373edb55}{extra\+Argument\+Error\+Message}} (char $\ast$argument)
-\begin{DoxyCompactList}\small\item\em outputs the format for the argument when there is additional argument \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em outputs the format for the argument when there is additional argument \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{yiffy-messages_8h_a28e66284663b33a9f8d102c306dff47a}{home\+Not\+Found\+Error\+Message}} ()
+\begin{DoxyCompactList}\small\item\em outputs the home not found error when application can not access the \$home environment variable \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{yiffy-messages_8h_a58d7e894ac05a63490698795d25bfe9a}{file\+Open\+Error\+Message}} ()
+\begin{DoxyCompactList}\small\item\em it shows some information message to give user solutions \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{yiffy-messages_8h_adb9f6e005070bc080ea4f4499537b735}{no\+Json\+Response\+Error\+Message}} ()
+\begin{DoxyCompactList}\small\item\em outputs the error when there is no json file \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -90,6 +95,34 @@ outputs the format for the argument when there is additional argument
 
 Definition at line 15 of file extra\+Argument\+Error\+Message.\+c.
 
+\mbox{\Hypertarget{yiffy-messages_8h_a58d7e894ac05a63490698795d25bfe9a}\label{yiffy-messages_8h_a58d7e894ac05a63490698795d25bfe9a}} 
+\index{yiffy-\/messages.h@{yiffy-\/messages.h}!fileOpenErrorMessage@{fileOpenErrorMessage}}
+\index{fileOpenErrorMessage@{fileOpenErrorMessage}!yiffy-\/messages.h@{yiffy-\/messages.h}}
+\doxysubsubsection{\texorpdfstring{fileOpenErrorMessage()}{fileOpenErrorMessage()}}
+{\footnotesize\ttfamily void file\+Open\+Error\+Message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+it shows some information message to give user solutions 
+
+
+
+Definition at line 14 of file file\+Open\+Error\+Message.\+c.
+
+\mbox{\Hypertarget{yiffy-messages_8h_a28e66284663b33a9f8d102c306dff47a}\label{yiffy-messages_8h_a28e66284663b33a9f8d102c306dff47a}} 
+\index{yiffy-\/messages.h@{yiffy-\/messages.h}!homeNotFoundErrorMessage@{homeNotFoundErrorMessage}}
+\index{homeNotFoundErrorMessage@{homeNotFoundErrorMessage}!yiffy-\/messages.h@{yiffy-\/messages.h}}
+\doxysubsubsection{\texorpdfstring{homeNotFoundErrorMessage()}{homeNotFoundErrorMessage()}}
+{\footnotesize\ttfamily void home\+Not\+Found\+Error\+Message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+outputs the home not found error when application can not access the \$home environment variable 
+
+
+
+Definition at line 14 of file home\+Not\+Found\+Error\+Message.\+c.
+
 \mbox{\Hypertarget{yiffy-messages_8h_a81c685b666239e7dfe3cc98ab6249b55}\label{yiffy-messages_8h_a81c685b666239e7dfe3cc98ab6249b55}} 
 \index{yiffy-\/messages.h@{yiffy-\/messages.h}!noArgumentValueMessage@{noArgumentValueMessage}}
 \index{noArgumentValueMessage@{noArgumentValueMessage}!yiffy-\/messages.h@{yiffy-\/messages.h}}
@@ -109,6 +142,26 @@ outputs the correct prompt format when there is no argument value
 
 
 Definition at line 15 of file no\+Argument\+Value\+Message.\+c.
+
+\mbox{\Hypertarget{yiffy-messages_8h_adb9f6e005070bc080ea4f4499537b735}\label{yiffy-messages_8h_adb9f6e005070bc080ea4f4499537b735}} 
+\index{yiffy-\/messages.h@{yiffy-\/messages.h}!noJsonResponseErrorMessage@{noJsonResponseErrorMessage}}
+\index{noJsonResponseErrorMessage@{noJsonResponseErrorMessage}!yiffy-\/messages.h@{yiffy-\/messages.h}}
+\doxysubsubsection{\texorpdfstring{noJsonResponseErrorMessage()}{noJsonResponseErrorMessage()}}
+{\footnotesize\ttfamily void no\+Json\+Response\+Error\+Message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+outputs the error when there is no json file 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argument} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 15 of file no\+Json\+Response\+Error\+Message.\+c.
 
 \mbox{\Hypertarget{yiffy-messages_8h_a98ea61cc699732ffc205c5cce8674455}\label{yiffy-messages_8h_a98ea61cc699732ffc205c5cce8674455}} 
 \index{yiffy-\/messages.h@{yiffy-\/messages.h}!onOffMessage@{onOffMessage}}

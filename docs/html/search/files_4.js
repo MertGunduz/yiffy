@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['unrecognizedargumentmessage_2ec_31',['unrecognizedArgumentMessage.c',['../dc/db5/unrecognizedArgumentMessage_8c.html',1,'']]]
+  ['noargumentvaluemessage_2ec_54',['noArgumentValueMessage.c',['../d9/da4/noArgumentValueMessage_8c.html',1,'']]],
+  ['nojsonresponseerrormessage_2ec_55',['noJsonResponseErrorMessage.c',['../de/d81/noJsonResponseErrorMessage_8c.html',1,'']]]
 ];

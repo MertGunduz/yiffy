@@ -15,4 +15,4 @@ set(CMAKE_C_STANDARD_REQUIRED True)
 file(MAKE_DIRECTORY $ENV{HOME}/.yiffy)
 
 # CREATE CONFIG FILE
-file(WRITE $ENV{HOME}/.yiffy/yiffy-config.txt "wgen:proxy:nsfw")
+file(WRITE $ENV{HOME}/.yiffy/yiffy-config.txt "wgen:nsfw")

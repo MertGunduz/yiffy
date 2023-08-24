@@ -1,0 +1,9 @@
+<map id="src/yiffytextmenus/showVersion.c" name="src/yiffytextmenus/showVersion.c">
+<area shape="rect" id="node1" title="shows the version" alt="" coords="209,5,353,47"/>
+<area shape="rect" id="node2" href="$d2/d2d/yiffy-text-menus_8h.html" title="the text based menu header for yiffy (show menu related part [showHelpMenu] [showVersionMenu] [showGi..." alt="" coords="210,95,352,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="73,259,140,285"/>
+<area shape="rect" id="node4" title=" " alt="" coords="426,177,496,203"/>
+<area shape="rect" id="node5" title=" " alt="" coords="246,259,316,285"/>
+<area shape="rect" id="node6" href="$d8/ddd/yiffy-ui_8h.html" title="general ui management header for yiffy (includes functions and structures for managing the terminal u..." alt="" coords="212,177,350,203"/>
+<area shape="rect" id="node7" href="$de/d35/yiffy-messages_8h.html" title="the message output header for yiffy" alt="" coords="25,169,188,211"/>
+</map>

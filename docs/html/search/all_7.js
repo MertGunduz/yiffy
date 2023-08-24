@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['unrecognized_5fargument_19',['UNRECOGNIZED_ARGUMENT',['../dc/dc0/yiffy_8c.html#a129246daa0c427b2108d7844650e5cf4',1,'yiffy.c']]],
-  ['unrecognizedargumentmessage_20',['unrecognizedArgumentMessage',['../dc/db5/unrecognizedArgumentMessage_8c.html#ab77033d8b672ad2a270de7f823842fe6',1,'unrecognizedArgumentMessage(char *argument):&#160;unrecognizedArgumentMessage.c'],['../de/d35/yiffy-messages_8h.html#ab77033d8b672ad2a270de7f823842fe6',1,'unrecognizedArgumentMessage(char *argument):&#160;unrecognizedArgumentMessage.c']]],
-  ['unrecognizedargumentmessage_2ec_21',['unrecognizedArgumentMessage.c',['../dc/db5/unrecognizedArgumentMessage_8c.html',1,'']]]
+  ['recognized_5fargument_28',['RECOGNIZED_ARGUMENT',['../dc/dc0/yiffy_8c.html#ae19e91650edc7366559a74767d6e0075',1,'yiffy.c']]]
 ];

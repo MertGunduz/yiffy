@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['onoffmessage_40',['onOffMessage',['../d3/d67/onOffMessage_8c.html#a98ea61cc699732ffc205c5cce8674455',1,'onOffMessage(char *argument):&#160;onOffMessage.c'],['../de/d35/yiffy-messages_8h.html#a98ea61cc699732ffc205c5cce8674455',1,'onOffMessage(char *argument):&#160;onOffMessage.c']]]
+  ['main_74',['main',['../dc/dc0/yiffy_8c.html#a0ddf1224851353fc92bfbff6f499fa97',1,'yiffy.c']]]
 ];

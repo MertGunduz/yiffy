@@ -16,10 +16,13 @@
 /// @brief sends request to e621 with the specified tags and takes response
 /// @param tags 
 /// @return the request url
-char *e621Request(char *tagString)
+int e621Request(char *tagString)
 {
+    /* request string */
+    char *requestString = (char*)malloc(256 * sizeof(char));
+
     /* configuration booleans */
-    bool isNsfw = false, isWgen = false, isProxy = false;
+    bool isNsfw = false;
 
     /* file path and line buffer */
     char file_path[MAX_FILE_PATH];
@@ -59,25 +62,35 @@ char *e621Request(char *tagString)
             isNsfw = true;
         }
 
-        if (strcmp(token, "wgen") == 0)
-        {
-            isWgen = true;
-        }
-
-        if (strcmp(token, "proxy") == 0)
-        {
-            isProxy = true;
-        }
-
         token = strtok(NULL, ":");
     }
 
-    // check if proxy on, use with proxy bridge
-
-
     // check if nsfw on send request to e621 if not send to e926
+    if (isNsfw)
+    {
+        sprintf(requestString, "aria2c \"https://e621.net/posts.json?limit=10&tags=%s\" -o posts.json >/dev/null 2>&1", tagString);
+    }
+    else
+    {
+        sprintf(requestString, "aria2c \"https://e926.net/posts.json?limit=10&tags=%s\" -o posts.json >/dev/null 2>&1", tagString);
+    }
 
-    // check if wgen on, if yes generate website ui
+    /* send request to url */
+    system(requestString);
 
-    return tagString; 
+    /* check if the file exists */
+    FILE *responseJson = fopen("posts.json", "r");
+
+    /* return validation integer */
+    if (responseJson != NULL)
+    {
+        /* close the file and send true */
+        fclose(responseJson);
+        return 1;
+    }
+    else
+    {
+        noJsonResponseErrorMessage();
+        exit(1);
+    }
 }

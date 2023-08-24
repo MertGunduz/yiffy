@@ -11,6 +11,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <string.h>
+#include <unistd.h>
 
 #include "../yiffymessages/yiffy-messages.h"
 #include "../yiffysearch/yiffy-search.h"
@@ -32,7 +33,6 @@ static void showConfigMenu();
 static void exportLocalData();
 static void importLocalData();
 static void changeWebGenerationMode(char *onOff);
-static void changeProxyMode(char *onOff);
 static void changeAdultMode(char *onOff);
 static void useYiffy(char *tagString);
 
@@ -53,7 +53,6 @@ static struct menuOption menuOptions[] =
     {"--export", exportLocalData},
     {"--import", importLocalData},
     {"--wgen", changeWebGenerationMode},
-    {"--proxy", changeProxyMode},
     {"--nsfw", changeAdultMode},
     {"--search", useYiffy}
 };
@@ -74,11 +73,7 @@ int main(int argc, char *argv[])
                 }
                 else if (strcmp(menuOptions[i].option, "--nsfw") == 0) /* THIRD ARGUMENT: on/off [yiffy --nsfw on]*/
                 {
-                    changeProxyMode(argv[2]);
-                }
-                else if (strcmp(menuOptions[i].option, "--proxy") == 0) /* THIRD ARGUMENT: on/off [yiffy --proxy on]*/
-                {
-                    changeProxyMode(argv[2]);
+                    changeAdultMode(argv[2]);
                 }
                 else if (strcmp(menuOptions[i].option, "--wgen") == 0) /* THIRD ARGUMENT: on/off [yiffy --wgen on] */
                 {
@@ -103,7 +98,7 @@ int main(int argc, char *argv[])
 static bool argumentVerify(int argumentCount, char *arguments[])
 {
     char *oneArguments[] = {"--help", "--version", "--github", "--website", "--config", "--export", "--import"};
-    char *twoArguments[] = {"--wgen", "--proxy", "--nsfw", "--search"};
+    char *twoArguments[] = {"--wgen", "--nsfw", "--search"};
 
     if (argumentCount == 3)
     {
@@ -212,12 +207,6 @@ static void changeWebGenerationMode(char *onOff)
     fprintf(stdout, "WEB GEN MENU %s\n", onOff);
 }
 
-/// @brief opens/closes proxy
-static void changeProxyMode(char *onOff) 
-{
-    fprintf(stdout, "PROXY MENU%s\n", onOff);
-}
-
 /// @brief opens/closes nsfw option
 static void changeAdultMode(char *onOff) 
 {
@@ -227,6 +216,11 @@ static void changeAdultMode(char *onOff)
 /// @brief sends request and gets data from e621/926
 static void useYiffy(char *tagString) 
 {
-    char *data = e621Request(tagString);
-    fprintf(stdout, "%s\n", data);
+    int returnVal = e621Request(tagString);
+
+    /* check if everything works fine */
+    if (returnVal)
+    {
+        fprintf(stdout, "great!\n");
+    }
 }

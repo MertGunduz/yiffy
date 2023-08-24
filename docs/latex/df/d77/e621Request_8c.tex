@@ -1,23 +1,30 @@
-\hypertarget{e621Request_8c}{}\doxysection{src/yiffyrequest/e621\+Request.c File Reference}
-\label{e621Request_8c}\index{src/yiffyrequest/e621Request.c@{src/yiffyrequest/e621Request.c}}
+\hypertarget{e621Request_8c}{}\doxysection{src/yiffysearch/e621\+Request.c File Reference}
+\label{e621Request_8c}\index{src/yiffysearch/e621Request.c@{src/yiffysearch/e621Request.c}}
 
 
 sends request to e621 with the specified tags and takes response  
 
 
-{\ttfamily \#include \char`\"{}yiffy-\/request.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}yiffy-\/search.\+h\char`\"{}}\newline
 Include dependency graph for e621\+Request.\+c\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=273pt]{d0/df9/e621Request_8c__incl}
+\includegraphics[width=350pt]{d0/df9/e621Request_8c__incl}
 \end{center}
 \end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{e621Request_8c_a263efd24d550124313df51247f07457a}{MAX\+\_\+\+FILE\+\_\+\+PATH}}~256
+\item 
+\#define \mbox{\hyperlink{e621Request_8c_ad4d796b98c583d49e83adabd74a63bf6}{MAX\+\_\+\+BUFFER\+\_\+\+SIZE}}~512
+\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-char $\ast$ \mbox{\hyperlink{e621Request_8c_aee8a2a68b341fc87e86c902426a932f6}{e621\+Request}} (char $\ast$tags)
+int \mbox{\hyperlink{e621Request_8c_a36f93f01763cb9cb93d6624f30c5da2e}{e621\+Request}} (char $\ast$tag\+String)
 \begin{DoxyCompactList}\small\item\em sends request to e621 with the specified tags and takes response \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -32,12 +39,35 @@ Mehmet Mert Gunduz
 \end{DoxyDate}
 
 
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{e621Request_8c_ad4d796b98c583d49e83adabd74a63bf6}\label{e621Request_8c_ad4d796b98c583d49e83adabd74a63bf6}} 
+\index{e621Request.c@{e621Request.c}!MAX\_BUFFER\_SIZE@{MAX\_BUFFER\_SIZE}}
+\index{MAX\_BUFFER\_SIZE@{MAX\_BUFFER\_SIZE}!e621Request.c@{e621Request.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_BUFFER\_SIZE}{MAX\_BUFFER\_SIZE}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+BUFFER\+\_\+\+SIZE~512}
+
+
+
+Definition at line 12 of file e621\+Request.\+c.
+
+\mbox{\Hypertarget{e621Request_8c_a263efd24d550124313df51247f07457a}\label{e621Request_8c_a263efd24d550124313df51247f07457a}} 
+\index{e621Request.c@{e621Request.c}!MAX\_FILE\_PATH@{MAX\_FILE\_PATH}}
+\index{MAX\_FILE\_PATH@{MAX\_FILE\_PATH}!e621Request.c@{e621Request.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_FILE\_PATH}{MAX\_FILE\_PATH}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+FILE\+\_\+\+PATH~256}
+
+
+
+Definition at line 11 of file e621\+Request.\+c.
+
+
+
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{e621Request_8c_aee8a2a68b341fc87e86c902426a932f6}\label{e621Request_8c_aee8a2a68b341fc87e86c902426a932f6}} 
+\mbox{\Hypertarget{e621Request_8c_a36f93f01763cb9cb93d6624f30c5da2e}\label{e621Request_8c_a36f93f01763cb9cb93d6624f30c5da2e}} 
 \index{e621Request.c@{e621Request.c}!e621Request@{e621Request}}
 \index{e621Request@{e621Request}!e621Request.c@{e621Request.c}}
 \doxysubsubsection{\texorpdfstring{e621Request()}{e621Request()}}
-{\footnotesize\ttfamily char$\ast$ e621\+Request (\begin{DoxyParamCaption}\item[{char $\ast$}]{tags }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int e621\+Request (\begin{DoxyParamCaption}\item[{char $\ast$}]{tag\+String }\end{DoxyParamCaption})}
 
 
 
@@ -53,5 +83,5 @@ the request url
 \end{DoxyReturn}
 
 
-Definition at line 16 of file e621\+Request.\+c.
+Definition at line 19 of file e621\+Request.\+c.
 
