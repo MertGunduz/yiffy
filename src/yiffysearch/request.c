@@ -16,7 +16,7 @@
 /// @brief sends request to e621 with the specified tags and takes response
 /// @param tags 
 /// @return the request url
-int request(char *tagString)
+void request(char *tagString)
 {
     /* request string */
     char *requestString = (char*)malloc(256 * sizeof(char));
@@ -82,15 +82,12 @@ int request(char *tagString)
     FILE *responseJson = fopen("posts.json", "r");
 
     /* return validation integer */
-    if (responseJson != NULL)
-    {
-        /* close the file and send true */
-        fclose(responseJson);
-        return 1;
-    }
-    else
+    if (responseJson == NULL)
     {
         noJsonResponseErrorMessage();
         exit(1);
     }
+
+    /* close the file */
+    fclose(responseJson);
 }

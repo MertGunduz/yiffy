@@ -17,6 +17,6 @@
 #include <stdbool.h>
 #include "../yiffymessages/yiffy-messages.h"
 
-int request(char *tagString);
+void request(char *tagString);
 
 #endif /* YIFFY_SEARCH_H */
