@@ -1,0 +1,691 @@
+\hypertarget{cjson_8h}{}\doxysection{src/cjson/cjson.h File Reference}
+\label{cjson_8h}\index{src/cjson/cjson.h@{src/cjson/cjson.h}}
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+Include dependency graph for cjson.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=177pt]{d7/dc0/cjson_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{d7/d23/cjson_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structcJSON}{c\+JSON}}
+\item 
+struct \mbox{\hyperlink{structcJSON__Hooks}{c\+JSON\+\_\+\+Hooks}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{cjson_8h_a79203c3ba406ffd5736627cc1e082e38}{CJSON\+\_\+\+CDECL}}
+\item 
+\#define \mbox{\hyperlink{cjson_8h_aee2cdf14a236df79175ef257a5a94964}{CJSON\+\_\+\+STDCALL}}
+\item 
+\#define \mbox{\hyperlink{cjson_8h_a70709a6f2a7e45debe4f5abe345fcb86}{CJSON\+\_\+\+PUBLIC}}(type)~type
+\item 
+\#define \mbox{\hyperlink{cjson_8h_a78f100ac5089a51941e2ca573ad8e380}{CJSON\+\_\+\+VERSION\+\_\+\+MAJOR}}~1
+\item 
+\#define \mbox{\hyperlink{cjson_8h_a55a808fe6b77cef1e4c2cf02a4316301}{CJSON\+\_\+\+VERSION\+\_\+\+MINOR}}~7
+\item 
+\#define \mbox{\hyperlink{cjson_8h_a6ad7073103d4b9aaf2153add95561c47}{CJSON\+\_\+\+VERSION\+\_\+\+PATCH}}~16
+\item 
+\#define \mbox{\hyperlink{cjson_8h_a80c36e86d8d65b697bc623fe28027668}{c\+JSON\+\_\+\+Invalid}}~(0)
+\item 
+\#define \mbox{\hyperlink{cjson_8h_a2d240682316354b5748f909ad220184b}{c\+JSON\+\_\+\+False}}~(1 $<$$<$ 0)
+\item 
+\#define \mbox{\hyperlink{cjson_8h_aad4e442b8095939decddfb67d87d9324}{c\+JSON\+\_\+\+True}}~(1 $<$$<$ 1)
+\item 
+\#define \mbox{\hyperlink{cjson_8h_aeadaba63ddb68aaa518528595d503dcd}{c\+JSON\+\_\+\+NULL}}~(1 $<$$<$ 2)
+\item 
+\#define \mbox{\hyperlink{cjson_8h_a15e77e2f6457dc9b19c10ddb032af971}{c\+JSON\+\_\+\+Number}}~(1 $<$$<$ 3)
+\item 
+\#define \mbox{\hyperlink{cjson_8h_aa2cb4765308e2bbdf01988b2acdf92d9}{c\+JSON\+\_\+\+String}}~(1 $<$$<$ 4)
+\item 
+\#define \mbox{\hyperlink{cjson_8h_a57cffa126740a8efcdcb7bcef80e8897}{c\+JSON\+\_\+\+Array}}~(1 $<$$<$ 5)
+\item 
+\#define \mbox{\hyperlink{cjson_8h_a22c6e13481c090629afbd77b7cebd24c}{c\+JSON\+\_\+\+Object}}~(1 $<$$<$ 6)
+\item 
+\#define \mbox{\hyperlink{cjson_8h_ae9ddc931ea84908d12f48c5b7f8731a1}{c\+JSON\+\_\+\+Raw}}~(1 $<$$<$ 7) /$\ast$ \mbox{\hyperlink{cjson_8h_a788db922597cf2fb6389e278f822e59f}{raw}} json $\ast$/
+\item 
+\#define \mbox{\hyperlink{cjson_8h_ad3d18116aae3bfa46f13bcfd7fd6d4e7}{c\+JSON\+\_\+\+Is\+Reference}}~256
+\item 
+\#define \mbox{\hyperlink{cjson_8h_a491c3484a36f3915cc4710088f55971f}{c\+JSON\+\_\+\+String\+Is\+Const}}~512
+\item 
+\#define \mbox{\hyperlink{cjson_8h_a9c7ac4e1b31070b787afb3a4b67727f4}{CJSON\+\_\+\+NESTING\+\_\+\+LIMIT}}~1000
+\item 
+\#define \mbox{\hyperlink{cjson_8h_ae5b1335bfccc358f566bea6f7e4bfdc6}{c\+JSON\+\_\+\+Set\+Int\+Value}}(object,  \mbox{\hyperlink{cjson_8h_a01b4671c6b7cc8f831c951c000a37735}{number}})~((object) ? (object)-\/$>$valueint = (object)-\/$>$valuedouble = (\mbox{\hyperlink{cjson_8h_a01b4671c6b7cc8f831c951c000a37735}{number}}) \+: (\mbox{\hyperlink{cjson_8h_a01b4671c6b7cc8f831c951c000a37735}{number}}))
+\item 
+\#define \mbox{\hyperlink{cjson_8h_adab3f1e3586395bdb2da5a40059cb24b}{c\+JSON\+\_\+\+Set\+Number\+Value}}(object,  \mbox{\hyperlink{cjson_8h_a01b4671c6b7cc8f831c951c000a37735}{number}})~((object != NULL) ? c\+JSON\+\_\+\+Set\+Number\+Helper(object, (double)\mbox{\hyperlink{cjson_8h_a01b4671c6b7cc8f831c951c000a37735}{number}}) \+: (\mbox{\hyperlink{cjson_8h_a01b4671c6b7cc8f831c951c000a37735}{number}}))
+\item 
+\#define \mbox{\hyperlink{cjson_8h_a210748b11b9b4f93d29391591a37ad85}{c\+JSON\+\_\+\+Set\+Bool\+Value}}(object,  bool\+Value)
+\item 
+\#define \mbox{\hyperlink{cjson_8h_ac3d6e5782fb4bb3c7a25c7c5b1868f06}{c\+JSON\+\_\+\+Array\+For\+Each}}(element,  array)~for(element = (array != NULL) ? (array)-\/$>$child \+: NULL; element != NULL; element = element-\/$>$next)
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structcJSON}{c\+JSON}} \mbox{\hyperlink{cjson_8h_a4c146234dfd7b6adbf13b49505e995bc}{c\+JSON}}
+\item 
+typedef struct \mbox{\hyperlink{structcJSON__Hooks}{c\+JSON\+\_\+\+Hooks}} \mbox{\hyperlink{cjson_8h_ab67bc592e52110fee68ab8ab4140530d}{c\+JSON\+\_\+\+Hooks}}
+\item 
+typedef int \mbox{\hyperlink{cjson_8h_aea0a1491f73d98b7cc4b8b791c408a4a}{c\+JSON\+\_\+bool}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{cjson_8h_ad111420010c8684e2acde69bb1ead4f8}{CJSON\+\_\+\+PUBLIC}} (const char $\ast$) c\+JSON\+\_\+\+Version(void)
+\item 
+\mbox{\hyperlink{cjson_8h_a5712efac9864c56f805260c5e2a5c01b}{CJSON\+\_\+\+PUBLIC}} (void) c\+JSON\+\_\+\+Init\+Hooks(\mbox{\hyperlink{structcJSON__Hooks}{c\+JSON\+\_\+\+Hooks}} $\ast$hooks)
+\item 
+\mbox{\hyperlink{cjson_8h_abd55c37a5af547c3c1ada176e38afbc6}{CJSON\+\_\+\+PUBLIC}} (\mbox{\hyperlink{structcJSON}{c\+JSON}} $\ast$) c\+JSON\+\_\+\+Parse(const char $\ast$value)
+\item 
+\mbox{\hyperlink{cjson_8h_acc0bf2ad0de27db33e6471754c8f3ace}{CJSON\+\_\+\+PUBLIC}} (char $\ast$) c\+JSON\+\_\+\+Print(const \mbox{\hyperlink{structcJSON}{c\+JSON}} $\ast$\mbox{\hyperlink{cjson_8h_ac76cea59d438ba893d2f82aabb367d14}{item}})
+\item 
+\mbox{\hyperlink{cjson_8h_aa7717765ab33f9dac70ff47e7e078b8b}{CJSON\+\_\+\+PUBLIC}} (\mbox{\hyperlink{cjson_8h_aea0a1491f73d98b7cc4b8b791c408a4a}{c\+JSON\+\_\+bool}}) c\+JSON\+\_\+\+Print\+Preallocated(\mbox{\hyperlink{structcJSON}{c\+JSON}} $\ast$\mbox{\hyperlink{cjson_8h_ac76cea59d438ba893d2f82aabb367d14}{item}}
+\item 
+\mbox{\hyperlink{cjson_8h_a228b429c345d298fa5b887420337a54c}{CJSON\+\_\+\+PUBLIC}} (double) c\+JSON\+\_\+\+Get\+Number\+Value(const \mbox{\hyperlink{structcJSON}{c\+JSON}} $\ast$const \mbox{\hyperlink{cjson_8h_ac76cea59d438ba893d2f82aabb367d14}{item}})
+\item 
+\mbox{\hyperlink{cjson_8h_a8172bffbb05eec3c761bf0b43484f62d}{CJSON\+\_\+\+PUBLIC}} (void $\ast$) c\+JSON\+\_\+malloc(size\+\_\+t size)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{cjson_8h_a7beaf9b4ef5e4c7254cc3298a3424354}{buffer\+\_\+length}}
+\item 
+const char $\ast$$\ast$ \mbox{\hyperlink{cjson_8h_a7725ae4fa33fc499614c6895ee9ee44a}{return\+\_\+parse\+\_\+end}}
+\item 
+const char \mbox{\hyperlink{cjson_8h_aea0a1491f73d98b7cc4b8b791c408a4a}{c\+JSON\+\_\+bool}} \mbox{\hyperlink{cjson_8h_a68bc5d2265c7694323a75615f7ac0130}{require\+\_\+null\+\_\+terminated}}
+\item 
+int \mbox{\hyperlink{cjson_8h_a039dc262c2ae63f95cfe193245f8ee7e}{prebuffer}}
+\item 
+int \mbox{\hyperlink{cjson_8h_aea0a1491f73d98b7cc4b8b791c408a4a}{c\+JSON\+\_\+bool}} \mbox{\hyperlink{cjson_8h_aa813b2b7bde1a5a1f528cd9d9aa9ee7d}{fmt}}
+\item 
+char $\ast$ \mbox{\hyperlink{cjson_8h_aff2566f4c366b48d73479bef43ee4d2e}{buffer}}
+\item 
+char const int \mbox{\hyperlink{cjson_8h_a03c83e0884e2e3a1783db79f2d67101f}{length}}
+\item 
+char const int const \mbox{\hyperlink{cjson_8h_aea0a1491f73d98b7cc4b8b791c408a4a}{c\+JSON\+\_\+bool}} \mbox{\hyperlink{cjson_8h_adb411a44855a4c49231d72a0fc9a3b3b}{format}}
+\item 
+int \mbox{\hyperlink{cjson_8h_a750b5d744c39a06bfb13e6eb010e35d0}{index}}
+\item 
+const char $\ast$const \mbox{\hyperlink{cjson_8h_addf925fe055723aa55a381a1ba45bda2}{string}}
+\item 
+int \mbox{\hyperlink{cjson_8h_ad43c3812e6d13e0518d9f8b8f463ffcf}{count}}
+\item 
+\mbox{\hyperlink{structcJSON}{c\+JSON}} $\ast$ \mbox{\hyperlink{cjson_8h_ac76cea59d438ba893d2f82aabb367d14}{item}}
+\item 
+int \mbox{\hyperlink{cjson_8h_aa2a4dae2a14de4093826005f9bdfd3bb}{which}}
+\item 
+int \mbox{\hyperlink{structcJSON}{c\+JSON}} $\ast$ \mbox{\hyperlink{cjson_8h_abd13e53985a93dee588f840f06aac973}{newitem}}
+\item 
+\mbox{\hyperlink{structcJSON}{c\+JSON}} $\ast$const \mbox{\hyperlink{structcJSON}{c\+JSON}} $\ast$ \mbox{\hyperlink{cjson_8h_a10573fccca598ec39809e8beb3f7f791}{replacement}}
+\item 
+\mbox{\hyperlink{cjson_8h_aea0a1491f73d98b7cc4b8b791c408a4a}{c\+JSON\+\_\+bool}} \mbox{\hyperlink{cjson_8h_afc8d1c385c6dc37e1c5b640869ce4ab6}{recurse}}
+\item 
+const \mbox{\hyperlink{structcJSON}{c\+JSON}} $\ast$const \mbox{\hyperlink{cjson_8h_a1a175e87536301df98c805ac0636ad7c}{b}}
+\item 
+const \mbox{\hyperlink{structcJSON}{c\+JSON}} $\ast$const const \mbox{\hyperlink{cjson_8h_aea0a1491f73d98b7cc4b8b791c408a4a}{c\+JSON\+\_\+bool}} \mbox{\hyperlink{cjson_8h_a05334336676ca1cd88db19ede4a065de}{case\+\_\+sensitive}}
+\item 
+const char $\ast$const \mbox{\hyperlink{cjson_8h_a25d22ecc7e656d2c59332072684e8766}{name}}
+\item 
+const char $\ast$const const \mbox{\hyperlink{cjson_8h_aea0a1491f73d98b7cc4b8b791c408a4a}{c\+JSON\+\_\+bool}} \mbox{\hyperlink{cjson_8h_a08f076c86f430b6f0e301fcf94223b38}{boolean}}
+\item 
+const char $\ast$const const double \mbox{\hyperlink{cjson_8h_a01b4671c6b7cc8f831c951c000a37735}{number}}
+\item 
+const char $\ast$const const char $\ast$const \mbox{\hyperlink{cjson_8h_a788db922597cf2fb6389e278f822e59f}{raw}}
+\item 
+const char $\ast$ \mbox{\hyperlink{cjson_8h_aa770d5dc55a1031ccff9aee4e96acf8f}{valuestring}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{cjson_8h_a57cffa126740a8efcdcb7bcef80e8897}\label{cjson_8h_a57cffa126740a8efcdcb7bcef80e8897}} 
+\index{cjson.h@{cjson.h}!cJSON\_Array@{cJSON\_Array}}
+\index{cJSON\_Array@{cJSON\_Array}!cjson.h@{cjson.h}}
+\doxysubsubsection{\texorpdfstring{cJSON\_Array}{cJSON\_Array}}
+{\footnotesize\ttfamily \#define c\+JSON\+\_\+\+Array~(1 $<$$<$ 5)}
+
+
+
+Definition at line 95 of file cjson.\+h.
+
+\mbox{\Hypertarget{cjson_8h_ac3d6e5782fb4bb3c7a25c7c5b1868f06}\label{cjson_8h_ac3d6e5782fb4bb3c7a25c7c5b1868f06}} 
+\index{cjson.h@{cjson.h}!cJSON\_ArrayForEach@{cJSON\_ArrayForEach}}
+\index{cJSON\_ArrayForEach@{cJSON\_ArrayForEach}!cjson.h@{cjson.h}}
+\doxysubsubsection{\texorpdfstring{cJSON\_ArrayForEach}{cJSON\_ArrayForEach}}
+{\footnotesize\ttfamily \#define c\+JSON\+\_\+\+Array\+For\+Each(\begin{DoxyParamCaption}\item[{}]{element,  }\item[{}]{array }\end{DoxyParamCaption})~for(element = (array != NULL) ? (array)-\/$>$child \+: NULL; element != NULL; element = element-\/$>$next)}
+
+
+
+Definition at line 290 of file cjson.\+h.
+
+\mbox{\Hypertarget{cjson_8h_a79203c3ba406ffd5736627cc1e082e38}\label{cjson_8h_a79203c3ba406ffd5736627cc1e082e38}} 
+\index{cjson.h@{cjson.h}!CJSON\_CDECL@{CJSON\_CDECL}}
+\index{CJSON\_CDECL@{CJSON\_CDECL}!cjson.h@{cjson.h}}
+\doxysubsubsection{\texorpdfstring{CJSON\_CDECL}{CJSON\_CDECL}}
+{\footnotesize\ttfamily \#define CJSON\+\_\+\+CDECL}
+
+
+
+Definition at line 71 of file cjson.\+h.
+
+\mbox{\Hypertarget{cjson_8h_a2d240682316354b5748f909ad220184b}\label{cjson_8h_a2d240682316354b5748f909ad220184b}} 
+\index{cjson.h@{cjson.h}!cJSON\_False@{cJSON\_False}}
+\index{cJSON\_False@{cJSON\_False}!cjson.h@{cjson.h}}
+\doxysubsubsection{\texorpdfstring{cJSON\_False}{cJSON\_False}}
+{\footnotesize\ttfamily \#define c\+JSON\+\_\+\+False~(1 $<$$<$ 0)}
+
+
+
+Definition at line 90 of file cjson.\+h.
+
+\mbox{\Hypertarget{cjson_8h_a80c36e86d8d65b697bc623fe28027668}\label{cjson_8h_a80c36e86d8d65b697bc623fe28027668}} 
+\index{cjson.h@{cjson.h}!cJSON\_Invalid@{cJSON\_Invalid}}
+\index{cJSON\_Invalid@{cJSON\_Invalid}!cjson.h@{cjson.h}}
+\doxysubsubsection{\texorpdfstring{cJSON\_Invalid}{cJSON\_Invalid}}
+{\footnotesize\ttfamily \#define c\+JSON\+\_\+\+Invalid~(0)}
+
+
+
+Definition at line 89 of file cjson.\+h.
+
+\mbox{\Hypertarget{cjson_8h_ad3d18116aae3bfa46f13bcfd7fd6d4e7}\label{cjson_8h_ad3d18116aae3bfa46f13bcfd7fd6d4e7}} 
+\index{cjson.h@{cjson.h}!cJSON\_IsReference@{cJSON\_IsReference}}
+\index{cJSON\_IsReference@{cJSON\_IsReference}!cjson.h@{cjson.h}}
+\doxysubsubsection{\texorpdfstring{cJSON\_IsReference}{cJSON\_IsReference}}
+{\footnotesize\ttfamily \#define c\+JSON\+\_\+\+Is\+Reference~256}
+
+
+
+Definition at line 99 of file cjson.\+h.
+
+\mbox{\Hypertarget{cjson_8h_a9c7ac4e1b31070b787afb3a4b67727f4}\label{cjson_8h_a9c7ac4e1b31070b787afb3a4b67727f4}} 
+\index{cjson.h@{cjson.h}!CJSON\_NESTING\_LIMIT@{CJSON\_NESTING\_LIMIT}}
+\index{CJSON\_NESTING\_LIMIT@{CJSON\_NESTING\_LIMIT}!cjson.h@{cjson.h}}
+\doxysubsubsection{\texorpdfstring{CJSON\_NESTING\_LIMIT}{CJSON\_NESTING\_LIMIT}}
+{\footnotesize\ttfamily \#define CJSON\+\_\+\+NESTING\+\_\+\+LIMIT~1000}
+
+
+
+Definition at line 137 of file cjson.\+h.
+
+\mbox{\Hypertarget{cjson_8h_aeadaba63ddb68aaa518528595d503dcd}\label{cjson_8h_aeadaba63ddb68aaa518528595d503dcd}} 
+\index{cjson.h@{cjson.h}!cJSON\_NULL@{cJSON\_NULL}}
+\index{cJSON\_NULL@{cJSON\_NULL}!cjson.h@{cjson.h}}
+\doxysubsubsection{\texorpdfstring{cJSON\_NULL}{cJSON\_NULL}}
+{\footnotesize\ttfamily \#define c\+JSON\+\_\+\+NULL~(1 $<$$<$ 2)}
+
+
+
+Definition at line 92 of file cjson.\+h.
+
+\mbox{\Hypertarget{cjson_8h_a15e77e2f6457dc9b19c10ddb032af971}\label{cjson_8h_a15e77e2f6457dc9b19c10ddb032af971}} 
+\index{cjson.h@{cjson.h}!cJSON\_Number@{cJSON\_Number}}
+\index{cJSON\_Number@{cJSON\_Number}!cjson.h@{cjson.h}}
+\doxysubsubsection{\texorpdfstring{cJSON\_Number}{cJSON\_Number}}
+{\footnotesize\ttfamily \#define c\+JSON\+\_\+\+Number~(1 $<$$<$ 3)}
+
+
+
+Definition at line 93 of file cjson.\+h.
+
+\mbox{\Hypertarget{cjson_8h_a22c6e13481c090629afbd77b7cebd24c}\label{cjson_8h_a22c6e13481c090629afbd77b7cebd24c}} 
+\index{cjson.h@{cjson.h}!cJSON\_Object@{cJSON\_Object}}
+\index{cJSON\_Object@{cJSON\_Object}!cjson.h@{cjson.h}}
+\doxysubsubsection{\texorpdfstring{cJSON\_Object}{cJSON\_Object}}
+{\footnotesize\ttfamily \#define c\+JSON\+\_\+\+Object~(1 $<$$<$ 6)}
+
+
+
+Definition at line 96 of file cjson.\+h.
+
+\mbox{\Hypertarget{cjson_8h_a70709a6f2a7e45debe4f5abe345fcb86}\label{cjson_8h_a70709a6f2a7e45debe4f5abe345fcb86}} 
+\index{cjson.h@{cjson.h}!CJSON\_PUBLIC@{CJSON\_PUBLIC}}
+\index{CJSON\_PUBLIC@{CJSON\_PUBLIC}!cjson.h@{cjson.h}}
+\doxysubsubsection{\texorpdfstring{CJSON\_PUBLIC}{CJSON\_PUBLIC}}
+{\footnotesize\ttfamily \#define CJSON\+\_\+\+PUBLIC(\begin{DoxyParamCaption}\item[{}]{type }\end{DoxyParamCaption})~type}
+
+
+
+Definition at line 77 of file cjson.\+h.
+
+\mbox{\Hypertarget{cjson_8h_ae9ddc931ea84908d12f48c5b7f8731a1}\label{cjson_8h_ae9ddc931ea84908d12f48c5b7f8731a1}} 
+\index{cjson.h@{cjson.h}!cJSON\_Raw@{cJSON\_Raw}}
+\index{cJSON\_Raw@{cJSON\_Raw}!cjson.h@{cjson.h}}
+\doxysubsubsection{\texorpdfstring{cJSON\_Raw}{cJSON\_Raw}}
+{\footnotesize\ttfamily \#define c\+JSON\+\_\+\+Raw~(1 $<$$<$ 7) /$\ast$ \mbox{\hyperlink{cjson_8h_a788db922597cf2fb6389e278f822e59f}{raw}} json $\ast$/}
+
+
+
+Definition at line 97 of file cjson.\+h.
+
+\mbox{\Hypertarget{cjson_8h_a210748b11b9b4f93d29391591a37ad85}\label{cjson_8h_a210748b11b9b4f93d29391591a37ad85}} 
+\index{cjson.h@{cjson.h}!cJSON\_SetBoolValue@{cJSON\_SetBoolValue}}
+\index{cJSON\_SetBoolValue@{cJSON\_SetBoolValue}!cjson.h@{cjson.h}}
+\doxysubsubsection{\texorpdfstring{cJSON\_SetBoolValue}{cJSON\_SetBoolValue}}
+{\footnotesize\ttfamily \#define c\+JSON\+\_\+\+Set\+Bool\+Value(\begin{DoxyParamCaption}\item[{}]{object,  }\item[{}]{bool\+Value }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    ( \(\backslash\)}
+\DoxyCodeLine{    (\textcolor{keywordtype}{object} != NULL \&\& ((object)-\/>type \& (\mbox{\hyperlink{cjson_8h_a2d240682316354b5748f909ad220184b}{cJSON\_False}}|\mbox{\hyperlink{cjson_8h_aad4e442b8095939decddfb67d87d9324}{cJSON\_True}}))) ? \(\backslash\)}
+\DoxyCodeLine{    (object)-\/>type=((\textcolor{keywordtype}{object})-\/>type \&(\string~(\mbox{\hyperlink{cjson_8h_a2d240682316354b5748f909ad220184b}{cJSON\_False}}|\mbox{\hyperlink{cjson_8h_aad4e442b8095939decddfb67d87d9324}{cJSON\_True}})))|((boolValue)?\mbox{\hyperlink{cjson_8h_aad4e442b8095939decddfb67d87d9324}{cJSON\_True}}:\mbox{\hyperlink{cjson_8h_a2d240682316354b5748f909ad220184b}{cJSON\_False}}) : \(\backslash\)}
+\DoxyCodeLine{    \mbox{\hyperlink{cjson_8h_a80c36e86d8d65b697bc623fe28027668}{cJSON\_Invalid}}\(\backslash\)}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+
+
+Definition at line 283 of file cjson.\+h.
+
+\mbox{\Hypertarget{cjson_8h_ae5b1335bfccc358f566bea6f7e4bfdc6}\label{cjson_8h_ae5b1335bfccc358f566bea6f7e4bfdc6}} 
+\index{cjson.h@{cjson.h}!cJSON\_SetIntValue@{cJSON\_SetIntValue}}
+\index{cJSON\_SetIntValue@{cJSON\_SetIntValue}!cjson.h@{cjson.h}}
+\doxysubsubsection{\texorpdfstring{cJSON\_SetIntValue}{cJSON\_SetIntValue}}
+{\footnotesize\ttfamily \#define c\+JSON\+\_\+\+Set\+Int\+Value(\begin{DoxyParamCaption}\item[{}]{object,  }\item[{}]{\mbox{\hyperlink{cjson_8h_a01b4671c6b7cc8f831c951c000a37735}{number}} }\end{DoxyParamCaption})~((object) ? (object)-\/$>$valueint = (object)-\/$>$valuedouble = (\mbox{\hyperlink{cjson_8h_a01b4671c6b7cc8f831c951c000a37735}{number}}) \+: (\mbox{\hyperlink{cjson_8h_a01b4671c6b7cc8f831c951c000a37735}{number}}))}
+
+
+
+Definition at line 275 of file cjson.\+h.
+
+\mbox{\Hypertarget{cjson_8h_adab3f1e3586395bdb2da5a40059cb24b}\label{cjson_8h_adab3f1e3586395bdb2da5a40059cb24b}} 
+\index{cjson.h@{cjson.h}!cJSON\_SetNumberValue@{cJSON\_SetNumberValue}}
+\index{cJSON\_SetNumberValue@{cJSON\_SetNumberValue}!cjson.h@{cjson.h}}
+\doxysubsubsection{\texorpdfstring{cJSON\_SetNumberValue}{cJSON\_SetNumberValue}}
+{\footnotesize\ttfamily \#define c\+JSON\+\_\+\+Set\+Number\+Value(\begin{DoxyParamCaption}\item[{}]{object,  }\item[{}]{\mbox{\hyperlink{cjson_8h_a01b4671c6b7cc8f831c951c000a37735}{number}} }\end{DoxyParamCaption})~((object != NULL) ? c\+JSON\+\_\+\+Set\+Number\+Helper(object, (double)\mbox{\hyperlink{cjson_8h_a01b4671c6b7cc8f831c951c000a37735}{number}}) \+: (\mbox{\hyperlink{cjson_8h_a01b4671c6b7cc8f831c951c000a37735}{number}}))}
+
+
+
+Definition at line 278 of file cjson.\+h.
+
+\mbox{\Hypertarget{cjson_8h_aee2cdf14a236df79175ef257a5a94964}\label{cjson_8h_aee2cdf14a236df79175ef257a5a94964}} 
+\index{cjson.h@{cjson.h}!CJSON\_STDCALL@{CJSON\_STDCALL}}
+\index{CJSON\_STDCALL@{CJSON\_STDCALL}!cjson.h@{cjson.h}}
+\doxysubsubsection{\texorpdfstring{CJSON\_STDCALL}{CJSON\_STDCALL}}
+{\footnotesize\ttfamily \#define CJSON\+\_\+\+STDCALL}
+
+
+
+Definition at line 72 of file cjson.\+h.
+
+\mbox{\Hypertarget{cjson_8h_aa2cb4765308e2bbdf01988b2acdf92d9}\label{cjson_8h_aa2cb4765308e2bbdf01988b2acdf92d9}} 
+\index{cjson.h@{cjson.h}!cJSON\_String@{cJSON\_String}}
+\index{cJSON\_String@{cJSON\_String}!cjson.h@{cjson.h}}
+\doxysubsubsection{\texorpdfstring{cJSON\_String}{cJSON\_String}}
+{\footnotesize\ttfamily \#define c\+JSON\+\_\+\+String~(1 $<$$<$ 4)}
+
+
+
+Definition at line 94 of file cjson.\+h.
+
+\mbox{\Hypertarget{cjson_8h_a491c3484a36f3915cc4710088f55971f}\label{cjson_8h_a491c3484a36f3915cc4710088f55971f}} 
+\index{cjson.h@{cjson.h}!cJSON\_StringIsConst@{cJSON\_StringIsConst}}
+\index{cJSON\_StringIsConst@{cJSON\_StringIsConst}!cjson.h@{cjson.h}}
+\doxysubsubsection{\texorpdfstring{cJSON\_StringIsConst}{cJSON\_StringIsConst}}
+{\footnotesize\ttfamily \#define c\+JSON\+\_\+\+String\+Is\+Const~512}
+
+
+
+Definition at line 100 of file cjson.\+h.
+
+\mbox{\Hypertarget{cjson_8h_aad4e442b8095939decddfb67d87d9324}\label{cjson_8h_aad4e442b8095939decddfb67d87d9324}} 
+\index{cjson.h@{cjson.h}!cJSON\_True@{cJSON\_True}}
+\index{cJSON\_True@{cJSON\_True}!cjson.h@{cjson.h}}
+\doxysubsubsection{\texorpdfstring{cJSON\_True}{cJSON\_True}}
+{\footnotesize\ttfamily \#define c\+JSON\+\_\+\+True~(1 $<$$<$ 1)}
+
+
+
+Definition at line 91 of file cjson.\+h.
+
+\mbox{\Hypertarget{cjson_8h_a78f100ac5089a51941e2ca573ad8e380}\label{cjson_8h_a78f100ac5089a51941e2ca573ad8e380}} 
+\index{cjson.h@{cjson.h}!CJSON\_VERSION\_MAJOR@{CJSON\_VERSION\_MAJOR}}
+\index{CJSON\_VERSION\_MAJOR@{CJSON\_VERSION\_MAJOR}!cjson.h@{cjson.h}}
+\doxysubsubsection{\texorpdfstring{CJSON\_VERSION\_MAJOR}{CJSON\_VERSION\_MAJOR}}
+{\footnotesize\ttfamily \#define CJSON\+\_\+\+VERSION\+\_\+\+MAJOR~1}
+
+
+
+Definition at line 82 of file cjson.\+h.
+
+\mbox{\Hypertarget{cjson_8h_a55a808fe6b77cef1e4c2cf02a4316301}\label{cjson_8h_a55a808fe6b77cef1e4c2cf02a4316301}} 
+\index{cjson.h@{cjson.h}!CJSON\_VERSION\_MINOR@{CJSON\_VERSION\_MINOR}}
+\index{CJSON\_VERSION\_MINOR@{CJSON\_VERSION\_MINOR}!cjson.h@{cjson.h}}
+\doxysubsubsection{\texorpdfstring{CJSON\_VERSION\_MINOR}{CJSON\_VERSION\_MINOR}}
+{\footnotesize\ttfamily \#define CJSON\+\_\+\+VERSION\+\_\+\+MINOR~7}
+
+
+
+Definition at line 83 of file cjson.\+h.
+
+\mbox{\Hypertarget{cjson_8h_a6ad7073103d4b9aaf2153add95561c47}\label{cjson_8h_a6ad7073103d4b9aaf2153add95561c47}} 
+\index{cjson.h@{cjson.h}!CJSON\_VERSION\_PATCH@{CJSON\_VERSION\_PATCH}}
+\index{CJSON\_VERSION\_PATCH@{CJSON\_VERSION\_PATCH}!cjson.h@{cjson.h}}
+\doxysubsubsection{\texorpdfstring{CJSON\_VERSION\_PATCH}{CJSON\_VERSION\_PATCH}}
+{\footnotesize\ttfamily \#define CJSON\+\_\+\+VERSION\+\_\+\+PATCH~16}
+
+
+
+Definition at line 84 of file cjson.\+h.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{cjson_8h_a4c146234dfd7b6adbf13b49505e995bc}\label{cjson_8h_a4c146234dfd7b6adbf13b49505e995bc}} 
+\index{cjson.h@{cjson.h}!cJSON@{cJSON}}
+\index{cJSON@{cJSON}!cjson.h@{cjson.h}}
+\doxysubsubsection{\texorpdfstring{cJSON}{cJSON}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structcJSON}{c\+JSON}} \mbox{\hyperlink{structcJSON}{c\+JSON}}}
+
+\mbox{\Hypertarget{cjson_8h_aea0a1491f73d98b7cc4b8b791c408a4a}\label{cjson_8h_aea0a1491f73d98b7cc4b8b791c408a4a}} 
+\index{cjson.h@{cjson.h}!cJSON\_bool@{cJSON\_bool}}
+\index{cJSON\_bool@{cJSON\_bool}!cjson.h@{cjson.h}}
+\doxysubsubsection{\texorpdfstring{cJSON\_bool}{cJSON\_bool}}
+{\footnotesize\ttfamily typedef int \mbox{\hyperlink{cjson_8h_aea0a1491f73d98b7cc4b8b791c408a4a}{c\+JSON\+\_\+bool}}}
+
+
+
+Definition at line 132 of file cjson.\+h.
+
+\mbox{\Hypertarget{cjson_8h_ab67bc592e52110fee68ab8ab4140530d}\label{cjson_8h_ab67bc592e52110fee68ab8ab4140530d}} 
+\index{cjson.h@{cjson.h}!cJSON\_Hooks@{cJSON\_Hooks}}
+\index{cJSON\_Hooks@{cJSON\_Hooks}!cjson.h@{cjson.h}}
+\doxysubsubsection{\texorpdfstring{cJSON\_Hooks}{cJSON\_Hooks}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structcJSON__Hooks}{c\+JSON\+\_\+\+Hooks}} \mbox{\hyperlink{structcJSON__Hooks}{c\+JSON\+\_\+\+Hooks}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{cjson_8h_acc0bf2ad0de27db33e6471754c8f3ace}\label{cjson_8h_acc0bf2ad0de27db33e6471754c8f3ace}} 
+\index{cjson.h@{cjson.h}!CJSON\_PUBLIC@{CJSON\_PUBLIC}}
+\index{CJSON\_PUBLIC@{CJSON\_PUBLIC}!cjson.h@{cjson.h}}
+\doxysubsubsection{\texorpdfstring{CJSON\_PUBLIC()}{CJSON\_PUBLIC()}\hspace{0.1cm}{\footnotesize\ttfamily [1/7]}}
+{\footnotesize\ttfamily CJSON\+\_\+\+PUBLIC (\begin{DoxyParamCaption}\item[{char $\ast$}]{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{cjson_8h_abd55c37a5af547c3c1ada176e38afbc6}\label{cjson_8h_abd55c37a5af547c3c1ada176e38afbc6}} 
+\index{cjson.h@{cjson.h}!CJSON\_PUBLIC@{CJSON\_PUBLIC}}
+\index{CJSON\_PUBLIC@{CJSON\_PUBLIC}!cjson.h@{cjson.h}}
+\doxysubsubsection{\texorpdfstring{CJSON\_PUBLIC()}{CJSON\_PUBLIC()}\hspace{0.1cm}{\footnotesize\ttfamily [2/7]}}
+{\footnotesize\ttfamily CJSON\+\_\+\+PUBLIC (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcJSON}{c\+JSON}} $\ast$}]{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{cjson_8h_aa7717765ab33f9dac70ff47e7e078b8b}\label{cjson_8h_aa7717765ab33f9dac70ff47e7e078b8b}} 
+\index{cjson.h@{cjson.h}!CJSON\_PUBLIC@{CJSON\_PUBLIC}}
+\index{CJSON\_PUBLIC@{CJSON\_PUBLIC}!cjson.h@{cjson.h}}
+\doxysubsubsection{\texorpdfstring{CJSON\_PUBLIC()}{CJSON\_PUBLIC()}\hspace{0.1cm}{\footnotesize\ttfamily [3/7]}}
+{\footnotesize\ttfamily CJSON\+\_\+\+PUBLIC (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cjson_8h_aea0a1491f73d98b7cc4b8b791c408a4a}{c\+JSON\+\_\+bool}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cjson_8h_ad111420010c8684e2acde69bb1ead4f8}\label{cjson_8h_ad111420010c8684e2acde69bb1ead4f8}} 
+\index{cjson.h@{cjson.h}!CJSON\_PUBLIC@{CJSON\_PUBLIC}}
+\index{CJSON\_PUBLIC@{CJSON\_PUBLIC}!cjson.h@{cjson.h}}
+\doxysubsubsection{\texorpdfstring{CJSON\_PUBLIC()}{CJSON\_PUBLIC()}\hspace{0.1cm}{\footnotesize\ttfamily [4/7]}}
+{\footnotesize\ttfamily CJSON\+\_\+\+PUBLIC (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 94 of file cjson.\+c.
+
+\mbox{\Hypertarget{cjson_8h_a228b429c345d298fa5b887420337a54c}\label{cjson_8h_a228b429c345d298fa5b887420337a54c}} 
+\index{cjson.h@{cjson.h}!CJSON\_PUBLIC@{CJSON\_PUBLIC}}
+\index{CJSON\_PUBLIC@{CJSON\_PUBLIC}!cjson.h@{cjson.h}}
+\doxysubsubsection{\texorpdfstring{CJSON\_PUBLIC()}{CJSON\_PUBLIC()}\hspace{0.1cm}{\footnotesize\ttfamily [5/7]}}
+{\footnotesize\ttfamily CJSON\+\_\+\+PUBLIC (\begin{DoxyParamCaption}\item[{double}]{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{cjson_8h_a8172bffbb05eec3c761bf0b43484f62d}\label{cjson_8h_a8172bffbb05eec3c761bf0b43484f62d}} 
+\index{cjson.h@{cjson.h}!CJSON\_PUBLIC@{CJSON\_PUBLIC}}
+\index{CJSON\_PUBLIC@{CJSON\_PUBLIC}!cjson.h@{cjson.h}}
+\doxysubsubsection{\texorpdfstring{CJSON\_PUBLIC()}{CJSON\_PUBLIC()}\hspace{0.1cm}{\footnotesize\ttfamily [6/7]}}
+{\footnotesize\ttfamily CJSON\+\_\+\+PUBLIC (\begin{DoxyParamCaption}\item[{void $\ast$}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3111 of file cjson.\+c.
+
+\mbox{\Hypertarget{cjson_8h_a5712efac9864c56f805260c5e2a5c01b}\label{cjson_8h_a5712efac9864c56f805260c5e2a5c01b}} 
+\index{cjson.h@{cjson.h}!CJSON\_PUBLIC@{CJSON\_PUBLIC}}
+\index{CJSON\_PUBLIC@{CJSON\_PUBLIC}!cjson.h@{cjson.h}}
+\doxysubsubsection{\texorpdfstring{CJSON\_PUBLIC()}{CJSON\_PUBLIC()}\hspace{0.1cm}{\footnotesize\ttfamily [7/7]}}
+{\footnotesize\ttfamily CJSON\+\_\+\+PUBLIC (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{cjson_8h_a1a175e87536301df98c805ac0636ad7c}\label{cjson_8h_a1a175e87536301df98c805ac0636ad7c}} 
+\index{cjson.h@{cjson.h}!b@{b}}
+\index{b@{b}!cjson.h@{cjson.h}}
+\doxysubsubsection{\texorpdfstring{b}{b}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structcJSON}{c\+JSON}}$\ast$ const b}
+
+
+
+Definition at line 255 of file cjson.\+h.
+
+\mbox{\Hypertarget{cjson_8h_a08f076c86f430b6f0e301fcf94223b38}\label{cjson_8h_a08f076c86f430b6f0e301fcf94223b38}} 
+\index{cjson.h@{cjson.h}!boolean@{boolean}}
+\index{boolean@{boolean}!cjson.h@{cjson.h}}
+\doxysubsubsection{\texorpdfstring{boolean}{boolean}}
+{\footnotesize\ttfamily const char$\ast$ const const \mbox{\hyperlink{cjson_8h_aea0a1491f73d98b7cc4b8b791c408a4a}{c\+JSON\+\_\+bool}} boolean}
+
+
+
+Definition at line 267 of file cjson.\+h.
+
+\mbox{\Hypertarget{cjson_8h_aff2566f4c366b48d73479bef43ee4d2e}\label{cjson_8h_aff2566f4c366b48d73479bef43ee4d2e}} 
+\index{cjson.h@{cjson.h}!buffer@{buffer}}
+\index{buffer@{buffer}!cjson.h@{cjson.h}}
+\doxysubsubsection{\texorpdfstring{buffer}{buffer}}
+{\footnotesize\ttfamily char$\ast$ buffer}
+
+
+
+Definition at line 163 of file cjson.\+h.
+
+\mbox{\Hypertarget{cjson_8h_a7beaf9b4ef5e4c7254cc3298a3424354}\label{cjson_8h_a7beaf9b4ef5e4c7254cc3298a3424354}} 
+\index{cjson.h@{cjson.h}!buffer\_length@{buffer\_length}}
+\index{buffer\_length@{buffer\_length}!cjson.h@{cjson.h}}
+\doxysubsubsection{\texorpdfstring{buffer\_length}{buffer\_length}}
+{\footnotesize\ttfamily size\+\_\+t buffer\+\_\+length}
+
+
+
+Definition at line 149 of file cjson.\+h.
+
+\mbox{\Hypertarget{cjson_8h_a05334336676ca1cd88db19ede4a065de}\label{cjson_8h_a05334336676ca1cd88db19ede4a065de}} 
+\index{cjson.h@{cjson.h}!case\_sensitive@{case\_sensitive}}
+\index{case\_sensitive@{case\_sensitive}!cjson.h@{cjson.h}}
+\doxysubsubsection{\texorpdfstring{case\_sensitive}{case\_sensitive}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structcJSON}{c\+JSON}}$\ast$ const const \mbox{\hyperlink{cjson_8h_aea0a1491f73d98b7cc4b8b791c408a4a}{c\+JSON\+\_\+bool}} case\+\_\+sensitive}
+
+
+
+Definition at line 255 of file cjson.\+h.
+
+\mbox{\Hypertarget{cjson_8h_ad43c3812e6d13e0518d9f8b8f463ffcf}\label{cjson_8h_ad43c3812e6d13e0518d9f8b8f463ffcf}} 
+\index{cjson.h@{cjson.h}!count@{count}}
+\index{count@{count}!cjson.h@{cjson.h}}
+\doxysubsubsection{\texorpdfstring{count}{count}}
+{\footnotesize\ttfamily int count}
+
+
+
+Definition at line 216 of file cjson.\+h.
+
+\mbox{\Hypertarget{cjson_8h_aa813b2b7bde1a5a1f528cd9d9aa9ee7d}\label{cjson_8h_aa813b2b7bde1a5a1f528cd9d9aa9ee7d}} 
+\index{cjson.h@{cjson.h}!fmt@{fmt}}
+\index{fmt@{fmt}!cjson.h@{cjson.h}}
+\doxysubsubsection{\texorpdfstring{fmt}{fmt}}
+{\footnotesize\ttfamily int \mbox{\hyperlink{cjson_8h_aea0a1491f73d98b7cc4b8b791c408a4a}{c\+JSON\+\_\+bool}} fmt}
+
+
+
+Definition at line 160 of file cjson.\+h.
+
+\mbox{\Hypertarget{cjson_8h_adb411a44855a4c49231d72a0fc9a3b3b}\label{cjson_8h_adb411a44855a4c49231d72a0fc9a3b3b}} 
+\index{cjson.h@{cjson.h}!format@{format}}
+\index{format@{format}!cjson.h@{cjson.h}}
+\doxysubsubsection{\texorpdfstring{format}{format}}
+{\footnotesize\ttfamily char const int const \mbox{\hyperlink{cjson_8h_aea0a1491f73d98b7cc4b8b791c408a4a}{c\+JSON\+\_\+bool}} format}
+
+
+
+Definition at line 163 of file cjson.\+h.
+
+\mbox{\Hypertarget{cjson_8h_a750b5d744c39a06bfb13e6eb010e35d0}\label{cjson_8h_a750b5d744c39a06bfb13e6eb010e35d0}} 
+\index{cjson.h@{cjson.h}!index@{index}}
+\index{index@{index}!cjson.h@{cjson.h}}
+\doxysubsubsection{\texorpdfstring{index}{index}}
+{\footnotesize\ttfamily int index}
+
+
+
+Definition at line 170 of file cjson.\+h.
+
+\mbox{\Hypertarget{cjson_8h_ac76cea59d438ba893d2f82aabb367d14}\label{cjson_8h_ac76cea59d438ba893d2f82aabb367d14}} 
+\index{cjson.h@{cjson.h}!item@{item}}
+\index{item@{item}!cjson.h@{cjson.h}}
+\doxysubsubsection{\texorpdfstring{item}{item}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structcJSON}{c\+JSON}} $\ast$const item}
+
+
+
+Definition at line 222 of file cjson.\+h.
+
+\mbox{\Hypertarget{cjson_8h_a03c83e0884e2e3a1783db79f2d67101f}\label{cjson_8h_a03c83e0884e2e3a1783db79f2d67101f}} 
+\index{cjson.h@{cjson.h}!length@{length}}
+\index{length@{length}!cjson.h@{cjson.h}}
+\doxysubsubsection{\texorpdfstring{length}{length}}
+{\footnotesize\ttfamily char const int length}
+
+
+
+Definition at line 163 of file cjson.\+h.
+
+\mbox{\Hypertarget{cjson_8h_a25d22ecc7e656d2c59332072684e8766}\label{cjson_8h_a25d22ecc7e656d2c59332072684e8766}} 
+\index{cjson.h@{cjson.h}!name@{name}}
+\index{name@{name}!cjson.h@{cjson.h}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily const char $\ast$const name}
+
+
+
+Definition at line 264 of file cjson.\+h.
+
+\mbox{\Hypertarget{cjson_8h_abd13e53985a93dee588f840f06aac973}\label{cjson_8h_abd13e53985a93dee588f840f06aac973}} 
+\index{cjson.h@{cjson.h}!newitem@{newitem}}
+\index{newitem@{newitem}!cjson.h@{cjson.h}}
+\doxysubsubsection{\texorpdfstring{newitem}{newitem}}
+{\footnotesize\ttfamily const char \mbox{\hyperlink{structcJSON}{c\+JSON}} $\ast$ newitem}
+
+
+
+Definition at line 242 of file cjson.\+h.
+
+\mbox{\Hypertarget{cjson_8h_a01b4671c6b7cc8f831c951c000a37735}\label{cjson_8h_a01b4671c6b7cc8f831c951c000a37735}} 
+\index{cjson.h@{cjson.h}!number@{number}}
+\index{number@{number}!cjson.h@{cjson.h}}
+\doxysubsubsection{\texorpdfstring{number}{number}}
+{\footnotesize\ttfamily double number}
+
+
+
+Definition at line 268 of file cjson.\+h.
+
+\mbox{\Hypertarget{cjson_8h_a039dc262c2ae63f95cfe193245f8ee7e}\label{cjson_8h_a039dc262c2ae63f95cfe193245f8ee7e}} 
+\index{cjson.h@{cjson.h}!prebuffer@{prebuffer}}
+\index{prebuffer@{prebuffer}!cjson.h@{cjson.h}}
+\doxysubsubsection{\texorpdfstring{prebuffer}{prebuffer}}
+{\footnotesize\ttfamily int prebuffer}
+
+
+
+Definition at line 160 of file cjson.\+h.
+
+\mbox{\Hypertarget{cjson_8h_a788db922597cf2fb6389e278f822e59f}\label{cjson_8h_a788db922597cf2fb6389e278f822e59f}} 
+\index{cjson.h@{cjson.h}!raw@{raw}}
+\index{raw@{raw}!cjson.h@{cjson.h}}
+\doxysubsubsection{\texorpdfstring{raw}{raw}}
+{\footnotesize\ttfamily const char$\ast$ const const char$\ast$ const raw}
+
+
+
+Definition at line 270 of file cjson.\+h.
+
+\mbox{\Hypertarget{cjson_8h_afc8d1c385c6dc37e1c5b640869ce4ab6}\label{cjson_8h_afc8d1c385c6dc37e1c5b640869ce4ab6}} 
+\index{cjson.h@{cjson.h}!recurse@{recurse}}
+\index{recurse@{recurse}!cjson.h@{cjson.h}}
+\doxysubsubsection{\texorpdfstring{recurse}{recurse}}
+{\footnotesize\ttfamily \mbox{\hyperlink{cjson_8h_aea0a1491f73d98b7cc4b8b791c408a4a}{c\+JSON\+\_\+bool}} recurse}
+
+
+
+Definition at line 249 of file cjson.\+h.
+
+\mbox{\Hypertarget{cjson_8h_a10573fccca598ec39809e8beb3f7f791}\label{cjson_8h_a10573fccca598ec39809e8beb3f7f791}} 
+\index{cjson.h@{cjson.h}!replacement@{replacement}}
+\index{replacement@{replacement}!cjson.h@{cjson.h}}
+\doxysubsubsection{\texorpdfstring{replacement}{replacement}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structcJSON}{c\+JSON}}$\ast$ const \mbox{\hyperlink{structcJSON}{c\+JSON}}$\ast$ replacement}
+
+
+
+Definition at line 243 of file cjson.\+h.
+
+\mbox{\Hypertarget{cjson_8h_a68bc5d2265c7694323a75615f7ac0130}\label{cjson_8h_a68bc5d2265c7694323a75615f7ac0130}} 
+\index{cjson.h@{cjson.h}!require\_null\_terminated@{require\_null\_terminated}}
+\index{require\_null\_terminated@{require\_null\_terminated}!cjson.h@{cjson.h}}
+\doxysubsubsection{\texorpdfstring{require\_null\_terminated}{require\_null\_terminated}}
+{\footnotesize\ttfamily size\+\_\+t const char \mbox{\hyperlink{cjson_8h_aea0a1491f73d98b7cc4b8b791c408a4a}{c\+JSON\+\_\+bool}} require\+\_\+null\+\_\+terminated}
+
+
+
+Definition at line 152 of file cjson.\+h.
+
+\mbox{\Hypertarget{cjson_8h_a7725ae4fa33fc499614c6895ee9ee44a}\label{cjson_8h_a7725ae4fa33fc499614c6895ee9ee44a}} 
+\index{cjson.h@{cjson.h}!return\_parse\_end@{return\_parse\_end}}
+\index{return\_parse\_end@{return\_parse\_end}!cjson.h@{cjson.h}}
+\doxysubsubsection{\texorpdfstring{return\_parse\_end}{return\_parse\_end}}
+{\footnotesize\ttfamily size\+\_\+t const char $\ast$$\ast$ return\+\_\+parse\+\_\+end}
+
+
+
+Definition at line 152 of file cjson.\+h.
+
+\mbox{\Hypertarget{cjson_8h_addf925fe055723aa55a381a1ba45bda2}\label{cjson_8h_addf925fe055723aa55a381a1ba45bda2}} 
+\index{cjson.h@{cjson.h}!string@{string}}
+\index{string@{string}!cjson.h@{cjson.h}}
+\doxysubsubsection{\texorpdfstring{string}{string}}
+{\footnotesize\ttfamily const char $\ast$const const char $\ast$const string}
+
+
+
+Definition at line 172 of file cjson.\+h.
+
+\mbox{\Hypertarget{cjson_8h_aa770d5dc55a1031ccff9aee4e96acf8f}\label{cjson_8h_aa770d5dc55a1031ccff9aee4e96acf8f}} 
+\index{cjson.h@{cjson.h}!valuestring@{valuestring}}
+\index{valuestring@{valuestring}!cjson.h@{cjson.h}}
+\doxysubsubsection{\texorpdfstring{valuestring}{valuestring}}
+{\footnotesize\ttfamily const char$\ast$ valuestring}
+
+
+
+Definition at line 280 of file cjson.\+h.
+
+\mbox{\Hypertarget{cjson_8h_aa2a4dae2a14de4093826005f9bdfd3bb}\label{cjson_8h_aa2a4dae2a14de4093826005f9bdfd3bb}} 
+\index{cjson.h@{cjson.h}!which@{which}}
+\index{which@{which}!cjson.h@{cjson.h}}
+\doxysubsubsection{\texorpdfstring{which}{which}}
+{\footnotesize\ttfamily int which}
+
+
+
+Definition at line 234 of file cjson.\+h.
+

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['onoffmessage_77',['onOffMessage',['../d3/d67/onOffMessage_8c.html#a98ea61cc699732ffc205c5cce8674455',1,'onOffMessage(char *argument):&#160;onOffMessage.c'],['../de/d35/yiffy-messages_8h.html#a98ea61cc699732ffc205c5cce8674455',1,'onOffMessage(char *argument):&#160;onOffMessage.c']]]
+  ['noargumentvaluemessage_170',['noArgumentValueMessage',['../d9/da4/noArgumentValueMessage_8c.html#a81c685b666239e7dfe3cc98ab6249b55',1,'noArgumentValueMessage(char *argument):&#160;noArgumentValueMessage.c'],['../de/d35/yiffy-messages_8h.html#a81c685b666239e7dfe3cc98ab6249b55',1,'noArgumentValueMessage(char *argument):&#160;noArgumentValueMessage.c']]],
+  ['nojsonresponseerrormessage_171',['noJsonResponseErrorMessage',['../de/d81/noJsonResponseErrorMessage_8c.html#adb9f6e005070bc080ea4f4499537b735',1,'noJsonResponseErrorMessage():&#160;noJsonResponseErrorMessage.c'],['../de/d35/yiffy-messages_8h.html#adb9f6e005070bc080ea4f4499537b735',1,'noJsonResponseErrorMessage():&#160;noJsonResponseErrorMessage.c']]]
 ];

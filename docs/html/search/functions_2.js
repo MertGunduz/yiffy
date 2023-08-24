@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['fileopenerrormessage_71',['fileOpenErrorMessage',['../d7/d7c/fileOpenErrorMessage_8c.html#a58d7e894ac05a63490698795d25bfe9a',1,'fileOpenErrorMessage():&#160;fileOpenErrorMessage.c'],['../de/d35/yiffy-messages_8h.html#a58d7e894ac05a63490698795d25bfe9a',1,'fileOpenErrorMessage():&#160;fileOpenErrorMessage.c']]],
-  ['fprintfh_72',['fprintfH',['../dd/d16/fprintfH_8c.html#af368c6ede13d6b3044f2875601238d7e',1,'fprintfH(FILE *file, char *content):&#160;fprintfH.c'],['../d8/ddd/yiffy-ui_8h.html#af368c6ede13d6b3044f2875601238d7e',1,'fprintfH(FILE *file, char *content):&#160;fprintfH.c']]]
+  ['extraargumenterrormessage_164',['extraArgumentErrorMessage',['../d3/d8c/extraArgumentErrorMessage_8c.html#aeeb39a1ff7f4fc6fbc7ab03e373edb55',1,'extraArgumentErrorMessage(char *argument):&#160;extraArgumentErrorMessage.c'],['../de/d35/yiffy-messages_8h.html#aeeb39a1ff7f4fc6fbc7ab03e373edb55',1,'extraArgumentErrorMessage(char *argument):&#160;extraArgumentErrorMessage.c']]]
 ];

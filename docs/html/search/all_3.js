@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['homenotfounderrormessage_13',['homeNotFoundErrorMessage',['../df/d62/homeNotFoundErrorMessage_8c.html#a28e66284663b33a9f8d102c306dff47a',1,'homeNotFoundErrorMessage():&#160;homeNotFoundErrorMessage.c'],['../de/d35/yiffy-messages_8h.html#a28e66284663b33a9f8d102c306dff47a',1,'homeNotFoundErrorMessage():&#160;homeNotFoundErrorMessage.c']]],
-  ['homenotfounderrormessage_2ec_14',['homeNotFoundErrorMessage.c',['../df/d62/homeNotFoundErrorMessage_8c.html',1,'']]]
+  ['depth_44',['depth',['../db/d68/structparse__buffer.html#af613c4ed7d73f76c60c50d1bcf4c67a0',1,'parse_buffer::depth()'],['../d1/dc7/structprintbuffer.html#aa7311b5da38ff8d1737824c611b48732',1,'printbuffer::depth()']]]
 ];

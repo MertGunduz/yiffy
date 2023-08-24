@@ -9,6 +9,7 @@ the main application file of yiffy
 {\ttfamily \#include $<$stdbool.\+h$>$}\newline
 {\ttfamily \#include $<$string.\+h$>$}\newline
 {\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../cjson/cjson.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}../yiffymessages/yiffy-\/messages.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}../yiffysearch/yiffy-\/search.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}../yiffytextmenus/yiffy-\/text-\/menus.\+h\char`\"{}}\newline
@@ -28,17 +29,17 @@ struct \mbox{\hyperlink{structmenuOption}{menu\+Option}}
 \doxysubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \mbox{\hyperlink{yiffy_8c_ae19e91650edc7366559a74767d6e0075}{RECOGNIZED\+\_\+\+ARGUMENT}}~true
+\#define \mbox{\hyperlink{yiffy_8c_ae19e91650edc7366559a74767d6e0075}{RECOGNIZED\+\_\+\+ARGUMENT}}~\mbox{\hyperlink{cjson_8c_a41f9c5fb8b08eb5dc3edce4dcb37fee7}{true}}
 \item 
-\#define \mbox{\hyperlink{yiffy_8c_a129246daa0c427b2108d7844650e5cf4}{UNRECOGNIZED\+\_\+\+ARGUMENT}}~false
+\#define \mbox{\hyperlink{yiffy_8c_a129246daa0c427b2108d7844650e5cf4}{UNRECOGNIZED\+\_\+\+ARGUMENT}}~\mbox{\hyperlink{cjson_8c_a65e9886d74aaee76545e83dd09011727}{false}}
 \item 
-\#define \mbox{\hyperlink{yiffy_8c_a9e8078dd597c541b6090e1e1ffd437e5}{MISSING\+\_\+\+ON\+\_\+\+OFF}}~false
+\#define \mbox{\hyperlink{yiffy_8c_a9e8078dd597c541b6090e1e1ffd437e5}{MISSING\+\_\+\+ON\+\_\+\+OFF}}~\mbox{\hyperlink{cjson_8c_a65e9886d74aaee76545e83dd09011727}{false}}
 \item 
-\#define \mbox{\hyperlink{yiffy_8c_a667329addeab5d6f7d3f18fc38bd9b90}{ARGC\+\_\+\+QTY\+\_\+\+ERROR}}~false
+\#define \mbox{\hyperlink{yiffy_8c_a667329addeab5d6f7d3f18fc38bd9b90}{ARGC\+\_\+\+QTY\+\_\+\+ERROR}}~\mbox{\hyperlink{cjson_8c_a65e9886d74aaee76545e83dd09011727}{false}}
 \item 
-\#define \mbox{\hyperlink{yiffy_8c_a7f24a1abca37046fc42297fdefe88335}{NO\+\_\+\+ARG\+\_\+\+VALUE}}~false
+\#define \mbox{\hyperlink{yiffy_8c_a7f24a1abca37046fc42297fdefe88335}{NO\+\_\+\+ARG\+\_\+\+VALUE}}~\mbox{\hyperlink{cjson_8c_a65e9886d74aaee76545e83dd09011727}{false}}
 \item 
-\#define \mbox{\hyperlink{yiffy_8c_a6520bb9916f161d340bb3aea747415db}{EXTRA\+\_\+\+ARG\+\_\+\+VALUE}}~false
+\#define \mbox{\hyperlink{yiffy_8c_a6520bb9916f161d340bb3aea747415db}{EXTRA\+\_\+\+ARG\+\_\+\+VALUE}}~\mbox{\hyperlink{cjson_8c_a65e9886d74aaee76545e83dd09011727}{false}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
@@ -63,61 +64,61 @@ Mehmet Mert Gunduz
 \index{yiffy.c@{yiffy.c}!ARGC\_QTY\_ERROR@{ARGC\_QTY\_ERROR}}
 \index{ARGC\_QTY\_ERROR@{ARGC\_QTY\_ERROR}!yiffy.c@{yiffy.c}}
 \doxysubsubsection{\texorpdfstring{ARGC\_QTY\_ERROR}{ARGC\_QTY\_ERROR}}
-{\footnotesize\ttfamily \#define ARGC\+\_\+\+QTY\+\_\+\+ERROR~false}
-
-
-
-Definition at line 23 of file yiffy.\+c.
-
-\mbox{\Hypertarget{yiffy_8c_a6520bb9916f161d340bb3aea747415db}\label{yiffy_8c_a6520bb9916f161d340bb3aea747415db}} 
-\index{yiffy.c@{yiffy.c}!EXTRA\_ARG\_VALUE@{EXTRA\_ARG\_VALUE}}
-\index{EXTRA\_ARG\_VALUE@{EXTRA\_ARG\_VALUE}!yiffy.c@{yiffy.c}}
-\doxysubsubsection{\texorpdfstring{EXTRA\_ARG\_VALUE}{EXTRA\_ARG\_VALUE}}
-{\footnotesize\ttfamily \#define EXTRA\+\_\+\+ARG\+\_\+\+VALUE~false}
-
-
-
-Definition at line 25 of file yiffy.\+c.
-
-\mbox{\Hypertarget{yiffy_8c_a9e8078dd597c541b6090e1e1ffd437e5}\label{yiffy_8c_a9e8078dd597c541b6090e1e1ffd437e5}} 
-\index{yiffy.c@{yiffy.c}!MISSING\_ON\_OFF@{MISSING\_ON\_OFF}}
-\index{MISSING\_ON\_OFF@{MISSING\_ON\_OFF}!yiffy.c@{yiffy.c}}
-\doxysubsubsection{\texorpdfstring{MISSING\_ON\_OFF}{MISSING\_ON\_OFF}}
-{\footnotesize\ttfamily \#define MISSING\+\_\+\+ON\+\_\+\+OFF~false}
-
-
-
-Definition at line 22 of file yiffy.\+c.
-
-\mbox{\Hypertarget{yiffy_8c_a7f24a1abca37046fc42297fdefe88335}\label{yiffy_8c_a7f24a1abca37046fc42297fdefe88335}} 
-\index{yiffy.c@{yiffy.c}!NO\_ARG\_VALUE@{NO\_ARG\_VALUE}}
-\index{NO\_ARG\_VALUE@{NO\_ARG\_VALUE}!yiffy.c@{yiffy.c}}
-\doxysubsubsection{\texorpdfstring{NO\_ARG\_VALUE}{NO\_ARG\_VALUE}}
-{\footnotesize\ttfamily \#define NO\+\_\+\+ARG\+\_\+\+VALUE~false}
+{\footnotesize\ttfamily \#define ARGC\+\_\+\+QTY\+\_\+\+ERROR~\mbox{\hyperlink{cjson_8c_a65e9886d74aaee76545e83dd09011727}{false}}}
 
 
 
 Definition at line 24 of file yiffy.\+c.
 
+\mbox{\Hypertarget{yiffy_8c_a6520bb9916f161d340bb3aea747415db}\label{yiffy_8c_a6520bb9916f161d340bb3aea747415db}} 
+\index{yiffy.c@{yiffy.c}!EXTRA\_ARG\_VALUE@{EXTRA\_ARG\_VALUE}}
+\index{EXTRA\_ARG\_VALUE@{EXTRA\_ARG\_VALUE}!yiffy.c@{yiffy.c}}
+\doxysubsubsection{\texorpdfstring{EXTRA\_ARG\_VALUE}{EXTRA\_ARG\_VALUE}}
+{\footnotesize\ttfamily \#define EXTRA\+\_\+\+ARG\+\_\+\+VALUE~\mbox{\hyperlink{cjson_8c_a65e9886d74aaee76545e83dd09011727}{false}}}
+
+
+
+Definition at line 26 of file yiffy.\+c.
+
+\mbox{\Hypertarget{yiffy_8c_a9e8078dd597c541b6090e1e1ffd437e5}\label{yiffy_8c_a9e8078dd597c541b6090e1e1ffd437e5}} 
+\index{yiffy.c@{yiffy.c}!MISSING\_ON\_OFF@{MISSING\_ON\_OFF}}
+\index{MISSING\_ON\_OFF@{MISSING\_ON\_OFF}!yiffy.c@{yiffy.c}}
+\doxysubsubsection{\texorpdfstring{MISSING\_ON\_OFF}{MISSING\_ON\_OFF}}
+{\footnotesize\ttfamily \#define MISSING\+\_\+\+ON\+\_\+\+OFF~\mbox{\hyperlink{cjson_8c_a65e9886d74aaee76545e83dd09011727}{false}}}
+
+
+
+Definition at line 23 of file yiffy.\+c.
+
+\mbox{\Hypertarget{yiffy_8c_a7f24a1abca37046fc42297fdefe88335}\label{yiffy_8c_a7f24a1abca37046fc42297fdefe88335}} 
+\index{yiffy.c@{yiffy.c}!NO\_ARG\_VALUE@{NO\_ARG\_VALUE}}
+\index{NO\_ARG\_VALUE@{NO\_ARG\_VALUE}!yiffy.c@{yiffy.c}}
+\doxysubsubsection{\texorpdfstring{NO\_ARG\_VALUE}{NO\_ARG\_VALUE}}
+{\footnotesize\ttfamily \#define NO\+\_\+\+ARG\+\_\+\+VALUE~\mbox{\hyperlink{cjson_8c_a65e9886d74aaee76545e83dd09011727}{false}}}
+
+
+
+Definition at line 25 of file yiffy.\+c.
+
 \mbox{\Hypertarget{yiffy_8c_ae19e91650edc7366559a74767d6e0075}\label{yiffy_8c_ae19e91650edc7366559a74767d6e0075}} 
 \index{yiffy.c@{yiffy.c}!RECOGNIZED\_ARGUMENT@{RECOGNIZED\_ARGUMENT}}
 \index{RECOGNIZED\_ARGUMENT@{RECOGNIZED\_ARGUMENT}!yiffy.c@{yiffy.c}}
 \doxysubsubsection{\texorpdfstring{RECOGNIZED\_ARGUMENT}{RECOGNIZED\_ARGUMENT}}
-{\footnotesize\ttfamily \#define RECOGNIZED\+\_\+\+ARGUMENT~true}
+{\footnotesize\ttfamily \#define RECOGNIZED\+\_\+\+ARGUMENT~\mbox{\hyperlink{cjson_8c_a41f9c5fb8b08eb5dc3edce4dcb37fee7}{true}}}
 
 
 
-Definition at line 20 of file yiffy.\+c.
+Definition at line 21 of file yiffy.\+c.
 
 \mbox{\Hypertarget{yiffy_8c_a129246daa0c427b2108d7844650e5cf4}\label{yiffy_8c_a129246daa0c427b2108d7844650e5cf4}} 
 \index{yiffy.c@{yiffy.c}!UNRECOGNIZED\_ARGUMENT@{UNRECOGNIZED\_ARGUMENT}}
 \index{UNRECOGNIZED\_ARGUMENT@{UNRECOGNIZED\_ARGUMENT}!yiffy.c@{yiffy.c}}
 \doxysubsubsection{\texorpdfstring{UNRECOGNIZED\_ARGUMENT}{UNRECOGNIZED\_ARGUMENT}}
-{\footnotesize\ttfamily \#define UNRECOGNIZED\+\_\+\+ARGUMENT~false}
+{\footnotesize\ttfamily \#define UNRECOGNIZED\+\_\+\+ARGUMENT~\mbox{\hyperlink{cjson_8c_a65e9886d74aaee76545e83dd09011727}{false}}}
 
 
 
-Definition at line 21 of file yiffy.\+c.
+Definition at line 22 of file yiffy.\+c.
 
 
 
@@ -130,5 +131,5 @@ Definition at line 21 of file yiffy.\+c.
 
 
 
-Definition at line 60 of file yiffy.\+c.
+Definition at line 61 of file yiffy.\+c.
 

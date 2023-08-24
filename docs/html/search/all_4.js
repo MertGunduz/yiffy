@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['main_15',['main',['../dc/dc0/yiffy_8c.html#a0ddf1224851353fc92bfbff6f499fa97',1,'yiffy.c']]],
-  ['max_5fbuffer_5fsize_16',['MAX_BUFFER_SIZE',['../df/d77/e621Request_8c.html#ad4d796b98c583d49e83adabd74a63bf6',1,'MAX_BUFFER_SIZE():&#160;e621Request.c'],['../dd/d89/showConfig_8c.html#ad4d796b98c583d49e83adabd74a63bf6',1,'MAX_BUFFER_SIZE():&#160;showConfig.c']]],
-  ['max_5ffile_5fpath_17',['MAX_FILE_PATH',['../df/d77/e621Request_8c.html#a263efd24d550124313df51247f07457a',1,'MAX_FILE_PATH():&#160;e621Request.c'],['../dd/d89/showConfig_8c.html#a263efd24d550124313df51247f07457a',1,'MAX_FILE_PATH():&#160;showConfig.c']]],
-  ['menuoption_18',['menuOption',['../dd/db9/structmenuOption.html',1,'']]],
-  ['missing_5fon_5foff_19',['MISSING_ON_OFF',['../dc/dc0/yiffy_8c.html#a9e8078dd597c541b6090e1e1ffd437e5',1,'yiffy.c']]]
+  ['error_45',['error',['../df/d8b/structerror.html',1,'']]],
+  ['extra_5farg_5fvalue_46',['EXTRA_ARG_VALUE',['../dc/dc0/yiffy_8c.html#a6520bb9916f161d340bb3aea747415db',1,'yiffy.c']]],
+  ['extraargumenterrormessage_47',['extraArgumentErrorMessage',['../d3/d8c/extraArgumentErrorMessage_8c.html#aeeb39a1ff7f4fc6fbc7ab03e373edb55',1,'extraArgumentErrorMessage(char *argument):&#160;extraArgumentErrorMessage.c'],['../de/d35/yiffy-messages_8h.html#aeeb39a1ff7f4fc6fbc7ab03e373edb55',1,'extraArgumentErrorMessage(char *argument):&#160;extraArgumentErrorMessage.c']]],
+  ['extraargumenterrormessage_2ec_48',['extraArgumentErrorMessage.c',['../d3/d8c/extraArgumentErrorMessage_8c.html',1,'']]]
 ];

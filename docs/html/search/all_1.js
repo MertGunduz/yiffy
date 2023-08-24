@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['e621request_3',['e621Request',['../df/d77/e621Request_8c.html#a36f93f01763cb9cb93d6624f30c5da2e',1,'e621Request(char *tagString):&#160;e621Request.c'],['../dc/d88/yiffy-search_8h.html#a36f93f01763cb9cb93d6624f30c5da2e',1,'e621Request(char *tagString):&#160;e621Request.c']]],
-  ['e621request_2ec_4',['e621Request.c',['../df/d77/e621Request_8c.html',1,'']]],
-  ['extra_5farg_5fvalue_5',['EXTRA_ARG_VALUE',['../dc/dc0/yiffy_8c.html#a6520bb9916f161d340bb3aea747415db',1,'yiffy.c']]],
-  ['extraargumenterrormessage_6',['extraArgumentErrorMessage',['../d3/d8c/extraArgumentErrorMessage_8c.html#aeeb39a1ff7f4fc6fbc7ab03e373edb55',1,'extraArgumentErrorMessage(char *argument):&#160;extraArgumentErrorMessage.c'],['../de/d35/yiffy-messages_8h.html#aeeb39a1ff7f4fc6fbc7ab03e373edb55',1,'extraArgumentErrorMessage(char *argument):&#160;extraArgumentErrorMessage.c']]],
-  ['extraargumenterrormessage_2ec_7',['extraArgumentErrorMessage.c',['../d3/d8c/extraArgumentErrorMessage_8c.html',1,'']]]
+  ['b_4',['b',['../d5/d56/cjson_8h.html#a1a175e87536301df98c805ac0636ad7c',1,'cjson.h']]],
+  ['boolean_5',['boolean',['../d5/d56/cjson_8h.html#a08f076c86f430b6f0e301fcf94223b38',1,'cjson.h']]],
+  ['buffer_6',['buffer',['../d1/dc7/structprintbuffer.html#a754f63618e91db99f7ab6cfc4e629013',1,'printbuffer::buffer()'],['../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e',1,'buffer():&#160;cjson.h']]],
+  ['buffer_5fat_5foffset_7',['buffer_at_offset',['../d6/d49/cjson_8c.html#ac538057ef78677344d222b763251af5e',1,'cjson.c']]],
+  ['buffer_5flength_8',['buffer_length',['../d5/d56/cjson_8h.html#a7beaf9b4ef5e4c7254cc3298a3424354',1,'cjson.h']]]
 ];

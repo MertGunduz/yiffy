@@ -81,7 +81,7 @@ $(function() {
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="comment">/* file path and line buffer */</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">char</span> file_path[<a class="code" href="../../dd/d89/showConfig_8c.html#a263efd24d550124313df51247f07457a">MAX_FILE_PATH</a>];</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">char</span> buffer[<a class="code" href="../../dd/d89/showConfig_8c.html#ad4d796b98c583d49e83adabd74a63bf6">MAX_BUFFER_SIZE</a>];</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">char</span> <a class="code" href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a>[<a class="code" href="../../dd/d89/showConfig_8c.html#ad4d796b98c583d49e83adabd74a63bf6">MAX_BUFFER_SIZE</a>];</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="comment">/* take the home directory of the current user */</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">char</span> *home_directory = getenv(<span class="stringliteral">&quot;HOME&quot;</span>);</div>
@@ -105,13 +105,13 @@ $(function() {
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">/* read and the content */</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    fscanf(configurationFile, <span class="stringliteral">&quot;%s&quot;</span>, buffer);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    fscanf(configurationFile, <span class="stringliteral">&quot;%s&quot;</span>, <a class="code" href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a>);</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">/* write the text ui */</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="../../dd/d16/fprintfH_8c.html#af368c6ede13d6b3044f2875601238d7e">fprintfH</a>(stdout, <span class="stringliteral">&quot;current yiffy configurations&quot;</span>);</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">/* tokenize the configuration string */</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">char</span> *token = strtok(buffer, <span class="stringliteral">&quot;:&quot;</span>);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">char</span> *token = strtok(<a class="code" href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a>, <span class="stringliteral">&quot;:&quot;</span>);</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">while</span> (token != NULL)</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    {</div>
@@ -119,6 +119,7 @@ $(function() {
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        token = strtok(NULL, <span class="stringliteral">&quot;:&quot;</span>);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
+<div class="ttc" id="acjson_8h_html_aff2566f4c366b48d73479bef43ee4d2e"><div class="ttname"><a href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a></div><div class="ttdeci">char * buffer</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d56/cjson_8h_source.html#l00163">cjson.h:163</a></div></div>
 <div class="ttc" id="afileOpenErrorMessage_8c_html_a58d7e894ac05a63490698795d25bfe9a"><div class="ttname"><a href="../../d7/d7c/fileOpenErrorMessage_8c.html#a58d7e894ac05a63490698795d25bfe9a">fileOpenErrorMessage</a></div><div class="ttdeci">void fileOpenErrorMessage()</div><div class="ttdoc">it shows some information message to give user solutions</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d7c/fileOpenErrorMessage_8c_source.html#l00014">fileOpenErrorMessage.c:14</a></div></div>
 <div class="ttc" id="afprintfH_8c_html_af368c6ede13d6b3044f2875601238d7e"><div class="ttname"><a href="../../dd/d16/fprintfH_8c.html#af368c6ede13d6b3044f2875601238d7e">fprintfH</a></div><div class="ttdeci">void fprintfH(FILE *file, char *content)</div><div class="ttdoc">creates the text header for show menus</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d16/fprintfH_8c_source.html#l00014">fprintfH.c:14</a></div></div>
 <div class="ttc" id="ahomeNotFoundErrorMessage_8c_html_a28e66284663b33a9f8d102c306dff47a"><div class="ttname"><a href="../../df/d62/homeNotFoundErrorMessage_8c.html#a28e66284663b33a9f8d102c306dff47a">homeNotFoundErrorMessage</a></div><div class="ttdeci">void homeNotFoundErrorMessage()</div><div class="ttdoc">outputs the home not found error when application can not access the $home environment variable</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d62/homeNotFoundErrorMessage_8c_source.html#l00014">homeNotFoundErrorMessage.c:14</a></div></div>

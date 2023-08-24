@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['noargumentvaluemessage_2ec_54',['noArgumentValueMessage.c',['../d9/da4/noArgumentValueMessage_8c.html',1,'']]],
-  ['nojsonresponseerrormessage_2ec_55',['noJsonResponseErrorMessage.c',['../de/d81/noJsonResponseErrorMessage_8c.html',1,'']]]
+  ['homenotfounderrormessage_2ec_145',['homeNotFoundErrorMessage.c',['../df/d62/homeNotFoundErrorMessage_8c.html',1,'']]]
 ];

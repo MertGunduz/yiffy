@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['yiffy_2dmessages_2eh_63',['yiffy-messages.h',['../de/d35/yiffy-messages_8h.html',1,'']]],
-  ['yiffy_2dsearch_2eh_64',['yiffy-search.h',['../dc/d88/yiffy-search_8h.html',1,'']]],
-  ['yiffy_2dtext_2dmenus_2eh_65',['yiffy-text-menus.h',['../d2/d2d/yiffy-text-menus_8h.html',1,'']]],
-  ['yiffy_2dui_2eh_66',['yiffy-ui.h',['../d8/ddd/yiffy-ui_8h.html',1,'']]],
-  ['yiffy_2ec_67',['yiffy.c',['../dc/dc0/yiffy_8c.html',1,'']]]
+  ['showconfig_2ec_150',['showConfig.c',['../dd/d89/showConfig_8c.html',1,'']]],
+  ['showgithub_2ec_151',['showGithub.c',['../df/d72/showGithub_8c.html',1,'']]],
+  ['showhelp_2ec_152',['showHelp.c',['../d5/d5e/showHelp_8c.html',1,'']]],
+  ['showversion_2ec_153',['showVersion.c',['../d8/d26/showVersion_8c.html',1,'']]],
+  ['showwebsite_2ec_154',['showWebsite.c',['../de/d97/showWebsite_8c.html',1,'']]]
 ];

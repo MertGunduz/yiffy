@@ -1,0 +1,71 @@
+\hypertarget{request_8c}{}\doxysection{src/yiffysearch/request.c File Reference}
+\label{request_8c}\index{src/yiffysearch/request.c@{src/yiffysearch/request.c}}
+{\ttfamily \#include \char`\"{}yiffy-\/search.\+h\char`\"{}}\newline
+Include dependency graph for request.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/dd4/request_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{request_8c_a263efd24d550124313df51247f07457a}{MAX\+\_\+\+FILE\+\_\+\+PATH}}~256
+\item 
+\#define \mbox{\hyperlink{request_8c_ad4d796b98c583d49e83adabd74a63bf6}{MAX\+\_\+\+BUFFER\+\_\+\+SIZE}}~512
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{request_8c_ad65df21b2e0f461e0d44e9a281be863c}{request}} (char $\ast$tag\+String)
+\begin{DoxyCompactList}\small\item\em sends request to e621 with the specified tags and takes response \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{request_8c_ad4d796b98c583d49e83adabd74a63bf6}\label{request_8c_ad4d796b98c583d49e83adabd74a63bf6}} 
+\index{request.c@{request.c}!MAX\_BUFFER\_SIZE@{MAX\_BUFFER\_SIZE}}
+\index{MAX\_BUFFER\_SIZE@{MAX\_BUFFER\_SIZE}!request.c@{request.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_BUFFER\_SIZE}{MAX\_BUFFER\_SIZE}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+BUFFER\+\_\+\+SIZE~512}
+
+
+
+Definition at line 12 of file request.\+c.
+
+\mbox{\Hypertarget{request_8c_a263efd24d550124313df51247f07457a}\label{request_8c_a263efd24d550124313df51247f07457a}} 
+\index{request.c@{request.c}!MAX\_FILE\_PATH@{MAX\_FILE\_PATH}}
+\index{MAX\_FILE\_PATH@{MAX\_FILE\_PATH}!request.c@{request.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_FILE\_PATH}{MAX\_FILE\_PATH}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+FILE\+\_\+\+PATH~256}
+
+
+
+Definition at line 11 of file request.\+c.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{request_8c_ad65df21b2e0f461e0d44e9a281be863c}\label{request_8c_ad65df21b2e0f461e0d44e9a281be863c}} 
+\index{request.c@{request.c}!request@{request}}
+\index{request@{request}!request.c@{request.c}}
+\doxysubsubsection{\texorpdfstring{request()}{request()}}
+{\footnotesize\ttfamily void request (\begin{DoxyParamCaption}\item[{char $\ast$}]{tag\+String }\end{DoxyParamCaption})}
+
+
+
+sends request to e621 with the specified tags and takes response 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tags} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the request url 
+\end{DoxyReturn}
+
+
+Definition at line 19 of file request.\+c.
+
