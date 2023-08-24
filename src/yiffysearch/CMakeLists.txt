@@ -1,5 +1,5 @@
 set(SOURCES
-    e621Request.c
+    request.c
 )
 
 add_library(yiffy-search STATIC ${SOURCES})

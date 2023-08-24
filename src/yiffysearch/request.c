@@ -16,7 +16,7 @@
 /// @brief sends request to e621 with the specified tags and takes response
 /// @param tags 
 /// @return the request url
-int e621Request(char *tagString)
+int request(char *tagString)
 {
     /* request string */
     char *requestString = (char*)malloc(256 * sizeof(char));

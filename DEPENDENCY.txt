@@ -4,4 +4,4 @@
 -terminal image viewer
 -ncurses
 -aria2
--squid proxy
+-libcjson-dev

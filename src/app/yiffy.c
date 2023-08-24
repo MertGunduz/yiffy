@@ -216,11 +216,42 @@ static void changeAdultMode(char *onOff)
 /// @brief sends request and gets data from e621/926
 static void useYiffy(char *tagString) 
 {
-    int returnVal = e621Request(tagString);
+    int returnVal = request(tagString);
 
     /* check if everything works fine */
     if (returnVal)
     {
-        fprintf(stdout, "great!\n");
+        /* memory allocation for json file and posts */
+        char *jsonContent = (char*)malloc(32768 * sizeof(char));
+        char *post = (char*)malloc(4096 * sizeof(char));
+        
+        /* read the json file */
+        FILE *jsonFile = fopen("posts.json", "r");
+        
+        if (jsonFile != NULL)
+        {
+            size_t bytesRead = fread(jsonContent, 1, 32767, jsonFile);
+
+            if (bytesRead < 32767)
+            {
+                jsonContent[bytesRead] = '\0';
+            }
+            else
+            {
+                // create a message function for this
+                fprintf(stderr, "File is too large for the buffer\n");
+            }
+
+            /* parse the post */
+
+
+            fprintf(stdout, "%ld\n", sizeof(post));
+            fprintf(stdout, "%s asd\n", post);
+        }
+        else
+        {
+            fileOpenErrorMessage();
+            exit(1);
+        }
     }
 }
