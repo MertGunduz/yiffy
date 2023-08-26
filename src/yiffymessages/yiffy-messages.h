@@ -22,5 +22,6 @@ void extraArgumentErrorMessage(char *argument);
 void homeNotFoundErrorMessage();
 void fileOpenErrorMessage();
 void noJsonResponseErrorMessage();
+void jsonParseErrorMessage();
 
 #endif /* YIFFY_MESSAGES_H */

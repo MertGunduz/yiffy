@@ -124,9 +124,9 @@ static void download()
     
     // Parse the JSON data
     cJSON *root = cJSON_Parse(jsonContent);
-    
+
     if (root == NULL) {
-        fprintf(stderr, "Error parsing JSON: %s\n", cJSON_GetErrorPtr());
+        jsonParseErrorMessage();
         exit(EXIT_FAILURE);
     }
 
@@ -141,17 +141,23 @@ static void download()
         for (int i = 0; i < num_posts; i++) 
         {
             cJSON *post_obj = cJSON_GetArrayItem(posts_array, i);
+            
+            cJSON *file_obj = cJSON_GetObjectItemCaseSensitive(post_obj, "file") ;
             cJSON *sample_obj = cJSON_GetObjectItemCaseSensitive(post_obj, "sample");
                 
             if (cJSON_IsObject(sample_obj)) 
             {
-                cJSON *url_obj = cJSON_GetObjectItemCaseSensitive(sample_obj, "url");
-                    
+                cJSON *sampleUrlObj = cJSON_GetObjectItemCaseSensitive(sample_obj, "url");
+                cJSON *fileUrlObj = cJSON_GetObjectItemCaseSensitive(file_obj, "url");
+
                 // Check if the "url" field exists and is a string
-                if (cJSON_IsString(url_obj)) 
+                if (cJSON_IsString(sampleUrlObj) && cJSON_IsString(fileUrlObj)) 
                 {
-                    const char *sample_url = url_obj->valuestring;
+                    const char *sample_url = sampleUrlObj->valuestring;
+                    const char *file_url = fileUrlObj->valuestring;
+                    
                     printf("Sample URL for Post %d: %s\n", i + 1, sample_url);
+                    printf("File URL for Post %d: %s\n\n", i + 1, file_url);
                 }
                 else 
                 {

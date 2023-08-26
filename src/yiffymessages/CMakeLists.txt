@@ -7,6 +7,7 @@ set(SOURCES
     homeNotFoundErrorMessage.c
     fileOpenErrorMessage.c
     noJsonResponseErrorMessage.c
+    jsonParseErrorMessage.c
 )
 
 add_library(yiffy-messages STATIC ${SOURCES})
