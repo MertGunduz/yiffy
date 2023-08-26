@@ -6,3 +6,6 @@ https://e926.net/posts.json?limit=10&tags=solo+blush+male+fox
 
 ID SEARCH:
 https://e621.net/posts/4255184.json
+
+SEARCH WITH LIMIT AND PAGE:
+https://e621.net/posts.json?tags=pee&limit=10&page=2
