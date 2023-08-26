@@ -100,10 +100,13 @@ void request(char *tagString)
 /// @brief downloads the sample posts to show in the terminal user interface
 static void download()
 {
-    /* memory allocation for json file and posts */
+    /* memory allocation for whole json file */
     char *jsonContent = (char*)malloc(32768 * sizeof(char));
-    //char *post = (char*)malloc(4096 * sizeof(char));
-        
+    
+    /* memory allocation for sampleURLs and fileURLs */
+    char **sampleURLs = (char**)malloc(10 * sizeof(char*));
+    char **fileURLs = (char**)malloc(10 * sizeof(char*));
+
     /* read the json file */
     FILE *jsonFile = fopen("posts.json", "r");
         
@@ -113,20 +116,15 @@ static void download()
         exit(EXIT_FAILURE);
     }
 
+    /* read the file and return bytes*/
     size_t bytesRead = fread(jsonContent, 1, 32767, jsonFile);
 
-    if (bytesRead < 32767)
-    {
-        jsonContent[bytesRead] = '\0';
-    }
-    else
-    {
-        // create a message function for this
-        fprintf(stderr, "File is too large for the buffer\n");
-    }
-        
+    /* null terminate the jsoncontent */
+    jsonContent[bytesRead] = '\0';
+    
     // Parse the JSON data
     cJSON *root = cJSON_Parse(jsonContent);
+    
     if (root == NULL) {
         fprintf(stderr, "Error parsing JSON: %s\n", cJSON_GetErrorPtr());
         exit(EXIT_FAILURE);
@@ -154,7 +152,7 @@ static void download()
                 {
                     const char *sample_url = url_obj->valuestring;
                     printf("Sample URL for Post %d: %s\n", i + 1, sample_url);
-                } 
+                }
                 else 
                 {
                     fprintf(stderr, "Error: 'url' field not found or not a string for post %d.\n", i + 1);
@@ -171,6 +169,9 @@ static void download()
         fprintf(stderr, "'posts' field is not an array.\n");
     }
 
-    // Clean up cJSON objects
+    /* free memory */
+    free(jsonContent);
+
+    /* Clean up cJSON objects */
     cJSON_Delete(root);
 }
