@@ -125,7 +125,15 @@ static void download()
     // Parse the JSON data
     cJSON *root = cJSON_Parse(jsonContent);
 
-    if (root == NULL) {
+    if (root == NULL) 
+    {
+        const char *error_ptr = cJSON_GetErrorPtr();
+    
+        if (error_ptr != NULL) 
+        {
+            fprintf(stderr, "Error before: %s\n", error_ptr);
+        }
+    
         jsonParseErrorMessage();
         exit(EXIT_FAILURE);
     }
