@@ -70,11 +70,11 @@ void fetch(char *tagString)
     // check if nsfw on send request to e621 if not send to e926
     if (isNsfw)
     {
-        sprintf(requestString, "aria2c \"https://e621.net/posts.json?limit=10&tags=%s\" -o posts.json >/dev/null 2>&1", tagString);
+        sprintf(requestString, "aria2c \"https://e621.net/posts.json?limit=20&tags=%s\" -o posts.json >/dev/null 2>&1", tagString);
     }
     else
     {
-        sprintf(requestString, "aria2c \"https://e926.net/posts.json?limit=10&tags=%s\" -o posts.json >/dev/null 2>&1", tagString);
+        sprintf(requestString, "aria2c \"https://e926.net/posts.json?limit=20&tags=%s\" -o posts.json >/dev/null 2>&1", tagString);
     }
 
     /* send request to url */
@@ -91,10 +91,10 @@ void fetch(char *tagString)
     }
 
     /* allocate memory to store the content */
-    char *jsonControlContent = (char *)malloc(65535 * sizeof(char));
+    char *jsonControlContent = (char *)malloc(262144 * sizeof(char));
     
     /* read the file for emptiness control and put null terminator at the end */
-    size_t bytesRead = fread(jsonControlContent, 1, 65535, responseJson);
+    size_t bytesRead = fread(jsonControlContent, 1, 262143, responseJson);
     jsonControlContent[bytesRead] = '\0';
 
     // Check if the content of the file equals {"posts":[]}
@@ -106,6 +106,7 @@ void fetch(char *tagString)
 
     /* close the file */
     free(jsonControlContent);
+    free(requestString);
     fclose(responseJson);
 
     /* download the sample posts by using the url's in the current json file */
@@ -116,7 +117,7 @@ void fetch(char *tagString)
 static void download()
 {
     /* memory allocation for whole json file */
-    char *jsonContent = (char*)malloc(65536 * sizeof(char));
+    char *jsonContent = (char*)malloc(262144 * sizeof(char));
 
     /* read the json file */
     FILE *jsonFile = fopen("posts.json", "r");
@@ -128,7 +129,7 @@ static void download()
     }
 
     /* read the file and return bytes*/
-    size_t bytesRead = fread(jsonContent, 1, 65535, jsonFile);
+    size_t bytesRead = fread(jsonContent, 1, 262143, jsonFile);
 
     /* null terminate the jsoncontent */
     jsonContent[bytesRead] = '\0';
@@ -152,9 +153,6 @@ static void download()
     // Navigate to the "posts" array
     cJSON *posts_array = cJSON_GetObjectItemCaseSensitive(root, "posts");
 
-    /* succesful find counter */
-    int pI = 0;
-
     if (cJSON_IsArray(posts_array)) 
     {
         int num_posts = cJSON_GetArraySize(posts_array);
@@ -163,26 +161,18 @@ static void download()
         for (int i = 0; i < num_posts; i++) 
         {
             cJSON *post_obj = cJSON_GetArrayItem(posts_array, i);
-            
             cJSON *file_obj = cJSON_GetObjectItemCaseSensitive(post_obj, "file") ;
-            cJSON *sample_obj = cJSON_GetObjectItemCaseSensitive(post_obj, "sample");
                 
-            if (cJSON_IsObject(sample_obj)) 
+            if (cJSON_IsObject(file_obj)) 
             {
-                cJSON *sampleUrlObj = cJSON_GetObjectItemCaseSensitive(sample_obj, "url");
                 cJSON *fileUrlObj = cJSON_GetObjectItemCaseSensitive(file_obj, "url");
 
                 // Check if the "url" field exists and is a string
-                if (cJSON_IsString(sampleUrlObj) && cJSON_IsString(fileUrlObj)) 
+                if (cJSON_IsString(fileUrlObj)) 
                 {
-                    const char *sample_url = sampleUrlObj->valuestring;
                     const char *file_url = fileUrlObj->valuestring;
                     
-                    printf("%d [LOW-QUALITY]: %s\n", pI + 1, sample_url);
-                    printf("%d [HIGH-QUALITY]: %s\n", pI + 1, file_url);
-
-                    /* increase successful search */
-                    pI++;
+                    printf("%s\n", file_url);
                 }
             }
         }

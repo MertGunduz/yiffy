@@ -36,7 +36,7 @@ static void importLocalData();
 static void changeWebGenerationMode(char *onOff);
 static void changeAdultMode(char *onOff);
 static void findURLS(char *tagString);
-static void search(char *tagstring);
+static void searchURLS(char *tagstring);
 
 /// @brief the general struct for handling the arguments by using function pointers
 struct menuOption
@@ -57,7 +57,7 @@ static struct menuOption menuOptions[] =
     {"--wgen", changeWebGenerationMode},
     {"--nsfw", changeAdultMode},
     {"--fetch", findURLS},
-    {"--search", search}
+    {"--search", searchURLS}
 };
 
 int main(int argc, char *argv[])
@@ -101,7 +101,7 @@ static bool argumentVerify(int argumentCount, char *arguments[])
         {
             if (strcmp(arguments[1], twoArguments[i]) == 0)
             {
-                if (strcmp(arguments[2], "on") == 0 || strcmp(arguments[2], "off") == 0 || strcmp(arguments[1], "--fetch") == 0 || strcmp(arguments[1], "--search"))
+                if (strcmp(arguments[2], "on") == 0 || strcmp(arguments[2], "off") == 0 || strcmp(arguments[1], "--fetch") == 0 || strcmp(arguments[1], "--search") == 0)
                 {
                     return RECOGNIZED_ARGUMENT; /* return true; */
                 }
@@ -215,7 +215,7 @@ static void findURLS(char *tagString)
 }
 
 /// @brief sends request and gets data from e621/926
-static void search(char *tagstring) 
+static void searchURLS(char *tagstring) 
 {
     fprintf(stdout, "SEARCH MENU %s\n", tagstring);
 }
