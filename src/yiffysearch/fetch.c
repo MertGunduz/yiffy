@@ -18,7 +18,7 @@ static void download();
 /// @brief sends request to e621 with the specified tags and takes response
 /// @param tags 
 /// @return the request url
-void fetch(char *tagString)
+void fetch(char *tagString, int page)
 {
     /* request string */
     char *requestString = (char*)malloc(256 * sizeof(char));
@@ -70,15 +70,18 @@ void fetch(char *tagString)
     // check if nsfw on send request to e621 if not send to e926
     if (isNsfw)
     {
-        sprintf(requestString, "aria2c \"https://e621.net/posts.json?limit=20&tags=%s\" -o posts.json >/dev/null 2>&1", tagString);
+        sprintf(requestString, "aria2c \"https://e621.net/posts.json?limit=20&page=%d&tags=%s\" -o posts.json >/dev/null 2>&1", page, tagString);
     }
     else
     {
-        sprintf(requestString, "aria2c \"https://e926.net/posts.json?limit=20&tags=%s\" -o posts.json >/dev/null 2>&1", tagString);
+        sprintf(requestString, "aria2c \"https://e926.net/posts.json?limit=20&page=%d&tags=%s\" -o posts.json >/dev/null 2>&1", page, tagString);
     }
 
     /* send request to url */
     system(requestString);
+
+    /* wait */
+    sleep(1);
 
     /* check if the file exists */
     FILE *responseJson = fopen("posts.json", "r");
@@ -183,4 +186,7 @@ static void download()
 
     /* Clean up cJSON objects */
     cJSON_Delete(root);
+
+    /* delete posts.json */
+    remove("posts.json");
 }

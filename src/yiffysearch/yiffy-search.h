@@ -15,10 +15,11 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
+#include <unistd.h>
 
 #include "../yiffymessages/yiffy-messages.h"
 #include "../cjson/cjson.h"
 
-void fetch(char *tagString);
+void fetch(char *tagString, int page);
 
 #endif /* YIFFY_SEARCH_H */
