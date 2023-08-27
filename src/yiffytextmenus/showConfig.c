@@ -37,8 +37,8 @@ void showConfig()
 
     if (configurationFile == NULL)
     {
-        fileOpenErrorMessage();
-        exit(1);
+        fileOpenErrorMessage(configurationFile);
+        exit(EXIT_FAILURE);
     }
 
     /* read and the content */
@@ -55,4 +55,6 @@ void showConfig()
         fprintf(stdout, "- %s\n", token);
         token = strtok(NULL, ":");
     }
+
+    fclose(configurationFile);
 }

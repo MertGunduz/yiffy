@@ -47,7 +47,7 @@ void request(char *tagString)
 
     if (configurationFile == NULL)
     {
-        fileOpenErrorMessage();
+        fileOpenErrorMessage(configurationFile);
         exit(EXIT_FAILURE);
     }
 
@@ -86,11 +86,26 @@ void request(char *tagString)
     /* return validation integer */
     if (responseJson == NULL)
     {
-        noJsonResponseErrorMessage();
+        noJsonResponseErrorMessage(responseJson);
+        exit(EXIT_FAILURE);
+    }
+
+    /* allocate memory to store the content */
+    char *jsonControlContent = (char *)malloc(65535 * sizeof(char));
+    
+    /* read the file for emptiness control and put null terminator at the end */
+    size_t bytesRead = fread(jsonControlContent, 1, 65535, responseJson);
+    jsonControlContent[bytesRead] = '\0';
+
+    // Check if the content of the file equals {"posts":[]}
+    if (strcmp(jsonControlContent, "{\"posts\":[]}") == 0) 
+    {
+        noResultsFoundErrorMessage();
         exit(EXIT_FAILURE);
     }
 
     /* close the file */
+    free(jsonControlContent);
     fclose(responseJson);
 
     /* download the sample posts by using the url's in the current json file */
@@ -101,7 +116,7 @@ void request(char *tagString)
 static void download()
 {
     /* memory allocation for whole json file */
-    char *jsonContent = (char*)malloc(32768 * sizeof(char));
+    char *jsonContent = (char*)malloc(65536 * sizeof(char));
     
     /* memory allocation for sampleURLs and fileURLs */
     char **sampleURLs = (char**)malloc(10 * sizeof(char*));
@@ -112,12 +127,12 @@ static void download()
         
     if (jsonFile == NULL)
     {
-        fileOpenErrorMessage();
+        fileOpenErrorMessage(jsonFile);
         exit(EXIT_FAILURE);
     }
 
     /* read the file and return bytes*/
-    size_t bytesRead = fread(jsonContent, 1, 32767, jsonFile);
+    size_t bytesRead = fread(jsonContent, 1, 65535, jsonFile);
 
     /* null terminate the jsoncontent */
     jsonContent[bytesRead] = '\0';

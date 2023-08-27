@@ -20,8 +20,9 @@ void noArgumentValueMessage(char *argument);
 void argcErrorMessage(int argc);
 void extraArgumentErrorMessage(char *argument);
 void homeNotFoundErrorMessage();
-void fileOpenErrorMessage();
-void noJsonResponseErrorMessage();
+void fileOpenErrorMessage(FILE *file);
+void noJsonResponseErrorMessage(FILE *jsonFile);
 void jsonParseErrorMessage();
+void noResultsFoundErrorMessage();
 
 #endif /* YIFFY_MESSAGES_H */

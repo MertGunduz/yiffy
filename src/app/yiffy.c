@@ -35,7 +35,8 @@ static void exportLocalData();
 static void importLocalData();
 static void changeWebGenerationMode(char *onOff);
 static void changeAdultMode(char *onOff);
-static void useYiffy(char *tagString);
+static void findURLS(char *tagString);
+static void search(char *tagstring);
 
 /// @brief the general struct for handling the arguments by using function pointers
 struct menuOption
@@ -55,7 +56,8 @@ static struct menuOption menuOptions[] =
     {"--import", importLocalData},
     {"--wgen", changeWebGenerationMode},
     {"--nsfw", changeAdultMode},
-    {"--search", useYiffy}
+    {"--fetch", findURLS},
+    {"--search", search}
 };
 
 int main(int argc, char *argv[])
@@ -68,17 +70,9 @@ int main(int argc, char *argv[])
             {
                 void (*menuFunc)(char *argv) = menuOptions[i].function;
 
-                if (strcmp(menuOptions[i].option, "--search") == 0) /* THIRD ARGUMENT: tags [yiffy --search "blush+fox+male"]*/
+                if (strcmp(menuOptions[i].option, "--search") == 0 || strcmp(menuOptions[i].option, "--fetch") == 0 || strcmp(menuOptions[i].option, "--nsfw") == 0 || strcmp(menuOptions[i].option, "--wgen") == 0) /* THIRD ARGUMENT: tags [yiffy --search "blush+fox+male"]*/
                 {
                     menuFunc(argv[2]);
-                }
-                else if (strcmp(menuOptions[i].option, "--nsfw") == 0) /* THIRD ARGUMENT: on/off [yiffy --nsfw on]*/
-                {
-                    changeAdultMode(argv[2]);
-                }
-                else if (strcmp(menuOptions[i].option, "--wgen") == 0) /* THIRD ARGUMENT: on/off [yiffy --wgen on] */
-                {
-                    changeWebGenerationMode(argv[2]);
                 }
                 else /* NO THIRD ARGUMENT */
                 {
@@ -99,7 +93,7 @@ int main(int argc, char *argv[])
 static bool argumentVerify(int argumentCount, char *arguments[])
 {
     char *oneArguments[] = {"--help", "--version", "--github", "--website", "--config", "--export", "--import"};
-    char *twoArguments[] = {"--wgen", "--nsfw", "--search"};
+    char *twoArguments[] = {"--wgen", "--nsfw", "--fetch", "--search"};
 
     if (argumentCount == 3)
     {
@@ -107,7 +101,7 @@ static bool argumentVerify(int argumentCount, char *arguments[])
         {
             if (strcmp(arguments[1], twoArguments[i]) == 0)
             {
-                if (strcmp(arguments[2], "on") == 0 || strcmp(arguments[2], "off") == 0 || strcmp(arguments[1], "--search") == 0)
+                if (strcmp(arguments[2], "on") == 0 || strcmp(arguments[2], "off") == 0 || strcmp(arguments[1], "--fetch") == 0 || strcmp(arguments[1], "--search"))
                 {
                     return RECOGNIZED_ARGUMENT; /* return true; */
                 }
@@ -214,8 +208,14 @@ static void changeAdultMode(char *onOff)
     fprintf(stdout, "NSFW MENU%s\n", onOff);
 }
 
-/// @brief sends request and gets data from e621/926
-static void useYiffy(char *tagString) 
+/// @brief sends request and gets url data from e621/926
+static void findURLS(char *tagString) 
 {
     request(tagString);
+}
+
+/// @brief sends request and gets data from e621/926
+static void search(char *tagstring) 
+{
+    fprintf(stdout, "SEARCH MENU %s\n", tagstring);
 }
