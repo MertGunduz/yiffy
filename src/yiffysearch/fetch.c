@@ -151,7 +151,10 @@ static void download()
 
     // Navigate to the "posts" array
     cJSON *posts_array = cJSON_GetObjectItemCaseSensitive(root, "posts");
-    
+
+    /* succesful find counter */
+    int pI = 0;
+
     if (cJSON_IsArray(posts_array)) 
     {
         int num_posts = cJSON_GetArraySize(posts_array);
@@ -175,8 +178,11 @@ static void download()
                     const char *sample_url = sampleUrlObj->valuestring;
                     const char *file_url = fileUrlObj->valuestring;
                     
-                    printf("%d [LOW-QUALITY]: %s\n", i + 1, sample_url);
-                    printf("%d [HIGH-QUALITY]: %s\n\n", i + 1, file_url);
+                    printf("%d [LOW-QUALITY]: %s\n", pI + 1, sample_url);
+                    printf("%d [HIGH-QUALITY]: %s\n", pI + 1, file_url);
+
+                    /* increase successful search */
+                    pI++;
                 }
             }
         }
