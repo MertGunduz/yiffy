@@ -211,7 +211,7 @@ static void changeAdultMode(char *onOff)
 /// @brief sends request and gets url data from e621/926
 static void findURLS(char *tagString) 
 {
-    request(tagString);
+    fetch(tagString);
 }
 
 /// @brief sends request and gets data from e621/926

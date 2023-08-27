@@ -18,7 +18,7 @@ static void download();
 /// @brief sends request to e621 with the specified tags and takes response
 /// @param tags 
 /// @return the request url
-void request(char *tagString)
+void fetch(char *tagString)
 {
     /* request string */
     char *requestString = (char*)malloc(256 * sizeof(char));
@@ -117,10 +117,6 @@ static void download()
 {
     /* memory allocation for whole json file */
     char *jsonContent = (char*)malloc(65536 * sizeof(char));
-    
-    /* memory allocation for sampleURLs and fileURLs */
-    char **sampleURLs = (char**)malloc(10 * sizeof(char*));
-    char **fileURLs = (char**)malloc(10 * sizeof(char*));
 
     /* read the json file */
     FILE *jsonFile = fopen("posts.json", "r");
@@ -179,23 +175,11 @@ static void download()
                     const char *sample_url = sampleUrlObj->valuestring;
                     const char *file_url = fileUrlObj->valuestring;
                     
-                    printf("Sample URL for Post %d: %s\n", i + 1, sample_url);
-                    printf("File URL for Post %d: %s\n\n", i + 1, file_url);
+                    printf("%d [LOW-QUALITY]: %s\n", i + 1, sample_url);
+                    printf("%d [HIGH-QUALITY]: %s\n\n", i + 1, file_url);
                 }
-                else 
-                {
-                    fprintf(stderr, "Error: 'url' field not found or not a string for post %d.\n", i + 1);
-                }
-            } 
-            else 
-            {
-                fprintf(stderr, "Error: 'sample' field not found for post %d.\n", i + 1);
             }
         }
-    } 
-    else 
-    {
-        fprintf(stderr, "'posts' field is not an array.\n");
     }
 
     /* free memory */

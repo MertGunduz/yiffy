@@ -19,6 +19,6 @@
 #include "../yiffymessages/yiffy-messages.h"
 #include "../cjson/cjson.h"
 
-void request(char *tagString);
+void fetch(char *tagString);
 
 #endif /* YIFFY_SEARCH_H */

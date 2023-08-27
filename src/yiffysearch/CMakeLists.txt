@@ -1,5 +1,5 @@
 set(SOURCES
-    request.c
+    fetch.c
 )
 
 add_library(yiffy-search STATIC ${SOURCES})
