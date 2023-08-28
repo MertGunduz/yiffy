@@ -99,6 +99,11 @@ void fetch(char *tagString, int page)
             noResultsFoundErrorMessage();
         }
         
+        free(jsonControlContent);
+        fclose(responseJson);
+
+        remove("posts.json");
+        
         exit(EXIT_FAILURE);
     }
 
