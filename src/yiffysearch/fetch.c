@@ -15,6 +15,8 @@
 
 static void download();
 
+static int totalDownloads = 0;
+
 /// @brief sends request to e621 with the specified tags and takes response
 /// @param tagString
 /// @param page
@@ -92,7 +94,11 @@ void fetch(char *tagString, int page)
     /* check if there is no content related to the prompted tags, checks if json response empty */
     if (strcmp(jsonControlContent, "{\"posts\":[]}") == 0) 
     {
-        noResultsFoundErrorMessage();
+        if (totalDownloads == 0)
+        {
+            noResultsFoundErrorMessage();
+        }
+        
         exit(EXIT_FAILURE);
     }
 
@@ -138,10 +144,11 @@ static void download()
         }
     
         jsonParseErrorMessage();
+        cJSON_Delete(root);
         exit(EXIT_FAILURE);
     }
 
-    // Navigate to the "posts" array
+    /* Navigate to the "posts" array */
     cJSON *posts_array = cJSON_GetObjectItemCaseSensitive(root, "posts");
 
     if (cJSON_IsArray(posts_array)) 
@@ -163,17 +170,26 @@ static void download()
                 {
                     const char *file_url = fileUrlObj->valuestring;
                     
-                    printf("%s\n", file_url);
+                    fprintf(stdout, "%s\n", file_url);
+
+                    /* increase the total downloads */
+                    totalDownloads++;
                 }
             }
         }
     }
 
     /* free memory */
-    free(jsonContent);
+    if (jsonContent != NULL)
+    {
+        free(jsonContent);
+    }
 
     /* Clean up cJSON objects */
-    cJSON_Delete(root);
+    if (root != NULL)
+    {
+        cJSON_Delete(root);
+    }
 
     /* delete posts.json */
     remove("posts.json");

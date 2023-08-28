@@ -42,9 +42,16 @@ void aria2Download(char *tags, int page, bool isNsfw)
         /* gives information related to the system func call error */
         badSystemFuncErrorMessage();
 
-        free(requestString);
+        if (requestString != NULL)
+        {
+            free(requestString);
+        }
+
         exit(EXIT_FAILURE);
     }
 
-    free(requestString);
+    if (requestString != NULL)
+    {
+        free(requestString);
+    }
 }
