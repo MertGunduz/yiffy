@@ -16,8 +16,8 @@
 static void download();
 
 /// @brief sends request to e621 with the specified tags and takes response
-/// @param tagString 
-/// @param page 
+/// @param tagString
+/// @param page
 void fetch(char *tagString, int page)
 {
     /* file path and buffer */
