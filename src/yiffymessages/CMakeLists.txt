@@ -9,6 +9,8 @@ set(SOURCES
     noJsonResponseErrorMessage.c
     jsonParseErrorMessage.c
     noResultsFoundErrorMessage.c
+    cjsonPtrErrorMessage.c
+    mallocErrorMessage.c
 )
 
 add_library(yiffy-messages STATIC ${SOURCES})

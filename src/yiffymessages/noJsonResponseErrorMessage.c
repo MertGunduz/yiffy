@@ -14,8 +14,8 @@
 /// @param argument 
 void noJsonResponseErrorMessage(FILE *jsonFile)
 {
-    fprintf(stderr, "yiffy: couldn\'t create the json response file.\n");
-    fprintf(stderr, "yiffy: please try giving the file writing permission to the working directory.\n");
+    fprintf(stderr, "yiffy: couldn\'t find the json response file.\n");
+    fprintf(stderr, "yiffy: please try giving the file read-write permission to the working directory.\n");
 
     /* close the file after showing information */
     fclose(jsonFile);

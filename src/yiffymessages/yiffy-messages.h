@@ -24,5 +24,7 @@ void fileOpenErrorMessage(FILE *file);
 void noJsonResponseErrorMessage(FILE *jsonFile);
 void jsonParseErrorMessage();
 void noResultsFoundErrorMessage();
+void cjsonPtrErrorMessage(const char *ptrError);
+void mallocErrorMessage();
 
 #endif /* YIFFY_MESSAGES_H */

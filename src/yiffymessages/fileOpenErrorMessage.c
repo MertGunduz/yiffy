@@ -14,7 +14,7 @@
 void fileOpenErrorMessage(FILE *file)
 { 
     fprintf(stderr, "yiffy: error opening the file.\n");
-    fprintf(stderr, "yiffy: please check the file read permissions.\n");
+    fprintf(stderr, "yiffy: please check the file read-write permissions.\n");
 
     /* close the file after showing information */
     fclose(file);

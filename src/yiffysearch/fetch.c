@@ -16,33 +16,29 @@
 static void download();
 
 /// @brief sends request to e621 with the specified tags and takes response
-/// @param tags 
-/// @return the request url
+/// @param tagString 
+/// @param page 
 void fetch(char *tagString, int page)
 {
-    /* request string */
-    char *requestString = (char*)malloc(256 * sizeof(char));
+    /* file path and buffer */
+    char file_path[MAX_FILE_PATH];
+    char buffer[MAX_BUFFER_SIZE];
 
     /* configuration booleans */
     bool isNsfw = false;
 
-    /* file path and line buffer */
-    char file_path[MAX_FILE_PATH];
-    char buffer[MAX_BUFFER_SIZE];
-
     /* take the home directory of the current user */
     char *home_directory = getenv("HOME");
 
-    if (home_directory == NULL) 
+    if (home_directory == NULL)
     {
         homeNotFoundErrorMessage();
         exit(EXIT_FAILURE);
     }
 
-    /* create the file path */
+    /* create the file path for the /home/.yiffy/yiffy-config file to read the configurations */
     sprintf(file_path, "%s/.yiffy/yiffy-config.txt", home_directory);
 
-    /* create file pointer */
     FILE *configurationFile = fopen(file_path, "r");
 
     if (configurationFile == NULL)
@@ -51,10 +47,10 @@ void fetch(char *tagString, int page)
         exit(EXIT_FAILURE);
     }
 
-    /* read and the content */
+    /* read the configurations file (wgen:nsfw) */
     fscanf(configurationFile, "%s", buffer);
 
-    /* tokenize the configuration string */
+    /* tokenize the configuration string to get the data one by one */
     char *token = strtok(buffer, ":");
 
     while (token != NULL)
@@ -67,21 +63,8 @@ void fetch(char *tagString, int page)
         token = strtok(NULL, ":");
     }
 
-    // check if nsfw on send request to e621 if not send to e926
-    if (isNsfw)
-    {
-        sprintf(requestString, "aria2c \"https://e621.net/posts.json?limit=20&page=%d&tags=%s\" -o posts.json >/dev/null 2>&1", page, tagString);
-    }
-    else
-    {
-        sprintf(requestString, "aria2c \"https://e926.net/posts.json?limit=20&page=%d&tags=%s\" -o posts.json >/dev/null 2>&1", page, tagString);
-    }
-
-    /* send request to url */
-    system(requestString);
-
-    /* wait */
-    sleep(1);
+    /* download the response from e621/926 API */
+    aria2Download(tagString, page, isNsfw);
 
     /* check if the file exists */
     FILE *responseJson = fopen("posts.json", "r");
@@ -95,12 +78,18 @@ void fetch(char *tagString, int page)
 
     /* allocate memory to store the content */
     char *jsonControlContent = (char *)malloc(262144 * sizeof(char));
+
+    if (jsonControlContent == NULL)
+    {
+        mallocErrorMessage();
+        exit(EXIT_FAILURE);
+    }
     
-    /* read the file for emptiness control and put null terminator at the end */
+    /* read the file and check if empty, put null terminator at the end */
     size_t bytesRead = fread(jsonControlContent, 1, 262143, responseJson);
     jsonControlContent[bytesRead] = '\0';
 
-    // Check if the content of the file equals {"posts":[]}
+    /* check if there is no content related to the prompted tags, checks if json response empty */
     if (strcmp(jsonControlContent, "{\"posts\":[]}") == 0) 
     {
         noResultsFoundErrorMessage();
@@ -109,7 +98,6 @@ void fetch(char *tagString, int page)
 
     /* close the file */
     free(jsonControlContent);
-    free(requestString);
     fclose(responseJson);
 
     /* download the sample posts by using the url's in the current json file */
@@ -146,7 +134,7 @@ static void download()
     
         if (error_ptr != NULL) 
         {
-            fprintf(stderr, "Error before: %s\n", error_ptr);
+            cjsonPtrErrorMessage(error_ptr);
         }
     
         jsonParseErrorMessage();

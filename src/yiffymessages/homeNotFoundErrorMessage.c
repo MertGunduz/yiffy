@@ -14,5 +14,5 @@
 void homeNotFoundErrorMessage()
 {
     fprintf(stderr, "yiffy: error getting home directory.\n");
-    fprintf(stderr, "yiffy: please check the home directory permissions.\n");
+    fprintf(stderr, "yiffy: please check the home directory permissions and environment variables.\n");
 }

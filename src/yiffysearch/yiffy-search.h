@@ -21,5 +21,6 @@
 #include "../cjson/cjson.h"
 
 void fetch(char *tagString, int page);
+void aria2Download(char *tags, int page, bool isNsfw);
 
 #endif /* YIFFY_SEARCH_H */
