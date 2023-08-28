@@ -20,6 +20,8 @@
 #include "../yiffymessages/yiffy-messages.h"
 #include "../cjson/cjson.h"
 
+#define BAD_SYSTEM_FUNC_CALL -1
+
 void fetch(char *tagString, int page);
 void aria2Download(char *tags, int page, bool isNsfw);
 

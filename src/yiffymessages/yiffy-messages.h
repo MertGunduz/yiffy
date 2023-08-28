@@ -26,5 +26,6 @@ void jsonParseErrorMessage();
 void noResultsFoundErrorMessage();
 void cjsonPtrErrorMessage(const char *ptrError);
 void mallocErrorMessage();
+void badSystemFuncErrorMessage();
 
 #endif /* YIFFY_MESSAGES_H */

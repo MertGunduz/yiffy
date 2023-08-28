@@ -34,9 +34,17 @@ void aria2Download(char *tags, int page, bool isNsfw)
     }
 
     /* download the response and sleep for signals */
-    system(requestString);
+    int success = system(requestString);
     sleep(1);
 
-    /* free memory */
+    if (success == BAD_SYSTEM_FUNC_CALL)
+    {
+        /* gives information related to the system func call error */
+        badSystemFuncErrorMessage();
+
+        free(requestString);
+        exit(EXIT_FAILURE);
+    }
+
     free(requestString);
 }

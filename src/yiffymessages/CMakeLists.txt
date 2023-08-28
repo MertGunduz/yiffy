@@ -11,6 +11,7 @@ set(SOURCES
     noResultsFoundErrorMessage.c
     cjsonPtrErrorMessage.c
     mallocErrorMessage.c
+    badSystemFuncErrorMessage.c
 )
 
 add_library(yiffy-messages STATIC ${SOURCES})
