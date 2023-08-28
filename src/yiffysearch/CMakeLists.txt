@@ -1,4 +1,5 @@
 set(SOURCES
+    dfetch.c
     fetch.c
     aria2Download.c
 )

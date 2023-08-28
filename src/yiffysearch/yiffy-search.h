@@ -22,6 +22,7 @@
 
 #define BAD_SYSTEM_FUNC_CALL -1
 
+void dfetch(char *tagString, int page);
 void fetch(char *tagString, int page);
 void aria2Download(char *tags, int page, bool isNsfw);
 

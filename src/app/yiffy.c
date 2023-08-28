@@ -35,7 +35,8 @@ static void exportLocalData();
 static void importLocalData();
 static void changeWebGenerationMode(char *onOff);
 static void changeAdultMode(char *onOff);
-static void findURLS(char *tagString);
+static void dfetchURLS(char *tagString);
+static void fetchURLS(char *tagString);
 static void searchURLS(char *tagstring);
 
 /// @brief the general struct for handling the arguments by using function pointers
@@ -56,7 +57,8 @@ static struct menuOption menuOptions[] =
     {"--import", importLocalData},
     {"--wgen", changeWebGenerationMode},
     {"--nsfw", changeAdultMode},
-    {"--fetch", findURLS},
+    {"--dfetch", dfetchURLS},
+    {"--fetch", fetchURLS},
     {"--search", searchURLS}
 };
 
@@ -70,7 +72,7 @@ int main(int argc, char *argv[])
             {
                 void (*menuFunc)(char *argv) = menuOptions[i].function;
 
-                if (strcmp(menuOptions[i].option, "--search") == 0 || strcmp(menuOptions[i].option, "--fetch") == 0 || strcmp(menuOptions[i].option, "--nsfw") == 0 || strcmp(menuOptions[i].option, "--wgen") == 0) /* THIRD ARGUMENT: tags [yiffy --search "blush+fox+male"]*/
+                if (strcmp(menuOptions[i].option, "--dfetch") == 0 || strcmp(menuOptions[i].option, "--fetch") == 0 || strcmp(menuOptions[i].option, "--search") == 0 || strcmp(menuOptions[i].option, "--nsfw") == 0 || strcmp(menuOptions[i].option, "--wgen") == 0) /* THIRD ARGUMENT: tags [yiffy --search "blush+fox+male"]*/
                 {
                     menuFunc(argv[2]);
                 }
@@ -93,7 +95,7 @@ int main(int argc, char *argv[])
 static bool argumentVerify(int argumentCount, char *arguments[])
 {
     char *oneArguments[] = {"--help", "--version", "--github", "--website", "--config", "--export", "--import"};
-    char *twoArguments[] = {"--wgen", "--nsfw", "--fetch", "--search"};
+    char *twoArguments[] = {"--wgen", "--nsfw", "--dfetch", "--fetch", "--search"};
 
     if (argumentCount == 3)
     {
@@ -101,7 +103,7 @@ static bool argumentVerify(int argumentCount, char *arguments[])
         {
             if (strcmp(arguments[1], twoArguments[i]) == 0)
             {
-                if (strcmp(arguments[2], "on") == 0 || strcmp(arguments[2], "off") == 0 || strcmp(arguments[1], "--fetch") == 0 || strcmp(arguments[1], "--search") == 0)
+                if (strcmp(arguments[2], "on") == 0 || strcmp(arguments[2], "off") == 0 || strcmp(arguments[1], "--dfetch") == 0 || strcmp(arguments[1], "--fetch") == 0 || strcmp(arguments[1], "--search") == 0)
                 {
                     return RECOGNIZED_ARGUMENT; /* return true; */
                 }
@@ -208,16 +210,32 @@ static void changeAdultMode(char *onOff)
     fprintf(stdout, "NSFW MENU%s\n", onOff);
 }
 
-/// @brief sends request and gets url data from e621/926
-static void findURLS(char *tagString) 
+/// @brief sends request, fetchs urls and download images from e621/926
+/// @param tagString 
+static void dfetchURLS(char *tagString)
 {
-    for (int i = 1; i < 1000; i++)
+    int i = 0;
+    while (true)
+    {
+        dfetch(tagString, i);
+        i++;
+    }
+}
+
+/// @brief sends request and fetchs urls from e621/926
+/// @param tagString 
+static void fetchURLS(char *tagString) 
+{
+    int i = 0;
+    while (true)
     {
         fetch(tagString, i);
+        i++;
     }
 }
 
 /// @brief sends request and gets data from e621/926
+/// @param tagstring 
 static void searchURLS(char *tagstring) 
 {
     fprintf(stdout, "SEARCH MENU %s\n", tagstring);
