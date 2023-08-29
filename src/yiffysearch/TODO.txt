@@ -1,20 +1,27 @@
-NSFW:
-https://e621.net/posts.json?limit=10&tags=solo+blush+male+fox
+NOTE 
+{
+    NSFW API REQUEST:
+    https://e621.net/posts.json?limit=20&tags=solo+blush+male+fox
 
-SFW:
-https://e926.net/posts.json?limit=10&tags=solo+blush+male+fox
+    SFW API REQUEST:
+    https://e926.net/posts.json?limit=20&tags=solo+blush+male+fox
 
-ID SEARCH:
-https://e621.net/posts/4255184.json
+    POST ID SEARCH:
+    https://e621.net/posts/4255184.json
 
-SEARCH WITH LIMIT AND PAGE:
-https://e621.net/posts.json?tags=pee&limit=10&page=
+    SEARCH WITH LIMIT AND PAGE:
+    https://e621.net/posts.json?tags=pee&limit=20&page=1
+}
 
+TODO 
+{
+    NEW NOTE: AUGUST 29 13:25 (AFTER FINISHING THE FETCH.C)
 
-================================
+    ```
+    Hi Mert,
 
-NEW NOTE: AUGUST 29 13:25 (AFTER FINISHING THE FETCH.C)
+    You've finished the fetch.c file. The comment system improved, macros added and the code has become cleaner after the function naming changes.
 
-Hi Mert,
-
-You've finished the fetch.c file. The comment system improved, macros added and the code has become cleaner after the function naming changes.
+    Do the same to the dfetch.c file.
+    ```
+}
