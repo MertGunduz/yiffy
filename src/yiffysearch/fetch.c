@@ -57,6 +57,8 @@ void fetch(char *tags, int page)
     size_t configBytes = fread(buffer, 1, MAX_BUFFER_SIZE - 1, config); 
     buffer[configBytes] = '\0';
 
+    fclose(config);
+
     char *token = strtok(buffer, ":");
 
     while (token != NULL) 
@@ -93,6 +95,8 @@ void fetch(char *tags, int page)
     size_t bytesRead = fread(jsonControlContent, 1, CONTENT_SIZE - 1, responseJson);
     jsonControlContent[bytesRead] = '\0';
 
+    fclose(responseJson);
+
     /* Check if the JSON response is empty. */
     if (strcmp(jsonControlContent, "{\"posts\":[]}") == 0) 
     {
@@ -102,16 +106,11 @@ void fetch(char *tags, int page)
         }
         
         free(jsonControlContent);
-        fclose(responseJson);
 
         remove("posts.json");
         
         exit(EXIT_FAILURE);
     }
-
-    /* Close the opened files for further processes. */
-    fclose(config);
-    fclose(responseJson);
 
     /* Free the memory. */
     free(jsonControlContent);
@@ -141,8 +140,12 @@ static void output()
     size_t bytesRead = fread(jsonContent, 1, CONTENT_SIZE - 1, jsonFile);
     jsonContent[bytesRead] = '\0';
     
+    fclose(jsonFile);
+
     /* Parse the JSON response data. */
     cJSON *root = cJSON_Parse(jsonContent);
+
+    free(jsonContent);
 
     if (root == NULL) 
     {
@@ -154,7 +157,6 @@ static void output()
         }
     
         jsonParseErrorMessage();
-        free(jsonContent);
         cJSON_Delete(root);
         exit(EXIT_FAILURE);
     }
@@ -189,12 +191,6 @@ static void output()
             }
         }
     }
-
-    /* Close the files. */
-    fclose(jsonFile);
-
-    /* Free memory. */
-    free(jsonContent);
 
     /* Clean up cJSON object. */
     cJSON_Delete(root);
