@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['reallocate_173',['reallocate',['../d1/d07/structinternal__hooks.html#a5dd48d5c2f2b1cf4f6eec5df6205e15c',1,'internal_hooks']]],
-  ['request_174',['request',['../dd/d23/request_8c.html#ad65df21b2e0f461e0d44e9a281be863c',1,'request(char *tagString):&#160;request.c'],['../dc/d88/yiffy-search_8h.html#ad65df21b2e0f461e0d44e9a281be863c',1,'request(char *tagString):&#160;request.c']]]
+  ['main_197',['main',['../dc/dc0/yiffy_8c.html#a0ddf1224851353fc92bfbff6f499fa97',1,'yiffy.c']]],
+  ['malloc_5ffn_198',['malloc_fn',['../dc/d55/structcJSON__Hooks.html#a71693d8b277a80a1faf8758b9589d670',1,'cJSON_Hooks']]],
+  ['mallocerrormessage_199',['mallocErrorMessage',['../d2/d6e/mallocErrorMessage_8c.html#aba87d83a1261ea74ac3a65cb8878efba',1,'mallocErrorMessage():&#160;mallocErrorMessage.c'],['../de/d35/yiffy-messages_8h.html#aba87d83a1261ea74ac3a65cb8878efba',1,'mallocErrorMessage():&#160;mallocErrorMessage.c']]]
 ];

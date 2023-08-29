@@ -20,7 +20,7 @@ static int totalDownloads = 0;
 /// @brief sends request to e621 with the specified tags and takes response
 /// @param tagString
 /// @param page
-void dfetch(char *tagString, int page)
+void dfetch(char *tags, int page)
 {
     /* file path and buffer */
     char file_path[MAX_FILE_PATH];
@@ -66,7 +66,7 @@ void dfetch(char *tagString, int page)
     }
 
     /* download the response from e621/926 API */
-    aria2Download(tagString, page, isNsfw);
+    aria2Download(tags, page, isNsfw);
 
     /* check if the file exists */
     FILE *responseJson = fopen("posts.json", "r");

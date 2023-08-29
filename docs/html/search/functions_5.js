@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['main_168',['main',['../dc/dc0/yiffy_8c.html#a0ddf1224851353fc92bfbff6f499fa97',1,'yiffy.c']]],
-  ['malloc_5ffn_169',['malloc_fn',['../dc/d55/structcJSON__Hooks.html#a71693d8b277a80a1faf8758b9589d670',1,'cJSON_Hooks']]]
+  ['fetch_192',['fetch',['../d1/d14/fetch_8c.html#a396e718624937eb224c416888d762eed',1,'fetch(char *tags, int page):&#160;fetch.c'],['../dc/d88/yiffy-search_8h.html#a396e718624937eb224c416888d762eed',1,'fetch(char *tags, int page):&#160;fetch.c']]],
+  ['fileopenerrormessage_193',['fileOpenErrorMessage',['../d7/d7c/fileOpenErrorMessage_8c.html#a76d169150f8b831d6d8fa432530eb37a',1,'fileOpenErrorMessage(FILE *file):&#160;fileOpenErrorMessage.c'],['../de/d35/yiffy-messages_8h.html#a76d169150f8b831d6d8fa432530eb37a',1,'fileOpenErrorMessage(FILE *file):&#160;fileOpenErrorMessage.c']]],
+  ['fprintfh_194',['fprintfH',['../dd/d16/fprintfH_8c.html#af368c6ede13d6b3044f2875601238d7e',1,'fprintfH(FILE *file, char *content):&#160;fprintfH.c'],['../d8/ddd/yiffy-ui_8h.html#af368c6ede13d6b3044f2875601238d7e',1,'fprintfH(FILE *file, char *content):&#160;fprintfH.c']]]
 ];

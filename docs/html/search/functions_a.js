@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['unrecognizedargumentmessage_180',['unrecognizedArgumentMessage',['../dc/db5/unrecognizedArgumentMessage_8c.html#ab77033d8b672ad2a270de7f823842fe6',1,'unrecognizedArgumentMessage(char *argument):&#160;unrecognizedArgumentMessage.c'],['../de/d35/yiffy-messages_8h.html#ab77033d8b672ad2a270de7f823842fe6',1,'unrecognizedArgumentMessage(char *argument):&#160;unrecognizedArgumentMessage.c']]]
+  ['onoffmessage_203',['onOffMessage',['../d3/d67/onOffMessage_8c.html#a98ea61cc699732ffc205c5cce8674455',1,'onOffMessage(char *argument):&#160;onOffMessage.c'],['../de/d35/yiffy-messages_8h.html#a98ea61cc699732ffc205c5cce8674455',1,'onOffMessage(char *argument):&#160;onOffMessage.c']]]
 ];

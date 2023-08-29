@@ -22,8 +22,8 @@
 
 #define BAD_SYSTEM_FUNC_CALL -1
 
-void dfetch(char *tagString, int page);
-void fetch(char *tagString, int page);
+void dfetch(char *tags, int page);
+void fetch(char *tags, int page);
 void aria2Download(char *tags, int page, bool isNsfw);
 
 #endif /* YIFFY_SEARCH_H */

@@ -1,0 +1,111 @@
+\hypertarget{fetch_8c}{}\doxysection{src/yiffysearch/fetch.c File Reference}
+\label{fetch_8c}\index{src/yiffysearch/fetch.c@{src/yiffysearch/fetch.c}}
+
+
+Sends request to e621-\/e926 with the specified tags by user and outputs URLs.  
+
+
+{\ttfamily \#include \char`\"{}yiffy-\/search.\+h\char`\"{}}\newline
+Include dependency graph for fetch.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d89/fetch_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{fetch_8c_a263efd24d550124313df51247f07457a}{MAX\+\_\+\+FILE\+\_\+\+PATH}}~256
+\begin{DoxyCompactList}\small\item\em This macro is used for the home directory file path size. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{fetch_8c_ad4d796b98c583d49e83adabd74a63bf6}{MAX\+\_\+\+BUFFER\+\_\+\+SIZE}}~512
+\begin{DoxyCompactList}\small\item\em This macro is used to set the size of an array which reads the config file. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{fetch_8c_aff9b7f6d81297248bf0ad06d725c8cbb}{CONTENT\+\_\+\+SIZE}}~262144
+\begin{DoxyCompactList}\small\item\em This macro is used to set the size of an array which reads the JSON file that comes as a response from the API. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{fetch_8c_a396e718624937eb224c416888d762eed}{fetch}} (char $\ast$tags, int page)
+\begin{DoxyCompactList}\small\item\em Reads the configuration file, sets the options and sends a request to e621-\/e926. After taking the response, it calls the output function to show the URLs to user. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Sends request to e621-\/e926 with the specified tags by user and outputs URLs. 
+
+This file is used to send a request to the fetch data from API and output the post URLs. Fetch function is used to check the configuration files and send request to the API. After that it takes the response and checks if JSON file is in the right format. Output function is used to read and parse the JSON file. Also outputs the URLs to the terminal or redirected path.
+
+\begin{DoxyAuthor}{Author}
+Mehmet Mert Gunduz
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+21/07/2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{fetch_8c_aff9b7f6d81297248bf0ad06d725c8cbb}\label{fetch_8c_aff9b7f6d81297248bf0ad06d725c8cbb}} 
+\index{fetch.c@{fetch.c}!CONTENT\_SIZE@{CONTENT\_SIZE}}
+\index{CONTENT\_SIZE@{CONTENT\_SIZE}!fetch.c@{fetch.c}}
+\doxysubsubsection{\texorpdfstring{CONTENT\_SIZE}{CONTENT\_SIZE}}
+{\footnotesize\ttfamily \#define CONTENT\+\_\+\+SIZE~262144}
+
+
+
+This macro is used to set the size of an array which reads the JSON file that comes as a response from the API. 
+
+
+
+Definition at line 17 of file fetch.\+c.
+
+\mbox{\Hypertarget{fetch_8c_ad4d796b98c583d49e83adabd74a63bf6}\label{fetch_8c_ad4d796b98c583d49e83adabd74a63bf6}} 
+\index{fetch.c@{fetch.c}!MAX\_BUFFER\_SIZE@{MAX\_BUFFER\_SIZE}}
+\index{MAX\_BUFFER\_SIZE@{MAX\_BUFFER\_SIZE}!fetch.c@{fetch.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_BUFFER\_SIZE}{MAX\_BUFFER\_SIZE}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+BUFFER\+\_\+\+SIZE~512}
+
+
+
+This macro is used to set the size of an array which reads the config file. 
+
+
+
+Definition at line 16 of file fetch.\+c.
+
+\mbox{\Hypertarget{fetch_8c_a263efd24d550124313df51247f07457a}\label{fetch_8c_a263efd24d550124313df51247f07457a}} 
+\index{fetch.c@{fetch.c}!MAX\_FILE\_PATH@{MAX\_FILE\_PATH}}
+\index{MAX\_FILE\_PATH@{MAX\_FILE\_PATH}!fetch.c@{fetch.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_FILE\_PATH}{MAX\_FILE\_PATH}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+FILE\+\_\+\+PATH~256}
+
+
+
+This macro is used for the home directory file path size. 
+
+
+
+Definition at line 15 of file fetch.\+c.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{fetch_8c_a396e718624937eb224c416888d762eed}\label{fetch_8c_a396e718624937eb224c416888d762eed}} 
+\index{fetch.c@{fetch.c}!fetch@{fetch}}
+\index{fetch@{fetch}!fetch.c@{fetch.c}}
+\doxysubsubsection{\texorpdfstring{fetch()}{fetch()}}
+{\footnotesize\ttfamily void fetch (\begin{DoxyParamCaption}\item[{char $\ast$}]{tags,  }\item[{int}]{page }\end{DoxyParamCaption})}
+
+
+
+Reads the configuration file, sets the options and sends a request to e621-\/e926. After taking the response, it calls the output function to show the URLs to user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tags} & These are the e621-\/e926 tags prompted by the user as an argument value. Example\+: yiffy --fetch \char`\"{}anthro+fur+male+smile\char`\"{}. \\
+\hline
+{\em page} & This is the value that is passed to the API to get results from the specified pages. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 31 of file fetch.\+c.
+

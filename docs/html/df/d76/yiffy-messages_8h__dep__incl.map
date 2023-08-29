@@ -1,20 +1,27 @@
 <map id="src/yiffymessages/yiffy&#45;messages.h" name="src/yiffymessages/yiffy&#45;messages.h">
-<area shape="rect" id="node1" title="the message output header for yiffy" alt="" coords="1167,5,1340,47"/>
-<area shape="rect" id="node2" href="$dc/dc0/yiffy_8c.html" title="the main application file of yiffy" alt="" coords="1793,191,1903,218"/>
-<area shape="rect" id="node3" href="$d9/d23/argcErrorMessage_8c.html" title="evaluates the argument count and gives information if it is not in the requested format" alt="" coords="196,95,399,136"/>
-<area shape="rect" id="node4" href="$d3/d8c/extraArgumentErrorMessage_8c.html" title="outputs the format for the argument when there is additional argument" alt="" coords="423,95,665,136"/>
-<area shape="rect" id="node5" href="$d7/d7c/fileOpenErrorMessage_8c.html" title="it shows some information message to give user solutions" alt="" coords="690,95,889,136"/>
-<area shape="rect" id="node6" href="$df/d62/homeNotFoundErrorMessage_8c.html" title="outputs the home not found error when application can not access the $home environment variable" alt="" coords="913,95,1117,136"/>
-<area shape="rect" id="node7" href="$d9/da4/noArgumentValueMessage_8c.html" title="outputs the correct prompt format when there is no argument value" alt="" coords="1141,95,1365,136"/>
-<area shape="rect" id="node8" href="$de/d81/noJsonResponseErrorMessage_8c.html" title="outputs the error when there is no json file" alt="" coords="1389,95,1576,136"/>
-<area shape="rect" id="node9" href="$d3/d67/onOffMessage_8c.html" title="outputs the correct argument value (on/off) for specified arguments" alt="" coords="1600,102,1848,129"/>
-<area shape="rect" id="node10" href="$dc/db5/unrecognizedArgumentMessage_8c.html" title="gives information and outputs the command prompted by the user when it is not defined as a valid argu..." alt="" coords="1873,95,2103,136"/>
-<area shape="rect" id="node11" href="$dc/d88/yiffy-search_8h.html" title="the general search and use header for yiffy" alt="" coords="21,95,171,136"/>
-<area shape="rect" id="node13" href="$d2/d2d/yiffy-text-menus_8h.html" title="the text based menu header for yiffy (show menu related part [showHelpMenu] [showVersionMenu] [showGi..." alt="" coords="2179,95,2325,136"/>
-<area shape="rect" id="node12" href="$dd/d23/request_8c.html" title=" " alt="" coords="5,191,187,218"/>
-<area shape="rect" id="node14" href="$dd/d89/showConfig_8c.html" title="shows the configurations" alt="" coords="2432,184,2576,225"/>
-<area shape="rect" id="node15" href="$df/d72/showGithub_8c.html" title="shows the github url" alt="" coords="2600,184,2744,225"/>
-<area shape="rect" id="node16" href="$d5/d5e/showHelp_8c.html" title="shows help menu" alt="" coords="1928,184,2072,225"/>
-<area shape="rect" id="node17" href="$d8/d26/showVersion_8c.html" title="shows the version" alt="" coords="2096,184,2240,225"/>
-<area shape="rect" id="node18" href="$de/d97/showWebsite_8c.html" title="shows the website url" alt="" coords="2264,184,2408,225"/>
+<area shape="rect" id="node1" title="the message output header for yiffy" alt="" coords="1982,5,2155,47"/>
+<area shape="rect" id="node2" href="$dc/dc0/yiffy_8c.html" title="the main application file of yiffy" alt="" coords="3181,191,3292,218"/>
+<area shape="rect" id="node3" href="$d9/d23/argcErrorMessage_8c.html" title="evaluates the argument count and gives information if it is not in the requested format" alt="" coords="447,95,650,136"/>
+<area shape="rect" id="node4" href="$d6/d23/badSystemFuncErrorMessage_8c.html" title="it shows some information when system function didn&#39;t worked" alt="" coords="675,95,892,136"/>
+<area shape="rect" id="node5" href="$d8/dae/cjsonPtrErrorMessage_8c.html" title="it shows some information when cjson root gives error" alt="" coords="916,95,1112,136"/>
+<area shape="rect" id="node6" href="$d3/d8c/extraArgumentErrorMessage_8c.html" title="outputs the format for the argument when there is additional argument" alt="" coords="1137,95,1379,136"/>
+<area shape="rect" id="node7" href="$d7/d7c/fileOpenErrorMessage_8c.html" title="it shows some information message to give user solutions" alt="" coords="1404,95,1603,136"/>
+<area shape="rect" id="node8" href="$df/d62/homeNotFoundErrorMessage_8c.html" title="outputs the home not found error when application can not access the $home environment variable" alt="" coords="1627,95,1831,136"/>
+<area shape="rect" id="node9" href="$d9/d20/jsonParseErrorMessage_8c.html" title="outputs the error message when application can not parse the json content" alt="" coords="1855,95,2061,136"/>
+<area shape="rect" id="node10" href="$d2/d6e/mallocErrorMessage_8c.html" title="it shows some information when yiffy cannot allocate memory" alt="" coords="2085,95,2273,136"/>
+<area shape="rect" id="node11" href="$d9/da4/noArgumentValueMessage_8c.html" title="outputs the correct prompt format when there is no argument value" alt="" coords="2298,95,2522,136"/>
+<area shape="rect" id="node12" href="$de/d81/noJsonResponseErrorMessage_8c.html" title="outputs the error when there is no json file" alt="" coords="2546,95,2733,136"/>
+<area shape="rect" id="node13" href="$d7/d62/noResultsFoundErrorMessage_8c.html" title="outputs the error when there is no response from the API" alt="" coords="2757,95,2965,136"/>
+<area shape="rect" id="node14" href="$d3/d67/onOffMessage_8c.html" title="outputs the correct argument value (on/off) for specified arguments" alt="" coords="2989,102,3237,129"/>
+<area shape="rect" id="node15" href="$dc/db5/unrecognizedArgumentMessage_8c.html" title="gives information and outputs the command prompted by the user when it is not defined as a valid argu..." alt="" coords="3261,95,3492,136"/>
+<area shape="rect" id="node16" href="$dc/d88/yiffy-search_8h.html" title="the general search and use header for yiffy" alt="" coords="272,95,423,136"/>
+<area shape="rect" id="node20" href="$d2/d2d/yiffy-text-menus_8h.html" title="the text based menu header for yiffy (show menu related part [showHelpMenu] [showVersionMenu] [showGi..." alt="" coords="3567,95,3714,136"/>
+<area shape="rect" id="node17" href="$d0/d8c/aria2Download_8c.html" title="downloads the API response by using aria2c, works with a system call" alt="" coords="5,191,236,218"/>
+<area shape="rect" id="node18" href="$d3/dd2/dfetch_8c.html" title="sends request to e621 with the specified tags and takes response" alt="" coords="261,191,434,218"/>
+<area shape="rect" id="node19" href="$d1/d14/fetch_8c.html" title="Sends request to e621&#45;e926 with the specified tags by user and outputs URLs." alt="" coords="458,191,623,218"/>
+<area shape="rect" id="node21" href="$dd/d89/showConfig_8c.html" title="shows the configurations" alt="" coords="3485,184,3629,225"/>
+<area shape="rect" id="node22" href="$df/d72/showGithub_8c.html" title="shows the github url" alt="" coords="3653,184,3797,225"/>
+<area shape="rect" id="node23" href="$d5/d5e/showHelp_8c.html" title="shows help menu" alt="" coords="3821,184,3965,225"/>
+<area shape="rect" id="node24" href="$d8/d26/showVersion_8c.html" title="shows the version" alt="" coords="3989,184,4133,225"/>
+<area shape="rect" id="node25" href="$de/d97/showWebsite_8c.html" title="shows the website url" alt="" coords="3317,184,3461,225"/>
 </map>

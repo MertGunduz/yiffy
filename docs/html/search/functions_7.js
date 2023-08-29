@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['onoffmessage_172',['onOffMessage',['../d3/d67/onOffMessage_8c.html#a98ea61cc699732ffc205c5cce8674455',1,'onOffMessage(char *argument):&#160;onOffMessage.c'],['../de/d35/yiffy-messages_8h.html#a98ea61cc699732ffc205c5cce8674455',1,'onOffMessage(char *argument):&#160;onOffMessage.c']]]
+  ['jsonparseerrormessage_196',['jsonParseErrorMessage',['../d9/d20/jsonParseErrorMessage_8c.html#a3d6b6f0d495570a56108ebe81a9135e0',1,'jsonParseErrorMessage():&#160;jsonParseErrorMessage.c'],['../de/d35/yiffy-messages_8h.html#a3d6b6f0d495570a56108ebe81a9135e0',1,'jsonParseErrorMessage():&#160;jsonParseErrorMessage.c']]]
 ];

@@ -100,8 +100,8 @@ $(function() {
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">if</span> (configurationFile == NULL)</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="../../d7/d7c/fileOpenErrorMessage_8c.html#a58d7e894ac05a63490698795d25bfe9a">fileOpenErrorMessage</a>();</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        exit(1);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="../../d7/d7c/fileOpenErrorMessage_8c.html#a76d169150f8b831d6d8fa432530eb37a">fileOpenErrorMessage</a>(configurationFile);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        exit(EXIT_FAILURE);</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">/* read and the content */</span></div>
@@ -118,9 +118,11 @@ $(function() {
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        fprintf(stdout, <span class="stringliteral">&quot;- %s\n&quot;</span>, token);</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        token = strtok(NULL, <span class="stringliteral">&quot;:&quot;</span>);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    fclose(configurationFile);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
 <div class="ttc" id="acjson_8h_html_aff2566f4c366b48d73479bef43ee4d2e"><div class="ttname"><a href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a></div><div class="ttdeci">char * buffer</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d56/cjson_8h_source.html#l00163">cjson.h:163</a></div></div>
-<div class="ttc" id="afileOpenErrorMessage_8c_html_a58d7e894ac05a63490698795d25bfe9a"><div class="ttname"><a href="../../d7/d7c/fileOpenErrorMessage_8c.html#a58d7e894ac05a63490698795d25bfe9a">fileOpenErrorMessage</a></div><div class="ttdeci">void fileOpenErrorMessage()</div><div class="ttdoc">it shows some information message to give user solutions</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d7c/fileOpenErrorMessage_8c_source.html#l00014">fileOpenErrorMessage.c:14</a></div></div>
+<div class="ttc" id="afileOpenErrorMessage_8c_html_a76d169150f8b831d6d8fa432530eb37a"><div class="ttname"><a href="../../d7/d7c/fileOpenErrorMessage_8c.html#a76d169150f8b831d6d8fa432530eb37a">fileOpenErrorMessage</a></div><div class="ttdeci">void fileOpenErrorMessage(FILE *file)</div><div class="ttdoc">it shows some information message to give user solutions</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d7c/fileOpenErrorMessage_8c_source.html#l00014">fileOpenErrorMessage.c:14</a></div></div>
 <div class="ttc" id="afprintfH_8c_html_af368c6ede13d6b3044f2875601238d7e"><div class="ttname"><a href="../../dd/d16/fprintfH_8c.html#af368c6ede13d6b3044f2875601238d7e">fprintfH</a></div><div class="ttdeci">void fprintfH(FILE *file, char *content)</div><div class="ttdoc">creates the text header for show menus</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d16/fprintfH_8c_source.html#l00014">fprintfH.c:14</a></div></div>
 <div class="ttc" id="ahomeNotFoundErrorMessage_8c_html_a28e66284663b33a9f8d102c306dff47a"><div class="ttname"><a href="../../df/d62/homeNotFoundErrorMessage_8c.html#a28e66284663b33a9f8d102c306dff47a">homeNotFoundErrorMessage</a></div><div class="ttdeci">void homeNotFoundErrorMessage()</div><div class="ttdoc">outputs the home not found error when application can not access the $home environment variable</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d62/homeNotFoundErrorMessage_8c_source.html#l00014">homeNotFoundErrorMessage.c:14</a></div></div>
 <div class="ttc" id="ashowConfig_8c_html_a263efd24d550124313df51247f07457a"><div class="ttname"><a href="../../dd/d89/showConfig_8c.html#a263efd24d550124313df51247f07457a">MAX_FILE_PATH</a></div><div class="ttdeci">#define MAX_FILE_PATH</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d89/showConfig_8c_source.html#l00011">showConfig.c:11</a></div></div>

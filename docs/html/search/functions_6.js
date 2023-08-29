@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['noargumentvaluemessage_170',['noArgumentValueMessage',['../d9/da4/noArgumentValueMessage_8c.html#a81c685b666239e7dfe3cc98ab6249b55',1,'noArgumentValueMessage(char *argument):&#160;noArgumentValueMessage.c'],['../de/d35/yiffy-messages_8h.html#a81c685b666239e7dfe3cc98ab6249b55',1,'noArgumentValueMessage(char *argument):&#160;noArgumentValueMessage.c']]],
-  ['nojsonresponseerrormessage_171',['noJsonResponseErrorMessage',['../de/d81/noJsonResponseErrorMessage_8c.html#adb9f6e005070bc080ea4f4499537b735',1,'noJsonResponseErrorMessage():&#160;noJsonResponseErrorMessage.c'],['../de/d35/yiffy-messages_8h.html#adb9f6e005070bc080ea4f4499537b735',1,'noJsonResponseErrorMessage():&#160;noJsonResponseErrorMessage.c']]]
+  ['homenotfounderrormessage_195',['homeNotFoundErrorMessage',['../df/d62/homeNotFoundErrorMessage_8c.html#a28e66284663b33a9f8d102c306dff47a',1,'homeNotFoundErrorMessage():&#160;homeNotFoundErrorMessage.c'],['../de/d35/yiffy-messages_8h.html#a28e66284663b33a9f8d102c306dff47a',1,'homeNotFoundErrorMessage():&#160;homeNotFoundErrorMessage.c']]]
 ];
