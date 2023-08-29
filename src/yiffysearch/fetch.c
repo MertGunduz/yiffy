@@ -30,7 +30,7 @@ static int totalDownloads = 0;
 */
 void fetch(char *tags, int page)
 {
-    char file_path[MAX_FILE_PATH];
+    char filePath[MAX_FILE_PATH];
     char buffer[MAX_BUFFER_SIZE];
 
     bool isNsfw = false;
@@ -43,10 +43,10 @@ void fetch(char *tags, int page)
         exit(EXIT_FAILURE);
     }
 
-    sprintf(file_path, "%s/.yiffy/yiffy-config.txt", home);
+    sprintf(filePath, "%s/.yiffy/yiffy-config.txt", home);
 
     /* Read the configuration file (home/user/.yiffy/yiffy-config.txt) to execute the wanted process. */
-    FILE *config = fopen(file_path, "r");
+    FILE *config = fopen(filePath, "r");
 
     if (config == NULL) 
     {
@@ -146,11 +146,11 @@ static void output()
 
     if (root == NULL) 
     {
-        const char *error_ptr = cJSON_GetErrorPtr();
+        const char *errorPtr = cJSON_GetErrorPtr();
     
-        if (error_ptr != NULL) 
+        if (errorPtr != NULL) 
         {
-            cjsonPtrErrorMessage(error_ptr);
+            cjsonPtrErrorMessage(errorPtr);
         }
     
         jsonParseErrorMessage();
@@ -160,28 +160,28 @@ static void output()
     }
 
     /* Navigate to the posts array. */
-    cJSON *posts_array = cJSON_GetObjectItemCaseSensitive(root, "posts");
+    cJSON *postsArray = cJSON_GetObjectItemCaseSensitive(root, "posts");
 
-    if (cJSON_IsArray(posts_array)) 
+    if (cJSON_IsArray(postsArray)) 
     {
-        int num_posts = cJSON_GetArraySize(posts_array);
+        int totalPosts = cJSON_GetArraySize(postsArray);
 
         // Iterate through the posts array.
-        for (int i = 0; i < num_posts; i++) 
+        for (int i = 0; i < totalPosts; i++) 
         {
-            cJSON *post_obj = cJSON_GetArrayItem(posts_array, i);
-            cJSON *file_obj = cJSON_GetObjectItemCaseSensitive(post_obj, "file") ;
+            cJSON *post = cJSON_GetArrayItem(postsArray, i);
+            cJSON *file = cJSON_GetObjectItemCaseSensitive(post, "file") ;
                 
-            if (cJSON_IsObject(file_obj)) 
+            if (cJSON_IsObject(file)) 
             {
-                cJSON *fileUrlObj = cJSON_GetObjectItemCaseSensitive(file_obj, "url");
+                cJSON *fileUrlObj = cJSON_GetObjectItemCaseSensitive(file, "url");
 
                 /* Check if the url field exists and is a string. */
                 if (cJSON_IsString(fileUrlObj)) 
                 {
-                    const char *file_url = fileUrlObj->valuestring;
+                    const char *fileURL = fileUrlObj->valuestring;
                     
-                    fprintf(stdout, "%s\n", file_url);
+                    fprintf(stdout, "%s\n", fileURL);
 
                     /* Increase the total downloads, this is used to control if any posts downloaded. */
                     totalDownloads++;

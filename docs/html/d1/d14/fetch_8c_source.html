@@ -84,7 +84,7 @@ $(function() {
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
 <div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="../../d1/d14/fetch_8c.html#a396e718624937eb224c416888d762eed">   31</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d1/d14/fetch_8c.html#a396e718624937eb224c416888d762eed">fetch</a>(<span class="keywordtype">char</span> *tags, <span class="keywordtype">int</span> page)</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">char</span> file_path[<a class="code" href="../../d1/d14/fetch_8c.html#a263efd24d550124313df51247f07457a">MAX_FILE_PATH</a>];</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">char</span> filePath[<a class="code" href="../../d1/d14/fetch_8c.html#a263efd24d550124313df51247f07457a">MAX_FILE_PATH</a>];</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">char</span> <a class="code" href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a>[<a class="code" href="../../d1/d14/fetch_8c.html#ad4d796b98c583d49e83adabd74a63bf6">MAX_BUFFER_SIZE</a>];</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">bool</span> isNsfw = <span class="keyword">false</span>;</div>
@@ -97,10 +97,10 @@ $(function() {
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        exit(EXIT_FAILURE);</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    sprintf(file_path, <span class="stringliteral">&quot;%s/.yiffy/yiffy-config.txt&quot;</span>, home);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    sprintf(filePath, <span class="stringliteral">&quot;%s/.yiffy/yiffy-config.txt&quot;</span>, home);</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">/* Read the configuration file (home/user/.yiffy/yiffy-config.txt) to execute the wanted process. */</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    FILE *config = fopen(file_path, <span class="stringliteral">&quot;r&quot;</span>);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    FILE *config = fopen(filePath, <span class="stringliteral">&quot;r&quot;</span>);</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">if</span> (config == NULL) </div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    {</div>
@@ -197,11 +197,11 @@ $(function() {
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordflow">if</span> (root == NULL) </div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    {</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">char</span> *error_ptr = cJSON_GetErrorPtr();</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">char</span> *errorPtr = cJSON_GetErrorPtr();</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    </div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <span class="keywordflow">if</span> (error_ptr != NULL) </div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <span class="keywordflow">if</span> (errorPtr != NULL) </div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        {</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            <a class="code" href="../../d8/dae/cjsonPtrErrorMessage_8c.html#af56a19a2187269965a612970ba59ecb5">cjsonPtrErrorMessage</a>(error_ptr);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            <a class="code" href="../../d8/dae/cjsonPtrErrorMessage_8c.html#af56a19a2187269965a612970ba59ecb5">cjsonPtrErrorMessage</a>(errorPtr);</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        }</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    </div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <a class="code" href="../../d9/d20/jsonParseErrorMessage_8c.html#a3d6b6f0d495570a56108ebe81a9135e0">jsonParseErrorMessage</a>();</div>
@@ -211,28 +211,28 @@ $(function() {
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    }</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="comment">/* Navigate to the posts array. */</span></div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <a class="code" href="../../db/d68/structcJSON.html">cJSON</a> *posts_array = cJSON_GetObjectItemCaseSensitive(root, <span class="stringliteral">&quot;posts&quot;</span>);</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <a class="code" href="../../db/d68/structcJSON.html">cJSON</a> *postsArray = cJSON_GetObjectItemCaseSensitive(root, <span class="stringliteral">&quot;posts&quot;</span>);</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordflow">if</span> (cJSON_IsArray(posts_array)) </div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordflow">if</span> (cJSON_IsArray(postsArray)) </div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    {</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <span class="keywordtype">int</span> num_posts = cJSON_GetArraySize(posts_array);</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <span class="keywordtype">int</span> totalPosts = cJSON_GetArraySize(postsArray);</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <span class="comment">// Iterate through the posts array.</span></div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_posts; i++) </div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; totalPosts; i++) </div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        {</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            <a class="code" href="../../db/d68/structcJSON.html">cJSON</a> *post_obj = cJSON_GetArrayItem(posts_array, i);</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            <a class="code" href="../../db/d68/structcJSON.html">cJSON</a> *file_obj = cJSON_GetObjectItemCaseSensitive(post_obj, <span class="stringliteral">&quot;file&quot;</span>) ;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            <a class="code" href="../../db/d68/structcJSON.html">cJSON</a> *post = cJSON_GetArrayItem(postsArray, i);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            <a class="code" href="../../db/d68/structcJSON.html">cJSON</a> *file = cJSON_GetObjectItemCaseSensitive(post, <span class="stringliteral">&quot;file&quot;</span>) ;</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                </div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            <span class="keywordflow">if</span> (cJSON_IsObject(file_obj)) </div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            <span class="keywordflow">if</span> (cJSON_IsObject(file)) </div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            {</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                <a class="code" href="../../db/d68/structcJSON.html">cJSON</a> *fileUrlObj = cJSON_GetObjectItemCaseSensitive(file_obj, <span class="stringliteral">&quot;url&quot;</span>);</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                <a class="code" href="../../db/d68/structcJSON.html">cJSON</a> *fileUrlObj = cJSON_GetObjectItemCaseSensitive(file, <span class="stringliteral">&quot;url&quot;</span>);</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160; </div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                <span class="comment">/* Check if the url field exists and is a string. */</span></div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                <span class="keywordflow">if</span> (cJSON_IsString(fileUrlObj)) </div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                {</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">char</span> *file_url = fileUrlObj-&gt;<a class="code" href="../../db/d68/structcJSON.html#ad43f8de2571e504c4c5ce0a36990e6e1">valuestring</a>;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">char</span> *fileURL = fileUrlObj-&gt;<a class="code" href="../../db/d68/structcJSON.html#ad43f8de2571e504c4c5ce0a36990e6e1">valuestring</a>;</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                    </div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                    fprintf(stdout, <span class="stringliteral">&quot;%s\n&quot;</span>, file_url);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                    fprintf(stdout, <span class="stringliteral">&quot;%s\n&quot;</span>, fileURL);</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                    <span class="comment">/* Increase the total downloads, this is used to control if any posts downloaded. */</span></div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                    totalDownloads++;</div>

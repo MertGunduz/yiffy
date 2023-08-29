@@ -8,4 +8,13 @@ ID SEARCH:
 https://e621.net/posts/4255184.json
 
 SEARCH WITH LIMIT AND PAGE:
-https://e621.net/posts.json?tags=pee&limit=10&page=2
+https://e621.net/posts.json?tags=pee&limit=10&page=
+
+
+================================
+
+NEW NOTE: AUGUST 29 13:25 (AFTER FINISHING THE FETCH.C)
+
+Hi Mert,
+
+You've finished the fetch.c file. The comment system improved, macros added and the code has become cleaner after the function naming changes.
