@@ -12,9 +12,9 @@
  * @date 21/07/2023
 */
 
-#define MAX_FILE_PATH 256 ///< This macro is used for the home directory file path size.
-#define MAX_BUFFER_SIZE 512 ///< This macro is used to set the size of an array which reads the config file.
-#define CONTENT_SIZE 262144 ///< This macro is used to set the size of an array which reads the JSON file that comes as a response from the API.
+#define MAX_FILE_PATH 256 ///< This macro is used to set the default size for getting the home directory file.
+#define MAX_BUFFER_SIZE 512 ///< This macro is used to set the default size for reading the config file
+#define CONTENT_SIZE 262144 ///< This macro is used to set the default size for reading the JSON file that comes as a response from the API.
 
 #include "yiffy-search.h"
 
