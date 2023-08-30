@@ -18,7 +18,7 @@
 
 #include "yiffy-search.h"
 
-static void output();
+static void output(char *jsonContent);
 
 static int totalDownloads = 0;
 
@@ -113,36 +113,15 @@ void fetch(char *tags, int page)
         exit(EXIT_FAILURE);
     }
 
-    /* Free the memory. */
-    free(jsonControlContent);
-
     /* Output the URLs by using the current JSON file. */
-    output();
+    output(jsonControlContent);
 }
 
 /**
  * @brief Reads and parses the JSON file. Also outputs the URLs to the terminal or redirected path.
 */
-static void output()
+static void output(char *jsonContent)
 {
-    /* Allocate memory for JSON file. */
-    char *jsonContent = (char*)malloc(CONTENT_SIZE * sizeof(char));
-
-    /* Read the json file. */
-    FILE *jsonFile = fopen("posts.json", "r");
-        
-    if (jsonFile == NULL)
-    {
-        fileOpenErrorMessage(jsonFile);
-        exit(EXIT_FAILURE);
-    }
-
-    /* read the file and return bytes*/
-    size_t bytesRead = fread(jsonContent, 1, CONTENT_SIZE - 1, jsonFile);
-    jsonContent[bytesRead] = '\0';
-    
-    fclose(jsonFile);
-
     /* Parse the JSON response data. */
     cJSON *root = cJSON_Parse(jsonContent);
 
