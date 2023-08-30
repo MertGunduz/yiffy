@@ -2,11 +2,12 @@
 \label{aria2Download_8c}\index{src/yiffysearch/aria2Download.c@{src/yiffysearch/aria2Download.c}}
 
 
-downloads the API response by using aria2c, works with a system call  
+Downloads the JSON file by using aria2c, works with the system function.  
 
 
 {\ttfamily \#include \char`\"{}yiffy-\/search.\+h\char`\"{}}\newline
-Include dependency graph for aria2\+Download.\+c\+:\nopagebreak
+Include dependency graph for aria2\+Download.\+c\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -21,7 +22,9 @@ void \mbox{\hyperlink{aria2Download_8c_aebab16cc92cc263d9665d22fc85b61a1}{aria2\
 
 
 \doxysubsection{Detailed Description}
-downloads the API response by using aria2c, works with a system call 
+Downloads the JSON file by using aria2c, works with the system function. 
+
+This file is used to set the request string by checking is\+NSFW parameter, and downloads the JSON file from e621/e926 API by using aria2c.
 
 \begin{DoxyAuthor}{Author}
 Mehmet Mert Gunduz
@@ -44,15 +47,14 @@ downloads the API response by using aria2c, works with a system call
 
 
 \begin{DoxyParams}{Parameters}
-{\em tags} & \\
+{\em tags} & These are the e621-\/e926 tags prompted by the user as an argument value. Example\+: yiffy --fetch \char`\"{}anthro+fur+male+smile\char`\"{}. \\
 \hline
-{\em page} & \\
+{\em page} & This is the value that is passed to the API to get results from the specified pages. \\
 \hline
-{\em is\+Nsfw} & ~\newline
- \\
+{\em is\+Nsfw} & This is the boolean value that checks the NSFW option. If true, sets the request string for e621 otherwise sets for e926. \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line 17 of file aria2\+Download.\+c.
+Definition at line 19 of file aria2\+Download.\+c.
 

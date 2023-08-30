@@ -1,7 +1,7 @@
 <map id="src/yiffysearch/yiffy&#45;search.h" name="src/yiffysearch/yiffy&#45;search.h">
 <area shape="rect" id="node1" title="the general search and use header for yiffy" alt="" coords="293,5,444,47"/>
 <area shape="rect" id="node2" href="$dc/dc0/yiffy_8c.html" title="the main application file of yiffy" alt="" coords="5,95,116,121"/>
-<area shape="rect" id="node3" href="$d0/d8c/aria2Download_8c.html" title="downloads the API response by using aria2c, works with a system call" alt="" coords="140,95,371,121"/>
+<area shape="rect" id="node3" href="$d0/d8c/aria2Download_8c.html" title="Downloads the JSON file by using aria2c, works with the system function." alt="" coords="140,95,371,121"/>
 <area shape="rect" id="node4" href="$d3/dd2/dfetch_8c.html" title="sends request to e621 with the specified tags and takes response" alt="" coords="395,95,569,121"/>
 <area shape="rect" id="node5" href="$d1/d14/fetch_8c.html" title="Sends request to e621&#45;e926 with the specified tags by user and outputs URLs." alt="" coords="593,95,758,121"/>
 </map>

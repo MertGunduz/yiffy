@@ -16,7 +16,7 @@
 <area shape="rect" id="node15" href="$dc/db5/unrecognizedArgumentMessage_8c.html" title="gives information and outputs the command prompted by the user when it is not defined as a valid argu..." alt="" coords="3261,95,3492,136"/>
 <area shape="rect" id="node16" href="$dc/d88/yiffy-search_8h.html" title="the general search and use header for yiffy" alt="" coords="272,95,423,136"/>
 <area shape="rect" id="node20" href="$d2/d2d/yiffy-text-menus_8h.html" title="the text based menu header for yiffy (show menu related part [showHelpMenu] [showVersionMenu] [showGi..." alt="" coords="3567,95,3714,136"/>
-<area shape="rect" id="node17" href="$d0/d8c/aria2Download_8c.html" title="downloads the API response by using aria2c, works with a system call" alt="" coords="5,191,236,218"/>
+<area shape="rect" id="node17" href="$d0/d8c/aria2Download_8c.html" title="Downloads the JSON file by using aria2c, works with the system function." alt="" coords="5,191,236,218"/>
 <area shape="rect" id="node18" href="$d3/dd2/dfetch_8c.html" title="sends request to e621 with the specified tags and takes response" alt="" coords="261,191,434,218"/>
 <area shape="rect" id="node19" href="$d1/d14/fetch_8c.html" title="Sends request to e621&#45;e926 with the specified tags by user and outputs URLs." alt="" coords="458,191,623,218"/>
 <area shape="rect" id="node21" href="$dd/d89/showConfig_8c.html" title="shows the configurations" alt="" coords="3485,184,3629,225"/>

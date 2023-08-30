@@ -74,7 +74,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>downloads the API response by using aria2c, works with a system call  
+<p>Downloads the JSON file by using aria2c, works with the system function.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="../../dc/d88/yiffy-search_8h_source.html">yiffy-search.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -82,7 +82,7 @@ Include dependency graph for aria2Download.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d8/dae/aria2Download_8c__incl.png" border="0" usemap="#asrc_2yiffysearch_2aria2Download_8c" alt=""/></div>
 <map name="asrc_2yiffysearch_2aria2Download_8c" id="asrc_2yiffysearch_2aria2Download_8c">
-<area shape="rect" title="downloads the API response by using aria2c, works with a system call" alt="" coords="234,5,465,32"/>
+<area shape="rect" title="Downloads the JSON file by using aria2c, works with the system function." alt="" coords="234,5,465,32"/>
 <area shape="rect" href="../../dc/d88/yiffy-search_8h.html" title="the general search and use header for yiffy" alt="" coords="294,80,405,107"/>
 <area shape="rect" title=" " alt="" coords="92,244,159,271"/>
 <area shape="rect" title=" " alt="" coords="26,162,97,189"/>
@@ -104,7 +104,8 @@ Functions</h2></td></tr>
 <tr class="separator:aebab16cc92cc263d9665d22fc85b61a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>downloads the API response by using aria2c, works with a system call </p>
+<div class="textblock"><p>Downloads the JSON file by using aria2c, works with the system function. </p>
+<p>This file is used to set the request string by checking isNSFW parameter, and downloads the JSON file from e621/e926 API by using aria2c.</p>
 <dl class="section author"><dt>Author</dt><dd>Mehmet Mert Gunduz</dd></dl>
 <dl class="section date"><dt>Date</dt><dd>28/08/2023 </dd></dl>
 
@@ -145,15 +146,14 @@ Functions</h2></td></tr>
 <p>downloads the API response by using aria2c, works with a system call </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">tags</td><td></td></tr>
-    <tr><td class="paramname">page</td><td></td></tr>
-    <tr><td class="paramname">isNsfw</td><td><br  />
- </td></tr>
+    <tr><td class="paramname">tags</td><td>These are the e621-e926 tags prompted by the user as an argument value. Example: yiffy &ndash;fetch "anthro+fur+male+smile". </td></tr>
+    <tr><td class="paramname">page</td><td>This is the value that is passed to the API to get results from the specified pages. </td></tr>
+    <tr><td class="paramname">isNsfw</td><td>This is the boolean value that checks the NSFW option. If true, sets the request string for e621 otherwise sets for e926. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d0/d8c/aria2Download_8c_source.html#l00017">17</a> of file <a class="el" href="../../d0/d8c/aria2Download_8c_source.html">aria2Download.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/d8c/aria2Download_8c_source.html#l00019">19</a> of file <a class="el" href="../../d0/d8c/aria2Download_8c_source.html">aria2Download.c</a>.</p>
 
 </div>
 </div>
