@@ -30,7 +30,7 @@ static int totalDownloads = 0;
 */
 void fetch(char *tags, int page)
 {
-    char filePath[MAX_FILE_PATH];
+    char configPath[MAX_FILE_PATH];
     char buffer[MAX_BUFFER_SIZE];
 
     bool isNsfw = false;
@@ -43,10 +43,10 @@ void fetch(char *tags, int page)
         exit(EXIT_FAILURE);
     }
 
-    sprintf(filePath, "%s/.yiffy/yiffy-config.txt", home);
+    sprintf(configPath, "%s/.yiffy/yiffy-config.txt", home);
 
     /* Read the configuration file (home/user/.yiffy/yiffy-config.txt) to execute the wanted process. */
-    FILE *config = fopen(filePath, "r");
+    FILE *config = fopen(configPath, "r");
 
     if (config == NULL) 
     {
@@ -66,6 +66,7 @@ void fetch(char *tags, int page)
         if (strcmp(token, "nsfw") == 0) 
         {
             isNsfw = true;
+            break;
         }
 
         token = strtok(NULL, ":");
@@ -84,7 +85,7 @@ void fetch(char *tags, int page)
     }
 
     /* Allocate memory to store the JSON response content. */
-    char *jsonControlContent = (char *)malloc(CONTENT_SIZE * sizeof(char));
+    char *jsonControlContent = (char*)malloc(CONTENT_SIZE * sizeof(char));
 
     if (jsonControlContent == NULL)
     {
