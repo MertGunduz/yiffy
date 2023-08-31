@@ -1,7 +1,7 @@
 /**
  * @file fetch.c
  * 
- * @brief Sends request to e621-e926 with the specified tags by user and outputs URLs.
+ * @brief Sends request to e621-e926 with the specified tags by user and outputs or outputs-downloads URLs.
  * 
  * This file is used to send a request to the fetch data from API and output the post URLs.
  * Fetch function is used to check the configuration files and send request to the API. After that it takes the response and checks if JSON file is in the right format.
@@ -18,17 +18,18 @@
 
 #include "yiffy-search.h"
 
-static void output(char *jsonContent);
+static void output(char *jsonContent, char *command);
 
 static int totalDownloads = 0;
 
 /**
- * @brief Reads the configuration file, sets the options and sends a request to e621-e926. After taking the response, it calls the output function to show the URLs to user. 
+ * @brief Reads the configuration file, sets the options and sends a request to e621-e926. After taking the response, it calls the output function to show the URLs. 
  * 
  * @param tags These are the e621-e926 tags prompted by the user as an argument value. Example: yiffy --fetch "anthro+fur+male+smile".
  * @param page This is the value that is passed to the API to get results from the specified pages.
+ * @param command This is the value that checks if to output-download or just output the URLs.
 */
-void fetch(char *tags, int page)
+void fetch(char *tags, int page, char *command)
 {
     char configPath[MAX_FILE_PATH];
     char buffer[MAX_BUFFER_SIZE];
@@ -114,13 +115,13 @@ void fetch(char *tags, int page)
     }
 
     /* Output the URLs by using the current JSON file. */
-    output(jsonControlContent);
+    output(jsonControlContent, command);
 }
 
 /**
  * @brief Reads and parses the JSON file. Also outputs the URLs to the terminal or redirected path.
 */
-static void output(char *jsonContent)
+static void output(char *jsonContent, char *command)
 {
     /* Parse the JSON response data. */
     cJSON *root = cJSON_Parse(jsonContent);
@@ -164,6 +165,25 @@ static void output(char *jsonContent)
                     const char *fileURL = fileUrlObj->valuestring;
                     
                     fprintf(stdout, "%s\n", fileURL);
+
+                    /* If the command is --dfetch download the fetched URLs. */
+                    if (strcmp(command, "--dfetch") == 0)
+                    {
+                        /* Alloc for downloading process. */
+                        char *downloadCommand = (char*)malloc(256 * sizeof(char));
+
+                        sprintf(downloadCommand, "aria2c %s >/dev/null 2>&1", fileURL);
+
+                        int downloadSuccess = system(downloadCommand);
+
+                        if (downloadSuccess == BAD_SYSTEM_FUNC_CALL)
+                        {
+                            free(downloadCommand);
+                            exit(EXIT_FAILURE);
+                        }
+
+                        free(downloadCommand);
+                    }
 
                     /* Increase the total downloads, this is used to control if any posts downloaded. */
                     totalDownloads++;

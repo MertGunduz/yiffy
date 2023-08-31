@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['menuoption_152',['menuOption',['../dd/db9/structmenuOption.html',1,'']]]
+  ['generaloption_153',['generalOption',['../d2/db7/structgeneralOption.html',1,'']]]
 ];

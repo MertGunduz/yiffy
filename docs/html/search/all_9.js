@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['length_83',['length',['../db/d68/structparse__buffer.html#a036970e9335896d3cee8459eda9e2eb9',1,'parse_buffer::length()'],['../d1/dc7/structprintbuffer.html#a1a679f8b6fe9b413fb3a87203b0f5bc8',1,'printbuffer::length()'],['../d5/d56/cjson_8h.html#a03c83e0884e2e3a1783db79f2d67101f',1,'length():&#160;cjson.h']]]
+  ['json_82',['json',['../df/d8b/structerror.html#a9b123855d5dd48e86de846588462b39f',1,'error']]],
+  ['jsonparseerrormessage_83',['jsonParseErrorMessage',['../d9/d20/jsonParseErrorMessage_8c.html#a3d6b6f0d495570a56108ebe81a9135e0',1,'jsonParseErrorMessage():&#160;jsonParseErrorMessage.c'],['../de/d35/yiffy-messages_8h.html#a3d6b6f0d495570a56108ebe81a9135e0',1,'jsonParseErrorMessage():&#160;jsonParseErrorMessage.c']]],
+  ['jsonparseerrormessage_2ec_84',['jsonParseErrorMessage.c',['../d9/d20/jsonParseErrorMessage_8c.html',1,'']]]
 ];

@@ -1,7 +1,7 @@
 /**
  * @file showHelp.c
  * 
- * @brief shows help menu
+ * @brief This file is used to show general help to the user by showing how to use the command line arguments.
  * 
  * @author Mehmet Mert Gunduz
  * 
@@ -20,8 +20,8 @@ void showHelp()
     fprintf(stdout, "--search \"[TAGS]\"   opens a tui interface\n\n");
 
     fprintfH(stdout, "yiffy api fetch arguments");
-    fprintf(stdout, "--dfetch \"[TAGS]\"   fetches urls and downloads\n");
-    fprintf(stdout, "--fetch \"[TAGS]\"    fetches urls\n\n");
+    fprintf(stdout, "--fetch \"[TAGS]\"    fetches urls\n");
+    fprintf(stdout, "--dfetch \"[TAGS]\"   fetches urls and downloads\n\n");
 
     fprintfH(stdout, "yiffy information menu arguments");
     fprintf(stdout, "--help              outputs the help menu\n"); 

@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['valuedouble_138',['valuedouble',['../db/d68/structcJSON.html#a4b21817d0fd2919901abadac73214e7f',1,'cJSON']]],
-  ['valueint_139',['valueint',['../db/d68/structcJSON.html#a369cea49494eb5d4409d532a731a0fbf',1,'cJSON']]],
-  ['valuestring_140',['valuestring',['../db/d68/structcJSON.html#ad43f8de2571e504c4c5ce0a36990e6e1',1,'cJSON::valuestring()'],['../d5/d56/cjson_8h.html#aa770d5dc55a1031ccff9aee4e96acf8f',1,'valuestring():&#160;cjson.h']]],
-  ['void_141',['void',['../d1/d07/structinternal__hooks.html#a5cc2dd5383da5f20b19e0f27fa59e123',1,'internal_hooks::void()'],['../dc/d55/structcJSON__Hooks.html#a42c96b388103ffb466e7335b9fc710c3',1,'cJSON_Hooks::void()']]]
+  ['unrecognized_5fargument_136',['UNRECOGNIZED_ARGUMENT',['../dc/dc0/yiffy_8c.html#a129246daa0c427b2108d7844650e5cf4',1,'yiffy.c']]],
+  ['unrecognizedargumentmessage_137',['unrecognizedArgumentMessage',['../dc/db5/unrecognizedArgumentMessage_8c.html#ab77033d8b672ad2a270de7f823842fe6',1,'unrecognizedArgumentMessage(char *argument):&#160;unrecognizedArgumentMessage.c'],['../de/d35/yiffy-messages_8h.html#ab77033d8b672ad2a270de7f823842fe6',1,'unrecognizedArgumentMessage(char *argument):&#160;unrecognizedArgumentMessage.c']]],
+  ['unrecognizedargumentmessage_2ec_138',['unrecognizedArgumentMessage.c',['../dc/db5/unrecognizedArgumentMessage_8c.html',1,'']]]
 ];

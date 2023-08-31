@@ -75,7 +75,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>sends request to e621 with the specified tags and takes response  
+<p>Sends request to e621-e926 with the specified tags by user and outputs-downloads URLs.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="../../dc/d88/yiffy-search_8h_source.html">yiffy-search.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -83,7 +83,7 @@ Include dependency graph for dfetch.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d0/dd4/dfetch_8c__incl.png" border="0" usemap="#asrc_2yiffysearch_2dfetch_8c" alt=""/></div>
 <map name="asrc_2yiffysearch_2dfetch_8c" id="asrc_2yiffysearch_2dfetch_8c">
-<area shape="rect" title="sends request to e621 with the specified tags and takes response" alt="" coords="263,5,436,32"/>
+<area shape="rect" title="Sends request to e621&#45;e926 with the specified tags by user and outputs&#45;downloads URLs." alt="" coords="263,5,436,32"/>
 <area shape="rect" href="../../dc/d88/yiffy-search_8h.html" title="the general search and use header for yiffy" alt="" coords="294,80,405,107"/>
 <area shape="rect" title=" " alt="" coords="92,244,159,271"/>
 <area shape="rect" title=" " alt="" coords="26,162,97,189"/>
@@ -101,23 +101,47 @@ Include dependency graph for dfetch.c:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a263efd24d550124313df51247f07457a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dd2/dfetch_8c.html#a263efd24d550124313df51247f07457a">MAX_FILE_PATH</a>&#160;&#160;&#160;256</td></tr>
+<tr class="memdesc:a263efd24d550124313df51247f07457a"><td class="mdescLeft">&#160;</td><td class="mdescRight">This macro is used to set the default size for getting the home directory file.  <a href="../../d3/dd2/dfetch_8c.html#a263efd24d550124313df51247f07457a">More...</a><br /></td></tr>
 <tr class="separator:a263efd24d550124313df51247f07457a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad4d796b98c583d49e83adabd74a63bf6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dd2/dfetch_8c.html#ad4d796b98c583d49e83adabd74a63bf6">MAX_BUFFER_SIZE</a>&#160;&#160;&#160;512</td></tr>
+<tr class="memdesc:ad4d796b98c583d49e83adabd74a63bf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">This macro is used to set the default size for reading the config file.  <a href="../../d3/dd2/dfetch_8c.html#ad4d796b98c583d49e83adabd74a63bf6">More...</a><br /></td></tr>
 <tr class="separator:ad4d796b98c583d49e83adabd74a63bf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff9b7f6d81297248bf0ad06d725c8cbb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dd2/dfetch_8c.html#aff9b7f6d81297248bf0ad06d725c8cbb">CONTENT_SIZE</a>&#160;&#160;&#160;262144</td></tr>
+<tr class="memdesc:aff9b7f6d81297248bf0ad06d725c8cbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">This macro is used to set the default size for reading the JSON file that comes as a response from the API.  <a href="../../d3/dd2/dfetch_8c.html#aff9b7f6d81297248bf0ad06d725c8cbb">More...</a><br /></td></tr>
+<tr class="separator:aff9b7f6d81297248bf0ad06d725c8cbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:aec8c78fe5f705338b0a2028d278e126f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dd2/dfetch_8c.html#aec8c78fe5f705338b0a2028d278e126f">dfetch</a> (char *tags, int page)</td></tr>
-<tr class="memdesc:aec8c78fe5f705338b0a2028d278e126f"><td class="mdescLeft">&#160;</td><td class="mdescRight">sends request to e621 with the specified tags and takes response  <a href="../../d3/dd2/dfetch_8c.html#aec8c78fe5f705338b0a2028d278e126f">More...</a><br /></td></tr>
+<tr class="memdesc:aec8c78fe5f705338b0a2028d278e126f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the configuration file, sets the options and sends a request to e621-e926. After taking the response, it calls the downloadOutput function to show and download the URLs.  <a href="../../d3/dd2/dfetch_8c.html#aec8c78fe5f705338b0a2028d278e126f">More...</a><br /></td></tr>
 <tr class="separator:aec8c78fe5f705338b0a2028d278e126f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>sends request to e621 with the specified tags and takes response </p>
+<div class="textblock"><p>Sends request to e621-e926 with the specified tags by user and outputs-downloads URLs. </p>
+<p>This file is used to send a request to the fetch data from API and output the post URLs. DFetch function is used to check the configuration files and send request to the API. After that it takes the response and checks if JSON file is in the right format. Output function is used to read and parse the JSON file. Also outputs the URLs to the terminal or redirected path.</p>
 <dl class="section author"><dt>Author</dt><dd>Mehmet Mert Gunduz</dd></dl>
-<dl class="section date"><dt>Date</dt><dd>28/08/2023 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>30/08/2023 </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="../../d3/dd2/dfetch_8c_source.html">dfetch.c</a>.</p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="aff9b7f6d81297248bf0ad06d725c8cbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff9b7f6d81297248bf0ad06d725c8cbb">&#9670;&nbsp;</a></span>CONTENT_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONTENT_SIZE&#160;&#160;&#160;262144</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This macro is used to set the default size for reading the JSON file that comes as a response from the API. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d3/dd2/dfetch_8c_source.html#l00017">17</a> of file <a class="el" href="../../d3/dd2/dfetch_8c_source.html">dfetch.c</a>.</p>
+
+</div>
+</div>
 <a id="ad4d796b98c583d49e83adabd74a63bf6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad4d796b98c583d49e83adabd74a63bf6">&#9670;&nbsp;</a></span>MAX_BUFFER_SIZE</h2>
 
@@ -130,7 +154,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/dd2/dfetch_8c_source.html#l00012">12</a> of file <a class="el" href="../../d3/dd2/dfetch_8c_source.html">dfetch.c</a>.</p>
+<p>This macro is used to set the default size for reading the config file. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d3/dd2/dfetch_8c_source.html#l00016">16</a> of file <a class="el" href="../../d3/dd2/dfetch_8c_source.html">dfetch.c</a>.</p>
 
 </div>
 </div>
@@ -146,7 +172,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/dd2/dfetch_8c_source.html#l00011">11</a> of file <a class="el" href="../../d3/dd2/dfetch_8c_source.html">dfetch.c</a>.</p>
+<p>This macro is used to set the default size for getting the home directory file. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d3/dd2/dfetch_8c_source.html#l00015">15</a> of file <a class="el" href="../../d3/dd2/dfetch_8c_source.html">dfetch.c</a>.</p>
 
 </div>
 </div>
@@ -177,16 +205,16 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>sends request to e621 with the specified tags and takes response </p>
+<p>Reads the configuration file, sets the options and sends a request to e621-e926. After taking the response, it calls the downloadOutput function to show and download the URLs. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">tagString</td><td></td></tr>
-    <tr><td class="paramname">page</td><td></td></tr>
+    <tr><td class="paramname">tags</td><td>These are the e621-e926 tags prompted by the user as an argument value. Example: yiffy &ndash;fetch "anthro+fur+male+smile". </td></tr>
+    <tr><td class="paramname">page</td><td>This is the value that is passed to the API to get results from the specified pages. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/dd2/dfetch_8c_source.html#l00023">23</a> of file <a class="el" href="../../d3/dd2/dfetch_8c_source.html">dfetch.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/dd2/dfetch_8c_source.html#l00031">31</a> of file <a class="el" href="../../d3/dd2/dfetch_8c_source.html">dfetch.c</a>.</p>
 
 </div>
 </div>

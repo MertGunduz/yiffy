@@ -26,53 +26,74 @@
 #define EXTRA_ARG_VALUE       false
 
 static bool argumentVerify(int argumentCount, char *arguments[]);
-static void showHelpMenu();
-static void showVersionMenu();
-static void showGithubMenu();
-static void showWebsiteMenu();
-static void showConfigMenu();
+
 static void exportLocalData();
 static void importLocalData();
 static void changeWebGenerationMode(char *onOff);
 static void changeAdultMode(char *onOff);
-static void dfetchURLS(char *tagString);
-static void fetchURLS(char *tagString);
 static void searchURLS(char *tagstring);
+static void fetchURLS(char *tagString, char *command);
 
-/// @brief the general struct for handling the arguments by using function pointers
-struct menuOption
+/// @brief The general struct for handling the general arguments.
+struct generalOption
 {
-    const char *option;
+    char *option;
     void (*function)(char *argv);
 };
 
-static struct menuOption menuOptions[] =
+/// @brief The general struct for handling the fetch arguments.
+struct fetchOption
 {
-    {"--help", showHelpMenu},
-    {"--version", showVersionMenu},
-    {"--github", showGithubMenu},
-    {"--website", showWebsiteMenu},
-    {"--config", showConfigMenu},
+    char *option;
+    void (*function)(char *argv, char *command);
+};
+
+static struct generalOption generalOptions[] =
+{
+    {"--help", showHelp},
+    {"--version", showVersion},
+    {"--github", showGithub},
+    {"--website", showWebsite},
+    {"--config", showConfig},
     {"--export", exportLocalData},
     {"--import", importLocalData},
     {"--wgen", changeWebGenerationMode},
     {"--nsfw", changeAdultMode},
-    {"--dfetch", dfetchURLS},
-    {"--fetch", fetchURLS},
     {"--search", searchURLS}
+};
+
+static struct fetchOption fetchOptions[] =
+{
+    {"--fetch", fetchURLS},
+    {"--dfetch", fetchURLS}
 };
 
 int main(int argc, char *argv[])
 {
     if (argumentVerify(argc, argv))
     {
-        for (long unsigned int i = 0; i < sizeof(menuOptions) / sizeof(menuOptions[0]); i++) 
+        for (long unsigned int i = 0; i < sizeof(fetchOptions) / sizeof(fetchOptions[0]); i++)
         {
-            if (strcmp(argv[1], menuOptions[i].option) == 0) 
+            if (strcmp(argv[1], fetchOptions[i].option) == 0)
             {
-                void (*menuFunc)(char *argv) = menuOptions[i].function;
+                void (*fetchFunction)(char *argv, char *command) = fetchOptions[i].function;
 
-                if (strcmp(menuOptions[i].option, "--dfetch") == 0 || strcmp(menuOptions[i].option, "--fetch") == 0 || strcmp(menuOptions[i].option, "--search") == 0 || strcmp(menuOptions[i].option, "--nsfw") == 0 || strcmp(menuOptions[i].option, "--wgen") == 0) /* THIRD ARGUMENT: tags [yiffy --search "blush+fox+male"]*/
+                if (strcmp(argv[1], fetchOptions[i].option) == 0)
+                {
+                    fetchFunction(argv[2], fetchOptions[i].option);
+                }
+
+                break;
+            }
+        }
+
+        for (long unsigned int i = 0; i < sizeof(generalOptions) / sizeof(generalOptions[0]); i++) 
+        {
+            if (strcmp(argv[1], generalOptions[i].option) == 0) 
+            {
+                void (*menuFunc)(char *argv) = generalOptions[i].function;
+
+                if (strcmp(generalOptions[i].option, "--search") == 0 || strcmp(generalOptions[i].option, "--nsfw") == 0 || strcmp(generalOptions[i].option, "--wgen") == 0) /* THIRD ARGUMENT: tags [yiffy --search "blush+fox+male"]*/
                 {
                     menuFunc(argv[2]);
                 }
@@ -80,6 +101,7 @@ int main(int argc, char *argv[])
                 {
                     menuFunc(NULL);
                 }
+
                 break;
             }
         }
@@ -156,36 +178,6 @@ static bool argumentVerify(int argumentCount, char *arguments[])
     }
 }
 
-/// @brief outputs help menu
-static void showHelpMenu() 
-{
-    showHelp();
-}
-
-/// @brief outputs version
-static void showVersionMenu() 
-{
-    showVersion();
-}
-
-/// @brief outputs github project source code url
-static void showGithubMenu() 
-{
-    showGithub();
-}
-
-/// @brief outputs website url
-static void showWebsiteMenu() 
-{
-    showWebsite();
-}
-
-/// @brief outputs configurations
-static void showConfigMenu() 
-{
-    showConfig();
-}
-
 /// @brief exports the app data as a string
 static void exportLocalData() 
 {
@@ -199,44 +191,32 @@ static void importLocalData()
 }
 
 /// @brief opens/closes web generation system
-static void changeWebGenerationMode(char *onOff) 
+static void changeWebGenerationMode(char *onOff)
 {
     fprintf(stdout, "WEB GEN MENU %s\n", onOff);
 }
 
 /// @brief opens/closes nsfw option
-static void changeAdultMode(char *onOff) 
+static void changeAdultMode(char *onOff)
 {
     fprintf(stdout, "NSFW MENU%s\n", onOff);
 }
 
-/// @brief sends request, fetchs urls and download images from e621/926
-/// @param tagString 
-static void dfetchURLS(char *tagString)
+/// @brief sends request and gets data from e621/926
+/// @param tagstring 
+static void searchURLS(char *tagstring)
 {
-    int i = 0;
-    while (true)
-    {
-        dfetch(tagString, i);
-        i++;
-    }
+    fprintf(stdout, "SEARCH MENU %s\n", tagstring);
 }
 
 /// @brief sends request and fetchs urls from e621/926
 /// @param tagString 
-static void fetchURLS(char *tagString) 
-{
-    int i = 0;
+static void fetchURLS(char *tagString, char *command)
+{ 
+    int i = 1;
     while (true)
     {
-        fetch(tagString, i);
+        fetch(tagString, i, command);
         i++;
     }
-}
-
-/// @brief sends request and gets data from e621/926
-/// @param tagstring 
-static void searchURLS(char *tagstring) 
-{
-    fprintf(stdout, "SEARCH MENU %s\n", tagstring);
 }

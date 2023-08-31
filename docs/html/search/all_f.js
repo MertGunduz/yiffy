@@ -1,15 +1,10 @@
 var searchData=
 [
-  ['showconfig_121',['showConfig',['../d2/d2d/yiffy-text-menus_8h.html#ae0ef63d634718b11b25e186b64c90354',1,'showConfig():&#160;showConfig.c'],['../dd/d89/showConfig_8c.html#ae0ef63d634718b11b25e186b64c90354',1,'showConfig():&#160;showConfig.c']]],
-  ['showconfig_2ec_122',['showConfig.c',['../dd/d89/showConfig_8c.html',1,'']]],
-  ['showgithub_123',['showGithub',['../d2/d2d/yiffy-text-menus_8h.html#a8b26c9d6e17267f547684c2fc7fdbac5',1,'showGithub():&#160;showGithub.c'],['../df/d72/showGithub_8c.html#a8b26c9d6e17267f547684c2fc7fdbac5',1,'showGithub():&#160;showGithub.c']]],
-  ['showgithub_2ec_124',['showGithub.c',['../df/d72/showGithub_8c.html',1,'']]],
-  ['showhelp_125',['showHelp',['../d5/d5e/showHelp_8c.html#aec315d77f5c38417289a0e311d2a9d31',1,'showHelp():&#160;showHelp.c'],['../d2/d2d/yiffy-text-menus_8h.html#aec315d77f5c38417289a0e311d2a9d31',1,'showHelp():&#160;showHelp.c']]],
-  ['showhelp_2ec_126',['showHelp.c',['../d5/d5e/showHelp_8c.html',1,'']]],
-  ['showversion_127',['showVersion',['../d8/d26/showVersion_8c.html#a2de507730a8ffeaa8ef728c753eecbfb',1,'showVersion():&#160;showVersion.c'],['../d2/d2d/yiffy-text-menus_8h.html#a2de507730a8ffeaa8ef728c753eecbfb',1,'showVersion():&#160;showVersion.c']]],
-  ['showversion_2ec_128',['showVersion.c',['../d8/d26/showVersion_8c.html',1,'']]],
-  ['showwebsite_129',['showWebsite',['../de/d97/showWebsite_8c.html#a1ed2e43a4ebb8dba900e6d4926e0bfed',1,'showWebsite():&#160;showWebsite.c'],['../d2/d2d/yiffy-text-menus_8h.html#a1ed2e43a4ebb8dba900e6d4926e0bfed',1,'showWebsite():&#160;showWebsite.c']]],
-  ['showwebsite_2ec_130',['showWebsite.c',['../de/d97/showWebsite_8c.html',1,'']]],
-  ['static_5fstrlen_131',['static_strlen',['../d6/d49/cjson_8c.html#a5714bac836668a1b9af55465b78531ef',1,'cjson.c']]],
-  ['string_132',['string',['../db/d68/structcJSON.html#aa6b47e9a4b0e0a26f519b1a2b6739983',1,'cJSON::string()'],['../d5/d56/cjson_8h.html#addf925fe055723aa55a381a1ba45bda2',1,'string():&#160;cjson.h']]]
+  ['raw_115',['raw',['../d5/d56/cjson_8h.html#a788db922597cf2fb6389e278f822e59f',1,'cjson.h']]],
+  ['reallocate_116',['reallocate',['../d1/d07/structinternal__hooks.html#a5dd48d5c2f2b1cf4f6eec5df6205e15c',1,'internal_hooks']]],
+  ['recognized_5fargument_117',['RECOGNIZED_ARGUMENT',['../dc/dc0/yiffy_8c.html#ae19e91650edc7366559a74767d6e0075',1,'yiffy.c']]],
+  ['recurse_118',['recurse',['../d5/d56/cjson_8h.html#afc8d1c385c6dc37e1c5b640869ce4ab6',1,'cjson.h']]],
+  ['replacement_119',['replacement',['../d5/d56/cjson_8h.html#a10573fccca598ec39809e8beb3f7f791',1,'cjson.h']]],
+  ['require_5fnull_5fterminated_120',['require_null_terminated',['../d5/d56/cjson_8h.html#a68bc5d2265c7694323a75615f7ac0130',1,'cjson.h']]],
+  ['return_5fparse_5fend_121',['return_parse_end',['../d5/d56/cjson_8h.html#a7725ae4fa33fc499614c6895ee9ee44a',1,'cjson.h']]]
 ];
