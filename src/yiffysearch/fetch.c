@@ -27,7 +27,7 @@ static int totalDownloads = 0;
  * 
  * @param tags These are the e621-e926 tags prompted by the user as an argument value. Example: yiffy --fetch "anthro+fur+male+smile".
  * @param page This is the value that is passed to the API to get results from the specified pages.
- * @param command This is the value that checks if to output-download or just output the URLs.
+ * @param command This is the value that checks if to output or output-download the URLs.
 */
 void fetch(char *tags, int page, char *command)
 {
