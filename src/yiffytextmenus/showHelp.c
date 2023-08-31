@@ -1,7 +1,7 @@
 /**
  * @file showHelp.c
  * 
- * @brief This file is used to show general help to the user by showing how to use the command line arguments.
+ * @brief This file is used to show general help to the user by showing how to use the cli options.
  * 
  * @author Mehmet Mert Gunduz
  * 
@@ -10,7 +10,9 @@
 
 #include "yiffy-text-menus.h"
 
-/// @brief shows help menu
+/**
+ * @brief Outputs general information about how to use yiffy. Shows cli options and other functionalities.
+*/
 void showHelp()
 {
     fprintf(stdout, "usage: yiffy [OPTION]\n");

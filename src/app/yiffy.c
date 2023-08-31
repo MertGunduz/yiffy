@@ -1,7 +1,10 @@
 /**
  * @file yiffy.c
  * 
- * @brief the main application file of yiffy
+ * @brief This is the main file and used to handle the arguments and execute the program by using external functions.
+ * 
+ * Main function is used to call the functions by using function pointers and pass arguments.
+ * ArgumentVerify function is used to check the validity of the arguments like argv, argc.
  * 
  * @author Mehmet Mert Gunduz 
  * 
@@ -34,14 +37,18 @@ static void changeAdultMode(char *onOff);
 static void searchURLS(char *tagstring);
 static void fetchURLS(char *tagString, char *command);
 
-/// @brief The general struct for handling the general arguments.
+/**
+ * @brief The general struct for handling the general arguments.
+*/
 struct generalOption
 {
     char *option;
     void (*function)(char *argv);
 };
 
-/// @brief The general struct for handling the fetch arguments.
+/**
+ * @brief The general struct for handling the fetch arguments.
+*/
 struct fetchOption
 {
     char *option;
@@ -110,10 +117,18 @@ int main(int argc, char *argv[])
     return 0;
 }
 
-/// @brief checks the argument count and arguments, if they are in the wanted format returns true 
-/// @param argumentCount 
-/// @param arguments 
-/// @return true or false (bool)
+/**
+ * @brief Checks the argument count and arguments, if they are in the wanted format returns true .
+ * 
+ * This function checks the validity of command line arguments provided to a program.
+ * It supports two types of arguments, single arguments and two-argument options.
+ * 
+ * 
+ * @param argumentCount The number of command line arguments.
+ * @param arguments The all arguments passed by the user.
+ *
+ * @return Returns an integer code indicating the result of argument validation.
+*/
 static bool argumentVerify(int argumentCount, char *arguments[])
 {
     char *oneArguments[] = {"--help", "--version", "--github", "--website", "--config", "--export", "--import"};
