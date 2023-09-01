@@ -37,6 +37,6 @@ void showHelp()
     fprintf(stdout, "--export            exports the data from program\n\n");
 
     fprintfH(stdout, "yiffy configuration and settings arguments");
-    fprintf(stdout, "--nsfw [ON/OFF]     switches to nsfw/sfw options\n");
-    fprintf(stdout, "--wgen [ON/OFF]     switches to wgen/non-wgen option\n");
+    fprintf(stdout, "--nsfw \"[ON/OFF]\"     switches to nsfw/sfw options\n");
+    fprintf(stdout, "--wgen \"[ON/OFF]\"     switches to wgen/non-wgen option\n");
 }
