@@ -1,7 +1,6 @@
 TODO: YIFFY SETTINGS MENU
 
 WEBSITE GENERATION:   ON/OFF (NOTE: THIS FEATURE CREATES A PICTURE WEBSITE BY USING THE PICTURES YOU DOWNLOADED!)       [--website-generation on/off]
-PROXY:                ON/OFF (NOTE: THIS FEATURE CONNECTS YOU TO A PROXY AND CHANGES YOUR DOMAIN NAME SERVERS!)         [--proxy              on/off]
 NSFW:                 ON/OFF (NOTE: THIS FEATURE SENDS REQUESTS TO E621 IF IT IS ON, OTHERWISE SENDS REQUESTS TO E926)  [--nsfw               on/off]
 
 NSFW: https://e621.net/posts.json?limit=10&tags=solo+blush+male+fox
