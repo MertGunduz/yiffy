@@ -11,7 +11,7 @@
 #include "yiffy-text-menus.h"
 
 /**
- * @brief Outputs general information about how to use yiffy. Shows cli options and other functionalities.
+ * @brief Shows the general help menu to user.
 */
 void showHelp()
 {

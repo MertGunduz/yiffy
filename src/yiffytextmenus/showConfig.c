@@ -1,7 +1,7 @@
 /**
  * @file showConfig.c
  * 
- * @brief shows the configurations
+ * @brief This file is used to show current configurations of the app to the user.
  * 
  * @author Mehmet Mert Gunduz
  * 
@@ -13,14 +13,15 @@
 
 #include "yiffy-text-menus.h"
 
-/// @brief shows the configurations
+/**
+ * @brief Shows the yiffy configurations to user.
+*/
 void showConfig()
 {
-    /* file path and line buffer */
     char file_path[MAX_FILE_PATH];
     char buffer[MAX_BUFFER_SIZE];
 
-    /* take the home directory of the current user */
+    /* Get the home directory of the current user. */
     char *home_directory = getenv("HOME");
 
     if (home_directory == NULL) 
@@ -29,7 +30,7 @@ void showConfig()
         exit(1);
     }
 
-    /* create the file path */
+    /* Create the configuration file path. */
     sprintf(file_path, "%s/.yiffy/yiffy-config.txt", home_directory);
 
     /* create file pointer */
@@ -41,13 +42,11 @@ void showConfig()
         exit(EXIT_FAILURE);
     }
 
-    /* read and the content */
     fscanf(configurationFile, "%s", buffer);
 
-    /* write the text ui */
+    /* Write the header to console. */
     fprintfH(stdout, "current yiffy configurations");
 
-    /* tokenize the configuration string */
     char *token = strtok(buffer, ":");
 
     while (token != NULL)

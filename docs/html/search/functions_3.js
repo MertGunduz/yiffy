@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['dfetch_192',['dfetch',['../d3/dd2/dfetch_8c.html#aec8c78fe5f705338b0a2028d278e126f',1,'dfetch(char *tags, int page):&#160;dfetch.c'],['../dc/d88/yiffy-search_8h.html#aec8c78fe5f705338b0a2028d278e126f',1,'dfetch(char *tags, int page):&#160;dfetch.c']]]
+  ['extraargumenterrormessage_189',['extraArgumentErrorMessage',['../d3/d8c/extraArgumentErrorMessage_8c.html#aeeb39a1ff7f4fc6fbc7ab03e373edb55',1,'extraArgumentErrorMessage(char *argument):&#160;extraArgumentErrorMessage.c'],['../de/d35/yiffy-messages_8h.html#aeeb39a1ff7f4fc6fbc7ab03e373edb55',1,'extraArgumentErrorMessage(char *argument):&#160;extraArgumentErrorMessage.c']]]
 ];

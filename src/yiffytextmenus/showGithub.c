@@ -1,7 +1,7 @@
 /**
  * @file showGithub.c
  * 
- * @brief shows the github url
+ * @brief This file is used to show project github URL, current issues to the user.
  * 
  * @author Mehmet Mert Gunduz
  * 
@@ -10,7 +10,9 @@
 
 #include "yiffy-text-menus.h"
 
-/// @brief shows the github url
+/**
+ * @brief Shows the project github URL, current issues to user.
+*/
 void showGithub()
 {
     fprintf(stdout, "<https://github.com/MertGunduz/yiffy>\n\n");

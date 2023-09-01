@@ -1,7 +1,7 @@
 /**
  * @file showWebsite.c
  * 
- * @brief shows the website url 
+ * @brief This file is used to show yiffy website to the user.
  * 
  * @author Mehmet Mert Gunduz 
  * 
@@ -10,7 +10,9 @@
 
 #include "yiffy-text-menus.h"
 
-/// @brief shows the website url 
+/**
+ * @brief Shows the yiffy website URL to user.
+*/
 void showWebsite()
 {
     fprintf(stdout, "<https://mertgunduz.github.io/yiffy>\n\n");

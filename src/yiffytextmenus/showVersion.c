@@ -1,7 +1,7 @@
 /**
  * @file showVersion.c
  * 
- * @brief shows the version
+ * @brief This file is used to show version of the app to the user.
  * 
  * @author Mehmet Mert Gunduz
  * 
@@ -10,7 +10,9 @@
 
 #include "yiffy-text-menus.h"
 
-/// @brief shows the version
+/**
+ * @brief Shows the version of yiffy to user.
+*/
 void showVersion()
 {
     fprintf(stdout, "yiffy (e621-e926 terminal viewer) 1.0.0\n\n");

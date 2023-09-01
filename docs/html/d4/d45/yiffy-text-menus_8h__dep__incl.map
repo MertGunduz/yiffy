@@ -1,9 +1,9 @@
 <map id="src/yiffytextmenus/yiffy&#45;text&#45;menus.h" name="src/yiffytextmenus/yiffy&#45;text&#45;menus.h">
 <area shape="rect" id="node1" title="the text based menu header for yiffy (show menu related part [showHelpMenu] [showVersionMenu] [showGi..." alt="" coords="391,5,538,47"/>
-<area shape="rect" id="node2" href="$dc/dc0/yiffy_8c.html" title="the main application file of yiffy" alt="" coords="5,102,116,129"/>
-<area shape="rect" id="node3" href="$dd/d89/showConfig_8c.html" title="shows the configurations" alt="" coords="141,95,285,136"/>
-<area shape="rect" id="node4" href="$df/d72/showGithub_8c.html" title="shows the github url" alt="" coords="309,95,453,136"/>
-<area shape="rect" id="node5" href="$d5/d5e/showHelp_8c.html" title="shows help menu" alt="" coords="477,95,621,136"/>
-<area shape="rect" id="node6" href="$d8/d26/showVersion_8c.html" title="shows the version" alt="" coords="645,95,789,136"/>
-<area shape="rect" id="node7" href="$de/d97/showWebsite_8c.html" title="shows the website url" alt="" coords="813,95,957,136"/>
+<area shape="rect" id="node2" href="$dc/dc0/yiffy_8c.html" title="This is the main file and used to handle the arguments and execute the program by using external func..." alt="" coords="5,102,116,129"/>
+<area shape="rect" id="node3" href="$dd/d89/showConfig_8c.html" title="This file is used to show current configurations of the app to the user." alt="" coords="141,95,285,136"/>
+<area shape="rect" id="node4" href="$df/d72/showGithub_8c.html" title="This file is used to show project github URL, current issues to the user." alt="" coords="309,95,453,136"/>
+<area shape="rect" id="node5" href="$d5/d5e/showHelp_8c.html" title="This file is used to show general help to the user by showing how to use the cli options." alt="" coords="477,95,621,136"/>
+<area shape="rect" id="node6" href="$d8/d26/showVersion_8c.html" title="This file is used to show version of the app to the user." alt="" coords="645,95,789,136"/>
+<area shape="rect" id="node7" href="$de/d97/showWebsite_8c.html" title="This file is used to show yiffy website to the user." alt="" coords="813,95,957,136"/>
 </map>

@@ -1,5 +1,5 @@
 <map id="src/yiffytextmenus/showHelp.c" name="src/yiffytextmenus/showHelp.c">
-<area shape="rect" id="node1" title="shows help menu" alt="" coords="209,5,353,47"/>
+<area shape="rect" id="node1" title="This file is used to show general help to the user by showing how to use the cli options." alt="" coords="209,5,353,47"/>
 <area shape="rect" id="node2" href="$d2/d2d/yiffy-text-menus_8h.html" title="the text based menu header for yiffy (show menu related part [showHelpMenu] [showVersionMenu] [showGi..." alt="" coords="210,95,352,121"/>
 <area shape="rect" id="node3" title=" " alt="" coords="73,259,140,285"/>
 <area shape="rect" id="node4" title=" " alt="" coords="426,177,496,203"/>

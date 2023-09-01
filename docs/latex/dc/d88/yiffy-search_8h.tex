@@ -35,9 +35,7 @@ This graph shows which files directly or indirectly include this file\+:
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{yiffy-search_8h_aec8c78fe5f705338b0a2028d278e126f}{dfetch}} (char $\ast$tags, int page)
-\begin{DoxyCompactList}\small\item\em Reads the configuration file, sets the options and sends a request to e621-\/e926. After taking the response, it calls the download\+Output function to show and download the URLs. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{yiffy-search_8h_a396e718624937eb224c416888d762eed}{fetch}} (char $\ast$tags, int page)
+void \mbox{\hyperlink{yiffy-search_8h_a41f382b6bd05c9776641fb4bc5024afa}{fetch}} (char $\ast$tags, int page, char $\ast$command)
 \begin{DoxyCompactList}\small\item\em Reads the configuration file, sets the options and sends a request to e621-\/e926. After taking the response, it calls the output function to show the URLs. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{yiffy-search_8h_aebab16cc92cc263d9665d22fc85b61a1}{aria2\+Download}} (char $\ast$tags, int page, bool is\+Nsfw)
 \begin{DoxyCompactList}\small\item\em downloads the API response by using aria2c, works with a system call \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -91,32 +89,11 @@ downloads the API response by using aria2c, works with a system call
 
 Definition at line 19 of file aria2\+Download.\+c.
 
-\mbox{\Hypertarget{yiffy-search_8h_aec8c78fe5f705338b0a2028d278e126f}\label{yiffy-search_8h_aec8c78fe5f705338b0a2028d278e126f}} 
-\index{yiffy-\/search.h@{yiffy-\/search.h}!dfetch@{dfetch}}
-\index{dfetch@{dfetch}!yiffy-\/search.h@{yiffy-\/search.h}}
-\doxysubsubsection{\texorpdfstring{dfetch()}{dfetch()}}
-{\footnotesize\ttfamily void dfetch (\begin{DoxyParamCaption}\item[{char $\ast$}]{tags,  }\item[{int}]{page }\end{DoxyParamCaption})}
-
-
-
-Reads the configuration file, sets the options and sends a request to e621-\/e926. After taking the response, it calls the download\+Output function to show and download the URLs. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em tags} & These are the e621-\/e926 tags prompted by the user as an argument value. Example\+: yiffy --fetch \char`\"{}anthro+fur+male+smile\char`\"{}. \\
-\hline
-{\em page} & This is the value that is passed to the API to get results from the specified pages. \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 31 of file dfetch.\+c.
-
-\mbox{\Hypertarget{yiffy-search_8h_a396e718624937eb224c416888d762eed}\label{yiffy-search_8h_a396e718624937eb224c416888d762eed}} 
+\mbox{\Hypertarget{yiffy-search_8h_a41f382b6bd05c9776641fb4bc5024afa}\label{yiffy-search_8h_a41f382b6bd05c9776641fb4bc5024afa}} 
 \index{yiffy-\/search.h@{yiffy-\/search.h}!fetch@{fetch}}
 \index{fetch@{fetch}!yiffy-\/search.h@{yiffy-\/search.h}}
 \doxysubsubsection{\texorpdfstring{fetch()}{fetch()}}
-{\footnotesize\ttfamily void fetch (\begin{DoxyParamCaption}\item[{char $\ast$}]{tags,  }\item[{int}]{page }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void fetch (\begin{DoxyParamCaption}\item[{char $\ast$}]{tags,  }\item[{int}]{page,  }\item[{char $\ast$}]{command }\end{DoxyParamCaption})}
 
 
 
@@ -128,8 +105,10 @@ Reads the configuration file, sets the options and sends a request to e621-\/e92
 \hline
 {\em page} & This is the value that is passed to the API to get results from the specified pages. \\
 \hline
+{\em command} & This is the value that checks if to output or output-\/download the URLs. \\
+\hline
 \end{DoxyParams}
 
 
-Definition at line 31 of file fetch.\+c.
+Definition at line 32 of file fetch.\+c.
 

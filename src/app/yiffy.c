@@ -34,8 +34,8 @@ static void exportLocalData();
 static void importLocalData();
 static void changeWebGenerationMode(char *onOff);
 static void changeAdultMode(char *onOff);
-static void searchURLS(char *tagstring);
-static void fetchURLS(char *tagString, char *command);
+static void searchURLS(char *tags);
+static void fetchURLS(char *tags, char *command);
 
 /**
  * @brief The general struct for handling the general arguments.
@@ -134,62 +134,94 @@ static bool argumentVerify(int argumentCount, char *arguments[])
     char *oneArguments[] = {"--help", "--version", "--github", "--website", "--config", "--export", "--import"};
     char *twoArguments[] = {"--wgen", "--nsfw", "--dfetch", "--fetch", "--search"};
 
+
     if (argumentCount == 3)
     {
+        /**
+        * @section Two Arguments Handling
+        *
+        * It checks if the passed argument exists in the htwoArguments array.
+        * If the passed option is --dfetch, --fetch or --search it returns true.
+        * Also, if the passed option is one of the twoArgument options and includes on/off as the second option returns true.
+        * If not, returns false and shows the user that the second option can only be on/off.
+        * 
+        * twoArguments they don't take on off: --dfetch, --fetch, --search.
+        * twoArguments they take on/off: --wgen, --nsfw.
+        */
         for (long unsigned int i = 0; i < sizeof(twoArguments) / sizeof(twoArguments[0]); i++)
         {
             if (strcmp(arguments[1], twoArguments[i]) == 0)
             {
                 if (strcmp(arguments[2], "on") == 0 || strcmp(arguments[2], "off") == 0 || strcmp(arguments[1], "--dfetch") == 0 || strcmp(arguments[1], "--fetch") == 0 || strcmp(arguments[1], "--search") == 0)
                 {
-                    return RECOGNIZED_ARGUMENT; /* return true; */
+                    return RECOGNIZED_ARGUMENT; /* Return true. */
                 }
                 else
                 {
                     onOffMessage(arguments[2]);
-                    return MISSING_ON_OFF; /* return false; */
+                    return MISSING_ON_OFF; /* Return false. */
                 }
             }
         }
 
+        /**
+         * @section Two Arguments Extra Argument Error Handling
+         * 
+         * When user entered 2 options and the first one exists in the oneArguments array, then it will generate an error message and return false.
+        */
         for (long unsigned int i = 0; i < sizeof(oneArguments) / sizeof(oneArguments[0]); i++)
         {
             if (strcmp(arguments[1], oneArguments[i]) == 0)
             {
                 extraArgumentErrorMessage(arguments[1]);
-                return EXTRA_ARG_VALUE; /* return false; */
+                return EXTRA_ARG_VALUE; /* Return false. */
             }
         }
 
         unrecognizedArgumentMessage(arguments[1]);
-        return UNRECOGNIZED_ARGUMENT; /* return false; */
+        return UNRECOGNIZED_ARGUMENT; /* Return false. */
     }
     else if (argumentCount == 2)
     {
+        /**
+         * @section One Argument Handling
+         * 
+         * When user entered 1 option and the first one exists in the oneArguments array, it will return true.
+        */
         for (long unsigned int i = 0; i < sizeof(oneArguments) / sizeof(oneArguments[0]); i++)
         {
             if (strcmp(arguments[1], oneArguments[i]) == 0)
             {
-                return RECOGNIZED_ARGUMENT; /* return true; */
+                return RECOGNIZED_ARGUMENT; /* Return true. */
             }
         }
 
+        /**
+         * @section One Argument Handling twoArgument Option Error Handling 
+         * 
+         * When user entered 1 option and the first one exists in the twoArguments array, it will return false and generate an error message.
+        */
         for (long unsigned int i = 0; i < sizeof(twoArguments) / sizeof(twoArguments[0]); i++)
         {
             if (strcmp(arguments[1], twoArguments[i]) == 0)
             {
                 noArgumentValueMessage(arguments[1]);
-                return NO_ARG_VALUE; /* return false; */
+                return NO_ARG_VALUE; /* Return false. */
             }
         }
         
         unrecognizedArgumentMessage(arguments[1]);
-        return UNRECOGNIZED_ARGUMENT; /* return false; */
+        return UNRECOGNIZED_ARGUMENT; /* Return false. */
     }
     else
     {
+        /**
+         * @section Invalid Argument Count Handling 
+         * 
+         * When user entered no options or more than 2 arguments, it will return false and generate an error message.
+        */
         argcErrorMessage(argumentCount);
-        return ARGC_QTY_ERROR; /* return false; */
+        return ARGC_QTY_ERROR; /* Return false. */
     }
 }
 
@@ -217,21 +249,25 @@ static void changeAdultMode(char *onOff)
     fprintf(stdout, "NSFW MENU%s\n", onOff);
 }
 
-/// @brief sends request and gets data from e621/926
-/// @param tagstring 
-static void searchURLS(char *tagstring)
+/**
+ * @brief Calls the search function to use yiffy e621-e926 terminal.
+ * @param tags These are the e621-e926 tags prompted by the user as an argument value. Example: yiffy --fetch "anthro+fur+male+smile".
+*/
+static void searchURLS(char *tags)
 {
-    fprintf(stdout, "SEARCH MENU %s\n", tagstring);
+    fprintf(stdout, "SEARCH MENU %s\n", tags);
 }
 
-/// @brief sends request and fetchs urls from e621/926
-/// @param tagString 
-static void fetchURLS(char *tagString, char *command)
+/**
+ * @brief Calls the fetch function in a loop to output or output-download URLs until there is no content anymore.
+ * @param tags These are the e621-e926 tags prompted by the user as an argument value. Example: yiffy --fetch "anthro+fur+male+smile".
+*/
+static void fetchURLS(char *tags, char *command)
 { 
     int i = 1;
     while (true)
     {
-        fetch(tagString, i, command);
+        fetch(tags, i, command);
         i++;
     }
 }

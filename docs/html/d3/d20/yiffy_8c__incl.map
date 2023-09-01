@@ -1,5 +1,5 @@
 <map id="src/app/yiffy.c" name="src/app/yiffy.c">
-<area shape="rect" id="node1" title="the main application file of yiffy" alt="" coords="325,5,436,32"/>
+<area shape="rect" id="node1" title="This is the main file and used to handle the arguments and execute the program by using external func..." alt="" coords="325,5,436,32"/>
 <area shape="rect" id="node2" title=" " alt="" coords="875,259,942,285"/>
 <area shape="rect" id="node3" title=" " alt="" coords="199,177,282,203"/>
 <area shape="rect" id="node4" title=" " alt="" coords="552,259,623,285"/>

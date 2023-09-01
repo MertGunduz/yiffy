@@ -105,11 +105,10 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d8/deb/yiffy-search_8h__dep__incl.png" border="0" usemap="#asrc_2yiffysearch_2yiffy-search_8hdep" alt=""/></div>
 <map name="asrc_2yiffysearch_2yiffy-search_8hdep" id="asrc_2yiffysearch_2yiffy-search_8hdep">
-<area shape="rect" title="the general search and use header for yiffy" alt="" coords="293,5,444,47"/>
-<area shape="rect" href="../../dc/dc0/yiffy_8c.html" title="the main application file of yiffy" alt="" coords="5,95,116,121"/>
+<area shape="rect" title="the general search and use header for yiffy" alt="" coords="180,5,331,47"/>
+<area shape="rect" href="../../dc/dc0/yiffy_8c.html" title="This is the main file and used to handle the arguments and execute the program by using external func..." alt="" coords="5,95,116,121"/>
 <area shape="rect" href="../../d0/d8c/aria2Download_8c.html" title="Downloads the JSON file by using aria2c, works with the system function." alt="" coords="140,95,371,121"/>
-<area shape="rect" href="../../d3/dd2/dfetch_8c.html" title="Sends request to e621&#45;e926 with the specified tags by user and outputs&#45;downloads URLs." alt="" coords="395,95,569,121"/>
-<area shape="rect" href="../../d1/d14/fetch_8c.html" title="Sends request to e621&#45;e926 with the specified tags by user and outputs URLs." alt="" coords="593,95,758,121"/>
+<area shape="rect" href="../../d1/d14/fetch_8c.html" title="Sends request to e621&#45;e926 with the specified tags by user and outputs or outputs&#45;downloads URLs." alt="" coords="395,95,561,121"/>
 </map>
 </div>
 </div>
@@ -122,12 +121,9 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aec8c78fe5f705338b0a2028d278e126f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d88/yiffy-search_8h.html#aec8c78fe5f705338b0a2028d278e126f">dfetch</a> (char *tags, int page)</td></tr>
-<tr class="memdesc:aec8c78fe5f705338b0a2028d278e126f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the configuration file, sets the options and sends a request to e621-e926. After taking the response, it calls the downloadOutput function to show and download the URLs.  <a href="../../dc/d88/yiffy-search_8h.html#aec8c78fe5f705338b0a2028d278e126f">More...</a><br /></td></tr>
-<tr class="separator:aec8c78fe5f705338b0a2028d278e126f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a396e718624937eb224c416888d762eed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d88/yiffy-search_8h.html#a396e718624937eb224c416888d762eed">fetch</a> (char *tags, int page)</td></tr>
-<tr class="memdesc:a396e718624937eb224c416888d762eed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the configuration file, sets the options and sends a request to e621-e926. After taking the response, it calls the output function to show the URLs.  <a href="../../dc/d88/yiffy-search_8h.html#a396e718624937eb224c416888d762eed">More...</a><br /></td></tr>
-<tr class="separator:a396e718624937eb224c416888d762eed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41f382b6bd05c9776641fb4bc5024afa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d88/yiffy-search_8h.html#a41f382b6bd05c9776641fb4bc5024afa">fetch</a> (char *tags, int page, char *command)</td></tr>
+<tr class="memdesc:a41f382b6bd05c9776641fb4bc5024afa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the configuration file, sets the options and sends a request to e621-e926. After taking the response, it calls the output function to show the URLs.  <a href="../../dc/d88/yiffy-search_8h.html#a41f382b6bd05c9776641fb4bc5024afa">More...</a><br /></td></tr>
+<tr class="separator:a41f382b6bd05c9776641fb4bc5024afa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aebab16cc92cc263d9665d22fc85b61a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d88/yiffy-search_8h.html#aebab16cc92cc263d9665d22fc85b61a1">aria2Download</a> (char *tags, int page, bool isNsfw)</td></tr>
 <tr class="memdesc:aebab16cc92cc263d9665d22fc85b61a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">downloads the API response by using aria2c, works with a system call  <a href="../../dc/d88/yiffy-search_8h.html#aebab16cc92cc263d9665d22fc85b61a1">More...</a><br /></td></tr>
 <tr class="separator:aebab16cc92cc263d9665d22fc85b61a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -202,47 +198,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aec8c78fe5f705338b0a2028d278e126f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aec8c78fe5f705338b0a2028d278e126f">&#9670;&nbsp;</a></span>dfetch()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void dfetch </td>
-          <td>(</td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>tags</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>page</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Reads the configuration file, sets the options and sends a request to e621-e926. After taking the response, it calls the downloadOutput function to show and download the URLs. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">tags</td><td>These are the e621-e926 tags prompted by the user as an argument value. Example: yiffy &ndash;fetch "anthro+fur+male+smile". </td></tr>
-    <tr><td class="paramname">page</td><td>This is the value that is passed to the API to get results from the specified pages. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="../../d3/dd2/dfetch_8c_source.html#l00031">31</a> of file <a class="el" href="../../d3/dd2/dfetch_8c_source.html">dfetch.c</a>.</p>
-
-</div>
-</div>
-<a id="a396e718624937eb224c416888d762eed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a396e718624937eb224c416888d762eed">&#9670;&nbsp;</a></span>fetch()</h2>
+<a id="a41f382b6bd05c9776641fb4bc5024afa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41f382b6bd05c9776641fb4bc5024afa">&#9670;&nbsp;</a></span>fetch()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -257,7 +214,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>page</em>&#160;</td>
+          <td class="paramname"><em>page</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>command</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -272,11 +235,12 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">tags</td><td>These are the e621-e926 tags prompted by the user as an argument value. Example: yiffy &ndash;fetch "anthro+fur+male+smile". </td></tr>
     <tr><td class="paramname">page</td><td>This is the value that is passed to the API to get results from the specified pages. </td></tr>
+    <tr><td class="paramname">command</td><td>This is the value that checks if to output or output-download the URLs. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d14/fetch_8c_source.html#l00031">31</a> of file <a class="el" href="../../d1/d14/fetch_8c_source.html">fetch.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d14/fetch_8c_source.html#l00032">32</a> of file <a class="el" href="../../d1/d14/fetch_8c_source.html">fetch.c</a>.</p>
 
 </div>
 </div>

@@ -2,11 +2,12 @@
 \label{fetch_8c}\index{src/yiffysearch/fetch.c@{src/yiffysearch/fetch.c}}
 
 
-Sends request to e621-\/e926 with the specified tags by user and outputs URLs.  
+Sends request to e621-\/e926 with the specified tags by user and outputs or outputs-\/downloads URLs.  
 
 
 {\ttfamily \#include \char`\"{}yiffy-\/search.\+h\char`\"{}}\newline
-Include dependency graph for fetch.\+c\+:\nopagebreak
+Include dependency graph for fetch.\+c\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -25,12 +26,12 @@ Include dependency graph for fetch.\+c\+:\nopagebreak
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{fetch_8c_a396e718624937eb224c416888d762eed}{fetch}} (char $\ast$tags, int page)
+void \mbox{\hyperlink{fetch_8c_a41f382b6bd05c9776641fb4bc5024afa}{fetch}} (char $\ast$tags, int page, char $\ast$command)
 \begin{DoxyCompactList}\small\item\em Reads the configuration file, sets the options and sends a request to e621-\/e926. After taking the response, it calls the output function to show the URLs. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Sends request to e621-\/e926 with the specified tags by user and outputs URLs. 
+Sends request to e621-\/e926 with the specified tags by user and outputs or outputs-\/downloads URLs. 
 
 This file is used to send a request to the fetch data from API and output the post URLs. Fetch function is used to check the configuration files and send request to the API. After that it takes the response and checks if JSON file is in the right format. Output function is used to read and parse the JSON file. Also outputs the URLs to the terminal or redirected path.
 
@@ -88,11 +89,11 @@ Definition at line 15 of file fetch.\+c.
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{fetch_8c_a396e718624937eb224c416888d762eed}\label{fetch_8c_a396e718624937eb224c416888d762eed}} 
+\mbox{\Hypertarget{fetch_8c_a41f382b6bd05c9776641fb4bc5024afa}\label{fetch_8c_a41f382b6bd05c9776641fb4bc5024afa}} 
 \index{fetch.c@{fetch.c}!fetch@{fetch}}
 \index{fetch@{fetch}!fetch.c@{fetch.c}}
 \doxysubsubsection{\texorpdfstring{fetch()}{fetch()}}
-{\footnotesize\ttfamily void fetch (\begin{DoxyParamCaption}\item[{char $\ast$}]{tags,  }\item[{int}]{page }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void fetch (\begin{DoxyParamCaption}\item[{char $\ast$}]{tags,  }\item[{int}]{page,  }\item[{char $\ast$}]{command }\end{DoxyParamCaption})}
 
 
 
@@ -104,8 +105,10 @@ Reads the configuration file, sets the options and sends a request to e621-\/e92
 \hline
 {\em page} & This is the value that is passed to the API to get results from the specified pages. \\
 \hline
+{\em command} & This is the value that checks if to output or output-\/download the URLs. \\
+\hline
 \end{DoxyParams}
 
 
-Definition at line 31 of file fetch.\+c.
+Definition at line 32 of file fetch.\+c.
 
