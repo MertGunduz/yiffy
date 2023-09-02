@@ -1,7 +1,7 @@
 /**
  * @file onOffMessage.c
  * 
- * @brief outputs the correct argument value (on/off) for specified arguments
+ * @brief This file is used to output the correct argument value (on/off) for specified arguments
  * 
  * @author Mehmet Mert Gunduz 
  * 

@@ -1,7 +1,7 @@
 /**
  * @file fetch.c
  * 
- * @brief Sends request to e621-e926 with the specified tags by user and outputs or outputs-downloads URLs.
+ * @brief This file is used to send requests to e621-e926 with the specified tags by user and outputs or outputs-downloads URLs.
  * 
  * This file is used to send a request to the fetch data from API and output the post URLs.
  * Fetch function is used to check the configuration files and send request to the API. After that it takes the response and checks if JSON file is in the right format.
