@@ -1,5 +1,10 @@
 \hypertarget{cjson_8c}{}\doxysection{src/cjson/cjson.c File Reference}
 \label{cjson_8c}\index{src/cjson/cjson.c@{src/cjson/cjson.c}}
+
+
+This file is used to handle all the JSON processes in requests, code file of a well-\/known library called \mbox{\hyperlink{structcJSON}{c\+JSON}}.  
+
+
 {\ttfamily \#include $<$string.\+h$>$}\newline
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include $<$math.\+h$>$}\newline
@@ -8,7 +13,8 @@
 {\ttfamily \#include $<$ctype.\+h$>$}\newline
 {\ttfamily \#include $<$float.\+h$>$}\newline
 {\ttfamily \#include \char`\"{}cjson.\+h\char`\"{}}\newline
-Include dependency graph for cjson.\+c\+:\nopagebreak
+Include dependency graph for cjson.\+c\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -81,6 +87,23 @@ typedef struct \mbox{\hyperlink{structinternal__hooks}{internal\+\_\+hooks}} \mb
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+This file is used to handle all the JSON processes in requests, code file of a well-\/known library called \mbox{\hyperlink{structcJSON}{c\+JSON}}. 
+
+Copyright (c) 2009-\/2017 Dave Gamble and \mbox{\hyperlink{structcJSON}{c\+JSON}} contributors Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \char`\"{}\+Software\char`\"{}), to deal in the Software without restriction, including without limitation the right to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions\+:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED \char`\"{}\+AS IS\char`\"{}, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+\begin{DoxyAuthor}{Author}
+Mehmet Mert Gunduz
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+02/09/2023 
+\end{DoxyDate}
+
+
 \doxysubsection{Macro Definition Documentation}
 \mbox{\Hypertarget{cjson_8c_ac538057ef78677344d222b763251af5e}\label{cjson_8c_ac538057ef78677344d222b763251af5e}} 
 \index{cjson.c@{cjson.c}!buffer\_at\_offset@{buffer\_at\_offset}}
@@ -90,7 +113,7 @@ typedef struct \mbox{\hyperlink{structinternal__hooks}{internal\+\_\+hooks}} \mb
 
 
 
-Definition at line 302 of file cjson.\+c.
+Definition at line 309 of file cjson.\+c.
 
 \mbox{\Hypertarget{cjson_8c_ae210aa01f1afe7510658c392f0f6e128}\label{cjson_8c_ae210aa01f1afe7510658c392f0f6e128}} 
 \index{cjson.c@{cjson.c}!can\_access\_at\_index@{can\_access\_at\_index}}
@@ -100,7 +123,7 @@ Definition at line 302 of file cjson.\+c.
 
 
 
-Definition at line 299 of file cjson.\+c.
+Definition at line 306 of file cjson.\+c.
 
 \mbox{\Hypertarget{cjson_8c_a2257377f8b81f4f76a16b698f681af34}\label{cjson_8c_a2257377f8b81f4f76a16b698f681af34}} 
 \index{cjson.c@{cjson.c}!can\_read@{can\_read}}
@@ -110,7 +133,7 @@ Definition at line 299 of file cjson.\+c.
 
 
 
-Definition at line 297 of file cjson.\+c.
+Definition at line 304 of file cjson.\+c.
 
 \mbox{\Hypertarget{cjson_8c_a5c873a43d8a78ce9a6d9e8eb41d65d2d}\label{cjson_8c_a5c873a43d8a78ce9a6d9e8eb41d65d2d}} 
 \index{cjson.c@{cjson.c}!cannot\_access\_at\_index@{cannot\_access\_at\_index}}
@@ -120,7 +143,7 @@ Definition at line 297 of file cjson.\+c.
 
 
 
-Definition at line 300 of file cjson.\+c.
+Definition at line 307 of file cjson.\+c.
 
 \mbox{\Hypertarget{cjson_8c_a13f540fa846f658531751b5ccb78f303}\label{cjson_8c_a13f540fa846f658531751b5ccb78f303}} 
 \index{cjson.c@{cjson.c}!cjson\_min@{cjson\_min}}
@@ -130,7 +153,7 @@ Definition at line 300 of file cjson.\+c.
 
 
 
-Definition at line 1185 of file cjson.\+c.
+Definition at line 1192 of file cjson.\+c.
 
 \mbox{\Hypertarget{cjson_8c_a65e9886d74aaee76545e83dd09011727}\label{cjson_8c_a65e9886d74aaee76545e83dd09011727}} 
 \index{cjson.c@{cjson.c}!false@{false}}
@@ -140,7 +163,7 @@ Definition at line 1185 of file cjson.\+c.
 
 
 
-Definition at line 70 of file cjson.\+c.
+Definition at line 77 of file cjson.\+c.
 
 \mbox{\Hypertarget{cjson_8c_a940bb34b2c297c3d8297d506a3955839}\label{cjson_8c_a940bb34b2c297c3d8297d506a3955839}} 
 \index{cjson.c@{cjson.c}!internal\_free@{internal\_free}}
@@ -150,7 +173,7 @@ Definition at line 70 of file cjson.\+c.
 
 
 
-Definition at line 179 of file cjson.\+c.
+Definition at line 186 of file cjson.\+c.
 
 \mbox{\Hypertarget{cjson_8c_a7fd7640617f7ffead7a9b1408c9d0ae8}\label{cjson_8c_a7fd7640617f7ffead7a9b1408c9d0ae8}} 
 \index{cjson.c@{cjson.c}!internal\_malloc@{internal\_malloc}}
@@ -160,7 +183,7 @@ Definition at line 179 of file cjson.\+c.
 
 
 
-Definition at line 178 of file cjson.\+c.
+Definition at line 185 of file cjson.\+c.
 
 \mbox{\Hypertarget{cjson_8c_a91654176e81c707d28b99dd0bf783ed5}\label{cjson_8c_a91654176e81c707d28b99dd0bf783ed5}} 
 \index{cjson.c@{cjson.c}!internal\_realloc@{internal\_realloc}}
@@ -170,7 +193,7 @@ Definition at line 178 of file cjson.\+c.
 
 
 
-Definition at line 180 of file cjson.\+c.
+Definition at line 187 of file cjson.\+c.
 
 \mbox{\Hypertarget{cjson_8c_abad128f70dbd5a06aa93fe79b3acc4df}\label{cjson_8c_abad128f70dbd5a06aa93fe79b3acc4df}} 
 \index{cjson.c@{cjson.c}!isinf@{isinf}}
@@ -180,7 +203,7 @@ Definition at line 180 of file cjson.\+c.
 
 
 
-Definition at line 74 of file cjson.\+c.
+Definition at line 81 of file cjson.\+c.
 
 \mbox{\Hypertarget{cjson_8c_a11b2d271b8abcb53159ffb82dc29547a}\label{cjson_8c_a11b2d271b8abcb53159ffb82dc29547a}} 
 \index{cjson.c@{cjson.c}!isnan@{isnan}}
@@ -190,7 +213,7 @@ Definition at line 74 of file cjson.\+c.
 
 
 
-Definition at line 77 of file cjson.\+c.
+Definition at line 84 of file cjson.\+c.
 
 \mbox{\Hypertarget{cjson_8c_a8abfcc76130f3f991d124dd22d7e69bc}\label{cjson_8c_a8abfcc76130f3f991d124dd22d7e69bc}} 
 \index{cjson.c@{cjson.c}!NAN@{NAN}}
@@ -200,7 +223,7 @@ Definition at line 77 of file cjson.\+c.
 
 
 
-Definition at line 84 of file cjson.\+c.
+Definition at line 91 of file cjson.\+c.
 
 \mbox{\Hypertarget{cjson_8c_a5714bac836668a1b9af55465b78531ef}\label{cjson_8c_a5714bac836668a1b9af55465b78531ef}} 
 \index{cjson.c@{cjson.c}!static\_strlen@{static\_strlen}}
@@ -210,7 +233,7 @@ Definition at line 84 of file cjson.\+c.
 
 
 
-Definition at line 184 of file cjson.\+c.
+Definition at line 191 of file cjson.\+c.
 
 \mbox{\Hypertarget{cjson_8c_a41f9c5fb8b08eb5dc3edce4dcb37fee7}\label{cjson_8c_a41f9c5fb8b08eb5dc3edce4dcb37fee7}} 
 \index{cjson.c@{cjson.c}!true@{true}}
@@ -220,7 +243,7 @@ Definition at line 184 of file cjson.\+c.
 
 
 
-Definition at line 65 of file cjson.\+c.
+Definition at line 72 of file cjson.\+c.
 
 
 
@@ -242,7 +265,7 @@ Definition at line 65 of file cjson.\+c.
 
 
 
-Definition at line 99 of file cjson.\+c.
+Definition at line 106 of file cjson.\+c.
 
 \mbox{\Hypertarget{cjson_8c_aa2ca313f61c789be20f8a69b651043c3}\label{cjson_8c_aa2ca313f61c789be20f8a69b651043c3}} 
 \index{cjson.c@{cjson.c}!CJSON\_PUBLIC@{CJSON\_PUBLIC}}
@@ -252,7 +275,7 @@ Definition at line 99 of file cjson.\+c.
 
 
 
-Definition at line 1079 of file cjson.\+c.
+Definition at line 1086 of file cjson.\+c.
 
 \mbox{\Hypertarget{cjson_8c_aed7e219a2b9187880c97c6f0ea5fa1b4}\label{cjson_8c_aed7e219a2b9187880c97c6f0ea5fa1b4}} 
 \index{cjson.c@{cjson.c}!CJSON\_PUBLIC@{CJSON\_PUBLIC}}
@@ -262,7 +285,7 @@ Definition at line 1079 of file cjson.\+c.
 
 
 
-Definition at line 1292 of file cjson.\+c.
+Definition at line 1299 of file cjson.\+c.
 
 \mbox{\Hypertarget{cjson_8c_a312f68be4be2921a09b9ba24d554900d}\label{cjson_8c_a312f68be4be2921a09b9ba24d554900d}} 
 \index{cjson.c@{cjson.c}!CJSON\_PUBLIC@{CJSON\_PUBLIC}}
@@ -272,7 +295,7 @@ Definition at line 1292 of file cjson.\+c.
 
 
 
-Definition at line 94 of file cjson.\+c.
+Definition at line 101 of file cjson.\+c.
 
 \mbox{\Hypertarget{cjson_8c_a4f2f67c8ce831561e7a1f5b173954037}\label{cjson_8c_a4f2f67c8ce831561e7a1f5b173954037}} 
 \index{cjson.c@{cjson.c}!CJSON\_PUBLIC@{CJSON\_PUBLIC}}
@@ -282,7 +305,7 @@ Definition at line 94 of file cjson.\+c.
 
 
 
-Definition at line 109 of file cjson.\+c.
+Definition at line 116 of file cjson.\+c.
 
 \mbox{\Hypertarget{cjson_8c_a0b3a6bc5d2c01a027675cf52246b9424}\label{cjson_8c_a0b3a6bc5d2c01a027675cf52246b9424}} 
 \index{cjson.c@{cjson.c}!CJSON\_PUBLIC@{CJSON\_PUBLIC}}
@@ -292,7 +315,7 @@ Definition at line 109 of file cjson.\+c.
 
 
 
-Definition at line 3111 of file cjson.\+c.
+Definition at line 3118 of file cjson.\+c.
 
 \mbox{\Hypertarget{cjson_8c_a9e943a63b19411e07fe82f46a56e35e5}\label{cjson_8c_a9e943a63b19411e07fe82f46a56e35e5}} 
 \index{cjson.c@{cjson.c}!CJSON\_PUBLIC@{CJSON\_PUBLIC}}
@@ -302,5 +325,5 @@ Definition at line 3111 of file cjson.\+c.
 
 
 
-Definition at line 209 of file cjson.\+c.
+Definition at line 216 of file cjson.\+c.
 
