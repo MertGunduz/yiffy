@@ -1,7 +1,7 @@
 /**
  * @file noArgumentValueMessage.c
  * 
- * @brief outputs the correct prompt format when there is no argument value 
+ * @brief This file is used to output the correct prompt format when there is no argument value. 
  * 
  * @author Mehmet Mert Gunduz 
  * 
@@ -10,8 +10,11 @@
 
 #include "yiffy-messages.h"
 
-/// @brief outputs the correct prompt format when there is no argument value 
-/// @param argument 
+/**
+ * @brief Outputs the correct prompt format when there is no argument value. 
+ * 
+ * @param argument The option prompted by the user. 
+*/
 void noArgumentValueMessage(char *argument)
 {
     if (strcmp(argument, "--wgen") == 0 || strcmp(argument, "--nsfw") == 0)

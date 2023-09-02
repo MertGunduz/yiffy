@@ -1,7 +1,7 @@
 /**
  * @file argcErrorMessage.c
  * 
- * @brief evaluates the argument count and gives information if it is not in the requested format
+ * @brief This file is used to evaluate the argument count and give information if not in the requested format.
  * 
  * @author Mehmet Mert Gunduz 
  * 
@@ -10,8 +10,11 @@
 
 #include "yiffy-messages.h"
 
-/// @brief evaluates the argument count and gives information if it is not in the requested format
-/// @param argc 
+/**
+ * @brief Evaluates the argument count and gives information if not in the requested format.
+ * 
+ * @param argc This is the argument count value.
+*/
 void argcErrorMessage(int argc)
 {
     if (argc == 1)

@@ -1,5 +1,5 @@
 <map id="src/yiffymessages/unrecognizedArgumentMessage.c" name="src/yiffymessages/unrecognizedArgumentMessage.c">
-<area shape="rect" id="node1" title="gives information and outputs the command prompted by the user when it is not defined as a valid argu..." alt="" coords="5,5,236,47"/>
+<area shape="rect" id="node1" title="This file is used to give information and output the command prompted by the user when it is not defi..." alt="" coords="5,5,236,47"/>
 <area shape="rect" id="node2" href="$de/d35/yiffy-messages_8h.html" title="the message output header for yiffy" alt="" coords="53,95,188,121"/>
 <area shape="rect" id="node3" title=" " alt="" coords="41,169,107,196"/>
 <area shape="rect" id="node4" title=" " alt="" coords="132,169,203,196"/>

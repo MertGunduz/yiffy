@@ -1,7 +1,7 @@
 /**
  * @file mallocErrorMessage.c
  * 
- * @brief  it shows some information when yiffy cannot allocate memory
+ * @brief This file is used to show some information when yiffy cannot allocate memory.
  * 
  * @author Mehmet Mert Gunduz
  * 
@@ -10,7 +10,9 @@
 
 #include "yiffy-messages.h"
 
-/// @brief it shows some information when yiffy cannot allocate memory
+/** 
+ * @brief Shows some information when yiffy cannot allocate memory.
+*/ 
 void mallocErrorMessage()
 { 
     fprintf(stderr, "yiffy: can\'t allocate memory for the processes.\n");

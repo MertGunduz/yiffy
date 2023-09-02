@@ -1,7 +1,7 @@
 /**
  * @file fileOpenErrorMessage.c
  * 
- * @brief it shows some information message to give user solutions
+ * @brief This file is used to show some information about file permissions when yiffy is not able to read file.  
  * 
  * @author Mehmet Mert Gunduz
  * 
@@ -10,12 +10,15 @@
 
 #include "yiffy-messages.h"
 
-/// @brief it shows some information message to give user solutions
+/**
+ * @brief Shows some information about file permissions when yiffy is not able to read file.  
+ * 
+ * @param file This is used to close the file. 
+*/
 void fileOpenErrorMessage(FILE *file)
 { 
     fprintf(stderr, "yiffy: error opening the file.\n");
     fprintf(stderr, "yiffy: please check the file read-write permissions.\n");
 
-    /* close the file after showing information */
     fclose(file);
 }

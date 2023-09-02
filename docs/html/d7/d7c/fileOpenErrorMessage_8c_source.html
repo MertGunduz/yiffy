@@ -74,15 +74,14 @@ $(function() {
 <a href="../../d7/d7c/fileOpenErrorMessage_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../de/d35/yiffy-messages_8h.html">yiffy-messages.h</a>&quot;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="../../d7/d7c/fileOpenErrorMessage_8c.html#a76d169150f8b831d6d8fa432530eb37a">   14</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d7/d7c/fileOpenErrorMessage_8c.html#a76d169150f8b831d6d8fa432530eb37a">fileOpenErrorMessage</a>(FILE *file)</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{ </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    fprintf(stderr, <span class="stringliteral">&quot;yiffy: error opening the file.\n&quot;</span>);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    fprintf(stderr, <span class="stringliteral">&quot;yiffy: please check the file read-write permissions.\n&quot;</span>);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="comment">/* close the file after showing information */</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    fclose(file);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
-<div class="ttc" id="afileOpenErrorMessage_8c_html_a76d169150f8b831d6d8fa432530eb37a"><div class="ttname"><a href="../../d7/d7c/fileOpenErrorMessage_8c.html#a76d169150f8b831d6d8fa432530eb37a">fileOpenErrorMessage</a></div><div class="ttdeci">void fileOpenErrorMessage(FILE *file)</div><div class="ttdoc">it shows some information message to give user solutions</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d7c/fileOpenErrorMessage_8c_source.html#l00014">fileOpenErrorMessage.c:14</a></div></div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="../../d7/d7c/fileOpenErrorMessage_8c.html#a76d169150f8b831d6d8fa432530eb37a">   18</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d7/d7c/fileOpenErrorMessage_8c.html#a76d169150f8b831d6d8fa432530eb37a">fileOpenErrorMessage</a>(FILE *file)</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{ </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    fprintf(stderr, <span class="stringliteral">&quot;yiffy: error opening the file.\n&quot;</span>);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    fprintf(stderr, <span class="stringliteral">&quot;yiffy: please check the file read-write permissions.\n&quot;</span>);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    fclose(file);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
+<div class="ttc" id="afileOpenErrorMessage_8c_html_a76d169150f8b831d6d8fa432530eb37a"><div class="ttname"><a href="../../d7/d7c/fileOpenErrorMessage_8c.html#a76d169150f8b831d6d8fa432530eb37a">fileOpenErrorMessage</a></div><div class="ttdeci">void fileOpenErrorMessage(FILE *file)</div><div class="ttdoc">Shows some information about file permissions when yiffy is not able to read file.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d7c/fileOpenErrorMessage_8c_source.html#l00018">fileOpenErrorMessage.c:18</a></div></div>
 <div class="ttc" id="ayiffy-messages_8h_html"><div class="ttname"><a href="../../de/d35/yiffy-messages_8h.html">yiffy-messages.h</a></div><div class="ttdoc">the message output header for yiffy</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

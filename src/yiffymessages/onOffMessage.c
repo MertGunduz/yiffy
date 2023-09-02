@@ -10,8 +10,11 @@
 
 #include "yiffy-messages.h"
 
-/// @brief outputs the correct argument value (on/off) for specified arguments
-/// @param argument 
+/**
+ * @brief Outputs the correct argument value (on/off) for specified options.
+ * 
+ * @param argument The option prompted by the user.
+*/ 
 void onOffMessage(char *argument)
 {
     fprintf(stderr, "yiffy: you have entered \"%s\" prompt as second argument.\n", argument);

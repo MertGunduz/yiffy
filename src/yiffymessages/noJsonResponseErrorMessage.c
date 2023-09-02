@@ -1,7 +1,7 @@
 /**
  * @file noJsonResponseErrorMessage.c
  * 
- * @brief outputs the error when there is no json file 
+ * @brief This file is used to output the error when there is no JSON file. 
  * 
  * @author Mehmet Mert Gunduz 
  * 
@@ -10,13 +10,15 @@
 
 #include "yiffy-messages.h"
 
-///  @brief outputs the error when there is no json file 
-/// @param argument 
+/**
+ * @brief Outputs the error when there is no JSON file. 
+ * 
+ * @param jsonFile This is used to close the JSON file. 
+*/
 void noJsonResponseErrorMessage(FILE *jsonFile)
 {
     fprintf(stderr, "yiffy: couldn\'t find the json response file.\n");
     fprintf(stderr, "yiffy: please try giving the file read-write permission to the working directory.\n");
 
-    /* close the file after showing information */
     fclose(jsonFile);
 }

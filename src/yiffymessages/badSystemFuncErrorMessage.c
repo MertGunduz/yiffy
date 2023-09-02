@@ -1,7 +1,7 @@
 /**
  * @file badSystemFuncErrorMessage.c
  * 
- * @brief it shows some information when system function didn't worked
+ * @brief This file is used to show some information when system function did not worked.
  * 
  * @author Mehmet Mert Gunduz
  * 
@@ -10,7 +10,9 @@
 
 #include "yiffy-messages.h"
 
-/// @brief it shows some information when system function didn't worked
+/**
+ * @brief Shows some information when system function not works.
+*/
 void badSystemFuncErrorMessage()
 { 
     fprintf(stderr, "yiffy: error executing the system command.\n");

@@ -1,7 +1,7 @@
 /**
  * @file extraArgumentErrorMessage.c
  * 
- * @brief outputs the format for the argument when there is additional argument
+ * @brief This file is used to output the correct format for the prompted option when there is additional invalid argument.
  * 
  * @author Mehmet Mert Gunduz 
  * 
@@ -10,8 +10,11 @@
 
 #include "yiffy-messages.h"
 
-/// @brief outputs the format for the argument when there is additional argument
-/// @param argument 
+/**
+ * @brief Outputs the correct format for the prompted option when there is additional invalid argument.
+ * 
+ * @param argument The option prompted by the user. 
+*/ 
 void extraArgumentErrorMessage(char *argument)
 {
     fprintf(stderr, "yiffy: please delete the argument value.\n");

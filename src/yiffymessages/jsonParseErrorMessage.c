@@ -1,7 +1,7 @@
 /**
  * @file jsonParseErrorMessage.c
  * 
- * @brief outputs the error message when application can not parse the json content
+ * @brief This file is used to output the error message when application can not parse the JSON content.
  * 
  * @author Mehmet Mert Gunduz
  * 
@@ -10,7 +10,9 @@
 
 #include "yiffy-messages.h"
 
-/// @brief outputs the error message when application can not parse the json content
+/**
+ * @brief Outputs the error message when application can not parse the JSON content.
+*/ 
 void jsonParseErrorMessage()
 {
     fprintf(stderr, "yiffy: error parsing json file.\n");

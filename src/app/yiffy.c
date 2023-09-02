@@ -120,8 +120,8 @@ int main(int argc, char *argv[])
 /**
  * @brief Checks the argument count and arguments, if they are in the wanted format returns true .
  * 
- * This function checks the validity of command line arguments provided to a program.
- * It supports two types of arguments, single arguments and two-argument options.
+ * Checks the validity of command line arguments provided to a program.
+ * Supports two types of arguments, single argument options and two-argument options.
  * 
  * 
  * @param argumentCount The number of command line arguments.

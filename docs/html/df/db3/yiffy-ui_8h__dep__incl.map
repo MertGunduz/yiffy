@@ -1,7 +1,7 @@
 <map id="src/yiffyui/yiffy&#45;ui.h" name="src/yiffyui/yiffy&#45;ui.h">
 <area shape="rect" id="node1" title="general ui management header for yiffy (includes functions and structures for managing the terminal u..." alt="" coords="477,5,625,32"/>
 <area shape="rect" id="node2" href="$d2/d2d/yiffy-text-menus_8h.html" title="the text based menu header for yiffy (show menu related part [showHelpMenu] [showVersionMenu] [showGi..." alt="" coords="391,80,538,121"/>
-<area shape="rect" id="node9" href="$dd/d16/fprintfH_8c.html" title="creates the text header for show menus" alt="" coords="563,87,713,114"/>
+<area shape="rect" id="node9" href="$dd/d16/fprintfH_8c.html" title="This file is used to create the text header." alt="" coords="563,87,713,114"/>
 <area shape="rect" id="node3" href="$dc/dc0/yiffy_8c.html" title="This is the main file and used to handle the arguments and execute the program by using external func..." alt="" coords="5,177,116,203"/>
 <area shape="rect" id="node4" href="$dd/d89/showConfig_8c.html" title="This file is used to show current configurations of the app to the user." alt="" coords="141,169,285,211"/>
 <area shape="rect" id="node5" href="$df/d72/showGithub_8c.html" title="This file is used to show project github URL, current issues to the user." alt="" coords="309,169,453,211"/>

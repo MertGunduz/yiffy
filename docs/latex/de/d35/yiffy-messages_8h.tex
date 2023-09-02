@@ -14,7 +14,8 @@ Include dependency graph for yiffy-\/messages.h\+:\nopagebreak
 \includegraphics[width=210pt]{d4/d8a/yiffy-messages_8h__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:\nopagebreak
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -25,31 +26,32 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{yiffy-messages_8h_a98ea61cc699732ffc205c5cce8674455}{on\+Off\+Message}} (char $\ast$argument)
-\begin{DoxyCompactList}\small\item\em outputs the correct argument value (on/off) for specified arguments \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Outputs the correct argument value (on/off) for specified options. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{yiffy-messages_8h_ab77033d8b672ad2a270de7f823842fe6}{unrecognized\+Argument\+Message}} (char $\ast$argument)
-\begin{DoxyCompactList}\small\item\em gives information and outputs the command prompted by the user when it is not defined as a valid argument \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Gives information and outputs the command prompted by the user when it is not defined as a valid argument. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{yiffy-messages_8h_a81c685b666239e7dfe3cc98ab6249b55}{no\+Argument\+Value\+Message}} (char $\ast$argument)
-\begin{DoxyCompactList}\small\item\em outputs the correct prompt format when there is no argument value \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Outputs the correct prompt format when there is no argument value. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{yiffy-messages_8h_a9beeda8ebe8f084dbc596d0639eaf9b3}{argc\+Error\+Message}} (int argc)
-\begin{DoxyCompactList}\small\item\em evaluates the argument count and gives information if it is not in the requested format \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Evaluates the argument count and gives information if not in the requested format. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{yiffy-messages_8h_aeeb39a1ff7f4fc6fbc7ab03e373edb55}{extra\+Argument\+Error\+Message}} (char $\ast$argument)
-\begin{DoxyCompactList}\small\item\em outputs the format for the argument when there is additional argument \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Outputs the correct format for the prompted option when there is additional invalid argument. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{yiffy-messages_8h_a28e66284663b33a9f8d102c306dff47a}{home\+Not\+Found\+Error\+Message}} ()
-\begin{DoxyCompactList}\small\item\em outputs the home not found error when application can not access the \$home environment variable \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Outputs the home not found error when application can not access the \$\+HOME environment variable. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{yiffy-messages_8h_a76d169150f8b831d6d8fa432530eb37a}{file\+Open\+Error\+Message}} (FILE $\ast$file)
-\begin{DoxyCompactList}\small\item\em it shows some information message to give user solutions \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Shows some information about file permissions when yiffy is not able to read file. ~\newline
+ \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{yiffy-messages_8h_a07238bc76c10c5b2a482d0c92bf876a0}{no\+Json\+Response\+Error\+Message}} (FILE $\ast$json\+File)
-\begin{DoxyCompactList}\small\item\em outputs the error when there is no json file \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Outputs the error when there is no JSON file. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{yiffy-messages_8h_a3d6b6f0d495570a56108ebe81a9135e0}{json\+Parse\+Error\+Message}} ()
-\begin{DoxyCompactList}\small\item\em outputs the error message when application can not parse the json content \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Outputs the error message when application can not parse the JSON content. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{yiffy-messages_8h_af035754847a199c09437d01c4924310e}{no\+Results\+Found\+Error\+Message}} ()
-\begin{DoxyCompactList}\small\item\em outputs the error when there is no response from the API \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Outputs the error when there is no response from the API. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{yiffy-messages_8h_af56a19a2187269965a612970ba59ecb5}{cjson\+Ptr\+Error\+Message}} (const char $\ast$ptr\+Error)
-\begin{DoxyCompactList}\small\item\em it shows some information when cjson root gives error \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Shows some information when cjson root gives error. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{yiffy-messages_8h_aba87d83a1261ea74ac3a65cb8878efba}{malloc\+Error\+Message}} ()
-\begin{DoxyCompactList}\small\item\em it shows some information when yiffy cannot allocate memory \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Shows some information when yiffy cannot allocate memory. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{yiffy-messages_8h_ac71c07b3e08b0746709e36e52c6af872}{bad\+System\+Func\+Error\+Message}} ()
-\begin{DoxyCompactList}\small\item\em it shows some information when system function didn\textquotesingle{}t worked \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Shows some information when system function not works. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -72,17 +74,16 @@ Mehmet Mert Gunduz
 
 
 
-evaluates the argument count and gives information if it is not in the requested format 
+Evaluates the argument count and gives information if not in the requested format. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em argc} & ~\newline
- \\
+{\em argc} & This is the argument count value. \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line 15 of file argc\+Error\+Message.\+c.
+Definition at line 18 of file argc\+Error\+Message.\+c.
 
 \mbox{\Hypertarget{yiffy-messages_8h_ac71c07b3e08b0746709e36e52c6af872}\label{yiffy-messages_8h_ac71c07b3e08b0746709e36e52c6af872}} 
 \index{yiffy-\/messages.h@{yiffy-\/messages.h}!badSystemFuncErrorMessage@{badSystemFuncErrorMessage}}
@@ -92,11 +93,11 @@ Definition at line 15 of file argc\+Error\+Message.\+c.
 
 
 
-it shows some information when system function didn\textquotesingle{}t worked 
+Shows some information when system function not works. 
 
 
 
-Definition at line 14 of file bad\+System\+Func\+Error\+Message.\+c.
+Definition at line 16 of file bad\+System\+Func\+Error\+Message.\+c.
 
 \mbox{\Hypertarget{yiffy-messages_8h_af56a19a2187269965a612970ba59ecb5}\label{yiffy-messages_8h_af56a19a2187269965a612970ba59ecb5}} 
 \index{yiffy-\/messages.h@{yiffy-\/messages.h}!cjsonPtrErrorMessage@{cjsonPtrErrorMessage}}
@@ -106,17 +107,16 @@ Definition at line 14 of file bad\+System\+Func\+Error\+Message.\+c.
 
 
 
-it shows some information when cjson root gives error 
+Shows some information when cjson root gives error. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em ptr\+Error} & ~\newline
- \\
+{\em ptr\+Error} & The CJSON generated error message. \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line 15 of file cjson\+Ptr\+Error\+Message.\+c.
+Definition at line 18 of file cjson\+Ptr\+Error\+Message.\+c.
 
 \mbox{\Hypertarget{yiffy-messages_8h_aeeb39a1ff7f4fc6fbc7ab03e373edb55}\label{yiffy-messages_8h_aeeb39a1ff7f4fc6fbc7ab03e373edb55}} 
 \index{yiffy-\/messages.h@{yiffy-\/messages.h}!extraArgumentErrorMessage@{extraArgumentErrorMessage}}
@@ -126,17 +126,16 @@ Definition at line 15 of file cjson\+Ptr\+Error\+Message.\+c.
 
 
 
-outputs the format for the argument when there is additional argument 
+Outputs the correct format for the prompted option when there is additional invalid argument. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em argument} & ~\newline
- \\
+{\em argument} & The option prompted by the user. \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line 15 of file extra\+Argument\+Error\+Message.\+c.
+Definition at line 18 of file extra\+Argument\+Error\+Message.\+c.
 
 \mbox{\Hypertarget{yiffy-messages_8h_a76d169150f8b831d6d8fa432530eb37a}\label{yiffy-messages_8h_a76d169150f8b831d6d8fa432530eb37a}} 
 \index{yiffy-\/messages.h@{yiffy-\/messages.h}!fileOpenErrorMessage@{fileOpenErrorMessage}}
@@ -146,11 +145,17 @@ Definition at line 15 of file extra\+Argument\+Error\+Message.\+c.
 
 
 
-it shows some information message to give user solutions 
+Shows some information about file permissions when yiffy is not able to read file. ~\newline
+ 
 
 
+\begin{DoxyParams}{Parameters}
+{\em file} & This is used to close the file. \\
+\hline
+\end{DoxyParams}
 
-Definition at line 14 of file file\+Open\+Error\+Message.\+c.
+
+Definition at line 18 of file file\+Open\+Error\+Message.\+c.
 
 \mbox{\Hypertarget{yiffy-messages_8h_a28e66284663b33a9f8d102c306dff47a}\label{yiffy-messages_8h_a28e66284663b33a9f8d102c306dff47a}} 
 \index{yiffy-\/messages.h@{yiffy-\/messages.h}!homeNotFoundErrorMessage@{homeNotFoundErrorMessage}}
@@ -160,11 +165,11 @@ Definition at line 14 of file file\+Open\+Error\+Message.\+c.
 
 
 
-outputs the home not found error when application can not access the \$home environment variable 
+Outputs the home not found error when application can not access the \$\+HOME environment variable. 
 
 
 
-Definition at line 14 of file home\+Not\+Found\+Error\+Message.\+c.
+Definition at line 16 of file home\+Not\+Found\+Error\+Message.\+c.
 
 \mbox{\Hypertarget{yiffy-messages_8h_a3d6b6f0d495570a56108ebe81a9135e0}\label{yiffy-messages_8h_a3d6b6f0d495570a56108ebe81a9135e0}} 
 \index{yiffy-\/messages.h@{yiffy-\/messages.h}!jsonParseErrorMessage@{jsonParseErrorMessage}}
@@ -174,11 +179,11 @@ Definition at line 14 of file home\+Not\+Found\+Error\+Message.\+c.
 
 
 
-outputs the error message when application can not parse the json content 
+Outputs the error message when application can not parse the JSON content. 
 
 
 
-Definition at line 14 of file json\+Parse\+Error\+Message.\+c.
+Definition at line 16 of file json\+Parse\+Error\+Message.\+c.
 
 \mbox{\Hypertarget{yiffy-messages_8h_aba87d83a1261ea74ac3a65cb8878efba}\label{yiffy-messages_8h_aba87d83a1261ea74ac3a65cb8878efba}} 
 \index{yiffy-\/messages.h@{yiffy-\/messages.h}!mallocErrorMessage@{mallocErrorMessage}}
@@ -188,11 +193,11 @@ Definition at line 14 of file json\+Parse\+Error\+Message.\+c.
 
 
 
-it shows some information when yiffy cannot allocate memory 
+Shows some information when yiffy cannot allocate memory. 
 
 
 
-Definition at line 14 of file malloc\+Error\+Message.\+c.
+Definition at line 16 of file malloc\+Error\+Message.\+c.
 
 \mbox{\Hypertarget{yiffy-messages_8h_a81c685b666239e7dfe3cc98ab6249b55}\label{yiffy-messages_8h_a81c685b666239e7dfe3cc98ab6249b55}} 
 \index{yiffy-\/messages.h@{yiffy-\/messages.h}!noArgumentValueMessage@{noArgumentValueMessage}}
@@ -202,17 +207,16 @@ Definition at line 14 of file malloc\+Error\+Message.\+c.
 
 
 
-outputs the correct prompt format when there is no argument value 
+Outputs the correct prompt format when there is no argument value. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em argument} & ~\newline
- \\
+{\em argument} & The option prompted by the user. \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line 15 of file no\+Argument\+Value\+Message.\+c.
+Definition at line 18 of file no\+Argument\+Value\+Message.\+c.
 
 \mbox{\Hypertarget{yiffy-messages_8h_a07238bc76c10c5b2a482d0c92bf876a0}\label{yiffy-messages_8h_a07238bc76c10c5b2a482d0c92bf876a0}} 
 \index{yiffy-\/messages.h@{yiffy-\/messages.h}!noJsonResponseErrorMessage@{noJsonResponseErrorMessage}}
@@ -222,17 +226,16 @@ Definition at line 15 of file no\+Argument\+Value\+Message.\+c.
 
 
 
-outputs the error when there is no json file 
+Outputs the error when there is no JSON file. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em argument} & ~\newline
- \\
+{\em json\+File} & This is used to close the JSON file. \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line 15 of file no\+Json\+Response\+Error\+Message.\+c.
+Definition at line 18 of file no\+Json\+Response\+Error\+Message.\+c.
 
 \mbox{\Hypertarget{yiffy-messages_8h_af035754847a199c09437d01c4924310e}\label{yiffy-messages_8h_af035754847a199c09437d01c4924310e}} 
 \index{yiffy-\/messages.h@{yiffy-\/messages.h}!noResultsFoundErrorMessage@{noResultsFoundErrorMessage}}
@@ -242,17 +245,11 @@ Definition at line 15 of file no\+Json\+Response\+Error\+Message.\+c.
 
 
 
-outputs the error when there is no response from the API 
+Outputs the error when there is no response from the API. 
 
 
-\begin{DoxyParams}{Parameters}
-{\em argument} & ~\newline
- \\
-\hline
-\end{DoxyParams}
 
-
-Definition at line 15 of file no\+Results\+Found\+Error\+Message.\+c.
+Definition at line 16 of file no\+Results\+Found\+Error\+Message.\+c.
 
 \mbox{\Hypertarget{yiffy-messages_8h_a98ea61cc699732ffc205c5cce8674455}\label{yiffy-messages_8h_a98ea61cc699732ffc205c5cce8674455}} 
 \index{yiffy-\/messages.h@{yiffy-\/messages.h}!onOffMessage@{onOffMessage}}
@@ -262,17 +259,16 @@ Definition at line 15 of file no\+Results\+Found\+Error\+Message.\+c.
 
 
 
-outputs the correct argument value (on/off) for specified arguments 
+Outputs the correct argument value (on/off) for specified options. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em argument} & ~\newline
- \\
+{\em argument} & The option prompted by the user. \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line 15 of file on\+Off\+Message.\+c.
+Definition at line 18 of file on\+Off\+Message.\+c.
 
 \mbox{\Hypertarget{yiffy-messages_8h_ab77033d8b672ad2a270de7f823842fe6}\label{yiffy-messages_8h_ab77033d8b672ad2a270de7f823842fe6}} 
 \index{yiffy-\/messages.h@{yiffy-\/messages.h}!unrecognizedArgumentMessage@{unrecognizedArgumentMessage}}
@@ -282,15 +278,14 @@ Definition at line 15 of file on\+Off\+Message.\+c.
 
 
 
-gives information and outputs the command prompted by the user when it is not defined as a valid argument 
+Gives information and outputs the command prompted by the user when it is not defined as a valid argument. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em argument} & ~\newline
- \\
+{\em argument} & The option prompted by the user. \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line 15 of file unrecognized\+Argument\+Message.\+c.
+Definition at line 18 of file unrecognized\+Argument\+Message.\+c.
 

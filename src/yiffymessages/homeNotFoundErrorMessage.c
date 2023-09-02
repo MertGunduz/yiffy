@@ -1,7 +1,7 @@
 /**
  * @file homeNotFoundErrorMessage.c
  * 
- * @brief outputs the home not found error when application can not access the $home environment variable
+ * @brief This file is used to output the home not found error when application can not access the $HOME environment variable.
  * 
  * @author Mehmet Mert Gunduz
  * 
@@ -10,7 +10,9 @@
 
 #include "yiffy-messages.h"
 
-/// @brief outputs the home not found error when application can not access the $home environment variable
+/**
+ * @brief Outputs the home not found error when application can not access the $HOME environment variable.
+*/
 void homeNotFoundErrorMessage()
 {
     fprintf(stderr, "yiffy: error getting home directory.\n");

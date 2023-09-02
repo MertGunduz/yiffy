@@ -74,20 +74,20 @@ $(function() {
 <a href="../../dd/d16/fprintfH_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d8/ddd/yiffy-ui_8h.html">yiffy-ui.h</a>&quot;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="../../dd/d16/fprintfH_8c.html#af368c6ede13d6b3044f2875601238d7e">   14</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dd/d16/fprintfH_8c.html#af368c6ede13d6b3044f2875601238d7e">fprintfH</a>(FILE *file, <span class="keywordtype">char</span> *content)</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">int</span> size = strlen(content);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    fprintf(stdout, <span class="stringliteral">&quot;%s&quot;</span>, content); fprintf(stdout, <span class="stringliteral">&quot;\n&quot;</span>);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; size; i++)</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        fprintf(stdout, <span class="stringliteral">&quot;-&quot;</span>);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    }</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="../../dd/d16/fprintfH_8c.html#af368c6ede13d6b3044f2875601238d7e">   19</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dd/d16/fprintfH_8c.html#af368c6ede13d6b3044f2875601238d7e">fprintfH</a>(FILE *file, <span class="keywordtype">char</span> *content)</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">int</span> size = strlen(content);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    fprintf(stdout, <span class="stringliteral">&quot;%s&quot;</span>, content); fprintf(stdout, <span class="stringliteral">&quot;\n&quot;</span>);</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    fprintf(stdout, <span class="stringliteral">&quot;\n&quot;</span>);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
-<div class="ttc" id="afprintfH_8c_html_af368c6ede13d6b3044f2875601238d7e"><div class="ttname"><a href="../../dd/d16/fprintfH_8c.html#af368c6ede13d6b3044f2875601238d7e">fprintfH</a></div><div class="ttdeci">void fprintfH(FILE *file, char *content)</div><div class="ttdoc">creates the text header for show menus</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d16/fprintfH_8c_source.html#l00014">fprintfH.c:14</a></div></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; size; i++)</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        fprintf(stdout, <span class="stringliteral">&quot;-&quot;</span>);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    }</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    fprintf(stdout, <span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
+<div class="ttc" id="afprintfH_8c_html_af368c6ede13d6b3044f2875601238d7e"><div class="ttname"><a href="../../dd/d16/fprintfH_8c.html#af368c6ede13d6b3044f2875601238d7e">fprintfH</a></div><div class="ttdeci">void fprintfH(FILE *file, char *content)</div><div class="ttdoc">Create the text header.</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d16/fprintfH_8c_source.html#l00019">fprintfH.c:19</a></div></div>
 <div class="ttc" id="ayiffy-ui_8h_html"><div class="ttname"><a href="../../d8/ddd/yiffy-ui_8h.html">yiffy-ui.h</a></div><div class="ttdoc">general ui management header for yiffy (includes functions and structures for managing the terminal u...</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
