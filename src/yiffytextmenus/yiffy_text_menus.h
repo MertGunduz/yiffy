@@ -1,7 +1,7 @@
 /**
- * @file yiffy-text-menus.h
+ * @file yiffy_text_menus.h
  * 
- * @brief the text based menu header for yiffy (show menu related part [showHelpMenu] [showVersionMenu] [showGithubMenu] [showWebsiteMenu] [showConfigMenu]) 
+ * @brief This header file is used to generate text based information menus for yiffy.
  * 
  * @author Mehmet Mert Gunduz 
  * 

@@ -1,7 +1,7 @@
 /**
- * @file yiffy-search.h
+ * @file yiffy_search.h
  * 
- * @brief the general search and use header for yiffy
+ * @brief This header file is used to handle the fetching and searching system.
  * 
  * @author Mehmet Mert Gunduz 
  * 

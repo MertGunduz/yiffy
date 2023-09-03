@@ -1,7 +1,7 @@
 /**
- * @file yiffy-messages.h
+ * @file yiffy_messages.h
  * 
- * @brief the message output header for yiffy 
+ * @brief This file is used to handle error and information messages. 
  * 
  * @author Mehmet Mert Gunduz 
  * 

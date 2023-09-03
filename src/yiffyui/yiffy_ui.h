@@ -1,7 +1,7 @@
 /**
- * @file yiffy-ui.h
+ * @file yiffy_ui.h
  * 
- * @brief general ui management header for yiffy (includes functions and structures for managing the terminal user interface)
+ * @brief This header file is used to manage ncurses-based TUIs (terminal-user-interfaces) for yiffy functions.
  * 
  * @author Mehmet Mert Gunduz
  * 
