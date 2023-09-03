@@ -11,7 +11,7 @@
 #define MAX_FILE_PATH 256
 #define MAX_BUFFER_SIZE 512
 
-#include "yiffy-text-menus.h"
+#include "yiffy_text_menus.h"
 
 /**
  * @brief Shows the yiffy configurations to user.

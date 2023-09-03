@@ -8,6 +8,7 @@
         "*.tcc": "c",
         "yiffy-text-menus.h": "c",
         "yiffy-search.h": "c",
-        "cmath": "c"
+        "cmath": "c",
+        "yiffy_text_menus.h": "c"
     }
 }

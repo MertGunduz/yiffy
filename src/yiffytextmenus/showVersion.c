@@ -8,7 +8,7 @@
  * @date 01/08/2023
 */
 
-#include "yiffy-text-menus.h"
+#include "yiffy_text_menus.h"
 
 /**
  * @brief Shows the version of yiffy to user.
