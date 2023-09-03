@@ -10,7 +10,7 @@
  * @date 28/08/2023
 */
 
-#include "yiffy-search.h"
+#include "yiffy_search.h"
 
 /// @brief downloads the API response by using aria2c, works with a system call
 /// @param tags These are the e621-e926 tags prompted by the user as an argument value. Example: yiffy --fetch "anthro+fur+male+smile".

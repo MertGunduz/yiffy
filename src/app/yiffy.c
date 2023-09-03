@@ -18,7 +18,7 @@
 
 #include "../cjson/cjson.h"
 #include "../yiffymessages/yiffy-messages.h"
-#include "../yiffysearch/yiffy-search.h"
+#include "../yiffysearch/yiffy_search.h"
 #include "../yiffytextmenus/yiffy_text_menus.h"
 
 #define RECOGNIZED_ARGUMENT   true

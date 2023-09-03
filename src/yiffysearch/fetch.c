@@ -16,7 +16,7 @@
 #define MAX_BUFFER_SIZE 512 ///< This macro is used to set the default size for reading the config file
 #define CONTENT_SIZE 262144 ///< This macro is used to set the default size for reading the JSON file that comes as a response from the API.
 
-#include "yiffy-search.h"
+#include "yiffy_search.h"
 
 static void output(char *jsonContent, char *command);
 
