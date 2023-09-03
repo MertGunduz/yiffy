@@ -8,7 +8,7 @@
  * @date 04/08/2023
 */
 
-#include "yiffy-ui.h"
+#include "yiffy_ui.h"
 
 /**
  * @brief Create the text header.
