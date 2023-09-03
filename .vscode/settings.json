@@ -9,6 +9,7 @@
         "yiffy-text-menus.h": "c",
         "yiffy-search.h": "c",
         "cmath": "c",
-        "yiffy_text_menus.h": "c"
+        "yiffy_text_menus.h": "c",
+        "yiffy_messages.h": "c"
     }
 }

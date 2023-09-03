@@ -8,7 +8,7 @@
  * @date 21/07/2023
 */
 
-#include "yiffy-messages.h"
+#include "yiffy_messages.h"
 
 /**
  * @brief Outputs the correct prompt format when there is no argument value. 

@@ -8,7 +8,7 @@
  * @date 21/07/2023
 */
 
-#include "yiffy-messages.h"
+#include "yiffy_messages.h"
 
 /**
  * @brief Outputs the correct argument value (on/off) for specified options.

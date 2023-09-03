@@ -8,7 +8,7 @@
  * @date 21/07/2023
 */
 
-#include "yiffy-messages.h"
+#include "yiffy_messages.h"
 
 /**
  * @brief Gives information and outputs the command prompted by the user when it is not defined as a valid argument.

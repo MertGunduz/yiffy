@@ -8,7 +8,7 @@
  * @date 24/08/2023
 */
 
-#include "yiffy-messages.h"
+#include "yiffy_messages.h"
 
 /**
  * @brief Outputs the error when there is no JSON file. 

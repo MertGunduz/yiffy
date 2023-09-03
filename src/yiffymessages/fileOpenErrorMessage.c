@@ -8,7 +8,7 @@
  * @date 05/08/2023
 */
 
-#include "yiffy-messages.h"
+#include "yiffy_messages.h"
 
 /**
  * @brief Shows some information about file permissions when yiffy is not able to read file.  

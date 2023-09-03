@@ -17,7 +17,7 @@
 #include <stdbool.h>
 #include <unistd.h>
 
-#include "../yiffymessages/yiffy-messages.h"
+#include "../yiffymessages/yiffy_messages.h"
 #include "../cjson/cjson.h"
 
 #define BAD_SYSTEM_FUNC_CALL -1

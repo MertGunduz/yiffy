@@ -8,7 +8,7 @@
  * @date 26/08/2023
 */
 
-#include "yiffy-messages.h"
+#include "yiffy_messages.h"
 
 /**
  * @brief Outputs the error message when application can not parse the JSON content.

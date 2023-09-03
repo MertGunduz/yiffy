@@ -17,7 +17,7 @@
 #include <unistd.h>
 
 #include "../cjson/cjson.h"
-#include "../yiffymessages/yiffy-messages.h"
+#include "../yiffymessages/yiffy_messages.h"
 #include "../yiffysearch/yiffy_search.h"
 #include "../yiffytextmenus/yiffy_text_menus.h"
 

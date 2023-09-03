@@ -8,7 +8,7 @@
  * @date 28/08/2023
 */
 
-#include "yiffy-messages.h"
+#include "yiffy_messages.h"
 
 /**
  * @brief Shows some information when system function not works.

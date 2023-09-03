@@ -8,7 +8,7 @@
  * @date 05/08/2023
 */
 
-#include "yiffy-messages.h"
+#include "yiffy_messages.h"
 
 /**
  * @brief Outputs the home not found error when application can not access the $HOME environment variable.
