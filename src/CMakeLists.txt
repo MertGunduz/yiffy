@@ -1,11 +1,11 @@
 # LIBRARY DIRECTORIES
 add_subdirectory(cjson)
-add_subdirectory(yiffyui)
-add_subdirectory(yiffysettings)
-add_subdirectory(yiffysearch)
-add_subdirectory(yiffymessages)
-add_subdirectory(yiffygeneration)
-add_subdirectory(yiffytextmenus)
+add_subdirectory(ui)
+add_subdirectory(conf)
+add_subdirectory(search)
+add_subdirectory(msg)
+add_subdirectory(gen)
+add_subdirectory(menus)
 
 # APPLICATION DIRECTORY
 add_subdirectory(app)

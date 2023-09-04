@@ -17,9 +17,9 @@
 #include <unistd.h>
 
 #include "../cjson/cjson.h"
-#include "../yiffymessages/yiffy_messages.h"
-#include "../yiffysearch/yiffy_search.h"
-#include "../yiffytextmenus/yiffy_text_menus.h"
+#include "../msg/yiffy_messages.h"
+#include "../search/yiffy_search.h"
+#include "../menus/yiffy_text_menus.h"
 
 #define RECOGNIZED_ARGUMENT   true
 #define UNRECOGNIZED_ARGUMENT false
