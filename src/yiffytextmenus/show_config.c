@@ -1,5 +1,5 @@
 /**
- * @file showConfig.c
+ * @file show_config.c
  * 
  * @brief This file is used to show current configurations of the app to the user.
  * 
@@ -16,7 +16,7 @@
 /**
  * @brief Shows the yiffy configurations to user.
 */
-void showConfig()
+void show_config()
 {
     char file_path[MAX_FILE_PATH];
     char buffer[MAX_BUFFER_SIZE];

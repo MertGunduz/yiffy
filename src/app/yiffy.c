@@ -57,11 +57,11 @@ struct fetchOption
 
 static struct generalOption generalOptions[] =
 {
-    {"--help", showHelp},
-    {"--version", showVersion},
-    {"--github", showGithub},
-    {"--website", showWebsite},
-    {"--config", showConfig},
+    {"--help", show_help},
+    {"--version", show_version},
+    {"--github", show_github},
+    {"--website", show_website},
+    {"--config", show_config},
     {"--export", exportLocalData},
     {"--import", importLocalData},
     {"--wgen", changeWebGenerationMode},

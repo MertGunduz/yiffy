@@ -1,5 +1,5 @@
 /**
- * @file showGithub.c
+ * @file show_github.c
  * 
  * @brief This file is used to show project github URL, current issues to the user.
  * 
@@ -13,7 +13,7 @@
 /**
  * @brief Shows the project github URL, current issues to user.
 */
-void showGithub()
+void show_github()
 {
     fprintf(stdout, "<https://github.com/MertGunduz/yiffy>\n\n");
 

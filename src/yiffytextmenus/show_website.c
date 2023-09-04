@@ -1,5 +1,5 @@
 /**
- * @file showWebsite.c
+ * @file show_website.c
  * 
  * @brief This file is used to show yiffy website to the user.
  * 
@@ -13,7 +13,7 @@
 /**
  * @brief Shows the yiffy website URL to user.
 */
-void showWebsite()
+void show_website()
 {
     fprintf(stdout, "<https://mertgunduz.github.io/yiffy>\n\n");
     

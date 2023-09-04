@@ -1,5 +1,5 @@
 /**
- * @file showVersion.c
+ * @file show_version.c
  * 
  * @brief This file is used to show version of the app to the user.
  * 
@@ -13,7 +13,7 @@
 /**
  * @brief Shows the version of yiffy to user.
 */
-void showVersion()
+void show_version()
 {
     fprintf(stdout, "yiffy (e621-e926 terminal viewer) 1.0.0\n\n");
     

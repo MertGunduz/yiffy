@@ -1,5 +1,5 @@
 /**
- * @file showHelp.c
+ * @file show_help.c
  * 
  * @brief This file is used to show general help to the user by showing how to use the cli options.
  * 
@@ -13,7 +13,7 @@
 /**
  * @brief Shows the general help menu to user.
 */
-void showHelp()
+void show_help()
 {
     fprintf(stdout, "usage: yiffy [OPTION]\n");
     fprintf(stdout, "use e621 and e926 from the terminal interface\n\n");

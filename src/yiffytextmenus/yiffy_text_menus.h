@@ -17,10 +17,10 @@
 #include "../yiffyui/yiffy_ui.h"
 #include "../yiffymessages/yiffy_messages.h"
 
-void showWebsite();
-void showVersion();
-void showGithub();
-void showHelp();
-void showConfig();
+void show_website();
+void show_version();
+void show_github();
+void show_help();
+void show_config();
 
 #endif /* YIFFY_TEXT_MENUS_H */
