@@ -1,5 +1,5 @@
 /**
- * @file aria2Download.c
+ * @file aria2_download.c
  * 
  * @brief Downloads the JSON file by using aria2c, works with the system function. 
  * 
@@ -16,7 +16,7 @@
 /// @param tags These are the e621-e926 tags prompted by the user as an argument value. Example: yiffy --fetch "anthro+fur+male+smile".
 /// @param page This is the value that is passed to the API to get results from the specified pages.
 /// @param isNsfw This is the boolean value that checks the NSFW option. If true, sets the request string for e621 otherwise sets for e926.
-void aria2Download(char *tags, int page, bool isNsfw)
+void aria2_download(char *tags, int page, bool isNsfw)
 {
     char *requestString = (char*)malloc(256 * sizeof(char));
 
