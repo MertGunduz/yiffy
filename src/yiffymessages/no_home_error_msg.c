@@ -1,5 +1,5 @@
 /**
- * @file homeNotFoundErrorMessage.c
+ * @file no_home_error_msg.c
  * 
  * @brief This file is used to output the home not found error when application can not access the $HOME environment variable.
  * 
@@ -13,7 +13,7 @@
 /**
  * @brief Outputs the home not found error when application can not access the $HOME environment variable.
 */
-void homeNotFoundErrorMessage()
+void no_home_error_msg()
 {
     fprintf(stderr, "yiffy: error getting home directory.\n");
     fprintf(stderr, "yiffy: please check the home directory permissions and environment variables.\n");

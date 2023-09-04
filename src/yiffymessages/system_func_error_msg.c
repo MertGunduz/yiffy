@@ -1,5 +1,5 @@
 /**
- * @file badSystemFuncErrorMessage.c
+ * @file system_func_error_msg.c
  * 
  * @brief This file is used to show some information when system function did not worked.
  * 
@@ -13,7 +13,7 @@
 /**
  * @brief Shows some information when system function not works.
 */
-void badSystemFuncErrorMessage()
+void system_func_error_msg()
 { 
     fprintf(stderr, "yiffy: error executing the system command.\n");
     fprintf(stderr, "yiffy: aria2c command might not found, please check app, shell and permissions.\n");

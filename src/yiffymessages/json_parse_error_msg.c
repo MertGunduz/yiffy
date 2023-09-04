@@ -1,5 +1,5 @@
 /**
- * @file jsonParseErrorMessage.c
+ * @file json_parse_error_msg.c
  * 
  * @brief This file is used to output the error message when application can not parse the JSON content.
  * 
@@ -13,7 +13,7 @@
 /**
  * @brief Outputs the error message when application can not parse the JSON content.
 */ 
-void jsonParseErrorMessage()
+void json_parse_error_msg()
 {
     fprintf(stderr, "yiffy: error parsing json file.\n");
     fprintf(stderr, "yiffy: check the read and write permissions.\n");

@@ -1,5 +1,5 @@
 /**
- * @file argcErrorMessage.c
+ * @file argc_error_msg.c
  * 
  * @brief This file is used to evaluate the argument count and give information if not in the requested format.
  * 
@@ -15,7 +15,7 @@
  * 
  * @param argc This is the argument count value.
 */
-void argcErrorMessage(int argc)
+void argc_error_msg(int argc)
 {
     if (argc == 1)
     {

@@ -26,7 +26,7 @@ void showConfig()
 
     if (home_directory == NULL) 
     {
-        homeNotFoundErrorMessage();
+        no_home_error_msg();
         exit(1);
     }
 
@@ -38,7 +38,7 @@ void showConfig()
 
     if (configurationFile == NULL)
     {
-        fileOpenErrorMessage(configurationFile);
+        file_open_error_msg(configurationFile);
         exit(EXIT_FAILURE);
     }
 

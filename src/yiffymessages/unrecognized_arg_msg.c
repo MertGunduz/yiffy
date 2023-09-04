@@ -1,5 +1,5 @@
 /**
- * @file unrecognizedArgumentMessage.c
+ * @file unrecognized_arg_msg.c
  * 
  * @brief This file is used to give information and output the command prompted by the user when it is not defined as a valid argument.
  * 
@@ -15,7 +15,7 @@
  * 
  * @param argument The option prompted by the user.
 */
-void unrecognizedArgumentMessage(char *argument)
+void unrecognized_arg_msg(char *argument)
 {
     fprintf(stderr, "yiffy: unrecognized command line argument: \"%s\".\n", argument);
 }

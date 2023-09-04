@@ -40,7 +40,7 @@ void fetch(char *tags, int page, char *command)
 
     if (home == NULL) 
     {
-        homeNotFoundErrorMessage();
+        no_home_error_msg();
         exit(EXIT_FAILURE);
     }
 
@@ -51,7 +51,7 @@ void fetch(char *tags, int page, char *command)
 
     if (config == NULL) 
     {
-        fileOpenErrorMessage(config);
+        file_open_error_msg(config);
         exit(EXIT_FAILURE);
     }
 
@@ -81,7 +81,7 @@ void fetch(char *tags, int page, char *command)
 
     if (responseJson == NULL)
     {
-        noJsonResponseErrorMessage(responseJson);
+        no_json_error_msg(responseJson);
         exit(EXIT_FAILURE);
     }
 
@@ -90,7 +90,7 @@ void fetch(char *tags, int page, char *command)
 
     if (jsonControlContent == NULL)
     {
-        mallocErrorMessage();
+        malloc_error_msg();
         exit(EXIT_FAILURE);
     }
     
@@ -104,7 +104,7 @@ void fetch(char *tags, int page, char *command)
     {
         if (totalDownloads == 0)
         {
-            noResultsFoundErrorMessage();
+            no_results_error_msg();
         }
         
         free(jsonControlContent);
@@ -134,10 +134,10 @@ static void output(char *jsonContent, char *command)
     
         if (errorPtr != NULL) 
         {
-            cjsonPtrErrorMessage(errorPtr);
+            cjson_error_msg(errorPtr);
         }
     
-        jsonParseErrorMessage();
+        json_parse_error_msg();
         cJSON_Delete(root);
         exit(EXIT_FAILURE);
     }

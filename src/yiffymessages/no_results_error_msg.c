@@ -1,5 +1,5 @@
 /**
- * @file noResultsFoundErrorMessage.c
+ * @file no_results_error_msg.c
  * 
  * @brief This file is used to output the error when there is no response from the API.
  * 
@@ -13,7 +13,7 @@
 /**
  * @brief Outputs the error when there is no response from the API.
 */ 
-void noResultsFoundErrorMessage()
+void no_results_error_msg()
 {
     fprintf(stderr, "yiffy: couldn\'t find any related posts with the given tags.\n");
     fprintf(stderr, "yiffy: please try giving different tags.\n");

@@ -22,7 +22,7 @@ void aria2Download(char *tags, int page, bool isNsfw)
 
     if (requestString == NULL)
     {
-        mallocErrorMessage();
+        malloc_error_msg();
         exit(EXIT_FAILURE);
     }
 
@@ -44,7 +44,7 @@ void aria2Download(char *tags, int page, bool isNsfw)
 
     if (success == BAD_SYSTEM_FUNC_CALL)
     {
-        badSystemFuncErrorMessage();
+        system_func_error_msg();
         exit(EXIT_FAILURE);
     }
 }

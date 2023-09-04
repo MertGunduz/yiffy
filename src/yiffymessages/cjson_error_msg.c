@@ -1,5 +1,5 @@
 /**
- * @file cjsonPtrErrorMessage.c
+ * @file cjson_error_msg.c
  * 
  * @brief This file is used to show some information when cjson root gives error.
  * 
@@ -15,7 +15,7 @@
  * 
  * @param ptrError The CJSON generated error message.
 */
-void cjsonPtrErrorMessage(const char *ptrError)
+void cjson_error_msg(const char *ptrError)
 { 
     fprintf(stderr, "yiffy: cjson root %s\n", ptrError);
 }

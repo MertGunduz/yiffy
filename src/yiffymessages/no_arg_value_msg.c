@@ -1,5 +1,5 @@
 /**
- * @file noArgumentValueMessage.c
+ * @file no_arg_value_msg.c
  * 
  * @brief This file is used to output the correct prompt format when there is no argument value. 
  * 
@@ -15,7 +15,7 @@
  * 
  * @param argument The option prompted by the user. 
 */
-void noArgumentValueMessage(char *argument)
+void no_arg_value_msg(char *argument)
 {
     if (strcmp(argument, "--wgen") == 0 || strcmp(argument, "--nsfw") == 0)
     {

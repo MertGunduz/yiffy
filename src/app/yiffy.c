@@ -158,7 +158,7 @@ static bool argumentVerify(int argumentCount, char *arguments[])
                 }
                 else
                 {
-                    onOffMessage(arguments[2]);
+                    on_off_msg(arguments[2]);
                     return MISSING_ON_OFF; /* Return false. */
                 }
             }
@@ -173,12 +173,12 @@ static bool argumentVerify(int argumentCount, char *arguments[])
         {
             if (strcmp(arguments[1], oneArguments[i]) == 0)
             {
-                extraArgumentErrorMessage(arguments[1]);
+                extra_arg_error_msg(arguments[1]);
                 return EXTRA_ARG_VALUE; /* Return false. */
             }
         }
 
-        unrecognizedArgumentMessage(arguments[1]);
+        unrecognized_arg_msg(arguments[1]);
         return UNRECOGNIZED_ARGUMENT; /* Return false. */
     }
     else if (argumentCount == 2)
@@ -205,12 +205,12 @@ static bool argumentVerify(int argumentCount, char *arguments[])
         {
             if (strcmp(arguments[1], twoArguments[i]) == 0)
             {
-                noArgumentValueMessage(arguments[1]);
+                no_arg_value_msg(arguments[1]);
                 return NO_ARG_VALUE; /* Return false. */
             }
         }
         
-        unrecognizedArgumentMessage(arguments[1]);
+        unrecognized_arg_msg(arguments[1]);
         return UNRECOGNIZED_ARGUMENT; /* Return false. */
     }
     else
@@ -220,7 +220,7 @@ static bool argumentVerify(int argumentCount, char *arguments[])
          * 
          * When user entered no options or more than 2 arguments, it will return false and generate an error message.
         */
-        argcErrorMessage(argumentCount);
+        argc_error_msg(argumentCount);
         return ARGC_QTY_ERROR; /* Return false. */
     }
 }

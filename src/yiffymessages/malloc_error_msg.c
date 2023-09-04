@@ -1,5 +1,5 @@
 /**
- * @file mallocErrorMessage.c
+ * @file malloc_error_msg.c
  * 
  * @brief This file is used to show some information when yiffy cannot allocate memory.
  * 
@@ -13,7 +13,7 @@
 /** 
  * @brief Shows some information when yiffy cannot allocate memory.
 */ 
-void mallocErrorMessage()
+void malloc_error_msg()
 { 
     fprintf(stderr, "yiffy: can\'t allocate memory for the processes.\n");
     fprintf(stderr, "yiffy: you might be out of swap space or memory, please check memory.\n");
