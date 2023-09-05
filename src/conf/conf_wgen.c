@@ -111,10 +111,21 @@ void conf_wgen(char *argv)
 
         for (int i = 0; i < bufferSize; i++)
         {
-            if (i == wgenIndex - 1)
+            if (wgenIndex == 0)
             {
-                i = i + optionSize;
-                continue;
+                if (i == wgenIndex)
+                {
+                    i = i + optionSize;
+                    continue;
+                }
+            }
+            else
+            {
+                if (i == wgenIndex - 1)
+                {
+                    i = i + optionSize;
+                    continue;
+                } 
             }
 
             fputc(buffer[i], confWriteFile);

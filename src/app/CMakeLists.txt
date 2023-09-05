@@ -31,7 +31,7 @@ install(
 
 # CREATE CONFIG FILE
 install(
-    CODE "file(WRITE \$ENV{HOME}/.yiffy/yiffy-config.txt \"test:wgen:test:nsfw\")"
+    CODE "file(WRITE \$ENV{HOME}/.yiffy/yiffy-config.txt \"wgen:nsfw\")"
 )
 
 # INSTALL THE EXECUTABLE TO USR/BIN

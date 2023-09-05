@@ -33,7 +33,6 @@ void show_config()
     /* Create the configuration file path. */
     sprintf(file_path, "%s/.yiffy/yiffy-config.txt", home_directory);
 
-    /* create file pointer */
     FILE *configurationFile = fopen(file_path, "r");
 
     if (configurationFile == NULL)
