@@ -111,13 +111,10 @@ void conf_wgen(char *argv)
 
         for (int i = 0; i < bufferSize; i++)
         {
-            if (wgenIndex == 0)
+            if (wgenIndex == 0 && i == wgenIndex)
             {
-                if (i == wgenIndex)
-                {
-                    i = i + optionSize;
-                    continue;
-                }
+                i = i + optionSize;
+                continue;
             }
             else
             {
