@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['reallocate_202',['reallocate',['../d1/d07/structinternal__hooks.html#a5dd48d5c2f2b1cf4f6eec5df6205e15c',1,'internal_hooks']]]
+  ['unrecognized_5farg_5fmsg_226',['unrecognized_arg_msg',['../d7/de2/unrecognized__arg__msg_8c.html#ae1e70d303bd9115115ecb22cb13459c5',1,'unrecognized_arg_msg(char *argument):&#160;unrecognized_arg_msg.c'],['../d0/de2/yiffy__messages_8h.html#ae1e70d303bd9115115ecb22cb13459c5',1,'unrecognized_arg_msg(char *argument):&#160;unrecognized_arg_msg.c']]]
 ];

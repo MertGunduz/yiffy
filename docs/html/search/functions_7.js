@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['main_195',['main',['../dc/dc0/yiffy_8c.html#a0ddf1224851353fc92bfbff6f499fa97',1,'yiffy.c']]],
-  ['malloc_5ffn_196',['malloc_fn',['../dc/d55/structcJSON__Hooks.html#a71693d8b277a80a1faf8758b9589d670',1,'cJSON_Hooks']]],
-  ['mallocerrormessage_197',['mallocErrorMessage',['../d2/d6e/mallocErrorMessage_8c.html#aba87d83a1261ea74ac3a65cb8878efba',1,'mallocErrorMessage():&#160;mallocErrorMessage.c'],['../de/d35/yiffy-messages_8h.html#aba87d83a1261ea74ac3a65cb8878efba',1,'mallocErrorMessage():&#160;mallocErrorMessage.c']]]
+  ['on_5foff_5fmsg_218',['on_off_msg',['../d9/d8a/on__off__msg_8c.html#a60eb77988fcf4ce24e3108507945e543',1,'on_off_msg(char *argument):&#160;on_off_msg.c'],['../d0/de2/yiffy__messages_8h.html#a60eb77988fcf4ce24e3108507945e543',1,'on_off_msg(char *argument):&#160;on_off_msg.c']]]
 ];

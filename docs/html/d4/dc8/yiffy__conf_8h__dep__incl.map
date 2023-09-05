@@ -1,0 +1,6 @@
+<map id="src/conf/yiffy_conf.h" name="src/conf/yiffy_conf.h">
+<area shape="rect" id="node1" title="This header file is used to do configuration for yiffy." alt="" coords="141,5,293,32"/>
+<area shape="rect" id="node2" href="$dc/dc0/yiffy_8c.html" title="This is the main file and used to handle the arguments and execute the program by using external func..." alt="" coords="5,80,116,107"/>
+<area shape="rect" id="node3" href="$de/dfc/conf__nsfw_8c.html" title="This file is used to configure the nsfw system. Basically alters the request URL." alt="" coords="141,80,293,107"/>
+<area shape="rect" id="node4" href="$de/dd5/conf__wgen_8c.html" title="This file is used to configure the wgen system. If on, it basically generates a collection website." alt="" coords="317,80,476,107"/>
+</map>

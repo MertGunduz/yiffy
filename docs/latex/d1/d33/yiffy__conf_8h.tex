@@ -1,0 +1,86 @@
+\hypertarget{yiffy__conf_8h}{}\doxysection{src/conf/yiffy\+\_\+conf.h File Reference}
+\label{yiffy__conf_8h}\index{src/conf/yiffy\_conf.h@{src/conf/yiffy\_conf.h}}
+
+
+This header file is used to do configuration for yiffy.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../msg/yiffy\+\_\+messages.\+h\char`\"{}}\newline
+Include dependency graph for yiffy\+\_\+conf.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/de9/yiffy__conf_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dc8/yiffy__conf_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{yiffy__conf_8h_ab273b10a4a3091abe2ecdae9e82d8f9c}{conf\+\_\+wgen}} (char $\ast$argv)
+\begin{DoxyCompactList}\small\item\em Configures the wgen system. If on, it basically generates a collection website. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{yiffy__conf_8h_a3a088a9fbd8616175ff107d483ac33f6}{conf\+\_\+nsfw}} (char $\ast$argv)
+\begin{DoxyCompactList}\small\item\em Configures the nsfw system. Basically alters the request URL. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This header file is used to do configuration for yiffy. 
+
+\begin{DoxyAuthor}{Author}
+Mehmet Mert Gunduz
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+04/09/2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{yiffy__conf_8h_a3a088a9fbd8616175ff107d483ac33f6}\label{yiffy__conf_8h_a3a088a9fbd8616175ff107d483ac33f6}} 
+\index{yiffy\_conf.h@{yiffy\_conf.h}!conf\_nsfw@{conf\_nsfw}}
+\index{conf\_nsfw@{conf\_nsfw}!yiffy\_conf.h@{yiffy\_conf.h}}
+\doxysubsubsection{\texorpdfstring{conf\_nsfw()}{conf\_nsfw()}}
+{\footnotesize\ttfamily void conf\+\_\+nsfw (\begin{DoxyParamCaption}\item[{char $\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+Configures the nsfw system. Basically alters the request URL. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argv} & This is the value that stores on/off. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 23 of file conf\+\_\+nsfw.\+c.
+
+\mbox{\Hypertarget{yiffy__conf_8h_ab273b10a4a3091abe2ecdae9e82d8f9c}\label{yiffy__conf_8h_ab273b10a4a3091abe2ecdae9e82d8f9c}} 
+\index{yiffy\_conf.h@{yiffy\_conf.h}!conf\_wgen@{conf\_wgen}}
+\index{conf\_wgen@{conf\_wgen}!yiffy\_conf.h@{yiffy\_conf.h}}
+\doxysubsubsection{\texorpdfstring{conf\_wgen()}{conf\_wgen()}}
+{\footnotesize\ttfamily void conf\+\_\+wgen (\begin{DoxyParamCaption}\item[{char $\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+Configures the wgen system. If on, it basically generates a collection website. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argv} & This is the value that stores on/off. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 23 of file conf\+\_\+wgen.\+c.
+

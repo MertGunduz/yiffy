@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>yiffy: src/yiffysearch/fetch.c Source File</title>
+<title>yiffy: src/search/fetch.c Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -63,7 +63,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_5d1ce5c2ebfd61763d8f5edf0b55fa27.html">yiffysearch</a></li>  </ul>
+<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_5e53e25df8c865d23c4f0f620d3a69fb.html">search</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -76,7 +76,7 @@ $(function() {
 <div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="../../d1/d14/fetch_8c.html#ad4d796b98c583d49e83adabd74a63bf6">   16</a></span>&#160;<span class="preprocessor">#define MAX_BUFFER_SIZE 512 </span></div>
 <div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="../../d1/d14/fetch_8c.html#aff9b7f6d81297248bf0ad06d725c8cbb">   17</a></span>&#160;<span class="preprocessor">#define CONTENT_SIZE 262144 </span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../dc/d88/yiffy-search_8h.html">yiffy-search.h</a>&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../de/d29/yiffy__search_8h.html">yiffy_search.h</a>&quot;</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> output(<span class="keywordtype">char</span> *jsonContent, <span class="keywordtype">char</span> *command);</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
@@ -93,7 +93,7 @@ $(function() {
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">if</span> (home == NULL) </div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="../../df/d62/homeNotFoundErrorMessage_8c.html#a28e66284663b33a9f8d102c306dff47a">homeNotFoundErrorMessage</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="../../d5/de7/no__home__error__msg_8c.html#ab360dcc8796de6e212175d6c4c77477d">no_home_error_msg</a>();</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        exit(EXIT_FAILURE);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
@@ -104,7 +104,7 @@ $(function() {
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">if</span> (config == NULL) </div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <a class="code" href="../../d7/d7c/fileOpenErrorMessage_8c.html#a76d169150f8b831d6d8fa432530eb37a">fileOpenErrorMessage</a>(config);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <a class="code" href="../../db/df9/file__open__error__msg_8c.html#a94c5cd5af84c1b87e2dbf95cb2cbce90">file_open_error_msg</a>(config);</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        exit(EXIT_FAILURE);</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
@@ -127,14 +127,14 @@ $(function() {
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="comment">/* Download the JSON response. */</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="../../d0/d8c/aria2Download_8c.html#aebab16cc92cc263d9665d22fc85b61a1">aria2Download</a>(tags, page, isNsfw);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="../../d6/d60/aria2__download_8c.html#a75a90032aa6fbf0c41997ecf6b4b70eb">aria2_download</a>(tags, page, isNsfw);</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="comment">/* Check if the JSON response downloaded. */</span></div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    FILE *responseJson = fopen(<span class="stringliteral">&quot;posts.json&quot;</span>, <span class="stringliteral">&quot;r&quot;</span>);</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">if</span> (responseJson == NULL)</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <a class="code" href="../../de/d81/noJsonResponseErrorMessage_8c.html#a07238bc76c10c5b2a482d0c92bf876a0">noJsonResponseErrorMessage</a>(responseJson);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <a class="code" href="../../d0/d31/no__json__error__msg_8c.html#aed800373b815495939c13042a30a3c85">no_json_error_msg</a>(responseJson);</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        exit(EXIT_FAILURE);</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
@@ -143,7 +143,7 @@ $(function() {
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">if</span> (jsonControlContent == NULL)</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <a class="code" href="../../d2/d6e/mallocErrorMessage_8c.html#aba87d83a1261ea74ac3a65cb8878efba">mallocErrorMessage</a>();</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <a class="code" href="../../d4/ddf/malloc__error__msg_8c.html#a8f2c3050fed77b86a432d485cde3ade1">malloc_error_msg</a>();</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        exit(EXIT_FAILURE);</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    </div>
@@ -157,7 +157,7 @@ $(function() {
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    {</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordflow">if</span> (totalDownloads == 0)</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        {</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            <a class="code" href="../../d7/d62/noResultsFoundErrorMessage_8c.html#af035754847a199c09437d01c4924310e">noResultsFoundErrorMessage</a>();</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            <a class="code" href="../../d6/dee/no__results__error__msg_8c.html#a2d26f407e1cd042bfff35c4fdb673550">no_results_error_msg</a>();</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        }</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        </div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        free(jsonControlContent);</div>
@@ -184,10 +184,10 @@ $(function() {
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    </div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="keywordflow">if</span> (errorPtr != NULL) </div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        {</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            <a class="code" href="../../d8/dae/cjsonPtrErrorMessage_8c.html#af56a19a2187269965a612970ba59ecb5">cjsonPtrErrorMessage</a>(errorPtr);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            <a class="code" href="../../df/d16/cjson__error__msg_8c.html#a05014d34ad9051eca179638e1f43decd">cjson_error_msg</a>(errorPtr);</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        }</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    </div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <a class="code" href="../../d9/d20/jsonParseErrorMessage_8c.html#a3d6b6f0d495570a56108ebe81a9135e0">jsonParseErrorMessage</a>();</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <a class="code" href="../../d9/d32/json__parse__error__msg_8c.html#a1cee29a606052cf745b98ca6f4d74d10">json_parse_error_msg</a>();</div>
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        cJSON_Delete(root);</div>
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        exit(EXIT_FAILURE);</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    }</div>
@@ -226,7 +226,7 @@ $(function() {
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                        <span class="keywordtype">int</span> downloadSuccess = system(downloadCommand);</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160; </div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                        <span class="keywordflow">if</span> (downloadSuccess == <a class="code" href="../../dc/d88/yiffy-search_8h.html#acbd50aa1f19ce68034a26b45b0aaed69">BAD_SYSTEM_FUNC_CALL</a>)</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                        <span class="keywordflow">if</span> (downloadSuccess == <a class="code" href="../../de/d29/yiffy__search_8h.html#acbd50aa1f19ce68034a26b45b0aaed69">BAD_SYSTEM_FUNC_CALL</a>)</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                        {</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                            free(downloadCommand);</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                            exit(EXIT_FAILURE);</div>
@@ -248,23 +248,23 @@ $(function() {
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="comment">/* Delete posts.json file. */</span></div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    remove(<span class="stringliteral">&quot;posts.json&quot;</span>);</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;}</div>
-<div class="ttc" id="aaria2Download_8c_html_aebab16cc92cc263d9665d22fc85b61a1"><div class="ttname"><a href="../../d0/d8c/aria2Download_8c.html#aebab16cc92cc263d9665d22fc85b61a1">aria2Download</a></div><div class="ttdeci">void aria2Download(char *tags, int page, bool isNsfw)</div><div class="ttdoc">downloads the API response by using aria2c, works with a system call</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d8c/aria2Download_8c_source.html#l00019">aria2Download.c:19</a></div></div>
-<div class="ttc" id="acjsonPtrErrorMessage_8c_html_af56a19a2187269965a612970ba59ecb5"><div class="ttname"><a href="../../d8/dae/cjsonPtrErrorMessage_8c.html#af56a19a2187269965a612970ba59ecb5">cjsonPtrErrorMessage</a></div><div class="ttdeci">void cjsonPtrErrorMessage(const char *ptrError)</div><div class="ttdoc">Shows some information when cjson root gives error.</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dae/cjsonPtrErrorMessage_8c_source.html#l00018">cjsonPtrErrorMessage.c:18</a></div></div>
+<div class="ttc" id="aaria2__download_8c_html_a75a90032aa6fbf0c41997ecf6b4b70eb"><div class="ttname"><a href="../../d6/d60/aria2__download_8c.html#a75a90032aa6fbf0c41997ecf6b4b70eb">aria2_download</a></div><div class="ttdeci">void aria2_download(char *tags, int page, bool isNsfw)</div><div class="ttdoc">downloads the API response by using aria2c, works with a system call</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d60/aria2__download_8c_source.html#l00019">aria2_download.c:19</a></div></div>
 <div class="ttc" id="acjson_8h_html_aff2566f4c366b48d73479bef43ee4d2e"><div class="ttname"><a href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a></div><div class="ttdeci">char * buffer</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d56/cjson_8h_source.html#l00170">cjson.h:170</a></div></div>
+<div class="ttc" id="acjson__error__msg_8c_html_a05014d34ad9051eca179638e1f43decd"><div class="ttname"><a href="../../df/d16/cjson__error__msg_8c.html#a05014d34ad9051eca179638e1f43decd">cjson_error_msg</a></div><div class="ttdeci">void cjson_error_msg(const char *ptrError)</div><div class="ttdoc">Shows some information when cjson root gives error.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d16/cjson__error__msg_8c_source.html#l00018">cjson_error_msg.c:18</a></div></div>
 <div class="ttc" id="afetch_8c_html_a263efd24d550124313df51247f07457a"><div class="ttname"><a href="../../d1/d14/fetch_8c.html#a263efd24d550124313df51247f07457a">MAX_FILE_PATH</a></div><div class="ttdeci">#define MAX_FILE_PATH</div><div class="ttdoc">This macro is used to set the default size for getting the home directory file.</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d14/fetch_8c_source.html#l00015">fetch.c:15</a></div></div>
 <div class="ttc" id="afetch_8c_html_a41f382b6bd05c9776641fb4bc5024afa"><div class="ttname"><a href="../../d1/d14/fetch_8c.html#a41f382b6bd05c9776641fb4bc5024afa">fetch</a></div><div class="ttdeci">void fetch(char *tags, int page, char *command)</div><div class="ttdoc">Reads the configuration file, sets the options and sends a request to e621-e926. After taking the res...</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d14/fetch_8c_source.html#l00032">fetch.c:32</a></div></div>
 <div class="ttc" id="afetch_8c_html_ad4d796b98c583d49e83adabd74a63bf6"><div class="ttname"><a href="../../d1/d14/fetch_8c.html#ad4d796b98c583d49e83adabd74a63bf6">MAX_BUFFER_SIZE</a></div><div class="ttdeci">#define MAX_BUFFER_SIZE</div><div class="ttdoc">This macro is used to set the default size for reading the config file.</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d14/fetch_8c_source.html#l00016">fetch.c:16</a></div></div>
 <div class="ttc" id="afetch_8c_html_aff9b7f6d81297248bf0ad06d725c8cbb"><div class="ttname"><a href="../../d1/d14/fetch_8c.html#aff9b7f6d81297248bf0ad06d725c8cbb">CONTENT_SIZE</a></div><div class="ttdeci">#define CONTENT_SIZE</div><div class="ttdoc">This macro is used to set the default size for reading the JSON file that comes as a response from th...</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d14/fetch_8c_source.html#l00017">fetch.c:17</a></div></div>
-<div class="ttc" id="afileOpenErrorMessage_8c_html_a76d169150f8b831d6d8fa432530eb37a"><div class="ttname"><a href="../../d7/d7c/fileOpenErrorMessage_8c.html#a76d169150f8b831d6d8fa432530eb37a">fileOpenErrorMessage</a></div><div class="ttdeci">void fileOpenErrorMessage(FILE *file)</div><div class="ttdoc">Shows some information about file permissions when yiffy is not able to read file.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d7c/fileOpenErrorMessage_8c_source.html#l00018">fileOpenErrorMessage.c:18</a></div></div>
-<div class="ttc" id="ahomeNotFoundErrorMessage_8c_html_a28e66284663b33a9f8d102c306dff47a"><div class="ttname"><a href="../../df/d62/homeNotFoundErrorMessage_8c.html#a28e66284663b33a9f8d102c306dff47a">homeNotFoundErrorMessage</a></div><div class="ttdeci">void homeNotFoundErrorMessage()</div><div class="ttdoc">Outputs the home not found error when application can not access the $HOME environment variable.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d62/homeNotFoundErrorMessage_8c_source.html#l00016">homeNotFoundErrorMessage.c:16</a></div></div>
-<div class="ttc" id="ajsonParseErrorMessage_8c_html_a3d6b6f0d495570a56108ebe81a9135e0"><div class="ttname"><a href="../../d9/d20/jsonParseErrorMessage_8c.html#a3d6b6f0d495570a56108ebe81a9135e0">jsonParseErrorMessage</a></div><div class="ttdeci">void jsonParseErrorMessage()</div><div class="ttdoc">Outputs the error message when application can not parse the JSON content.</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d20/jsonParseErrorMessage_8c_source.html#l00016">jsonParseErrorMessage.c:16</a></div></div>
-<div class="ttc" id="amallocErrorMessage_8c_html_aba87d83a1261ea74ac3a65cb8878efba"><div class="ttname"><a href="../../d2/d6e/mallocErrorMessage_8c.html#aba87d83a1261ea74ac3a65cb8878efba">mallocErrorMessage</a></div><div class="ttdeci">void mallocErrorMessage()</div><div class="ttdoc">Shows some information when yiffy cannot allocate memory.</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d6e/mallocErrorMessage_8c_source.html#l00016">mallocErrorMessage.c:16</a></div></div>
-<div class="ttc" id="anoJsonResponseErrorMessage_8c_html_a07238bc76c10c5b2a482d0c92bf876a0"><div class="ttname"><a href="../../de/d81/noJsonResponseErrorMessage_8c.html#a07238bc76c10c5b2a482d0c92bf876a0">noJsonResponseErrorMessage</a></div><div class="ttdeci">void noJsonResponseErrorMessage(FILE *jsonFile)</div><div class="ttdoc">Outputs the error when there is no JSON file.</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d81/noJsonResponseErrorMessage_8c_source.html#l00018">noJsonResponseErrorMessage.c:18</a></div></div>
-<div class="ttc" id="anoResultsFoundErrorMessage_8c_html_af035754847a199c09437d01c4924310e"><div class="ttname"><a href="../../d7/d62/noResultsFoundErrorMessage_8c.html#af035754847a199c09437d01c4924310e">noResultsFoundErrorMessage</a></div><div class="ttdeci">void noResultsFoundErrorMessage()</div><div class="ttdoc">Outputs the error when there is no response from the API.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d62/noResultsFoundErrorMessage_8c_source.html#l00016">noResultsFoundErrorMessage.c:16</a></div></div>
+<div class="ttc" id="afile__open__error__msg_8c_html_a94c5cd5af84c1b87e2dbf95cb2cbce90"><div class="ttname"><a href="../../db/df9/file__open__error__msg_8c.html#a94c5cd5af84c1b87e2dbf95cb2cbce90">file_open_error_msg</a></div><div class="ttdeci">void file_open_error_msg(FILE *file)</div><div class="ttdoc">Shows some information about file permissions when yiffy is not able to read file.</div><div class="ttdef"><b>Definition:</b> <a href="../../db/df9/file__open__error__msg_8c_source.html#l00018">file_open_error_msg.c:18</a></div></div>
+<div class="ttc" id="ajson__parse__error__msg_8c_html_a1cee29a606052cf745b98ca6f4d74d10"><div class="ttname"><a href="../../d9/d32/json__parse__error__msg_8c.html#a1cee29a606052cf745b98ca6f4d74d10">json_parse_error_msg</a></div><div class="ttdeci">void json_parse_error_msg()</div><div class="ttdoc">Outputs the error message when application can not parse the JSON content.</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d32/json__parse__error__msg_8c_source.html#l00016">json_parse_error_msg.c:16</a></div></div>
+<div class="ttc" id="amalloc__error__msg_8c_html_a8f2c3050fed77b86a432d485cde3ade1"><div class="ttname"><a href="../../d4/ddf/malloc__error__msg_8c.html#a8f2c3050fed77b86a432d485cde3ade1">malloc_error_msg</a></div><div class="ttdeci">void malloc_error_msg()</div><div class="ttdoc">Shows some information when yiffy cannot allocate memory.</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/ddf/malloc__error__msg_8c_source.html#l00016">malloc_error_msg.c:16</a></div></div>
+<div class="ttc" id="ano__home__error__msg_8c_html_ab360dcc8796de6e212175d6c4c77477d"><div class="ttname"><a href="../../d5/de7/no__home__error__msg_8c.html#ab360dcc8796de6e212175d6c4c77477d">no_home_error_msg</a></div><div class="ttdeci">void no_home_error_msg()</div><div class="ttdoc">Outputs the home not found error when application can not access the $HOME environment variable.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/de7/no__home__error__msg_8c_source.html#l00016">no_home_error_msg.c:16</a></div></div>
+<div class="ttc" id="ano__json__error__msg_8c_html_aed800373b815495939c13042a30a3c85"><div class="ttname"><a href="../../d0/d31/no__json__error__msg_8c.html#aed800373b815495939c13042a30a3c85">no_json_error_msg</a></div><div class="ttdeci">void no_json_error_msg(FILE *jsonFile)</div><div class="ttdoc">Outputs the error when there is no JSON file.</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d31/no__json__error__msg_8c_source.html#l00018">no_json_error_msg.c:18</a></div></div>
+<div class="ttc" id="ano__results__error__msg_8c_html_a2d26f407e1cd042bfff35c4fdb673550"><div class="ttname"><a href="../../d6/dee/no__results__error__msg_8c.html#a2d26f407e1cd042bfff35c4fdb673550">no_results_error_msg</a></div><div class="ttdeci">void no_results_error_msg()</div><div class="ttdoc">Outputs the error when there is no response from the API.</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/dee/no__results__error__msg_8c_source.html#l00016">no_results_error_msg.c:16</a></div></div>
 <div class="ttc" id="astructcJSON_html"><div class="ttname"><a href="../../db/d68/structcJSON.html">cJSON</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d56/cjson_8h_source.html#l00110">cjson.h:111</a></div></div>
 <div class="ttc" id="astructcJSON_html_ad43f8de2571e504c4c5ce0a36990e6e1"><div class="ttname"><a href="../../db/d68/structcJSON.html#ad43f8de2571e504c4c5ce0a36990e6e1">cJSON::valuestring</a></div><div class="ttdeci">char * valuestring</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d56/cjson_8h_source.html#l00122">cjson.h:122</a></div></div>
-<div class="ttc" id="ayiffy-search_8h_html"><div class="ttname"><a href="../../dc/d88/yiffy-search_8h.html">yiffy-search.h</a></div><div class="ttdoc">the general search and use header for yiffy</div></div>
-<div class="ttc" id="ayiffy-search_8h_html_acbd50aa1f19ce68034a26b45b0aaed69"><div class="ttname"><a href="../../dc/d88/yiffy-search_8h.html#acbd50aa1f19ce68034a26b45b0aaed69">BAD_SYSTEM_FUNC_CALL</a></div><div class="ttdeci">#define BAD_SYSTEM_FUNC_CALL</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d88/yiffy-search_8h_source.html#l00023">yiffy-search.h:23</a></div></div>
+<div class="ttc" id="ayiffy__search_8h_html"><div class="ttname"><a href="../../de/d29/yiffy__search_8h.html">yiffy_search.h</a></div><div class="ttdoc">This header file is used to handle the fetching and searching system.</div></div>
+<div class="ttc" id="ayiffy__search_8h_html_acbd50aa1f19ce68034a26b45b0aaed69"><div class="ttname"><a href="../../de/d29/yiffy__search_8h.html#acbd50aa1f19ce68034a26b45b0aaed69">BAD_SYSTEM_FUNC_CALL</a></div><div class="ttdeci">#define BAD_SYSTEM_FUNC_CALL</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d29/yiffy__search_8h_source.html#l00023">yiffy_search.h:23</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

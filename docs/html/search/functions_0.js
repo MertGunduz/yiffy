@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['allocate_183',['allocate',['../d1/d07/structinternal__hooks.html#a872a0c28217b451331d24b8e0484b293',1,'internal_hooks']]],
-  ['argcerrormessage_184',['argcErrorMessage',['../d9/d23/argcErrorMessage_8c.html#a9beeda8ebe8f084dbc596d0639eaf9b3',1,'argcErrorMessage(int argc):&#160;argcErrorMessage.c'],['../de/d35/yiffy-messages_8h.html#a9beeda8ebe8f084dbc596d0639eaf9b3',1,'argcErrorMessage(int argc):&#160;argcErrorMessage.c']]],
-  ['aria2download_185',['aria2Download',['../d0/d8c/aria2Download_8c.html#aebab16cc92cc263d9665d22fc85b61a1',1,'aria2Download(char *tags, int page, bool isNsfw):&#160;aria2Download.c'],['../dc/d88/yiffy-search_8h.html#aebab16cc92cc263d9665d22fc85b61a1',1,'aria2Download(char *tags, int page, bool isNsfw):&#160;aria2Download.c']]]
+  ['allocate_197',['allocate',['../d1/d07/structinternal__hooks.html#a872a0c28217b451331d24b8e0484b293',1,'internal_hooks']]],
+  ['already_5fconf_5fmsg_198',['already_conf_msg',['../da/d03/already__conf__msg_8c.html#a2b3c403bb7977f8a7672f39dec8d5659',1,'already_conf_msg(char *option, char *argv):&#160;already_conf_msg.c'],['../d0/de2/yiffy__messages_8h.html#a2b3c403bb7977f8a7672f39dec8d5659',1,'already_conf_msg(char *option, char *argv):&#160;already_conf_msg.c']]],
+  ['argc_5ferror_5fmsg_199',['argc_error_msg',['../d3/de0/argc__error__msg_8c.html#a020d66de7fd128881c8398247a0d0bdd',1,'argc_error_msg(int argc):&#160;argc_error_msg.c'],['../d0/de2/yiffy__messages_8h.html#a020d66de7fd128881c8398247a0d0bdd',1,'argc_error_msg(int argc):&#160;argc_error_msg.c']]],
+  ['aria2_5fdownload_200',['aria2_download',['../d6/d60/aria2__download_8c.html#a75a90032aa6fbf0c41997ecf6b4b70eb',1,'aria2_download(char *tags, int page, bool isNsfw):&#160;aria2_download.c'],['../de/d29/yiffy__search_8h.html#a75a90032aa6fbf0c41997ecf6b4b70eb',1,'aria2_download(char *tags, int page, bool isNsfw):&#160;aria2_download.c']]]
 ];

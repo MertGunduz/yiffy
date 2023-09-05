@@ -1,0 +1,60 @@
+\hypertarget{aria2__download_8c}{}\doxysection{src/search/aria2\+\_\+download.c File Reference}
+\label{aria2__download_8c}\index{src/search/aria2\_download.c@{src/search/aria2\_download.c}}
+
+
+Downloads the JSON file by using aria2c, works with the system function.  
+
+
+{\ttfamily \#include \char`\"{}yiffy\+\_\+search.\+h\char`\"{}}\newline
+Include dependency graph for aria2\+\_\+download.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d3a/aria2__download_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{aria2__download_8c_a75a90032aa6fbf0c41997ecf6b4b70eb}{aria2\+\_\+download}} (char $\ast$tags, int page, bool is\+Nsfw)
+\begin{DoxyCompactList}\small\item\em downloads the API response by using aria2c, works with a system call \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Downloads the JSON file by using aria2c, works with the system function. 
+
+This file is used to set the request string by checking is\+NSFW parameter, and downloads the JSON file from e621/e926 API by using aria2c.
+
+\begin{DoxyAuthor}{Author}
+Mehmet Mert Gunduz
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+28/08/2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{aria2__download_8c_a75a90032aa6fbf0c41997ecf6b4b70eb}\label{aria2__download_8c_a75a90032aa6fbf0c41997ecf6b4b70eb}} 
+\index{aria2\_download.c@{aria2\_download.c}!aria2\_download@{aria2\_download}}
+\index{aria2\_download@{aria2\_download}!aria2\_download.c@{aria2\_download.c}}
+\doxysubsubsection{\texorpdfstring{aria2\_download()}{aria2\_download()}}
+{\footnotesize\ttfamily void aria2\+\_\+download (\begin{DoxyParamCaption}\item[{char $\ast$}]{tags,  }\item[{int}]{page,  }\item[{bool}]{is\+Nsfw }\end{DoxyParamCaption})}
+
+
+
+downloads the API response by using aria2c, works with a system call 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tags} & These are the e621-\/e926 tags prompted by the user as an argument value. Example\+: yiffy --fetch \char`\"{}anthro+fur+male+smile\char`\"{}. \\
+\hline
+{\em page} & This is the value that is passed to the API to get results from the specified pages. \\
+\hline
+{\em is\+Nsfw} & This is the boolean value that checks the NSFW option. If true, sets the request string for e621 otherwise sets for e926. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 19 of file aria2\+\_\+download.\+c.
+

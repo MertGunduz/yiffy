@@ -1,8 +1,8 @@
 <map id="src/cjson/cjson.h" name="src/cjson/cjson.h">
-<area shape="rect" id="node1" title="This file is used as a header file for the cjson.c, used for JSON processes in requests,..." alt="" coords="63,5,192,32"/>
-<area shape="rect" id="node2" href="$dc/dc0/yiffy_8c.html" title="This is the main file and used to handle the arguments and execute the program by using external func..." alt="" coords="5,169,116,196"/>
-<area shape="rect" id="node3" href="$d6/d49/cjson_8c.html" title="This file is used to handle all the JSON processes in requests, code file of a well&#45;known library cal..." alt="" coords="63,87,191,114"/>
-<area shape="rect" id="node4" href="$dc/d88/yiffy-search_8h.html" title="the general search and use header for yiffy" alt="" coords="216,80,367,121"/>
-<area shape="rect" id="node5" href="$d0/d8c/aria2Download_8c.html" title="Downloads the JSON file by using aria2c, works with the system function." alt="" coords="157,169,388,196"/>
-<area shape="rect" id="node6" href="$d1/d14/fetch_8c.html" title="This file is used to send requests to e621&#45;e926 with the specified tags by user and outputs or output..." alt="" coords="413,169,578,196"/>
+<area shape="rect" id="node1" title="This file is used as a header file for the cjson.c, used for JSON processes in requests,..." alt="" coords="48,5,177,32"/>
+<area shape="rect" id="node2" href="$dc/dc0/yiffy_8c.html" title="This is the main file and used to handle the arguments and execute the program by using external func..." alt="" coords="5,155,116,181"/>
+<area shape="rect" id="node3" href="$d6/d49/cjson_8c.html" title="This file is used to handle all the JSON processes in requests, code file of a well&#45;known library cal..." alt="" coords="49,80,177,107"/>
+<area shape="rect" id="node4" href="$de/d29/yiffy__search_8h.html" title="This header file is used to handle the fetching and searching system." alt="" coords="201,80,384,107"/>
+<area shape="rect" id="node5" href="$d6/d60/aria2__download_8c.html" title="Downloads the JSON file by using aria2c, works with the system function." alt="" coords="164,155,371,181"/>
+<area shape="rect" id="node6" href="$d1/d14/fetch_8c.html" title="This file is used to send requests to e621&#45;e926 with the specified tags by user and outputs or output..." alt="" coords="395,155,531,181"/>
 </map>

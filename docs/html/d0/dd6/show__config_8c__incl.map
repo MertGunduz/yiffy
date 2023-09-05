@@ -1,0 +1,9 @@
+<map id="src/menus/show_config.c" name="src/menus/show_config.c">
+<area shape="rect" id="node1" title="This file is used to show current configurations of the app to the user." alt="" coords="192,5,376,32"/>
+<area shape="rect" id="node2" href="$d5/dff/yiffy__text__menus_8h.html" title="This header file is used to generate text based information menus for yiffy." alt="" coords="211,80,357,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="81,229,148,256"/>
+<area shape="rect" id="node4" title=" " alt="" coords="415,155,486,181"/>
+<area shape="rect" id="node5" title=" " alt="" coords="249,229,319,256"/>
+<area shape="rect" id="node6" href="$d6/d01/yiffy__ui_8h.html" title="This header file is used to manage ncurses&#45;based TUIs (terminal&#45;user&#45;interfaces) for yiffy functions." alt="" coords="229,155,339,181"/>
+<area shape="rect" id="node7" href="$d0/de2/yiffy__messages_8h.html" title="This file is used to handle error and information messages." alt="" coords="25,155,205,181"/>
+</map>

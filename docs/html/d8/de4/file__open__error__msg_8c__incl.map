@@ -1,0 +1,6 @@
+<map id="src/msg/file_open_error_msg.c" name="src/msg/file_open_error_msg.c">
+<area shape="rect" id="node1" title="This file is used to show some information about file permissions when yiffy is not able to read file..." alt="" coords="5,5,180,47"/>
+<area shape="rect" id="node2" href="$d0/de2/yiffy__messages_8h.html" title="This file is used to handle error and information messages." alt="" coords="25,95,161,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="13,169,79,196"/>
+<area shape="rect" id="node4" title=" " alt="" coords="104,169,175,196"/>
+</map>
