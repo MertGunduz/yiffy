@@ -27,5 +27,7 @@ void no_results_error_msg();
 void cjson_error_msg(const char *ptrError);
 void malloc_error_msg();
 void system_func_error_msg();
+void already_conf_msg(char *option, char *argv);
+void conf_successful_msg(char *option, char *argv);
 
 #endif /* YIFFY_MESSAGES_H */

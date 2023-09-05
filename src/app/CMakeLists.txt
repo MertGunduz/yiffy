@@ -1,7 +1,7 @@
 # CREATING THE BINARY FILE
 add_executable(yiffy yiffy.c)
 
-#GCC OPTIONS
+# GCC OPTIONS
 target_compile_options(yiffy PRIVATE
     -Wall
     -Wextra
@@ -22,7 +22,20 @@ target_compile_options(yiffy PRIVATE
 )
 
 # LINK THE LIBRARIES
-target_link_libraries(yiffy yiffy-search yiffy-text-menus yiffy-ui yiffy-messages cjson)
+target_link_libraries(yiffy yiffy-conf yiffy-search yiffy-text-menus yiffy-ui yiffy-messages cjson)
+
+# CREATE DIRECTORY
+install(
+    CODE "file(MAKE_DIRECTORY \$ENV{HOME}/.yiffy)"
+)
+
+# CREATE CONFIG FILE
+install(
+    CODE "file(WRITE \$ENV{HOME}/.yiffy/yiffy-config.txt \"test:wgen:test:nsfw\")"
+)
 
 # INSTALL THE EXECUTABLE TO USR/BIN
-install(TARGETS yiffy DESTINATION /usr/bin)
+install(
+    TARGETS yiffy
+    DESTINATION /usr/bin
+)

@@ -20,6 +20,7 @@
 #include "../msg/yiffy_messages.h"
 #include "../search/yiffy_search.h"
 #include "../menus/yiffy_text_menus.h"
+#include "../conf/yiffy_conf.h"
 
 #define RECOGNIZED_ARGUMENT   true
 #define UNRECOGNIZED_ARGUMENT false
@@ -32,7 +33,6 @@ static bool argumentVerify(int argumentCount, char *arguments[]);
 
 static void exportLocalData();
 static void importLocalData();
-static void changeWebGenerationMode(char *onOff);
 static void changeAdultMode(char *onOff);
 static void searchURLS(char *tags);
 static void fetchURLS(char *tags, char *command);
@@ -64,7 +64,7 @@ static struct generalOption generalOptions[] =
     {"--config", show_config},
     {"--export", exportLocalData},
     {"--import", importLocalData},
-    {"--wgen", changeWebGenerationMode},
+    {"--wgen", conf_wgen},
     {"--nsfw", changeAdultMode},
     {"--search", searchURLS}
 };
@@ -235,12 +235,6 @@ static void exportLocalData()
 static void importLocalData() 
 {
     fprintf(stdout, "IMPORT MENU\n");
-}
-
-/// @brief opens/closes web generation system
-static void changeWebGenerationMode(char *onOff)
-{
-    fprintf(stdout, "WEB GEN MENU %s\n", onOff);
 }
 
 /// @brief opens/closes nsfw option
