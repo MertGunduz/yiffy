@@ -33,7 +33,6 @@ static bool argumentVerify(int argumentCount, char *arguments[]);
 
 static void exportLocalData();
 static void importLocalData();
-static void changeAdultMode(char *onOff);
 static void searchURLS(char *tags);
 static void fetchURLS(char *tags, char *command);
 
@@ -65,7 +64,7 @@ static struct generalOption generalOptions[] =
     {"--export", exportLocalData},
     {"--import", importLocalData},
     {"--wgen", conf_wgen},
-    {"--nsfw", changeAdultMode},
+    {"--nsfw", conf_nsfw},
     {"--search", searchURLS}
 };
 
@@ -235,12 +234,6 @@ static void exportLocalData()
 static void importLocalData() 
 {
     fprintf(stdout, "IMPORT MENU\n");
-}
-
-/// @brief opens/closes nsfw option
-static void changeAdultMode(char *onOff)
-{
-    fprintf(stdout, "NSFW MENU%s\n", onOff);
 }
 
 /**

@@ -17,5 +17,6 @@
 #include "../msg/yiffy_messages.h"
 
 void conf_wgen(char *argv);
+void conf_nsfw(char *argv);
 
 #endif /* YIFFY_CONF_H */
