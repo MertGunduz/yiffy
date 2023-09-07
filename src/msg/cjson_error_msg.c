@@ -15,7 +15,7 @@
  * 
  * @param ptrError The CJSON generated error message.
 */
-void cjson_error_msg(const char *ptrError)
+void cjson_error_msg(const char *ptr_error)
 { 
     fprintf(stderr, "yiffy: cjson root %s\n", ptrError);
 }

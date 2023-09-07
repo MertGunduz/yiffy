@@ -12,7 +12,7 @@ var searchData=
   ['cjson_5farrayforeach_23',['cJSON_ArrayForEach',['../d5/d56/cjson_8h.html#ac3d6e5782fb4bb3c7a25c7c5b1868f06',1,'cjson.h']]],
   ['cjson_5fbool_24',['cJSON_bool',['../d5/d56/cjson_8h.html#aea0a1491f73d98b7cc4b8b791c408a4a',1,'cjson.h']]],
   ['cjson_5fcdecl_25',['CJSON_CDECL',['../d5/d56/cjson_8h.html#a79203c3ba406ffd5736627cc1e082e38',1,'cjson.h']]],
-  ['cjson_5ferror_5fmsg_26',['cjson_error_msg',['../df/d16/cjson__error__msg_8c.html#a05014d34ad9051eca179638e1f43decd',1,'cjson_error_msg(const char *ptrError):&#160;cjson_error_msg.c'],['../d0/de2/yiffy__messages_8h.html#a05014d34ad9051eca179638e1f43decd',1,'cjson_error_msg(const char *ptrError):&#160;cjson_error_msg.c']]],
+  ['cjson_5ferror_5fmsg_26',['cjson_error_msg',['../df/d16/cjson__error__msg_8c.html#aee955f677a4d5906d3a7f972ccb8543e',1,'cjson_error_msg(const char *ptr_error):&#160;cjson_error_msg.c'],['../d0/de2/yiffy__messages_8h.html#aee955f677a4d5906d3a7f972ccb8543e',1,'cjson_error_msg(const char *ptr_error):&#160;cjson_error_msg.c']]],
   ['cjson_5ferror_5fmsg_2ec_27',['cjson_error_msg.c',['../df/d16/cjson__error__msg_8c.html',1,'']]],
   ['cjson_5ffalse_28',['cJSON_False',['../d5/d56/cjson_8h.html#a2d240682316354b5748f909ad220184b',1,'cjson.h']]],
   ['cjson_5fhooks_29',['cJSON_Hooks',['../d5/d56/cjson_8h.html#ab67bc592e52110fee68ab8ab4140530d',1,'cJSON_Hooks():&#160;cjson.h'],['../dc/d55/structcJSON__Hooks.html',1,'cJSON_Hooks']]],

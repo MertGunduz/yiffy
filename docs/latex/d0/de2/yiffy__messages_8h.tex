@@ -14,8 +14,7 @@ Include dependency graph for yiffy\+\_\+messages.\+h\+:\nopagebreak
 \includegraphics[width=223pt]{d9/d36/yiffy__messages_8h__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:
-\nopagebreak
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -40,13 +39,13 @@ void \mbox{\hyperlink{yiffy__messages_8h_ab360dcc8796de6e212175d6c4c77477d}{no\+
 void \mbox{\hyperlink{yiffy__messages_8h_a94c5cd5af84c1b87e2dbf95cb2cbce90}{file\+\_\+open\+\_\+error\+\_\+msg}} (FILE $\ast$file)
 \begin{DoxyCompactList}\small\item\em Shows some information about file permissions when yiffy is not able to read file. ~\newline
  \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{yiffy__messages_8h_aed800373b815495939c13042a30a3c85}{no\+\_\+json\+\_\+error\+\_\+msg}} (FILE $\ast$json\+File)
+void \mbox{\hyperlink{yiffy__messages_8h_aaaed77adad2afa7f86c4d4c4703564aa}{no\+\_\+json\+\_\+error\+\_\+msg}} (FILE $\ast$json\+\_\+file)
 \begin{DoxyCompactList}\small\item\em Outputs the error when there is no JSON file. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{yiffy__messages_8h_a1cee29a606052cf745b98ca6f4d74d10}{json\+\_\+parse\+\_\+error\+\_\+msg}} ()
 \begin{DoxyCompactList}\small\item\em Outputs the error message when application can not parse the JSON content. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{yiffy__messages_8h_a2d26f407e1cd042bfff35c4fdb673550}{no\+\_\+results\+\_\+error\+\_\+msg}} ()
 \begin{DoxyCompactList}\small\item\em Outputs the error when there is no response from the API. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{yiffy__messages_8h_a05014d34ad9051eca179638e1f43decd}{cjson\+\_\+error\+\_\+msg}} (const char $\ast$ptr\+Error)
+void \mbox{\hyperlink{yiffy__messages_8h_aee955f677a4d5906d3a7f972ccb8543e}{cjson\+\_\+error\+\_\+msg}} (const char $\ast$ptr\+\_\+error)
 \begin{DoxyCompactList}\small\item\em Shows some information when cjson root gives error. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{yiffy__messages_8h_a8f2c3050fed77b86a432d485cde3ade1}{malloc\+\_\+error\+\_\+msg}} ()
 \begin{DoxyCompactList}\small\item\em Shows some information when yiffy cannot allocate memory. \end{DoxyCompactList}\item 
@@ -110,11 +109,11 @@ Evaluates the argument count and gives information if not in the requested forma
 
 Definition at line 18 of file argc\+\_\+error\+\_\+msg.\+c.
 
-\mbox{\Hypertarget{yiffy__messages_8h_a05014d34ad9051eca179638e1f43decd}\label{yiffy__messages_8h_a05014d34ad9051eca179638e1f43decd}} 
+\mbox{\Hypertarget{yiffy__messages_8h_aee955f677a4d5906d3a7f972ccb8543e}\label{yiffy__messages_8h_aee955f677a4d5906d3a7f972ccb8543e}} 
 \index{yiffy\_messages.h@{yiffy\_messages.h}!cjson\_error\_msg@{cjson\_error\_msg}}
 \index{cjson\_error\_msg@{cjson\_error\_msg}!yiffy\_messages.h@{yiffy\_messages.h}}
 \doxysubsubsection{\texorpdfstring{cjson\_error\_msg()}{cjson\_error\_msg()}}
-{\footnotesize\ttfamily void cjson\+\_\+error\+\_\+msg (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ptr\+Error }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void cjson\+\_\+error\+\_\+msg (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ptr\+\_\+error }\end{DoxyParamCaption})}
 
 
 
@@ -250,11 +249,11 @@ Outputs the home not found error when application can not access the \$\+HOME en
 
 Definition at line 16 of file no\+\_\+home\+\_\+error\+\_\+msg.\+c.
 
-\mbox{\Hypertarget{yiffy__messages_8h_aed800373b815495939c13042a30a3c85}\label{yiffy__messages_8h_aed800373b815495939c13042a30a3c85}} 
+\mbox{\Hypertarget{yiffy__messages_8h_aaaed77adad2afa7f86c4d4c4703564aa}\label{yiffy__messages_8h_aaaed77adad2afa7f86c4d4c4703564aa}} 
 \index{yiffy\_messages.h@{yiffy\_messages.h}!no\_json\_error\_msg@{no\_json\_error\_msg}}
 \index{no\_json\_error\_msg@{no\_json\_error\_msg}!yiffy\_messages.h@{yiffy\_messages.h}}
 \doxysubsubsection{\texorpdfstring{no\_json\_error\_msg()}{no\_json\_error\_msg()}}
-{\footnotesize\ttfamily void no\+\_\+json\+\_\+error\+\_\+msg (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{json\+File }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void no\+\_\+json\+\_\+error\+\_\+msg (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{json\+\_\+file }\end{DoxyParamCaption})}
 
 
 
