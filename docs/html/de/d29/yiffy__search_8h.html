@@ -82,6 +82,7 @@ $(function() {
 <code>#include &lt;string.h&gt;</code><br />
 <code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &lt;unistd.h&gt;</code><br />
+<code>#include &lt;ncurses.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="../../d0/de2/yiffy__messages_8h_source.html">../msg/yiffy_messages.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d5/d56/cjson_8h_source.html">../cjson/cjson.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -89,15 +90,16 @@ Include dependency graph for yiffy_search.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d6/d9d/yiffy__search_8h__incl.png" border="0" usemap="#asrc_2search_2yiffy__search_8h" alt=""/></div>
 <map name="asrc_2search_2yiffy__search_8h" id="asrc_2search_2yiffy__search_8h">
-<area shape="rect" title="This header file is used to handle the fetching and searching system." alt="" coords="275,5,457,32"/>
+<area shape="rect" title="This header file is used to handle the fetching and searching system." alt="" coords="325,5,508,32"/>
 <area shape="rect" title=" " alt="" coords="98,155,165,181"/>
 <area shape="rect" title=" " alt="" coords="25,80,96,107"/>
 <area shape="rect" title=" " alt="" coords="253,155,324,181"/>
 <area shape="rect" title=" " alt="" coords="325,80,407,107"/>
 <area shape="rect" title=" " alt="" coords="431,80,506,107"/>
+<area shape="rect" title=" " alt="" coords="531,80,615,107"/>
 <area shape="rect" href="../../d0/de2/yiffy__messages_8h.html" title="This file is used to handle error and information messages." alt="" coords="120,80,300,107"/>
-<area shape="rect" href="../../d5/d56/cjson_8h.html" title="This file is used as a header file for the cjson.c, used for JSON processes in requests,..." alt="" coords="581,80,700,107"/>
-<area shape="rect" title=" " alt="" coords="603,155,678,181"/>
+<area shape="rect" href="../../d5/d56/cjson_8h.html" title="This file is used as a header file for the cjson.c, used for JSON processes in requests,..." alt="" coords="691,80,809,107"/>
+<area shape="rect" title=" " alt="" coords="713,155,787,181"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -105,10 +107,11 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d1/d35/yiffy__search_8h__dep__incl.png" border="0" usemap="#asrc_2search_2yiffy__search_8hdep" alt=""/></div>
 <map name="asrc_2search_2yiffy__search_8hdep" id="asrc_2search_2yiffy__search_8hdep">
-<area shape="rect" title="This header file is used to handle the fetching and searching system." alt="" coords="152,5,335,32"/>
+<area shape="rect" title="This header file is used to handle the fetching and searching system." alt="" coords="249,5,432,32"/>
 <area shape="rect" href="../../dc/dc0/yiffy_8c.html" title="This is the main file and used to handle the arguments and execute the program by using external func..." alt="" coords="5,80,116,107"/>
 <area shape="rect" href="../../d6/d60/aria2__download_8c.html" title="Downloads the JSON file by using aria2c, works with the system function." alt="" coords="140,80,347,107"/>
 <area shape="rect" href="../../d1/d14/fetch_8c.html" title="This file is used to send requests to e621&#45;e926 with the specified tags by user and outputs or output..." alt="" coords="371,80,507,107"/>
+<area shape="rect" href="../../dc/dec/search_8c.html" title="This file is used to search over e621&#45;e926 by using a terminal with the specified tags by user and ou..." alt="" coords="531,80,678,107"/>
 </map>
 </div>
 </div>
@@ -147,7 +150,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d29/yiffy__search_8h_source.html#l00023">23</a> of file <a class="el" href="../../de/d29/yiffy__search_8h_source.html">yiffy_search.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d29/yiffy__search_8h_source.html#l00024">24</a> of file <a class="el" href="../../de/d29/yiffy__search_8h_source.html">yiffy_search.h</a>.</p>
 
 </div>
 </div>
@@ -174,7 +177,7 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>isNsfw</em>&#160;</td>
+          <td class="paramname"><em>is_nsfw</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -189,7 +192,7 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">tags</td><td>These are the e621-e926 tags prompted by the user as an argument value. Example: yiffy &ndash;fetch "anthro+fur+male+smile". </td></tr>
     <tr><td class="paramname">page</td><td>This is the value that is passed to the API to get results from the specified pages. </td></tr>
-    <tr><td class="paramname">isNsfw</td><td>This is the boolean value that checks the NSFW option. If true, sets the request string for e621 otherwise sets for e926. </td></tr>
+    <tr><td class="paramname">is_nsfw</td><td>This is the boolean value that checks the NSFW option. If true, sets the request string for e621 otherwise sets for e926. </td></tr>
   </table>
   </dd>
 </dl>

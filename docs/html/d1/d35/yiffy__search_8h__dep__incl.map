@@ -1,6 +1,7 @@
 <map id="src/search/yiffy_search.h" name="src/search/yiffy_search.h">
-<area shape="rect" id="node1" title="This header file is used to handle the fetching and searching system." alt="" coords="152,5,335,32"/>
+<area shape="rect" id="node1" title="This header file is used to handle the fetching and searching system." alt="" coords="249,5,432,32"/>
 <area shape="rect" id="node2" href="$dc/dc0/yiffy_8c.html" title="This is the main file and used to handle the arguments and execute the program by using external func..." alt="" coords="5,80,116,107"/>
 <area shape="rect" id="node3" href="$d6/d60/aria2__download_8c.html" title="Downloads the JSON file by using aria2c, works with the system function." alt="" coords="140,80,347,107"/>
 <area shape="rect" id="node4" href="$d1/d14/fetch_8c.html" title="This file is used to send requests to e621&#45;e926 with the specified tags by user and outputs or output..." alt="" coords="371,80,507,107"/>
+<area shape="rect" id="node5" href="$dc/dec/search_8c.html" title="This file is used to search over e621&#45;e926 by using a terminal with the specified tags by user and ou..." alt="" coords="531,80,678,107"/>
 </map>

@@ -1,0 +1,58 @@
+\hypertarget{search_8c}{}\doxysection{src/search/search.c File Reference}
+\label{search_8c}\index{src/search/search.c@{src/search/search.c}}
+
+
+This file is used to search over e621-\/e926 by using a terminal with the specified tags by user and outputs or outputs-\/downloads URLs.  
+
+
+{\ttfamily \#include \char`\"{}yiffy\+\_\+search.\+h\char`\"{}}\newline
+Include dependency graph for search.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/ddf/search_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{search_8c_a4bc3b3dec1f6f4fd37aabb74dc5919e9}{search}} (char $\ast$tags, int page)
+\begin{DoxyCompactList}\small\item\em Sends a request to search over the e621-\/e926 by using the API. It uses ncurses to provide the web-\/like experience. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file is used to search over e621-\/e926 by using a terminal with the specified tags by user and outputs or outputs-\/downloads URLs. 
+
+This file is used to send a request to the search over the e621-\/e926 by using the API. It uses ncurses to provide the web-\/like experience.
+
+\begin{DoxyAuthor}{Author}
+Mehmet Mert Gunduz
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+21/07/2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{search_8c_a4bc3b3dec1f6f4fd37aabb74dc5919e9}\label{search_8c_a4bc3b3dec1f6f4fd37aabb74dc5919e9}} 
+\index{search.c@{search.c}!search@{search}}
+\index{search@{search}!search.c@{search.c}}
+\doxysubsubsection{\texorpdfstring{search()}{search()}}
+{\footnotesize\ttfamily void search (\begin{DoxyParamCaption}\item[{char $\ast$}]{tags,  }\item[{int}]{page }\end{DoxyParamCaption})}
+
+
+
+Sends a request to search over the e621-\/e926 by using the API. It uses ncurses to provide the web-\/like experience. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tags} & These are the e621-\/e926 tags prompted by the user as an argument value. Example\+: yiffy --fetch \char`\"{}anthro+fur+male+smile\char`\"{}. \\
+\hline
+{\em page} & This is the value that is passed to the API to get results from the specified pages. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 21 of file search.\+c.
+

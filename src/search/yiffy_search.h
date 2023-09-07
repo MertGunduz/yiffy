@@ -16,6 +16,7 @@
 #include <string.h>
 #include <stdbool.h>
 #include <unistd.h>
+#include <ncurses.h>
 
 #include "../msg/yiffy_messages.h"
 #include "../cjson/cjson.h"

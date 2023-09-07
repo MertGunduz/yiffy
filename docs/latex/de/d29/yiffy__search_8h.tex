@@ -10,6 +10,7 @@ This header file is used to handle the fetching and searching system.
 {\ttfamily \#include $<$string.\+h$>$}\newline
 {\ttfamily \#include $<$stdbool.\+h$>$}\newline
 {\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$ncurses.\+h$>$}\newline
 {\ttfamily \#include \char`\"{}../msg/yiffy\+\_\+messages.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}../cjson/cjson.\+h\char`\"{}}\newline
 Include dependency graph for yiffy\+\_\+search.\+h\+:
@@ -62,7 +63,7 @@ Mehmet Mert Gunduz
 
 
 
-Definition at line 23 of file yiffy\+\_\+search.\+h.
+Definition at line 24 of file yiffy\+\_\+search.\+h.
 
 
 
@@ -71,7 +72,7 @@ Definition at line 23 of file yiffy\+\_\+search.\+h.
 \index{yiffy\_search.h@{yiffy\_search.h}!aria2\_download@{aria2\_download}}
 \index{aria2\_download@{aria2\_download}!yiffy\_search.h@{yiffy\_search.h}}
 \doxysubsubsection{\texorpdfstring{aria2\_download()}{aria2\_download()}}
-{\footnotesize\ttfamily void aria2\+\_\+download (\begin{DoxyParamCaption}\item[{char $\ast$}]{tags,  }\item[{int}]{page,  }\item[{bool}]{is\+Nsfw }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void aria2\+\_\+download (\begin{DoxyParamCaption}\item[{char $\ast$}]{tags,  }\item[{int}]{page,  }\item[{bool}]{is\+\_\+nsfw }\end{DoxyParamCaption})}
 
 
 
@@ -83,7 +84,7 @@ downloads the API response by using aria2c, works with a system call
 \hline
 {\em page} & This is the value that is passed to the API to get results from the specified pages. \\
 \hline
-{\em is\+Nsfw} & This is the boolean value that checks the NSFW option. If true, sets the request string for e621 otherwise sets for e926. \\
+{\em is\+\_\+nsfw} & This is the boolean value that checks the NSFW option. If true, sets the request string for e621 otherwise sets for e926. \\
 \hline
 \end{DoxyParams}
 

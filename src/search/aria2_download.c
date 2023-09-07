@@ -15,32 +15,32 @@
 /// @brief downloads the API response by using aria2c, works with a system call
 /// @param tags These are the e621-e926 tags prompted by the user as an argument value. Example: yiffy --fetch "anthro+fur+male+smile".
 /// @param page This is the value that is passed to the API to get results from the specified pages.
-/// @param isNsfw This is the boolean value that checks the NSFW option. If true, sets the request string for e621 otherwise sets for e926.
-void aria2_download(char *tags, int page, bool isNsfw)
+/// @param is_nsfw This is the boolean value that checks the NSFW option. If true, sets the request string for e621 otherwise sets for e926.
+void aria2_download(char *tags, int page, bool is_nsfw)
 {
-    char *requestString = (char*)malloc(256 * sizeof(char));
+    char *request_string = (char*)malloc(256 * sizeof(char));
 
-    if (requestString == NULL)
+    if (request_string == NULL)
     {
         malloc_error_msg();
         exit(EXIT_FAILURE);
     }
 
     /* Set the string for NSFW or SFW option by checking the isNsfw parameter. */
-    if (isNsfw)
+    if (is_nsfw)
     {
-        sprintf(requestString, "aria2c \"https://e621.net/posts.json?limit=20&page=%d&tags=%s\" -o posts.json >/dev/null 2>&1", page, tags);
+        sprintf(request_string, "aria2c \"https://e621.net/posts.json?limit=20&page=%d&tags=%s\" -o posts.json >/dev/null 2>&1", page, tags);
     }
     else
     {
-        sprintf(requestString, "aria2c \"https://e926.net/posts.json?limit=20&page=%d&tags=%s\" -o posts.json >/dev/null 2>&1", page, tags);
+        sprintf(request_string, "aria2c \"https://e926.net/posts.json?limit=20&page=%d&tags=%s\" -o posts.json >/dev/null 2>&1", page, tags);
     }
 
     /* Download the JSON and set a sleep(1) for signals. */
-    int success = system(requestString);
+    int success = system(request_string);
     sleep(1);
 
-    free(requestString);
+    free(request_string);
 
     if (success == BAD_SYSTEM_FUNC_CALL)
     {

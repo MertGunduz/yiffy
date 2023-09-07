@@ -1,12 +1,13 @@
 <map id="src/search/aria2_download.c" name="src/search/aria2_download.c">
-<area shape="rect" id="node1" title="Downloads the JSON file by using aria2c, works with the system function." alt="" coords="263,5,469,32"/>
-<area shape="rect" id="node2" href="$de/d29/yiffy__search_8h.html" title="This header file is used to handle the fetching and searching system." alt="" coords="309,80,423,107"/>
+<area shape="rect" id="node1" title="Downloads the JSON file by using aria2c, works with the system function." alt="" coords="313,5,520,32"/>
+<area shape="rect" id="node2" href="$de/d29/yiffy__search_8h.html" title="This header file is used to handle the fetching and searching system." alt="" coords="360,80,473,107"/>
 <area shape="rect" id="node3" title=" " alt="" coords="98,229,165,256"/>
 <area shape="rect" id="node4" title=" " alt="" coords="25,155,96,181"/>
 <area shape="rect" id="node5" title=" " alt="" coords="253,229,324,256"/>
 <area shape="rect" id="node6" title=" " alt="" coords="325,155,407,181"/>
 <area shape="rect" id="node7" title=" " alt="" coords="431,155,506,181"/>
-<area shape="rect" id="node8" href="$d0/de2/yiffy__messages_8h.html" title="This file is used to handle error and information messages." alt="" coords="120,155,300,181"/>
-<area shape="rect" id="node9" href="$d5/d56/cjson_8h.html" title="This file is used as a header file for the cjson.c, used for JSON processes in requests,..." alt="" coords="581,155,700,181"/>
-<area shape="rect" id="node10" title=" " alt="" coords="603,229,678,256"/>
+<area shape="rect" id="node8" title=" " alt="" coords="531,155,615,181"/>
+<area shape="rect" id="node9" href="$d0/de2/yiffy__messages_8h.html" title="This file is used to handle error and information messages." alt="" coords="120,155,300,181"/>
+<area shape="rect" id="node10" href="$d5/d56/cjson_8h.html" title="This file is used as a header file for the cjson.c, used for JSON processes in requests,..." alt="" coords="691,155,809,181"/>
+<area shape="rect" id="node11" title=" " alt="" coords="713,229,787,256"/>
 </map>
