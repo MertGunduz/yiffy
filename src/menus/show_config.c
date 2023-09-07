@@ -33,15 +33,15 @@ void show_config()
     /* Create the configuration file path. */
     sprintf(file_path, "%s/.yiffy/yiffy-config.txt", home_directory);
 
-    FILE *configurationFile = fopen(file_path, "r");
+    FILE *config_file = fopen(file_path, "r");
 
-    if (configurationFile == NULL)
+    if (config_file == NULL)
     {
-        file_open_error_msg(configurationFile);
+        file_open_error_msg(config_file);
         exit(EXIT_FAILURE);
     }
 
-    fscanf(configurationFile, "%s", buffer);
+    fscanf(config_file, "%s", buffer);
 
     /* Write the header to console. */
     fprintfH(stdout, "current yiffy configurations");
@@ -54,5 +54,5 @@ void show_config()
         token = strtok(NULL, ":");
     }
 
-    fclose(configurationFile);
+    fclose(config_file);
 }

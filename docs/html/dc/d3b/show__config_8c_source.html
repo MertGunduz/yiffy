@@ -94,15 +94,15 @@ $(function() {
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="comment">/* Create the configuration file path. */</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    sprintf(file_path, <span class="stringliteral">&quot;%s/.yiffy/yiffy-config.txt&quot;</span>, home_directory);</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    FILE *configurationFile = fopen(file_path, <span class="stringliteral">&quot;r&quot;</span>);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    FILE *config_file = fopen(file_path, <span class="stringliteral">&quot;r&quot;</span>);</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">if</span> (configurationFile == NULL)</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">if</span> (config_file == NULL)</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="../../db/df9/file__open__error__msg_8c.html#a94c5cd5af84c1b87e2dbf95cb2cbce90">file_open_error_msg</a>(configurationFile);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="../../db/df9/file__open__error__msg_8c.html#a94c5cd5af84c1b87e2dbf95cb2cbce90">file_open_error_msg</a>(config_file);</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        exit(EXIT_FAILURE);</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    fscanf(configurationFile, <span class="stringliteral">&quot;%s&quot;</span>, <a class="code" href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a>);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    fscanf(config_file, <span class="stringliteral">&quot;%s&quot;</span>, <a class="code" href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a>);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">/* Write the header to console. */</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="../../dd/d16/fprintfH_8c.html#af368c6ede13d6b3044f2875601238d7e">fprintfH</a>(stdout, <span class="stringliteral">&quot;current yiffy configurations&quot;</span>);</div>
@@ -115,7 +115,7 @@ $(function() {
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        token = strtok(NULL, <span class="stringliteral">&quot;:&quot;</span>);</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    fclose(configurationFile);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    fclose(config_file);</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
 <div class="ttc" id="acjson_8h_html_aff2566f4c366b48d73479bef43ee4d2e"><div class="ttname"><a href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a></div><div class="ttdeci">char * buffer</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d56/cjson_8h_source.html#l00170">cjson.h:170</a></div></div>
 <div class="ttc" id="afile__open__error__msg_8c_html_a94c5cd5af84c1b87e2dbf95cb2cbce90"><div class="ttname"><a href="../../db/df9/file__open__error__msg_8c.html#a94c5cd5af84c1b87e2dbf95cb2cbce90">file_open_error_msg</a></div><div class="ttdeci">void file_open_error_msg(FILE *file)</div><div class="ttdoc">Shows some information about file permissions when yiffy is not able to read file.</div><div class="ttdef"><b>Definition:</b> <a href="../../db/df9/file__open__error__msg_8c_source.html#l00018">file_open_error_msg.c:18</a></div></div>
