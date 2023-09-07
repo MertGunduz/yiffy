@@ -4,7 +4,7 @@
  * @brief This is the main file and used to handle the arguments and execute the program by using external functions.
  * 
  * Main function is used to call the functions by using function pointers and pass arguments.
- * ArgumentVerify function is used to check the validity of the arguments like argv, argc.
+ * Argument_verify function is used to check the validity of the arguments like argv, argc.
  * 
  * @author Mehmet Mert Gunduz 
  * 
@@ -29,17 +29,17 @@
 #define NO_ARG_VALUE          false
 #define EXTRA_ARG_VALUE       false
 
-static bool argumentVerify(int argumentCount, char *arguments[]);
+static bool argument_verify(int argument_count, char *arguments[]);
 
-static void exportLocalData();
-static void importLocalData();
-static void searchURLS(char *tags);
-static void fetchURLS(char *tags, char *command);
+static void export_local_data();
+static void import_local_data();
+static void search_urls(char *tags);
+static void fetch_urls(char *tags, char *command);
 
 /**
  * @brief The general struct for handling the general arguments.
 */
-struct generalOption
+struct general_option
 {
     char *option;
     void (*function)(char *argv);
@@ -48,64 +48,64 @@ struct generalOption
 /**
  * @brief The general struct for handling the fetch arguments.
 */
-struct fetchOption
+struct fetch_option
 {
     char *option;
     void (*function)(char *argv, char *command);
 };
 
-static struct generalOption generalOptions[] =
+static struct general_option general_options[] =
 {
     {"--help", show_help},
     {"--version", show_version},
     {"--github", show_github},
     {"--website", show_website},
     {"--config", show_config},
-    {"--export", exportLocalData},
-    {"--import", importLocalData},
+    {"--export", export_local_data},
+    {"--import", import_local_data},
     {"--wgen", conf_wgen},
     {"--nsfw", conf_nsfw},
-    {"--search", searchURLS}
+    {"--search", search_urls}
 };
 
-static struct fetchOption fetchOptions[] =
+static struct fetch_option fetch_options[] =
 {
-    {"--fetch", fetchURLS},
-    {"--dfetch", fetchURLS}
+    {"--fetch", fetch_urls},
+    {"--dfetch", fetch_urls}
 };
 
 int main(int argc, char *argv[])
 {
-    if (argumentVerify(argc, argv))
+    if (argument_verify(argc, argv))
     {
-        for (long unsigned int i = 0; i < sizeof(fetchOptions) / sizeof(fetchOptions[0]); i++)
+        for (long unsigned int i = 0; i < sizeof(fetch_options) / sizeof(fetch_options[0]); i++)
         {
-            if (strcmp(argv[1], fetchOptions[i].option) == 0)
+            if (strcmp(argv[1], fetch_options[i].option) == 0)
             {
-                void (*fetchFunction)(char *argv, char *command) = fetchOptions[i].function;
+                void (*fetch_function)(char *argv, char *command) = fetch_options[i].function;
 
-                if (strcmp(argv[1], fetchOptions[i].option) == 0)
+                if (strcmp(argv[1], fetch_options[i].option) == 0)
                 {
-                    fetchFunction(argv[2], fetchOptions[i].option);
+                    fetch_function(argv[2], fetch_options[i].option);
                 }
 
                 break;
             }
         }
 
-        for (long unsigned int i = 0; i < sizeof(generalOptions) / sizeof(generalOptions[0]); i++) 
+        for (long unsigned int i = 0; i < sizeof(general_options) / sizeof(general_options[0]); i++) 
         {
-            if (strcmp(argv[1], generalOptions[i].option) == 0) 
+            if (strcmp(argv[1], general_options[i].option) == 0) 
             {
-                void (*menuFunc)(char *argv) = generalOptions[i].function;
+                void (*menu_func)(char *argv) = general_options[i].function;
 
-                if (strcmp(generalOptions[i].option, "--search") == 0 || strcmp(generalOptions[i].option, "--nsfw") == 0 || strcmp(generalOptions[i].option, "--wgen") == 0) /* THIRD ARGUMENT: tags [yiffy --search "blush+fox+male"]*/
+                if (strcmp(general_options[i].option, "--search") == 0 || strcmp(general_options[i].option, "--nsfw") == 0 || strcmp(general_options[i].option, "--wgen") == 0) /* THIRD ARGUMENT: tags [yiffy --search "blush+fox+male"]*/
                 {
-                    menuFunc(argv[2]);
+                    menu_func(argv[2]);
                 }
                 else /* NO THIRD ARGUMENT */
                 {
-                    menuFunc(NULL);
+                    menu_func(NULL);
                 }
 
                 break;
@@ -123,33 +123,33 @@ int main(int argc, char *argv[])
  * Supports two types of arguments, single argument options and two-argument options.
  * 
  * 
- * @param argumentCount The number of command line arguments.
+ * @param argument_count The number of command line arguments.
  * @param arguments The all arguments passed by the user.
  *
  * @return Returns an integer code indicating the result of argument validation.
 */
-static bool argumentVerify(int argumentCount, char *arguments[])
+static bool argument_verify(int argument_count, char *arguments[])
 {
-    char *oneArguments[] = {"--help", "--version", "--github", "--website", "--config", "--export", "--import"};
-    char *twoArguments[] = {"--wgen", "--nsfw", "--dfetch", "--fetch", "--search"};
+    char *one_arguments[] = {"--help", "--version", "--github", "--website", "--config", "--export", "--import"};
+    char *two_arguments[] = {"--wgen", "--nsfw", "--dfetch", "--fetch", "--search"};
 
 
-    if (argumentCount == 3)
+    if (argument_count == 3)
     {
         /**
         * @section Two Arguments Handling
         *
-        * It checks if the passed argument exists in the htwoArguments array.
+        * It checks if the passed argument exists in the two_arguments array.
         * If the passed option is --dfetch, --fetch or --search it returns true.
         * Also, if the passed option is one of the twoArgument options and includes on/off as the second option returns true.
         * If not, returns false and shows the user that the second option can only be on/off.
         * 
-        * twoArguments they don't take on off: --dfetch, --fetch, --search.
-        * twoArguments they take on/off: --wgen, --nsfw.
+        * two_arguments they don't take on off: --dfetch, --fetch, --search.
+        * two_arguments they take on/off: --wgen, --nsfw.
         */
-        for (long unsigned int i = 0; i < sizeof(twoArguments) / sizeof(twoArguments[0]); i++)
+        for (long unsigned int i = 0; i < sizeof(two_arguments) / sizeof(two_arguments[0]); i++)
         {
-            if (strcmp(arguments[1], twoArguments[i]) == 0)
+            if (strcmp(arguments[1], two_arguments[i]) == 0)
             {
                 if (strcmp(arguments[2], "on") == 0 || strcmp(arguments[2], "off") == 0 || strcmp(arguments[1], "--dfetch") == 0 || strcmp(arguments[1], "--fetch") == 0 || strcmp(arguments[1], "--search") == 0)
                 {
@@ -168,9 +168,9 @@ static bool argumentVerify(int argumentCount, char *arguments[])
          * 
          * When user entered 2 options and the first one exists in the oneArguments array, then it will generate an error message and return false.
         */
-        for (long unsigned int i = 0; i < sizeof(oneArguments) / sizeof(oneArguments[0]); i++)
+        for (long unsigned int i = 0; i < sizeof(one_arguments) / sizeof(one_arguments[0]); i++)
         {
-            if (strcmp(arguments[1], oneArguments[i]) == 0)
+            if (strcmp(arguments[1], one_arguments[i]) == 0)
             {
                 extra_arg_error_msg(arguments[1]);
                 return EXTRA_ARG_VALUE; /* Return false. */
@@ -180,16 +180,16 @@ static bool argumentVerify(int argumentCount, char *arguments[])
         unrecognized_arg_msg(arguments[1]);
         return UNRECOGNIZED_ARGUMENT; /* Return false. */
     }
-    else if (argumentCount == 2)
+    else if (argument_count == 2)
     {
         /**
          * @section One Argument Handling
          * 
          * When user entered 1 option and the first one exists in the oneArguments array, it will return true.
         */
-        for (long unsigned int i = 0; i < sizeof(oneArguments) / sizeof(oneArguments[0]); i++)
+        for (long unsigned int i = 0; i < sizeof(one_arguments) / sizeof(one_arguments[0]); i++)
         {
-            if (strcmp(arguments[1], oneArguments[i]) == 0)
+            if (strcmp(arguments[1], one_arguments[i]) == 0)
             {
                 return RECOGNIZED_ARGUMENT; /* Return true. */
             }
@@ -198,11 +198,11 @@ static bool argumentVerify(int argumentCount, char *arguments[])
         /**
          * @section One Argument Handling twoArgument Option Error Handling 
          * 
-         * When user entered 1 option and the first one exists in the twoArguments array, it will return false and generate an error message.
+         * When user entered 1 option and the first one exists in the two_arguments array, it will return false and generate an error message.
         */
-        for (long unsigned int i = 0; i < sizeof(twoArguments) / sizeof(twoArguments[0]); i++)
+        for (long unsigned int i = 0; i < sizeof(two_arguments) / sizeof(two_arguments[0]); i++)
         {
-            if (strcmp(arguments[1], twoArguments[i]) == 0)
+            if (strcmp(arguments[1], two_arguments[i]) == 0)
             {
                 no_arg_value_msg(arguments[1]);
                 return NO_ARG_VALUE; /* Return false. */
@@ -219,37 +219,39 @@ static bool argumentVerify(int argumentCount, char *arguments[])
          * 
          * When user entered no options or more than 2 arguments, it will return false and generate an error message.
         */
-        argc_error_msg(argumentCount);
+        argc_error_msg(argument_count);
         return ARGC_QTY_ERROR; /* Return false. */
     }
 }
 
 /// @brief exports the app data as a string
-static void exportLocalData() 
+static void export_local_data() 
 {
     fprintf(stdout, "EXPORT MENU\n");
 }
 
 /// @brief imports the string and creates app data
-static void importLocalData() 
+static void import_local_data() 
 {
     fprintf(stdout, "IMPORT MENU\n");
 }
 
 /**
  * @brief Calls the search function to use yiffy e621-e926 terminal.
+ * 
  * @param tags These are the e621-e926 tags prompted by the user as an argument value. Example: yiffy --fetch "anthro+fur+male+smile".
 */
-static void searchURLS(char *tags)
+static void search_urls(char *tags)
 {
     fprintf(stdout, "SEARCH MENU %s\n", tags);
 }
 
 /**
  * @brief Calls the fetch function in a loop to output or output-download URLs until there is no content anymore.
+ * 
  * @param tags These are the e621-e926 tags prompted by the user as an argument value. Example: yiffy --fetch "anthro+fur+male+smile".
 */
-static void fetchURLS(char *tags, char *command)
+static void fetch_urls(char *tags, char *command)
 { 
     int i = 1;
     while (true)
