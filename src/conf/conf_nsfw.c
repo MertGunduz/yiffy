@@ -26,13 +26,13 @@ void conf_nsfw(char *argv)
     char buffer[MAX_BUFFER_SIZE];
 
     /* Operation boolean, used to check if it exists in the current configuration or not. */
-    bool isNsfwOn;
+    bool is_nsfw;
 
     /* To write or delete the configuration setting. Keyword (nsfw) has got 4 characters. */
-    int optionSize = 4;
+    int option_size = 4;
 
     /* To set the index of the option. */
-    int nsfwIndex;
+    int nsfw_index;
 
     /* Get the home directory of the current user. */
     char *home_directory = getenv("HOME");
@@ -47,21 +47,21 @@ void conf_nsfw(char *argv)
     sprintf(file_path, "%s/.yiffy/yiffy-config.txt", home_directory);
 
     /* create file pointer */
-    FILE *confReadWriteFile = fopen(file_path, "r+");
+    FILE *conf_read_write_file = fopen(file_path, "r+");
 
-    if (confReadWriteFile == NULL)
+    if (conf_read_write_file == NULL)
     {
-        file_open_error_msg(confReadWriteFile);
+        file_open_error_msg(conf_read_write_file);
         exit(EXIT_FAILURE);
     }
 
-    fscanf(confReadWriteFile, "%s", buffer);
+    fscanf(conf_read_write_file, "%s", buffer);
 
     /* Close the conf read file. */
-    fclose(confReadWriteFile);
+    fclose(conf_read_write_file);
 
     /* Get the buffer size. */
-    int bufferSize = strlen(buffer); 
+    int buffer_size = strlen(buffer); 
 
     /* Check if the nsfw string exists. */
     char *string = strstr(buffer, "nsfw");
@@ -69,66 +69,66 @@ void conf_nsfw(char *argv)
     if (string != NULL)
     {
         /* Get the index of the nsfw token. */
-        nsfwIndex = string - buffer;
+        nsfw_index = string - buffer;
 
         /* Set the boolean to true to make operations. */
-        isNsfwOn = true;
+        is_nsfw = true;
     }
 
-    if (strcmp(argv, "on") == 0 && isNsfwOn)
+    if (strcmp(argv, "on") == 0 && is_nsfw)
     {
         already_conf_msg("nsfw", argv);
     }
-    else if (strcmp(argv, "on") == 0 && !isNsfwOn)
+    else if (strcmp(argv, "on") == 0 && !is_nsfw)
     {
-        FILE *confAppendFile = fopen(file_path, "a");
+        FILE *conf_append_file = fopen(file_path, "a");
 
-        if (confAppendFile == NULL)
+        if (conf_append_file == NULL)
         {
-            file_open_error_msg(confAppendFile);
+            file_open_error_msg(conf_append_file);
             exit(EXIT_FAILURE);
         }
 
-        fprintf(confAppendFile, ":nsfw");
+        fprintf(conf_append_file, ":nsfw");
 
-        fclose(confAppendFile);
+        fclose(conf_append_file);
 
         conf_successful_msg("nsfw", argv);
     }
-    else if (strcmp(argv, "off") == 0 && !isNsfwOn)
+    else if (strcmp(argv, "off") == 0 && !is_nsfw)
     {
         already_conf_msg("nsfw", argv);
     }
-    else if (strcmp(argv, "off") == 0 && isNsfwOn)
+    else if (strcmp(argv, "off") == 0 && is_nsfw)
     {
-        FILE *confWriteFile = fopen(file_path, "w");
+        FILE *conf_write_file = fopen(file_path, "w");
 
-        if (confWriteFile == NULL)
+        if (conf_write_file == NULL)
         {
-            file_open_error_msg(confWriteFile);
+            file_open_error_msg(conf_write_file);
             exit(EXIT_FAILURE);
         }
 
-        for (int i = 0; i < bufferSize; i++)
+        for (int i = 0; i < buffer_size; i++)
         {
-            if (nsfwIndex == 0 && i == nsfwIndex)
+            if (nsfw_index == 0 && i == nsfw_index)
             {
-                i = i + optionSize;
+                i = i + option_size;
                 continue;
             }
             else
             {
-                if (i == nsfwIndex - 1)
+                if (i == nsfw_index - 1)
                 {
-                    i = i + optionSize;
+                    i = i + option_size;
                     continue;
                 } 
             }
 
-            fputc(buffer[i], confWriteFile);
+            fputc(buffer[i], conf_write_file);
         }
 
-        fclose(confWriteFile);
+        fclose(conf_write_file);
 
         conf_successful_msg("nsfw", argv);
     }

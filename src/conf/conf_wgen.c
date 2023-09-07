@@ -26,13 +26,13 @@ void conf_wgen(char *argv)
     char buffer[MAX_BUFFER_SIZE];
 
     /* Operation boolean, used to check if it exists in the current configuration or not. */
-    bool isWgenOn;
+    bool is_wgen;
 
     /* To write or delete the configuration setting. Keyword (wgen) has got 4 characters. */
-    int optionSize = 4;
+    int option_size = 4;
 
     /* To set the index of the option. */
-    int wgenIndex;
+    int wgen_index;
 
     /* Get the home directory of the current user. */
     char *home_directory = getenv("HOME");
@@ -47,21 +47,21 @@ void conf_wgen(char *argv)
     sprintf(file_path, "%s/.yiffy/yiffy-config.txt", home_directory);
 
     /* create file pointer */
-    FILE *confReadWriteFile = fopen(file_path, "r+");
+    FILE *conf_read_write_file = fopen(file_path, "r+");
 
-    if (confReadWriteFile == NULL)
+    if (conf_read_write_file == NULL)
     {
-        file_open_error_msg(confReadWriteFile);
+        file_open_error_msg(conf_read_write_file);
         exit(EXIT_FAILURE);
     }
 
-    fscanf(confReadWriteFile, "%s", buffer);
+    fscanf(conf_read_write_file, "%s", buffer);
 
     /* Close the conf read file. */
-    fclose(confReadWriteFile);
+    fclose(conf_read_write_file);
 
     /* Get the buffer size. */
-    int bufferSize = strlen(buffer); 
+    int buffer_size = strlen(buffer); 
 
     /* Check if the wgen string exists. */
     char *string = strstr(buffer, "wgen");
@@ -69,66 +69,66 @@ void conf_wgen(char *argv)
     if (string != NULL)
     {
         /* Get the index of the wgen token. */
-        wgenIndex = string - buffer;
+        wgen_index = string - buffer;
 
         /* Set the boolean to true to make operations. */
-        isWgenOn = true;
+        is_wgen = true;
     }
 
-    if (strcmp(argv, "on") == 0 && isWgenOn)
+    if (strcmp(argv, "on") == 0 && is_wgen)
     {
         already_conf_msg("wgen", argv);
     }
-    else if (strcmp(argv, "on") == 0 && !isWgenOn)
+    else if (strcmp(argv, "on") == 0 && !is_wgen)
     {
-        FILE *confAppendFile = fopen(file_path, "a");
+        FILE *conf_append_file = fopen(file_path, "a");
 
-        if (confAppendFile == NULL)
+        if (conf_append_file == NULL)
         {
-            file_open_error_msg(confAppendFile);
+            file_open_error_msg(conf_append_file);
             exit(EXIT_FAILURE);
         }
 
-        fprintf(confAppendFile, ":wgen");
+        fprintf(conf_append_file, ":wgen");
 
-        fclose(confAppendFile);
+        fclose(conf_append_file);
 
         conf_successful_msg("wgen", argv);
     }
-    else if (strcmp(argv, "off") == 0 && !isWgenOn)
+    else if (strcmp(argv, "off") == 0 && !is_wgen)
     {
         already_conf_msg("wgen", argv);
     }
-    else if (strcmp(argv, "off") == 0 && isWgenOn)
+    else if (strcmp(argv, "off") == 0 && is_wgen)
     {
-        FILE *confWriteFile = fopen(file_path, "w");
+        FILE *conf_write_file = fopen(file_path, "w");
 
-        if (confWriteFile == NULL)
+        if (conf_write_file == NULL)
         {
-            file_open_error_msg(confWriteFile);
+            file_open_error_msg(conf_write_file);
             exit(EXIT_FAILURE);
         }
 
-        for (int i = 0; i < bufferSize; i++)
+        for (int i = 0; i < buffer_size; i++)
         {
-            if (wgenIndex == 0 && i == wgenIndex)
+            if (wgen_index == 0 && i == wgen_index)
             {
-                i = i + optionSize;
+                i = i + option_size;
                 continue;
             }
             else
             {
-                if (i == wgenIndex - 1)
+                if (i == wgen_index - 1)
                 {
-                    i = i + optionSize;
+                    i = i + option_size;
                     continue;
                 } 
             }
 
-            fputc(buffer[i], confWriteFile);
+            fputc(buffer[i], conf_write_file);
         }
 
-        fclose(confWriteFile);
+        fclose(conf_write_file);
 
         conf_successful_msg("wgen", argv);
     }
