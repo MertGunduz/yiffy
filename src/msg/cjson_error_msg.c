@@ -17,5 +17,5 @@
 */
 void cjson_error_msg(const char *ptr_error)
 { 
-    fprintf(stderr, "yiffy: cjson root %s\n", ptrError);
+    fprintf(stderr, "yiffy: cjson root %s\n", ptr_error);
 }
