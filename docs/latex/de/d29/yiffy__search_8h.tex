@@ -38,7 +38,9 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 void \mbox{\hyperlink{yiffy__search_8h_a41f382b6bd05c9776641fb4bc5024afa}{fetch}} (char $\ast$tags, int page, char $\ast$command)
 \begin{DoxyCompactList}\small\item\em Reads the configuration file, sets the options and sends a request to e621-\/e926. After taking the response, it calls the output function to show the URLs. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{yiffy__search_8h_a75a90032aa6fbf0c41997ecf6b4b70eb}{aria2\+\_\+download}} (char $\ast$tags, int page, bool is\+Nsfw)
-\begin{DoxyCompactList}\small\item\em downloads the API response by using aria2c, works with a system call \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em downloads the API response by using aria2c, works with a system call \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{yiffy__search_8h_a4bc3b3dec1f6f4fd37aabb74dc5919e9}{search}} (char $\ast$tags, int page)
+\begin{DoxyCompactList}\small\item\em Sends a request to search over the e621-\/e926 by using the API. It uses ncurses to provide the web-\/like experience. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -111,4 +113,25 @@ Reads the configuration file, sets the options and sends a request to e621-\/e92
 
 
 Definition at line 32 of file fetch.\+c.
+
+\mbox{\Hypertarget{yiffy__search_8h_a4bc3b3dec1f6f4fd37aabb74dc5919e9}\label{yiffy__search_8h_a4bc3b3dec1f6f4fd37aabb74dc5919e9}} 
+\index{yiffy\_search.h@{yiffy\_search.h}!search@{search}}
+\index{search@{search}!yiffy\_search.h@{yiffy\_search.h}}
+\doxysubsubsection{\texorpdfstring{search()}{search()}}
+{\footnotesize\ttfamily void search (\begin{DoxyParamCaption}\item[{char $\ast$}]{tags,  }\item[{int}]{page }\end{DoxyParamCaption})}
+
+
+
+Sends a request to search over the e621-\/e926 by using the API. It uses ncurses to provide the web-\/like experience. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tags} & These are the e621-\/e926 tags prompted by the user as an argument value. Example\+: yiffy --fetch \char`\"{}anthro+fur+male+smile\char`\"{}. \\
+\hline
+{\em page} & This is the value that is passed to the API to get results from the specified pages. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 21 of file search.\+c.
 

@@ -21,8 +21,11 @@ target_compile_options(yiffy PRIVATE
     -Wcast-align
 )
 
+# FIND NCURSES
+find_package(Curses REQUIRED)
+
 # LINK THE LIBRARIES
-target_link_libraries(yiffy yiffy-conf yiffy-search yiffy-text-menus yiffy-ui yiffy-messages cjson)
+target_link_libraries(yiffy yiffy-conf yiffy-search yiffy-text-menus yiffy-ui yiffy-messages cjson ${CURSES_LIBRARIES})
 
 # CREATE DIRECTORY
 install(

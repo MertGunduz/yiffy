@@ -130,6 +130,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a75a90032aa6fbf0c41997ecf6b4b70eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d29/yiffy__search_8h.html#a75a90032aa6fbf0c41997ecf6b4b70eb">aria2_download</a> (char *tags, int page, bool isNsfw)</td></tr>
 <tr class="memdesc:a75a90032aa6fbf0c41997ecf6b4b70eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">downloads the API response by using aria2c, works with a system call  <a href="../../de/d29/yiffy__search_8h.html#a75a90032aa6fbf0c41997ecf6b4b70eb">More...</a><br /></td></tr>
 <tr class="separator:a75a90032aa6fbf0c41997ecf6b4b70eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bc3b3dec1f6f4fd37aabb74dc5919e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d29/yiffy__search_8h.html#a4bc3b3dec1f6f4fd37aabb74dc5919e9">search</a> (char *tags, int page)</td></tr>
+<tr class="memdesc:a4bc3b3dec1f6f4fd37aabb74dc5919e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a request to search over the e621-e926 by using the API. It uses ncurses to provide the web-like experience.  <a href="../../de/d29/yiffy__search_8h.html#a4bc3b3dec1f6f4fd37aabb74dc5919e9">More...</a><br /></td></tr>
+<tr class="separator:a4bc3b3dec1f6f4fd37aabb74dc5919e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This header file is used to handle the fetching and searching system. </p>
@@ -244,6 +247,45 @@ Functions</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d14/fetch_8c_source.html#l00032">32</a> of file <a class="el" href="../../d1/d14/fetch_8c_source.html">fetch.c</a>.</p>
+
+</div>
+</div>
+<a id="a4bc3b3dec1f6f4fd37aabb74dc5919e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bc3b3dec1f6f4fd37aabb74dc5919e9">&#9670;&nbsp;</a></span>search()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void search </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>tags</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>page</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sends a request to search over the e621-e926 by using the API. It uses ncurses to provide the web-like experience. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tags</td><td>These are the e621-e926 tags prompted by the user as an argument value. Example: yiffy &ndash;fetch "anthro+fur+male+smile". </td></tr>
+    <tr><td class="paramname">page</td><td>This is the value that is passed to the API to get results from the specified pages. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="../../dc/dec/search_8c_source.html#l00021">21</a> of file <a class="el" href="../../dc/dec/search_8c_source.html">search.c</a>.</p>
 
 </div>
 </div>

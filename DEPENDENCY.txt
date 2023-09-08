@@ -1,6 +1,8 @@
--gcc
--make
--cmake
--terminal image viewer
--ncurses
--aria2
+gcc
+make
+tiv
+aria2
+build-essential
+cmake 
+libncurses-dev 
+pkg-config

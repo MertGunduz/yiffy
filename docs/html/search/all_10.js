@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['search_126',['search',['../dc/dec/search_8c.html#a4bc3b3dec1f6f4fd37aabb74dc5919e9',1,'search.c']]],
+  ['search_126',['search',['../de/d29/yiffy__search_8h.html#a4bc3b3dec1f6f4fd37aabb74dc5919e9',1,'search(char *tags, int page):&#160;search.c'],['../dc/dec/search_8c.html#a4bc3b3dec1f6f4fd37aabb74dc5919e9',1,'search(char *tags, int page):&#160;search.c']]],
   ['search_2ec_127',['search.c',['../dc/dec/search_8c.html',1,'']]],
   ['show_5fconfig_128',['show_config',['../d5/dff/yiffy__text__menus_8h.html#aca4794b6b6172dc0b0e6d6fba2297c58',1,'show_config():&#160;show_config.c'],['../dc/d3b/show__config_8c.html#aca4794b6b6172dc0b0e6d6fba2297c58',1,'show_config():&#160;show_config.c']]],
   ['show_5fconfig_2ec_129',['show_config.c',['../dc/d3b/show__config_8c.html',1,'']]],
