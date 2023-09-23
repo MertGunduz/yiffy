@@ -25,6 +25,6 @@
 
 void fetch(char *tags, int page, char *command);
 void aria2_download(char *tags, int page, bool isNsfw);
-void search(char *tags, int page);
+void search(char *tags);
 
 #endif /* YIFFY_SEARCH_H */

@@ -243,7 +243,7 @@ static void import_local_data()
 */
 static void search_urls(char *tags)
 {
-    search(tags, 0);
+    search(tags);
 }
 
 /**
