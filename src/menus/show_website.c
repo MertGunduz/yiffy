@@ -17,7 +17,8 @@ void show_website()
 {
     fprintf(stdout, "<https://mertgunduz.github.io/yiffy>\n\n");
     
-    fprintfH(stdout, "website content and functionalities");
+    fprintf(stdout, "website content and functionalities");
+    fprintf(stdout, "-----------------------------------\n");
     fprintf(stdout, "you can find releases, updates, mail lists and news.\n");
     fprintf(stdout, "before contributing you can check the general guidelines.\n");
 }

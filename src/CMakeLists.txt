@@ -1,6 +1,5 @@
 # LIBRARY DIRECTORIES
 add_subdirectory(cjson)
-add_subdirectory(ui)
 add_subdirectory(conf)
 add_subdirectory(search)
 add_subdirectory(msg)

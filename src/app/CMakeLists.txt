@@ -25,7 +25,7 @@ target_compile_options(yiffy PRIVATE
 find_package(Curses REQUIRED)
 
 # LINK THE LIBRARIES
-target_link_libraries(yiffy yiffy-conf yiffy-search yiffy-text-menus yiffy-ui yiffy-messages cjson ${CURSES_LIBRARIES})
+target_link_libraries(yiffy yiffy-conf yiffy-search yiffy-text-menus yiffy-messages cjson ${CURSES_LIBRARIES})
 
 # CREATE DIRECTORY
 install(

@@ -14,7 +14,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "../ui/yiffy_ui.h"
 #include "../msg/yiffy_messages.h"
 
 void show_website();
