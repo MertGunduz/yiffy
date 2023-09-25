@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['search_223',['search',['../dc/dec/search_8c.html#a4bc3b3dec1f6f4fd37aabb74dc5919e9',1,'search(char *tags, int page):&#160;search.c'],['../de/d29/yiffy__search_8h.html#a4bc3b3dec1f6f4fd37aabb74dc5919e9',1,'search(char *tags, int page):&#160;search.c']]],
+  ['search_223',['search',['../dc/dec/search_8c.html#ab899bd069f8d6db7339eba31c3ad7a02',1,'search(char *tags):&#160;search.c'],['../de/d29/yiffy__search_8h.html#ab899bd069f8d6db7339eba31c3ad7a02',1,'search(char *tags):&#160;search.c']]],
   ['show_5fconfig_224',['show_config',['../dc/d3b/show__config_8c.html#aca4794b6b6172dc0b0e6d6fba2297c58',1,'show_config():&#160;show_config.c'],['../d5/dff/yiffy__text__menus_8h.html#aca4794b6b6172dc0b0e6d6fba2297c58',1,'show_config():&#160;show_config.c']]],
   ['show_5fgithub_225',['show_github',['../d4/d65/show__github_8c.html#ae31a1275940d22cd5cb90427c1ac92c6',1,'show_github():&#160;show_github.c'],['../d5/dff/yiffy__text__menus_8h.html#ae31a1275940d22cd5cb90427c1ac92c6',1,'show_github():&#160;show_github.c']]],
   ['show_5fhelp_226',['show_help',['../de/d0c/show__help_8c.html#ac29c297ae32acdb2172e926d5f144681',1,'show_help():&#160;show_help.c'],['../d5/dff/yiffy__text__menus_8h.html#ac29c297ae32acdb2172e926d5f144681',1,'show_help():&#160;show_help.c']]],

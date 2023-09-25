@@ -105,21 +105,21 @@ $(function() {
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    fscanf(config_file, <span class="stringliteral">&quot;%s&quot;</span>, <a class="code" href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a>);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">/* Write the header to console. */</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="../../dd/d16/fprintfH_8c.html#af368c6ede13d6b3044f2875601238d7e">fprintfH</a>(stdout, <span class="stringliteral">&quot;current yiffy configurations&quot;</span>);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">char</span> *token = strtok(<a class="code" href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a>, <span class="stringliteral">&quot;:&quot;</span>);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">while</span> (token != NULL)</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        fprintf(stdout, <span class="stringliteral">&quot;- %s\n&quot;</span>, token);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        token = strtok(NULL, <span class="stringliteral">&quot;:&quot;</span>);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    fclose(config_file);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    fprintf(stdout, <span class="stringliteral">&quot;current yiffy configurations&quot;</span>);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    fprintf(stdout, <span class="stringliteral">&quot;----------------------------\n&quot;</span>);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">char</span> *token = strtok(<a class="code" href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a>, <span class="stringliteral">&quot;:&quot;</span>);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">while</span> (token != NULL)</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        fprintf(stdout, <span class="stringliteral">&quot;- %s\n&quot;</span>, token);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        token = strtok(NULL, <span class="stringliteral">&quot;:&quot;</span>);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    fclose(config_file);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
 <div class="ttc" id="acjson_8h_html_aff2566f4c366b48d73479bef43ee4d2e"><div class="ttname"><a href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a></div><div class="ttdeci">char * buffer</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d56/cjson_8h_source.html#l00170">cjson.h:170</a></div></div>
 <div class="ttc" id="afile__open__error__msg_8c_html_a94c5cd5af84c1b87e2dbf95cb2cbce90"><div class="ttname"><a href="../../db/df9/file__open__error__msg_8c.html#a94c5cd5af84c1b87e2dbf95cb2cbce90">file_open_error_msg</a></div><div class="ttdeci">void file_open_error_msg(FILE *file)</div><div class="ttdoc">Shows some information about file permissions when yiffy is not able to read file.</div><div class="ttdef"><b>Definition:</b> <a href="../../db/df9/file__open__error__msg_8c_source.html#l00018">file_open_error_msg.c:18</a></div></div>
-<div class="ttc" id="afprintfH_8c_html_af368c6ede13d6b3044f2875601238d7e"><div class="ttname"><a href="../../dd/d16/fprintfH_8c.html#af368c6ede13d6b3044f2875601238d7e">fprintfH</a></div><div class="ttdeci">void fprintfH(FILE *file, char *content)</div><div class="ttdoc">Create the text header.</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d16/fprintfH_8c_source.html#l00019">fprintfH.c:19</a></div></div>
 <div class="ttc" id="ano__home__error__msg_8c_html_ab360dcc8796de6e212175d6c4c77477d"><div class="ttname"><a href="../../d5/de7/no__home__error__msg_8c.html#ab360dcc8796de6e212175d6c4c77477d">no_home_error_msg</a></div><div class="ttdeci">void no_home_error_msg()</div><div class="ttdoc">Outputs the home not found error when application can not access the $HOME environment variable.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/de7/no__home__error__msg_8c_source.html#l00016">no_home_error_msg.c:16</a></div></div>
 <div class="ttc" id="ashow__config_8c_html_a263efd24d550124313df51247f07457a"><div class="ttname"><a href="../../dc/d3b/show__config_8c.html#a263efd24d550124313df51247f07457a">MAX_FILE_PATH</a></div><div class="ttdeci">#define MAX_FILE_PATH</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d3b/show__config_8c_source.html#l00011">show_config.c:11</a></div></div>
 <div class="ttc" id="ashow__config_8c_html_aca4794b6b6172dc0b0e6d6fba2297c58"><div class="ttname"><a href="../../dc/d3b/show__config_8c.html#aca4794b6b6172dc0b0e6d6fba2297c58">show_config</a></div><div class="ttdeci">void show_config()</div><div class="ttdoc">Shows the yiffy configurations to user.</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d3b/show__config_8c_source.html#l00019">show_config.c:19</a></div></div>

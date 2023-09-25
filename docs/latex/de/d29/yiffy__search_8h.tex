@@ -11,9 +11,11 @@ This header file is used to handle the fetching and searching system.
 {\ttfamily \#include $<$stdbool.\+h$>$}\newline
 {\ttfamily \#include $<$unistd.\+h$>$}\newline
 {\ttfamily \#include $<$ncurses.\+h$>$}\newline
+{\ttfamily \#include $<$locale.\+h$>$}\newline
 {\ttfamily \#include \char`\"{}../msg/yiffy\+\_\+messages.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}../cjson/cjson.\+h\char`\"{}}\newline
-Include dependency graph for yiffy\+\_\+search.\+h\+:\nopagebreak
+Include dependency graph for yiffy\+\_\+search.\+h\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -39,7 +41,7 @@ void \mbox{\hyperlink{yiffy__search_8h_a41f382b6bd05c9776641fb4bc5024afa}{fetch}
 \begin{DoxyCompactList}\small\item\em Reads the configuration file, sets the options and sends a request to e621-\/e926. After taking the response, it calls the output function to show the URLs. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{yiffy__search_8h_a75a90032aa6fbf0c41997ecf6b4b70eb}{aria2\+\_\+download}} (char $\ast$tags, int page, bool is\+Nsfw)
 \begin{DoxyCompactList}\small\item\em downloads the API response by using aria2c, works with a system call \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{yiffy__search_8h_a4bc3b3dec1f6f4fd37aabb74dc5919e9}{search}} (char $\ast$tags, int page)
+void \mbox{\hyperlink{yiffy__search_8h_ab899bd069f8d6db7339eba31c3ad7a02}{search}} (char $\ast$tags)
 \begin{DoxyCompactList}\small\item\em Sends a request to search over the e621-\/e926 by using the API. It uses ncurses to provide the web-\/like experience. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -63,7 +65,7 @@ Mehmet Mert Gunduz
 
 
 
-Definition at line 24 of file yiffy\+\_\+search.\+h.
+Definition at line 25 of file yiffy\+\_\+search.\+h.
 
 
 
@@ -114,11 +116,11 @@ Reads the configuration file, sets the options and sends a request to e621-\/e92
 
 Definition at line 32 of file fetch.\+c.
 
-\mbox{\Hypertarget{yiffy__search_8h_a4bc3b3dec1f6f4fd37aabb74dc5919e9}\label{yiffy__search_8h_a4bc3b3dec1f6f4fd37aabb74dc5919e9}} 
+\mbox{\Hypertarget{yiffy__search_8h_ab899bd069f8d6db7339eba31c3ad7a02}\label{yiffy__search_8h_ab899bd069f8d6db7339eba31c3ad7a02}} 
 \index{yiffy\_search.h@{yiffy\_search.h}!search@{search}}
 \index{search@{search}!yiffy\_search.h@{yiffy\_search.h}}
 \doxysubsubsection{\texorpdfstring{search()}{search()}}
-{\footnotesize\ttfamily void search (\begin{DoxyParamCaption}\item[{char $\ast$}]{tags,  }\item[{int}]{page }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void search (\begin{DoxyParamCaption}\item[{char $\ast$}]{tags }\end{DoxyParamCaption})}
 
 
 
@@ -128,10 +130,18 @@ Sends a request to search over the e621-\/e926 by using the API. It uses ncurses
 \begin{DoxyParams}{Parameters}
 {\em tags} & These are the e621-\/e926 tags prompted by the user as an argument value. Example\+: yiffy --fetch \char`\"{}anthro+fur+male+smile\char`\"{}. \\
 \hline
-{\em page} & This is the value that is passed to the API to get results from the specified pages. \\
-\hline
 \end{DoxyParams}
+$<$ Set the locale to all.
 
+$<$ Initialize the library and setup the terminal.
 
-Definition at line 21 of file search.\+c.
+$<$ Disable line buffering, get input instantly.
+
+$<$ Close the echo ability of user input to the screen.
+
+$<$ Enable special keys like CTRL, SHIFT.
+
+$<$ Enable the color ability.
+
+Definition at line 44 of file search.\+c.
 

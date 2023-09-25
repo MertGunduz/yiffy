@@ -12,36 +12,29 @@
 
 #include "yiffy_search.h"
 
-static void create_yiffy_controls_ui(int terminal_height, int terminal_width, void (*func)());
-static void create_single_line_ui();
-static void create_double_line_ui();
-
-/* Menu type handling enum, selects the control bar line type. */
-typedef enum 
-{
-    single_line,
-    double_line
-} ui_type;
+#define COMMAND_UI_CHARS 125
 
 /* The control handling struct. */
 typedef struct
 {
-    char *control_char;
+    char control_char;
     char *control_description;
 } control;
 
 /* All yiffy search control commands. */
 control ui_controls[] = 
 {
-    {" < ", "Prev Page"},
-    {" > ", "Next Page"},
-    {" ^ ", "Up"},
-    {" v ", "Down"},
-    {" S ", "Show"},
-    {" I ", "Information"},
-    {" D ", "Download"},
-    {" Q ", "Quit"},
+    {'<', "Prev"},
+    {'>', "Next"},
+    {'^', "Up  "},
+    {'v', "Down"},
+    {'S', "Show"},
+    {'I', "Info"},
+    {'G', "Get "},
+    {'Q', "Quit"},
 };
+
+static void create_yiffy_controls_ui(int terminal_height, int terminal_width, int total_characters, control *controls);
 
 /**
  * @brief Sends a request to search over the e621-e926 by using the API. It uses ncurses to provide the web-like experience. 
@@ -58,37 +51,61 @@ void search(char *tags)
     keypad(stdscr, TRUE);    ///< Enable special keys like CTRL, SHIFT.
     start_color();           ///< Enable the color ability.
 
+    /* Set the color pair for control commands. */
+    init_pair(1, COLOR_BLACK, COLOR_WHITE);
+
     int height, width, total_characters = 0;
-    void (*func)();
 
     /* Get the screen size. */
     height = getmaxy(stdscr);
     width = getmaxx(stdscr);
 
-    for (int i = 0; i < sizeof(ui_controls) / sizeof(ui_controls[0]); i++)
-    {
-        total_characters += strlen(ui_controls[i].control_char) + strlen(ui_controls[i].control_description);
-    }
-
     printw("%d", total_characters);
+
+    create_yiffy_controls_ui(height, width, COMMAND_UI_CHARS, ui_controls);
 
     getch();
     endwin();
 }
 
-static void create_yiffy_controls_ui(int terminal_height, int terminal_width, void (*func)())
+static void create_yiffy_controls_ui(int terminal_height, int terminal_width, int total_characters, control *controls)
 {
-    init_pair(1, COLOR_BLACK, COLOR_WHITE);
+    /* Two line control commands ui. */
+    if (terminal_width > total_characters)
+    {
+        move(terminal_height - 1, 0);
+        
+        for (int i = 0; i < 8; i++)
+        {
+            attron(A_BOLD | COLOR_PAIR(1));
+            printw("[%c]", controls[i].control_char);
+            attroff(A_BOLD | COLOR_PAIR(1));
 
-    func();
-}
+            printw(" %s      ", controls[i].control_description);        
+        }
+    }
+    else
+    {
+        move(terminal_height - 2, 0);
+        
+        for (int i = 0; i < 4; i++)
+        {
+            attron(A_BOLD | COLOR_PAIR(1));
+            printw("[%c]", controls[i].control_char);
+            attroff(A_BOLD | COLOR_PAIR(1));
 
-static void create_single_line_ui()
-{
-    
-}
+            printw(" %s      ", controls[i].control_description);        
+        }
 
-static void create_double_line_ui() 
-{
+        move(terminal_height - 1, 0);
+        
+        for (int i = 4; i < 8; i++)
+        {
+            attron(A_BOLD | COLOR_PAIR(1));
+            printw("[%c]", controls[i].control_char);
+            attroff(A_BOLD | COLOR_PAIR(1));
 
+            printw(" %s      ", controls[i].control_description);        
+        }
+    }
 }

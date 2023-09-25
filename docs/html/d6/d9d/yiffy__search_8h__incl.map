@@ -1,12 +1,13 @@
 <map id="src/search/yiffy_search.h" name="src/search/yiffy_search.h">
-<area shape="rect" id="node1" title="This header file is used to handle the fetching and searching system." alt="" coords="325,5,508,32"/>
+<area shape="rect" id="node1" title="This header file is used to handle the fetching and searching system." alt="" coords="378,5,560,32"/>
 <area shape="rect" id="node2" title=" " alt="" coords="98,155,165,181"/>
-<area shape="rect" id="node3" title=" " alt="" coords="25,80,96,107"/>
-<area shape="rect" id="node4" title=" " alt="" coords="253,155,324,181"/>
-<area shape="rect" id="node5" title=" " alt="" coords="325,80,407,107"/>
-<area shape="rect" id="node6" title=" " alt="" coords="431,80,506,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="26,80,96,107"/>
+<area shape="rect" id="node4" title=" " alt="" coords="254,155,324,181"/>
+<area shape="rect" id="node5" title=" " alt="" coords="325,80,408,107"/>
+<area shape="rect" id="node6" title=" " alt="" coords="432,80,506,107"/>
 <area shape="rect" id="node7" title=" " alt="" coords="531,80,615,107"/>
-<area shape="rect" id="node8" href="$d0/de2/yiffy__messages_8h.html" title="This file is used to handle error and information messages." alt="" coords="120,80,300,107"/>
-<area shape="rect" id="node9" href="$d5/d56/cjson_8h.html" title="This file is used as a header file for the cjson.c, used for JSON processes in requests,..." alt="" coords="691,80,809,107"/>
-<area shape="rect" id="node10" title=" " alt="" coords="713,155,787,181"/>
+<area shape="rect" id="node8" title=" " alt="" coords="639,80,712,107"/>
+<area shape="rect" id="node9" href="$d0/de2/yiffy__messages_8h.html" title="This file is used to handle error and information messages." alt="" coords="120,80,300,107"/>
+<area shape="rect" id="node10" href="$d5/d56/cjson_8h.html" title="This file is used as a header file for the cjson.c, used for JSON processes in requests,..." alt="" coords="788,80,907,107"/>
+<area shape="rect" id="node11" title=" " alt="" coords="810,155,885,181"/>
 </map>

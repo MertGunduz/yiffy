@@ -1,8 +1,7 @@
 <map id="src/menus/yiffy_text_menus.h" name="src/menus/yiffy_text_menus.h">
-<area shape="rect" id="node1" title="This header file is used to generate text based information menus for yiffy." alt="" coords="206,5,361,47"/>
-<area shape="rect" id="node2" title=" " alt="" coords="81,169,148,196"/>
-<area shape="rect" id="node3" title=" " alt="" coords="415,95,486,121"/>
-<area shape="rect" id="node4" title=" " alt="" coords="248,169,319,196"/>
-<area shape="rect" id="node5" href="$d6/d01/yiffy__ui_8h.html" title="This header file is used to manage ncurses&#45;based TUIs (terminal&#45;user&#45;interfaces) for yiffy functions." alt="" coords="228,95,339,121"/>
-<area shape="rect" id="node6" href="$d0/de2/yiffy__messages_8h.html" title="This file is used to handle error and information messages." alt="" coords="24,95,204,121"/>
+<area shape="rect" id="node1" title="This header file is used to generate text based information menus for yiffy." alt="" coords="55,5,210,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="81,169,147,196"/>
+<area shape="rect" id="node3" title=" " alt="" coords="23,95,93,121"/>
+<area shape="rect" id="node4" title=" " alt="" coords="236,169,307,196"/>
+<area shape="rect" id="node5" href="$d0/de2/yiffy__messages_8h.html" title="This file is used to handle error and information messages." alt="" coords="117,95,297,121"/>
 </map>
