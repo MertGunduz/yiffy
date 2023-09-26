@@ -12,8 +12,9 @@ var searchData=
   ['show_5fversion_2ec_137',['show_version.c',['../de/d22/show__version_8c.html',1,'']]],
   ['show_5fwebsite_138',['show_website',['../d6/dd1/show__website_8c.html#aa861d50389386f6052a394968cc4a986',1,'show_website():&#160;show_website.c'],['../d5/dff/yiffy__text__menus_8h.html#aa861d50389386f6052a394968cc4a986',1,'show_website():&#160;show_website.c']]],
   ['show_5fwebsite_2ec_139',['show_website.c',['../d6/dd1/show__website_8c.html',1,'']]],
-  ['static_5fstrlen_140',['static_strlen',['../d6/d49/cjson_8c.html#a5714bac836668a1b9af55465b78531ef',1,'cjson.c']]],
-  ['string_141',['string',['../db/d68/structcJSON.html#aa6b47e9a4b0e0a26f519b1a2b6739983',1,'cJSON::string()'],['../d5/d56/cjson_8h.html#addf925fe055723aa55a381a1ba45bda2',1,'string():&#160;cjson.h']]],
-  ['system_5ffunc_5ferror_5fmsg_142',['system_func_error_msg',['../dc/d8f/system__func__error__msg_8c.html#acc21d14c9f9a59987f07615415759325',1,'system_func_error_msg():&#160;system_func_error_msg.c'],['../d0/de2/yiffy__messages_8h.html#acc21d14c9f9a59987f07615415759325',1,'system_func_error_msg():&#160;system_func_error_msg.c']]],
-  ['system_5ffunc_5ferror_5fmsg_2ec_143',['system_func_error_msg.c',['../dc/d8f/system__func__error__msg_8c.html',1,'']]]
+  ['single_5fcommand_5fui_5fchars_140',['SINGLE_COMMAND_UI_CHARS',['../dc/dec/search_8c.html#a80d7cbf60879dd8717440f4b36d1f60a',1,'search.c']]],
+  ['static_5fstrlen_141',['static_strlen',['../d6/d49/cjson_8c.html#a5714bac836668a1b9af55465b78531ef',1,'cjson.c']]],
+  ['string_142',['string',['../db/d68/structcJSON.html#aa6b47e9a4b0e0a26f519b1a2b6739983',1,'cJSON::string()'],['../d5/d56/cjson_8h.html#addf925fe055723aa55a381a1ba45bda2',1,'string():&#160;cjson.h']]],
+  ['system_5ffunc_5ferror_5fmsg_143',['system_func_error_msg',['../dc/d8f/system__func__error__msg_8c.html#acc21d14c9f9a59987f07615415759325',1,'system_func_error_msg():&#160;system_func_error_msg.c'],['../d0/de2/yiffy__messages_8h.html#acc21d14c9f9a59987f07615415759325',1,'system_func_error_msg():&#160;system_func_error_msg.c']]],
+  ['system_5ffunc_5ferror_5fmsg_2ec_144',['system_func_error_msg.c',['../dc/d8f/system__func__error__msg_8c.html',1,'']]]
 ];

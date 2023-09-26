@@ -91,10 +91,10 @@ static void create_yiffy_controls_ui(int terminal_height, int terminal_width, co
             attroff(COLOR_PAIR(1));
 
             /* Write the command descriptions. */
-            printw(" %s      ", controls[i].control_description);
+            printw(" %s", controls[i].control_description);
 
-            /* Add space to set the command control part to terminal size. */
-            space(single_total_distance); 
+            /* By default it gives 6 spaces to each command control element. Also, it includes more spaces to make the terminal responsive. */
+            space(6 + single_total_distance);
         }
     }
     else
@@ -111,10 +111,10 @@ static void create_yiffy_controls_ui(int terminal_height, int terminal_width, co
             printw("[%c]", controls[i].control_char);
             attroff(A_BOLD | COLOR_PAIR(1));
 
-            printw(" %s      ", controls[i].control_description);    
+            printw(" %s", controls[i].control_description);    
 
-            /* Add space to set the command control part to terminal size. */
-            space(double_total_distance);     
+            /* By default it gives 6 spaces to each command control element. Also, it includes more spaces to make the terminal responsive. */
+            space(6 + double_total_distance);   
         }
 
         move(terminal_height - 1, 0);
@@ -125,10 +125,10 @@ static void create_yiffy_controls_ui(int terminal_height, int terminal_width, co
             printw("[%c]", controls[i].control_char);
             attroff(A_BOLD | COLOR_PAIR(1));
 
-            printw(" %s      ", controls[i].control_description);        
+            printw(" %s", controls[i].control_description);        
 
-            /* Add space to set the command control part to terminal size. */
-            space(double_total_distance);     
+            /* By default it gives 6 spaces to each command control element. Also, it includes more spaces to make the terminal responsive. */
+            space(6 + double_total_distance);
         }
     }
 }

@@ -6,8 +6,7 @@ This file is used to search over e621-\/e926 by using a terminal with the specif
 
 
 {\ttfamily \#include \char`\"{}yiffy\+\_\+search.\+h\char`\"{}}\newline
-Include dependency graph for search.\+c\+:
-\nopagebreak
+Include dependency graph for search.\+c\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -22,7 +21,9 @@ struct \mbox{\hyperlink{structcontrol}{control}}
 \doxysubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \mbox{\hyperlink{search_8c_a36c1ec7bff525e081df5c3f7c03ab2c2}{COMMAND\+\_\+\+UI\+\_\+\+CHARS}}~125
+\#define \mbox{\hyperlink{search_8c_a80d7cbf60879dd8717440f4b36d1f60a}{SINGLE\+\_\+\+COMMAND\+\_\+\+UI\+\_\+\+CHARS}}~105
+\item 
+\#define \mbox{\hyperlink{search_8c_a0d4d6cefc567cd573ecaea2bad908c14}{DOUBLE\+\_\+\+COMMAND\+\_\+\+UI\+\_\+\+CHARS}}~50
 \end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
@@ -50,11 +51,21 @@ Mehmet Mert Gunduz
 
 
 \doxysubsection{Macro Definition Documentation}
-\mbox{\Hypertarget{search_8c_a36c1ec7bff525e081df5c3f7c03ab2c2}\label{search_8c_a36c1ec7bff525e081df5c3f7c03ab2c2}} 
-\index{search.c@{search.c}!COMMAND\_UI\_CHARS@{COMMAND\_UI\_CHARS}}
-\index{COMMAND\_UI\_CHARS@{COMMAND\_UI\_CHARS}!search.c@{search.c}}
-\doxysubsubsection{\texorpdfstring{COMMAND\_UI\_CHARS}{COMMAND\_UI\_CHARS}}
-{\footnotesize\ttfamily \#define COMMAND\+\_\+\+UI\+\_\+\+CHARS~125}
+\mbox{\Hypertarget{search_8c_a0d4d6cefc567cd573ecaea2bad908c14}\label{search_8c_a0d4d6cefc567cd573ecaea2bad908c14}} 
+\index{search.c@{search.c}!DOUBLE\_COMMAND\_UI\_CHARS@{DOUBLE\_COMMAND\_UI\_CHARS}}
+\index{DOUBLE\_COMMAND\_UI\_CHARS@{DOUBLE\_COMMAND\_UI\_CHARS}!search.c@{search.c}}
+\doxysubsubsection{\texorpdfstring{DOUBLE\_COMMAND\_UI\_CHARS}{DOUBLE\_COMMAND\_UI\_CHARS}}
+{\footnotesize\ttfamily \#define DOUBLE\+\_\+\+COMMAND\+\_\+\+UI\+\_\+\+CHARS~50}
+
+
+
+Definition at line 16 of file search.\+c.
+
+\mbox{\Hypertarget{search_8c_a80d7cbf60879dd8717440f4b36d1f60a}\label{search_8c_a80d7cbf60879dd8717440f4b36d1f60a}} 
+\index{search.c@{search.c}!SINGLE\_COMMAND\_UI\_CHARS@{SINGLE\_COMMAND\_UI\_CHARS}}
+\index{SINGLE\_COMMAND\_UI\_CHARS@{SINGLE\_COMMAND\_UI\_CHARS}!search.c@{search.c}}
+\doxysubsubsection{\texorpdfstring{SINGLE\_COMMAND\_UI\_CHARS}{SINGLE\_COMMAND\_UI\_CHARS}}
+{\footnotesize\ttfamily \#define SINGLE\+\_\+\+COMMAND\+\_\+\+UI\+\_\+\+CHARS~105}
 
 
 
@@ -90,7 +101,9 @@ $<$ Enable special keys like CTRL, SHIFT.
 
 $<$ Enable the color ability.
 
-Definition at line 44 of file search.\+c.
+$<$ Enable default colors
+
+Definition at line 46 of file search.\+c.
 
 
 
@@ -118,5 +131,5 @@ Definition at line 44 of file search.\+c.
 \end{DoxyCode}
 
 
-Definition at line 25 of file search.\+c.
+Definition at line 26 of file search.\+c.
 
