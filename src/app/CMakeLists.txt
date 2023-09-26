@@ -28,13 +28,18 @@ find_package(Curses REQUIRED)
 target_link_libraries(yiffy yiffy-conf yiffy-search yiffy-text-menus yiffy-messages cjson ${CURSES_LIBRARIES})
 
 # CREATE DIRECTORY
-install(
-    CODE "file(MAKE_DIRECTORY \$ENV{HOME}/.yiffy)"
+set(dest_path "$ENV{HOME}/.yiffy")
+
+file(
+    MAKE_DIRECTORY "${dest_path}"
 )
 
+
 # CREATE CONFIG FILE
-install(
-    CODE "file(WRITE \$ENV{HOME}/.yiffy/yiffy-config.txt \"wgen:nsfw\")"
+set(file_path "$ENV{HOME}/.yiffy/yiffy-config.txt")
+
+install(SCRIPT 
+    CODE "file(WRITE \"${file_path}\" \"wgen:nsfw\")"
 )
 
 # INSTALL THE EXECUTABLE TO USR/BIN
