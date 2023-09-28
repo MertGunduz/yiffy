@@ -45,5 +45,5 @@ install(SCRIPT
 # INSTALL THE EXECUTABLE TO USR/BIN
 install(
     TARGETS yiffy
-    DESTINATION /usr/bin
+    DESTINATION /usr/local/bin/
 )
