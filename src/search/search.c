@@ -53,6 +53,7 @@ void search(char *tags)
     keypad(stdscr, TRUE);    ///< Enable special keys like CTRL, SHIFT.
     start_color();           ///< Enable the color ability.
     use_default_colors();    ///< Enable default colors
+    curs_set(0);             ///< Close the cursor.
 
     /* Set the color pair for control commands. */
     init_pair(1, COLOR_BLACK, COLOR_WHITE);
