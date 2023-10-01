@@ -35,7 +35,10 @@ control ui_controls[] =
     {'Q', "Quit"},
 };
 
-static void create_yiffy_controls_ui(int terminal_height, int terminal_width, control *controls);
+static void create_yiffy_ui(int terminal_height, int terminal_width, control *controls, char *posts[]);
+static void create_one_line_ui(int terminal_height, int terminal_width, control *controls);
+static void create_double_line_ui(int terminal_height, int terminal_width, control *controls);
+static char* fetch_posts();
 static void space(int num);
 
 /**
@@ -64,82 +67,121 @@ void search(char *tags)
     height = getmaxy(stdscr);
     width = getmaxx(stdscr);
 
-    create_yiffy_controls_ui(height, width, ui_controls);
+    create_yiffy_ui(height, width, ui_controls, NULL);
 
     getch();
     clear();
     endwin();
 }
 
-static void create_yiffy_controls_ui(int terminal_height, int terminal_width, control *controls)
+static void create_yiffy_ui(int terminal_height, int terminal_width, control *controls, char *posts[])
 {
     /* Two line control commands ui. */
     if (terminal_width > SINGLE_COMMAND_UI_CHARS)
     {
-        /* This variable is used for setting the size of command controls to maximize the width of terminal. */
-        int single_total_distance = terminal_width - SINGLE_COMMAND_UI_CHARS;
-        single_total_distance = single_total_distance / 8;
-
-        /* Go to the bottom of terminal. */
-        move(terminal_height - 2, 0);
-        
-        /* Start writing the 8 commands to the bottom of terminal in a single line. */
-        for (int i = 0; i < 8; i++)
-        {
-            /* Write the command characters with bold font and white background. */
-            attron(COLOR_PAIR(1));
-            printw("[%c]", controls[i].control_char);
-            attroff(COLOR_PAIR(1));
-
-            /* Write the command descriptions. */
-            printw(" %s", controls[i].control_description);
-
-            /* By default it gives 6 spaces to each command control element. Also, it includes more spaces to make the terminal responsive. */
-            space(6 + single_total_distance);
-        }
-
-        /* Draw the command control panel borders. */
-        mvhline(terminal_height - 3, 0, 0, terminal_width);
-        mvhline(terminal_height - 1, 0, 0, terminal_width);
+        create_one_line_ui(terminal_height, terminal_width, controls);
     }
     else
     {
-        /* This variable is used for setting the size of command controls to maximize the width of terminal. */
-        int double_total_distance = terminal_width - DOUBLE_COMMAND_UI_CHARS;
-        double_total_distance = double_total_distance / 4;
-
-        move(terminal_height - 3, 0);
-        
-        for (int i = 0; i < 4; i++)
-        {
-            attron(A_BOLD | COLOR_PAIR(1));
-            printw("[%c]", controls[i].control_char);
-            attroff(A_BOLD | COLOR_PAIR(1));
-
-            printw(" %s", controls[i].control_description);    
-
-            /* By default it gives 6 spaces to each command control element. Also, it includes more spaces to make the terminal responsive. */
-            space(6 + double_total_distance);   
-        }
-
-        move(terminal_height - 2, 0);
-        
-        for (int i = 4; i < 8; i++)
-        {
-            attron(A_BOLD | COLOR_PAIR(1));
-            printw("[%c]", controls[i].control_char);
-            attroff(A_BOLD | COLOR_PAIR(1));
-
-            printw(" %s", controls[i].control_description);        
-
-            /* By default it gives 6 spaces to each command control element. Also, it includes more spaces to make the terminal responsive. */
-            space(6 + double_total_distance);
-        }
-
-        /* Draw the command control panel borders. */
-        mvhline(terminal_height - 4, 0, 0, terminal_width);
-        mvhline(terminal_height - 1, 0, 0, terminal_width);
+        create_double_line_ui(terminal_height, terminal_width, controls);
     }
+}
+
+static void create_one_line_ui(int terminal_height, int terminal_width, control *controls)
+{
+    /* This variable is used for setting the size of command controls to maximize the width of terminal. */
+    int single_total_distance = terminal_width - SINGLE_COMMAND_UI_CHARS;
+    single_total_distance = single_total_distance / 8;
+
+    /* The list part of the ui. */
+    for (int i = 0; i < terminal_height - 2; i++)
+    {
+        mvprintw(i, 0, "%d", i);
+    }
+
+    /* Go to the bottom of terminal to create the controls part. */
+    move(terminal_height - 2, 0);
+        
+    /* Start writing the 8 commands to the bottom of terminal in a single line. */
+    for (int i = 0; i < 8; i++)
+    {
+        /* Write the command characters with bold font and white background. */
+        attron(COLOR_PAIR(1));
+        printw("[%c]", controls[i].control_char);
+        attroff(COLOR_PAIR(1));
+
+        /* Write the command descriptions. */
+        printw(" %s", controls[i].control_description);
+
+        /* By default it gives 6 spaces to each command control element. Also, it includes more spaces to make the terminal responsive. */
+        space(6 + single_total_distance);
+    }
+
+    /* Draw the command control panel borders. */
+    mvhline(terminal_height - 3, 0, 0, terminal_width);
+    mvhline(terminal_height - 1, 0, 0, terminal_width);
+}
+
+static void create_double_line_ui(int terminal_height, int terminal_width, control *controls)
+{
+    /* This variable is used for setting the size of command controls to maximize the width of terminal. */
+    int double_total_distance = terminal_width - DOUBLE_COMMAND_UI_CHARS;
+    double_total_distance = double_total_distance / 4;
+
+    /* The list part of the ui. */
+    for (int i = 0; i < terminal_height - 2; i++)
+    {
+        mvprintw(i, 0, "%d", i);
+    }
+    
+    /* The list part of the code. */
+    for (int i = 0; i < terminal_height - 2; i++)
+    {
+        mvprintw(i, 0, "%d", i);
+    }
+
+    /* Go to the bottom of terminal to create the controls part. */
+    move(terminal_height - 3, 0);
+        
+    for (int i = 0; i < 4; i++)
+    {
+        /* Write the command characters with bold font and white background. */
+        attron(A_BOLD | COLOR_PAIR(1));
+        printw("[%c]", controls[i].control_char);
+        attroff(A_BOLD | COLOR_PAIR(1));
+
+        /* Write the command descriptions. */
+        printw(" %s", controls[i].control_description);    
+
+        /* By default it gives 6 spaces to each command control element. Also, it includes more spaces to make the terminal responsive. */
+        space(6 + double_total_distance);   
+    }
+
+    /* Go to the second bottom line of terminal to create the controls part line 2. */
+    move(terminal_height - 2, 0);
+        
+    for (int i = 4; i < 8; i++)
+    {
+        /* Write the command characters with bold font and white background. */
+        attron(A_BOLD | COLOR_PAIR(1));
+        printw("[%c]", controls[i].control_char);
+        attroff(A_BOLD | COLOR_PAIR(1));
+
+        /* Write the command descriptions. */
+        printw(" %s", controls[i].control_description);        
+
+        /* By default it gives 6 spaces to each command control element. Also, it includes more spaces to make the terminal responsive. */
+        space(6 + double_total_distance);
+    }
+
+    /* Draw the command control panel borders. */
+    mvhline(terminal_height - 4, 0, 0, terminal_width);
+    mvhline(terminal_height - 1, 0, 0, terminal_width);
+}
+
+static char* fetch_posts(int total_lines)
+{
+
 }
 
 static void space(int num)
