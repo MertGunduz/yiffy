@@ -1,8 +1,7 @@
 gcc
-make
-tiv
-aria2
 build-essential
-cmake 
+ascii-image-converter
+aria2
+cmake
+make
 libncurses-dev 
-pkg-config
