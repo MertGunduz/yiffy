@@ -80,7 +80,7 @@ static void create_yiffy_controls_ui(int terminal_height, int terminal_width, co
         single_total_distance = single_total_distance / 8;
 
         /* Go to the bottom of terminal. */
-        move(terminal_height - 1, 0);
+        move(terminal_height - 2, 0);
         
         /* Start writing the 8 commands to the bottom of terminal in a single line. */
         for (int i = 0; i < 8; i++)
@@ -96,6 +96,10 @@ static void create_yiffy_controls_ui(int terminal_height, int terminal_width, co
             /* By default it gives 6 spaces to each command control element. Also, it includes more spaces to make the terminal responsive. */
             space(6 + single_total_distance);
         }
+
+        /* Draw the command control panel borders. */
+        mvhline(terminal_height - 3, 0, 0, terminal_width);
+        mvhline(terminal_height - 1, 0, 0, terminal_width);
     }
     else
     {
@@ -103,7 +107,7 @@ static void create_yiffy_controls_ui(int terminal_height, int terminal_width, co
         int double_total_distance = terminal_width - DOUBLE_COMMAND_UI_CHARS;
         double_total_distance = double_total_distance / 4;
 
-        move(terminal_height - 2, 0);
+        move(terminal_height - 3, 0);
         
         for (int i = 0; i < 4; i++)
         {
@@ -117,7 +121,7 @@ static void create_yiffy_controls_ui(int terminal_height, int terminal_width, co
             space(6 + double_total_distance);   
         }
 
-        move(terminal_height - 1, 0);
+        move(terminal_height - 2, 0);
         
         for (int i = 4; i < 8; i++)
         {
@@ -130,6 +134,10 @@ static void create_yiffy_controls_ui(int terminal_height, int terminal_width, co
             /* By default it gives 6 spaces to each command control element. Also, it includes more spaces to make the terminal responsive. */
             space(6 + double_total_distance);
         }
+
+        /* Draw the command control panel borders. */
+        mvhline(terminal_height - 4, 0, 0, terminal_width);
+        mvhline(terminal_height - 1, 0, 0, terminal_width);
     }
 }
 
