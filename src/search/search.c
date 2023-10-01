@@ -146,15 +146,15 @@ static void create_double_line_ui(int terminal_height, int terminal_width, contr
     for (int i = 0; i < 4; i++)
     {
         /* Write the command characters with bold font and white background. */
-        attron(A_BOLD | COLOR_PAIR(1));
+        attron(COLOR_PAIR(1));
         printw("[%c]", controls[i].control_char);
-        attroff(A_BOLD | COLOR_PAIR(1));
+        attroff(COLOR_PAIR(1));
 
         /* Write the command descriptions. */
-        printw(" %s", controls[i].control_description);    
+        printw(" %s", controls[i].control_description);
 
         /* By default it gives 6 spaces to each command control element. Also, it includes more spaces to make the terminal responsive. */
-        space(6 + double_total_distance);   
+        space(6 + double_total_distance);
     }
 
     /* Go to the second bottom line of terminal to create the controls part line 2. */
@@ -163,12 +163,12 @@ static void create_double_line_ui(int terminal_height, int terminal_width, contr
     for (int i = 4; i < 8; i++)
     {
         /* Write the command characters with bold font and white background. */
-        attron(A_BOLD | COLOR_PAIR(1));
+        attron(COLOR_PAIR(1));
         printw("[%c]", controls[i].control_char);
-        attroff(A_BOLD | COLOR_PAIR(1));
+        attroff(COLOR_PAIR(1));
 
         /* Write the command descriptions. */
-        printw(" %s", controls[i].control_description);        
+        printw(" %s", controls[i].control_description);
 
         /* By default it gives 6 spaces to each command control element. Also, it includes more spaces to make the terminal responsive. */
         space(6 + double_total_distance);
