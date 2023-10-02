@@ -22,15 +22,17 @@
 #include "../menus/yiffy_text_menus.h"
 #include "../conf/yiffy_conf.h"
 
-#define RECOGNIZED_ARGUMENT   true
-#define UNRECOGNIZED_ARGUMENT false
-#define MISSING_ON_OFF        false
-#define ARGC_QTY_ERROR        false
-#define NO_ARG_VALUE          false
-#define EXTRA_ARG_VALUE       false
+#define RECOGNIZED_ARGUMENT   true  ///< 
+#define UNRECOGNIZED_ARGUMENT false ///< 
+#define MISSING_ON_OFF        false ///< 
+#define ARGC_QTY_ERROR        false ///< 
+#define NO_ARG_VALUE          false ///< 
+#define EXTRA_ARG_VALUE       false ///<
+#define MAX_FILE_PATH         256   ///< This macro is used to set the default size for getting the home directory file.
+#define MAX_BUFFER_SIZE       512   ///< This macro is used to set the default size for reading the config file
 
 static bool argument_verify(int argument_count, char *arguments[]);
-
+static bool is_api_accessible();
 static void export_local_data();
 static void import_local_data();
 static void search_urls(char *tags);
@@ -76,7 +78,7 @@ static struct fetch_option fetch_options[] =
 
 int main(int argc, char *argv[])
 {
-    if (argument_verify(argc, argv))
+    if (is_api_accessible() && argument_verify(argc, argv))
     {
         for (long unsigned int i = 0; i < sizeof(fetch_options) / sizeof(fetch_options[0]); i++)
         {
@@ -222,6 +224,84 @@ static bool argument_verify(int argument_count, char *arguments[])
         argc_error_msg(argument_count);
         return ARGC_QTY_ERROR; /* Return false. */
     }
+}
+
+
+/**
+ * @brief Sends ping to the e621/e926 to check if it accessible.
+*/
+static bool is_api_accessible()
+{
+    char config_path[MAX_FILE_PATH];
+    char buffer[MAX_BUFFER_SIZE];
+
+    bool is_nsfw = false;
+
+    char *home = getenv("HOME");
+
+    if (home == NULL) 
+    {
+        no_home_error_msg();
+        exit(EXIT_FAILURE);
+    }
+
+    sprintf(config_path, "%s/.yiffy/yiffy-config.txt", home);
+
+    /* Read the configuration file (home/user/.yiffy/yiffy-config.txt) to execute the wanted process. */
+    FILE *config = fopen(config_path, "r");
+
+    if (config == NULL) 
+    {
+        file_open_error_msg(config);
+        exit(EXIT_FAILURE);
+    }
+
+    size_t config_bytes = fread(buffer, 1, MAX_BUFFER_SIZE - 1, config); 
+    buffer[config_bytes] = '\0';
+
+    fclose(config);
+
+    char *token = strtok(buffer, ":");
+
+    while (token != NULL) 
+    {
+        if (strcmp(token, "nsfw") == 0) 
+        {
+            is_nsfw = true;
+            break;
+        }
+
+        token = strtok(NULL, ":");
+    }
+
+    char *request_string = (char*)malloc(256 * sizeof(char));
+
+    /* Set the string for NSFW or SFW option by checking the isNsfw parameter. */
+    if (is_nsfw)
+    {
+        sprintf(request_string, "ping -c 2 e621.net >/dev/null 2>&1");
+    }
+    else
+    {
+        sprintf(request_string, "ping -c 2 e926.net >/dev/null 2>&1");
+    }
+
+    /* Send the ping. */
+    int ping_result = system(request_string);
+
+    /* Free the memory. */
+    free(request_string);
+
+    if (ping_result == 0)
+    {
+        return true;
+    }
+    else
+    {
+        access_error_msg();
+        exit(EXIT_FAILURE);
+    }
+
 }
 
 /// @brief exports the app data as a string

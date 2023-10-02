@@ -29,5 +29,6 @@ void malloc_error_msg();
 void system_func_error_msg();
 void already_conf_msg(char *option, char *argv);
 void conf_successful_msg(char *option, char *argv);
+void access_error_msg();
 
 #endif /* YIFFY_MESSAGES_H */
