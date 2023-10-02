@@ -37,7 +37,7 @@ Your comprehensive guide to understanding the growth and evolution of Project Yi
 
 - **Online Communities** 🌐
   * Engage in both furry-focused and tech communities.
-  * Establish a dedicated subreddit for better interaction.
+  * Create posts in linux and furry subreddits for better interaction.
 
 - **Collaborations** 🤝
   * Forge partnerships with relevant furry influencers.
