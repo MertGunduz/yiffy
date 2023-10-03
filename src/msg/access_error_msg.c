@@ -16,6 +16,5 @@
 void access_error_msg()
 {
     fprintf(stderr, "yiffy: can\'t access the e621/e926 API.\n");
-    fprintf(stderr, "yiffy: please check if the website is down or accessible.\n");
-    fprintf(stderr, "yiffy: please use a VPN if e621/e926 is banned in your country.\n");
+    fprintf(stderr, "yiffy: please check if the website is down.\n");
 }
