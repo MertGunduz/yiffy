@@ -44,7 +44,7 @@ void show_config()
     fscanf(config_file, "%s", buffer);
 
     /* Write the header to console. */
-    fprintf(stdout, "current yiffy configurations");
+    fprintf(stdout, "current yiffy configurations\n");
     fprintf(stdout, "----------------------------\n");
 
     char *token = strtok(buffer, ":");

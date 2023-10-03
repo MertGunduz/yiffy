@@ -17,7 +17,7 @@ void show_version()
 {
     fprintf(stdout, "yiffy (e621-e926 terminal viewer) 1.0.0\n\n");
     
-    fprintf(stdout, "technical details about yiffy");
+    fprintf(stdout, "technical details about yiffy\n");
     fprintf(stdout, "-----------------------------\n");
     fprintf(stdout, "gnu gpl version 3 <https://gnu.org/licenses/gpl.html> licensed and free to use.\n");
     fprintf(stdout, "you are free to use, change and redistribute it.\n");
