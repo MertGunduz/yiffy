@@ -12,8 +12,8 @@
 
 #include "yiffy_search.h"
 
-#define SINGLE_COMMAND_UI_CHARS 105
-#define DOUBLE_COMMAND_UI_CHARS 50
+#define SINGLE_COMMAND_UI_CHARS 105 ///< The total characters for one line UI.
+#define DOUBLE_COMMAND_UI_CHARS 50  ///< The total characters for two lines UI.
 
 /* The control handling struct. */
 typedef struct
@@ -25,10 +25,10 @@ typedef struct
 /* All yiffy search control commands. */
 control ui_controls[] = 
 {
-    {'<', "Prev"},
-    {'>', "Next"},
-    {'^', "Up  "},
-    {'v', "Down"},
+    {'B', "Back"},
+    {'N', "Next"},
+    {'U', "Up  "},
+    {'D', "Down"},
     {'S', "Show"},
     {'I', "Info"},
     {'G', "Get "},
@@ -61,7 +61,7 @@ void search(char *tags)
     /* Set the color pair for control commands. */
     init_pair(1, COLOR_BLACK, COLOR_WHITE);
 
-    int height, width;
+    int height, width; ///< Terminal size variables.
 
     /* Get the screen size. */
     height = getmaxy(stdscr);
