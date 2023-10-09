@@ -15,6 +15,10 @@
 #define SINGLE_COMMAND_UI_CHARS 105 ///< The total characters for one line UI.
 #define DOUBLE_COMMAND_UI_CHARS 50  ///< The total characters for two lines UI.
 
+#define MAX_FILE_PATH 256   ///< This macro is used to set the default size for getting the home directory file.
+#define MAX_BUFFER_SIZE 512 ///< This macro is used to set the default size for reading the config file
+#define CONTENT_SIZE 262144 ///< This macro is used to set the default size for reading the JSON file that comes as a response from the API.
+
 /* The control handling struct. */
 typedef struct
 {
@@ -38,7 +42,7 @@ control ui_controls[] =
 static void create_yiffy_ui(int terminal_height, int terminal_width, control *controls, char *posts[]);
 static void create_one_line_ui(int terminal_height, int terminal_width, control *controls);
 static void create_double_line_ui(int terminal_height, int terminal_width, control *controls);
-static char* fetch_posts();
+static void print_list(const char *filename, int page);
 static void space(int num);
 
 /**
@@ -49,7 +53,6 @@ static void space(int num);
 void search(char *tags)
 {
     setlocale(LC_ALL, "");   ///< Set the locale to all.
-
     initscr();               ///< Initialize the library and setup the terminal.
     cbreak();                ///< Disable line buffering, get input instantly.
     noecho();                ///< Close the echo ability of user input to the screen.
@@ -61,13 +64,63 @@ void search(char *tags)
     /* Set the color pair for control commands. */
     init_pair(1, COLOR_BLACK, COLOR_WHITE);
 
-    int height, width; ///< Terminal size variables.
+    int height, width;      ///< Terminal size variables.
+    bool is_nsfw = false;   ///< e621/e926 checker variable.
+    int p = 0;              ///< The page system for search function.
 
     /* Get the screen size. */
     height = getmaxy(stdscr);
     width = getmaxx(stdscr);
 
+    /* Pre-request configuration checks. */
+    char config_path[MAX_FILE_PATH];
+    char buffer[MAX_BUFFER_SIZE];
+
+    char *home = getenv("HOME");
+
+    if (home == NULL) 
+    {
+        no_home_error_msg();
+        exit(EXIT_FAILURE);
+    }
+
+    sprintf(config_path, "%s/.yiffy/yiffy-config.txt", home);
+
+    /* Read the configuration file (home/user/.yiffy/yiffy-config.txt) to execute the wanted process. */
+    FILE *config = fopen(config_path, "r");
+
+    if (config == NULL) 
+    {
+        file_open_error_msg(config);
+        exit(EXIT_FAILURE);
+    }
+
+    size_t config_bytes = fread(buffer, 1, MAX_BUFFER_SIZE - 1, config); 
+    buffer[config_bytes] = '\0';
+
+    fclose(config);
+
+    char *token = strtok(buffer, ":");
+
+    while (token != NULL) 
+    {
+        if (strcmp(token, "nsfw") == 0) 
+        {
+            is_nsfw = true;
+            break;
+        }
+
+        token = strtok(NULL, ":");
+    }
+
+    /* Request posts from API. */
+    aria2_download(tags, p, is_nsfw);
+
+    /* Create the UI. */
     create_yiffy_ui(height, width, ui_controls, NULL);
+
+    // Fetch and parse the JSON data from the downloaded file
+    print_list("posts.json", 0);
 
     getch();
     clear();
@@ -179,9 +232,67 @@ static void create_double_line_ui(int terminal_height, int terminal_width, contr
     mvhline(terminal_height - 1, 0, 0, terminal_width);
 }
 
-static char* fetch_posts(int total_lines)
+static void print_list(const char *filename, int page)
 {
+    FILE *fp;
+    char *json_string;
+    long length;
 
+    move(0, 0);
+
+    // Open the file
+    fp = fopen(filename, "rb");
+    if (fp == NULL) 
+    {
+        fprintf(stderr, "Could not open file %s\n", filename);
+        exit(EXIT_FAILURE);
+    }
+
+    // Get the length of the file
+    fseek(fp, 0, SEEK_END);
+    length = ftell(fp);
+    fseek(fp, 0, SEEK_SET);
+
+    // Read the file content into a string
+    json_string = (char *)malloc((length+1) * sizeof(char));
+    if (json_string == NULL) 
+    {
+        fprintf(stderr, "Could not allocate memory for JSON string\n");
+        fclose(fp);
+        exit(EXIT_FAILURE);
+    }
+
+    fread(json_string, sizeof(char), length, fp);
+    fclose(fp);
+    json_string[length] = '\0';
+
+    // Parse the JSON string
+    cJSON *json = cJSON_Parse(json_string);
+
+    if (json == NULL) 
+    {
+        fprintf(stderr, "Could not parse JSON\n");
+        free(json_string);
+        exit(EXIT_FAILURE);
+    }
+
+    // Fetch the data
+    cJSON *posts = cJSON_GetObjectItemCaseSensitive(json, "posts");
+    cJSON *post;
+    cJSON_ArrayForEach(post, posts) 
+    {
+        cJSON *file = cJSON_GetObjectItemCaseSensitive(post, "file");
+        cJSON *url = cJSON_GetObjectItemCaseSensitive(file, "url");
+        
+        if (url->valuestring != NULL)
+        {
+            printw("%s\n", url->valuestring);
+        }
+    }
+
+    // Clean up
+    cJSON_Delete(json);
+    free(json_string);
 }
 
 static void space(int num)
