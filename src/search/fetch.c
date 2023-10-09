@@ -74,7 +74,7 @@ void fetch(char *tags, int page, char *command)
     }
 
     /* Download the JSON response. */
-    aria2_download(tags, page, is_nsfw);
+    aria2_download(tags, page, is_nsfw, 20);
 
     /* Check if the JSON response downloaded. */
     FILE *response_json = fopen("posts.json", "r");

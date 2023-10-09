@@ -114,7 +114,7 @@ void search(char *tags)
     }
 
     /* Request posts from API. */
-    aria2_download(tags, p, is_nsfw);
+    aria2_download(tags, p, is_nsfw, height - 2);
 
     /* Create the UI. */
     create_yiffy_ui(height, width, ui_controls, NULL);
@@ -237,6 +237,7 @@ static void print_list(const char *filename, int page)
     FILE *fp;
     char *json_string;
     long length;
+    int ct = 1;
 
     move(0, 0);
 
@@ -286,7 +287,24 @@ static void print_list(const char *filename, int page)
         
         if (url->valuestring != NULL)
         {
-            printw("%s\n", url->valuestring);
+            if (ct < 10)
+            {
+                printw("[0%d] - ", ct); 
+            }
+            else
+            {
+                printw("[%d] - ", ct); 
+            }
+
+            for (int i = 8; i < 72; i++)
+            {
+                addch(url->valuestring[i]);
+            }
+            
+            printw("\n");
+            
+            /* Increase the counter. */
+            ct++;
         }
     }
 
