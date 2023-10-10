@@ -146,12 +146,6 @@ static void create_one_line_ui(int terminal_height, int terminal_width, control 
     int single_total_distance = terminal_width - SINGLE_COMMAND_UI_CHARS;
     single_total_distance = single_total_distance / 8;
 
-    /* The list part of the ui. */
-    for (int i = 0; i < terminal_height - 2; i++)
-    {
-        mvprintw(i, 0, "%d", i);
-    }
-
     /* Go to the bottom of terminal to create the controls part. */
     move(terminal_height - 2, 0);
         
@@ -180,18 +174,6 @@ static void create_double_line_ui(int terminal_height, int terminal_width, contr
     /* This variable is used for setting the size of command controls to maximize the width of terminal. */
     int double_total_distance = terminal_width - DOUBLE_COMMAND_UI_CHARS;
     double_total_distance = double_total_distance / 4;
-
-    /* The list part of the ui. */
-    for (int i = 0; i < terminal_height - 2; i++)
-    {
-        mvprintw(i, 0, "%d", i);
-    }
-    
-    /* The list part of the code. */
-    for (int i = 0; i < terminal_height - 2; i++)
-    {
-        mvprintw(i, 0, "%d", i);
-    }
 
     /* Go to the bottom of terminal to create the controls part. */
     move(terminal_height - 3, 0);
