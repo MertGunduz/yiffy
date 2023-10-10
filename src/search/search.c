@@ -42,7 +42,9 @@ control ui_controls[] =
 static void create_yiffy_ui(int terminal_height, int terminal_width, control *controls, char *posts[]);
 static void create_one_line_ui(int terminal_height, int terminal_width, control *controls);
 static void create_double_line_ui(int terminal_height, int terminal_width, control *controls);
-static void print_list(const char *filename, int page);
+static void print_list(const char *filename, int page, int is_double);
+static void numerator(int counter);
+static void print_urls(cJSON *url);
 static void space(int num);
 
 /**
@@ -114,13 +116,10 @@ void search(char *tags)
     }
 
     /* Request posts from API. */
-    aria2_download(tags, p, is_nsfw, height - 2);
+    aria2_download(tags, p, is_nsfw, height + 15);
 
     /* Create the UI. */
     create_yiffy_ui(height, width, ui_controls, NULL);
-
-    // Fetch and parse the JSON data from the downloaded file
-    print_list("posts.json", 0);
 
     getch();
     clear();
@@ -133,10 +132,12 @@ static void create_yiffy_ui(int terminal_height, int terminal_width, control *co
     if (terminal_width > SINGLE_COMMAND_UI_CHARS)
     {
         create_one_line_ui(terminal_height, terminal_width, controls);
+        print_list("posts.json", 0, false);
     }
     else
     {
         create_double_line_ui(terminal_height, terminal_width, controls);
+        print_list("posts.json", 0, true);
     }
 }
 
@@ -214,7 +215,7 @@ static void create_double_line_ui(int terminal_height, int terminal_width, contr
     mvhline(terminal_height - 1, 0, 0, terminal_width);
 }
 
-static void print_list(const char *filename, int page)
+static void print_list(const char *filename, int page, int is_double)
 {
     FILE *fp;
     char *json_string;
@@ -269,30 +270,48 @@ static void print_list(const char *filename, int page)
         
         if (url->valuestring != NULL)
         {
-            if (ct < 10)
-            {
-                printw("[0%d] - ", ct); 
-            }
-            else
-            {
-                printw("[%d] - ", ct); 
-            }
+            /* Write the numbers. */
+            numerator(ct);
 
-            for (int i = 8; i < 72; i++)
-            {
-                addch(url->valuestring[i]);
-            }
-            
-            printw("\n");
+            /* Write the URLs.*/
+            print_urls(url);
             
             /* Increase the counter. */
             ct++;
+
+            /* In double line UI structure, it needs minus 3. In one line structure, it needs minus 2. */
+            if (ct == getmaxy(stdscr) - 2 - is_double)
+            {
+                getch();
+            }
         }
     }
 
     // Clean up
     cJSON_Delete(json);
     free(json_string);
+}
+
+static void numerator(int counter)
+{
+    if (counter < 10)
+    {
+    printw("[0%d] - ", counter); 
+    }
+    else
+    {
+        printw("[%d] - ", counter); 
+    }
+}
+
+static void print_urls(cJSON *url)
+{
+    for (int i = 8; i < 72; i++)
+    {
+        addch(url->valuestring[i]);
+    }
+    
+    printw("\n");
 }
 
 static void space(int num)
