@@ -122,7 +122,6 @@ void search(char *tags)
     /* Create the UI. */
     create_yiffy_ui(height, width, ui_controls, NULL);
 
-    getch();
     clear();
     endwin();
 }
@@ -337,12 +336,12 @@ void print_tags(cJSON *general_tags)
             // Check if the tag is a string and print it
             if (cJSON_IsString(tag)) 
             {
-                if (a == 5)
+                if (a == 3)  // Changed condition here
                 {
                     break;
                 }
 
-                printw("%s", tag->valuestring);
+                printw("%.10s", tag->valuestring);
                 addch(' '); 
 
                 a++;
