@@ -45,6 +45,7 @@ static void create_double_line_ui(int terminal_height, int terminal_width, contr
 static void print_list(const char *filename, int page, int is_double);
 static void numerator(int counter);
 static void print_urls(cJSON *url);
+void print_tags(cJSON *general_tags);
 static void space(int num);
 
 /**
@@ -275,6 +276,14 @@ static void print_list(const char *filename, int page, int is_double)
 
             /* Write the URLs.*/
             print_urls(url);
+
+            cJSON *tags = cJSON_GetObjectItemCaseSensitive(post, "tags");
+            cJSON *general_tags = cJSON_GetObjectItemCaseSensitive(tags, "general");
+            
+            /* Write the tags.*/
+            print_tags(general_tags);
+
+            printw("\n");
             
             /* Increase the counter. */
             ct++;
@@ -310,8 +319,37 @@ static void print_urls(cJSON *url)
     {
         addch(url->valuestring[i]);
     }
-    
-    printw("\n");
+
+    printw(" - ");
+}
+
+void print_tags(cJSON *general_tags) 
+{
+    int a = 0;
+    // Ensure the general_tags is an array
+    if (cJSON_IsArray(general_tags)) 
+    {
+        addch(' '); 
+        // Loop through each tag in the general_tags array
+        cJSON *tag;
+        cJSON_ArrayForEach(tag, general_tags) 
+        {
+            // Check if the tag is a string and print it
+            if (cJSON_IsString(tag)) 
+            {
+                if (a == 5)
+                {
+                    break;
+                }
+
+                printw("%s", tag->valuestring);
+                addch(' '); 
+
+                a++;
+            }
+        }
+        addch(' '); 
+    }
 }
 
 static void space(int num)
