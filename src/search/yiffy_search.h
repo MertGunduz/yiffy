@@ -18,6 +18,7 @@
 #include <unistd.h>
 #include <locale.h>
 #include <ctype.h>
+#include <time.h>
 
 #include "../msg/yiffy_messages.h"
 #include "../cjson/cjson.h"
