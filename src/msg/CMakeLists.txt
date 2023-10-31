@@ -16,6 +16,7 @@ set(SOURCES
     conf_successful_msg.c
     access_error_msg.c
     color_comp_error_msg.c
+    window_create_error_msg.c
 )
 
 add_library(yiffy-messages STATIC ${SOURCES})
