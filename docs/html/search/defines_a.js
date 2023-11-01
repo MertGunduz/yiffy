@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['single_5fcommand_5fui_5fchars_326',['SINGLE_COMMAND_UI_CHARS',['../dc/dec/search_8c.html#a80d7cbf60879dd8717440f4b36d1f60a',1,'search.c']]],
-  ['static_5fstrlen_327',['static_strlen',['../d6/d49/cjson_8c.html#a5714bac836668a1b9af55465b78531ef',1,'cjson.c']]]
+  ['true_324',['true',['../d6/d49/cjson_8c.html#a41f9c5fb8b08eb5dc3edce4dcb37fee7',1,'cjson.c']]]
 ];

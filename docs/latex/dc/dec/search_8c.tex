@@ -2,7 +2,7 @@
 \label{search_8c}\index{src/search/search.c@{src/search/search.c}}
 
 
-This file is used to search over e621-\/e926 by using a terminal with the specified tags by user and outputs or outputs-\/downloads URLs.  
+This file is used to interact with the terminal user interface version of yiffy, it provides download-\/list-\/search-\/info features to the users.  
 
 
 {\ttfamily \#include \char`\"{}yiffy\+\_\+search.\+h\char`\"{}}\newline
@@ -13,64 +13,22 @@ Include dependency graph for search.\+c\+:\nopagebreak
 \includegraphics[width=350pt]{db/ddf/search_8c__incl}
 \end{center}
 \end{figure}
-\doxysubsection*{Classes}
-\begin{DoxyCompactItemize}
-\item 
-struct \mbox{\hyperlink{structcontrol}{control}}
-\end{DoxyCompactItemize}
-\doxysubsection*{Macros}
-\begin{DoxyCompactItemize}
-\item 
-\#define \mbox{\hyperlink{search_8c_a80d7cbf60879dd8717440f4b36d1f60a}{SINGLE\+\_\+\+COMMAND\+\_\+\+UI\+\_\+\+CHARS}}~105
-\item 
-\#define \mbox{\hyperlink{search_8c_a0d4d6cefc567cd573ecaea2bad908c14}{DOUBLE\+\_\+\+COMMAND\+\_\+\+UI\+\_\+\+CHARS}}~50
-\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{search_8c_ab899bd069f8d6db7339eba31c3ad7a02}{search}} (char $\ast$tags)
-\begin{DoxyCompactList}\small\item\em Sends a request to search over the e621-\/e926 by using the API. It uses ncurses to provide the web-\/like experience. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Variables}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\hyperlink{structcontrol}{control}} \mbox{\hyperlink{search_8c_a6e3d8d75a506bafd0da3a14dc96b9d36}{ui\+\_\+controls}} \mbox{[}$\,$\mbox{]}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-This file is used to search over e621-\/e926 by using a terminal with the specified tags by user and outputs or outputs-\/downloads URLs. 
-
-This file is used to send a request to the search over the e621-\/e926 by using the API. It uses ncurses to provide the web-\/like experience.
+This file is used to interact with the terminal user interface version of yiffy, it provides download-\/list-\/search-\/info features to the users. 
 
 \begin{DoxyAuthor}{Author}
 Mehmet Mert Gunduz
 \end{DoxyAuthor}
 \begin{DoxyDate}{Date}
-21/07/2023 
+31/10/2023 
 \end{DoxyDate}
-
-
-\doxysubsection{Macro Definition Documentation}
-\mbox{\Hypertarget{search_8c_a0d4d6cefc567cd573ecaea2bad908c14}\label{search_8c_a0d4d6cefc567cd573ecaea2bad908c14}} 
-\index{search.c@{search.c}!DOUBLE\_COMMAND\_UI\_CHARS@{DOUBLE\_COMMAND\_UI\_CHARS}}
-\index{DOUBLE\_COMMAND\_UI\_CHARS@{DOUBLE\_COMMAND\_UI\_CHARS}!search.c@{search.c}}
-\doxysubsubsection{\texorpdfstring{DOUBLE\_COMMAND\_UI\_CHARS}{DOUBLE\_COMMAND\_UI\_CHARS}}
-{\footnotesize\ttfamily \#define DOUBLE\+\_\+\+COMMAND\+\_\+\+UI\+\_\+\+CHARS~50}
-
-
-
-Definition at line 16 of file search.\+c.
-
-\mbox{\Hypertarget{search_8c_a80d7cbf60879dd8717440f4b36d1f60a}\label{search_8c_a80d7cbf60879dd8717440f4b36d1f60a}} 
-\index{search.c@{search.c}!SINGLE\_COMMAND\_UI\_CHARS@{SINGLE\_COMMAND\_UI\_CHARS}}
-\index{SINGLE\_COMMAND\_UI\_CHARS@{SINGLE\_COMMAND\_UI\_CHARS}!search.c@{search.c}}
-\doxysubsubsection{\texorpdfstring{SINGLE\_COMMAND\_UI\_CHARS}{SINGLE\_COMMAND\_UI\_CHARS}}
-{\footnotesize\ttfamily \#define SINGLE\+\_\+\+COMMAND\+\_\+\+UI\+\_\+\+CHARS~105}
-
-
-
-Definition at line 15 of file search.\+c.
-
 
 
 \doxysubsection{Function Documentation}
@@ -82,56 +40,5 @@ Definition at line 15 of file search.\+c.
 
 
 
-Sends a request to search over the e621-\/e926 by using the API. It uses ncurses to provide the web-\/like experience. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em tags} & These are the e621-\/e926 tags prompted by the user as an argument value. Example\+: yiffy --fetch \char`\"{}anthro+fur+male+smile\char`\"{}. \\
-\hline
-\end{DoxyParams}
-$<$ Set the locale to all.
-
-$<$ Initialize the library and setup the terminal.
-
-$<$ Disable line buffering, get input instantly.
-
-$<$ Close the echo ability of user input to the screen.
-
-$<$ Enable special keys like CTRL, SHIFT.
-
-$<$ Enable the color ability.
-
-$<$ Enable default colors
-
-$<$ Close the cursor.
-
-Definition at line 49 of file search.\+c.
-
-
-
-\doxysubsection{Variable Documentation}
-\mbox{\Hypertarget{search_8c_a6e3d8d75a506bafd0da3a14dc96b9d36}\label{search_8c_a6e3d8d75a506bafd0da3a14dc96b9d36}} 
-\index{search.c@{search.c}!ui\_controls@{ui\_controls}}
-\index{ui\_controls@{ui\_controls}!search.c@{search.c}}
-\doxysubsubsection{\texorpdfstring{ui\_controls}{ui\_controls}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structcontrol}{control}} ui\+\_\+controls\mbox{[}$\,$\mbox{]}}
-
-{\bfseries Initial value\+:}
-\begin{DoxyCode}{0}
-\DoxyCodeLine{= }
-\DoxyCodeLine{\{}
-\DoxyCodeLine{    \{\textcolor{charliteral}{'<'}, \textcolor{stringliteral}{"{}Prev"{}}\},}
-\DoxyCodeLine{    \{\textcolor{charliteral}{'>'}, \textcolor{stringliteral}{"{}Next"{}}\},}
-\DoxyCodeLine{    \{\textcolor{charliteral}{'\string^'}, \textcolor{stringliteral}{"{}Up  "{}}\},}
-\DoxyCodeLine{    \{\textcolor{charliteral}{'v'}, \textcolor{stringliteral}{"{}Down"{}}\},}
-\DoxyCodeLine{    \{\textcolor{charliteral}{'S'}, \textcolor{stringliteral}{"{}Show"{}}\},}
-\DoxyCodeLine{    \{\textcolor{charliteral}{'I'}, \textcolor{stringliteral}{"{}Info"{}}\},}
-\DoxyCodeLine{    \{\textcolor{charliteral}{'G'}, \textcolor{stringliteral}{"{}Get "{}}\},}
-\DoxyCodeLine{    \{\textcolor{charliteral}{'Q'}, \textcolor{stringliteral}{"{}Quit"{}}\},}
-\DoxyCodeLine{\}}
-
-\end{DoxyCode}
-
-
-Definition at line 26 of file search.\+c.
+Definition at line 19 of file search.\+c.
 

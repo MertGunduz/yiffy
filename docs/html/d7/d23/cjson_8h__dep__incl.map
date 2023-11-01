@@ -5,5 +5,5 @@
 <area shape="rect" id="node4" href="$de/d29/yiffy__search_8h.html" title="This header file is used to handle the fetching and searching system." alt="" coords="251,80,433,107"/>
 <area shape="rect" id="node5" href="$d6/d60/aria2__download_8c.html" title="Downloads the JSON file by using aria2c, works with the system function." alt="" coords="140,155,347,181"/>
 <area shape="rect" id="node6" href="$d1/d14/fetch_8c.html" title="This file is used to send requests to e621&#45;e926 with the specified tags by user and outputs or output..." alt="" coords="371,155,507,181"/>
-<area shape="rect" id="node7" href="$dc/dec/search_8c.html" title="This file is used to search over e621&#45;e926 by using a terminal with the specified tags by user and ou..." alt="" coords="531,155,678,181"/>
+<area shape="rect" id="node7" href="$dc/dec/search_8c.html" title="This file is used to interact with the terminal user interface version of yiffy, it provides download..." alt="" coords="531,155,678,181"/>
 </map>

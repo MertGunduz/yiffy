@@ -20,6 +20,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="../../yiffy_small_logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">yiffy
    &#160;<span id="projectnumber">1.0.0</span>
@@ -75,27 +76,28 @@ $(function() {
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#ifndef YIFFY_SEARCH_H</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#define YIFFY_SEARCH_H</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;ncurses.h&gt;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;unistd.h&gt;</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;ncurses.h&gt;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;locale.h&gt;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;../msg/yiffy_messages.h&quot;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;../cjson/cjson.h&quot;</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="../../de/d29/yiffy__search_8h.html#acbd50aa1f19ce68034a26b45b0aaed69">   25</a></span>&#160;<span class="preprocessor">#define BAD_SYSTEM_FUNC_CALL -1</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../de/d29/yiffy__search_8h.html#a41f382b6bd05c9776641fb4bc5024afa">fetch</a>(<span class="keywordtype">char</span> *tags, <span class="keywordtype">int</span> page, <span class="keywordtype">char</span> *command);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../de/d29/yiffy__search_8h.html#a75a90032aa6fbf0c41997ecf6b4b70eb">aria2_download</a>(<span class="keywordtype">char</span> *tags, <span class="keywordtype">int</span> page, <span class="keywordtype">bool</span> isNsfw);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../de/d29/yiffy__search_8h.html#ab899bd069f8d6db7339eba31c3ad7a02">search</a>(<span class="keywordtype">char</span> *tags);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* YIFFY_SEARCH_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;locale.h&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;ctype.h&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;time.h&gt;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;../msg/yiffy_messages.h&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;../cjson/cjson.h&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="../../de/d29/yiffy__search_8h.html#acbd50aa1f19ce68034a26b45b0aaed69">   26</a></span>&#160;<span class="preprocessor">#define BAD_SYSTEM_FUNC_CALL -1</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../de/d29/yiffy__search_8h.html#a41f382b6bd05c9776641fb4bc5024afa">fetch</a>(<span class="keywordtype">char</span> *tags, <span class="keywordtype">int</span> page, <span class="keywordtype">char</span> *command);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../de/d29/yiffy__search_8h.html#a5d6732ce337f794d14f9f2b835a0d2ef">aria2_download</a>(<span class="keywordtype">char</span> *tags, <span class="keywordtype">int</span> page, <span class="keywordtype">bool</span> is_nsfw, <span class="keywordtype">int</span> lim);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../de/d29/yiffy__search_8h.html#ab899bd069f8d6db7339eba31c3ad7a02">search</a>(<span class="keywordtype">char</span> *tags);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* YIFFY_SEARCH_H */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="ayiffy__search_8h_html_a41f382b6bd05c9776641fb4bc5024afa"><div class="ttname"><a href="../../de/d29/yiffy__search_8h.html#a41f382b6bd05c9776641fb4bc5024afa">fetch</a></div><div class="ttdeci">void fetch(char *tags, int page, char *command)</div><div class="ttdoc">Reads the configuration file, sets the options and sends a request to e621-e926. After taking the res...</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d14/fetch_8c_source.html#l00032">fetch.c:32</a></div></div>
-<div class="ttc" id="ayiffy__search_8h_html_a75a90032aa6fbf0c41997ecf6b4b70eb"><div class="ttname"><a href="../../de/d29/yiffy__search_8h.html#a75a90032aa6fbf0c41997ecf6b4b70eb">aria2_download</a></div><div class="ttdeci">void aria2_download(char *tags, int page, bool isNsfw)</div><div class="ttdoc">downloads the API response by using aria2c, works with a system call</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d60/aria2__download_8c_source.html#l00019">aria2_download.c:19</a></div></div>
-<div class="ttc" id="ayiffy__search_8h_html_ab899bd069f8d6db7339eba31c3ad7a02"><div class="ttname"><a href="../../de/d29/yiffy__search_8h.html#ab899bd069f8d6db7339eba31c3ad7a02">search</a></div><div class="ttdeci">void search(char *tags)</div><div class="ttdoc">Sends a request to search over the e621-e926 by using the API. It uses ncurses to provide the web-lik...</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/dec/search_8c_source.html#l00049">search.c:49</a></div></div>
+<div class="ttc" id="ayiffy__search_8h_html_a5d6732ce337f794d14f9f2b835a0d2ef"><div class="ttname"><a href="../../de/d29/yiffy__search_8h.html#a5d6732ce337f794d14f9f2b835a0d2ef">aria2_download</a></div><div class="ttdeci">void aria2_download(char *tags, int page, bool is_nsfw, int lim)</div><div class="ttdoc">downloads the API response by using aria2c, works with a system call</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d60/aria2__download_8c_source.html#l00019">aria2_download.c:19</a></div></div>
+<div class="ttc" id="ayiffy__search_8h_html_ab899bd069f8d6db7339eba31c3ad7a02"><div class="ttname"><a href="../../de/d29/yiffy__search_8h.html#ab899bd069f8d6db7339eba31c3ad7a02">search</a></div><div class="ttdeci">void search(char *tags)</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/dec/search_8c_source.html#l00019">search.c:19</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
