@@ -17,36 +17,51 @@ static void create_controls_window(WINDOW *win);
 
 void search(char *tags)
 {
-    /* Start the ncurses based terminal user interface. */
     initscr();
     noecho();
     start_color();
     curs_set(0);
+    keypad(stdscr, TRUE);
 
-    /* Check if terminal supports colors. */
     if (!has_colors())
     {
         color_comp_error_msg();
+        endwin();
         exit(EXIT_FAILURE);
     }
 
-    /* Create the color. */
     init_pair(1, COLOR_BLACK, COLOR_WHITE);
 
     /* Windows for the ncurses TUI. */
-    WINDOW *top_window = newwin(3, COLS -1, 0, 1);
+    WINDOW *top_window = newwin(3, COLS - 1, 0, 1);
     WINDOW *posts_window = newwin(10 + (LINES - 23), COLS - 1, 3, 1);
     WINDOW *info_window = newwin(7, COLS - 1, 13 + (LINES - 23), 1);
     WINDOW *controls_window = newwin(3, COLS - 1, 20 + (LINES - 23), 1);
 
-    /* Create the terminal user interface by calling functions. */
-    create_top_window(top_window);
-    create_posts_window(posts_window);
-    create_info_window(info_window);
-    create_controls_window(controls_window);
+    int ch;
+    do 
+    {
+        if (ch == KEY_RESIZE)
+        {
+            endwin();  // End the current window
+            refresh(); // Refresh to get the updated values of LINES and COLS
+            clear();   // Clear the screen
 
-    /* Close the search app. */
-    getch();
+            // Recreate the windows with updated sizes and positions
+            top_window = newwin(3, COLS - 1, 0, 1);
+            posts_window = newwin(10 + (LINES - 23), COLS - 1, 3, 1);
+            info_window = newwin(7, COLS - 1, 13 + (LINES - 23), 1);
+            controls_window = newwin(3, COLS - 1, 20 + (LINES - 23), 1);
+        }
+
+        // Redraw the windows
+        create_top_window(top_window);
+        create_posts_window(posts_window);
+        create_info_window(info_window);
+        create_controls_window(controls_window);
+    } while ((ch = getch()) != 'q');
+
+    // Close the search app.
     endwin();
 }
 
