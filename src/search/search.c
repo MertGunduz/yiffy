@@ -38,12 +38,17 @@ void search(char *tags)
     WINDOW *info_window = newwin(7, COLS - 1, 13 + (LINES - 23), 1);
     WINDOW *controls_window = newwin(3, COLS - 1, 20 + (LINES - 23), 1);
 
+    // Redraw the windows
+    create_top_window(top_window);
+    create_posts_window(posts_window);
+    create_info_window(info_window);
+    create_controls_window(controls_window);
+    
     int ch;
     do 
     {
         if (ch == KEY_RESIZE)
         {
-            endwin();  // End the current window
             refresh(); // Refresh to get the updated values of LINES and COLS
             clear();   // Clear the screen
 
@@ -52,13 +57,13 @@ void search(char *tags)
             posts_window = newwin(10 + (LINES - 23), COLS - 1, 3, 1);
             info_window = newwin(7, COLS - 1, 13 + (LINES - 23), 1);
             controls_window = newwin(3, COLS - 1, 20 + (LINES - 23), 1);
-        }
 
-        // Redraw the windows
-        create_top_window(top_window);
-        create_posts_window(posts_window);
-        create_info_window(info_window);
-        create_controls_window(controls_window);
+            // Redraw the windows
+            create_top_window(top_window);
+            create_posts_window(posts_window);
+            create_info_window(info_window);
+            create_controls_window(controls_window);
+        }
     } while ((ch = getch()) != 'q');
 
     // Close the search app.
