@@ -81,7 +81,7 @@ Get help and information about Yiffy:
   - `--help`: Access a guide and list of commands.
   - `--version`: Check the current version of Yiffy.
   - `--github`: Visit the [Yiffy GitHub repository](https://github.com/MertGunduz/yiffy).
-  - `--website`: Explore the official [Yiffy website](https://yiffy.example.com/).
+  - `--website`: Explore the official [Yiffy website](https://yiffy-cli.com/).
   - `--config`: Open the configuration menu.
 
 ### Data Management
