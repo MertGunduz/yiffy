@@ -4,7 +4,7 @@
 
 </div>
 
-# Yiffy: E621/E926 Search and Download Terminal App
+# Yiffy: E621/E926 Search and Download TUI App
 
 Yiffy is a terminal application designed to search, download, and fetch images from e621 and e926.
 
