@@ -31,7 +31,7 @@ Yiffy is a terminal application designed to search, download, and fetch images f
 ## Installatiom
 
 ```
-wget install.sh
+wget https://github.com/MertGunduz/yiffy/blob/main/install.sh
 ```
 ```
 sudo chmod +x install.sh
