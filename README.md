@@ -1,71 +1,68 @@
-<img width="74" align="left" alt="commision_unix" src="https://github.com/MertGunduz/yiffy/assets/65850970/148fe232-6989-4c8f-b081-6c31126fa4b9">
+![yiffy logo](https://github.com/MertGunduz/yiffy/assets/65850970/148fe232-6989-4c8f-b081-6c31126fa4b9) 
 
-# yiffy
+# Yiffy: Image Search and Download Terminal App
 
-yiffy is a terminal app for searching/downloading/fetching images from e621/e926 <br>
+Yiffy is a terminal application designed to search, download, and fetch images from e621 and e926.
 
-# Dependencies needed for Debian based distro's
-- gcc
-- build-essential
-- ascii-image-converter
-- aria2
-- cmake
-- make
-- libncurses-dev
+## System Dependencies
 
-# Dependencies needed for Arch based distro's
-- gcc (core)
-- make (core)
-- base-devel (core)
-- aria2 (extra)
-- cmake (extra)
-- ncurses (extra, multililib repo should be enabled)
-- ascii-image-converter (AUR)
+### For Debian-Based Distributions:
+- `gcc`
+- `build-essential`
+- `ascii-image-converter`
+- `aria2`
+- `cmake`
+- `make`
+- `libncurses-dev`
 
-# Building on linux
-```
+### For Arch-Based Distributions:
+- `gcc` (core)
+- `make` (core)
+- `base-devel` (core)
+- `aria2` (extra)
+- `cmake` (extra)
+- `ncurses` (extra, multilib repo should be enabled)
+- `ascii-image-converter` (AUR)
+
+## Building Yiffy on Linux
+
+Follow these commands to build Yiffy on a Linux system:
+
+```bash
 git clone https://github.com/MertGunduz/yiffy.git
-```
-```
 cd yiffy
-```
-```
 mkdir build
-```
-```
 cd build
-```
-```
 cmake ..
-```
-```
 make
-```
-```
 sudo cmake --install .
 ```
 
-# Commands
+## Yiffy Commands
 
-### yiffy search tui argument  
-```--search "tag1 tag2"```   opens a tui interface
+### Search and TUI Interface
+- `yiffy search tui argument`
+  - `--search "tag1 tag2"`: Opens a TUI interface.
 
-### yiffy api fetch arguments
-```--fetch "tag1 tag2"```    fetches urls<br>
-```--dfetch "tag1 tag2"```   fetches urls and downloads
+### API Fetch and Download
+- `yiffy api fetch arguments`
+  - `--fetch "tag1 tag2"`: Fetches URLs.
+  - `--dfetch "tag1 tag2"`: Fetches URLs and downloads.
 
-### yiffy information menu arguments
-```--help```              outputs the help menu<br>
-```--version```           outputs the version menu<br>
-```--github```            outputs the github menu<br>
-```--website```           outputs the website menu<br>
-```--config```            outputs the configuration menu<br>
+### Information and Help Menu
+- `yiffy information menu arguments`
+  - `--help`: Outputs the help menu.
+  - `--version`: Outputs the version information.
+  - `--github`: Provides the GitHub repository link.
+  - `--website`: Provides the official website link.
+  - `--config`: Outputs the configuration menu.
 
-### yiffy data import-export arguments
-```--import```            imports the data to program<br>
-```--export```            exports the data from program<br>
+### Data Import and Export
+- `yiffy data import-export arguments`
+  - `--import`: Imports data to the program.
+  - `--export`: Exports data from the program.
 
-### yiffy configuration and settings arguments
-```--nsfw on/off```     switches to nsfw/sfw options<br>
-```--wgen on/off```     switches to wgen/non-wgen option
-
+### Configuration and Settings
+- `yiffy configuration and settings arguments`
+  - `--nsfw on/off`: Switch between NSFW and SFW options.
+  - `--wgen on/off`: Switch between WGEN and non-WGEN options.
