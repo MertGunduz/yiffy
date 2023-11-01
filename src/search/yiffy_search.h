@@ -20,6 +20,7 @@
 #include <ctype.h>
 #include <time.h>
 
+#include "../ui/yiffy_ui.h"
 #include "../msg/yiffy_messages.h"
 #include "../cjson/cjson.h"
 
