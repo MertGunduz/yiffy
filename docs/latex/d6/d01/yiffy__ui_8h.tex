@@ -1,20 +1,17 @@
 \hypertarget{yiffy__ui_8h}{}\doxysection{src/ui/yiffy\+\_\+ui.h File Reference}
 \label{yiffy__ui_8h}\index{src/ui/yiffy\_ui.h@{src/ui/yiffy\_ui.h}}
-
-
-This header file is used to manage ncurses-\/based TUIs (terminal-\/user-\/interfaces) for yiffy functions.  
-
-
-{\ttfamily \#include $<$stdio.\+h$>$}\newline
-{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$ncurses.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../msg/yiffy\+\_\+messages.\+h\char`\"{}}\newline
 Include dependency graph for yiffy\+\_\+ui.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=202pt]{d3/dda/yiffy__ui_8h__incl}
+\includegraphics[width=350pt]{d3/dda/yiffy__ui_8h__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:\nopagebreak
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -24,40 +21,90 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{yiffy__ui_8h_af368c6ede13d6b3044f2875601238d7e}{fprintfH}} (FILE $\ast$file, char $\ast$content)
-\begin{DoxyCompactList}\small\item\em Create the text header. \end{DoxyCompactList}\end{DoxyCompactItemize}
-
-
-\doxysubsection{Detailed Description}
-This header file is used to manage ncurses-\/based TUIs (terminal-\/user-\/interfaces) for yiffy functions. 
-
-\begin{DoxyAuthor}{Author}
-Mehmet Mert Gunduz
-\end{DoxyAuthor}
-\begin{DoxyDate}{Date}
-04/08/2023 
-\end{DoxyDate}
+void \mbox{\hyperlink{yiffy__ui_8h_a41067cc095ee5182e7055f6a6dbdb25b}{create\+\_\+top\+\_\+window}} (WINDOW $\ast$win)
+\begin{DoxyCompactList}\small\item\em Creates the top header of search tui. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{yiffy__ui_8h_abe44dcce914b12aff1b6b4ac48aca19a}{create\+\_\+posts\+\_\+window}} (WINDOW $\ast$win)
+\begin{DoxyCompactList}\small\item\em Creates the posts section of search tui. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{yiffy__ui_8h_adb4aea0b1ad265d6ccda5999d1395bf4}{create\+\_\+info\+\_\+window}} (WINDOW $\ast$win)
+\begin{DoxyCompactList}\small\item\em Creates the info section of search tui. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{yiffy__ui_8h_a0f7af6e000e695b753605abc470acc30}{create\+\_\+controls\+\_\+window}} (WINDOW $\ast$win)
+\begin{DoxyCompactList}\small\item\em Creates the controls section of search tui. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{yiffy__ui_8h_af368c6ede13d6b3044f2875601238d7e}\label{yiffy__ui_8h_af368c6ede13d6b3044f2875601238d7e}} 
-\index{yiffy\_ui.h@{yiffy\_ui.h}!fprintfH@{fprintfH}}
-\index{fprintfH@{fprintfH}!yiffy\_ui.h@{yiffy\_ui.h}}
-\doxysubsubsection{\texorpdfstring{fprintfH()}{fprintfH()}}
-{\footnotesize\ttfamily void fprintfH (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{file,  }\item[{char $\ast$}]{content }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{yiffy__ui_8h_a0f7af6e000e695b753605abc470acc30}\label{yiffy__ui_8h_a0f7af6e000e695b753605abc470acc30}} 
+\index{yiffy\_ui.h@{yiffy\_ui.h}!create\_controls\_window@{create\_controls\_window}}
+\index{create\_controls\_window@{create\_controls\_window}!yiffy\_ui.h@{yiffy\_ui.h}}
+\doxysubsubsection{\texorpdfstring{create\_controls\_window()}{create\_controls\_window()}}
+{\footnotesize\ttfamily void create\+\_\+controls\+\_\+window (\begin{DoxyParamCaption}\item[{WINDOW $\ast$}]{win }\end{DoxyParamCaption})}
 
 
 
-Create the text header. 
+Creates the controls section of search tui. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em file} & This is used for the file output, stdout, stderr or any file can be used. \\
-\hline
-{\em content} & This is used to specify the content to write. \\
+{\em win} & Manipulates the window to draw the controls section. \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line 19 of file fprintf\+H.\+c.
+Definition at line 18 of file create\+\_\+controls\+\_\+window.\+c.
+
+\mbox{\Hypertarget{yiffy__ui_8h_adb4aea0b1ad265d6ccda5999d1395bf4}\label{yiffy__ui_8h_adb4aea0b1ad265d6ccda5999d1395bf4}} 
+\index{yiffy\_ui.h@{yiffy\_ui.h}!create\_info\_window@{create\_info\_window}}
+\index{create\_info\_window@{create\_info\_window}!yiffy\_ui.h@{yiffy\_ui.h}}
+\doxysubsubsection{\texorpdfstring{create\_info\_window()}{create\_info\_window()}}
+{\footnotesize\ttfamily void create\+\_\+info\+\_\+window (\begin{DoxyParamCaption}\item[{WINDOW $\ast$}]{win }\end{DoxyParamCaption})}
+
+
+
+Creates the info section of search tui. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em win} & Manipulates the window to draw the info section. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 18 of file create\+\_\+info\+\_\+window.\+c.
+
+\mbox{\Hypertarget{yiffy__ui_8h_abe44dcce914b12aff1b6b4ac48aca19a}\label{yiffy__ui_8h_abe44dcce914b12aff1b6b4ac48aca19a}} 
+\index{yiffy\_ui.h@{yiffy\_ui.h}!create\_posts\_window@{create\_posts\_window}}
+\index{create\_posts\_window@{create\_posts\_window}!yiffy\_ui.h@{yiffy\_ui.h}}
+\doxysubsubsection{\texorpdfstring{create\_posts\_window()}{create\_posts\_window()}}
+{\footnotesize\ttfamily void create\+\_\+posts\+\_\+window (\begin{DoxyParamCaption}\item[{WINDOW $\ast$}]{win }\end{DoxyParamCaption})}
+
+
+
+Creates the posts section of search tui. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em win} & Manipulates the window to draw the posts section. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 18 of file create\+\_\+posts\+\_\+window.\+c.
+
+\mbox{\Hypertarget{yiffy__ui_8h_a41067cc095ee5182e7055f6a6dbdb25b}\label{yiffy__ui_8h_a41067cc095ee5182e7055f6a6dbdb25b}} 
+\index{yiffy\_ui.h@{yiffy\_ui.h}!create\_top\_window@{create\_top\_window}}
+\index{create\_top\_window@{create\_top\_window}!yiffy\_ui.h@{yiffy\_ui.h}}
+\doxysubsubsection{\texorpdfstring{create\_top\_window()}{create\_top\_window()}}
+{\footnotesize\ttfamily void create\+\_\+top\+\_\+window (\begin{DoxyParamCaption}\item[{WINDOW $\ast$}]{win }\end{DoxyParamCaption})}
+
+
+
+Creates the top header of search tui. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em win} & Manipulates the window to draw the top header. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 18 of file create\+\_\+top\+\_\+window.\+c.
 

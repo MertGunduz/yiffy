@@ -1,11 +1,8 @@
 <map id="src/ui/yiffy_ui.h" name="src/ui/yiffy_ui.h">
-<area shape="rect" id="node1" title="This header file is used to manage ncurses&#45;based TUIs (terminal&#45;user&#45;interfaces) for yiffy functions." alt="" coords="564,5,685,32"/>
-<area shape="rect" id="node2" href="$d5/dff/yiffy__text__menus_8h.html" title="This header file is used to generate text based information menus for yiffy." alt="" coords="466,80,621,121"/>
-<area shape="rect" id="node9" href="$dd/d16/fprintfH_8c.html" title="This file is used to create the text header." alt="" coords="645,87,767,114"/>
-<area shape="rect" id="node3" href="$dc/dc0/yiffy_8c.html" title="This is the main file and used to handle the arguments and execute the program by using external func..." alt="" coords="5,169,116,196"/>
-<area shape="rect" id="node4" href="$dc/d3b/show__config_8c.html" title="This file is used to show current configurations of the app to the user." alt="" coords="141,169,325,196"/>
-<area shape="rect" id="node5" href="$d4/d65/show__github_8c.html" title="This file is used to show project github URL, current issues to the user." alt="" coords="349,169,535,196"/>
-<area shape="rect" id="node6" href="$de/d0c/show__help_8c.html" title="This file is used to show general help to the user by showing how to use the cli options." alt="" coords="559,169,733,196"/>
-<area shape="rect" id="node7" href="$de/d22/show__version_8c.html" title="This file is used to show version of the app to the user." alt="" coords="757,169,951,196"/>
-<area shape="rect" id="node8" href="$d6/dd1/show__website_8c.html" title="This file is used to show yiffy website to the user." alt="" coords="975,169,1171,196"/>
+<area shape="rect" id="node1" title=" " alt="" coords="369,5,490,32"/>
+<area shape="rect" id="node2" href="$dc/dec/search_8c.html" title="This file is used to interact with the terminal user interface version of yiffy, it provides download..." alt="" coords="5,87,152,114"/>
+<area shape="rect" id="node3" href="$d6/d24/create__controls__window_8c.html" title="This file is used to create the controls section of search tui." alt="" coords="177,80,338,121"/>
+<area shape="rect" id="node4" href="$d7/dc2/create__info__window_8c.html" title="This file is used to create the info section of search tui." alt="" coords="362,80,497,121"/>
+<area shape="rect" id="node5" href="$d3/d45/create__posts__window_8c.html" title="This file is used to create the posts section of search tui." alt="" coords="521,80,665,121"/>
+<area shape="rect" id="node6" href="$dd/d93/create__top__window_8c.html" title="This file is used to create the top header of search tui." alt="" coords="689,87,887,114"/>
 </map>

@@ -1,5 +1,8 @@
 <map id="src/ui/yiffy_ui.h" name="src/ui/yiffy_ui.h">
-<area shape="rect" id="node1" title="This header file is used to manage ncurses&#45;based TUIs (terminal&#45;user&#45;interfaces) for yiffy functions." alt="" coords="25,5,146,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,80,72,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="97,80,167,107"/>
+<area shape="rect" id="node1" title=" " alt="" coords="88,5,209,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,80,89,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="113,80,184,107"/>
+<area shape="rect" id="node4" href="$d0/de2/yiffy__messages_8h.html" title="This file is used to handle error and information messages." alt="" coords="208,80,388,107"/>
+<area shape="rect" id="node5" title=" " alt="" coords="218,155,285,181"/>
+<area shape="rect" id="node6" title=" " alt="" coords="309,155,380,181"/>
 </map>

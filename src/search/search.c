@@ -9,6 +9,7 @@
 */
 
 #include "yiffy_search.h"
+#include "../ui/yiffy_ui.h"
 
 WINDOW *top_window, *posts_window, *info_window, *controls_window;
 
