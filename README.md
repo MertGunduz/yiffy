@@ -1,6 +1,10 @@
+<div align="center">
+  
 ![yiffy logo](https://github.com/MertGunduz/yiffy/assets/65850970/148fe232-6989-4c8f-b081-6c31126fa4b9) 
 
-# Yiffy: Image Search and Download Terminal App
+</div>
+
+# Yiffy: E621/E926 Search and Download Terminal App
 
 Yiffy is a terminal application designed to search, download, and fetch images from e621 and e926.
 
