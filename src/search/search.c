@@ -14,6 +14,7 @@ static void create_top_window(WINDOW *win);
 static void create_posts_window(WINDOW *win);
 static void create_info_window(WINDOW *win);
 static void create_controls_window(WINDOW *win);
+static void controls(WINDOW *win1, WINDOW *win2, WINDOW *win3, WINDOW *win4);
 
 void search(char *tags)
 {
@@ -30,6 +31,7 @@ void search(char *tags)
         exit(EXIT_FAILURE);
     }
 
+    /* Creating the main color scheme. */
     init_pair(1, COLOR_BLACK, COLOR_WHITE);
 
     /* Windows for the ncurses TUI. */
@@ -38,33 +40,14 @@ void search(char *tags)
     WINDOW *info_window = newwin(7, COLS - 1, 13 + (LINES - 23), 1);
     WINDOW *controls_window = newwin(3, COLS - 1, 20 + (LINES - 23), 1);
 
-    // Redraw the windows
+    /* Draw the windows */
     create_top_window(top_window);
     create_posts_window(posts_window);
     create_info_window(info_window);
     create_controls_window(controls_window);
     
-    int ch;
-    do 
-    {
-        if (ch == KEY_RESIZE)
-        {
-            refresh(); // Refresh to get the updated values of LINES and COLS
-            clear();   // Clear the screen
-
-            // Recreate the windows with updated sizes and positions
-            top_window = newwin(3, COLS - 1, 0, 1);
-            posts_window = newwin(10 + (LINES - 23), COLS - 1, 3, 1);
-            info_window = newwin(7, COLS - 1, 13 + (LINES - 23), 1);
-            controls_window = newwin(3, COLS - 1, 20 + (LINES - 23), 1);
-
-            // Redraw the windows
-            create_top_window(top_window);
-            create_posts_window(posts_window);
-            create_info_window(info_window);
-            create_controls_window(controls_window);
-        }
-    } while ((ch = getch()) != 'q');
+    /* The main control system of yiffy. */
+    controls(top_window, posts_window, info_window, controls_window);
 
     // Close the search app.
     endwin();
@@ -84,8 +67,10 @@ static void create_top_window(WINDOW *win)
     wattroff(win, A_BOLD);
 
     mvwprintw(win, 0, 1, "YIFFY");
-    mvwprintw(win, 0, COLS - 23, "PRESS CTRL+H FOR HELP");
-    mvwprintw(win, 1, 2, "- E621.NET - NSFW SEARCH ON");
+    
+    wattron(win, A_STANDOUT);
+    mvwprintw(win, 1, 1, " E621.NET - NSFW - ASCII-IMAGE-CONVERTER ");
+    wattroff(win, A_STANDOUT);
 
     refresh();
     wrefresh(win);
@@ -144,6 +129,62 @@ static void create_controls_window(WINDOW *win)
 
     mvwprintw(win, 0, 1, "CONTROLS");
 
+    wmove(win, 1, 1);
+
+    wattron(win, A_STANDOUT);
+    wprintw(win, " S [SHOW] ");
+    wattroff(win, A_STANDOUT);
+
+    wprintw(win, "  ");
+
+    wattron(win, A_STANDOUT);
+    wprintw(win, " D [DOWNLOAD] ");
+    wattroff(win, A_STANDOUT);
+
+    wprintw(win, "  ");
+
+
+    wattron(win, A_STANDOUT);
+    wprintw(win, " P [PREV] ");
+    wattroff(win, A_STANDOUT);
+
+    wprintw(win, "  ");
+
+    wattron(win, A_STANDOUT);
+    wprintw(win, " N [NEXT] ");
+    wattroff(win, A_STANDOUT);
+
+    wprintw(win, "  ");
+
+    wattron(win, A_STANDOUT);
+    wprintw(win, " Q [QUIT] ");
+    wattroff(win, A_STANDOUT);
+
     refresh();
     wrefresh(win);
+}
+
+static void controls(WINDOW *win1, WINDOW *win2, WINDOW *win3, WINDOW *win4)
+{
+    int ch;
+    do 
+    {
+        if (ch == KEY_RESIZE)
+        {
+            refresh(); // Refresh to get the updated values of LINES and COLS
+            clear();   // Clear the screen
+
+            // Recreate the windows with updated sizes and positions
+            win1 = newwin(3, COLS - 1, 0, 1);
+            win2 = newwin(10 + (LINES - 23), COLS - 1, 3, 1);
+            win3 = newwin(7, COLS - 1, 13 + (LINES - 23), 1);
+            win4 = newwin(3, COLS - 1, 20 + (LINES - 23), 1);
+
+            // Redraw the windows
+            create_top_window(win1);
+            create_posts_window(win2);
+            create_info_window(win3);
+            create_controls_window(win4);
+        }
+    } while ((ch = getch()) != 'q');
 }
