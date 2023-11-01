@@ -9,12 +9,12 @@
 
 # Dependencies needed for Arch based distro's
 - gcc (core)
+- make (core)
 - base-devel (core)
-- ascii-image-converter (AUR)
 - aria2 (extra)
 - cmake (extra)
-- make (core)
 - ncurses (extra, multililib repo should be enabled)
+- ascii-image-converter (AUR)
 
 # Building on linux
 ```
