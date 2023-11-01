@@ -46,12 +46,12 @@ sudo cmake --install .
 
 ### Search and TUI Interface
 - `yiffy search tui argument`
-  - `--search "tag1 tag2"`: Opens a TUI interface.
+  - `--search "tag1+tag2"`: Opens a TUI interface.
 
 ### API Fetch and Download
 - `yiffy api fetch arguments`
-  - `--fetch "tag1 tag2"`: Fetches URLs.
-  - `--dfetch "tag1 tag2"`: Fetches URLs and downloads.
+  - `--fetch "tag1+tag2"`: Fetches URLs.
+  - `--dfetch "tag1+tag2"`: Fetches URLs and downloads.
 
 ### Information and Help Menu
 - `yiffy information menu arguments`
