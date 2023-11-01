@@ -1,3 +1,9 @@
+<img width="74" align="left" alt="commision_unix" src="https://github.com/MertGunduz/yiffy/assets/65850970/148fe232-6989-4c8f-b081-6c31126fa4b9">
+
+# yiffy
+
+yiffy is a terminal app for searching/downloading/fetching images from e621/e926 <br>
+
 # Dependencies needed for Debian based distro's
 - gcc
 - build-essential
