@@ -13,6 +13,7 @@
 static void create_top_window(WINDOW *win);
 static void create_posts_window(WINDOW *win);
 static void create_info_window(WINDOW *win);
+static void create_controls_window(WINDOW *win);
 
 void search(char *tags)
 {
@@ -32,15 +33,17 @@ void search(char *tags)
     /* Create the color. */
     init_pair(1, COLOR_BLACK, COLOR_WHITE);
 
-    /* Top window part of TUI. */
+    /* Windows for the ncurses TUI. */
     WINDOW *top_window = newwin(3, COLS -1, 0, 1);
-    WINDOW *posts_window = newwin(20, COLS - 1, 3, 1);
-    WINDOW *info_window = newwin(7, COLS - 1, 23, 1);
+    WINDOW *posts_window = newwin(10 + (LINES - 23), COLS - 1, 3, 1);
+    WINDOW *info_window = newwin(7, COLS - 1, 13 + (LINES - 23), 1);
+    WINDOW *controls_window = newwin(3, COLS - 1, 20 + (LINES - 23), 1);
 
     /* Create the terminal user interface by calling functions. */
     create_top_window(top_window);
     create_posts_window(posts_window);
     create_info_window(info_window);
+    create_controls_window(controls_window);
 
     /* Close the search app. */
     getch();
@@ -89,7 +92,6 @@ static void create_posts_window(WINDOW *win)
 
 static void create_info_window(WINDOW *win)
 {
-
     if (win == NULL)
     {
         window_create_error_msg();
@@ -102,6 +104,25 @@ static void create_info_window(WINDOW *win)
     wattroff(win, A_BOLD);
 
     mvwprintw(win, 0, 1, "INFORMATION");
+
+    refresh();
+    wrefresh(win);
+}
+
+static void create_controls_window(WINDOW *win)
+{
+    if (win == NULL)
+    {
+        window_create_error_msg();
+        endwin();
+        exit(EXIT_FAILURE);
+    }
+
+    wattron(win, A_BOLD);
+    box(win, 0, 0);
+    wattroff(win, A_BOLD);
+
+    mvwprintw(win, 0, 1, "CONTROLS");
 
     refresh();
     wrefresh(win);
