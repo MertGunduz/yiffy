@@ -28,7 +28,19 @@ Yiffy is a terminal application designed to search, download, and fetch images f
 - `ncurses` (extra, multilib repo should be enabled)
 - `ascii-image-converter` (AUR)
 
-## Building Yiffy on Linux
+## Installatiom
+
+```
+wget https://github.com/MertGunduz/yiffy/blob/main/install.sh
+```
+```
+sudo chmod +x install.sh
+```
+```
+./install.sh
+```
+
+## Building manually Yiffy on Linux
 
 Follow these commands to build Yiffy on a Linux system:
 
