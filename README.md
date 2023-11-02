@@ -42,7 +42,7 @@ Please select your Linux distribution for specific installation instructions:
     <td align="center" width="96">
       <a href="install/debian.MD">
         <img src="https://github.com/MertGunduz/yiffy/assets/65850970/140887f1-3ae3-4f96-a039-fa98f8a231de" width="56" height="56" alt="Debian, Ubuntu">
-        <br>Debian, Ubuntu
+        <br>Debian
       </a>
     </td>
     <td align="center" width="96">
