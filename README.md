@@ -41,23 +41,23 @@ Please select your Linux distribution for specific installation instructions:
   <tr>
     <td align="center" width="96">
         <img src="https://github.com/MertGunduz/yiffy/assets/65850970/140887f1-3ae3-4f96-a039-fa98f8a231de" width="56" height="56" alt="Debian, Ubuntu">
-        <br><a href="install/debian.MD">Debian</a>
+        <br><a href="install/debian.sh">Debian</a>
     </td>
     <td align="center" width="96">
         <img src="https://github.com/MertGunduz/yiffy/assets/65850970/20f4135f-422f-471f-a825-491c603e03b5" width="56" height="56" alt="Fedora">
-        <br><a href="install/fedora.MD">Fedora</a>
+        <br><a href="install/fedora.sh">Fedora</a>
     </td>
     <td align="center" width="96">
         <img src="https://github.com/MertGunduz/yiffy/assets/65850970/7feb9dd9-7190-48ca-8cbd-2acd5160bc23" width="56" height="56" alt="Arch Linux">
-        <br><a href="install/arch.MD">Arch</a>
+        <br><a href="install/arch.sh">Arch</a>
     </td>
     <td align="center" width="96">
         <img src="https://github.com/MertGunduz/yiffy/assets/65850970/8ef75ca9-b821-4918-94f3-5ac95465e2bd" width="56" height="56" alt="Gentoo">
-        <br><a href="install/gentoo.MD">Gentoo</a>
+        <br><a href="install/gentoo.sh">Gentoo</a>
     </td>
     <td align="center" width="96">
         <img src="https://github.com/MertGunduz/yiffy/assets/65850970/66dea202-b543-48b7-9d7e-9d4dda909060" width="56" height="56" alt="FreeBSD">
-       <br><a href="install/bsd.MD">FreeBSD</a>
+       <br><a href="install/bsd.sh">FreeBSD</a>
     </td>
   </tr>
 </table>
@@ -108,6 +108,6 @@ Manage your data within the Yiffy application:
 Adjust settings and configurations as per your preference:
 - `yiffy configuration and settings arguments`: 
   - `--nsfw on/off`: Toggle NSFW (Not Safe for Work) and SFW (Safe For Work) content.
-  - `--wgen on/off`: Switch between WGEN (a specific setting or feature) and its alternatives.
+  - `--wgen on/off`: Switch between WGEN (a website building feature) for search.c and dfetch/fetch.c.
 
 The above documentation provides a comprehensive and clear guide to Yiffy, ensuring a seamless and enjoyable user experience.
