@@ -13,6 +13,7 @@
 
 #include <ncurses.h>
 #include <stdlib.h>
+#include <time.h>
 
 #include "../msg/yiffy_messages.h"
 
@@ -32,5 +33,6 @@ void create_top_window(WINDOW *win);
 void create_posts_window(WINDOW *win);
 void create_info_window(WINDOW *win);
 void create_controls_window(WINDOW *win);
+void search(char *tags);
 
 #endif /* YIFFY_UI_H */

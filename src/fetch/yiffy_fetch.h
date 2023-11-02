@@ -11,7 +11,6 @@
 #ifndef YIFFY_SEARCH_H
 #define YIFFY_SEARCH_H
 
-#include <ncurses.h>
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
@@ -27,6 +26,5 @@
 
 void fetch(char *tags, int page, char *command);
 void aria2_download(char *tags, int page, bool is_nsfw, int lim);
-void search(char *tags);
 
 #endif /* YIFFY_SEARCH_H */

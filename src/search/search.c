@@ -8,8 +8,9 @@
  * @date 31/10/2023
 */
 
-#include "yiffy_search.h"
-#include "../ui/yiffy_ui.h"
+#include "yiffy_ui.h"
+#include "../fetch/yiffy_fetch.h"
+
 
 WINDOW *top_window, *posts_window, *info_window, *controls_window;
 
@@ -31,7 +32,7 @@ void search(char *tags)
     create_ui();
 
     /* API request to e621/e926. */
-    aria2_download(tags, 1, true, POSTS_WINDOW_HEIGHT);
+    aria2_download(tags, 1, true, 60);
 
     /* Put the posts to the user interface. */
     show_posts(tags, posts_window);

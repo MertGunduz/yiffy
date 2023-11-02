@@ -5,7 +5,7 @@ add_executable(yiffy yiffy.c)
 find_package(Curses REQUIRED)
 
 # LINK THE LIBRARIES
-target_link_libraries(yiffy yiffy-conf yiffy-search yiffy-ui yiffy-text-menus yiffy-messages cjson ${CURSES_LIBRARIES})
+target_link_libraries(yiffy yiffy-conf yiffy-fetch yiffy-ui yiffy-text-menus yiffy-messages cjson ${CURSES_LIBRARIES})
 
 # CREATE DIRECTORY
 set(dest_path "$ENV{HOME}/.yiffy")

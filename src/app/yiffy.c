@@ -18,7 +18,8 @@
 
 #include "../cjson/cjson.h"
 #include "../msg/yiffy_messages.h"
-#include "../search/yiffy_search.h"
+#include "../search/yiffy_ui.h"
+#include "../fetch/yiffy_fetch.h"
 #include "../menus/yiffy_text_menus.h"
 #include "../conf/yiffy_conf.h"
 
