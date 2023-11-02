@@ -110,5 +110,3 @@ Adjust settings and configurations as per your preference:
 - `yiffy configuration and settings arguments`: 
   - `--nsfw on/off`: Toggle NSFW (Not Safe for Work) and SFW (Safe For Work) content.
   - `--wgen on/off`: Switch between WGEN (a website building feature) for search.c and dfetch/fetch.c.
-
-The above documentation provides a comprehensive and clear guide to Yiffy, ensuring a seamless and enjoyable user experience.
