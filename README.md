@@ -44,11 +44,11 @@ Please select your Linux distribution for specific installation instructions:
         <br><a href="install/debian.MD">Debian</a>
     </td>
     <td align="center" width="96">
-        <img src="https://github.com/MertGunduz/yiffy/assets/65850970/7feb9dd9-7190-48ca-8cbd-2acd5160bc23" width="56" height="56" alt="Fedora">
+        <img src="https://github.com/MertGunduz/yiffy/assets/65850970/20f4135f-422f-471f-a825-491c603e03b5" width="56" height="56" alt="Fedora">
         <br><a href="install/fedora.MD">Fedora</a>
     </td>
     <td align="center" width="96">
-        <img src="https://github.com/MertGunduz/yiffy/assets/65850970/20f4135f-422f-471f-a825-491c603e03b5" width="56" height="56" alt="Arch Linux">
+        <img src="https://github.com/MertGunduz/yiffy/assets/65850970/7feb9dd9-7190-48ca-8cbd-2acd5160bc23" width="56" height="56" alt="Arch Linux">
         <br><a href="install/arch.MD">Arch</a>
     </td>
     <td align="center" width="96">
