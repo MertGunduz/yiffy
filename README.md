@@ -33,7 +33,7 @@
 - `tiv`: [Terminal ImageViewer](https://github.com/stefanhaustein/TerminalImageViewer), a tool to display images in the terminal.
 - `timg`: [Terminal Image and Video Viewer](https://github.com/hzeller/timg), a tool to display images/videos in the terminal.
 
-## Installation Guide
+## Installation Scripts
 
 Please select your Linux distribution for specific installation instructions:
 
