@@ -22,7 +22,6 @@
 ## Dependencies
 
 ### Mandatory Dependencies:
-Ensure the optimal performance of Yiffy by installing the following packages:
 - `gcc`: The [GNU Compiler Collection](https://gcc.gnu.org/)
 - `ascii-image-converter`: Convert images to ASCII art with this [tool](https://github.com/TheZoraiz/ascii-image-converter)
 - `aria2`: A versatile [command-line download utility](https://aria2.github.io/)
