@@ -6,12 +6,10 @@
 
 # Yiffy: E621/E926 Search and Download TUI App
 
-**Yiffy** is a basic Text User Interface (TUI) application designed to operate the searching, downloading, and retrieval of images from [e621](https://e621.net/) and [e926](https://e926.net/), providing a user-friendly experience.
+**Yiffy** is a basic Text User Interface (TUI) application developed to provide the process of searching, fetching, and downloading images from [e621](https://e621.net/) and [e926](https://e926.net/).
 
 ## Table of Contents
 - [Dependencies](#dependencies)
-  - [Debian-Based Linux Distributions](#for-debian-based-linux-distributions)
-  - [Arch-Based Linux Distributions](#for-arch-based-linux-distributions)
 - [Installation Guide](#installation-guide)
 - [Manual Build Instructions for Yiffy on Linux](#manual-build-instructions-for-yiffy-on-linux)
 - [Comprehensive Guide to Yiffy Commands](#comprehensive-guide-to-yiffy-commands)
@@ -23,37 +21,33 @@
 
 ## Dependencies
 
-### For Debian-Based Linux Distributions:
+### Mandatory Dependencies:
 Ensure the optimal performance of Yiffy by installing the following packages:
 - `gcc`: The [GNU Compiler Collection](https://gcc.gnu.org/)
-- `build-essential`: A meta-package for building Debian packages
 - `ascii-image-converter`: Convert images to ASCII art with this [tool](https://github.com/TheZoraiz/ascii-image-converter)
 - `aria2`: A versatile [command-line download utility](https://aria2.github.io/)
 - `cmake`: Cross-platform tools for [software building](https://cmake.org/)
 - `make`: A utility to maintain groups of programs
 - `libncurses-dev`: Developer’s libraries for [ncurses](https://invisible-island.net/ncurses/ncurses.html)
 
-### For Arch-Based Linux Distributions:
-Ensure the following packages are installed:
-- Core Packages: `gcc`, `make`, `base-devel`
-- Extra Packages: `aria2`, `cmake`, `ncurses` (Enable the multilib repository for `ncurses`)
-- AUR (Arch User Repository): [`ascii-image-converter`](https://aur.archlinux.org/packages/ascii-image-converter)
+### Optional Dependencies:
+- `tiv`: [Terminal ImageViewer](https://github.com/stefanhaustein/TerminalImageViewer), a tool to display images in the terminal.
 
 ## Installation Guide
 
-Execute these commands in your terminal to get started with Yiffy:
+Please select your Linux distribution for specific installation instructions:
 
-```text
-wget https://github.com/MertGunduz/yiffy/blob/main/install.sh
-sudo chmod +x install.sh
-./install.sh
-```
+- [Debian, Ubuntu](install/debian.MD)
+- [Fedora](install/fedora.MD)
+- [Arch Linux](install/arch.MD)
+- [Gentoo](install/gentoo.MD)
+- [FreeBSD](install/freebsd.MD)
 
 ## Manual Build Instructions for Yiffy on Linux
 
 Follow these steps to compile and install Yiffy manually:
 
-```text
+```sh
 git clone https://github.com/MertGunduz/yiffy.git
 cd yiffy
 mkdir build && cd build
@@ -95,3 +89,5 @@ Adjust settings and configurations as per your preference:
 - `yiffy configuration and settings arguments`: 
   - `--nsfw on/off`: Toggle NSFW (Not Safe for Work) and SFW (Safe For Work) content.
   - `--wgen on/off`: Switch between WGEN (a specific setting or feature) and its alternatives.
+
+The above documentation provides a comprehensive and clear guide to Yiffy, ensuring a seamless and enjoyable user experience.
