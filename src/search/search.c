@@ -8,7 +8,7 @@
  * @date 31/10/2023
 */
 
-#include "yiffy_ui.h"
+#include "yiffy_search.h"
 #include "../fetch/yiffy_fetch.h"
 
 

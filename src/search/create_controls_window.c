@@ -8,7 +8,7 @@
  * @date 01/11/2023
 */
 
-#include "yiffy_ui.h"
+#include "yiffy_search.h"
 
 /**
  * @brief Creates the controls section of search tui.
