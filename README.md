@@ -41,31 +41,31 @@ Please select your Linux distribution for specific installation instructions:
   <tr>
     <td align="center" width="96">
       <a href="install/debian.MD">
-        <img src="https://github.com/MertGunduz/yiffy/assets/65850970/140887f1-3ae3-4f96-a039-fa98f8a231de" width="64" height="56" alt="Debian, Ubuntu">
+        <img src="https://github.com/MertGunduz/yiffy/assets/65850970/140887f1-3ae3-4f96-a039-fa98f8a231de" width="56" height="56" alt="Debian, Ubuntu">
         <br>Debian, Ubuntu
       </a>
     </td>
     <td align="center" width="96">
       <a href="install/fedora.MD">
-        <img src="https://github.com/MertGunduz/yiffy/assets/65850970/7feb9dd9-7190-48ca-8cbd-2acd5160bc23" width="64" height="56" alt="Fedora">
+        <img src="https://github.com/MertGunduz/yiffy/assets/65850970/7feb9dd9-7190-48ca-8cbd-2acd5160bc23" width="56" height="56" alt="Fedora">
         <br>Fedora
       </a>
     </td>
     <td align="center" width="96">
       <a href="install/arch.MD">
-        <img src="https://github.com/MertGunduz/yiffy/assets/65850970/20f4135f-422f-471f-a825-491c603e03b5" width="64" height="56" alt="Arch Linux">
+        <img src="https://github.com/MertGunduz/yiffy/assets/65850970/20f4135f-422f-471f-a825-491c603e03b5" width="56" height="56" alt="Arch Linux">
         <br>Arch Linux
       </a>
     </td>
     <td align="center" width="96">
       <a href="install/gentoo.MD">
-        <img src="https://github.com/MertGunduz/yiffy/assets/65850970/8ef75ca9-b821-4918-94f3-5ac95465e2bd" width="64" height="56" alt="Gentoo">
+        <img src="https://github.com/MertGunduz/yiffy/assets/65850970/8ef75ca9-b821-4918-94f3-5ac95465e2bd" width="56" height="56" alt="Gentoo">
         <br>Gentoo
       </a>
     </td>
     <td align="center" width="96">
       <a href="install/freebsd.MD">
-        <img src="https://github.com/MertGunduz/yiffy/assets/65850970/66dea202-b543-48b7-9d7e-9d4dda909060" width="64" height="56" alt="FreeBSD">
+        <img src="https://github.com/MertGunduz/yiffy/assets/65850970/66dea202-b543-48b7-9d7e-9d4dda909060" width="56" height="56" alt="FreeBSD">
         <br>FreeBSD
       </a>
     </td>
