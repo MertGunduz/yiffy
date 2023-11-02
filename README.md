@@ -63,7 +63,7 @@ Please select your Linux distribution for specific installation instructions:
 </table>
 
 
-## Manual Build Instructions for Yiffy on Linux
+## Manual Build Instructions
 
 Follow these steps to compile and install Yiffy manually:
 
