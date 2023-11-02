@@ -68,7 +68,7 @@ Please select your Linux distribution for specific installation instructions:
 
 Follow these steps to compile and install Yiffy manually:
 
-```sh
+```text
 git clone https://github.com/MertGunduz/yiffy.git
 cd yiffy
 mkdir build && cd build
