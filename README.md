@@ -77,7 +77,7 @@ make
 sudo cmake --install .
 ```
 
-## Comprehensive Guide to Yiffy Commands
+## Guide to Yiffy Commands
 
 ### Search and TUI (Text User Interface)
 Interact with the application through a user-friendly interface:
