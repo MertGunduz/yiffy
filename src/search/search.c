@@ -18,6 +18,12 @@
 #define MAX_FILE_PATH 256   ///< This macro is used to set the default size for getting the home directory file.
 #define MAX_BUFFER_SIZE 512 ///< This macro is used to set the default size for reading the config file
 
+typedef struct control
+{
+    char *control_full_name;
+    char control_character;
+} control;
+
 static void init_ncurses();
 
 void search(char *tags)
@@ -141,9 +147,18 @@ void search(char *tags)
     refresh();
     wrefresh(info_panel);
 
-    /******************************************************************/
-    /* Controls panel, shows information about the configurations. */
-    /******************************************************************/
+    /***************************************/
+    /* Controls panel, shows the controls. */
+    /***************************************/
+
+    control controls[] = 
+    {
+        {"SHOW", 'S'},
+        {"DOWNLOAD", 'D'},
+        {"PREV", 'P'},
+        {"NEXT", 'N'},
+        {"QUIT", 'Q'}
+    };
 
     /* Create info window and apply box to give it borders. */
     WINDOW *controls_panel = newwin(3, COLS, 9 + posts_panel_height, 0);
@@ -155,9 +170,29 @@ void search(char *tags)
     /* The logo in uppercase. */
     wprintw(controls_panel, "CONTROLS");
 
+    /* Move to the center line of controls window. */
+    wmove(controls_panel, 1, 1);
+
+    /* Write the controls. */
+    for (int i = 0; i < sizeof(controls) / sizeof(controls[0]); i++)
+    {
+        wattron(controls_panel, A_STANDOUT);
+        wprintw(controls_panel, " %c [%s] ", controls[i].control_character, controls[i].control_full_name);
+        wattroff(controls_panel, A_STANDOUT);
+        
+        wprintw(controls_panel, "  ");
+    }
+
     /* Refreshing the panel to show the updates to user. */
     refresh();
     wrefresh(controls_panel);
+
+    /****************************************************************************/
+    /* API response/request part, downloads JSON file and decodes-fetches data. */
+    /****************************************************************************/
+
+    /* Download the API response (posts.json). */
+    aria2_download(tags, 1, is_nsfw, posts_panel_height);
 
     getch();
     endwin();
