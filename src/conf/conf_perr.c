@@ -1,9 +1,9 @@
 /**
- * @file conf_wgen.c
+ * @file conf_perr.c
  * 
- * @brief This file is used to configure the wgen system. If on, it basically generates a collection website.
+ * @brief This file is used to configure the perr system. If on, it basically generates a collection website.
  * 
- * This file goes to the /home/user/.yiffy/yiffy-config.txt and sets the wgen function to on or off depending the option.
+ * This file goes to the /home/user/.yiffy/yiffy-config.txt and sets the perr function to on or off depending the option.
  * 
  * @date 05/09/2023
  * 
@@ -16,23 +16,23 @@
 #include "yiffy_conf.h"
 
 /**
- * @brief Configures the wgen system. If on, it basically generates a collection website.
+ * @brief Configures the perr system. If on, it basically generates a collection website.
  * 
  * @param argv This is the value that stores on/off.
 */
-void conf_wgen(char *argv)
+void conf_perr(char *argv)
 {
     char file_path[MAX_FILE_PATH];
     char buffer[MAX_BUFFER_SIZE];
 
     /* Operation boolean, used to check if it exists in the current configuration or not. */
-    bool is_wgen;
+    bool is_perr;
 
-    /* To write or delete the configuration setting. Keyword (wgen) has got 4 characters. */
+    /* To write or delete the configuration setting. Keyword (perr) has got 4 characters. */
     int option_size = 4;
 
     /* To set the index of the option. */
-    int wgen_index;
+    int perr_index;
 
     /* Get the home directory of the current user. */
     char *home_directory = getenv("HOME");
@@ -63,23 +63,23 @@ void conf_wgen(char *argv)
     /* Get the buffer size. */
     int buffer_size = strlen(buffer); 
 
-    /* Check if the wgen string exists. */
-    char *string = strstr(buffer, "wgen");
+    /* Check if the perr string exists. */
+    char *string = strstr(buffer, "perr");
     
     if (string != NULL)
     {
-        /* Get the index of the wgen token. */
-        wgen_index = string - buffer;
+        /* Get the index of the perr token. */
+        perr_index = string - buffer;
 
         /* Set the boolean to true to make operations. */
-        is_wgen = true;
+        is_perr = true;
     }
 
-    if (strcmp(argv, "on") == 0 && is_wgen)
+    if (strcmp(argv, "on") == 0 && is_perr)
     {
-        already_conf_msg("wgen", argv);
+        already_conf_msg("perr", argv);
     }
-    else if (strcmp(argv, "on") == 0 && !is_wgen)
+    else if (strcmp(argv, "on") == 0 && !is_perr)
     {
         FILE *conf_append_file = fopen(file_path, "a");
 
@@ -89,17 +89,17 @@ void conf_wgen(char *argv)
             exit(EXIT_FAILURE);
         }
 
-        fprintf(conf_append_file, ":wgen");
+        fprintf(conf_append_file, ":perr");
 
         fclose(conf_append_file);
 
-        conf_successful_msg("wgen", argv);
+        conf_successful_msg("perr", argv);
     }
-    else if (strcmp(argv, "off") == 0 && !is_wgen)
+    else if (strcmp(argv, "off") == 0 && !is_perr)
     {
-        already_conf_msg("wgen", argv);
+        already_conf_msg("perr", argv);
     }
-    else if (strcmp(argv, "off") == 0 && is_wgen)
+    else if (strcmp(argv, "off") == 0 && is_perr)
     {
         FILE *conf_write_file = fopen(file_path, "w");
 
@@ -111,14 +111,14 @@ void conf_wgen(char *argv)
 
         for (int i = 0; i < buffer_size; i++)
         {
-            if (wgen_index == 0 && i == wgen_index)
+            if (perr_index == 0 && i == perr_index)
             {
                 i = i + option_size;
                 continue;
             }
             else
             {
-                if (i == wgen_index - 1)
+                if (i == perr_index - 1)
                 {
                     i = i + option_size;
                     continue;
@@ -130,6 +130,6 @@ void conf_wgen(char *argv)
 
         fclose(conf_write_file);
 
-        conf_successful_msg("wgen", argv);
+        conf_successful_msg("perr", argv);
     }
 }
