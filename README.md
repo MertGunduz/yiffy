@@ -10,9 +10,9 @@
 
 ## Table of Contents
 - [Dependencies](#dependencies)
-- [Installation Guide](#installation-guide)
-- [Manual Build Instructions for Yiffy on Linux](#manual-build-instructions-for-yiffy-on-linux)
-- [Comprehensive Guide to Yiffy Commands](#comprehensive-guide-to-yiffy-commands)
+- [Installation Scripts](#installation-scripts)
+- [Manual Build Instructions](#manual-build-instructions)
+- [Guide to Yiffy Commands](#guide-to-yiffy-commands)
   - [Search and TUI (Text User Interface)](#search-and-tui-text-user-interface)
   - [API Fetch and Download](#api-fetch-and-download)
   - [Information and Help](#information-and-help)
