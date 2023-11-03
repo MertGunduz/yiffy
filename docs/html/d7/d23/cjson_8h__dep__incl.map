@@ -2,8 +2,8 @@
 <area shape="rect" id="node1" title="This file is used as a header file for the cjson.c, used for JSON processes in requests,..." alt="" coords="97,5,227,32"/>
 <area shape="rect" id="node2" href="$dc/dc0/yiffy_8c.html" title="This is the main file and used to handle the arguments and execute the program by using external func..." alt="" coords="5,155,116,181"/>
 <area shape="rect" id="node3" href="$d6/d49/cjson_8c.html" title="This file is used to handle all the JSON processes in requests, code file of a well&#45;known library cal..." alt="" coords="98,80,226,107"/>
-<area shape="rect" id="node4" href="$de/d29/yiffy__search_8h.html" title="This header file is used to handle the fetching and searching system." alt="" coords="251,80,433,107"/>
-<area shape="rect" id="node5" href="$d6/d60/aria2__download_8c.html" title="Downloads the JSON file by using aria2c, works with the system function." alt="" coords="140,155,347,181"/>
-<area shape="rect" id="node6" href="$d1/d14/fetch_8c.html" title="This file is used to send requests to e621&#45;e926 with the specified tags by user and outputs or output..." alt="" coords="371,155,507,181"/>
-<area shape="rect" id="node7" href="$dc/dec/search_8c.html" title="This file is used to interact with the terminal user interface version of yiffy, it provides download..." alt="" coords="531,155,678,181"/>
+<area shape="rect" id="node4" href="$d5/d05/yiffy__fetch_8h.html" title=" " alt="" coords="250,80,413,107"/>
+<area shape="rect" id="node5" href="$d6/d60/aria2__download_8c.html" title="Downloads the JSON file by using aria2c, works with the system function." alt="" coords="140,155,336,181"/>
+<area shape="rect" id="node6" href="$d1/d14/fetch_8c.html" title="This file is used to send requests to e621&#45;e926 with the specified tags by user and outputs or output..." alt="" coords="360,155,487,181"/>
+<area shape="rect" id="node7" href="$dc/dec/search_8c.html" title="This file is used to interact with the terminal user interface version of yiffy, it provides download..." alt="" coords="511,155,658,181"/>
 </map>

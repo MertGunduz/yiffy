@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>yiffy: src/search/aria2_download.c Source File</title>
+<title>yiffy: src/fetch/aria2_download.c Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -64,7 +64,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_5e53e25df8c865d23c4f0f620d3a69fb.html">search</a></li>  </ul>
+<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_677e3bc52e02299a33df1d2c0e43d3b1.html">fetch</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -73,7 +73,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <a href="../../d6/d60/aria2__download_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../de/d29/yiffy__search_8h.html">yiffy_search.h</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d5/d05/yiffy__fetch_8h.html">yiffy_fetch.h</a>&quot;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
 <div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="../../d6/d60/aria2__download_8c.html#a5d6732ce337f794d14f9f2b835a0d2ef">   19</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d6/d60/aria2__download_8c.html#a5d6732ce337f794d14f9f2b835a0d2ef">aria2_download</a>(<span class="keywordtype">char</span> *tags, <span class="keywordtype">int</span> page, <span class="keywordtype">bool</span> is_nsfw, <span class="keywordtype">int</span> lim)</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
@@ -101,7 +101,7 @@ $(function() {
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    free(request_string);</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">if</span> (success == <a class="code" href="../../de/d29/yiffy__search_8h.html#acbd50aa1f19ce68034a26b45b0aaed69">BAD_SYSTEM_FUNC_CALL</a>)</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">if</span> (success == <a class="code" href="../../d5/d05/yiffy__fetch_8h.html#acbd50aa1f19ce68034a26b45b0aaed69">BAD_SYSTEM_FUNC_CALL</a>)</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    {</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <a class="code" href="../../dc/d8f/system__func__error__msg_8c.html#acc21d14c9f9a59987f07615415759325">system_func_error_msg</a>();</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        exit(EXIT_FAILURE);</div>
@@ -110,8 +110,8 @@ $(function() {
 <div class="ttc" id="aaria2__download_8c_html_a5d6732ce337f794d14f9f2b835a0d2ef"><div class="ttname"><a href="../../d6/d60/aria2__download_8c.html#a5d6732ce337f794d14f9f2b835a0d2ef">aria2_download</a></div><div class="ttdeci">void aria2_download(char *tags, int page, bool is_nsfw, int lim)</div><div class="ttdoc">downloads the API response by using aria2c, works with a system call</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d60/aria2__download_8c_source.html#l00019">aria2_download.c:19</a></div></div>
 <div class="ttc" id="amalloc__error__msg_8c_html_a8f2c3050fed77b86a432d485cde3ade1"><div class="ttname"><a href="../../d4/ddf/malloc__error__msg_8c.html#a8f2c3050fed77b86a432d485cde3ade1">malloc_error_msg</a></div><div class="ttdeci">void malloc_error_msg()</div><div class="ttdoc">Shows some information when yiffy cannot allocate memory.</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/ddf/malloc__error__msg_8c_source.html#l00016">malloc_error_msg.c:16</a></div></div>
 <div class="ttc" id="asystem__func__error__msg_8c_html_acc21d14c9f9a59987f07615415759325"><div class="ttname"><a href="../../dc/d8f/system__func__error__msg_8c.html#acc21d14c9f9a59987f07615415759325">system_func_error_msg</a></div><div class="ttdeci">void system_func_error_msg()</div><div class="ttdoc">Shows some information when system function not works.</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d8f/system__func__error__msg_8c_source.html#l00016">system_func_error_msg.c:16</a></div></div>
-<div class="ttc" id="ayiffy__search_8h_html"><div class="ttname"><a href="../../de/d29/yiffy__search_8h.html">yiffy_search.h</a></div><div class="ttdoc">This header file is used to handle the fetching and searching system.</div></div>
-<div class="ttc" id="ayiffy__search_8h_html_acbd50aa1f19ce68034a26b45b0aaed69"><div class="ttname"><a href="../../de/d29/yiffy__search_8h.html#acbd50aa1f19ce68034a26b45b0aaed69">BAD_SYSTEM_FUNC_CALL</a></div><div class="ttdeci">#define BAD_SYSTEM_FUNC_CALL</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d29/yiffy__search_8h_source.html#l00026">yiffy_search.h:26</a></div></div>
+<div class="ttc" id="ayiffy__fetch_8h_html"><div class="ttname"><a href="../../d5/d05/yiffy__fetch_8h.html">yiffy_fetch.h</a></div></div>
+<div class="ttc" id="ayiffy__fetch_8h_html_acbd50aa1f19ce68034a26b45b0aaed69"><div class="ttname"><a href="../../d5/d05/yiffy__fetch_8h.html#acbd50aa1f19ce68034a26b45b0aaed69">BAD_SYSTEM_FUNC_CALL</a></div><div class="ttdeci">#define BAD_SYSTEM_FUNC_CALL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d05/yiffy__fetch_8h_source.html#l00025">yiffy_fetch.h:25</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

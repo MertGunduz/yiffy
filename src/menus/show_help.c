@@ -43,5 +43,5 @@ void show_help()
     fprintf(stdout, "yiffy configuration and settings arguments\n");
     fprintf(stdout, "------------------------------------------\n");
     fprintf(stdout, "--nsfw \"[ON/OFF]\"     switches to nsfw/sfw options\n");
-    fprintf(stdout, "--wgen \"[ON/OFF]\"     switches to wgen/non-wgen option\n");
+    fprintf(stdout, "--perr \"[ON/OFF]\"     switches to perr/non-perr option\n");
 }

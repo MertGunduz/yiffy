@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>yiffy: src/search/fetch.c Source File</title>
+<title>yiffy: src/fetch/fetch.c Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -64,7 +64,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_5e53e25df8c865d23c4f0f620d3a69fb.html">search</a></li>  </ul>
+<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_677e3bc52e02299a33df1d2c0e43d3b1.html">fetch</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -77,7 +77,7 @@ $(function() {
 <div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="../../d1/d14/fetch_8c.html#ad4d796b98c583d49e83adabd74a63bf6">   16</a></span>&#160;<span class="preprocessor">#define MAX_BUFFER_SIZE 512 </span></div>
 <div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="../../d1/d14/fetch_8c.html#aff9b7f6d81297248bf0ad06d725c8cbb">   17</a></span>&#160;<span class="preprocessor">#define CONTENT_SIZE 262144 </span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../de/d29/yiffy__search_8h.html">yiffy_search.h</a>&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d5/d05/yiffy__fetch_8h.html">yiffy_fetch.h</a>&quot;</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> output(<span class="keywordtype">char</span> *json_content, <span class="keywordtype">char</span> *command);</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
@@ -227,7 +227,7 @@ $(function() {
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                        <span class="keywordtype">int</span> download_success = system(download_command);</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                        <span class="keywordflow">if</span> (download_success == <a class="code" href="../../de/d29/yiffy__search_8h.html#acbd50aa1f19ce68034a26b45b0aaed69">BAD_SYSTEM_FUNC_CALL</a>)</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                        <span class="keywordflow">if</span> (download_success == <a class="code" href="../../d5/d05/yiffy__fetch_8h.html#acbd50aa1f19ce68034a26b45b0aaed69">BAD_SYSTEM_FUNC_CALL</a>)</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                        {</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                            free(download_command);</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                            exit(EXIT_FAILURE);</div>
@@ -264,8 +264,8 @@ $(function() {
 <div class="ttc" id="ano__results__error__msg_8c_html_a2d26f407e1cd042bfff35c4fdb673550"><div class="ttname"><a href="../../d6/dee/no__results__error__msg_8c.html#a2d26f407e1cd042bfff35c4fdb673550">no_results_error_msg</a></div><div class="ttdeci">void no_results_error_msg()</div><div class="ttdoc">Outputs the error when there is no response from the API.</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/dee/no__results__error__msg_8c_source.html#l00016">no_results_error_msg.c:16</a></div></div>
 <div class="ttc" id="astructcJSON_html"><div class="ttname"><a href="../../db/d68/structcJSON.html">cJSON</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d56/cjson_8h_source.html#l00110">cjson.h:111</a></div></div>
 <div class="ttc" id="astructcJSON_html_ad43f8de2571e504c4c5ce0a36990e6e1"><div class="ttname"><a href="../../db/d68/structcJSON.html#ad43f8de2571e504c4c5ce0a36990e6e1">cJSON::valuestring</a></div><div class="ttdeci">char * valuestring</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d56/cjson_8h_source.html#l00122">cjson.h:122</a></div></div>
-<div class="ttc" id="ayiffy__search_8h_html"><div class="ttname"><a href="../../de/d29/yiffy__search_8h.html">yiffy_search.h</a></div><div class="ttdoc">This header file is used to handle the fetching and searching system.</div></div>
-<div class="ttc" id="ayiffy__search_8h_html_acbd50aa1f19ce68034a26b45b0aaed69"><div class="ttname"><a href="../../de/d29/yiffy__search_8h.html#acbd50aa1f19ce68034a26b45b0aaed69">BAD_SYSTEM_FUNC_CALL</a></div><div class="ttdeci">#define BAD_SYSTEM_FUNC_CALL</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d29/yiffy__search_8h_source.html#l00026">yiffy_search.h:26</a></div></div>
+<div class="ttc" id="ayiffy__fetch_8h_html"><div class="ttname"><a href="../../d5/d05/yiffy__fetch_8h.html">yiffy_fetch.h</a></div></div>
+<div class="ttc" id="ayiffy__fetch_8h_html_acbd50aa1f19ce68034a26b45b0aaed69"><div class="ttname"><a href="../../d5/d05/yiffy__fetch_8h.html#acbd50aa1f19ce68034a26b45b0aaed69">BAD_SYSTEM_FUNC_CALL</a></div><div class="ttdeci">#define BAD_SYSTEM_FUNC_CALL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d05/yiffy__fetch_8h_source.html#l00025">yiffy_fetch.h:25</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

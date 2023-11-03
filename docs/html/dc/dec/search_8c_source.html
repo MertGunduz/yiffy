@@ -73,92 +73,221 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <a href="../../dc/dec/search_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../de/d29/yiffy__search_8h.html">yiffy_search.h</a>&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;../ui/yiffy_ui.h&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="../../dc/dec/search_8c.html#afc6458e24a010aea1580d8daffb217b9">   14</a></span>&#160;WINDOW *<a class="code" href="../../dc/dec/search_8c.html#a8eb5644bdf68ad95ffafe4751a2bc094">top_window</a>, *<a class="code" href="../../dc/dec/search_8c.html#a9041190cd58590a1733f4bdd927270ac">posts_window</a>, *<a class="code" href="../../dc/dec/search_8c.html#aef2154a8171e975fd561ae7c7e4630e8">info_window</a>, *<a class="code" href="../../dc/dec/search_8c.html#afc6458e24a010aea1580d8daffb217b9">controls_window</a>;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> init_ncurses();</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> create_ui();</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> init_ui();</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="../../dc/dec/search_8c.html#ab899bd069f8d6db7339eba31c3ad7a02">   20</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dc/dec/search_8c.html#ab899bd069f8d6db7339eba31c3ad7a02">search</a>(<span class="keywordtype">char</span> *tags)</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="comment">/* Initialize the ncurses with the needed configurations. */</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    init_ncurses();</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">/* Creating the main color scheme. */</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    init_pair(1, COLOR_BLACK, COLOR_WHITE);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="comment">/* Create the windows and create user interface. */</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    init_ui();</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    create_ui();</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">/* The main control system of yiffy. */</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">int</span> ch;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">do</span> </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">if</span> (ch == KEY_RESIZE)</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="comment">/* Refresh the screen. */</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            refresh();</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="comment">/* Clear the screen. */</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            clear(); </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="comment">/* Recreate the windows with updated sizes/positions and create user interface */</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            init_ui();</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            create_ui();</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        }</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    } <span class="keywordflow">while</span> ((ch = getch()) != <span class="charliteral">&#39;q&#39;</span>);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">/* Close the search system. */</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    endwin();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> init_ncurses()</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">/* Initialize ncurses and do the required configurations. */</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    initscr();</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    noecho();</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    start_color();</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    curs_set(0);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    keypad(stdscr, TRUE);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../de/d29/yiffy__search_8h.html">yiffy_search.h</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;../fetch/yiffy_fetch.h&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="../../dc/dec/search_8c.html#a263efd24d550124313df51247f07457a">   18</a></span>&#160;<span class="preprocessor">#define MAX_FILE_PATH 256   </span></div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="../../dc/dec/search_8c.html#ad4d796b98c583d49e83adabd74a63bf6">   19</a></span>&#160;<span class="preprocessor">#define MAX_BUFFER_SIZE 512 </span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="../../dd/dee/structcontrol.html">   21</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="../../dd/dee/structcontrol.html">control</a></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="../../dd/dee/structcontrol.html#a4e3589dccbb6b41838b153f38b21e3d2">   23</a></span>&#160;    <span class="keywordtype">char</span> *<a class="code" href="../../dd/dee/structcontrol.html#a4e3589dccbb6b41838b153f38b21e3d2">control_full_name</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="../../dd/dee/structcontrol.html#a87db8c567eae4d27196ee4a7dfdc09d5">   24</a></span>&#160;    <span class="keywordtype">char</span> <a class="code" href="../../dd/dee/structcontrol.html#a87db8c567eae4d27196ee4a7dfdc09d5">control_character</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="../../dc/dec/search_8c.html#aa1d3790e2a578b5f80f650aea7973406">   25</a></span>&#160;} <a class="code" href="../../dc/dec/search_8c.html#aa1d3790e2a578b5f80f650aea7973406">control</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> init_ncurses();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="../../dc/dec/search_8c.html#ab899bd069f8d6db7339eba31c3ad7a02">   29</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dc/dec/search_8c.html#ab899bd069f8d6db7339eba31c3ad7a02">search</a>(<span class="keywordtype">char</span> *tags)</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="comment">/* Configuration file path and data buffer for configurations. */</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">char</span> config_path[<a class="code" href="../../dc/dec/search_8c.html#a263efd24d550124313df51247f07457a">MAX_FILE_PATH</a>];</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">char</span> <a class="code" href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a>[<a class="code" href="../../dc/dec/search_8c.html#ad4d796b98c583d49e83adabd74a63bf6">MAX_BUFFER_SIZE</a>];</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">/* The home path of the user. */</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">char</span> *home_path = getenv(<span class="stringliteral">&quot;HOME&quot;</span>);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">/* Check if NSFW option on. */</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">bool</span> is_nsfw = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">if</span> (home_path == NULL) </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="../../d5/de7/no__home__error__msg_8c.html#ab360dcc8796de6e212175d6c4c77477d">no_home_error_msg</a>();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        exit(EXIT_FAILURE);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    sprintf(config_path, <span class="stringliteral">&quot;%s/.yiffy/yiffy-config.txt&quot;</span>, home_path);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">/* Read the configuration file (home/user/.yiffy/yiffy-config.txt) to execute the wanted process. */</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    FILE *config = fopen(config_path, <span class="stringliteral">&quot;r&quot;</span>);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">if</span> (config == NULL) </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <a class="code" href="../../db/df9/file__open__error__msg_8c.html#a94c5cd5af84c1b87e2dbf95cb2cbce90">file_open_error_msg</a>(config);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        exit(EXIT_FAILURE);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">size_t</span> config_bytes = fread(<a class="code" href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a>, 1, <a class="code" href="../../dc/dec/search_8c.html#ad4d796b98c583d49e83adabd74a63bf6">MAX_BUFFER_SIZE</a> - 1, config); </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a>[config_bytes] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    fclose(config);</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">/* Checks the color compatibility of the terminal. If it does not support, exits with an error message. */</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">if</span> (!has_colors())</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <a class="code" href="../../d9/dd8/color__comp__error__msg_8c.html#af050e19d72fa5f083e33bdcb40d87934">color_comp_error_msg</a>();</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        endwin();</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        exit(EXIT_FAILURE);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> create_ui()</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;{</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="code" href="../../dd/d93/create__top__window_8c.html#a41067cc095ee5182e7055f6a6dbdb25b">create_top_window</a>(<a class="code" href="../../dc/dec/search_8c.html#a8eb5644bdf68ad95ffafe4751a2bc094">top_window</a>);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="../../d3/d45/create__posts__window_8c.html#abe44dcce914b12aff1b6b4ac48aca19a">create_posts_window</a>(<a class="code" href="../../dc/dec/search_8c.html#a9041190cd58590a1733f4bdd927270ac">posts_window</a>);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="../../d7/dc2/create__info__window_8c.html#adb4aea0b1ad265d6ccda5999d1395bf4">create_info_window</a>(<a class="code" href="../../dc/dec/search_8c.html#aef2154a8171e975fd561ae7c7e4630e8">info_window</a>);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="../../d6/d24/create__controls__window_8c.html#a0f7af6e000e695b753605abc470acc30">create_controls_window</a>(<a class="code" href="../../dc/dec/search_8c.html#afc6458e24a010aea1580d8daffb217b9">controls_window</a>);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> init_ui()</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;{</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="../../dc/dec/search_8c.html#a8eb5644bdf68ad95ffafe4751a2bc094">top_window</a> = newwin(3, COLS - 1, 0, 1);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="../../dc/dec/search_8c.html#a9041190cd58590a1733f4bdd927270ac">posts_window</a> = newwin(10 + (LINES - 23), COLS - 1, 3, 1);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="../../dc/dec/search_8c.html#aef2154a8171e975fd561ae7c7e4630e8">info_window</a> = newwin(7, COLS - 1, 13 + (LINES - 23), 1);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <a class="code" href="../../dc/dec/search_8c.html#afc6458e24a010aea1580d8daffb217b9">controls_window</a> = newwin(3, COLS - 1, 20 + (LINES - 23), 1);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">char</span> *token = strtok(<a class="code" href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a>, <span class="stringliteral">&quot;:&quot;</span>);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">while</span> (token != NULL) </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">if</span> (strcmp(token, <span class="stringliteral">&quot;nsfw&quot;</span>) == 0) </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            is_nsfw = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        token = strtok(NULL, <span class="stringliteral">&quot;:&quot;</span>);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="comment">/* Initialize the wanted tui configurations like noecho, start_color, etc... */</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    init_ncurses();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">    /**********************************************************/</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="comment">/* Top panel, shows information about the configurations. */</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">    /**********************************************************/</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="comment">/* Create top window and apply box to give it borders. */</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    WINDOW *top_panel = newwin(3, COLS, 0, 0);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    box(top_panel, 0, 0);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">/* Move to one right, gives it a better look. */</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    wmove(top_panel, 0, 1);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="comment">/* The logo in uppercase. */</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    wprintw(top_panel, <span class="stringliteral">&quot;YIFFY&quot;</span>);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="comment">/* Move to inside of top panel window. */</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    wmove(top_panel, 1, 1);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="comment">/* Make the top panel information bright. */</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    wattron(top_panel, A_STANDOUT);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">if</span> (is_nsfw)</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        wprintw(top_panel, <span class="stringliteral">&quot; NSFW [E621.NET] - ASCII-IMAGE-CONVERTER &quot;</span>);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    }    </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        wprintw(top_panel, <span class="stringliteral">&quot; SFW [E926.NET] - ASCII-IMAGE-CONVERTER &quot;</span>);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    wattroff(top_panel, A_STANDOUT);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="comment">/* Refreshing the panel to show the updates to user. */</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    refresh();</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    wrefresh(top_panel);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment">    /*****************************************/</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="comment">/* Posts panel, shows the list of posts. */</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment">    /*****************************************/</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="comment">/* Create posts window and apply box to give it borders. */</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordtype">int</span> posts_panel_height = LINES - 12;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    WINDOW *posts_panel = newwin(posts_panel_height, COLS, 3, 0);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    box(posts_panel, 0, 0);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="comment">/* Move to one right, gives it a better look. */</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    wmove(posts_panel, 0, 1);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="comment">/* The logo in uppercase. */</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    wprintw(posts_panel, <span class="stringliteral">&quot;POSTS&quot;</span>);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="comment">/* Refreshing the panel to show the updates to user. */</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    refresh();</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    wrefresh(posts_panel);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="comment">    /*****************************************************************/</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="comment">/* Information panel, shows information about the selected post. */</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="comment">    /*****************************************************************/</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="comment">/* Create info window and apply box to give it borders. */</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    WINDOW *info_panel = newwin(6, COLS, 3 + posts_panel_height, 0);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    box(info_panel, 0, 0);</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="comment">/* Move to one right, gives it a better look. */</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    wmove(info_panel, 0, 1);</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="comment">/* The logo in uppercase. */</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    wprintw(info_panel, <span class="stringliteral">&quot;INFORMATION&quot;</span>);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="comment">/* Refreshing the panel to show the updates to user. */</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    refresh();</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    wrefresh(info_panel);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="comment">    /***************************************/</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="comment">/* Controls panel, shows the controls. */</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="comment">    /***************************************/</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <a class="code" href="../../dd/dee/structcontrol.html">control</a> controls[] = </div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    {</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        {<span class="stringliteral">&quot;SHOW&quot;</span>, <span class="charliteral">&#39;S&#39;</span>},</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        {<span class="stringliteral">&quot;DOWNLOAD&quot;</span>, <span class="charliteral">&#39;D&#39;</span>},</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        {<span class="stringliteral">&quot;PREV&quot;</span>, <span class="charliteral">&#39;P&#39;</span>},</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        {<span class="stringliteral">&quot;NEXT&quot;</span>, <span class="charliteral">&#39;N&#39;</span>},</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        {<span class="stringliteral">&quot;QUIT&quot;</span>, <span class="charliteral">&#39;Q&#39;</span>}</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    };</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="comment">/* Create info window and apply box to give it borders. */</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    WINDOW *controls_panel = newwin(3, COLS, 9 + posts_panel_height, 0);</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    box(controls_panel, 0, 0);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="comment">/* Move to one right, gives it a better look. */</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    wmove(controls_panel, 0, 1);</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="comment">/* The logo in uppercase. */</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    wprintw(controls_panel, <span class="stringliteral">&quot;CONTROLS&quot;</span>);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="comment">/* Move to the center line of controls window. */</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    wmove(controls_panel, 1, 1);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="comment">/* Write the controls. */</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <span class="keyword">sizeof</span>(controls) / <span class="keyword">sizeof</span>(controls[0]); i++)</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    {</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        wattron(controls_panel, A_STANDOUT);</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        wprintw(controls_panel, <span class="stringliteral">&quot; %c [%s] &quot;</span>, controls[i].control_character, controls[i].control_full_name);</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        wattroff(controls_panel, A_STANDOUT);</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        </div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        wprintw(controls_panel, <span class="stringliteral">&quot;  &quot;</span>);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    }</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="comment">/* Refreshing the panel to show the updates to user. */</span></div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    refresh();</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    wrefresh(controls_panel);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="comment">    /****************************************************************************/</span></div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="comment">/* API response/request part, downloads JSON file and decodes-fetches data. */</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="comment">    /****************************************************************************/</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="comment">/* Download the API response (posts.json). */</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <a class="code" href="../../d6/d60/aria2__download_8c.html#a5d6732ce337f794d14f9f2b835a0d2ef">aria2_download</a>(tags, 1, is_nsfw, posts_panel_height);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    getch();</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    endwin();</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;}</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> init_ncurses()</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;{</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="comment">/* Initialize ncurses and do the required configurations. */</span></div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    initscr();</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    noecho();</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    start_color();</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    curs_set(0);</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    keypad(stdscr, TRUE);</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160; </div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="comment">/* Checks the color compatibility of the terminal. If it does not support, exits with an error message. */</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <span class="keywordflow">if</span> (!has_colors())</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    {</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        <a class="code" href="../../d9/dd8/color__comp__error__msg_8c.html#af050e19d72fa5f083e33bdcb40d87934">color_comp_error_msg</a>();</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        endwin();</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        exit(EXIT_FAILURE);</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    }</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;}</div>
+<div class="ttc" id="aaria2__download_8c_html_a5d6732ce337f794d14f9f2b835a0d2ef"><div class="ttname"><a href="../../d6/d60/aria2__download_8c.html#a5d6732ce337f794d14f9f2b835a0d2ef">aria2_download</a></div><div class="ttdeci">void aria2_download(char *tags, int page, bool is_nsfw, int lim)</div><div class="ttdoc">downloads the API response by using aria2c, works with a system call</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d60/aria2__download_8c_source.html#l00019">aria2_download.c:19</a></div></div>
+<div class="ttc" id="acjson_8h_html_aff2566f4c366b48d73479bef43ee4d2e"><div class="ttname"><a href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a></div><div class="ttdeci">char * buffer</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d56/cjson_8h_source.html#l00170">cjson.h:170</a></div></div>
 <div class="ttc" id="acolor__comp__error__msg_8c_html_af050e19d72fa5f083e33bdcb40d87934"><div class="ttname"><a href="../../d9/dd8/color__comp__error__msg_8c.html#af050e19d72fa5f083e33bdcb40d87934">color_comp_error_msg</a></div><div class="ttdeci">void color_comp_error_msg()</div><div class="ttdoc">Shows some information about the color compatibility of a terminal.</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dd8/color__comp__error__msg_8c_source.html#l00016">color_comp_error_msg.c:16</a></div></div>
-<div class="ttc" id="acreate__controls__window_8c_html_a0f7af6e000e695b753605abc470acc30"><div class="ttname"><a href="../../d6/d24/create__controls__window_8c.html#a0f7af6e000e695b753605abc470acc30">create_controls_window</a></div><div class="ttdeci">void create_controls_window(WINDOW *win)</div><div class="ttdoc">Creates the controls section of search tui.</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d24/create__controls__window_8c_source.html#l00018">create_controls_window.c:18</a></div></div>
-<div class="ttc" id="acreate__info__window_8c_html_adb4aea0b1ad265d6ccda5999d1395bf4"><div class="ttname"><a href="../../d7/dc2/create__info__window_8c.html#adb4aea0b1ad265d6ccda5999d1395bf4">create_info_window</a></div><div class="ttdeci">void create_info_window(WINDOW *win)</div><div class="ttdoc">Creates the info section of search tui.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/dc2/create__info__window_8c_source.html#l00018">create_info_window.c:18</a></div></div>
-<div class="ttc" id="acreate__posts__window_8c_html_abe44dcce914b12aff1b6b4ac48aca19a"><div class="ttname"><a href="../../d3/d45/create__posts__window_8c.html#abe44dcce914b12aff1b6b4ac48aca19a">create_posts_window</a></div><div class="ttdeci">void create_posts_window(WINDOW *win)</div><div class="ttdoc">Creates the posts section of search tui.</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d45/create__posts__window_8c_source.html#l00018">create_posts_window.c:18</a></div></div>
-<div class="ttc" id="acreate__top__window_8c_html_a41067cc095ee5182e7055f6a6dbdb25b"><div class="ttname"><a href="../../dd/d93/create__top__window_8c.html#a41067cc095ee5182e7055f6a6dbdb25b">create_top_window</a></div><div class="ttdeci">void create_top_window(WINDOW *win)</div><div class="ttdoc">Creates the top header of search tui.</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d93/create__top__window_8c_source.html#l00018">create_top_window.c:18</a></div></div>
-<div class="ttc" id="asearch_8c_html_a8eb5644bdf68ad95ffafe4751a2bc094"><div class="ttname"><a href="../../dc/dec/search_8c.html#a8eb5644bdf68ad95ffafe4751a2bc094">top_window</a></div><div class="ttdeci">WINDOW * top_window</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/dec/search_8c_source.html#l00014">search.c:14</a></div></div>
-<div class="ttc" id="asearch_8c_html_a9041190cd58590a1733f4bdd927270ac"><div class="ttname"><a href="../../dc/dec/search_8c.html#a9041190cd58590a1733f4bdd927270ac">posts_window</a></div><div class="ttdeci">WINDOW * posts_window</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/dec/search_8c_source.html#l00014">search.c:14</a></div></div>
-<div class="ttc" id="asearch_8c_html_ab899bd069f8d6db7339eba31c3ad7a02"><div class="ttname"><a href="../../dc/dec/search_8c.html#ab899bd069f8d6db7339eba31c3ad7a02">search</a></div><div class="ttdeci">void search(char *tags)</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/dec/search_8c_source.html#l00020">search.c:20</a></div></div>
-<div class="ttc" id="asearch_8c_html_aef2154a8171e975fd561ae7c7e4630e8"><div class="ttname"><a href="../../dc/dec/search_8c.html#aef2154a8171e975fd561ae7c7e4630e8">info_window</a></div><div class="ttdeci">WINDOW * info_window</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/dec/search_8c_source.html#l00014">search.c:14</a></div></div>
-<div class="ttc" id="asearch_8c_html_afc6458e24a010aea1580d8daffb217b9"><div class="ttname"><a href="../../dc/dec/search_8c.html#afc6458e24a010aea1580d8daffb217b9">controls_window</a></div><div class="ttdeci">WINDOW * controls_window</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/dec/search_8c_source.html#l00014">search.c:14</a></div></div>
+<div class="ttc" id="afile__open__error__msg_8c_html_a94c5cd5af84c1b87e2dbf95cb2cbce90"><div class="ttname"><a href="../../db/df9/file__open__error__msg_8c.html#a94c5cd5af84c1b87e2dbf95cb2cbce90">file_open_error_msg</a></div><div class="ttdeci">void file_open_error_msg(FILE *file)</div><div class="ttdoc">Shows some information about file permissions when yiffy is not able to read file.</div><div class="ttdef"><b>Definition:</b> <a href="../../db/df9/file__open__error__msg_8c_source.html#l00018">file_open_error_msg.c:18</a></div></div>
+<div class="ttc" id="ano__home__error__msg_8c_html_ab360dcc8796de6e212175d6c4c77477d"><div class="ttname"><a href="../../d5/de7/no__home__error__msg_8c.html#ab360dcc8796de6e212175d6c4c77477d">no_home_error_msg</a></div><div class="ttdeci">void no_home_error_msg()</div><div class="ttdoc">Outputs the home not found error when application can not access the $HOME environment variable.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/de7/no__home__error__msg_8c_source.html#l00016">no_home_error_msg.c:16</a></div></div>
+<div class="ttc" id="asearch_8c_html_a263efd24d550124313df51247f07457a"><div class="ttname"><a href="../../dc/dec/search_8c.html#a263efd24d550124313df51247f07457a">MAX_FILE_PATH</a></div><div class="ttdeci">#define MAX_FILE_PATH</div><div class="ttdoc">This macro is used to set the default size for getting the home directory file.</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/dec/search_8c_source.html#l00018">search.c:18</a></div></div>
+<div class="ttc" id="asearch_8c_html_aa1d3790e2a578b5f80f650aea7973406"><div class="ttname"><a href="../../dc/dec/search_8c.html#aa1d3790e2a578b5f80f650aea7973406">control</a></div><div class="ttdeci">struct control control</div></div>
+<div class="ttc" id="asearch_8c_html_ab899bd069f8d6db7339eba31c3ad7a02"><div class="ttname"><a href="../../dc/dec/search_8c.html#ab899bd069f8d6db7339eba31c3ad7a02">search</a></div><div class="ttdeci">void search(char *tags)</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/dec/search_8c_source.html#l00029">search.c:29</a></div></div>
+<div class="ttc" id="asearch_8c_html_ad4d796b98c583d49e83adabd74a63bf6"><div class="ttname"><a href="../../dc/dec/search_8c.html#ad4d796b98c583d49e83adabd74a63bf6">MAX_BUFFER_SIZE</a></div><div class="ttdeci">#define MAX_BUFFER_SIZE</div><div class="ttdoc">This macro is used to set the default size for reading the config file.</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/dec/search_8c_source.html#l00019">search.c:19</a></div></div>
+<div class="ttc" id="astructcontrol_html"><div class="ttname"><a href="../../dd/dee/structcontrol.html">control</a></div><div class="ttdef"><b>Definition:</b> <a href="../../dc/dec/search_8c_source.html#l00021">search.c:22</a></div></div>
+<div class="ttc" id="astructcontrol_html_a4e3589dccbb6b41838b153f38b21e3d2"><div class="ttname"><a href="../../dd/dee/structcontrol.html#a4e3589dccbb6b41838b153f38b21e3d2">control::control_full_name</a></div><div class="ttdeci">char * control_full_name</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/dec/search_8c_source.html#l00023">search.c:23</a></div></div>
+<div class="ttc" id="astructcontrol_html_a87db8c567eae4d27196ee4a7dfdc09d5"><div class="ttname"><a href="../../dd/dee/structcontrol.html#a87db8c567eae4d27196ee4a7dfdc09d5">control::control_character</a></div><div class="ttdeci">char control_character</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/dec/search_8c_source.html#l00024">search.c:24</a></div></div>
 <div class="ttc" id="ayiffy__search_8h_html"><div class="ttname"><a href="../../de/d29/yiffy__search_8h.html">yiffy_search.h</a></div><div class="ttdoc">This header file is used to handle the fetching and searching system.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

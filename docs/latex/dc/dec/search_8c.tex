@@ -6,7 +6,7 @@ This file is used to interact with the terminal user interface version of yiffy,
 
 
 {\ttfamily \#include \char`\"{}yiffy\+\_\+search.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}../ui/yiffy\+\_\+ui.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../fetch/yiffy\+\_\+fetch.\+h\char`\"{}}\newline
 Include dependency graph for search.\+c\+:
 \nopagebreak
 \begin{figure}[H]
@@ -15,26 +15,34 @@ Include dependency graph for search.\+c\+:
 \includegraphics[width=350pt]{db/ddf/search_8c__incl}
 \end{center}
 \end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structcontrol}{control}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{search_8c_a263efd24d550124313df51247f07457a}{MAX\+\_\+\+FILE\+\_\+\+PATH}}~256
+\begin{DoxyCompactList}\small\item\em This macro is used to set the default size for getting the home directory file. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{search_8c_ad4d796b98c583d49e83adabd74a63bf6}{MAX\+\_\+\+BUFFER\+\_\+\+SIZE}}~512
+\begin{DoxyCompactList}\small\item\em This macro is used to set the default size for reading the config file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structcontrol}{control}} \mbox{\hyperlink{search_8c_aa1d3790e2a578b5f80f650aea7973406}{control}}
+\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{search_8c_ab899bd069f8d6db7339eba31c3ad7a02}{search}} (char $\ast$tags)
 \end{DoxyCompactItemize}
-\doxysubsection*{Variables}
-\begin{DoxyCompactItemize}
-\item 
-WINDOW $\ast$ \mbox{\hyperlink{search_8c_a8eb5644bdf68ad95ffafe4751a2bc094}{top\+\_\+window}}
-\item 
-WINDOW $\ast$ \mbox{\hyperlink{search_8c_a9041190cd58590a1733f4bdd927270ac}{posts\+\_\+window}}
-\item 
-WINDOW $\ast$ \mbox{\hyperlink{search_8c_aef2154a8171e975fd561ae7c7e4630e8}{info\+\_\+window}}
-\item 
-WINDOW $\ast$ \mbox{\hyperlink{search_8c_afc6458e24a010aea1580d8daffb217b9}{controls\+\_\+window}}
-\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 This file is used to interact with the terminal user interface version of yiffy, it provides download-\/list-\/search-\/info features to the users. 
+
+This file is created by using mathematical calculations to give its look, it gets really complicated to read from scratch. Since ncurses is a very old and low-\/level library, it can be daunting to understand the whole code by just reading it. All it does in this code is generating UI, resizing system and placing the data to the windows.
 
 \begin{DoxyAuthor}{Author}
 Mehmet Mert Gunduz
@@ -42,6 +50,46 @@ Mehmet Mert Gunduz
 \begin{DoxyDate}{Date}
 31/10/2023 
 \end{DoxyDate}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{search_8c_ad4d796b98c583d49e83adabd74a63bf6}\label{search_8c_ad4d796b98c583d49e83adabd74a63bf6}} 
+\index{search.c@{search.c}!MAX\_BUFFER\_SIZE@{MAX\_BUFFER\_SIZE}}
+\index{MAX\_BUFFER\_SIZE@{MAX\_BUFFER\_SIZE}!search.c@{search.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_BUFFER\_SIZE}{MAX\_BUFFER\_SIZE}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+BUFFER\+\_\+\+SIZE~512}
+
+
+
+This macro is used to set the default size for reading the config file. 
+
+
+
+Definition at line 19 of file search.\+c.
+
+\mbox{\Hypertarget{search_8c_a263efd24d550124313df51247f07457a}\label{search_8c_a263efd24d550124313df51247f07457a}} 
+\index{search.c@{search.c}!MAX\_FILE\_PATH@{MAX\_FILE\_PATH}}
+\index{MAX\_FILE\_PATH@{MAX\_FILE\_PATH}!search.c@{search.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_FILE\_PATH}{MAX\_FILE\_PATH}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+FILE\+\_\+\+PATH~256}
+
+
+
+This macro is used to set the default size for getting the home directory file. 
+
+
+
+Definition at line 18 of file search.\+c.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{search_8c_aa1d3790e2a578b5f80f650aea7973406}\label{search_8c_aa1d3790e2a578b5f80f650aea7973406}} 
+\index{search.c@{search.c}!control@{control}}
+\index{control@{control}!search.c@{search.c}}
+\doxysubsubsection{\texorpdfstring{control}{control}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structcontrol}{control}} \mbox{\hyperlink{structcontrol}{control}}}
+
 
 
 \doxysubsection{Function Documentation}
@@ -53,48 +101,5 @@ Mehmet Mert Gunduz
 
 
 
-Definition at line 20 of file search.\+c.
-
-
-
-\doxysubsection{Variable Documentation}
-\mbox{\Hypertarget{search_8c_afc6458e24a010aea1580d8daffb217b9}\label{search_8c_afc6458e24a010aea1580d8daffb217b9}} 
-\index{search.c@{search.c}!controls\_window@{controls\_window}}
-\index{controls\_window@{controls\_window}!search.c@{search.c}}
-\doxysubsubsection{\texorpdfstring{controls\_window}{controls\_window}}
-{\footnotesize\ttfamily WINDOW $\ast$ controls\+\_\+window}
-
-
-
-Definition at line 14 of file search.\+c.
-
-\mbox{\Hypertarget{search_8c_aef2154a8171e975fd561ae7c7e4630e8}\label{search_8c_aef2154a8171e975fd561ae7c7e4630e8}} 
-\index{search.c@{search.c}!info\_window@{info\_window}}
-\index{info\_window@{info\_window}!search.c@{search.c}}
-\doxysubsubsection{\texorpdfstring{info\_window}{info\_window}}
-{\footnotesize\ttfamily WINDOW $\ast$ info\+\_\+window}
-
-
-
-Definition at line 14 of file search.\+c.
-
-\mbox{\Hypertarget{search_8c_a9041190cd58590a1733f4bdd927270ac}\label{search_8c_a9041190cd58590a1733f4bdd927270ac}} 
-\index{search.c@{search.c}!posts\_window@{posts\_window}}
-\index{posts\_window@{posts\_window}!search.c@{search.c}}
-\doxysubsubsection{\texorpdfstring{posts\_window}{posts\_window}}
-{\footnotesize\ttfamily WINDOW $\ast$ posts\+\_\+window}
-
-
-
-Definition at line 14 of file search.\+c.
-
-\mbox{\Hypertarget{search_8c_a8eb5644bdf68ad95ffafe4751a2bc094}\label{search_8c_a8eb5644bdf68ad95ffafe4751a2bc094}} 
-\index{search.c@{search.c}!top\_window@{top\_window}}
-\index{top\_window@{top\_window}!search.c@{search.c}}
-\doxysubsubsection{\texorpdfstring{top\_window}{top\_window}}
-{\footnotesize\ttfamily WINDOW$\ast$ top\+\_\+window}
-
-
-
-Definition at line 14 of file search.\+c.
+Definition at line 29 of file search.\+c.
 

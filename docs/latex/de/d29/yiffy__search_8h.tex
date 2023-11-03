@@ -7,14 +7,8 @@ This header file is used to handle the fetching and searching system.
 
 {\ttfamily \#include $<$ncurses.\+h$>$}\newline
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
-{\ttfamily \#include $<$string.\+h$>$}\newline
-{\ttfamily \#include $<$stdbool.\+h$>$}\newline
-{\ttfamily \#include $<$unistd.\+h$>$}\newline
-{\ttfamily \#include $<$locale.\+h$>$}\newline
-{\ttfamily \#include $<$ctype.\+h$>$}\newline
 {\ttfamily \#include $<$time.\+h$>$}\newline
 {\ttfamily \#include \char`\"{}../msg/yiffy\+\_\+messages.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}../cjson/cjson.\+h\char`\"{}}\newline
 Include dependency graph for yiffy\+\_\+search.\+h\+:
 \nopagebreak
 \begin{figure}[H]
@@ -23,25 +17,17 @@ Include dependency graph for yiffy\+\_\+search.\+h\+:
 \includegraphics[width=350pt]{d6/d9d/yiffy__search_8h__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:\nopagebreak
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{d1/d35/yiffy__search_8h__dep__incl}
+\includegraphics[width=292pt]{d1/d35/yiffy__search_8h__dep__incl}
 \end{center}
 \end{figure}
-\doxysubsection*{Macros}
-\begin{DoxyCompactItemize}
-\item 
-\#define \mbox{\hyperlink{yiffy__search_8h_acbd50aa1f19ce68034a26b45b0aaed69}{BAD\+\_\+\+SYSTEM\+\_\+\+FUNC\+\_\+\+CALL}}~-\/1
-\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{yiffy__search_8h_a41f382b6bd05c9776641fb4bc5024afa}{fetch}} (char $\ast$tags, int page, char $\ast$command)
-\begin{DoxyCompactList}\small\item\em Reads the configuration file, sets the options and sends a request to e621-\/e926. After taking the response, it calls the output function to show the URLs. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{yiffy__search_8h_a5d6732ce337f794d14f9f2b835a0d2ef}{aria2\+\_\+download}} (char $\ast$tags, int page, bool is\+\_\+nsfw, int lim)
-\begin{DoxyCompactList}\small\item\em downloads the API response by using aria2c, works with a system call \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{yiffy__search_8h_ab899bd069f8d6db7339eba31c3ad7a02}{search}} (char $\ast$tags)
 \end{DoxyCompactItemize}
 
@@ -65,66 +51,7 @@ Mehmet Mert Gunduz
 \end{DoxyDate}
 
 
-\doxysubsection{Macro Definition Documentation}
-\mbox{\Hypertarget{yiffy__search_8h_acbd50aa1f19ce68034a26b45b0aaed69}\label{yiffy__search_8h_acbd50aa1f19ce68034a26b45b0aaed69}} 
-\index{yiffy\_search.h@{yiffy\_search.h}!BAD\_SYSTEM\_FUNC\_CALL@{BAD\_SYSTEM\_FUNC\_CALL}}
-\index{BAD\_SYSTEM\_FUNC\_CALL@{BAD\_SYSTEM\_FUNC\_CALL}!yiffy\_search.h@{yiffy\_search.h}}
-\doxysubsubsection{\texorpdfstring{BAD\_SYSTEM\_FUNC\_CALL}{BAD\_SYSTEM\_FUNC\_CALL}}
-{\footnotesize\ttfamily \#define BAD\+\_\+\+SYSTEM\+\_\+\+FUNC\+\_\+\+CALL~-\/1}
-
-
-
-Definition at line 26 of file yiffy\+\_\+search.\+h.
-
-
-
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{yiffy__search_8h_a5d6732ce337f794d14f9f2b835a0d2ef}\label{yiffy__search_8h_a5d6732ce337f794d14f9f2b835a0d2ef}} 
-\index{yiffy\_search.h@{yiffy\_search.h}!aria2\_download@{aria2\_download}}
-\index{aria2\_download@{aria2\_download}!yiffy\_search.h@{yiffy\_search.h}}
-\doxysubsubsection{\texorpdfstring{aria2\_download()}{aria2\_download()}}
-{\footnotesize\ttfamily void aria2\+\_\+download (\begin{DoxyParamCaption}\item[{char $\ast$}]{tags,  }\item[{int}]{page,  }\item[{bool}]{is\+\_\+nsfw,  }\item[{int}]{lim }\end{DoxyParamCaption})}
-
-
-
-downloads the API response by using aria2c, works with a system call 
-
-
-\begin{DoxyParams}{Parameters}
-{\em tags} & These are the e621-\/e926 tags prompted by the user as an argument value. Example\+: yiffy --fetch \char`\"{}anthro+fur+male+smile\char`\"{}. \\
-\hline
-{\em page} & This is the value that is passed to the API to get results from the specified pages. \\
-\hline
-{\em is\+\_\+nsfw} & This is the boolean value that checks the NSFW option. If true, sets the request string for e621 otherwise sets for e926. \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 19 of file aria2\+\_\+download.\+c.
-
-\mbox{\Hypertarget{yiffy__search_8h_a41f382b6bd05c9776641fb4bc5024afa}\label{yiffy__search_8h_a41f382b6bd05c9776641fb4bc5024afa}} 
-\index{yiffy\_search.h@{yiffy\_search.h}!fetch@{fetch}}
-\index{fetch@{fetch}!yiffy\_search.h@{yiffy\_search.h}}
-\doxysubsubsection{\texorpdfstring{fetch()}{fetch()}}
-{\footnotesize\ttfamily void fetch (\begin{DoxyParamCaption}\item[{char $\ast$}]{tags,  }\item[{int}]{page,  }\item[{char $\ast$}]{command }\end{DoxyParamCaption})}
-
-
-
-Reads the configuration file, sets the options and sends a request to e621-\/e926. After taking the response, it calls the output function to show the URLs. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em tags} & These are the e621-\/e926 tags prompted by the user as an argument value. Example\+: yiffy --fetch \char`\"{}anthro+fur+male+smile\char`\"{}. \\
-\hline
-{\em page} & This is the value that is passed to the API to get results from the specified pages. \\
-\hline
-{\em command} & This is the value that checks if to output or output-\/download the URLs. \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 32 of file fetch.\+c.
-
 \mbox{\Hypertarget{yiffy__search_8h_ab899bd069f8d6db7339eba31c3ad7a02}\label{yiffy__search_8h_ab899bd069f8d6db7339eba31c3ad7a02}} 
 \index{yiffy\_search.h@{yiffy\_search.h}!search@{search}}
 \index{search@{search}!yiffy\_search.h@{yiffy\_search.h}}
@@ -133,5 +60,5 @@ Definition at line 32 of file fetch.\+c.
 
 
 
-Definition at line 20 of file search.\+c.
+Definition at line 29 of file search.\+c.
 
