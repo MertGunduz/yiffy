@@ -174,7 +174,7 @@ void search(char *tags)
     wmove(controls_panel, 1, 1);
 
     /* Write the controls. */
-    for (int i = 0; i < sizeof(controls) / sizeof(controls[0]); i++)
+    for (size_t i = 0; i < sizeof(controls) / sizeof(controls[0]); i++)
     {
         wattron(controls_panel, A_STANDOUT);
         wprintw(controls_panel, " %c [%s] ", controls[i].control_character, controls[i].control_full_name);

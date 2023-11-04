@@ -79,7 +79,7 @@ int main(int argc, char *argv[])
 {
     if (argument_verify(argc, argv))
     {
-        for (long unsigned int i = 0; i < sizeof(fetch_options) / sizeof(fetch_options[0]); i++)
+        for (size_t i = 0; i < sizeof(fetch_options) / sizeof(fetch_options[0]); i++)
         {
             if (strcmp(argv[1], fetch_options[i].option) == 0)
             {
@@ -94,7 +94,7 @@ int main(int argc, char *argv[])
             }
         }
 
-        for (long unsigned int i = 0; i < sizeof(general_options) / sizeof(general_options[0]); i++) 
+        for (size_t i = 0; i < sizeof(general_options) / sizeof(general_options[0]); i++) 
         {
             if (strcmp(argv[1], general_options[i].option) == 0) 
             {
@@ -148,7 +148,7 @@ static bool argument_verify(int argument_count, char *arguments[])
         * two_arguments they don't take on off: --dfetch, --fetch, --search.
         * two_arguments they take on/off: --perr, --nsfw.
         */
-        for (long unsigned int i = 0; i < sizeof(two_arguments) / sizeof(two_arguments[0]); i++)
+        for (size_t i = 0; i < sizeof(two_arguments) / sizeof(two_arguments[0]); i++)
         {
             if (strcmp(arguments[1], two_arguments[i]) == 0)
             {
@@ -169,7 +169,7 @@ static bool argument_verify(int argument_count, char *arguments[])
          * 
          * When user entered 2 options and the first one exists in the oneArguments array, then it will generate an error message and return false.
         */
-        for (long unsigned int i = 0; i < sizeof(one_arguments) / sizeof(one_arguments[0]); i++)
+        for (size_t i = 0; i < sizeof(one_arguments) / sizeof(one_arguments[0]); i++)
         {
             if (strcmp(arguments[1], one_arguments[i]) == 0)
             {
@@ -188,7 +188,7 @@ static bool argument_verify(int argument_count, char *arguments[])
          * 
          * When user entered 1 option and the first one exists in the oneArguments array, it will return true.
         */
-        for (long unsigned int i = 0; i < sizeof(one_arguments) / sizeof(one_arguments[0]); i++)
+        for (size_t i = 0; i < sizeof(one_arguments) / sizeof(one_arguments[0]); i++)
         {
             if (strcmp(arguments[1], one_arguments[i]) == 0)
             {
@@ -201,7 +201,7 @@ static bool argument_verify(int argument_count, char *arguments[])
          * 
          * When user entered 1 option and the first one exists in the two_arguments array, it will return false and generate an error message.
         */
-        for (long unsigned int i = 0; i < sizeof(two_arguments) / sizeof(two_arguments[0]); i++)
+        for (size_t i = 0; i < sizeof(two_arguments) / sizeof(two_arguments[0]); i++)
         {
             if (strcmp(arguments[1], two_arguments[i]) == 0)
             {

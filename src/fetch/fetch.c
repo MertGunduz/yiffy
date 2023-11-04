@@ -153,7 +153,7 @@ static void output(char *json_content, char *command)
         int total_posts = cJSON_GetArraySize(posts_array);
 
         // Iterate through the posts array.
-        for (int i = 0; i < total_posts; i++) 
+        for (size_t i = 0; i < total_posts; i++) 
         {
             cJSON *post = cJSON_GetArrayItem(posts_array, i);
             cJSON *file = cJSON_GetObjectItemCaseSensitive(post, "file") ;

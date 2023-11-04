@@ -109,7 +109,7 @@ void conf_nsfw(char *argv)
             exit(EXIT_FAILURE);
         }
 
-        for (int i = 0; i < buffer_size; i++)
+        for (size_t i = 0; i < buffer_size; i++)
         {
             if (nsfw_index == 0 && i == nsfw_index)
             {

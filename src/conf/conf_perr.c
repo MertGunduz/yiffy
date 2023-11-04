@@ -26,7 +26,7 @@ void conf_perr(char *argv)
     char buffer[MAX_BUFFER_SIZE];
 
     /* Operation boolean, used to check if it exists in the current configuration or not. */
-    bool is_perr;
+    bool is_perr = false;
 
     /* To write or delete the configuration setting. Keyword (perr) has got 4 characters. */
     int option_size = 4;
@@ -109,7 +109,7 @@ void conf_perr(char *argv)
             exit(EXIT_FAILURE);
         }
 
-        for (int i = 0; i < buffer_size; i++)
+        for (size_t i = 0; i < buffer_size; i++)
         {
             if (perr_index == 0 && i == perr_index)
             {
