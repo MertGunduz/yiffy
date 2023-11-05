@@ -108,4 +108,4 @@ Manage your data within the Yiffy application:
 Adjust settings and configurations as per your preference:
 - `yiffy configuration and settings arguments`: 
   - `--nsfw on/off`: Toggle NSFW (Not Safe for Work) and SFW (Safe For Work) content.
-  - `--wgen on/off`: Switch between WGEN (a website building feature) for search.c and dfetch/fetch.c.
+  - `--plog on/off`: Switch between PLOG (Print Log) for search.c and dfetch/fetch.c.
