@@ -18,7 +18,7 @@ file(
 set(file_path "$ENV{HOME}/.yiffy/yiffy-config.txt")
 
 install(SCRIPT 
-    CODE "file(WRITE \"${file_path}\" \"perr:nsfw\")"
+    CODE "file(WRITE \"${file_path}\" \"plog:nsfw\")"
 )
 
 # INSTALL THE EXECUTABLE TO USR/BIN

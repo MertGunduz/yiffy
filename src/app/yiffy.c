@@ -64,7 +64,7 @@ static struct general_option general_options[] =
     {"--config", show_config},
     {"--export", export_local_data},
     {"--import", import_local_data},
-    {"--perr", conf_perr},
+    {"--plog", conf_plog},
     {"--nsfw", conf_nsfw},
     {"--search", search_urls}
 };
@@ -100,7 +100,7 @@ int main(int argc, char *argv[])
             {
                 void (*menu_func)(char *argv) = general_options[i].function;
 
-                if (strcmp(general_options[i].option, "--search") == 0 || strcmp(general_options[i].option, "--nsfw") == 0 || strcmp(general_options[i].option, "--perr") == 0) /* THIRD ARGUMENT: tags [yiffy --search "blush+fox+male"]*/
+                if (strcmp(general_options[i].option, "--search") == 0 || strcmp(general_options[i].option, "--nsfw") == 0 || strcmp(general_options[i].option, "--plog") == 0) /* THIRD ARGUMENT: tags [yiffy --search "blush+fox+male"]*/
                 {
                     menu_func(argv[2]);
                 }
@@ -132,7 +132,7 @@ int main(int argc, char *argv[])
 static bool argument_verify(int argument_count, char *arguments[])
 {
     char *one_arguments[] = {"--help", "--version", "--github", "--website", "--config", "--export", "--import"};
-    char *two_arguments[] = {"--perr", "--nsfw", "--dfetch", "--fetch", "--search"};
+    char *two_arguments[] = {"--plog", "--nsfw", "--dfetch", "--fetch", "--search"};
 
 
     if (argument_count == 3)
@@ -146,7 +146,7 @@ static bool argument_verify(int argument_count, char *arguments[])
         * If not, returns false and shows the user that the second option can only be on/off.
         * 
         * two_arguments they don't take on off: --dfetch, --fetch, --search.
-        * two_arguments they take on/off: --perr, --nsfw.
+        * two_arguments they take on/off: --plog, --nsfw.
         */
         for (size_t i = 0; i < sizeof(two_arguments) / sizeof(two_arguments[0]); i++)
         {
