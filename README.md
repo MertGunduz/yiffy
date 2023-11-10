@@ -1,6 +1,6 @@
 <div align="center">
 
-![Yiffy Logo](https://github.com/MertGunduz/yiffy/assets/65850970/148fe232-6989-4c8f-b081-6c31126fa4b9)
+![yiffy_small](https://github.com/MertGunduz/yiffy/assets/65850970/1626c334-d5ac-4b37-96b6-19335d897bbe)
 
 </div>
 
