@@ -16,7 +16,6 @@
 #include <string.h>
 #include <unistd.h>
 
-#include "../cjson/cjson.h"
 #include "../msg/yiffy_messages.h"
 #include "../search/yiffy_search.h"
 #include "../fetch/yiffy_fetch.h"
