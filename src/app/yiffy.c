@@ -84,11 +84,7 @@ int main(int argc, char *argv[])
             if (strcmp(argv[1], fetch_options[i].option) == 0)
             {
                 void (*fetch_function)(char *argv, char *command) = fetch_options[i].function;
-
-                if (strcmp(argv[1], fetch_options[i].option) == 0)
-                {
-                    fetch_function(argv[2], fetch_options[i].option);
-                }
+                fetch_function(argv[2], fetch_options[i].option);
 
                 break;
             }
