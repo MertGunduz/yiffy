@@ -6,7 +6,7 @@
  * Main function is used to call the functions by using function pointers and pass arguments.
  * Argument_verify function is used to check the validity of the arguments like argv, argc.
  * 
- * @author Mehmet Mert Gunduz 
+ * @author Mehmet Mert Gunduz (merttgg@gmail.com)
  * 
  * @date 21/07/2023
 */

@@ -22,7 +22,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  * 
- * @author Mehmet Mert Gunduz
+ * @author Mehmet Mert Gunduz (merttgg@gmail.com)
  * 
  * @date 02/09/2023 
 */

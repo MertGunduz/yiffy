@@ -3,7 +3,7 @@
  * 
  * @brief This file is used to show some information about the color compatibility of a terminal.
  * 
- * @author Mehmet Mert Gunduz
+ * @author Mehmet Mert Gunduz (merttgg@gmail.com)
  * 
  * @date 31/10/2023
 */

@@ -3,7 +3,7 @@
  * 
  * @brief This file is used to show general help to the user by showing how to use the cli options.
  * 
- * @author Mehmet Mert Gunduz
+ * @author Mehmet Mert Gunduz (merttgg@gmail.com)
  * 
  * @date 01/08/2023
 */

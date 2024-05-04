@@ -3,7 +3,7 @@
  * 
  * @brief This file is used to show some information about file permissions when yiffy is not able to read file.  
  * 
- * @author Mehmet Mert Gunduz
+ * @author Mehmet Mert Gunduz (merttgg@gmail.com)
  * 
  * @date 05/08/2023
 */

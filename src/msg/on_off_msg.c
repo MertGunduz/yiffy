@@ -3,7 +3,7 @@
  * 
  * @brief This file is used to output the correct argument value (on/off) for specified arguments
  * 
- * @author Mehmet Mert Gunduz 
+ * @author Mehmet Mert Gunduz (merttgg@gmail.com)
  * 
  * @date 21/07/2023
 */

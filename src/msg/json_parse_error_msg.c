@@ -3,7 +3,7 @@
  * 
  * @brief This file is used to output the error message when application can not parse the JSON content.
  * 
- * @author Mehmet Mert Gunduz
+ * @author Mehmet Mert Gunduz (merttgg@gmail.com)
  * 
  * @date 26/08/2023
 */

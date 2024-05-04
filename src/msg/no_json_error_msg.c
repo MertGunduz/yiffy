@@ -3,7 +3,7 @@
  * 
  * @brief This file is used to output the error when there is no JSON file. 
  * 
- * @author Mehmet Mert Gunduz 
+ * @author Mehmet Mert Gunduz (merttgg@gmail.com)
  * 
  * @date 24/08/2023
 */

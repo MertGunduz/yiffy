@@ -7,7 +7,7 @@
  * Since ncurses is a very old and low-level library, it can be daunting to understand the whole code by just reading it.
  * All it does in this code is generating UI, resizing system and placing the data to the windows.
  * 
- * @author Mehmet Mert Gunduz
+ * @author Mehmet Mert Gunduz (merttgg@gmail.com)
  * 
  * @date 31/10/2023
 */

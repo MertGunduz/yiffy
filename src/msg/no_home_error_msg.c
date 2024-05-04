@@ -3,7 +3,7 @@
  * 
  * @brief This file is used to output the home not found error when application can not access the $HOME environment variable.
  * 
- * @author Mehmet Mert Gunduz
+ * @author Mehmet Mert Gunduz (merttgg@gmail.com)
  * 
  * @date 05/08/2023
 */

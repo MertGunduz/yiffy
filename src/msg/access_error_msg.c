@@ -3,7 +3,7 @@
  * 
  * @brief This file is used to check the accessibility to the e621/e926 api.
  * 
- * @author Mehmet Mert Gunduz 
+ * @author Mehmet Mert Gunduz (merttgg@gmail.com)
  * 
  * @date 02/10/2023
 */

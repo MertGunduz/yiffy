@@ -3,7 +3,7 @@
  * 
  * @brief This file is used to show current configurations of the app to the user.
  * 
- * @author Mehmet Mert Gunduz
+ * @author Mehmet Mert Gunduz (merttgg@gmail.com)
  * 
  * @date 05/08/2023
 */

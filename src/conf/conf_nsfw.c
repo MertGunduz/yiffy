@@ -5,9 +5,9 @@
  * 
  * This file goes to the /home/user/.yiffy/yiffy-config.txt and sets the nsfw function to on or off depending the option.
  * 
- * @date 05/09/2023
+ * @author Mehmet Mert Gunduz (merttgg@gmail.com)
  * 
- * @author Mehmet Mert Gunduz
+ * @date 05/09/2023
 */
 
 #define MAX_FILE_PATH 256

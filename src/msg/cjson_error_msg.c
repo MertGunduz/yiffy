@@ -3,7 +3,7 @@
  * 
  * @brief This file is used to show some information when cjson root gives error.
  * 
- * @author Mehmet Mert Gunduz
+ * @author Mehmet Mert Gunduz (merttgg@gmail.com)
  * 
  * @date 28/08/2023
 */

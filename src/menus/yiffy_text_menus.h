@@ -3,7 +3,7 @@
  * 
  * @brief This header file is used to generate text based information menus for yiffy.
  * 
- * @author Mehmet Mert Gunduz 
+ * @author Mehmet Mert Gunduz (merttgg@gmail.com)
  * 
  * @date 01/08/2023
 */

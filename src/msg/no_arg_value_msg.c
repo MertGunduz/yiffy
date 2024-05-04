@@ -3,7 +3,7 @@
  * 
  * @brief This file is used to output the correct prompt format when there is no argument value. 
  * 
- * @author Mehmet Mert Gunduz 
+ * @author Mehmet Mert Gunduz (merttgg@gmail.com)
  * 
  * @date 21/07/2023
 */

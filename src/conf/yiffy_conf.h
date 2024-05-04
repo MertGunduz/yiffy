@@ -3,7 +3,7 @@
  * 
  * @brief This header file is used to do configuration for yiffy.
  * 
- * @author Mehmet Mert Gunduz 
+ * @author Mehmet Mert Gunduz (merttgg@gmail.com)
  * 
  * @date 04/09/2023
 */

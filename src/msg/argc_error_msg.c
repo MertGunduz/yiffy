@@ -3,7 +3,7 @@
  * 
  * @brief This file is used to evaluate the argument count and give information if not in the requested format.
  * 
- * @author Mehmet Mert Gunduz 
+ * @author Mehmet Mert Gunduz (merttgg@gmail.com)
  * 
  * @date 21/07/2023
 */

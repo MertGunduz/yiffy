@@ -7,7 +7,7 @@
  * Fetch function is used to check the configuration files and send request to the API. After that it takes the response and checks if JSON file is in the right format.
  * Output function is used to read and parse the JSON file. Also outputs the URLs to the terminal or redirected path. 
  * 
- * @author Mehmet Mert Gunduz 
+ * @author Mehmet Mert Gunduz (merttgg@gmail.com)
  *
  * @date 21/07/2023
 */

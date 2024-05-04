@@ -5,7 +5,7 @@
  * 
  * This file is used to set the request string by checking isNSFW parameter, and downloads the JSON file from e621/e926 API by using aria2c.
  * 
- * @author Mehmet Mert Gunduz
+ * @author Mehmet Mert Gunduz (merttgg@gmail.com)
  * 
  * @date 28/08/2023
 */

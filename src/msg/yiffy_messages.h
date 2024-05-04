@@ -3,7 +3,7 @@
  * 
  * @brief This file is used to handle error and information messages. 
  * 
- * @author Mehmet Mert Gunduz 
+ * @author Mehmet Mert Gunduz (merttgg@gmail.com)
  * 
  * @date 21/07/2023
 */

@@ -3,7 +3,7 @@
  * 
  * @brief This file is used to give information and output the command prompted by the user when it is not defined as a valid argument.
  * 
- * @author Mehmet Mert Gunduz 
+ * @author Mehmet Mert Gunduz (merttgg@gmail.com)
  * 
  * @date 21/07/2023
 */

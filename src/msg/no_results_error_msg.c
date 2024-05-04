@@ -3,7 +3,7 @@
  * 
  * @brief This file is used to output the error when there is no response from the API.
  * 
- * @author Mehmet Mert Gunduz 
+ * @author Mehmet Mert Gunduz (merttgg@gmail.com)
  * 
  * @date 27/08/2023
 */

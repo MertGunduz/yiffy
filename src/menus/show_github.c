@@ -3,7 +3,7 @@
  * 
  * @brief This file is used to show project github URL, current issues to the user.
  * 
- * @author Mehmet Mert Gunduz
+ * @author Mehmet Mert Gunduz (merttgg@gmail.com)
  * 
  * @date 01/08/2023
 */
