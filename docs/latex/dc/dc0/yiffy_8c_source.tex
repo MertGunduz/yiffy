@@ -1,0 +1,213 @@
+\hypertarget{yiffy_8c_source}{}\doxysection{yiffy.\+c}
+\label{yiffy_8c_source}\index{src/app/yiffy.c@{src/app/yiffy.c}}
+\mbox{\hyperlink{yiffy_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00014}00014 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00015}00015 \textcolor{preprocessor}{\#include <stdbool.h>}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00016}00016 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00017}00017 \textcolor{preprocessor}{\#include <unistd.h>}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00019}00019 \textcolor{preprocessor}{\#include "{}../msg/yiffy\_messages.h"{}}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00020}00020 \textcolor{preprocessor}{\#include "{}../search/yiffy\_search.h"{}}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00021}00021 \textcolor{preprocessor}{\#include "{}../fetch/yiffy\_fetch.h"{}}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00022}00022 \textcolor{preprocessor}{\#include "{}../menus/yiffy\_text\_menus.h"{}}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00023}00023 \textcolor{preprocessor}{\#include "{}../conf/yiffy\_conf.h"{}}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00025}\mbox{\hyperlink{yiffy_8c_ae19e91650edc7366559a74767d6e0075}{00025}} \textcolor{preprocessor}{\#define RECOGNIZED\_ARGUMENT   true  }}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00026}\mbox{\hyperlink{yiffy_8c_a129246daa0c427b2108d7844650e5cf4}{00026}} \textcolor{preprocessor}{\#define UNRECOGNIZED\_ARGUMENT false }}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00027}\mbox{\hyperlink{yiffy_8c_a9e8078dd597c541b6090e1e1ffd437e5}{00027}} \textcolor{preprocessor}{\#define MISSING\_ON\_OFF        false }}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00028}\mbox{\hyperlink{yiffy_8c_a667329addeab5d6f7d3f18fc38bd9b90}{00028}} \textcolor{preprocessor}{\#define ARGC\_QTY\_ERROR        false }}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00029}\mbox{\hyperlink{yiffy_8c_a7f24a1abca37046fc42297fdefe88335}{00029}} \textcolor{preprocessor}{\#define NO\_ARG\_VALUE          false }}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00030}\mbox{\hyperlink{yiffy_8c_a6520bb9916f161d340bb3aea747415db}{00030}} \textcolor{preprocessor}{\#define EXTRA\_ARG\_VALUE       false }}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00032}00032 \textcolor{keyword}{static} \textcolor{keywordtype}{bool} argument\_verify(\textcolor{keywordtype}{int} argument\_count, \textcolor{keywordtype}{char} *arguments[]);}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00033}00033 \textcolor{keyword}{static} \textcolor{keywordtype}{bool} is\_api\_accessible();}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00034}00034 \textcolor{keyword}{static} \textcolor{keywordtype}{void} export\_local\_data();}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00035}00035 \textcolor{keyword}{static} \textcolor{keywordtype}{void} import\_local\_data();}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00036}00036 \textcolor{keyword}{static} \textcolor{keywordtype}{void} search\_urls(\textcolor{keywordtype}{char} *tags);}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00037}00037 \textcolor{keyword}{static} \textcolor{keywordtype}{void} fetch\_urls(\textcolor{keywordtype}{char} *tags, \textcolor{keywordtype}{char} *command);}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00042}\mbox{\hyperlink{structgeneral__option}{00042}} \textcolor{keyword}{struct }\mbox{\hyperlink{structgeneral__option}{general\_option}}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00043}00043 \{}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00044}\mbox{\hyperlink{structgeneral__option_a62084e958e49adf5c63fc40bcd982748}{00044}}     \textcolor{keywordtype}{char} *\mbox{\hyperlink{structgeneral__option_a62084e958e49adf5c63fc40bcd982748}{option}};}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00045}\mbox{\hyperlink{structgeneral__option_abf4aa62f04dc6060c4e6102c7bec49f4}{00045}}     void (*\mbox{\hyperlink{structgeneral__option_abf4aa62f04dc6060c4e6102c7bec49f4}{function}})(\textcolor{keywordtype}{char} *argv);}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00046}00046 \};}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00051}\mbox{\hyperlink{structfetch__option}{00051}} \textcolor{keyword}{struct }\mbox{\hyperlink{structfetch__option}{fetch\_option}}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00052}00052 \{}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00053}\mbox{\hyperlink{structfetch__option_a27437d643297ddccbbb96a77f20f1629}{00053}}     \textcolor{keywordtype}{char} *\mbox{\hyperlink{structfetch__option_a27437d643297ddccbbb96a77f20f1629}{option}};}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00054}\mbox{\hyperlink{structfetch__option_a03db2a934e5a0d186f9f41270a5be04e}{00054}}     void (*\mbox{\hyperlink{structfetch__option_a03db2a934e5a0d186f9f41270a5be04e}{function}})(\textcolor{keywordtype}{char} *argv, \textcolor{keywordtype}{char} *command);}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00055}00055 \};}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00057}00057 \textcolor{keyword}{static} \textcolor{keyword}{struct }\mbox{\hyperlink{structgeneral__option}{general\_option}} general\_options[] =}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00058}00058 \{}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00059}00059     \{\textcolor{stringliteral}{"{}-\/-\/help"{}}, \mbox{\hyperlink{show__help_8c_ac29c297ae32acdb2172e926d5f144681}{show\_help}}\},}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00060}00060     \{\textcolor{stringliteral}{"{}-\/-\/version"{}}, \mbox{\hyperlink{show__version_8c_af8f154bf210b7ff6d50433da876083e6}{show\_version}}\},}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00061}00061     \{\textcolor{stringliteral}{"{}-\/-\/github"{}}, \mbox{\hyperlink{show__github_8c_ae31a1275940d22cd5cb90427c1ac92c6}{show\_github}}\},}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00062}00062     \{\textcolor{stringliteral}{"{}-\/-\/website"{}}, \mbox{\hyperlink{show__website_8c_aa861d50389386f6052a394968cc4a986}{show\_website}}\},}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00063}00063     \{\textcolor{stringliteral}{"{}-\/-\/config"{}}, \mbox{\hyperlink{show__config_8c_aca4794b6b6172dc0b0e6d6fba2297c58}{show\_config}}\},}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00064}00064     \{\textcolor{stringliteral}{"{}-\/-\/export"{}}, export\_local\_data\},}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00065}00065     \{\textcolor{stringliteral}{"{}-\/-\/import"{}}, import\_local\_data\},}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00066}00066     \{\textcolor{stringliteral}{"{}-\/-\/plog"{}}, \mbox{\hyperlink{conf__plog_8c_ac22c4c392204b63227cd2ac058798c82}{conf\_plog}}\},}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00067}00067     \{\textcolor{stringliteral}{"{}-\/-\/nsfw"{}}, \mbox{\hyperlink{conf__nsfw_8c_a3a088a9fbd8616175ff107d483ac33f6}{conf\_nsfw}}\},}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00068}00068     \{\textcolor{stringliteral}{"{}-\/-\/search"{}}, search\_urls\}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00069}00069 \};}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00070}00070 }
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00071}00071 \textcolor{keyword}{static} \textcolor{keyword}{struct }\mbox{\hyperlink{structfetch__option}{fetch\_option}} fetch\_options[] =}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00072}00072 \{}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00073}00073     \{\textcolor{stringliteral}{"{}-\/-\/fetch"{}}, fetch\_urls\},}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00074}00074     \{\textcolor{stringliteral}{"{}-\/-\/dfetch"{}}, fetch\_urls\}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00075}00075 \};}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00076}00076 }
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00077}\mbox{\hyperlink{yiffy_8c_a0ddf1224851353fc92bfbff6f499fa97}{00077}} \textcolor{keywordtype}{int} \mbox{\hyperlink{yiffy_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}}(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} *argv[])}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00078}00078 \{}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00079}00079     \textcolor{keywordflow}{if} (argument\_verify(argc, argv))}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00080}00080     \{}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00081}00081         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < \textcolor{keyword}{sizeof}(fetch\_options) / \textcolor{keyword}{sizeof}(fetch\_options[0]); i++)}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00082}00082         \{}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00083}00083             \textcolor{keywordflow}{if} (strcmp(argv[1], fetch\_options[i].\mbox{\hyperlink{structfetch__option_a27437d643297ddccbbb96a77f20f1629}{option}}) == 0)}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00084}00084             \{}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00085}00085                 void (*fetch\_function)(\textcolor{keywordtype}{char} *argv, \textcolor{keywordtype}{char} *command) = fetch\_options[i].\mbox{\hyperlink{structfetch__option_a03db2a934e5a0d186f9f41270a5be04e}{function}};}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00086}00086                 fetch\_function(argv[2], fetch\_options[i].\mbox{\hyperlink{structfetch__option_a27437d643297ddccbbb96a77f20f1629}{option}});}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00087}00087 }
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00088}00088                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00089}00089             \}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00090}00090         \}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00091}00091 }
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00092}00092         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < \textcolor{keyword}{sizeof}(general\_options) / \textcolor{keyword}{sizeof}(general\_options[0]); i++) }
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00093}00093         \{}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00094}00094             \textcolor{keywordflow}{if} (strcmp(argv[1], general\_options[i].\mbox{\hyperlink{structfetch__option_a27437d643297ddccbbb96a77f20f1629}{option}}) == 0) }
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00095}00095             \{}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00096}00096                 void (*menu\_func)(\textcolor{keywordtype}{char} *argv) = general\_options[i].\mbox{\hyperlink{structfetch__option_a03db2a934e5a0d186f9f41270a5be04e}{function}};}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00097}00097 }
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00098}00098                 \textcolor{keywordflow}{if} (strcmp(general\_options[i].\mbox{\hyperlink{structfetch__option_a27437d643297ddccbbb96a77f20f1629}{option}}, \textcolor{stringliteral}{"{}-\/-\/search"{}}) == 0 || strcmp(general\_options[i].\mbox{\hyperlink{structfetch__option_a27437d643297ddccbbb96a77f20f1629}{option}}, \textcolor{stringliteral}{"{}-\/-\/nsfw"{}}) == 0 || strcmp(general\_options[i].\mbox{\hyperlink{structfetch__option_a27437d643297ddccbbb96a77f20f1629}{option}}, \textcolor{stringliteral}{"{}-\/-\/plog"{}}) == 0) \textcolor{comment}{/* THIRD ARGUMENT: tags [yiffy -\/-\/search "{}blush+fox+male"{}]*/}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00099}00099                 \{}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00100}00100                     menu\_func(argv[2]);}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00101}00101                 \}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00102}00102                 \textcolor{keywordflow}{else} \textcolor{comment}{/* NO THIRD ARGUMENT */}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00103}00103                 \{}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00104}00104                     menu\_func(NULL);}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00105}00105                 \}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00106}00106 }
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00107}00107                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00108}00108             \}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00109}00109         \}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00110}00110     \}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00111}00111 }
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00112}00112     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00113}00113 \}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00114}00114 }
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00127}00127 \textcolor{keyword}{static} \textcolor{keywordtype}{bool} argument\_verify(\textcolor{keywordtype}{int} argument\_count, \textcolor{keywordtype}{char} *arguments[])}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00128}00128 \{}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00129}00129     \textcolor{keywordtype}{char} *one\_arguments[] = \{\textcolor{stringliteral}{"{}-\/-\/help"{}}, \textcolor{stringliteral}{"{}-\/-\/version"{}}, \textcolor{stringliteral}{"{}-\/-\/github"{}}, \textcolor{stringliteral}{"{}-\/-\/website"{}}, \textcolor{stringliteral}{"{}-\/-\/config"{}}, \textcolor{stringliteral}{"{}-\/-\/export"{}}, \textcolor{stringliteral}{"{}-\/-\/import"{}}\};}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00130}00130     \textcolor{keywordtype}{char} *two\_arguments[] = \{\textcolor{stringliteral}{"{}-\/-\/plog"{}}, \textcolor{stringliteral}{"{}-\/-\/nsfw"{}}, \textcolor{stringliteral}{"{}-\/-\/dfetch"{}}, \textcolor{stringliteral}{"{}-\/-\/fetch"{}}, \textcolor{stringliteral}{"{}-\/-\/search"{}}\};}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00131}00131 }
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00132}00132 }
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00133}00133     \textcolor{keywordflow}{if} (argument\_count == 3)}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00134}00134     \{}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00146}00146         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < \textcolor{keyword}{sizeof}(two\_arguments) / \textcolor{keyword}{sizeof}(two\_arguments[0]); i++)}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00147}00147         \{}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00148}00148             \textcolor{keywordflow}{if} (strcmp(arguments[1], two\_arguments[i]) == 0)}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00149}00149             \{}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00150}00150                 \textcolor{keywordflow}{if} (strcmp(arguments[2], \textcolor{stringliteral}{"{}on"{}}) == 0 || strcmp(arguments[2], \textcolor{stringliteral}{"{}off"{}}) == 0 || strcmp(arguments[1], \textcolor{stringliteral}{"{}-\/-\/dfetch"{}}) == 0 || strcmp(arguments[1], \textcolor{stringliteral}{"{}-\/-\/fetch"{}}) == 0 || strcmp(arguments[1], \textcolor{stringliteral}{"{}-\/-\/search"{}}) == 0)}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00151}00151                 \{}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00152}00152                     \textcolor{keywordflow}{return} \mbox{\hyperlink{yiffy_8c_ae19e91650edc7366559a74767d6e0075}{RECOGNIZED\_ARGUMENT}}; \textcolor{comment}{/* Return true. */}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00153}00153                 \}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00154}00154                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00155}00155                 \{}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00156}00156                     \mbox{\hyperlink{on__off__msg_8c_a60eb77988fcf4ce24e3108507945e543}{on\_off\_msg}}(arguments[2]);}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00157}00157                     \textcolor{keywordflow}{return} \mbox{\hyperlink{yiffy_8c_a9e8078dd597c541b6090e1e1ffd437e5}{MISSING\_ON\_OFF}}; \textcolor{comment}{/* Return false. */}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00158}00158                 \}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00159}00159             \}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00160}00160         \}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00161}00161 }
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00167}00167         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < \textcolor{keyword}{sizeof}(one\_arguments) / \textcolor{keyword}{sizeof}(one\_arguments[0]); i++)}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00168}00168         \{}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00169}00169             \textcolor{keywordflow}{if} (strcmp(arguments[1], one\_arguments[i]) == 0)}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00170}00170             \{}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00171}00171                 \mbox{\hyperlink{extra__arg__error__msg_8c_ac4967f114291f160f3f6f916b57887cc}{extra\_arg\_error\_msg}}(arguments[1]);}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00172}00172                 \textcolor{keywordflow}{return} \mbox{\hyperlink{yiffy_8c_a6520bb9916f161d340bb3aea747415db}{EXTRA\_ARG\_VALUE}}; \textcolor{comment}{/* Return false. */}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00173}00173             \}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00174}00174         \}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00175}00175 }
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00176}00176         \mbox{\hyperlink{unrecognized__arg__msg_8c_ae1e70d303bd9115115ecb22cb13459c5}{unrecognized\_arg\_msg}}(arguments[1]);}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00177}00177         \textcolor{keywordflow}{return} \mbox{\hyperlink{yiffy_8c_a129246daa0c427b2108d7844650e5cf4}{UNRECOGNIZED\_ARGUMENT}}; \textcolor{comment}{/* Return false. */}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00178}00178     \}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00179}00179     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (argument\_count == 2)}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00180}00180     \{}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00186}00186         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < \textcolor{keyword}{sizeof}(one\_arguments) / \textcolor{keyword}{sizeof}(one\_arguments[0]); i++)}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00187}00187         \{}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00188}00188             \textcolor{keywordflow}{if} (strcmp(arguments[1], one\_arguments[i]) == 0)}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00189}00189             \{}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00190}00190                 \textcolor{keywordflow}{return} \mbox{\hyperlink{yiffy_8c_ae19e91650edc7366559a74767d6e0075}{RECOGNIZED\_ARGUMENT}}; \textcolor{comment}{/* Return true. */}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00191}00191             \}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00192}00192         \}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00193}00193 }
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00199}00199         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < \textcolor{keyword}{sizeof}(two\_arguments) / \textcolor{keyword}{sizeof}(two\_arguments[0]); i++)}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00200}00200         \{}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00201}00201             \textcolor{keywordflow}{if} (strcmp(arguments[1], two\_arguments[i]) == 0)}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00202}00202             \{}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00203}00203                 \mbox{\hyperlink{no__arg__value__msg_8c_a2104c256bb9f09a63fb38bc5ff530eca}{no\_arg\_value\_msg}}(arguments[1]);}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00204}00204                 \textcolor{keywordflow}{return} \mbox{\hyperlink{yiffy_8c_a7f24a1abca37046fc42297fdefe88335}{NO\_ARG\_VALUE}}; \textcolor{comment}{/* Return false. */}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00205}00205             \}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00206}00206         \}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00207}00207         }
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00208}00208         \mbox{\hyperlink{unrecognized__arg__msg_8c_ae1e70d303bd9115115ecb22cb13459c5}{unrecognized\_arg\_msg}}(arguments[1]);}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00209}00209         \textcolor{keywordflow}{return} \mbox{\hyperlink{yiffy_8c_a129246daa0c427b2108d7844650e5cf4}{UNRECOGNIZED\_ARGUMENT}}; \textcolor{comment}{/* Return false. */}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00210}00210     \}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00211}00211     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00212}00212     \{}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00218}00218         \mbox{\hyperlink{argc__error__msg_8c_a020d66de7fd128881c8398247a0d0bdd}{argc\_error\_msg}}(argument\_count);}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00219}00219         \textcolor{keywordflow}{return} \mbox{\hyperlink{yiffy_8c_a667329addeab5d6f7d3f18fc38bd9b90}{ARGC\_QTY\_ERROR}}; \textcolor{comment}{/* Return false. */}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00220}00220     \}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00221}00221 \}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00222}00222 }
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00223}00223 }
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00227}00227 \textcolor{keyword}{static} \textcolor{keywordtype}{bool} is\_api\_accessible()}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00228}00228 \{}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00229}00229     \textcolor{comment}{/* Send the ping. */}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00230}00230     \textcolor{keywordtype}{int} ping\_result = system(\textcolor{stringliteral}{"{}ping -\/c 1 e621.net >/dev/null 2>\&1"{}});}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00231}00231 }
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00232}00232     \textcolor{keywordflow}{if} (ping\_result == 0)}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00233}00233     \{}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00234}00234         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00235}00235     \}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00236}00236     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00237}00237     \{}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00238}00238         \mbox{\hyperlink{access__error__msg_8c_a5c9e516a330fca51d5c0c7be7e44c327}{access\_error\_msg}}();}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00239}00239         exit(EXIT\_FAILURE);}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00240}00240     \}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00241}00241 \}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00242}00242 }
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00244}00244 \textcolor{keyword}{static} \textcolor{keywordtype}{void} export\_local\_data() }
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00245}00245 \{}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00246}00246     fprintf(stdout, \textcolor{stringliteral}{"{}EXPORT MENU\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00247}00247 \}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00248}00248 }
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00250}00250 \textcolor{keyword}{static} \textcolor{keywordtype}{void} import\_local\_data() }
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00251}00251 \{}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00252}00252     fprintf(stdout, \textcolor{stringliteral}{"{}IMPORT MENU\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00253}00253 \}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00254}00254 }
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00260}00260 \textcolor{keyword}{static} \textcolor{keywordtype}{void} search\_urls(\textcolor{keywordtype}{char} *tags)}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00261}00261 \{   \textcolor{keywordflow}{if} (is\_api\_accessible())}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00262}00262     \{}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00263}00263         \mbox{\hyperlink{search_8c_ab899bd069f8d6db7339eba31c3ad7a02}{search}}(tags);        }
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00264}00264     \}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00265}00265 \}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00266}00266 }
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00272}00272 \textcolor{keyword}{static} \textcolor{keywordtype}{void} fetch\_urls(\textcolor{keywordtype}{char} *tags, \textcolor{keywordtype}{char} *command)}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00273}00273 \{ }
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00274}00274     \textcolor{keywordflow}{if} (is\_api\_accessible())}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00275}00275     \{}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00276}00276         \textcolor{keywordtype}{int} i = 1;}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00277}00277         \textcolor{keywordflow}{while} (\textcolor{keyword}{true})}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00278}00278         \{}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00279}00279             \mbox{\hyperlink{fetch_8c_a41f382b6bd05c9776641fb4bc5024afa}{fetch}}(tags, i, command);}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00280}00280             i++;}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00281}00281         \}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00282}00282     \}}
+\DoxyCodeLine{\Hypertarget{yiffy_8c_source_l00283}00283 \}}
+
+\end{DoxyCode}

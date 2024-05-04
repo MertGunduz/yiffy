@@ -1,0 +1,183 @@
+\hypertarget{fetch_8c_source}{}\doxysection{fetch.\+c}
+\label{fetch_8c_source}\index{src/fetch/fetch.c@{src/fetch/fetch.c}}
+\mbox{\hyperlink{fetch_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00015}\mbox{\hyperlink{fetch_8c_a263efd24d550124313df51247f07457a}{00015}} \textcolor{preprocessor}{\#define MAX\_FILE\_PATH 256   }}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00016}\mbox{\hyperlink{fetch_8c_ad4d796b98c583d49e83adabd74a63bf6}{00016}} \textcolor{preprocessor}{\#define MAX\_BUFFER\_SIZE 512 }}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00017}\mbox{\hyperlink{fetch_8c_aff9b7f6d81297248bf0ad06d725c8cbb}{00017}} \textcolor{preprocessor}{\#define CONTENT\_SIZE 262144 }}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00019}00019 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{yiffy__fetch_8h}{yiffy\_fetch.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00021}00021 \textcolor{keyword}{static} \textcolor{keywordtype}{void} output(\textcolor{keywordtype}{char} *json\_content, \textcolor{keywordtype}{char} *command);}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00023}00023 \textcolor{keyword}{static} \textcolor{keywordtype}{int} total\_downloads = 0;}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00032}\mbox{\hyperlink{fetch_8c_a41f382b6bd05c9776641fb4bc5024afa}{00032}} \textcolor{keywordtype}{void} \mbox{\hyperlink{fetch_8c_a41f382b6bd05c9776641fb4bc5024afa}{fetch}}(\textcolor{keywordtype}{char} *tags, \textcolor{keywordtype}{int} page, \textcolor{keywordtype}{char} *command)}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00033}00033 \{}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00034}00034     \textcolor{keywordtype}{char} config\_path[\mbox{\hyperlink{fetch_8c_a263efd24d550124313df51247f07457a}{MAX\_FILE\_PATH}}];}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00035}00035     \textcolor{keywordtype}{char} \mbox{\hyperlink{cjson_8h_aff2566f4c366b48d73479bef43ee4d2e}{buffer}}[\mbox{\hyperlink{fetch_8c_ad4d796b98c583d49e83adabd74a63bf6}{MAX\_BUFFER\_SIZE}}];}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00037}00037     \textcolor{keywordtype}{bool} is\_nsfw = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00039}00039     \textcolor{keywordtype}{char} *home = getenv(\textcolor{stringliteral}{"{}HOME"{}});}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00041}00041     \textcolor{keywordflow}{if} (home == NULL) }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00042}00042     \{}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00043}00043         \mbox{\hyperlink{no__home__error__msg_8c_ab360dcc8796de6e212175d6c4c77477d}{no\_home\_error\_msg}}();}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00044}00044         exit(EXIT\_FAILURE);}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00045}00045     \}}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00047}00047     sprintf(config\_path, \textcolor{stringliteral}{"{}\%s/.yiffy/yiffy-\/config.txt"{}}, home);}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00049}00049     \textcolor{comment}{/* Read the configuration file (home/user/.yiffy/yiffy-\/config.txt) to execute the wanted process. */}}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00050}00050     FILE *config = fopen(config\_path, \textcolor{stringliteral}{"{}r"{}});}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00052}00052     \textcolor{keywordflow}{if} (config == NULL) }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00053}00053     \{}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00054}00054         \mbox{\hyperlink{file__open__error__msg_8c_a94c5cd5af84c1b87e2dbf95cb2cbce90}{file\_open\_error\_msg}}(config);}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00055}00055         exit(EXIT\_FAILURE);}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00056}00056     \}}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00058}00058     \textcolor{keywordtype}{size\_t} config\_bytes = fread(\mbox{\hyperlink{cjson_8h_aff2566f4c366b48d73479bef43ee4d2e}{buffer}}, 1, \mbox{\hyperlink{fetch_8c_ad4d796b98c583d49e83adabd74a63bf6}{MAX\_BUFFER\_SIZE}} -\/ 1, config); }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00059}00059     \mbox{\hyperlink{cjson_8h_aff2566f4c366b48d73479bef43ee4d2e}{buffer}}[config\_bytes] = \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00060}00060 }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00061}00061     fclose(config);}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00062}00062 }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00063}00063     \textcolor{keywordtype}{char} *token = strtok(\mbox{\hyperlink{cjson_8h_aff2566f4c366b48d73479bef43ee4d2e}{buffer}}, \textcolor{stringliteral}{"{}:"{}});}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00064}00064 }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00065}00065     \textcolor{keywordflow}{while} (token != NULL) }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00066}00066     \{}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00067}00067         \textcolor{keywordflow}{if} (strcmp(token, \textcolor{stringliteral}{"{}nsfw"{}}) == 0) }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00068}00068         \{}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00069}00069             is\_nsfw = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00070}00070             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00071}00071         \}}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00072}00072 }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00073}00073         token = strtok(NULL, \textcolor{stringliteral}{"{}:"{}});}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00074}00074     \}}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00075}00075 }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00076}00076     \textcolor{comment}{/* Download the JSON response. */}}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00077}00077     \mbox{\hyperlink{aria2__download_8c_a5d6732ce337f794d14f9f2b835a0d2ef}{aria2\_download}}(tags, page, is\_nsfw, 20);}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00079}00079     \textcolor{comment}{/* Check if the JSON response downloaded. */}}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00080}00080     FILE *response\_json = fopen(\textcolor{stringliteral}{"{}posts.json"{}}, \textcolor{stringliteral}{"{}r"{}});}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00081}00081 }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00082}00082     \textcolor{keywordflow}{if} (response\_json == NULL)}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00083}00083     \{}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00084}00084         \mbox{\hyperlink{no__json__error__msg_8c_aaaed77adad2afa7f86c4d4c4703564aa}{no\_json\_error\_msg}}(response\_json);}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00085}00085         exit(EXIT\_FAILURE);}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00086}00086     \}}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00087}00087 }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00088}00088     \textcolor{comment}{/* Allocate memory to store the JSON response content. */}}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00089}00089     \textcolor{keywordtype}{char} *json\_control\_content = (\textcolor{keywordtype}{char}*)malloc(\mbox{\hyperlink{fetch_8c_aff9b7f6d81297248bf0ad06d725c8cbb}{CONTENT\_SIZE}} * \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}));}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00090}00090 }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00091}00091     \textcolor{keywordflow}{if} (json\_control\_content == NULL)}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00092}00092     \{}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00093}00093         \mbox{\hyperlink{malloc__error__msg_8c_a8f2c3050fed77b86a432d485cde3ade1}{malloc\_error\_msg}}();}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00094}00094         exit(EXIT\_FAILURE);}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00095}00095     \}}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00096}00096     }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00097}00097     \textcolor{keywordtype}{size\_t} bytes\_read = fread(json\_control\_content, 1, \mbox{\hyperlink{fetch_8c_aff9b7f6d81297248bf0ad06d725c8cbb}{CONTENT\_SIZE}} -\/ 1, response\_json);}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00098}00098     json\_control\_content[bytes\_read] = \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00099}00099 }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00100}00100     fclose(response\_json);}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00101}00101 }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00102}00102     \textcolor{comment}{/* Check if the JSON response is empty. */}}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00103}00103     \textcolor{keywordflow}{if} (strcmp(json\_control\_content, \textcolor{stringliteral}{"{}\{\(\backslash\)"{}posts\(\backslash\)"{}:[]\}"{}}) == 0) }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00104}00104     \{}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00105}00105         \textcolor{keywordflow}{if} (total\_downloads == 0)}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00106}00106         \{}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00107}00107             \mbox{\hyperlink{no__results__error__msg_8c_a2d26f407e1cd042bfff35c4fdb673550}{no\_results\_error\_msg}}();}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00108}00108         \}}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00109}00109         }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00110}00110         free(json\_control\_content);}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00111}00111 }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00112}00112         remove(\textcolor{stringliteral}{"{}posts.json"{}});}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00113}00113         }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00114}00114         exit(EXIT\_FAILURE);}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00115}00115     \}}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00116}00116 }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00117}00117     \textcolor{comment}{/* Output the URLs by using the current JSON file. */}}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00118}00118     output(json\_control\_content, command);}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00119}00119 \}}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00120}00120 }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00127}00127 \textcolor{keyword}{static} \textcolor{keywordtype}{void} output(\textcolor{keywordtype}{char} *json\_content, \textcolor{keywordtype}{char} *command)}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00128}00128 \{}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00129}00129     \textcolor{comment}{/* Parse the JSON response data. */}}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00130}00130     \mbox{\hyperlink{structcJSON}{cJSON}} *root = cJSON\_Parse(json\_content);}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00131}00131 }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00132}00132     free(json\_content);}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00133}00133 }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00134}00134     \textcolor{keywordflow}{if} (root == NULL) }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00135}00135     \{}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00136}00136         \textcolor{keyword}{const} \textcolor{keywordtype}{char} *error\_ptr = cJSON\_GetErrorPtr();}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00137}00137     }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00138}00138         \textcolor{keywordflow}{if} (error\_ptr != NULL) }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00139}00139         \{}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00140}00140             \mbox{\hyperlink{cjson__error__msg_8c_aee955f677a4d5906d3a7f972ccb8543e}{cjson\_error\_msg}}(error\_ptr);}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00141}00141         \}}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00142}00142     }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00143}00143         \mbox{\hyperlink{json__parse__error__msg_8c_a1cee29a606052cf745b98ca6f4d74d10}{json\_parse\_error\_msg}}();}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00144}00144         cJSON\_Delete(root);}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00145}00145         exit(EXIT\_FAILURE);}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00146}00146     \}}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00147}00147 }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00148}00148     \textcolor{comment}{/* Navigate to the posts array. */}}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00149}00149     \mbox{\hyperlink{structcJSON}{cJSON}} *posts\_array = cJSON\_GetObjectItemCaseSensitive(root, \textcolor{stringliteral}{"{}posts"{}});}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00150}00150 }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00151}00151     \textcolor{keywordflow}{if} (cJSON\_IsArray(posts\_array)) }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00152}00152     \{}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00153}00153         \textcolor{keywordtype}{int} total\_posts = cJSON\_GetArraySize(posts\_array);}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00154}00154 }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00155}00155         \textcolor{comment}{// Iterate through the posts array.}}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00156}00156         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < total\_posts; i++) }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00157}00157         \{}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00158}00158             \mbox{\hyperlink{structcJSON}{cJSON}} *post = cJSON\_GetArrayItem(posts\_array, i);}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00159}00159             \mbox{\hyperlink{structcJSON}{cJSON}} *file = cJSON\_GetObjectItemCaseSensitive(post, \textcolor{stringliteral}{"{}file"{}}) ;}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00160}00160                 }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00161}00161             \textcolor{keywordflow}{if} (cJSON\_IsObject(file))}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00162}00162             \{}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00163}00163                 \mbox{\hyperlink{structcJSON}{cJSON}} *file\_url\_obj = cJSON\_GetObjectItemCaseSensitive(file, \textcolor{stringliteral}{"{}url"{}});}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00164}00164 }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00165}00165                 \textcolor{comment}{/* Check if the url field exists and is a string. */}}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00166}00166                 \textcolor{keywordflow}{if} (cJSON\_IsString(file\_url\_obj)) }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00167}00167                 \{}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00168}00168                     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *file\_url = file\_url\_obj-\/>\mbox{\hyperlink{structcJSON_ad43f8de2571e504c4c5ce0a36990e6e1}{valuestring}};}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00169}00169                     }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00170}00170                     fprintf(stdout, \textcolor{stringliteral}{"{}\%s\(\backslash\)n"{}}, file\_url);}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00171}00171 }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00172}00172                     \textcolor{comment}{/* If the command is -\/-\/dfetch download the fetched URLs. */}}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00173}00173                     \textcolor{keywordflow}{if} (strcmp(command, \textcolor{stringliteral}{"{}-\/-\/dfetch"{}}) == 0)}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00174}00174                     \{}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00175}00175                         \textcolor{comment}{/* Alloc for downloading process. */}}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00176}00176                         \textcolor{keywordtype}{char} *download\_command = (\textcolor{keywordtype}{char}*)malloc(256 * \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}));}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00177}00177 }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00178}00178                         sprintf(download\_command, \textcolor{stringliteral}{"{}aria2c \%s >/dev/null 2>\&1"{}}, file\_url);}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00179}00179 }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00180}00180                         \textcolor{keywordtype}{int} download\_success = system(download\_command);}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00181}00181 }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00182}00182                         \textcolor{keywordflow}{if} (download\_success == \mbox{\hyperlink{yiffy__fetch_8h_acbd50aa1f19ce68034a26b45b0aaed69}{BAD\_SYSTEM\_FUNC\_CALL}})}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00183}00183                         \{}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00184}00184                             free(download\_command);}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00185}00185                             exit(EXIT\_FAILURE);}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00186}00186                         \}}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00187}00187 }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00188}00188                         free(download\_command);}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00189}00189                     \}}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00190}00190 }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00191}00191                     \textcolor{comment}{/* Increase the total downloads, this is used to control if any posts downloaded. */}}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00192}00192                     total\_downloads++;}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00193}00193                 \}}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00194}00194             \}}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00195}00195         \}}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00196}00196     \}}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00197}00197 }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00198}00198     \textcolor{comment}{/* Clean up cJSON object. */}}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00199}00199     cJSON\_Delete(root);}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00200}00200 }
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00201}00201     \textcolor{comment}{/* Delete posts.json file. */}}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00202}00202     remove(\textcolor{stringliteral}{"{}posts.json"{}});}
+\DoxyCodeLine{\Hypertarget{fetch_8c_source_l00203}00203 \}}
+
+\end{DoxyCode}

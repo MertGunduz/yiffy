@@ -1,0 +1,33 @@
+\hypertarget{yiffy__messages_8h_source}{}\doxysection{yiffy\+\_\+messages.\+h}
+\label{yiffy__messages_8h_source}\index{src/msg/yiffy\_messages.h@{src/msg/yiffy\_messages.h}}
+\mbox{\hyperlink{yiffy__messages_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{yiffy__messages_8h_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{yiffy__messages_8h_source_l00011}00011 \textcolor{preprocessor}{\#ifndef YIFFY\_MESSAGES\_H}}
+\DoxyCodeLine{\Hypertarget{yiffy__messages_8h_source_l00012}00012 \textcolor{preprocessor}{\#define YIFFY\_MESSAGES\_H}}
+\DoxyCodeLine{\Hypertarget{yiffy__messages_8h_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{yiffy__messages_8h_source_l00014}00014 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{yiffy__messages_8h_source_l00015}00015 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{\Hypertarget{yiffy__messages_8h_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{yiffy__messages_8h_source_l00017}00017 \textcolor{keywordtype}{void} \mbox{\hyperlink{yiffy__messages_8h_a60eb77988fcf4ce24e3108507945e543}{on\_off\_msg}}(\textcolor{keywordtype}{char} *argument);}
+\DoxyCodeLine{\Hypertarget{yiffy__messages_8h_source_l00018}00018 \textcolor{keywordtype}{void} \mbox{\hyperlink{yiffy__messages_8h_ae1e70d303bd9115115ecb22cb13459c5}{unrecognized\_arg\_msg}}(\textcolor{keywordtype}{char} *argument);}
+\DoxyCodeLine{\Hypertarget{yiffy__messages_8h_source_l00019}00019 \textcolor{keywordtype}{void} \mbox{\hyperlink{yiffy__messages_8h_a2104c256bb9f09a63fb38bc5ff530eca}{no\_arg\_value\_msg}}(\textcolor{keywordtype}{char} *argument);}
+\DoxyCodeLine{\Hypertarget{yiffy__messages_8h_source_l00020}00020 \textcolor{keywordtype}{void} \mbox{\hyperlink{yiffy__messages_8h_a020d66de7fd128881c8398247a0d0bdd}{argc\_error\_msg}}(\textcolor{keywordtype}{int} argc);}
+\DoxyCodeLine{\Hypertarget{yiffy__messages_8h_source_l00021}00021 \textcolor{keywordtype}{void} \mbox{\hyperlink{yiffy__messages_8h_ac4967f114291f160f3f6f916b57887cc}{extra\_arg\_error\_msg}}(\textcolor{keywordtype}{char} *argument);}
+\DoxyCodeLine{\Hypertarget{yiffy__messages_8h_source_l00022}00022 \textcolor{keywordtype}{void} \mbox{\hyperlink{yiffy__messages_8h_ab360dcc8796de6e212175d6c4c77477d}{no\_home\_error\_msg}}();}
+\DoxyCodeLine{\Hypertarget{yiffy__messages_8h_source_l00023}00023 \textcolor{keywordtype}{void} \mbox{\hyperlink{yiffy__messages_8h_a94c5cd5af84c1b87e2dbf95cb2cbce90}{file\_open\_error\_msg}}(FILE *file);}
+\DoxyCodeLine{\Hypertarget{yiffy__messages_8h_source_l00024}00024 \textcolor{keywordtype}{void} \mbox{\hyperlink{yiffy__messages_8h_aaaed77adad2afa7f86c4d4c4703564aa}{no\_json\_error\_msg}}(FILE *json\_file);}
+\DoxyCodeLine{\Hypertarget{yiffy__messages_8h_source_l00025}00025 \textcolor{keywordtype}{void} \mbox{\hyperlink{yiffy__messages_8h_a1cee29a606052cf745b98ca6f4d74d10}{json\_parse\_error\_msg}}();}
+\DoxyCodeLine{\Hypertarget{yiffy__messages_8h_source_l00026}00026 \textcolor{keywordtype}{void} \mbox{\hyperlink{yiffy__messages_8h_a2d26f407e1cd042bfff35c4fdb673550}{no\_results\_error\_msg}}();}
+\DoxyCodeLine{\Hypertarget{yiffy__messages_8h_source_l00027}00027 \textcolor{keywordtype}{void} \mbox{\hyperlink{yiffy__messages_8h_aee955f677a4d5906d3a7f972ccb8543e}{cjson\_error\_msg}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *ptr\_error);}
+\DoxyCodeLine{\Hypertarget{yiffy__messages_8h_source_l00028}00028 \textcolor{keywordtype}{void} \mbox{\hyperlink{yiffy__messages_8h_a8f2c3050fed77b86a432d485cde3ade1}{malloc\_error\_msg}}();}
+\DoxyCodeLine{\Hypertarget{yiffy__messages_8h_source_l00029}00029 \textcolor{keywordtype}{void} \mbox{\hyperlink{yiffy__messages_8h_acc21d14c9f9a59987f07615415759325}{system\_func\_error\_msg}}();}
+\DoxyCodeLine{\Hypertarget{yiffy__messages_8h_source_l00030}00030 \textcolor{keywordtype}{void} \mbox{\hyperlink{yiffy__messages_8h_a2b3c403bb7977f8a7672f39dec8d5659}{already\_conf\_msg}}(\textcolor{keywordtype}{char} *option, \textcolor{keywordtype}{char} *argv);}
+\DoxyCodeLine{\Hypertarget{yiffy__messages_8h_source_l00031}00031 \textcolor{keywordtype}{void} \mbox{\hyperlink{yiffy__messages_8h_a4c232dc73b53a88d1d351208928e889c}{conf\_successful\_msg}}(\textcolor{keywordtype}{char} *option, \textcolor{keywordtype}{char} *argv);}
+\DoxyCodeLine{\Hypertarget{yiffy__messages_8h_source_l00032}00032 \textcolor{keywordtype}{void} \mbox{\hyperlink{yiffy__messages_8h_a5c9e516a330fca51d5c0c7be7e44c327}{access\_error\_msg}}();}
+\DoxyCodeLine{\Hypertarget{yiffy__messages_8h_source_l00033}00033 \textcolor{keywordtype}{void} \mbox{\hyperlink{yiffy__messages_8h_af050e19d72fa5f083e33bdcb40d87934}{color\_comp\_error\_msg}}();}
+\DoxyCodeLine{\Hypertarget{yiffy__messages_8h_source_l00034}00034 \textcolor{keywordtype}{void} \mbox{\hyperlink{yiffy__messages_8h_aa2139f028bdd1f14dcd7c65eabf8a14f}{window\_create\_error\_msg}}();}
+\DoxyCodeLine{\Hypertarget{yiffy__messages_8h_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{yiffy__messages_8h_source_l00036}00036 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* YIFFY\_MESSAGES\_H */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

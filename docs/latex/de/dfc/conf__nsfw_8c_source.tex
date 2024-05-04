@@ -1,0 +1,125 @@
+\hypertarget{conf__nsfw_8c_source}{}\doxysection{conf\+\_\+nsfw.\+c}
+\label{conf__nsfw_8c_source}\index{src/conf/conf\_nsfw.c@{src/conf/conf\_nsfw.c}}
+\mbox{\hyperlink{conf__nsfw_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00013}\mbox{\hyperlink{conf__nsfw_8c_a263efd24d550124313df51247f07457a}{00013}} \textcolor{preprocessor}{\#define MAX\_FILE\_PATH 256}}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00014}\mbox{\hyperlink{conf__nsfw_8c_ad4d796b98c583d49e83adabd74a63bf6}{00014}} \textcolor{preprocessor}{\#define MAX\_BUFFER\_SIZE 512}}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00016}00016 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{yiffy__conf_8h}{yiffy\_conf.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00023}\mbox{\hyperlink{conf__nsfw_8c_a3a088a9fbd8616175ff107d483ac33f6}{00023}} \textcolor{keywordtype}{void} \mbox{\hyperlink{conf__nsfw_8c_a3a088a9fbd8616175ff107d483ac33f6}{conf\_nsfw}}(\textcolor{keywordtype}{char} *argv)}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00024}00024 \{}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00025}00025     \textcolor{keywordtype}{char} file\_path[\mbox{\hyperlink{conf__nsfw_8c_a263efd24d550124313df51247f07457a}{MAX\_FILE\_PATH}}];}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00026}00026     \textcolor{keywordtype}{char} \mbox{\hyperlink{cjson_8h_aff2566f4c366b48d73479bef43ee4d2e}{buffer}}[\mbox{\hyperlink{conf__nsfw_8c_ad4d796b98c583d49e83adabd74a63bf6}{MAX\_BUFFER\_SIZE}}];}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00028}00028     \textcolor{comment}{/* Operation boolean, used to check if it exists in the current configuration or not. */}}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00029}00029     \textcolor{keywordtype}{bool} is\_nsfw;}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00031}00031     \textcolor{comment}{/* To write or delete the configuration setting. Keyword (nsfw) has got 4 characters. */}}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00032}00032     \textcolor{keywordtype}{int} option\_size = 4;}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00034}00034     \textcolor{comment}{/* To set the index of the option. */}}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00035}00035     \textcolor{keywordtype}{int} nsfw\_index;}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00037}00037     \textcolor{comment}{/* Get the home directory of the current user. */}}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00038}00038     \textcolor{keywordtype}{char} *home\_directory = getenv(\textcolor{stringliteral}{"{}HOME"{}});}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00040}00040     \textcolor{keywordflow}{if} (home\_directory == NULL) }
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00041}00041     \{}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00042}00042         \mbox{\hyperlink{no__home__error__msg_8c_ab360dcc8796de6e212175d6c4c77477d}{no\_home\_error\_msg}}();}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00043}00043         exit(1);}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00044}00044     \}}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00046}00046     \textcolor{comment}{/* Create the configuration file path. */}}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00047}00047     sprintf(file\_path, \textcolor{stringliteral}{"{}\%s/.yiffy/yiffy-\/config.txt"{}}, home\_directory);}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00049}00049     \textcolor{comment}{/* create file pointer */}}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00050}00050     FILE *conf\_read\_write\_file = fopen(file\_path, \textcolor{stringliteral}{"{}r+"{}});}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00052}00052     \textcolor{keywordflow}{if} (conf\_read\_write\_file == NULL)}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00053}00053     \{}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00054}00054         \mbox{\hyperlink{file__open__error__msg_8c_a94c5cd5af84c1b87e2dbf95cb2cbce90}{file\_open\_error\_msg}}(conf\_read\_write\_file);}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00055}00055         exit(EXIT\_FAILURE);}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00056}00056     \}}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00058}00058     fscanf(conf\_read\_write\_file, \textcolor{stringliteral}{"{}\%s"{}}, \mbox{\hyperlink{cjson_8h_aff2566f4c366b48d73479bef43ee4d2e}{buffer}});}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00059}00059 }
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00060}00060     \textcolor{comment}{/* Close the conf read file. */}}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00061}00061     fclose(conf\_read\_write\_file);}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00062}00062 }
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00063}00063     \textcolor{comment}{/* Get the buffer size. */}}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00064}00064     \textcolor{keywordtype}{int} buffer\_size = strlen(\mbox{\hyperlink{cjson_8h_aff2566f4c366b48d73479bef43ee4d2e}{buffer}}); }
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00066}00066     \textcolor{comment}{/* Check if the nsfw string exists. */}}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00067}00067     \textcolor{keywordtype}{char} *\textcolor{keywordtype}{string} = strstr(\mbox{\hyperlink{cjson_8h_aff2566f4c366b48d73479bef43ee4d2e}{buffer}}, \textcolor{stringliteral}{"{}nsfw"{}});}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00068}00068     }
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00069}00069     \textcolor{keywordflow}{if} (\textcolor{keywordtype}{string} != NULL)}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00070}00070     \{}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00071}00071         \textcolor{comment}{/* Get the index of the nsfw token. */}}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00072}00072         nsfw\_index = \textcolor{keywordtype}{string} -\/ \mbox{\hyperlink{cjson_8h_aff2566f4c366b48d73479bef43ee4d2e}{buffer}};}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00073}00073 }
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00074}00074         \textcolor{comment}{/* Set the boolean to true to make operations. */}}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00075}00075         is\_nsfw = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00076}00076     \}}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00077}00077 }
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00078}00078     \textcolor{keywordflow}{if} (strcmp(argv, \textcolor{stringliteral}{"{}on"{}}) == 0 \&\& is\_nsfw)}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00079}00079     \{}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00080}00080         \mbox{\hyperlink{already__conf__msg_8c_a2b3c403bb7977f8a7672f39dec8d5659}{already\_conf\_msg}}(\textcolor{stringliteral}{"{}nsfw"{}}, argv);}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00081}00081     \}}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00082}00082     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (strcmp(argv, \textcolor{stringliteral}{"{}on"{}}) == 0 \&\& !is\_nsfw)}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00083}00083     \{}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00084}00084         FILE *conf\_append\_file = fopen(file\_path, \textcolor{stringliteral}{"{}a"{}});}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00085}00085 }
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00086}00086         \textcolor{keywordflow}{if} (conf\_append\_file == NULL)}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00087}00087         \{}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00088}00088             \mbox{\hyperlink{file__open__error__msg_8c_a94c5cd5af84c1b87e2dbf95cb2cbce90}{file\_open\_error\_msg}}(conf\_append\_file);}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00089}00089             exit(EXIT\_FAILURE);}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00090}00090         \}}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00091}00091 }
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00092}00092         fprintf(conf\_append\_file, \textcolor{stringliteral}{"{}:nsfw"{}});}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00093}00093 }
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00094}00094         fclose(conf\_append\_file);}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00095}00095 }
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00096}00096         \mbox{\hyperlink{conf__successful__msg_8c_a4c232dc73b53a88d1d351208928e889c}{conf\_successful\_msg}}(\textcolor{stringliteral}{"{}nsfw"{}}, argv);}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00097}00097     \}}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00098}00098     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (strcmp(argv, \textcolor{stringliteral}{"{}off"{}}) == 0 \&\& !is\_nsfw)}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00099}00099     \{}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00100}00100         \mbox{\hyperlink{already__conf__msg_8c_a2b3c403bb7977f8a7672f39dec8d5659}{already\_conf\_msg}}(\textcolor{stringliteral}{"{}nsfw"{}}, argv);}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00101}00101     \}}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00102}00102     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (strcmp(argv, \textcolor{stringliteral}{"{}off"{}}) == 0 \&\& is\_nsfw)}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00103}00103     \{}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00104}00104         FILE *conf\_write\_file = fopen(file\_path, \textcolor{stringliteral}{"{}w"{}});}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00105}00105 }
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00106}00106         \textcolor{keywordflow}{if} (conf\_write\_file == NULL)}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00107}00107         \{}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00108}00108             \mbox{\hyperlink{file__open__error__msg_8c_a94c5cd5af84c1b87e2dbf95cb2cbce90}{file\_open\_error\_msg}}(conf\_write\_file);}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00109}00109             exit(EXIT\_FAILURE);}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00110}00110         \}}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00111}00111 }
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00112}00112         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < buffer\_size; i++)}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00113}00113         \{}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00114}00114             \textcolor{keywordflow}{if} (nsfw\_index == 0 \&\& i == nsfw\_index)}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00115}00115             \{}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00116}00116                 i = i + option\_size;}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00117}00117                 \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00118}00118             \}}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00119}00119             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00120}00120             \{}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00121}00121                 \textcolor{keywordflow}{if} (i == nsfw\_index -\/ 1)}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00122}00122                 \{}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00123}00123                     i = i + option\_size;}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00124}00124                     \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00125}00125                 \} }
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00126}00126             \}}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00127}00127 }
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00128}00128             fputc(\mbox{\hyperlink{cjson_8h_aff2566f4c366b48d73479bef43ee4d2e}{buffer}}[i], conf\_write\_file);}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00129}00129         \}}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00130}00130 }
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00131}00131         fclose(conf\_write\_file);}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00132}00132 }
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00133}00133         \mbox{\hyperlink{conf__successful__msg_8c_a4c232dc73b53a88d1d351208928e889c}{conf\_successful\_msg}}(\textcolor{stringliteral}{"{}nsfw"{}}, argv);}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00134}00134     \}}
+\DoxyCodeLine{\Hypertarget{conf__nsfw_8c_source_l00135}00135 \}}
+
+\end{DoxyCode}
