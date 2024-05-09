@@ -1,9 +1,0 @@
-<map id="fetch" name="fetch">
-<area shape="rect" id="node1" title="Reads the configuration file, sets the options and sends a request to e621&#45;e926. After taking the res..." alt="" coords="5,107,60,133"/>
-<area shape="rect" id="node2" href="$d6/d60/aria2__download_8c.html#a5d6732ce337f794d14f9f2b835a0d2ef" title="downloads the API response by using aria2c, works with a system call" alt="" coords="123,56,248,83"/>
-<area shape="rect" id="node3" href="$d4/ddf/malloc__error__msg_8c.html#a8f2c3050fed77b86a432d485cde3ade1" title="Shows some information when yiffy cannot allocate memory." alt="" coords="331,5,469,32"/>
-<area shape="rect" id="node5" href="$db/df9/file__open__error__msg_8c.html#a94c5cd5af84c1b87e2dbf95cb2cbce90" title="Shows some information about file permissions when yiffy is not able to read file." alt="" coords="108,107,263,133"/>
-<area shape="rect" id="node6" href="$d5/de7/no__home__error__msg_8c.html#ab360dcc8796de6e212175d6c4c77477d" title="Outputs the home not found error when application can not access the $HOME environment variable." alt="" coords="108,157,263,184"/>
-<area shape="rect" id="node7" href="$d0/d31/no__json__error__msg_8c.html#aaaed77adad2afa7f86c4d4c4703564aa" title="Outputs the error when there is no JSON file." alt="" coords="113,208,258,235"/>
-<area shape="rect" id="node4" href="$dc/d8f/system__func__error__msg_8c.html#acc21d14c9f9a59987f07615415759325" title="Shows some information when system function not works." alt="" coords="311,56,489,83"/>
-</map>
