@@ -6,7 +6,7 @@
 
 </div>
 
-## Yiffy: E621/E926 Search and Download TUI App
+## E621/E926 Search and Download TUI App
 
 **Yiffy** is a basic Text User Interface (TUI) application developed to provide the process of searching, fetching, and downloading images from [e621](https://e621.net/) and [e926](https://e926.net/).
 
