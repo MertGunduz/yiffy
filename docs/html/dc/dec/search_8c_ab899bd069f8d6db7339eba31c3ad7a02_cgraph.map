@@ -1,0 +1,5 @@
+<map id="search" name="search">
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,71,57"/>
+<area shape="rect" id="node2" href="$db/df9/file__open__error__msg_8c.html#a94c5cd5af84c1b87e2dbf95cb2cbce90" title="Shows some information about file permissions when yiffy is not able to read file." alt="" coords="119,5,273,32"/>
+<area shape="rect" id="node3" href="$d5/de7/no__home__error__msg_8c.html#ab360dcc8796de6e212175d6c4c77477d" title="Outputs the home not found error when application can not access the $HOME environment variable." alt="" coords="119,56,273,83"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="conf_nsfw" name="conf_nsfw">
+<area shape="rect" id="node1" title="Configures the nsfw system. Basically alters the request URL." alt="" coords="5,81,92,108"/>
+<area shape="rect" id="node2" href="$da/d03/already__conf__msg_8c.html#a2b3c403bb7977f8a7672f39dec8d5659" title="Shows some information when cjson root gives error." alt="" coords="149,5,291,32"/>
+<area shape="rect" id="node3" href="$d6/dd7/conf__successful__msg_8c.html#a4c232dc73b53a88d1d351208928e889c" title="Shows some information when cjson root gives error." alt="" coords="140,56,300,83"/>
+<area shape="rect" id="node4" href="$db/df9/file__open__error__msg_8c.html#a94c5cd5af84c1b87e2dbf95cb2cbce90" title="Shows some information about file permissions when yiffy is not able to read file." alt="" coords="143,107,297,133"/>
+<area shape="rect" id="node5" href="$d5/de7/no__home__error__msg_8c.html#ab360dcc8796de6e212175d6c4c77477d" title="Outputs the home not found error when application can not access the $HOME environment variable." alt="" coords="143,157,297,184"/>
+</map>

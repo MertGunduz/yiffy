@@ -1,0 +1,7 @@
+<map id="conf_plog" name="conf_plog">
+<area shape="rect" id="node1" title="Configures the plog system. If on, it basically generates a collection website." alt="" coords="5,81,91,108"/>
+<area shape="rect" id="node2" href="$da/d03/already__conf__msg_8c.html#a2b3c403bb7977f8a7672f39dec8d5659" title="Shows some information when cjson root gives error." alt="" coords="148,5,289,32"/>
+<area shape="rect" id="node3" href="$d6/dd7/conf__successful__msg_8c.html#a4c232dc73b53a88d1d351208928e889c" title="Shows some information when cjson root gives error." alt="" coords="139,56,299,83"/>
+<area shape="rect" id="node4" href="$db/df9/file__open__error__msg_8c.html#a94c5cd5af84c1b87e2dbf95cb2cbce90" title="Shows some information about file permissions when yiffy is not able to read file." alt="" coords="141,107,296,133"/>
+<area shape="rect" id="node5" href="$d5/de7/no__home__error__msg_8c.html#ab360dcc8796de6e212175d6c4c77477d" title="Outputs the home not found error when application can not access the $HOME environment variable." alt="" coords="141,157,296,184"/>
+</map>

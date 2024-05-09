@@ -1,8 +1,0 @@
-<map id="src/ui/yiffy_ui.h" name="src/ui/yiffy_ui.h">
-<area shape="rect" id="node1" title=" " alt="" coords="369,5,490,32"/>
-<area shape="rect" id="node2" href="$dc/dec/search_8c.html" title="This file is used to interact with the terminal user interface version of yiffy, it provides download..." alt="" coords="5,87,152,114"/>
-<area shape="rect" id="node3" href="$d6/d24/create__controls__window_8c.html" title="This file is used to create the controls section of search tui." alt="" coords="177,80,338,121"/>
-<area shape="rect" id="node4" href="$d7/dc2/create__info__window_8c.html" title="This file is used to create the info section of search tui." alt="" coords="362,80,497,121"/>
-<area shape="rect" id="node5" href="$d3/d45/create__posts__window_8c.html" title="This file is used to create the posts section of search tui." alt="" coords="521,80,665,121"/>
-<area shape="rect" id="node6" href="$dd/d93/create__top__window_8c.html" title="This file is used to create the top header of search tui." alt="" coords="689,87,887,114"/>
-</map>

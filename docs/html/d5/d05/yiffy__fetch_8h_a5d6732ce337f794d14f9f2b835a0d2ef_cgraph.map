@@ -1,0 +1,5 @@
+<map id="aria2_download" name="aria2_download">
+<area shape="rect" id="node1" title="downloads the API response by using aria2c, works with a system call" alt="" coords="5,31,131,57"/>
+<area shape="rect" id="node2" href="$d4/ddf/malloc__error__msg_8c.html#a8f2c3050fed77b86a432d485cde3ade1" title="Shows some information when yiffy cannot allocate memory." alt="" coords="199,5,337,32"/>
+<area shape="rect" id="node3" href="$dc/d8f/system__func__error__msg_8c.html#acc21d14c9f9a59987f07615415759325" title="Shows some information when system function not works." alt="" coords="179,56,357,83"/>
+</map>

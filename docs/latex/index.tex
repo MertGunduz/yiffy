@@ -1,0 +1,92 @@
+\label{index_md_README}%
+\Hypertarget{index_md_README}%
+ 
+
+
+
+\hypertarget{index_autotoc_md1}{}\doxysection{Yiffy\+: E621/\+E926 Search and Download TUI App}\label{index_autotoc_md1}
+{\bfseries{Yiffy}} is a basic Text User Interface (TUI) application developed to provide the process of searching, fetching, and downloading images from \href{https://e621.net/}{\texttt{ e621}} and \href{https://e926.net/}{\texttt{ e926}}.\hypertarget{index_autotoc_md2}{}\doxysection{Table of Contents}\label{index_autotoc_md2}
+
+\begin{DoxyItemize}
+\item Dependencies
+\item Manual Build Instructions
+\item Guide to Yiffy Commands
+\begin{DoxyItemize}
+\item Search and TUI (Text User Interface)
+\item API Fetch and Download
+\item Information and Help
+\item Data Management
+\item Configuration and Settings
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{index_autotoc_md3}{}\doxysection{Dependencies}\label{index_autotoc_md3}
+\hypertarget{index_autotoc_md4}{}\doxysubsection{Mandatory Dependencies\+:}\label{index_autotoc_md4}
+
+\begin{DoxyItemize}
+\item {\ttfamily gcc}\+: The \href{https://gcc.gnu.org/}{\texttt{ GNU Compiler Collection}}
+\item {\ttfamily ascii-\/image-\/converter}\+: Convert images to ASCII art with this \href{https://github.com/TheZoraiz/ascii-image-converter}{\texttt{ tool}}
+\item {\ttfamily aria2}\+: A versatile \href{https://aria2.github.io/}{\texttt{ command-\/line download utility}}
+\item {\ttfamily cmake}\+: Cross-\/platform tools for \href{https://cmake.org/}{\texttt{ software building}}
+\item {\ttfamily make}\+: A utility to maintain groups of programs
+\item {\ttfamily libncurses-\/dev}\+: Developer’s libraries for \href{https://invisible-island.net/ncurses/ncurses.html}{\texttt{ ncurses}}
+\end{DoxyItemize}\hypertarget{index_autotoc_md5}{}\doxysubsection{Optional Dependencies\+:}\label{index_autotoc_md5}
+
+\begin{DoxyItemize}
+\item {\ttfamily tiv}\+: \href{https://github.com/stefanhaustein/TerminalImageViewer}{\texttt{ Terminal Image\+Viewer}}, a tool to display images in the terminal.
+\item {\ttfamily timg}\+: \href{https://github.com/hzeller/timg}{\texttt{ Terminal Image and Video Viewer}}, a tool to display images/videos in the terminal.
+\end{DoxyItemize}\hypertarget{index_autotoc_md6}{}\doxysection{Manual Build Instructions}\label{index_autotoc_md6}
+Follow these steps to compile and install Yiffy manually\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git clone https://github.com/MertGunduz/yiffy.git}
+\DoxyCodeLine{cd yiffy}
+\DoxyCodeLine{mkdir build \&\& cd build}
+\DoxyCodeLine{cmake ..}
+\DoxyCodeLine{make}
+\DoxyCodeLine{sudo cmake -\/-\/install .}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md7}{}\doxysection{Guide to Yiffy Commands}\label{index_autotoc_md7}
+\hypertarget{index_autotoc_md8}{}\doxysubsection{Search and TUI (\+Text User Interface)}\label{index_autotoc_md8}
+Interact with the application through a user-\/friendly interface\+:
+\begin{DoxyItemize}
+\item {\ttfamily yiffy search tui argument}\+:
+\begin{DoxyItemize}
+\item {\ttfamily -\/-\/search \char`\"{}tag1+tag2\char`\"{}}\+: Enhance your search experience with an intuitive TUI.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{index_autotoc_md9}{}\doxysubsection{API Fetch and Download}\label{index_autotoc_md9}
+Quickly fetch and download images based on tags\+:
+\begin{DoxyItemize}
+\item {\ttfamily yiffy api fetch arguments}\+:
+\begin{DoxyItemize}
+\item {\ttfamily -\/-\/fetch \char`\"{}tag1+tag2\char`\"{}}\+: Retrieve URLs based on specified tags.
+\item {\ttfamily -\/-\/dfetch \char`\"{}tag1+tag2\char`\"{}}\+: Fetch URLs and download the images instantly.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{index_autotoc_md10}{}\doxysubsection{Information and Help}\label{index_autotoc_md10}
+Get help and information about Yiffy\+:
+\begin{DoxyItemize}
+\item {\ttfamily yiffy information menu arguments}\+:
+\begin{DoxyItemize}
+\item {\ttfamily -\/-\/help}\+: Access a guide and list of commands.
+\item {\ttfamily -\/-\/version}\+: Check the current version of Yiffy.
+\item {\ttfamily -\/-\/github}\+: Visit the \href{https://github.com/MertGunduz/yiffy}{\texttt{ Yiffy Git\+Hub repository}}.
+\item {\ttfamily -\/-\/website}\+: Explore the official \href{https://yiffy-cli.com/}{\texttt{ Yiffy website}}.
+\item {\ttfamily -\/-\/config}\+: Open the configuration menu.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{index_autotoc_md11}{}\doxysubsection{Data Management}\label{index_autotoc_md11}
+Manage your data within the Yiffy application\+:
+\begin{DoxyItemize}
+\item {\ttfamily yiffy data import-\/export arguments}\+:
+\begin{DoxyItemize}
+\item {\ttfamily -\/-\/import}\+: Import data into Yiffy.
+\item {\ttfamily -\/-\/export}\+: Export data from Yiffy.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{index_autotoc_md12}{}\doxysubsection{Configuration and Settings}\label{index_autotoc_md12}
+Adjust settings and configurations as per your preference\+:
+\begin{DoxyItemize}
+\item {\ttfamily yiffy configuration and settings arguments}\+:
+\begin{DoxyItemize}
+\item {\ttfamily -\/-\/nsfw on/off}\+: Toggle NSFW (Not Safe for Work) and SFW (Safe For Work) content.
+\item {\ttfamily -\/-\/plog on/off}\+: Switch between PLOG (Print Log) for \mbox{\hyperlink{search_8c}{search.\+c}} and dfetch/fetch.\+c. 
+\end{DoxyItemize}
+\end{DoxyItemize}

@@ -1,0 +1,5 @@
+<map id="show_config" name="show_config">
+<area shape="rect" id="node1" title="Shows the yiffy configurations to user." alt="" coords="5,31,108,57"/>
+<area shape="rect" id="node2" href="$db/df9/file__open__error__msg_8c.html#a94c5cd5af84c1b87e2dbf95cb2cbce90" title="Shows some information about file permissions when yiffy is not able to read file." alt="" coords="156,5,311,32"/>
+<area shape="rect" id="node3" href="$d5/de7/no__home__error__msg_8c.html#ab360dcc8796de6e212175d6c4c77477d" title="Outputs the home not found error when application can not access the $HOME environment variable." alt="" coords="156,56,311,83"/>
+</map>

@@ -1,9 +1,0 @@
-<map id="src/ui/create_info_window.c" name="src/ui/create_info_window.c">
-<area shape="rect" id="node1" title="This file is used to create the info section of search tui." alt="" coords="81,5,216,47"/>
-<area shape="rect" id="node2" href="$d6/d01/yiffy__ui_8h.html" title=" " alt="" coords="107,95,190,121"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,169,89,196"/>
-<area shape="rect" id="node4" title=" " alt="" coords="113,169,184,196"/>
-<area shape="rect" id="node5" href="$d0/de2/yiffy__messages_8h.html" title="This file is used to handle error and information messages." alt="" coords="208,169,388,196"/>
-<area shape="rect" id="node6" title=" " alt="" coords="218,244,285,271"/>
-<area shape="rect" id="node7" title=" " alt="" coords="309,244,380,271"/>
-</map>

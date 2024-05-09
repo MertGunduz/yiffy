@@ -1,16 +1,17 @@
+# yiffy
+
 <div align="center">
 
 ![yiffy_small](https://github.com/MertGunduz/yiffy/assets/65850970/1626c334-d5ac-4b37-96b6-19335d897bbe)
 
 </div>
 
-# Yiffy: E621/E926 Search and Download TUI App
+## Yiffy: E621/E926 Search and Download TUI App
 
 **Yiffy** is a basic Text User Interface (TUI) application developed to provide the process of searching, fetching, and downloading images from [e621](https://e621.net/) and [e926](https://e926.net/).
 
 ## Table of Contents
 - [Dependencies](#dependencies)
-- [Installation Scripts](#installation-scripts)
 - [Manual Build Instructions](#manual-build-instructions)
 - [Guide to Yiffy Commands](#guide-to-yiffy-commands)
   - [Search and TUI (Text User Interface)](#search-and-tui-text-user-interface)
@@ -32,36 +33,6 @@
 ### Optional Dependencies:
 - `tiv`: [Terminal ImageViewer](https://github.com/stefanhaustein/TerminalImageViewer), a tool to display images in the terminal.
 - `timg`: [Terminal Image and Video Viewer](https://github.com/hzeller/timg), a tool to display images/videos in the terminal.
-
-## Installation Scripts
-
-Please select your Linux distribution for specific installation instructions:
-
-<table>
-  <tr>
-    <td align="center" width="96">
-        <img src="https://github.com/MertGunduz/yiffy/assets/65850970/140887f1-3ae3-4f96-a039-fa98f8a231de" width="56" height="56" alt="Debian, Ubuntu">
-        <br><a href="install/debian.sh">Debian</a>
-    </td>
-    <td align="center" width="96">
-        <img src="https://github.com/MertGunduz/yiffy/assets/65850970/20f4135f-422f-471f-a825-491c603e03b5" width="56" height="56" alt="Fedora">
-        <br><a href="install/fedora.sh">Fedora</a>
-    </td>
-    <td align="center" width="96">
-        <img src="https://github.com/MertGunduz/yiffy/assets/65850970/7feb9dd9-7190-48ca-8cbd-2acd5160bc23" width="56" height="56" alt="Arch Linux">
-        <br><a href="install/arch.sh">Arch</a>
-    </td>
-    <td align="center" width="96">
-        <img src="https://github.com/MertGunduz/yiffy/assets/65850970/8ef75ca9-b821-4918-94f3-5ac95465e2bd" width="56" height="56" alt="Gentoo">
-        <br><a href="install/gentoo.sh">Gentoo</a>
-    </td>
-    <td align="center" width="96">
-        <img src="https://github.com/MertGunduz/yiffy/assets/65850970/66dea202-b543-48b7-9d7e-9d4dda909060" width="56" height="56" alt="FreeBSD">
-       <br><a href="install/bsd.sh">FreeBSD</a>
-    </td>
-  </tr>
-</table>
-
 
 ## Manual Build Instructions
 
