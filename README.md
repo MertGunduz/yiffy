@@ -51,18 +51,18 @@ sudo cmake --install .
 
 ### Search and TUI (Text User Interface)
 *Interact with the application through a user-friendly interface*
-- #### yiffy search tui argument: 
+- **yiffy search tui argument:** 
   - `--search "tag1+tag2"`: Enhance your search experience with an intuitive TUI.
 
 ### API Fetch and Download
 *Quickly fetch and download images based on tags*
-- #### yiffy api fetch arguments: 
+- **yiffy api fetch arguments:** 
   - `--fetch "tag1+tag2"`: Retrieve URLs based on specified tags.
   - `--dfetch "tag1+tag2"`: Fetch URLs and download the images instantly.
 
 ### Information and Help
 *Get help and information about Yiffy*
-- #### yiffy information menu arguments: 
+- **yiffy information menu arguments:** 
   - `--help`: Access a guide and list of commands.
   - `--version`: Check the current version of Yiffy.
   - `--github`: Visit the [Yiffy GitHub repository](https://github.com/MertGunduz/yiffy).
@@ -71,12 +71,12 @@ sudo cmake --install .
 
 ### Data Management
 *Manage your data within the Yiffy application*
-- #### yiffy data import-export arguments: 
+- **yiffy data import-export arguments:**
   - `--import`: Import data into Yiffy.
   - `--export`: Export data from Yiffy.
 
 ### Configuration and Settings
 *Adjust settings and configurations as per your preference*
-- #### yiffy configuration and settings arguments: 
+- **yiffy configuration and settings arguments:** 
   - `--nsfw on/off`: Toggle NSFW (Not Safe for Work) and SFW (Safe For Work) content.
   - `--plog on/off`: Switch between PLOG (Print Log) for search.c and dfetch/fetch.c.
