@@ -25,7 +25,7 @@
 var NAVTREE =
 [
   [ "yiffy", "index.html", [
-    [ "Yiffy: E621/E926 Search and Download TUI App", "index.html#autotoc_md1", null ],
+    [ "E621/E926 Search and Download TUI App", "index.html#autotoc_md1", null ],
     [ "Table of Contents", "index.html#autotoc_md2", null ],
     [ "Dependencies", "index.html#autotoc_md3", [
       [ "Mandatory Dependencies:", "index.html#autotoc_md4", null ],
