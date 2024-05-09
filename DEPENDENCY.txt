@@ -1,7 +1,0 @@
-gcc
-build-essential
-ascii-image-converter
-aria2
-cmake
-make
-libncurses-dev 
