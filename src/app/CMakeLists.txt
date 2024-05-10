@@ -1,4 +1,4 @@
-# CREATING THE BINARY FILE
+# CREATE THE BINARY FILE
 add_executable(yiffy yiffy.c)
 
 # FIND NCURSES
@@ -21,8 +21,15 @@ install(SCRIPT
     CODE "file(WRITE \"${file_path}\" \"plog:nsfw\")"
 )
 
-# INSTALL THE EXECUTABLE TO USR/BIN
-install(
-    TARGETS yiffy
-    DESTINATION /usr/local/bin/
-)
+# INSTALL THE EXECUTABLE TO USR/LOCAL/BIN
+install(TARGETS yiffy DESTINATION /usr/local/bin)
+
+# Create and install the config file, ensuring it writes with the correct permissions
+install(CODE "
+    file(MAKE_DIRECTORY \"${dest_path}\")
+    file(WRITE \"${dest_path}/yiffy-config.txt\" \"plog:nsfw\")
+    execute_process(COMMAND chmod 755 \"${dest_path}\")
+    execute_process(COMMAND chmod 755 \"${dest_path}/yiffy-config.txt\")
+    execute_process(COMMAND chown $ENV{USER}:$ENV{USER} \"${dest_path}\")
+    execute_process(COMMAND chown $ENV{USER}:$ENV{USER} \"${dest_path}/yiffy-config.txt\")
+")
