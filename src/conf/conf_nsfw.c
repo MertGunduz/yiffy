@@ -40,7 +40,7 @@ void conf_nsfw(char *argv)
     if (home_directory == NULL) 
     {
         no_home_error_msg();
-        exit(1);
+        exit(EXIT_FAILURE);
     }
 
     /* Create the configuration file path. */
