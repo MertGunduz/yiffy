@@ -12,13 +12,9 @@
 
 /**
  * @brief Shows some information about file permissions when yiffy is not able to read file.  
- * 
- * @param file This is used to close the file. 
 */
-void file_open_error_msg(FILE *file)
+void file_open_error_msg()
 { 
     fprintf(stderr, "yiffy: error opening the file.\n");
     fprintf(stderr, "yiffy: please check the file read-write permissions.\n");
-
-    fclose(file);
 }

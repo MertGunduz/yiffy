@@ -51,7 +51,7 @@ void fetch(char *tags, int page, char *command)
 
     if (config == NULL) 
     {
-        file_open_error_msg(config);
+        file_open_error_msg();
         exit(EXIT_FAILURE);
     }
 

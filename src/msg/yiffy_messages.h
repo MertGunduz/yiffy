@@ -20,7 +20,7 @@ void no_arg_value_msg(char *argument);
 void argc_error_msg(int argc);
 void extra_arg_error_msg(char *argument);
 void no_home_error_msg();
-void file_open_error_msg(FILE *file);
+void file_open_error_msg();
 void no_json_error_msg(FILE *json_file);
 void json_parse_error_msg();
 void no_results_error_msg();

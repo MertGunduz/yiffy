@@ -37,7 +37,7 @@ void show_config()
 
     if (config_file == NULL)
     {
-        file_open_error_msg(config_file);
+        file_open_error_msg();
         exit(EXIT_FAILURE);
     }
 

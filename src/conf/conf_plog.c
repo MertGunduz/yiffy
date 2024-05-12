@@ -51,7 +51,7 @@ void conf_plog(char *argv)
 
     if (conf_read_write_file == NULL)
     {
-        file_open_error_msg(conf_read_write_file);
+        file_open_error_msg();
         exit(EXIT_FAILURE);
     }
 
@@ -85,7 +85,7 @@ void conf_plog(char *argv)
 
         if (conf_append_file == NULL)
         {
-            file_open_error_msg(conf_append_file);
+            file_open_error_msg();
             exit(EXIT_FAILURE);
         }
 
@@ -105,7 +105,7 @@ void conf_plog(char *argv)
 
         if (conf_write_file == NULL)
         {
-            file_open_error_msg(conf_write_file);
+            file_open_error_msg();
             exit(EXIT_FAILURE);
         }
 
