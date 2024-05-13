@@ -136,7 +136,7 @@ $(document).ready(function(){initNavTree('de/dfc/conf__nsfw_8c_source.html','../
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordflow">if</span> (home_directory == NULL) </div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    {</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <a class="code hl_function" href="../../d5/de7/no__home__error__msg_8c.html#ab360dcc8796de6e212175d6c4c77477d">no_home_error_msg</a>();</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        exit(1);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        exit(EXIT_FAILURE);</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    }</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="comment">/* Create the configuration file path. */</span></div>
@@ -147,7 +147,7 @@ $(document).ready(function(){initNavTree('de/dfc/conf__nsfw_8c_source.html','../
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordflow">if</span> (conf_read_write_file == NULL)</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    {</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <a class="code hl_function" href="../../db/df9/file__open__error__msg_8c.html#a94c5cd5af84c1b87e2dbf95cb2cbce90">file_open_error_msg</a>(conf_read_write_file);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <a class="code hl_function" href="../../db/df9/file__open__error__msg_8c.html#a86dae457f49acffe2f59c6072cdec928">file_open_error_msg</a>();</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        exit(EXIT_FAILURE);</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    }</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
@@ -181,7 +181,7 @@ $(document).ready(function(){initNavTree('de/dfc/conf__nsfw_8c_source.html','../
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <span class="keywordflow">if</span> (conf_append_file == NULL)</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        {</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            <a class="code hl_function" href="../../db/df9/file__open__error__msg_8c.html#a94c5cd5af84c1b87e2dbf95cb2cbce90">file_open_error_msg</a>(conf_append_file);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            <a class="code hl_function" href="../../db/df9/file__open__error__msg_8c.html#a86dae457f49acffe2f59c6072cdec928">file_open_error_msg</a>();</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            exit(EXIT_FAILURE);</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        }</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
@@ -201,7 +201,7 @@ $(document).ready(function(){initNavTree('de/dfc/conf__nsfw_8c_source.html','../
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        <span class="keywordflow">if</span> (conf_write_file == NULL)</div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        {</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            <a class="code hl_function" href="../../db/df9/file__open__error__msg_8c.html#a94c5cd5af84c1b87e2dbf95cb2cbce90">file_open_error_msg</a>(conf_write_file);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            <a class="code hl_function" href="../../db/df9/file__open__error__msg_8c.html#a86dae457f49acffe2f59c6072cdec928">file_open_error_msg</a>();</div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>            exit(EXIT_FAILURE);</div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        }</div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
@@ -235,7 +235,7 @@ $(document).ready(function(){initNavTree('de/dfc/conf__nsfw_8c_source.html','../
 <div class="ttc" id="aconf__nsfw_8c_html_a3a088a9fbd8616175ff107d483ac33f6"><div class="ttname"><a href="../../de/dfc/conf__nsfw_8c.html#a3a088a9fbd8616175ff107d483ac33f6">conf_nsfw</a></div><div class="ttdeci">void conf_nsfw(char *argv)</div><div class="ttdoc">Configures the nsfw system. Basically alters the request URL.</div><div class="ttdef"><b>Definition:</b> <a href="../../de/dfc/conf__nsfw_8c_source.html#l00023">conf_nsfw.c:23</a></div></div>
 <div class="ttc" id="aconf__nsfw_8c_html_ad4d796b98c583d49e83adabd74a63bf6"><div class="ttname"><a href="../../de/dfc/conf__nsfw_8c.html#ad4d796b98c583d49e83adabd74a63bf6">MAX_BUFFER_SIZE</a></div><div class="ttdeci">#define MAX_BUFFER_SIZE</div><div class="ttdef"><b>Definition:</b> <a href="../../de/dfc/conf__nsfw_8c_source.html#l00014">conf_nsfw.c:14</a></div></div>
 <div class="ttc" id="aconf__successful__msg_8c_html_a4c232dc73b53a88d1d351208928e889c"><div class="ttname"><a href="../../d6/dd7/conf__successful__msg_8c.html#a4c232dc73b53a88d1d351208928e889c">conf_successful_msg</a></div><div class="ttdeci">void conf_successful_msg(char *option, char *argv)</div><div class="ttdoc">Shows some information when cjson root gives error.</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/dd7/conf__successful__msg_8c_source.html#l00019">conf_successful_msg.c:19</a></div></div>
-<div class="ttc" id="afile__open__error__msg_8c_html_a94c5cd5af84c1b87e2dbf95cb2cbce90"><div class="ttname"><a href="../../db/df9/file__open__error__msg_8c.html#a94c5cd5af84c1b87e2dbf95cb2cbce90">file_open_error_msg</a></div><div class="ttdeci">void file_open_error_msg(FILE *file)</div><div class="ttdoc">Shows some information about file permissions when yiffy is not able to read file.</div><div class="ttdef"><b>Definition:</b> <a href="../../db/df9/file__open__error__msg_8c_source.html#l00018">file_open_error_msg.c:18</a></div></div>
+<div class="ttc" id="afile__open__error__msg_8c_html_a86dae457f49acffe2f59c6072cdec928"><div class="ttname"><a href="../../db/df9/file__open__error__msg_8c.html#a86dae457f49acffe2f59c6072cdec928">file_open_error_msg</a></div><div class="ttdeci">void file_open_error_msg()</div><div class="ttdoc">Shows some information about file permissions when yiffy is not able to read file.</div><div class="ttdef"><b>Definition:</b> <a href="../../db/df9/file__open__error__msg_8c_source.html#l00016">file_open_error_msg.c:16</a></div></div>
 <div class="ttc" id="ano__home__error__msg_8c_html_ab360dcc8796de6e212175d6c4c77477d"><div class="ttname"><a href="../../d5/de7/no__home__error__msg_8c.html#ab360dcc8796de6e212175d6c4c77477d">no_home_error_msg</a></div><div class="ttdeci">void no_home_error_msg()</div><div class="ttdoc">Outputs the home not found error when application can not access the $HOME environment variable.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/de7/no__home__error__msg_8c_source.html#l00016">no_home_error_msg.c:16</a></div></div>
 <div class="ttc" id="ayiffy__conf_8h_html"><div class="ttname"><a href="../../d1/d33/yiffy__conf_8h.html">yiffy_conf.h</a></div><div class="ttdoc">This header file is used to do configuration for yiffy.</div></div>
 </div><!-- fragment --></div><!-- contents -->

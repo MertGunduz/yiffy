@@ -7,7 +7,7 @@ var yiffy__messages_8h =
     [ "color_comp_error_msg", "d0/de2/yiffy__messages_8h.html#af050e19d72fa5f083e33bdcb40d87934", null ],
     [ "conf_successful_msg", "d0/de2/yiffy__messages_8h.html#a4c232dc73b53a88d1d351208928e889c", null ],
     [ "extra_arg_error_msg", "d0/de2/yiffy__messages_8h.html#ac4967f114291f160f3f6f916b57887cc", null ],
-    [ "file_open_error_msg", "d0/de2/yiffy__messages_8h.html#a94c5cd5af84c1b87e2dbf95cb2cbce90", null ],
+    [ "file_open_error_msg", "d0/de2/yiffy__messages_8h.html#a86dae457f49acffe2f59c6072cdec928", null ],
     [ "json_parse_error_msg", "d0/de2/yiffy__messages_8h.html#a1cee29a606052cf745b98ca6f4d74d10", null ],
     [ "malloc_error_msg", "d0/de2/yiffy__messages_8h.html#a8f2c3050fed77b86a432d485cde3ade1", null ],
     [ "no_arg_value_msg", "d0/de2/yiffy__messages_8h.html#a2104c256bb9f09a63fb38bc5ff530eca", null ],
