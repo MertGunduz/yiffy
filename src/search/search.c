@@ -12,6 +12,8 @@
  * @date 31/10/2023
 */
 
+#include <ncurses.h>
+
 #include "yiffy_search.h"
 #include "../fetch/yiffy_fetch.h"
 
@@ -24,7 +26,30 @@ typedef struct control
     char control_character;
 } control;
 
+control controls[] = 
+{
+    {"SHOW", 'S'},
+    {"DOWNLOAD", 'D'},
+    {"PREV", 'P'},
+    {"NEXT", 'N'},
+    {"QUIT", 'Q'}
+};
+
+WINDOW *top_panel;
+WINDOW *posts_panel;
+WINDOW *info_panel;
+WINDOW *controls_panel;
+
+bool is_nsfw;
+
+int posts_panel_height;
+
 static void init_ncurses();
+static void set_panel_title(WINDOW *window, char *title);
+static void create_top_panel(WINDOW *top_panel);
+static void create_posts_panel(WINDOW *posts_panel);
+static void create_info_panel(WINDOW *info_panel);
+static void create_controls_panel(WINDOW *controls_panel);
 
 void search(char *tags)
 {
@@ -36,7 +61,7 @@ void search(char *tags)
     char *home_path = getenv("HOME");
 
     /* Check if NSFW option on. */
-    bool is_nsfw = false;
+    is_nsfw = false;
 
     if (home_path == NULL) 
     {
@@ -75,121 +100,12 @@ void search(char *tags)
 
     /* Initialize the wanted tui configurations like noecho, start_color, etc... */
     init_ncurses();
-
-    /**********************************************************/
-    /* Top panel, shows information about the configurations. */
-    /**********************************************************/
     
-    /* Create top window and apply box to give it borders. */
-    WINDOW *top_panel = newwin(3, COLS, 0, 0);
-    box(top_panel, 0, 0);
-
-    /* Move to one right, gives it a better look. */
-    wmove(top_panel, 0, 1);
-
-    /* The logo in uppercase. */
-    wprintw(top_panel, "YIFFY");
-
-    /* Move to inside of top panel window. */
-    wmove(top_panel, 1, 1);
-
-    /* Make the top panel information bright. */
-    wattron(top_panel, A_STANDOUT);
-    if (is_nsfw)
-    {
-        wprintw(top_panel, " NSFW [E621.NET] - ASCII-IMAGE-CONVERTER ");
-    }    
-    else
-    {
-        wprintw(top_panel, " SFW [E926.NET] - ASCII-IMAGE-CONVERTER ");
-    }
-    wattroff(top_panel, A_STANDOUT);
-
-    /* Refreshing the panel to show the updates to user. */
-    refresh();
-    wrefresh(top_panel);
-
-    /*****************************************/
-    /* Posts panel, shows the list of posts. */
-    /*****************************************/
-    
-    /* Create posts window and apply box to give it borders. */
-    int posts_panel_height = LINES - 12;
-
-    WINDOW *posts_panel = newwin(posts_panel_height, COLS, 3, 0);
-    box(posts_panel, 0, 0);
-
-    /* Move to one right, gives it a better look. */
-    wmove(posts_panel, 0, 1);
-
-    /* The logo in uppercase. */
-    wprintw(posts_panel, "POSTS");
-
-    /* Refreshing the panel to show the updates to user. */
-    refresh();
-    wrefresh(posts_panel);
-
-    /*****************************************************************/
-    /* Information panel, shows information about the selected post. */
-    /*****************************************************************/
-
-    /* Create info window and apply box to give it borders. */
-    WINDOW *info_panel = newwin(6, COLS, 3 + posts_panel_height, 0);
-    box(info_panel, 0, 0);
-
-    /* Move to one right, gives it a better look. */
-    wmove(info_panel, 0, 1);
-
-    /* The logo in uppercase. */
-    wprintw(info_panel, "INFORMATION");
-
-    /* Refreshing the panel to show the updates to user. */
-    refresh();
-    wrefresh(info_panel);
-
-    /***************************************/
-    /* Controls panel, shows the controls. */
-    /***************************************/
-
-    control controls[] = 
-    {
-        {"SHOW", 'S'},
-        {"DOWNLOAD", 'D'},
-        {"PREV", 'P'},
-        {"NEXT", 'N'},
-        {"QUIT", 'Q'}
-    };
-
-    /* Create info window and apply box to give it borders. */
-    WINDOW *controls_panel = newwin(3, COLS, 9 + posts_panel_height, 0);
-    box(controls_panel, 0, 0);
-
-    /* Move to one right, gives it a better look. */
-    wmove(controls_panel, 0, 1);
-
-    /* The logo in uppercase. */
-    wprintw(controls_panel, "CONTROLS");
-
-    /* Move to the center line of controls window. */
-    wmove(controls_panel, 1, 1);
-
-    /* Write the controls. */
-    for (size_t i = 0; i < sizeof(controls) / sizeof(controls[0]); i++)
-    {
-        wattron(controls_panel, A_STANDOUT);
-        wprintw(controls_panel, " %c [%s] ", controls[i].control_character, controls[i].control_full_name);
-        wattroff(controls_panel, A_STANDOUT);
-        
-        wprintw(controls_panel, "  ");
-    }
-
-    /* Refreshing the panel to show the updates to user. */
-    refresh();
-    wrefresh(controls_panel);
-
-    /****************************************************************************/
-    /* API response/request part, downloads JSON file and decodes-fetches data. */
-    /****************************************************************************/
+    /* Create the ui. */
+    create_top_panel(top_panel);
+    create_posts_panel(posts_panel);
+    create_info_panel(info_panel);
+    create_controls_panel(controls_panel);
 
     /* Download the API response (posts.json). */
     aria2_download(tags, 1, is_nsfw, posts_panel_height);
@@ -207,11 +123,89 @@ static void init_ncurses()
     curs_set(0);
     keypad(stdscr, TRUE);
 
-    /* Checks the color compatibility of the terminal. If it does not support, exits with an error message. */
+    /* Check the color compatibility of the terminal. If it does not support, exit with an error message. */
     if (!has_colors())
     {
         color_comp_error_msg();
         endwin();
         exit(EXIT_FAILURE);
     }
+}
+
+static void set_panel_title(WINDOW *window, char *title)
+{
+    /* Write the panel title. */
+    mvwprintw(window, 0, 1, "%s", title);
+}
+
+static void create_top_panel(WINDOW *top_panel)
+{
+    top_panel = newwin(3, COLS, 0, 0);
+    box(top_panel, 0, 0);
+
+    set_panel_title(top_panel, "YIFFY");
+
+    /* Write the SFW-NSFW option in A_STANDOUT (bright) mod. */
+    wattron(top_panel, A_STANDOUT);
+    if (is_nsfw)
+    {
+        mvwprintw(top_panel, 1, 1, " NSFW [E621.NET] - ASCII-IMAGE-CONVERTER ");
+    }    
+    else
+    {
+        mvwprintw(top_panel, 1, 1, " SFW [E926.NET] - ASCII-IMAGE-CONVERTER ");
+    }
+    wattroff(top_panel, A_STANDOUT);
+
+    refresh();
+    wrefresh(top_panel);
+}
+
+static void create_posts_panel(WINDOW *posts_panel)
+{
+    /* Create the posts_panel until information, taking 12 lines from it because the info and controls panel line is 12. */
+    posts_panel_height = LINES - 12;
+
+    posts_panel = newwin(posts_panel_height, COLS, 3, 0);
+    box(posts_panel, 0, 0);
+
+    set_panel_title(posts_panel, "POSTS");
+
+    refresh();
+    wrefresh(posts_panel);
+}
+
+static void create_info_panel(WINDOW *info_panel)
+{
+    info_panel = newwin(6, COLS, 3 + posts_panel_height, 0);
+    box(info_panel, 0, 0);
+
+    set_panel_title(info_panel, "INFORMATION");
+
+    refresh();
+    wrefresh(info_panel);
+}
+
+static void create_controls_panel(WINDOW *controls_panel)
+{
+    controls_panel = newwin(3, COLS, 9 + posts_panel_height, 0);
+    box(controls_panel, 0, 0);
+
+    set_panel_title(controls_panel, "CONTROLS");
+
+    /* Move to the center line of controls window. */
+    wmove(controls_panel, 1, 1);
+
+    /* Write the controls. */
+    for (size_t i = 0; i < sizeof(controls) / sizeof(controls[0]); i++)
+    {
+        wattron(controls_panel, A_STANDOUT);
+        wprintw(controls_panel, " %c [%s] ", controls[i].control_character, controls[i].control_full_name);
+        wattroff(controls_panel, A_STANDOUT);
+        
+        wprintw(controls_panel, "  ");
+    }
+
+    refresh();
+    wrefresh(controls_panel);
 }
