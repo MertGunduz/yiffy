@@ -111,24 +111,26 @@ $(document).ready(function(){initNavTree('dc/dec/search_8c.html','../../'); init
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">search.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>This file is used to interact with the terminal user interface version of yiffy, it provides download-list-search-info features to the users.  
+<p>This file is used to interact with the terminal user interface version of yiffy, providing download, list, search, travel, and post info features.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="../../de/d29/yiffy__search_8h_source.html">yiffy_search.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;ncurses.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="../../de/d29/yiffy__search_8h_source.html">yiffy_search.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d5/d05/yiffy__fetch_8h_source.html">../fetch/yiffy_fetch.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for search.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../db/ddf/search_8c__incl.png" border="0" usemap="#asrc_2search_2search_8c" alt=""/></div>
 <map name="asrc_2search_2search_8c" id="asrc_2search_2search_8c">
-<area shape="rect" title="This file is used to interact with the terminal user interface version of yiffy, it provides download..." alt="" coords="305,5,451,32"/>
-<area shape="rect" href="../../de/d29/yiffy__search_8h.html" title="This header file is used to handle the fetching and searching system." alt="" coords="184,80,297,107"/>
-<area shape="rect" href="../../d5/d05/yiffy__fetch_8h.html" title=" " alt="" coords="478,80,630,107"/>
+<area shape="rect" title="This file is used to interact with the terminal user interface version of yiffy, providing download,..." alt="" coords="121,5,267,32"/>
 <area shape="rect" title=" " alt="" coords="5,155,89,181"/>
+<area shape="rect" href="../../de/d29/yiffy__search_8h.html" title="This header file is used to handle the fetching and searching system." alt="" coords="137,80,251,107"/>
+<area shape="rect" href="../../d5/d05/yiffy__fetch_8h.html" title=" " alt="" coords="478,80,630,107"/>
 <area shape="rect" title=" " alt="" coords="113,155,184,181"/>
 <area shape="rect" title=" " alt="" coords="209,155,273,181"/>
 <area shape="rect" href="../../d0/de2/yiffy__messages_8h.html" title="This file is used to handle error and information messages." alt="" coords="297,155,477,181"/>
@@ -148,6 +150,7 @@ Include dependency graph for search.c:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dee/structcontrol.html">control</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores the control name and key for displaying in the controls panel.  <a href="../../dd/dee/structcontrol.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
@@ -162,17 +165,37 @@ Macros</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:aa1d3790e2a578b5f80f650aea7973406"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="../../dd/dee/structcontrol.html">control</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dec/search_8c.html#aa1d3790e2a578b5f80f650aea7973406">control</a></td></tr>
+<tr class="memdesc:aa1d3790e2a578b5f80f650aea7973406"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores the control name and key for displaying in the controls panel.  <a href="../../dc/dec/search_8c.html#aa1d3790e2a578b5f80f650aea7973406">More...</a><br /></td></tr>
 <tr class="separator:aa1d3790e2a578b5f80f650aea7973406"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ab899bd069f8d6db7339eba31c3ad7a02"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dec/search_8c.html#ab899bd069f8d6db7339eba31c3ad7a02">search</a> (char *tags)</td></tr>
+<tr class="memdesc:ab899bd069f8d6db7339eba31c3ad7a02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a ncurses-based user interface to show, download, search and travel the e621/e926 by using curl api calls and aria2c tool.  <a href="../../dc/dec/search_8c.html#ab899bd069f8d6db7339eba31c3ad7a02">More...</a><br /></td></tr>
 <tr class="separator:ab899bd069f8d6db7339eba31c3ad7a02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:af0d0e693c574c3bfb0fcdcca37cbd745"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/dee/structcontrol.html">control</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dec/search_8c.html#af0d0e693c574c3bfb0fcdcca37cbd745">controls</a> []</td></tr>
+<tr class="separator:af0d0e693c574c3bfb0fcdcca37cbd745"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae12a02b5afc3b5def9e20811d078b8c4"><td class="memItemLeft" align="right" valign="top">WINDOW *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dec/search_8c.html#ae12a02b5afc3b5def9e20811d078b8c4">top_panel</a></td></tr>
+<tr class="separator:ae12a02b5afc3b5def9e20811d078b8c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c06d68b76c7eba4e5734669e5053f1c"><td class="memItemLeft" align="right" valign="top">WINDOW *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dec/search_8c.html#a4c06d68b76c7eba4e5734669e5053f1c">posts_panel</a></td></tr>
+<tr class="separator:a4c06d68b76c7eba4e5734669e5053f1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08755815429f772a4c26bf92b603cb6f"><td class="memItemLeft" align="right" valign="top">WINDOW *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dec/search_8c.html#a08755815429f772a4c26bf92b603cb6f">info_panel</a></td></tr>
+<tr class="separator:a08755815429f772a4c26bf92b603cb6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae016b8c86e9657f02e41baa15603d955"><td class="memItemLeft" align="right" valign="top">WINDOW *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dec/search_8c.html#ae016b8c86e9657f02e41baa15603d955">controls_panel</a></td></tr>
+<tr class="separator:ae016b8c86e9657f02e41baa15603d955"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e8f6f474ecc73b9d4c438b5cc2e690f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dec/search_8c.html#a8e8f6f474ecc73b9d4c438b5cc2e690f">is_nsfw</a></td></tr>
+<tr class="memdesc:a8e8f6f474ecc73b9d4c438b5cc2e690f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the NSFW option is enabled.  <a href="../../dc/dec/search_8c.html#a8e8f6f474ecc73b9d4c438b5cc2e690f">More...</a><br /></td></tr>
+<tr class="separator:a8e8f6f474ecc73b9d4c438b5cc2e690f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5008b3b6a0e2594df27b44d93bc351d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dec/search_8c.html#ac5008b3b6a0e2594df27b44d93bc351d">posts_panel_height</a></td></tr>
+<tr class="memdesc:ac5008b3b6a0e2594df27b44d93bc351d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Height of the posts panel in the user interface.  <a href="../../dc/dec/search_8c.html#ac5008b3b6a0e2594df27b44d93bc351d">More...</a><br /></td></tr>
+<tr class="separator:ac5008b3b6a0e2594df27b44d93bc351d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >This file is used to interact with the terminal user interface version of yiffy, it provides download-list-search-info features to the users. </p>
-<p >This file is created by using mathematical calculations to give its look, it gets really complicated to read from scratch. Since ncurses is a very old and low-level library, it can be daunting to understand the whole code by just reading it. All it does in this code is generating UI, resizing system and placing the data to the windows.</p>
-<dl class="section author"><dt>Author</dt><dd>Mehmet Mert Gunduz (<a href="#" onclick="location.href='mai'+'lto:'+'mer'+'tt'+'gg@'+'gm'+'ail'+'.c'+'om'; return false;">mertt<span class="obfuscator">.nosp@m.</span>gg@g<span class="obfuscator">.nosp@m.</span>mail.<span class="obfuscator">.nosp@m.</span>com</a>)</dd></dl>
+<div class="textblock"><p >This file is used to interact with the terminal user interface version of yiffy, providing download, list, search, travel, and post info features. </p>
+<p >It uses ncurses to generate the UI, handle resizing, and place data in windows named panels in this code.</p>
 <dl class="section date"><dt>Date</dt><dd>31/10/2023 </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="../../dc/dec/search_8c_source.html">search.c</a>.</p>
@@ -191,7 +214,7 @@ Functions</h2></td></tr>
 
 <p>This macro is used to set the default size for reading the config file. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../dc/dec/search_8c_source.html#l00019">19</a> of file <a class="el" href="../../dc/dec/search_8c_source.html">search.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/dec/search_8c_source.html#l00017">17</a> of file <a class="el" href="../../dc/dec/search_8c_source.html">search.c</a>.</p>
 
 </div>
 </div>
@@ -209,7 +232,7 @@ Functions</h2></td></tr>
 
 <p>This macro is used to set the default size for getting the home directory file. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../dc/dec/search_8c_source.html#l00018">18</a> of file <a class="el" href="../../dc/dec/search_8c_source.html">search.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/dec/search_8c_source.html#l00016">16</a> of file <a class="el" href="../../dc/dec/search_8c_source.html">search.c</a>.</p>
 
 </div>
 </div>
@@ -225,6 +248,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Stores the control name and key for displaying in the controls panel. </p>
 
 </div>
 </div>
@@ -245,7 +270,140 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dc/dec/search_8c_source.html#l00029">29</a> of file <a class="el" href="../../dc/dec/search_8c_source.html">search.c</a>.</p>
+<p>Creates a ncurses-based user interface to show, download, search and travel the e621/e926 by using curl api calls and aria2c tool. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tags</td><td>These are the e621-e926 tags prompted by the user as an argument value. Example: yiffy &ndash;search "anthro+fur+male+smile". </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="../../dc/dec/search_8c_source.html#l00056">56</a> of file <a class="el" href="../../dc/dec/search_8c_source.html">search.c</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="af0d0e693c574c3bfb0fcdcca37cbd745" name="af0d0e693c574c3bfb0fcdcca37cbd745"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0d0e693c574c3bfb0fcdcca37cbd745">&#9670;&nbsp;</a></span>controls</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dd/dee/structcontrol.html">control</a> controls[]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= </div>
+<div class="line">{</div>
+<div class="line">    {<span class="stringliteral">&quot;SHOW&quot;</span>, <span class="charliteral">&#39;S&#39;</span>},</div>
+<div class="line">    {<span class="stringliteral">&quot;DOWNLOAD&quot;</span>, <span class="charliteral">&#39;D&#39;</span>},</div>
+<div class="line">    {<span class="stringliteral">&quot;PREV&quot;</span>, <span class="charliteral">&#39;P&#39;</span>},</div>
+<div class="line">    {<span class="stringliteral">&quot;NEXT&quot;</span>, <span class="charliteral">&#39;N&#39;</span>},</div>
+<div class="line">    {<span class="stringliteral">&quot;QUIT&quot;</span>, <span class="charliteral">&#39;Q&#39;</span>}</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="../../dc/dec/search_8c_source.html#l00026">26</a> of file <a class="el" href="../../dc/dec/search_8c_source.html">search.c</a>.</p>
+
+</div>
+</div>
+<a id="ae016b8c86e9657f02e41baa15603d955" name="ae016b8c86e9657f02e41baa15603d955"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae016b8c86e9657f02e41baa15603d955">&#9670;&nbsp;</a></span>controls_panel</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">WINDOW* controls_panel</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../dc/dec/search_8c_source.html#l00038">38</a> of file <a class="el" href="../../dc/dec/search_8c_source.html">search.c</a>.</p>
+
+</div>
+</div>
+<a id="a08755815429f772a4c26bf92b603cb6f" name="a08755815429f772a4c26bf92b603cb6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08755815429f772a4c26bf92b603cb6f">&#9670;&nbsp;</a></span>info_panel</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">WINDOW* info_panel</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../dc/dec/search_8c_source.html#l00037">37</a> of file <a class="el" href="../../dc/dec/search_8c_source.html">search.c</a>.</p>
+
+</div>
+</div>
+<a id="a8e8f6f474ecc73b9d4c438b5cc2e690f" name="a8e8f6f474ecc73b9d4c438b5cc2e690f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e8f6f474ecc73b9d4c438b5cc2e690f">&#9670;&nbsp;</a></span>is_nsfw</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool is_nsfw</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indicates whether the NSFW option is enabled. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../dc/dec/search_8c_source.html#l00041">41</a> of file <a class="el" href="../../dc/dec/search_8c_source.html">search.c</a>.</p>
+
+</div>
+</div>
+<a id="a4c06d68b76c7eba4e5734669e5053f1c" name="a4c06d68b76c7eba4e5734669e5053f1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c06d68b76c7eba4e5734669e5053f1c">&#9670;&nbsp;</a></span>posts_panel</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">WINDOW* posts_panel</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../dc/dec/search_8c_source.html#l00036">36</a> of file <a class="el" href="../../dc/dec/search_8c_source.html">search.c</a>.</p>
+
+</div>
+</div>
+<a id="ac5008b3b6a0e2594df27b44d93bc351d" name="ac5008b3b6a0e2594df27b44d93bc351d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5008b3b6a0e2594df27b44d93bc351d">&#9670;&nbsp;</a></span>posts_panel_height</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int posts_panel_height</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Height of the posts panel in the user interface. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../dc/dec/search_8c_source.html#l00044">44</a> of file <a class="el" href="../../dc/dec/search_8c_source.html">search.c</a>.</p>
+
+</div>
+</div>
+<a id="ae12a02b5afc3b5def9e20811d078b8c4" name="ae12a02b5afc3b5def9e20811d078b8c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae12a02b5afc3b5def9e20811d078b8c4">&#9670;&nbsp;</a></span>top_panel</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">WINDOW* top_panel</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../dc/dec/search_8c_source.html#l00035">35</a> of file <a class="el" href="../../dc/dec/search_8c_source.html">search.c</a>.</p>
 
 </div>
 </div>

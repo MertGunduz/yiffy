@@ -3,5 +3,5 @@
 <area shape="rect" id="node2" href="$dc/dc0/yiffy_8c.html" title="This is the main file and used to handle the arguments and execute the program by using external func..." alt="" coords="5,80,116,107"/>
 <area shape="rect" id="node3" href="$d6/d60/aria2__download_8c.html" title="Downloads the JSON file by using aria2c, works with the system function." alt="" coords="140,80,336,107"/>
 <area shape="rect" id="node4" href="$d1/d14/fetch_8c.html" title="This file is used to send requests to e621&#45;e926 with the specified tags by user and outputs or output..." alt="" coords="360,80,487,107"/>
-<area shape="rect" id="node5" href="$dc/dec/search_8c.html" title="This file is used to interact with the terminal user interface version of yiffy, it provides download..." alt="" coords="511,80,658,107"/>
+<area shape="rect" id="node5" href="$dc/dec/search_8c.html" title="This file is used to interact with the terminal user interface version of yiffy, providing download,..." alt="" coords="511,80,658,107"/>
 </map>

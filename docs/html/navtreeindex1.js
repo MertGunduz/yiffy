@@ -1,5 +1,12 @@
 var NAVTREEINDEX1 =
 {
+"dd/dee/structcontrol.html":[5,0,2],
+"dd/dee/structcontrol.html#a4e3589dccbb6b41838b153f38b21e3d2":[5,0,2,1],
+"dd/dee/structcontrol.html#a87db8c567eae4d27196ee4a7dfdc09d5":[5,0,2,0],
+"de/d0c/show__help_8c.html":[6,0,0,4,2],
+"de/d0c/show__help_8c.html#ac29c297ae32acdb2172e926d5f144681":[6,0,0,4,2,0],
+"de/d0c/show__help_8c_source.html":[6,0,0,4,2],
+"de/d22/show__version_8c.html":[6,0,0,4,3],
 "de/d22/show__version_8c.html#af8f154bf210b7ff6d50433da876083e6":[6,0,0,4,3,0],
 "de/d22/show__version_8c_source.html":[6,0,0,4,3],
 "de/d29/yiffy__search_8h.html":[6,0,0,6,1],

@@ -1,8 +1,8 @@
 <map id="src/search/search.c" name="src/search/search.c">
-<area shape="rect" id="node1" title="This file is used to interact with the terminal user interface version of yiffy, it provides download..." alt="" coords="305,5,451,32"/>
-<area shape="rect" id="node2" href="$de/d29/yiffy__search_8h.html" title="This header file is used to handle the fetching and searching system." alt="" coords="184,80,297,107"/>
+<area shape="rect" id="node1" title="This file is used to interact with the terminal user interface version of yiffy, providing download,..." alt="" coords="121,5,267,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,155,89,181"/>
+<area shape="rect" id="node3" href="$de/d29/yiffy__search_8h.html" title="This header file is used to handle the fetching and searching system." alt="" coords="137,80,251,107"/>
 <area shape="rect" id="node9" href="$d5/d05/yiffy__fetch_8h.html" title=" " alt="" coords="478,80,630,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,155,89,181"/>
 <area shape="rect" id="node4" title=" " alt="" coords="113,155,184,181"/>
 <area shape="rect" id="node5" title=" " alt="" coords="209,155,273,181"/>
 <area shape="rect" id="node6" href="$d0/de2/yiffy__messages_8h.html" title="This file is used to handle error and information messages." alt="" coords="297,155,477,181"/>

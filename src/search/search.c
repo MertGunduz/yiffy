@@ -6,7 +6,7 @@
  * It uses ncurses to generate the UI, handle resizing, and place data in windows named panels in this code.
  * 
  * @date 31/10/2023
- */
+*/
 
 #include <ncurses.h>
 
@@ -14,8 +14,9 @@
 #include "../fetch/yiffy_fetch.h"
 
 #define MAX_FILE_PATH 256   ///< This macro is used to set the default size for getting the home directory file.
-#define MAX_BUFFER_SIZE 512 ///< This macro is used to set the default size for reading the config file
+#define MAX_BUFFER_SIZE 512 ///< This macro is used to set the default size for reading the config file.
 
+/// @brief Stores the control name and key for displaying in the controls panel.
 typedef struct control 
 {
     char *control_full_name;
@@ -36,7 +37,10 @@ WINDOW *posts_panel;
 WINDOW *info_panel;
 WINDOW *controls_panel;
 
+/// @brief Indicates whether the NSFW option is enabled.
 bool is_nsfw;
+
+/// @brief Height of the posts panel in the user interface.
 int posts_panel_height;
 
 static void init_ncurses();
@@ -47,6 +51,8 @@ static void create_info_panel();
 static void create_controls_panel();
 static void create_panels();
 
+/// @brief Creates a ncurses-based user interface to show, download, search and travel the e621/e926 by using curl api calls and aria2c tool.
+/// @param tags These are the e621-e926 tags prompted by the user as an argument value. Example: yiffy --search "anthro+fur+male+smile".
 void search(char *tags) 
 {
     /* Configuration file path and data buffer for configurations. */
@@ -56,7 +62,7 @@ void search(char *tags)
     /* The home path of the user. */
     char *home_path = getenv("HOME");
 
-    /* Check if NSFW option on. */
+    /* Check if the NSFW option is enabled. */
     is_nsfw = false;
 
     if (home_path == NULL) 
@@ -67,7 +73,7 @@ void search(char *tags)
 
     sprintf(config_path, "%s/.yiffy/yiffy-config.txt", home_path);
 
-    /* Read the configuration file (home/user/.yiffy/yiffy-config.txt) to execute the wanted process. */
+    /* Read the configuration file (~/.yiffy/yiffy-config.txt) to execute the desired process. */
     FILE *config = fopen(config_path, "r");
 
     if (config == NULL) 
@@ -81,6 +87,7 @@ void search(char *tags)
 
     fclose(config);
 
+    /* Parse the configuration to check for NSFW option. */
     char *token = strtok(buffer, ":");
 
     while (token != NULL) 
@@ -98,13 +105,14 @@ void search(char *tags)
     init_ncurses();
     create_panels();
 
-    /* Download the first posts page. */
+    /* Download the first page of posts with prompted tags. */
     aria2_download(tags, 1, is_nsfw, posts_panel_height);
 
     getch();
     endwin();
 }
 
+/// @brief Initialize ncurses, check color compatibility and perform necessary configurations for the user interface.
 static void init_ncurses()
 {
     /* Initialize ncurses and do the required configurations. */
@@ -123,12 +131,16 @@ static void init_ncurses()
     }
 }
 
+/// @brief Writes a title to the top-left corner of the specified window.
+/// @param window The window where the title will be displayed.
+/// @param title The title string to be written.
 static void set_panel_title(WINDOW *window, const char *title) 
 {
     /* Write the panel title. */
     mvwprintw(window, 0, 1, "%s", title);
 }
 
+/// @brief Creates the top panel UI displaying basic information about the API in use.
 static void create_top_panel() 
 {
     top_panel = newwin(3, COLS, 0, 0);
@@ -152,6 +164,7 @@ static void create_top_panel()
     wrefresh(top_panel);
 }
 
+/// @brief Creates the UI for displaying posts related to tags provided as terminal arguments.
 static void create_posts_panel() 
 {
     /* Create the posts_panel until information, taking 12 lines from it because the info and controls panel line is 12. */
@@ -166,6 +179,7 @@ static void create_posts_panel()
     wrefresh(posts_panel);
 }
 
+/// @brief Creates the info panel UI to display basic information about the selected post.
 static void create_info_panel() 
 {
     info_panel = newwin(6, COLS, 3 + posts_panel_height, 0);
@@ -177,6 +191,7 @@ static void create_info_panel()
     wrefresh(info_panel);
 }
 
+/// @brief Creates the controls panel UI to display valid keys for controlling the program.
 static void create_controls_panel() 
 {
     controls_panel = newwin(3, COLS, 9 + posts_panel_height, 0);
@@ -202,6 +217,7 @@ static void create_controls_panel()
     wrefresh(controls_panel);
 }
 
+/// @brief Creates all the panels for the user interface.
 static void create_panels() 
 {
     create_top_panel();
