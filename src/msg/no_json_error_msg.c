@@ -12,13 +12,9 @@
 
 /**
  * @brief Outputs the error when there is no JSON file. 
- * 
- * @param jsonFile This is used to close the JSON file. 
 */
-void no_json_error_msg(FILE *json_file)
+void no_json_error_msg()
 {
     fprintf(stderr, "yiffy: couldn\'t find the json response file.\n");
     fprintf(stderr, "yiffy: please try giving the file read-write permission to the working directory and run yiffy again.\n");
-
-    fclose(json_file);
 }

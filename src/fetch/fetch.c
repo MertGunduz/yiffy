@@ -81,7 +81,7 @@ void fetch(char *tags, int page, char *command)
 
     if (response_json == NULL)
     {
-        no_json_error_msg(response_json);
+        no_json_error_msg();
         exit(EXIT_FAILURE);
     }
 
