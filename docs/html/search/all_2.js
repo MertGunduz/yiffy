@@ -45,7 +45,7 @@ var searchData=
   ['conf_5fsuccessful_5fmsg_2ec_42',['conf_successful_msg.c',['../d6/dd7/conf__successful__msg_8c.html',1,'']]],
   ['content_43',['content',['../db/d68/structparse__buffer.html#a52ee1184576baa3d5171059ab0e942de',1,'parse_buffer']]],
   ['content_5fsize_44',['CONTENT_SIZE',['../d1/d14/fetch_8c.html#aff9b7f6d81297248bf0ad06d725c8cbb',1,'fetch.c']]],
-  ['control_45',['control',['../dd/dee/structcontrol.html',1,'control'],['../dc/dec/search_8c.html#aa1d3790e2a578b5f80f650aea7973406',1,'control():&#160;search.c']]],
+  ['control_45',['control',['../dd/dee/structcontrol.html',1,'']]],
   ['control_5fcharacter_46',['control_character',['../dd/dee/structcontrol.html#a87db8c567eae4d27196ee4a7dfdc09d5',1,'control']]],
   ['control_5ffull_5fname_47',['control_full_name',['../dd/dee/structcontrol.html#a4e3589dccbb6b41838b153f38b21e3d2',1,'control']]],
   ['controls_48',['controls',['../dc/dec/search_8c.html#af0d0e693c574c3bfb0fcdcca37cbd745',1,'search.c']]],

@@ -110,14 +110,13 @@ $(document).ready(function(){initNavTree('dc/dec/search_8c.html','../../'); init
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#define-members">Macros</a> &#124;
-<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">search.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>This file is used to interact with the terminal user interface version of yiffy, providing download, list, search, travel, and post info features.  
+<p>This file is used to interact with the terminal user interface version of yiffy, providing download, list, search, travel, and selected post tags features.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;ncurses.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="../../de/d29/yiffy__search_8h_source.html">yiffy_search.h</a>&quot;</code><br />
@@ -162,12 +161,6 @@ Macros</h2></td></tr>
 <tr class="memdesc:ad4d796b98c583d49e83adabd74a63bf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">This macro is used to set the default size for reading the config file.  <a href="../../dc/dec/search_8c.html#ad4d796b98c583d49e83adabd74a63bf6">More...</a><br /></td></tr>
 <tr class="separator:ad4d796b98c583d49e83adabd74a63bf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:aa1d3790e2a578b5f80f650aea7973406"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="../../dd/dee/structcontrol.html">control</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dec/search_8c.html#aa1d3790e2a578b5f80f650aea7973406">control</a></td></tr>
-<tr class="memdesc:aa1d3790e2a578b5f80f650aea7973406"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores the control name and key for displaying in the controls panel.  <a href="../../dc/dec/search_8c.html#aa1d3790e2a578b5f80f650aea7973406">More...</a><br /></td></tr>
-<tr class="separator:aa1d3790e2a578b5f80f650aea7973406"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ab899bd069f8d6db7339eba31c3ad7a02"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dec/search_8c.html#ab899bd069f8d6db7339eba31c3ad7a02">search</a> (char *tags)</td></tr>
@@ -182,8 +175,8 @@ Variables</h2></td></tr>
 <tr class="separator:ae12a02b5afc3b5def9e20811d078b8c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c06d68b76c7eba4e5734669e5053f1c"><td class="memItemLeft" align="right" valign="top">WINDOW *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dec/search_8c.html#a4c06d68b76c7eba4e5734669e5053f1c">posts_panel</a></td></tr>
 <tr class="separator:a4c06d68b76c7eba4e5734669e5053f1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08755815429f772a4c26bf92b603cb6f"><td class="memItemLeft" align="right" valign="top">WINDOW *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dec/search_8c.html#a08755815429f772a4c26bf92b603cb6f">info_panel</a></td></tr>
-<tr class="separator:a08755815429f772a4c26bf92b603cb6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe48b2432f089f029289f76adfa4cdcd"><td class="memItemLeft" align="right" valign="top">WINDOW *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dec/search_8c.html#afe48b2432f089f029289f76adfa4cdcd">post_tags_panel</a></td></tr>
+<tr class="separator:afe48b2432f089f029289f76adfa4cdcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae016b8c86e9657f02e41baa15603d955"><td class="memItemLeft" align="right" valign="top">WINDOW *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dec/search_8c.html#ae016b8c86e9657f02e41baa15603d955">controls_panel</a></td></tr>
 <tr class="separator:ae016b8c86e9657f02e41baa15603d955"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e8f6f474ecc73b9d4c438b5cc2e690f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dec/search_8c.html#a8e8f6f474ecc73b9d4c438b5cc2e690f">is_nsfw</a></td></tr>
@@ -194,7 +187,7 @@ Variables</h2></td></tr>
 <tr class="separator:ac5008b3b6a0e2594df27b44d93bc351d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >This file is used to interact with the terminal user interface version of yiffy, providing download, list, search, travel, and post info features. </p>
+<div class="textblock"><p >This file is used to interact with the terminal user interface version of yiffy, providing download, list, search, travel, and selected post tags features. </p>
 <p >It uses ncurses to generate the UI, handle resizing, and place data in windows named panels in this code.</p>
 <dl class="section date"><dt>Date</dt><dd>31/10/2023 </dd></dl>
 
@@ -233,23 +226,6 @@ Variables</h2></td></tr>
 <p>This macro is used to set the default size for getting the home directory file. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../dc/dec/search_8c_source.html#l00016">16</a> of file <a class="el" href="../../dc/dec/search_8c_source.html">search.c</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Typedef Documentation</h2>
-<a id="aa1d3790e2a578b5f80f650aea7973406" name="aa1d3790e2a578b5f80f650aea7973406"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa1d3790e2a578b5f80f650aea7973406">&#9670;&nbsp;</a></span>control</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef struct <a class="el" href="../../dd/dee/structcontrol.html">control</a> <a class="el" href="../../dd/dee/structcontrol.html">control</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Stores the control name and key for displaying in the controls panel. </p>
 
 </div>
 </div>
@@ -323,22 +299,6 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a08755815429f772a4c26bf92b603cb6f" name="a08755815429f772a4c26bf92b603cb6f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a08755815429f772a4c26bf92b603cb6f">&#9670;&nbsp;</a></span>info_panel</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">WINDOW* info_panel</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../dc/dec/search_8c_source.html#l00037">37</a> of file <a class="el" href="../../dc/dec/search_8c_source.html">search.c</a>.</p>
-
-</div>
-</div>
 <a id="a8e8f6f474ecc73b9d4c438b5cc2e690f" name="a8e8f6f474ecc73b9d4c438b5cc2e690f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8e8f6f474ecc73b9d4c438b5cc2e690f">&#9670;&nbsp;</a></span>is_nsfw</h2>
 
@@ -354,6 +314,22 @@ Variables</h2></td></tr>
 <p>Indicates whether the NSFW option is enabled. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../dc/dec/search_8c_source.html#l00041">41</a> of file <a class="el" href="../../dc/dec/search_8c_source.html">search.c</a>.</p>
+
+</div>
+</div>
+<a id="afe48b2432f089f029289f76adfa4cdcd" name="afe48b2432f089f029289f76adfa4cdcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe48b2432f089f029289f76adfa4cdcd">&#9670;&nbsp;</a></span>post_tags_panel</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">WINDOW* post_tags_panel</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../dc/dec/search_8c_source.html#l00037">37</a> of file <a class="el" href="../../dc/dec/search_8c_source.html">search.c</a>.</p>
 
 </div>
 </div>

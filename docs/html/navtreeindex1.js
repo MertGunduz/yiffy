@@ -1,6 +1,5 @@
 var NAVTREEINDEX1 =
 {
-"dd/dee/structcontrol.html":[5,0,2],
 "dd/dee/structcontrol.html#a4e3589dccbb6b41838b153f38b21e3d2":[5,0,2,1],
 "dd/dee/structcontrol.html#a87db8c567eae4d27196ee4a7dfdc09d5":[5,0,2,0],
 "de/d0c/show__help_8c.html":[6,0,0,4,2],
