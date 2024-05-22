@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['window_5fcreate_5ferror_5fmsg_0',['window_create_error_msg',['../d8/d12/window__create__error__msg_8c.html#aa2139f028bdd1f14dcd7c65eabf8a14f',1,'window_create_error_msg():&#160;window_create_error_msg.c'],['../d0/de2/yiffy__messages_8h.html#aa2139f028bdd1f14dcd7c65eabf8a14f',1,'window_create_error_msg():&#160;window_create_error_msg.c']]]
+  ['void_0',['void',['../d1/d07/structinternal__hooks.html#a5cc2dd5383da5f20b19e0f27fa59e123',1,'internal_hooks::void()'],['../dc/d55/structcJSON__Hooks.html#a42c96b388103ffb466e7335b9fc710c3',1,'cJSON_Hooks::void()']]]
 ];

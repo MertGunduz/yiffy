@@ -1,5 +1,11 @@
 <map id="src/search/yiffy_search.h" name="src/search/yiffy_search.h">
-<area shape="rect" id="node1" title="This header file is used to handle the fetching and searching system." alt="" coords="45,5,228,32"/>
-<area shape="rect" id="node2" href="$dc/dc0/yiffy_8c.html" title="This is the main file and used to handle the arguments and execute the program by using external func..." alt="" coords="5,80,116,107"/>
-<area shape="rect" id="node3" href="$dc/dec/search_8c.html" title="This file is used to interact with the terminal user interface version of yiffy, providing download,..." alt="" coords="141,80,287,107"/>
+<area shape="rect" id="node1" title="This header file is used to handle the fetching and searching system." alt="" coords="641,5,824,32"/>
+<area shape="rect" id="node2" href="$dc/dc0/yiffy_8c.html" title="This is the main file and used to handle the arguments and execute the program by using external func..." alt="" coords="5,87,116,114"/>
+<area shape="rect" id="node3" href="$d6/d24/create__controls__window_8c.html" title="This file is used to create a new window to display the controls and adds it to the specified positio..." alt="" coords="141,80,333,121"/>
+<area shape="rect" id="node4" href="$d9/d28/create__post__tags__window_8c.html" title="This file is used to create a new window to display post tags and adds it to the specified position." alt="" coords="357,80,525,121"/>
+<area shape="rect" id="node5" href="$d3/d45/create__posts__window_8c.html" title="This file is used to create a new window to display posts and adds it to the specified position." alt="" coords="549,80,724,121"/>
+<area shape="rect" id="node6" href="$dd/d93/create__top__window_8c.html" title="This file is used to create a new top window to display the title and SFW/NSFW status." alt="" coords="748,80,909,121"/>
+<area shape="rect" id="node7" href="$d7/d34/init__ncurses_8c.html" title="This file initializes and configures the ncurses library for the needed user interface." alt="" coords="934,87,1115,114"/>
+<area shape="rect" id="node8" href="$dc/dec/search_8c.html" title="This file is used to interact with the terminal user interface version of yiffy, providing download,..." alt="" coords="1139,87,1286,114"/>
+<area shape="rect" id="node9" href="$dc/d2b/set__window__title_8c.html" title="This file is used to write title to the windows for the user interface." alt="" coords="1311,80,1480,121"/>
 </map>

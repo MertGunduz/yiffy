@@ -17,6 +17,26 @@
 
 #include "../msg/yiffy_messages.h"
 
+/// @brief Stores the control name and key for displaying in the controls panel.
+typedef struct
+{
+    char *control_full_name;
+    char control_character;
+} control;
+
+/* Main search function. */
 void search(char *tags);
+
+/* Easier to use ncurses initialization function. */
+void init_ncurses();
+
+/* User Interface creation functions. */
+void create_top_window(WINDOW *window, bool is_nsfw);
+void create_posts_window(WINDOW *window, int *posts_panel_height); 
+void create_post_tags_window(WINDOW *window, int *posts_panel_height);
+void create_controls_window(WINDOW *window, int *posts_panel_height, control *controls, int total_controls);
+
+/* Function for writing the titles to windows. */
+void set_window_title(WINDOW *window, const char *title);
 
 #endif /* YIFFY_UI_H */

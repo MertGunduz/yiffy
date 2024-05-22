@@ -6,5 +6,9 @@ var searchData=
   ['color_5fcomp_5ferror_5fmsg_2ec_3',['color_comp_error_msg.c',['../d9/dd8/color__comp__error__msg_8c.html',1,'']]],
   ['conf_5fnsfw_2ec_4',['conf_nsfw.c',['../de/dfc/conf__nsfw_8c.html',1,'']]],
   ['conf_5fplog_2ec_5',['conf_plog.c',['../d8/d32/conf__plog_8c.html',1,'']]],
-  ['conf_5fsuccessful_5fmsg_2ec_6',['conf_successful_msg.c',['../d6/dd7/conf__successful__msg_8c.html',1,'']]]
+  ['conf_5fsuccessful_5fmsg_2ec_6',['conf_successful_msg.c',['../d6/dd7/conf__successful__msg_8c.html',1,'']]],
+  ['create_5fcontrols_5fwindow_2ec_7',['create_controls_window.c',['../d6/d24/create__controls__window_8c.html',1,'']]],
+  ['create_5fpost_5ftags_5fwindow_2ec_8',['create_post_tags_window.c',['../d9/d28/create__post__tags__window_8c.html',1,'']]],
+  ['create_5fposts_5fwindow_2ec_9',['create_posts_window.c',['../d3/d45/create__posts__window_8c.html',1,'']]],
+  ['create_5ftop_5fwindow_2ec_10',['create_top_window.c',['../dd/d93/create__top__window_8c.html',1,'']]]
 ];

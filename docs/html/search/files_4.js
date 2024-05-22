@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['json_5fparse_5ferror_5fmsg_2ec_0',['json_parse_error_msg.c',['../d9/d32/json__parse__error__msg_8c.html',1,'']]]
+  ['init_5fncurses_2ec_0',['init_ncurses.c',['../d7/d34/init__ncurses_8c.html',1,'']]]
 ];

@@ -108,6 +108,7 @@ $(document).ready(function(){initNavTree('de/d29/yiffy__search_8h.html','../../'
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">yiffy_search.h File Reference</div></div>
 </div><!--header-->
@@ -138,19 +139,49 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d1/d35/yiffy__search_8h__dep__incl.png" border="0" usemap="#asrc_2search_2yiffy__search_8hdep" alt=""/></div>
 <map name="asrc_2search_2yiffy__search_8hdep" id="asrc_2search_2yiffy__search_8hdep">
-<area shape="rect" title="This header file is used to handle the fetching and searching system." alt="" coords="45,5,228,32"/>
-<area shape="rect" href="../../dc/dc0/yiffy_8c.html" title="This is the main file and used to handle the arguments and execute the program by using external func..." alt="" coords="5,80,116,107"/>
-<area shape="rect" href="../../dc/dec/search_8c.html" title="This file is used to interact with the terminal user interface version of yiffy, providing download,..." alt="" coords="141,80,287,107"/>
+<area shape="rect" title="This header file is used to handle the fetching and searching system." alt="" coords="641,5,824,32"/>
+<area shape="rect" href="../../dc/dc0/yiffy_8c.html" title="This is the main file and used to handle the arguments and execute the program by using external func..." alt="" coords="5,87,116,114"/>
+<area shape="rect" href="../../d6/d24/create__controls__window_8c.html" title="This file is used to create a new window to display the controls and adds it to the specified positio..." alt="" coords="141,80,333,121"/>
+<area shape="rect" href="../../d9/d28/create__post__tags__window_8c.html" title="This file is used to create a new window to display post tags and adds it to the specified position." alt="" coords="357,80,525,121"/>
+<area shape="rect" href="../../d3/d45/create__posts__window_8c.html" title="This file is used to create a new window to display posts and adds it to the specified position." alt="" coords="549,80,724,121"/>
+<area shape="rect" href="../../dd/d93/create__top__window_8c.html" title="This file is used to create a new top window to display the title and SFW/NSFW status." alt="" coords="748,80,909,121"/>
+<area shape="rect" href="../../d7/d34/init__ncurses_8c.html" title="This file initializes and configures the ncurses library for the needed user interface." alt="" coords="934,87,1115,114"/>
+<area shape="rect" href="../../dc/dec/search_8c.html" title="This file is used to interact with the terminal user interface version of yiffy, providing download,..." alt="" coords="1139,87,1286,114"/>
+<area shape="rect" href="../../dc/d2b/set__window__title_8c.html" title="This file is used to write title to the windows for the user interface." alt="" coords="1311,80,1480,121"/>
 </map>
 </div>
 </div>
 <p><a href="../../de/d29/yiffy__search_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dee/structcontrol.html">control</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores the control name and key for displaying in the controls panel.  <a href="../../dd/dee/structcontrol.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ab899bd069f8d6db7339eba31c3ad7a02"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d29/yiffy__search_8h.html#ab899bd069f8d6db7339eba31c3ad7a02">search</a> (char *tags)</td></tr>
 <tr class="memdesc:ab899bd069f8d6db7339eba31c3ad7a02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a ncurses-based user interface to show, download, search and travel the e621/e926 by using curl api calls and aria2c tool.  <a href="../../de/d29/yiffy__search_8h.html#ab899bd069f8d6db7339eba31c3ad7a02">More...</a><br /></td></tr>
 <tr class="separator:ab899bd069f8d6db7339eba31c3ad7a02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85769112d75b553ce8125bfda23f32bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d29/yiffy__search_8h.html#a85769112d75b553ce8125bfda23f32bc">init_ncurses</a> ()</td></tr>
+<tr class="memdesc:a85769112d75b553ce8125bfda23f32bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the ncurses library and sets up the terminal UI.  <a href="../../de/d29/yiffy__search_8h.html#a85769112d75b553ce8125bfda23f32bc">More...</a><br /></td></tr>
+<tr class="separator:a85769112d75b553ce8125bfda23f32bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a090b2242d6c27461b6d72b4c69c3255f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d29/yiffy__search_8h.html#a090b2242d6c27461b6d72b4c69c3255f">create_top_window</a> (WINDOW *window, bool <a class="el" href="../../dc/dec/search_8c.html#a8e8f6f474ecc73b9d4c438b5cc2e690f">is_nsfw</a>)</td></tr>
+<tr class="memdesc:a090b2242d6c27461b6d72b4c69c3255f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new top window to display the title and SFW/NSFW status.  <a href="../../de/d29/yiffy__search_8h.html#a090b2242d6c27461b6d72b4c69c3255f">More...</a><br /></td></tr>
+<tr class="separator:a090b2242d6c27461b6d72b4c69c3255f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3429f6ee3b0840edd6c7a6d01fd54773"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d29/yiffy__search_8h.html#a3429f6ee3b0840edd6c7a6d01fd54773">create_posts_window</a> (WINDOW *window, int *<a class="el" href="../../dc/dec/search_8c.html#ac5008b3b6a0e2594df27b44d93bc351d">posts_panel_height</a>)</td></tr>
+<tr class="memdesc:a3429f6ee3b0840edd6c7a6d01fd54773"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new window to display posts and adds it to the specified position.  <a href="../../de/d29/yiffy__search_8h.html#a3429f6ee3b0840edd6c7a6d01fd54773">More...</a><br /></td></tr>
+<tr class="separator:a3429f6ee3b0840edd6c7a6d01fd54773"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a800291b89cb5eebec38a251c0ea0a24f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d29/yiffy__search_8h.html#a800291b89cb5eebec38a251c0ea0a24f">create_post_tags_window</a> (WINDOW *window, int *<a class="el" href="../../dc/dec/search_8c.html#ac5008b3b6a0e2594df27b44d93bc351d">posts_panel_height</a>)</td></tr>
+<tr class="memdesc:a800291b89cb5eebec38a251c0ea0a24f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new window to display post tags and adds it to the specified position.  <a href="../../de/d29/yiffy__search_8h.html#a800291b89cb5eebec38a251c0ea0a24f">More...</a><br /></td></tr>
+<tr class="separator:a800291b89cb5eebec38a251c0ea0a24f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a856b187dbd59a65a8bc9ffe5a597b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d29/yiffy__search_8h.html#a0a856b187dbd59a65a8bc9ffe5a597b1">create_controls_window</a> (WINDOW *window, int *<a class="el" href="../../dc/dec/search_8c.html#ac5008b3b6a0e2594df27b44d93bc351d">posts_panel_height</a>, <a class="el" href="../../dd/dee/structcontrol.html">control</a> *<a class="el" href="../../dc/dec/search_8c.html#af0d0e693c574c3bfb0fcdcca37cbd745">controls</a>, int total_controls)</td></tr>
+<tr class="memdesc:a0a856b187dbd59a65a8bc9ffe5a597b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new window to display the controls and adds it to the specified position.  <a href="../../de/d29/yiffy__search_8h.html#a0a856b187dbd59a65a8bc9ffe5a597b1">More...</a><br /></td></tr>
+<tr class="separator:a0a856b187dbd59a65a8bc9ffe5a597b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99e678a5bf2aa342184677f946dc1439"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d29/yiffy__search_8h.html#a99e678a5bf2aa342184677f946dc1439">set_window_title</a> (WINDOW *window, const char *title)</td></tr>
+<tr class="memdesc:a99e678a5bf2aa342184677f946dc1439"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a title to the top-left corner of the specified window.  <a href="../../de/d29/yiffy__search_8h.html#a99e678a5bf2aa342184677f946dc1439">More...</a><br /></td></tr>
+<tr class="separator:a99e678a5bf2aa342184677f946dc1439"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >This header file is used to handle the fetching and searching system. </p>
@@ -162,6 +193,201 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition in file <a class="el" href="../../de/d29/yiffy__search_8h_source.html">yiffy_search.h</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a id="a0a856b187dbd59a65a8bc9ffe5a597b1" name="a0a856b187dbd59a65a8bc9ffe5a597b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a856b187dbd59a65a8bc9ffe5a597b1">&#9670;&nbsp;</a></span>create_controls_window()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void create_controls_window </td>
+          <td>(</td>
+          <td class="paramtype">WINDOW *&#160;</td>
+          <td class="paramname"><em>window</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>posts_panel_height</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../dd/dee/structcontrol.html">control</a> *&#160;</td>
+          <td class="paramname"><em>controls</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>total_controls</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates a new window to display the controls and adds it to the specified position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>A pointer to the WINDOW where controls will be displayed. </td></tr>
+    <tr><td class="paramname">posts_panel_height</td><td>A pointer to an integer representing the height of the posts panel. </td></tr>
+    <tr><td class="paramname">controls</td><td>An array of control structures, each containing a control character and a control full name. </td></tr>
+    <tr><td class="paramname">total_controls</td><td>The total number of controls to be displayed. <br  />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d6/d24/create__controls__window_8c_source.html#l00018">18</a> of file <a class="el" href="../../d6/d24/create__controls__window_8c_source.html">create_controls_window.c</a>.</p>
+
+</div>
+</div>
+<a id="a800291b89cb5eebec38a251c0ea0a24f" name="a800291b89cb5eebec38a251c0ea0a24f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a800291b89cb5eebec38a251c0ea0a24f">&#9670;&nbsp;</a></span>create_post_tags_window()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void create_post_tags_window </td>
+          <td>(</td>
+          <td class="paramtype">WINDOW *&#160;</td>
+          <td class="paramname"><em>window</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>posts_panel_height</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates a new window to display post tags and adds it to the specified position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>A pointer to the WINDOW where post tags will be displayed. </td></tr>
+    <tr><td class="paramname">posts_panel_height</td><td>A pointer to an integer representing the height of the posts panel. <br  />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d9/d28/create__post__tags__window_8c_source.html#l00016">16</a> of file <a class="el" href="../../d9/d28/create__post__tags__window_8c_source.html">create_post_tags_window.c</a>.</p>
+
+</div>
+</div>
+<a id="a3429f6ee3b0840edd6c7a6d01fd54773" name="a3429f6ee3b0840edd6c7a6d01fd54773"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3429f6ee3b0840edd6c7a6d01fd54773">&#9670;&nbsp;</a></span>create_posts_window()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void create_posts_window </td>
+          <td>(</td>
+          <td class="paramtype">WINDOW *&#160;</td>
+          <td class="paramname"><em>window</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>posts_panel_height</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates a new window to display posts and adds it to the specified position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>A pointer to the WINDOW where posts will be displayed. </td></tr>
+    <tr><td class="paramname">posts_panel_height</td><td>A pointer to an integer representing the height of the posts panel. <br  />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d3/d45/create__posts__window_8c_source.html#l00016">16</a> of file <a class="el" href="../../d3/d45/create__posts__window_8c_source.html">create_posts_window.c</a>.</p>
+
+</div>
+</div>
+<a id="a090b2242d6c27461b6d72b4c69c3255f" name="a090b2242d6c27461b6d72b4c69c3255f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a090b2242d6c27461b6d72b4c69c3255f">&#9670;&nbsp;</a></span>create_top_window()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void create_top_window </td>
+          <td>(</td>
+          <td class="paramtype">WINDOW *&#160;</td>
+          <td class="paramname"><em>window</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>is_nsfw</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates a new top window to display the title and SFW/NSFW status. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>A pointer to the WINDOW where the title and SFW/NSFW status will be displayed. </td></tr>
+    <tr><td class="paramname">is_nsfw</td><td>A boolean indicating whether the content is NSFW (true) or SFW (false). <br  />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="../../dd/d93/create__top__window_8c_source.html#l00016">16</a> of file <a class="el" href="../../dd/d93/create__top__window_8c_source.html">create_top_window.c</a>.</p>
+
+</div>
+</div>
+<a id="a85769112d75b553ce8125bfda23f32bc" name="a85769112d75b553ce8125bfda23f32bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85769112d75b553ce8125bfda23f32bc">&#9670;&nbsp;</a></span>init_ncurses()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void init_ncurses </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initializes the ncurses library and sets up the terminal UI. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d34/init__ncurses_8c_source.html#l00014">14</a> of file <a class="el" href="../../d7/d34/init__ncurses_8c_source.html">init_ncurses.c</a>.</p>
+
+</div>
+</div>
 <a id="ab899bd069f8d6db7339eba31c3ad7a02" name="ab899bd069f8d6db7339eba31c3ad7a02"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab899bd069f8d6db7339eba31c3ad7a02">&#9670;&nbsp;</a></span>search()</h2>
 
@@ -186,7 +412,46 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../dc/dec/search_8c_source.html#l00056">56</a> of file <a class="el" href="../../dc/dec/search_8c_source.html">search.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/dec/search_8c_source.html#l00041">41</a> of file <a class="el" href="../../dc/dec/search_8c_source.html">search.c</a>.</p>
+
+</div>
+</div>
+<a id="a99e678a5bf2aa342184677f946dc1439" name="a99e678a5bf2aa342184677f946dc1439"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99e678a5bf2aa342184677f946dc1439">&#9670;&nbsp;</a></span>set_window_title()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void set_window_title </td>
+          <td>(</td>
+          <td class="paramtype">WINDOW *&#160;</td>
+          <td class="paramname"><em>window</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>title</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Writes a title to the top-left corner of the specified window. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>The window where the title will be displayed. </td></tr>
+    <tr><td class="paramname">title</td><td>The title string to be written. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="../../dc/d2b/set__window__title_8c_source.html#l00016">16</a> of file <a class="el" href="../../dc/d2b/set__window__title_8c_source.html">set_window_title.c</a>.</p>
 
 </div>
 </div>
