@@ -1,7 +1,7 @@
 /**
  * @file search.c
  * 
- * @brief This file is used to interact with the terminal user interface version of yiffy, providing download, list, search, travel, and post info features.
+ * @brief This file is used to interact with the terminal user interface version of yiffy, providing download, list, search, travel, and selected post tags features.
  * 
  * It uses ncurses to generate the UI, handle resizing, and place data in windows named panels in this code.
  * 
@@ -17,7 +17,7 @@
 #define MAX_BUFFER_SIZE 512 ///< This macro is used to set the default size for reading the config file.
 
 /// @brief Stores the control name and key for displaying in the controls panel.
-typedef struct control 
+typedef struct
 {
     char *control_full_name;
     char control_character;
@@ -34,7 +34,7 @@ control controls[] =
 
 WINDOW *top_panel;
 WINDOW *posts_panel;
-WINDOW *info_panel;
+WINDOW *post_tags_panel;
 WINDOW *controls_panel;
 
 /// @brief Indicates whether the NSFW option is enabled.
@@ -47,7 +47,7 @@ static void init_ncurses();
 static void set_panel_title(WINDOW *window, const char *title);
 static void create_top_panel();
 static void create_posts_panel();
-static void create_info_panel();
+static void create_post_tags_panel();
 static void create_controls_panel();
 static void create_panels();
 
@@ -179,16 +179,16 @@ static void create_posts_panel()
     wrefresh(posts_panel);
 }
 
-/// @brief Creates the info panel UI to display basic information about the selected post.
-static void create_info_panel() 
+/// @brief Creates the post tags panel UI to display tags of selected post.
+static void create_post_tags_panel() 
 {
-    info_panel = newwin(6, COLS, 3 + posts_panel_height, 0);
-    box(info_panel, 0, 0);
+    post_tags_panel = newwin(6, COLS, 3 + posts_panel_height, 0);
+    box(post_tags_panel, 0, 0);
 
-    set_panel_title(info_panel, "INFORMATION");
+    set_panel_title(post_tags_panel, "POST-TAGS");
 
     refresh();
-    wrefresh(info_panel);
+    wrefresh(post_tags_panel);
 }
 
 /// @brief Creates the controls panel UI to display valid keys for controlling the program.
@@ -222,6 +222,6 @@ static void create_panels()
 {
     create_top_panel();
     create_posts_panel();
-    create_info_panel();
+    create_post_tags_panel();
     create_controls_panel();
 }
