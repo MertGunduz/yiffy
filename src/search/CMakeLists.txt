@@ -6,6 +6,7 @@ set(SOURCES
     create_post_tags_window.c
     create_controls_window.c
     search.c
+    write_post.c
 )
 
 add_library(yiffy-search STATIC ${SOURCES})

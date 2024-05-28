@@ -32,5 +32,7 @@ void conf_successful_msg(char *option, char *argv);
 void access_error_msg();
 void color_comp_error_msg();
 void window_create_error_msg();
+void posts_not_array_error_msg();
+void post_error_msg();
 
 #endif /* YIFFY_MESSAGES_H */
