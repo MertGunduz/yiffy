@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['void_0',['void',['../d1/d07/structinternal__hooks.html#a5cc2dd5383da5f20b19e0f27fa59e123',1,'internal_hooks::void()'],['../dc/d55/structcJSON__Hooks.html#a42c96b388103ffb466e7335b9fc710c3',1,'cJSON_Hooks::void()']]]
+  ['unrecognized_5farg_5fmsg_0',['unrecognized_arg_msg',['../d7/de2/unrecognized__arg__msg_8c.html#ae1e70d303bd9115115ecb22cb13459c5',1,'unrecognized_arg_msg(char *argument):&#160;unrecognized_arg_msg.c'],['../d0/de2/yiffy__messages_8h.html#ae1e70d303bd9115115ecb22cb13459c5',1,'unrecognized_arg_msg(char *argument):&#160;unrecognized_arg_msg.c']]]
 ];

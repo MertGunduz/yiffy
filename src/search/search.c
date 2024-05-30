@@ -3,7 +3,7 @@
  * 
  * @brief This file is used to interact with the terminal user interface version of yiffy, providing download, list, search, travel, and selected post tags features.
  * 
- * It uses ncurses to generate the UI, handle resizing, and place data in windows named panels in this code.
+ * @author Mehmet Mert Gunduz (merttgg@gmail.com)
  * 
  * @date 31/10/2023
 */

@@ -7,5 +7,6 @@ var dir_5e53e25df8c865d23c4f0f620d3a69fb =
     [ "init_ncurses.c", "d7/d34/init__ncurses_8c.html", "d7/d34/init__ncurses_8c" ],
     [ "search.c", "dc/dec/search_8c.html", "dc/dec/search_8c" ],
     [ "set_window_title.c", "dc/d2b/set__window__title_8c.html", "dc/d2b/set__window__title_8c" ],
+    [ "write_post.c", "db/de0/write__post_8c.html", "db/de0/write__post_8c" ],
     [ "yiffy_search.h", "de/d29/yiffy__search_8h.html", "de/d29/yiffy__search_8h" ]
 ];

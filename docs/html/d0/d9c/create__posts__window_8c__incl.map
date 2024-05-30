@@ -1,10 +1,17 @@
 <map id="src/search/create_posts_window.c" name="src/search/create_posts_window.c">
-<area shape="rect" id="node1" title="This file is used to create a new window to display posts and adds it to the specified position." alt="" coords="107,5,281,47"/>
-<area shape="rect" id="node2" href="$de/d29/yiffy__search_8h.html" title="This header file is used to handle the fetching and searching system." alt="" coords="137,95,251,121"/>
+<area shape="rect" id="node1" title="This file is used to create a new window to display posts and adds it to the specified position." alt="" coords="91,5,265,47"/>
+<area shape="rect" id="node2" href="$de/d29/yiffy__search_8h.html" title="This header file is used to handle the fetching and searching system." alt="" coords="121,95,235,121"/>
 <area shape="rect" id="node3" title=" " alt="" coords="5,169,89,196"/>
-<area shape="rect" id="node4" title=" " alt="" coords="113,169,184,196"/>
-<area shape="rect" id="node5" title=" " alt="" coords="209,169,273,196"/>
-<area shape="rect" id="node6" href="$d0/de2/yiffy__messages_8h.html" title="This file is used to handle error and information messages." alt="" coords="297,169,477,196"/>
-<area shape="rect" id="node7" title=" " alt="" coords="307,244,374,271"/>
-<area shape="rect" id="node8" title=" " alt="" coords="399,244,469,271"/>
+<area shape="rect" id="node4" title=" " alt="" coords="13,244,84,271"/>
+<area shape="rect" id="node5" title=" " alt="" coords="109,244,173,271"/>
+<area shape="rect" id="node6" href="$d5/d05/yiffy__fetch_8h.html" title=" " alt="" coords="313,169,465,196"/>
+<area shape="rect" id="node12" href="$d0/de2/yiffy__messages_8h.html" title="This file is used to handle error and information messages." alt="" coords="789,244,969,271"/>
+<area shape="rect" id="node7" title=" " alt="" coords="631,319,701,345"/>
+<area shape="rect" id="node8" title=" " alt="" coords="583,244,666,271"/>
+<area shape="rect" id="node9" title=" " alt="" coords="690,244,765,271"/>
+<area shape="rect" id="node10" title=" " alt="" coords="197,244,271,271"/>
+<area shape="rect" id="node11" title=" " alt="" coords="295,244,365,271"/>
+<area shape="rect" id="node14" href="$d5/d56/cjson_8h.html" title="This file is used as a header file for the cjson.c, used for JSON processes in requests,..." alt="" coords="389,244,508,271"/>
+<area shape="rect" id="node13" title=" " alt="" coords="846,319,913,345"/>
+<area shape="rect" id="node15" title=" " alt="" coords="411,319,486,345"/>
 </map>

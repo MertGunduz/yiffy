@@ -119,27 +119,26 @@ $(document).ready(function(){initNavTree('dc/dec/search_8c.html','../../'); init
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;ncurses.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="../../de/d29/yiffy__search_8h_source.html">yiffy_search.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d5/d05/yiffy__fetch_8h_source.html">../fetch/yiffy_fetch.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for search.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../db/ddf/search_8c__incl.png" border="0" usemap="#asrc_2search_2search_8c" alt=""/></div>
 <map name="asrc_2search_2search_8c" id="asrc_2search_2search_8c">
-<area shape="rect" title="This file is used to interact with the terminal user interface version of yiffy, providing download,..." alt="" coords="121,5,267,32"/>
-<area shape="rect" title=" " alt="" coords="5,155,89,181"/>
-<area shape="rect" href="../../de/d29/yiffy__search_8h.html" title="This header file is used to handle the fetching and searching system." alt="" coords="137,80,251,107"/>
-<area shape="rect" href="../../d5/d05/yiffy__fetch_8h.html" title=" " alt="" coords="478,80,630,107"/>
-<area shape="rect" title=" " alt="" coords="113,155,184,181"/>
-<area shape="rect" title=" " alt="" coords="209,155,273,181"/>
-<area shape="rect" href="../../d0/de2/yiffy__messages_8h.html" title="This file is used to handle error and information messages." alt="" coords="297,155,477,181"/>
-<area shape="rect" title=" " alt="" coords="354,229,421,256"/>
-<area shape="rect" title=" " alt="" coords="463,229,533,256"/>
-<area shape="rect" title=" " alt="" coords="553,155,635,181"/>
-<area shape="rect" title=" " alt="" coords="659,155,734,181"/>
-<area shape="rect" title=" " alt="" coords="759,155,832,181"/>
-<area shape="rect" title=" " alt="" coords="856,155,927,181"/>
-<area shape="rect" href="../../d5/d56/cjson_8h.html" title="This file is used as a header file for the cjson.c, used for JSON processes in requests,..." alt="" coords="951,155,1069,181"/>
-<area shape="rect" title=" " alt="" coords="973,229,1047,256"/>
+<area shape="rect" title="This file is used to interact with the terminal user interface version of yiffy, providing download,..." alt="" coords="402,5,549,32"/>
+<area shape="rect" title=" " alt="" coords="337,155,421,181"/>
+<area shape="rect" href="../../de/d29/yiffy__search_8h.html" title="This header file is used to handle the fetching and searching system." alt="" coords="491,80,604,107"/>
+<area shape="rect" title=" " alt="" coords="801,229,872,256"/>
+<area shape="rect" title=" " alt="" coords="897,229,961,256"/>
+<area shape="rect" href="../../d5/d05/yiffy__fetch_8h.html" title=" " alt="" coords="497,155,649,181"/>
+<area shape="rect" href="../../d0/de2/yiffy__messages_8h.html" title="This file is used to handle error and information messages." alt="" coords="5,229,185,256"/>
+<area shape="rect" title=" " alt="" coords="219,304,289,331"/>
+<area shape="rect" title=" " alt="" coords="498,229,581,256"/>
+<area shape="rect" title=" " alt="" coords="605,229,679,256"/>
+<area shape="rect" title=" " alt="" coords="704,229,777,256"/>
+<area shape="rect" title=" " alt="" coords="209,229,280,256"/>
+<area shape="rect" href="../../d5/d56/cjson_8h.html" title="This file is used as a header file for the cjson.c, used for JSON processes in requests,..." alt="" coords="356,229,475,256"/>
+<area shape="rect" title=" " alt="" coords="62,304,129,331"/>
+<area shape="rect" title=" " alt="" coords="378,304,453,331"/>
 </map>
 </div>
 </div>
@@ -153,6 +152,9 @@ Macros</h2></td></tr>
 <tr class="memitem:ad4d796b98c583d49e83adabd74a63bf6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dec/search_8c.html#ad4d796b98c583d49e83adabd74a63bf6">MAX_BUFFER_SIZE</a>&#160;&#160;&#160;512</td></tr>
 <tr class="memdesc:ad4d796b98c583d49e83adabd74a63bf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">This macro is used to set the default size for reading the config file.  <a href="../../dc/dec/search_8c.html#ad4d796b98c583d49e83adabd74a63bf6">More...</a><br /></td></tr>
 <tr class="separator:ad4d796b98c583d49e83adabd74a63bf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff9b7f6d81297248bf0ad06d725c8cbb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dec/search_8c.html#aff9b7f6d81297248bf0ad06d725c8cbb">CONTENT_SIZE</a>&#160;&#160;&#160;524288</td></tr>
+<tr class="memdesc:aff9b7f6d81297248bf0ad06d725c8cbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">This macro is used to set the default size for reading the JSON file that comes as a response from the API.  <a href="../../dc/dec/search_8c.html#aff9b7f6d81297248bf0ad06d725c8cbb">More...</a><br /></td></tr>
+<tr class="separator:aff9b7f6d81297248bf0ad06d725c8cbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -178,14 +180,35 @@ Variables</h2></td></tr>
 <tr class="memitem:ac5008b3b6a0e2594df27b44d93bc351d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dec/search_8c.html#ac5008b3b6a0e2594df27b44d93bc351d">posts_panel_height</a></td></tr>
 <tr class="memdesc:ac5008b3b6a0e2594df27b44d93bc351d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Height of the posts panel in the user interface.  <a href="../../dc/dec/search_8c.html#ac5008b3b6a0e2594df27b44d93bc351d">More...</a><br /></td></tr>
 <tr class="separator:ac5008b3b6a0e2594df27b44d93bc351d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ac6cc50345ea91ff324aba7f265e0fa"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dec/search_8c.html#a4ac6cc50345ea91ff324aba7f265e0fa">json_string</a> [<a class="el" href="../../dc/dec/search_8c.html#aff9b7f6d81297248bf0ad06d725c8cbb">CONTENT_SIZE</a>]</td></tr>
+<tr class="memdesc:a4ac6cc50345ea91ff324aba7f265e0fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">The string for storing posts.json data.  <a href="../../dc/dec/search_8c.html#a4ac6cc50345ea91ff324aba7f265e0fa">More...</a><br /></td></tr>
+<tr class="separator:a4ac6cc50345ea91ff324aba7f265e0fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >This file is used to interact with the terminal user interface version of yiffy, providing download, list, search, travel, and selected post tags features. </p>
-<p >It uses ncurses to generate the UI, handle resizing, and place data in windows named panels in this code.</p>
+<dl class="section author"><dt>Author</dt><dd>Mehmet Mert Gunduz (<a href="#" onclick="location.href='mai'+'lto:'+'mer'+'tt'+'gg@'+'gm'+'ail'+'.c'+'om'; return false;">mertt<span class="obfuscator">.nosp@m.</span>gg@g<span class="obfuscator">.nosp@m.</span>mail.<span class="obfuscator">.nosp@m.</span>com</a>)</dd></dl>
 <dl class="section date"><dt>Date</dt><dd>31/10/2023 </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="../../dc/dec/search_8c_source.html">search.c</a>.</p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="aff9b7f6d81297248bf0ad06d725c8cbb" name="aff9b7f6d81297248bf0ad06d725c8cbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff9b7f6d81297248bf0ad06d725c8cbb">&#9670;&nbsp;</a></span>CONTENT_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONTENT_SIZE&#160;&#160;&#160;524288</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This macro is used to set the default size for reading the JSON file that comes as a response from the API. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../dc/dec/search_8c_source.html#l00017">17</a> of file <a class="el" href="../../dc/dec/search_8c_source.html">search.c</a>.</p>
+
+</div>
+</div>
 <a id="ad4d796b98c583d49e83adabd74a63bf6" name="ad4d796b98c583d49e83adabd74a63bf6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad4d796b98c583d49e83adabd74a63bf6">&#9670;&nbsp;</a></span>MAX_BUFFER_SIZE</h2>
 
@@ -200,7 +223,7 @@ Variables</h2></td></tr>
 
 <p>This macro is used to set the default size for reading the config file. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../dc/dec/search_8c_source.html#l00017">17</a> of file <a class="el" href="../../dc/dec/search_8c_source.html">search.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/dec/search_8c_source.html#l00016">16</a> of file <a class="el" href="../../dc/dec/search_8c_source.html">search.c</a>.</p>
 
 </div>
 </div>
@@ -218,7 +241,7 @@ Variables</h2></td></tr>
 
 <p>This macro is used to set the default size for getting the home directory file. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../dc/dec/search_8c_source.html#l00016">16</a> of file <a class="el" href="../../dc/dec/search_8c_source.html">search.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/dec/search_8c_source.html#l00015">15</a> of file <a class="el" href="../../dc/dec/search_8c_source.html">search.c</a>.</p>
 
 </div>
 </div>
@@ -247,7 +270,7 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../dc/dec/search_8c_source.html#l00041">41</a> of file <a class="el" href="../../dc/dec/search_8c_source.html">search.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/dec/search_8c_source.html#l00044">44</a> of file <a class="el" href="../../dc/dec/search_8c_source.html">search.c</a>.</p>
 
 </div>
 </div>
@@ -307,6 +330,24 @@ Variables</h2></td></tr>
 <p>Indicates whether the NSFW option is enabled. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../dc/dec/search_8c_source.html#l00034">34</a> of file <a class="el" href="../../dc/dec/search_8c_source.html">search.c</a>.</p>
+
+</div>
+</div>
+<a id="a4ac6cc50345ea91ff324aba7f265e0fa" name="a4ac6cc50345ea91ff324aba7f265e0fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ac6cc50345ea91ff324aba7f265e0fa">&#9670;&nbsp;</a></span>json_string</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char json_string[<a class="el" href="../../dc/dec/search_8c.html#aff9b7f6d81297248bf0ad06d725c8cbb">CONTENT_SIZE</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The string for storing posts.json data. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../dc/dec/search_8c_source.html#l00040">40</a> of file <a class="el" href="../../dc/dec/search_8c_source.html">search.c</a>.</p>
 
 </div>
 </div>
