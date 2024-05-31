@@ -63,7 +63,7 @@ static struct general_option general_options[] =
     {"--config", show_config},
     {"--export", export_local_data},
     {"--import", import_local_data},
-    {"--plog", conf_plog},
+    {"--ivcommand", conf_img_viewer_command},
     {"--nsfw", conf_nsfw},
     {"--search", search_urls}
 };
@@ -127,7 +127,7 @@ int main(int argc, char *argv[])
 static bool argument_verify(int argument_count, char *arguments[])
 {
     char *one_arguments[] = {"--help", "--version", "--github", "--website", "--config", "--export", "--import"};
-    char *two_arguments[] = {"--plog", "--nsfw", "--dfetch", "--fetch", "--search"};
+    char *two_arguments[] = {"--ivcommand", "--nsfw", "--dfetch", "--fetch", "--search"};
 
 
     if (argument_count == 3)
@@ -136,18 +136,18 @@ static bool argument_verify(int argument_count, char *arguments[])
         * @section Two Arguments Handling
         *
         * It checks if the passed argument exists in the two_arguments array.
-        * If the passed option is --dfetch, --fetch or --search it returns true.
+        * If the passed option is --dfetch, --fetch, --search or --ivcommand it returns true.
         * Also, if the passed option is one of the twoArgument options and includes on/off as the second option returns true.
         * If not, returns false and shows the user that the second option can only be on/off.
         * 
-        * two_arguments they don't take on off: --dfetch, --fetch, --search.
-        * two_arguments they take on/off: --plog, --nsfw.
+        * two_arguments they don't take on/off: --dfetch, --fetch, --search, --ivcommand.
+        * two_arguments they take on/off: --nsfw.
         */
         for (size_t i = 0; i < sizeof(two_arguments) / sizeof(two_arguments[0]); i++)
         {
             if (strcmp(arguments[1], two_arguments[i]) == 0)
             {
-                if (strcmp(arguments[2], "on") == 0 || strcmp(arguments[2], "off") == 0 || strcmp(arguments[1], "--dfetch") == 0 || strcmp(arguments[1], "--fetch") == 0 || strcmp(arguments[1], "--search") == 0)
+                if (strcmp(arguments[2], "on") == 0 || strcmp(arguments[2], "off") == 0 || strcmp(arguments[1], "--dfetch") == 0 || strcmp(arguments[1], "--fetch") == 0 || strcmp(arguments[1], "--search") == 0 || strcmp(arguments[1], "--ivcommand") == 0)
                 {
                     return RECOGNIZED_ARGUMENT; /* Return true. */
                 }

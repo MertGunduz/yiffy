@@ -16,7 +16,7 @@
 #include <stdbool.h>
 #include "../msg/yiffy_messages.h"
 
-void conf_plog(char *argv);
 void conf_nsfw(char *argv);
+void conf_img_viewer_command(char *argv);
 
 #endif /* YIFFY_CONF_H */
