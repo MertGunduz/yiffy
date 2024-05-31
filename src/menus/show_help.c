@@ -30,18 +30,20 @@ void show_help()
     fprintf(stdout, "yiffy information menu arguments\n");
     fprintf(stdout, "--------------------------------\n");
     fprintf(stdout, "--help              outputs the help menu\n"); 
-    fprintf(stdout, "--version           outputs the version menu\n");
-    fprintf(stdout, "--github            outputs the github menu\n");
-    fprintf(stdout, "--website           outputs the website menu\n");
-    fprintf(stdout, "--config            outputs the configuration menu\n\n");
+    fprintf(stdout, "--version           outputs the version\n");
+    fprintf(stdout, "--github            outputs the github url\n");
+    fprintf(stdout, "--config            outputs the configs-credentials\n\n");
 
     fprintf(stdout, "yiffy data import-export arguments\n");
     fprintf(stdout, "-----------------------------------\n");
     fprintf(stdout, "--import            imports the data to program\n");
     fprintf(stdout, "--export            exports the data from program\n\n");
 
-    fprintf(stdout, "yiffy configuration and settings arguments\n");
-    fprintf(stdout, "------------------------------------------\n");
-    fprintf(stdout, "--nsfw \"[ON/OFF]\"     switches to nsfw/sfw options\n");
-    fprintf(stdout, "--perr \"[ON/OFF]\"     switches to perr/non-perr option\n");
+    fprintf(stdout, "yiffy config and credential arguments\n");
+    fprintf(stdout, "-------------------------------------\n");
+    fprintf(stdout, "--nsfw \"[ON/OFF]\"   switches to nsfw/sfw options\n");
+    fprintf(stdout, "--ivcommand \"[CMD]\" sets the image viewer command\n");
+    fprintf(stdout, "--uname \"[UNAME]\"   sets the username\n");
+    fprintf(stdout, "--apikey \"[API KEY]\" sets the api key\n");
+
 }

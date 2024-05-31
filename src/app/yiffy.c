@@ -59,7 +59,6 @@ static struct general_option general_options[] =
     {"--help", show_help},
     {"--version", show_version},
     {"--github", show_github},
-    {"--website", show_website},
     {"--config", show_config},
     {"--export", export_local_data},
     {"--import", import_local_data},
@@ -126,7 +125,7 @@ int main(int argc, char *argv[])
 */
 static bool argument_verify(int argument_count, char *arguments[])
 {
-    char *one_arguments[] = {"--help", "--version", "--github", "--website", "--config", "--export", "--import"};
+    char *one_arguments[] = {"--help", "--version", "--github", "--config", "--export", "--import"};
     char *two_arguments[] = {"--ivcommand", "--nsfw", "--dfetch", "--fetch", "--search"};
 
 

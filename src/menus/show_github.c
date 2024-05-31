@@ -15,10 +15,10 @@
 */
 void show_github()
 {
-    fprintf(stdout, "<https://github.com/MertGunduz/yiffy>\n\n");
+    fprintf(stdout, "https://github.com/MertGunduz/yiffy\n\n");
 
     fprintf(stdout, "contribution and issue creating links\n");
     fprintf(stdout, "-------------------------------------\n");
-    fprintf(stdout, "go to <https://github.com/MertGunduz/yiffy/issues/new> to open an issue.\n");
-    fprintf(stdout, "go to <https://github.com/MertGunduz/yiffy/issues> to view issues.\n");
+    fprintf(stdout, "go to https://github.com/MertGunduz/yiffy/issues/new to open an issue.\n");
+    fprintf(stdout, "go to https://github.com/MertGunduz/yiffy/issues to view issues.\n");
 }
