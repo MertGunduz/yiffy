@@ -108,13 +108,12 @@ $(document).ready(function(){initNavTree('de/dfc/conf__nsfw_8c.html','../../'); 
 
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">conf_nsfw.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>This file is used to configure the nsfw system. Basically alters the request URL.  
+<p>This file is used to configure the NSFW option.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="../../d1/d33/yiffy__conf_8h_source.html">yiffy_conf.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -122,7 +121,7 @@ Include dependency graph for conf_nsfw.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../de/da1/conf__nsfw_8c__incl.png" border="0" usemap="#asrc_2conf_2conf__nsfw_8c" alt=""/></div>
 <map name="asrc_2conf_2conf__nsfw_8c" id="asrc_2conf_2conf__nsfw_8c">
-<area shape="rect" title="This file is used to configure the nsfw system. Basically alters the request URL." alt="" coords="32,5,184,32"/>
+<area shape="rect" title="This file is used to configure the NSFW option." alt="" coords="32,5,184,32"/>
 <area shape="rect" href="../../d1/d33/yiffy__conf_8h.html" title="This header file is used to do configuration for yiffy." alt="" coords="60,80,157,107"/>
 <area shape="rect" title=" " alt="" coords="70,229,136,256"/>
 <area shape="rect" title=" " alt="" coords="22,155,93,181"/>
@@ -134,60 +133,20 @@ Include dependency graph for conf_nsfw.c:</div>
 </div>
 <p><a href="../../de/dfc/conf__nsfw_8c_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a263efd24d550124313df51247f07457a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dfc/conf__nsfw_8c.html#a263efd24d550124313df51247f07457a">MAX_FILE_PATH</a>&#160;&#160;&#160;256</td></tr>
-<tr class="separator:a263efd24d550124313df51247f07457a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4d796b98c583d49e83adabd74a63bf6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dfc/conf__nsfw_8c.html#ad4d796b98c583d49e83adabd74a63bf6">MAX_BUFFER_SIZE</a>&#160;&#160;&#160;512</td></tr>
-<tr class="separator:ad4d796b98c583d49e83adabd74a63bf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a3a088a9fbd8616175ff107d483ac33f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dfc/conf__nsfw_8c.html#a3a088a9fbd8616175ff107d483ac33f6">conf_nsfw</a> (char *argv)</td></tr>
-<tr class="memdesc:a3a088a9fbd8616175ff107d483ac33f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures the nsfw system. Basically alters the request URL.  <a href="../../de/dfc/conf__nsfw_8c.html#a3a088a9fbd8616175ff107d483ac33f6">More...</a><br /></td></tr>
+<tr class="memdesc:a3a088a9fbd8616175ff107d483ac33f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures the nsfw NSFW option.  <a href="../../de/dfc/conf__nsfw_8c.html#a3a088a9fbd8616175ff107d483ac33f6">More...</a><br /></td></tr>
 <tr class="separator:a3a088a9fbd8616175ff107d483ac33f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >This file is used to configure the nsfw system. Basically alters the request URL. </p>
-<p >This file goes to the /home/user/.yiffy/yiffy-config.txt and sets the nsfw function to on or off depending the option.</p>
+<div class="textblock"><p >This file is used to configure the NSFW option. </p>
+<p >This file goes to the /home/user/.yiffy/yiffy-config.txt and sets the IS_NSFW to on/off.</p>
 <dl class="section author"><dt>Author</dt><dd>Mehmet Mert Gunduz (<a href="#" onclick="location.href='mai'+'lto:'+'mer'+'tt'+'gg@'+'gm'+'ail'+'.c'+'om'; return false;">mertt<span class="obfuscator">.nosp@m.</span>gg@g<span class="obfuscator">.nosp@m.</span>mail.<span class="obfuscator">.nosp@m.</span>com</a>)</dd></dl>
 <dl class="section date"><dt>Date</dt><dd>05/09/2023 </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="../../de/dfc/conf__nsfw_8c_source.html">conf_nsfw.c</a>.</p>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="ad4d796b98c583d49e83adabd74a63bf6" name="ad4d796b98c583d49e83adabd74a63bf6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad4d796b98c583d49e83adabd74a63bf6">&#9670;&nbsp;</a></span>MAX_BUFFER_SIZE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define MAX_BUFFER_SIZE&#160;&#160;&#160;512</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../de/dfc/conf__nsfw_8c_source.html#l00014">14</a> of file <a class="el" href="../../de/dfc/conf__nsfw_8c_source.html">conf_nsfw.c</a>.</p>
-
-</div>
-</div>
-<a id="a263efd24d550124313df51247f07457a" name="a263efd24d550124313df51247f07457a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a263efd24d550124313df51247f07457a">&#9670;&nbsp;</a></span>MAX_FILE_PATH</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define MAX_FILE_PATH&#160;&#160;&#160;256</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../de/dfc/conf__nsfw_8c_source.html#l00013">13</a> of file <a class="el" href="../../de/dfc/conf__nsfw_8c_source.html">conf_nsfw.c</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="a3a088a9fbd8616175ff107d483ac33f6" name="a3a088a9fbd8616175ff107d483ac33f6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3a088a9fbd8616175ff107d483ac33f6">&#9670;&nbsp;</a></span>conf_nsfw()</h2>
 
@@ -204,7 +163,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Configures the nsfw system. Basically alters the request URL. </p>
+<p>Configures the nsfw NSFW option. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">argv</td><td>This is the value that stores on/off. </td></tr>
@@ -212,7 +171,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../de/dfc/conf__nsfw_8c_source.html#l00023">23</a> of file <a class="el" href="../../de/dfc/conf__nsfw_8c_source.html">conf_nsfw.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/dfc/conf__nsfw_8c_source.html#l00020">20</a> of file <a class="el" href="../../de/dfc/conf__nsfw_8c_source.html">conf_nsfw.c</a>.</p>
 
 </div>
 </div>

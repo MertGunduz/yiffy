@@ -1,45 +1,45 @@
 <map id="src/msg/yiffy_messages.h" name="src/msg/yiffy_messages.h">
-<area shape="rect" id="node1" title="This file is used to handle error and information messages." alt="" coords="2526,5,2717,32"/>
-<area shape="rect" id="node2" href="$dc/dc0/yiffy_8c.html" title="This is the main file and used to handle the arguments and execute the program by using external func..." alt="" coords="134,251,245,278"/>
-<area shape="rect" id="node3" href="$d1/d33/yiffy__conf_8h.html" title="This header file is used to do configuration for yiffy." alt="" coords="128,87,280,114"/>
-<area shape="rect" id="node6" href="$d5/d05/yiffy__fetch_8h.html" title=" " alt="" coords="646,87,808,114"/>
-<area shape="rect" id="node9" href="$de/d29/yiffy__search_8h.html" title="This header file is used to handle the fetching and searching system." alt="" coords="866,169,1049,196"/>
-<area shape="rect" id="node18" href="$d5/dff/yiffy__text__menus_8h.html" title="This header file is used to generate text based information menus for yiffy." alt="" coords="1064,80,1219,121"/>
-<area shape="rect" id="node24" href="$db/df8/access__error__msg_8c.html" title="This file is used to check the accessibility to the e621/e926 api." alt="" coords="1244,80,1402,121"/>
-<area shape="rect" id="node25" href="$da/d03/already__conf__msg_8c.html" title="This file is used to show some information when cjson root gives error." alt="" coords="1426,80,1588,121"/>
-<area shape="rect" id="node26" href="$d3/de0/argc__error__msg_8c.html" title="This file is used to evaluate the argument count and give information if not in the requested format." alt="" coords="1612,80,1754,121"/>
-<area shape="rect" id="node27" href="$df/d16/cjson__error__msg_8c.html" title="This file is used to show some information when cjson root gives error." alt="" coords="1779,80,1928,121"/>
-<area shape="rect" id="node28" href="$d9/dd8/color__comp__error__msg_8c.html" title="This file is used to show some information about the color compatibility of a terminal." alt="" coords="1952,80,2104,121"/>
-<area shape="rect" id="node29" href="$d6/dd7/conf__successful__msg_8c.html" title="This file is used to show some information when cjson root gives error." alt="" coords="2129,80,2309,121"/>
-<area shape="rect" id="node30" href="$d1/df5/extra__arg__error__msg_8c.html" title="This file is used to output the correct format for the prompted option when there is additional inval..." alt="" coords="2333,80,2510,121"/>
-<area shape="rect" id="node31" href="$db/df9/file__open__error__msg_8c.html" title="This file is used to show some information about file permissions when yiffy is not able to read file..." alt="" coords="2534,80,2709,121"/>
-<area shape="rect" id="node32" href="$d9/d32/json__parse__error__msg_8c.html" title="This file is used to output the error message when application can not parse the JSON content." alt="" coords="2734,80,2880,121"/>
-<area shape="rect" id="node33" href="$d4/ddf/malloc__error__msg_8c.html" title="This file is used to show some information when yiffy cannot allocate memory." alt="" coords="2905,80,3064,121"/>
-<area shape="rect" id="node34" href="$d1/d70/no__arg__value__msg_8c.html" title="This file is used to output the correct prompt format when there is no argument value." alt="" coords="3088,80,3252,121"/>
-<area shape="rect" id="node35" href="$d5/de7/no__home__error__msg_8c.html" title="This file is used to output the home not found error when application can not access the $HOME enviro..." alt="" coords="3276,80,3450,121"/>
-<area shape="rect" id="node36" href="$d0/d31/no__json__error__msg_8c.html" title="This file is used to output the error when there is no JSON file." alt="" coords="3475,80,3640,121"/>
-<area shape="rect" id="node37" href="$d6/dee/no__results__error__msg_8c.html" title="This file is used to output the error when there is no response from the API." alt="" coords="3664,80,3808,121"/>
-<area shape="rect" id="node38" href="$d9/d8a/on__off__msg_8c.html" title="This file is used to output the correct argument value (on/off) for specified arguments." alt="" coords="3832,87,3995,114"/>
-<area shape="rect" id="node39" href="$d4/d42/post__error__msg_8c.html" title="This file is used to output the error when the parsing is faced with an error in the post section." alt="" coords="4020,80,4162,121"/>
-<area shape="rect" id="node40" href="$d0/d05/posts__not__array__error__msg_8c.html" title="This file is used to output the error when the parsing is faced with an error in the posts section." alt="" coords="4187,80,4368,121"/>
-<area shape="rect" id="node41" href="$dc/d8f/system__func__error__msg_8c.html" title="This file is used to show some information when system function did not worked." alt="" coords="4392,80,4552,121"/>
-<area shape="rect" id="node42" href="$d7/de2/unrecognized__arg__msg_8c.html" title="This file is used to give information and output the command prompted by the user when it is not defi..." alt="" coords="4577,80,4741,121"/>
-<area shape="rect" id="node43" href="$d8/d12/window__create__error__msg_8c.html" title="This file is used to give information about the window creation error." alt="" coords="4765,80,4940,121"/>
-<area shape="rect" id="node4" href="$de/dfc/conf__nsfw_8c.html" title="This file is used to configure the nsfw system. Basically alters the request URL." alt="" coords="40,169,192,196"/>
-<area shape="rect" id="node5" href="$d8/d32/conf__plog_8c.html" title="This file is used to configure the plog system. If on, it basically generates a collection website." alt="" coords="217,169,368,196"/>
-<area shape="rect" id="node7" href="$d6/d60/aria2__download_8c.html" title="Downloads the JSON file by using aria2c, works with the system function." alt="" coords="444,169,640,196"/>
-<area shape="rect" id="node8" href="$d1/d14/fetch_8c.html" title="This file is used to send requests to e621&#45;e926 with the specified tags by user and outputs or output..." alt="" coords="664,169,790,196"/>
-<area shape="rect" id="node10" href="$d6/d24/create__controls__window_8c.html" title="This file is used to create a new window to display the controls and adds it to the specified positio..." alt="" coords="270,244,462,285"/>
-<area shape="rect" id="node11" href="$d9/d28/create__post__tags__window_8c.html" title="This file is used to create a new window to display post tags and adds it to the specified position." alt="" coords="486,244,654,285"/>
-<area shape="rect" id="node12" href="$d3/d45/create__posts__window_8c.html" title="This file is used to create a new window to display posts and adds it to the specified position." alt="" coords="678,244,853,285"/>
-<area shape="rect" id="node13" href="$dd/d93/create__top__window_8c.html" title="This file is used to create a new top window to display the title and SFW/NSFW status." alt="" coords="877,244,1038,285"/>
-<area shape="rect" id="node14" href="$d7/d34/init__ncurses_8c.html" title="This file initializes and configures the ncurses library for the needed user interface." alt="" coords="1063,251,1244,278"/>
-<area shape="rect" id="node15" href="$dc/dec/search_8c.html" title="This file is used to interact with the terminal user interface version of yiffy, providing download,..." alt="" coords="1268,251,1415,278"/>
-<area shape="rect" id="node16" href="$dc/d2b/set__window__title_8c.html" title="This file is used to write title to the windows for the user interface." alt="" coords="1440,244,1609,285"/>
-<area shape="rect" id="node17" href="$db/de0/write__post_8c.html" title="This file is used to write posts to the posts window." alt="" coords="1634,251,1804,278"/>
-<area shape="rect" id="node19" href="$dc/d3b/show__config_8c.html" title="This file is used to show current configurations of the app to the user." alt="" coords="1074,169,1258,196"/>
-<area shape="rect" id="node20" href="$d4/d65/show__github_8c.html" title="This file is used to show project github URL, current issues to the user." alt="" coords="1282,169,1468,196"/>
-<area shape="rect" id="node21" href="$de/d0c/show__help_8c.html" title="This file is used to show general help to the user by showing how to use the cli options." alt="" coords="1492,169,1666,196"/>
-<area shape="rect" id="node22" href="$de/d22/show__version_8c.html" title="This file is used to show version of the app to the user." alt="" coords="1690,169,1884,196"/>
-<area shape="rect" id="node23" href="$d6/dd1/show__website_8c.html" title="This file is used to show yiffy website to the user." alt="" coords="1908,169,2104,196"/>
+<area shape="rect" id="node1" title="This file is used to handle error and information messages." alt="" coords="2560,5,2751,32"/>
+<area shape="rect" id="node2" href="$dc/dc0/yiffy_8c.html" title="This is the main file and used to handle the arguments and execute the program by using external func..." alt="" coords="168,266,279,293"/>
+<area shape="rect" id="node3" href="$d1/d33/yiffy__conf_8h.html" title="This header file is used to do configuration for yiffy." alt="" coords="153,87,305,114"/>
+<area shape="rect" id="node6" href="$d5/d05/yiffy__fetch_8h.html" title=" " alt="" coords="680,87,842,114"/>
+<area shape="rect" id="node9" href="$de/d29/yiffy__search_8h.html" title="This header file is used to handle the fetching and searching system." alt="" coords="900,177,1083,203"/>
+<area shape="rect" id="node18" href="$d5/dff/yiffy__text__menus_8h.html" title="This header file is used to generate text based information menus for yiffy." alt="" coords="1098,80,1253,121"/>
+<area shape="rect" id="node24" href="$db/df8/access__error__msg_8c.html" title="This file is used to check the accessibility to the e621/e926 api." alt="" coords="1278,80,1436,121"/>
+<area shape="rect" id="node25" href="$da/d03/already__conf__msg_8c.html" title="This file is used to show some information when cjson root gives error." alt="" coords="1460,80,1622,121"/>
+<area shape="rect" id="node26" href="$d3/de0/argc__error__msg_8c.html" title="This file is used to evaluate the argument count and give information if not in the requested format." alt="" coords="1646,80,1788,121"/>
+<area shape="rect" id="node27" href="$df/d16/cjson__error__msg_8c.html" title="This file is used to show some information when cjson root gives error." alt="" coords="1813,80,1962,121"/>
+<area shape="rect" id="node28" href="$d9/dd8/color__comp__error__msg_8c.html" title="This file is used to show some information about the color compatibility of a terminal." alt="" coords="1986,80,2138,121"/>
+<area shape="rect" id="node29" href="$d6/dd7/conf__successful__msg_8c.html" title="This file is used to show some information when cjson root gives error." alt="" coords="2163,80,2343,121"/>
+<area shape="rect" id="node30" href="$d1/df5/extra__arg__error__msg_8c.html" title="This file is used to output the correct format for the prompted option when there is additional inval..." alt="" coords="2367,80,2544,121"/>
+<area shape="rect" id="node31" href="$db/df9/file__open__error__msg_8c.html" title="This file is used to show some information about file permissions when yiffy is not able to read file..." alt="" coords="2568,80,2743,121"/>
+<area shape="rect" id="node32" href="$d9/d32/json__parse__error__msg_8c.html" title="This file is used to output the error message when application can not parse the JSON content." alt="" coords="2768,80,2914,121"/>
+<area shape="rect" id="node33" href="$d4/ddf/malloc__error__msg_8c.html" title="This file is used to show some information when yiffy cannot allocate memory." alt="" coords="2939,80,3098,121"/>
+<area shape="rect" id="node34" href="$d1/d70/no__arg__value__msg_8c.html" title="This file is used to output the correct prompt format when there is no argument value." alt="" coords="3122,80,3286,121"/>
+<area shape="rect" id="node35" href="$d5/de7/no__home__error__msg_8c.html" title="This file is used to output the home not found error when application can not access the $HOME enviro..." alt="" coords="3310,80,3484,121"/>
+<area shape="rect" id="node36" href="$d0/d31/no__json__error__msg_8c.html" title="This file is used to output the error when there is no JSON file." alt="" coords="3509,80,3674,121"/>
+<area shape="rect" id="node37" href="$d6/dee/no__results__error__msg_8c.html" title="This file is used to output the error when there is no response from the API." alt="" coords="3698,80,3842,121"/>
+<area shape="rect" id="node38" href="$d9/d8a/on__off__msg_8c.html" title="This file is used to output the correct argument value (on/off) for specified arguments." alt="" coords="3866,87,4029,114"/>
+<area shape="rect" id="node39" href="$d4/d42/post__error__msg_8c.html" title="This file is used to output the error when the parsing is faced with an error in the post section." alt="" coords="4054,80,4196,121"/>
+<area shape="rect" id="node40" href="$d0/d05/posts__not__array__error__msg_8c.html" title="This file is used to output the error when the parsing is faced with an error in the posts section." alt="" coords="4221,80,4402,121"/>
+<area shape="rect" id="node41" href="$dc/d8f/system__func__error__msg_8c.html" title="This file is used to show some information when system function did not worked." alt="" coords="4426,80,4586,121"/>
+<area shape="rect" id="node42" href="$d7/de2/unrecognized__arg__msg_8c.html" title="This file is used to give information and output the command prompted by the user when it is not defi..." alt="" coords="4611,80,4775,121"/>
+<area shape="rect" id="node43" href="$d8/d12/window__create__error__msg_8c.html" title="This file is used to give information about the window creation error." alt="" coords="4799,80,4974,121"/>
+<area shape="rect" id="node4" href="$da/d93/conf__img__viewer__command_8c.html" title="This file is used to configures the image viewer command system, the image viewer command is used to ..." alt="" coords="38,169,226,211"/>
+<area shape="rect" id="node5" href="$de/dfc/conf__nsfw_8c.html" title="This file is used to configure the NSFW option." alt="" coords="250,177,402,203"/>
+<area shape="rect" id="node7" href="$d6/d60/aria2__download_8c.html" title="Downloads the JSON file by using aria2c, works with the system function." alt="" coords="478,177,674,203"/>
+<area shape="rect" id="node8" href="$d1/d14/fetch_8c.html" title="This file is used to send requests to e621&#45;e926 with the specified tags by user and outputs or output..." alt="" coords="698,177,824,203"/>
+<area shape="rect" id="node10" href="$d6/d24/create__controls__window_8c.html" title="This file is used to create a new window to display the controls and adds it to the specified positio..." alt="" coords="304,259,496,300"/>
+<area shape="rect" id="node11" href="$d9/d28/create__post__tags__window_8c.html" title="This file is used to create a new window to display post tags and adds it to the specified position." alt="" coords="520,259,688,300"/>
+<area shape="rect" id="node12" href="$d3/d45/create__posts__window_8c.html" title="This file is used to create a new window to display posts and adds it to the specified position." alt="" coords="712,259,887,300"/>
+<area shape="rect" id="node13" href="$dd/d93/create__top__window_8c.html" title="This file is used to create a new top window to display the title and SFW/NSFW status." alt="" coords="911,259,1072,300"/>
+<area shape="rect" id="node14" href="$d7/d34/init__ncurses_8c.html" title="This file initializes and configures the ncurses library for the needed user interface." alt="" coords="1097,266,1278,293"/>
+<area shape="rect" id="node15" href="$dc/dec/search_8c.html" title="This file is used to interact with the terminal user interface version of yiffy, providing download,..." alt="" coords="1302,266,1449,293"/>
+<area shape="rect" id="node16" href="$dc/d2b/set__window__title_8c.html" title="This file is used to write title to the windows for the user interface." alt="" coords="1474,259,1643,300"/>
+<area shape="rect" id="node17" href="$db/de0/write__post_8c.html" title="This file is used to write posts to the posts window." alt="" coords="1668,266,1838,293"/>
+<area shape="rect" id="node19" href="$dc/d3b/show__config_8c.html" title="This file is used to show current configurations of the app to the user." alt="" coords="1108,177,1292,203"/>
+<area shape="rect" id="node20" href="$d4/d65/show__github_8c.html" title="This file is used to show project github URL, current issues to the user." alt="" coords="1316,177,1502,203"/>
+<area shape="rect" id="node21" href="$de/d0c/show__help_8c.html" title="This file is used to show general help to the user by showing how to use the cli options." alt="" coords="1526,177,1700,203"/>
+<area shape="rect" id="node22" href="$de/d22/show__version_8c.html" title="This file is used to show version of the app to the user." alt="" coords="1724,177,1918,203"/>
+<area shape="rect" id="node23" href="$d6/dd1/show__website_8c.html" title="This file is used to show yiffy website to the user." alt="" coords="1942,177,2138,203"/>
 </map>
