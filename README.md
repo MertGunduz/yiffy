@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![yiffy_small](https://github.com/MertGunduz/yiffy/assets/65850970/1626c334-d5ac-4b37-96b6-19335d897bbe)
+![yiffy_logo](https://github.com/MertGunduz/yiffy/assets/65850970/fb3358a3-3749-4216-ab0b-701edab15cc5)
 
 </div>
 
