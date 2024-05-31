@@ -14,22 +14,30 @@ file(
     MAKE_DIRECTORY "${dest_path}"
 )
 
-# CREATE CONFIG FILE
-set(file_path "$ENV{HOME}/.yiffy/yiffy-config.txt")
+# CREATE CONFIG FILES
+set(config_file_path "$ENV{HOME}/.yiffy/yiffy-config.txt")
+set(credentials_file_path "$ENV{HOME}/.yiffy/yiffy-credentials.txt")
 
 install(SCRIPT 
-    CODE "file(WRITE \"${file_path}\" \"plog:nsfw\")"
+    CODE "file(WRITE \"${config_file_path}\" \"plog:nsfw\")"
+)
+
+install(SCRIPT 
+    CODE "file(WRITE \"${credentials_file_path}\" \"\")"
 )
 
 # INSTALL THE EXECUTABLE TO USR/LOCAL/BIN
 install(TARGETS yiffy DESTINATION /usr/local/bin)
 
-# Create and install the config file, ensuring it writes with the correct permissions
+# Create and install the config files, ensuring they write with the correct permissions
 install(CODE "
     file(MAKE_DIRECTORY \"${dest_path}\")
     file(WRITE \"${dest_path}/yiffy-config.txt\" \"plog:nsfw\")
+    file(WRITE \"${dest_path}/yiffy-credentials.txt\" \"\")
     execute_process(COMMAND chmod 755 \"${dest_path}\")
     execute_process(COMMAND chmod 755 \"${dest_path}/yiffy-config.txt\")
+    execute_process(COMMAND chmod 755 \"${dest_path}/yiffy-credentials.txt\")
     execute_process(COMMAND chown $ENV{USER}:$ENV{USER} \"${dest_path}\")
     execute_process(COMMAND chown $ENV{USER}:$ENV{USER} \"${dest_path}/yiffy-config.txt\")
+    execute_process(COMMAND chown $ENV{USER}:$ENV{USER} \"${dest_path}/yiffy-credentials.txt\")
 ")
