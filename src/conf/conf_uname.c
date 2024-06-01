@@ -1,14 +1,16 @@
 /**
- * @file conf_img_viewer_command.c
+ * @file conf_uname.c
  * 
- * @brief This file is used to configures the image viewer command system, the image viewer command is used to show images on terminal in search function.
+ * @brief This file is used to configure the username option.
  * 
- * This file goes to the /home/user/.yiffy/yiffy-config.txt and sets the IMG_DISPLAY_COMMAND with an image viewer command.
+ * This file goes to the /home/user/.yiffy/yiffy-credentials.txt and sets the username for api account access.
  * 
  * @author Mehmet Mert Gunduz (merttgg@gmail.com)
  * 
- * @date 31/05/2024
+ * @date 05/09/2023
 */
+
+#include "yiffy_conf.h"
 
 #define FILE_PATH_SIZE 256   ///< This macro is used to set the default size for getting the home directory file.
 #define BUFFER_SIZE 512 ///< This macro is used to set the default size for reading the config file.
@@ -19,19 +21,17 @@ static char *home_directory; ///< Stores the home directory as string.
 static char file_path[FILE_PATH_SIZE]; ///< Stores the file path for config and credentials files.
 static char buffer[BUFFER_SIZE]; ///< Stores the configs and credentials one by one, used for parsing them by using fgets.
 
-static char ivcommand[256]; ///< Stores the image viewer command option string.
-
-#include "yiffy_conf.h"
+static char uname[256]; ///< Stores the username credential data string.
 
 /**
- * @brief Configures the image viewer command system, the image viewer command is used to show images on terminal in search function.
+ * @brief Configures the username option.
  * 
- * @param argv This is the value that stores the command string.
+ * @param argv This is the value that stores the username.
 */
-void conf_img_viewer_command(char *argv)
+void conf_uname(char *argv)
 {
-    /* Create the image viewer command option string. */
-    sprintf(ivcommand, "IMG_DISPLAY_COMMAND=%s\n", argv);
+    /* Create the username option string. */
+    sprintf(uname, "USERNAME=%s\n", argv);
 
     /* Get the home directory of the current user. */
     home_directory = getenv("HOME");
@@ -42,8 +42,8 @@ void conf_img_viewer_command(char *argv)
         exit(1);
     }
 
-    /* Create the configuration file path. */
-    sprintf(file_path, "%s/.yiffy/yiffy-config.txt", home_directory);
+    /* Create the credentials file path. */
+    sprintf(file_path, "%s/.yiffy/yiffy-credentials.txt", home_directory);
 
     FILE *config_file = fopen(file_path, "r");
 
@@ -60,9 +60,9 @@ void conf_img_viewer_command(char *argv)
 
     while (fgets(buffer, BUFFER_SIZE - 1, config_file))
     {
-        if (strstr(buffer, "IMG_DISPLAY_COMMAND=") != NULL)
+        if (strstr(buffer, "USERNAME=") != NULL)
         {
-            strcpy(buffer, ivcommand);
+            strcpy(buffer, uname);
         }
 
         strcpy(content_ptr, buffer);

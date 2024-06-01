@@ -22,7 +22,7 @@ static char file_path[FILE_PATH_SIZE]; ///< Stores the file path for config and 
 static char buffer[BUFFER_SIZE]; ///< Stores the configs and credentials one by one, used for parsing them by using fgets.
 
 /**
- * @brief Configures the nsfw NSFW option.
+ * @brief Configures the nsfw option.
  * 
  * @param argv This is the value that stores on/off.
 */

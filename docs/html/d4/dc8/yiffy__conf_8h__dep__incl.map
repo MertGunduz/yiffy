@@ -1,6 +1,7 @@
 <map id="src/conf/yiffy_conf.h" name="src/conf/yiffy_conf.h">
-<area shape="rect" id="node1" title="This header file is used to do configuration for yiffy." alt="" coords="158,5,310,32"/>
+<area shape="rect" id="node1" title="This header file is used to do configuration for yiffy." alt="" coords="255,5,407,32"/>
 <area shape="rect" id="node2" href="$dc/dc0/yiffy_8c.html" title="This is the main file and used to handle the arguments and execute the program by using external func..." alt="" coords="5,87,116,114"/>
 <area shape="rect" id="node3" href="$da/d93/conf__img__viewer__command_8c.html" title="This file is used to configures the image viewer command system, the image viewer command is used to ..." alt="" coords="140,80,328,121"/>
 <area shape="rect" id="node4" href="$de/dfc/conf__nsfw_8c.html" title="This file is used to configure the NSFW option." alt="" coords="353,87,505,114"/>
+<area shape="rect" id="node5" href="$d4/df4/conf__uname_8c.html" title="This file is used to configure the username option." alt="" coords="529,87,697,114"/>
 </map>

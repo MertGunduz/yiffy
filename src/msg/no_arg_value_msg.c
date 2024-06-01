@@ -17,12 +17,12 @@
 */
 void no_arg_value_msg(char *argument)
 {
-    if (strcmp(argument, "--wgen") == 0 || strcmp(argument, "--nsfw") == 0)
+    if (strcmp(argument, "--nsfw") == 0)
     {
         fprintf(stderr, "yiffy: please enter the argument value for \"%s\".\n", argument);
         fprintf(stderr, "yiffy: valid values for \"%s\" are on/off.\n", argument);
     }
-    else if (strcmp(argument, "--search") == 0 || strcmp(argument, "--dfetch") == 0 || strcmp(argument, "--fetch") == 0 || strcmp(argument, "--ivcommand") == 0)
+    else if (strcmp(argument, "--search") == 0 || strcmp(argument, "--dfetch") == 0 || strcmp(argument, "--fetch") == 0 || strcmp(argument, "--ivcommand") == 0 || strcmp(argument, "--uname") == 0)
     {
         fprintf(stderr, "yiffy: please enter the search tags.\n");
         fprintf(stderr, "yiffy: prompt \"man yiffy\" to read the user manual.\n");
