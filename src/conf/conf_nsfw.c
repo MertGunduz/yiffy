@@ -86,8 +86,6 @@ void conf_nsfw(char *argv)
         content_length += strlen(buffer);
     }
 
-    printf("%d\n", content_length);
-
     /* Close the config file for reading. */
     fclose(config_file);
 

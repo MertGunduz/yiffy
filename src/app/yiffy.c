@@ -94,7 +94,7 @@ int main(int argc, char *argv[])
             {
                 void (*menu_func)(char *argv) = general_options[i].function;
 
-                if (strcmp(general_options[i].option, "--search") == 0 || strcmp(general_options[i].option, "--nsfw") == 0 || strcmp(general_options[i].option, "--plog") == 0) /* THIRD ARGUMENT: tags [yiffy --search "blush+fox+male"]*/
+                if (strcmp(general_options[i].option, "--search") == 0 || strcmp(general_options[i].option, "--nsfw") == 0 || strcmp(general_options[i].option, "--ivcommand") == 0) /* THIRD ARGUMENT: tags [yiffy --search "blush+fox+male"]*/
                 {
                     menu_func(argv[2]);
                 }

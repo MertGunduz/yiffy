@@ -182,25 +182,23 @@ $(document).ready(function(){initNavTree('de/dfc/conf__nsfw_8c_source.html','../
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        content_length += strlen(<a class="code hl_variable" href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a>);</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    }</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    printf(<span class="stringliteral">&quot;%d\n&quot;</span>, content_length);</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="comment">/* Close the config file for reading. */</span></div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    fclose(config_file);</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="comment">/* Write the modified content back to the file. */</span></div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    config_file = fopen(file_path, <span class="stringliteral">&quot;w&quot;</span>);</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keywordflow">if</span> (config_file == NULL)</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    {</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        <a class="code hl_function" href="../../db/df9/file__open__error__msg_8c.html#a86dae457f49acffe2f59c6072cdec928">file_open_error_msg</a>();</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        exit(EXIT_FAILURE);</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    }</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="comment">/* Close the config file for reading. */</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    fclose(config_file);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="comment">/* Write the modified content back to the file. */</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    config_file = fopen(file_path, <span class="stringliteral">&quot;w&quot;</span>);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keywordflow">if</span> (config_file == NULL)</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    {</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <a class="code hl_function" href="../../db/df9/file__open__error__msg_8c.html#a86dae457f49acffe2f59c6072cdec928">file_open_error_msg</a>();</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        exit(EXIT_FAILURE);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    }</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    fwrite(file_content, <span class="keyword">sizeof</span>(<span class="keywordtype">char</span>), content_length, config_file);</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    fwrite(file_content, <span class="keyword">sizeof</span>(<span class="keywordtype">char</span>), content_length, config_file);</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="comment">/* Close the config file for writing. */</span></div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    fclose(config_file);</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>}</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="comment">/* Close the config file for writing. */</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    fclose(config_file);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>}</div>
 <div class="ttc" id="aalready__conf__msg_8c_html_a2b3c403bb7977f8a7672f39dec8d5659"><div class="ttname"><a href="../../da/d03/already__conf__msg_8c.html#a2b3c403bb7977f8a7672f39dec8d5659">already_conf_msg</a></div><div class="ttdeci">void already_conf_msg(char *option, char *argv)</div><div class="ttdoc">Shows some information when cjson root gives error.</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d03/already__conf__msg_8c_source.html#l00019">already_conf_msg.c:19</a></div></div>
 <div class="ttc" id="acjson_8h_html_aff2566f4c366b48d73479bef43ee4d2e"><div class="ttname"><a href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a></div><div class="ttdeci">char * buffer</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d56/cjson_8h_source.html#l00170">cjson.h:170</a></div></div>
 <div class="ttc" id="aconf__nsfw_8c_html_a3a088a9fbd8616175ff107d483ac33f6"><div class="ttname"><a href="../../de/dfc/conf__nsfw_8c.html#a3a088a9fbd8616175ff107d483ac33f6">conf_nsfw</a></div><div class="ttdeci">void conf_nsfw(char *argv)</div><div class="ttdoc">Configures the nsfw NSFW option.</div><div class="ttdef"><b>Definition:</b> <a href="../../de/dfc/conf__nsfw_8c_source.html#l00029">conf_nsfw.c:29</a></div></div>
