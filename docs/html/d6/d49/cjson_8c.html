@@ -177,13 +177,13 @@ Macros</h2></td></tr>
 <tr class="separator:a91654176e81c707d28b99dd0bf783ed5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5714bac836668a1b9af55465b78531ef"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d49/cjson_8c.html#a5714bac836668a1b9af55465b78531ef">static_strlen</a>(string_literal)&#160;&#160;&#160;(sizeof(string_literal) - sizeof(&quot;&quot;))</td></tr>
 <tr class="separator:a5714bac836668a1b9af55465b78531ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2257377f8b81f4f76a16b698f681af34"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d49/cjson_8c.html#a2257377f8b81f4f76a16b698f681af34">can_read</a>(<a class="el" href="../../dc/d3b/show__config_8c.html#a6c5957148428c0e822816ccc79481bc7">buffer</a>,  size)&#160;&#160;&#160;((<a class="el" href="../../dc/d3b/show__config_8c.html#a6c5957148428c0e822816ccc79481bc7">buffer</a> != NULL) &amp;&amp; (((<a class="el" href="../../dc/d3b/show__config_8c.html#a6c5957148428c0e822816ccc79481bc7">buffer</a>)-&gt;offset + size) &lt;= (<a class="el" href="../../dc/d3b/show__config_8c.html#a6c5957148428c0e822816ccc79481bc7">buffer</a>)-&gt;<a class="el" href="../../d5/d56/cjson_8h.html#a03c83e0884e2e3a1783db79f2d67101f">length</a>))</td></tr>
+<tr class="memitem:a2257377f8b81f4f76a16b698f681af34"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d49/cjson_8c.html#a2257377f8b81f4f76a16b698f681af34">can_read</a>(<a class="el" href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a>,  size)&#160;&#160;&#160;((<a class="el" href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a> != NULL) &amp;&amp; (((<a class="el" href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a>)-&gt;offset + size) &lt;= (<a class="el" href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a>)-&gt;<a class="el" href="../../d5/d56/cjson_8h.html#a03c83e0884e2e3a1783db79f2d67101f">length</a>))</td></tr>
 <tr class="separator:a2257377f8b81f4f76a16b698f681af34"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae210aa01f1afe7510658c392f0f6e128"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d49/cjson_8c.html#ae210aa01f1afe7510658c392f0f6e128">can_access_at_index</a>(<a class="el" href="../../dc/d3b/show__config_8c.html#a6c5957148428c0e822816ccc79481bc7">buffer</a>,  <a class="el" href="../../d5/d56/cjson_8h.html#a750b5d744c39a06bfb13e6eb010e35d0">index</a>)&#160;&#160;&#160;((<a class="el" href="../../dc/d3b/show__config_8c.html#a6c5957148428c0e822816ccc79481bc7">buffer</a> != NULL) &amp;&amp; (((<a class="el" href="../../dc/d3b/show__config_8c.html#a6c5957148428c0e822816ccc79481bc7">buffer</a>)-&gt;offset + <a class="el" href="../../d5/d56/cjson_8h.html#a750b5d744c39a06bfb13e6eb010e35d0">index</a>) &lt; (<a class="el" href="../../dc/d3b/show__config_8c.html#a6c5957148428c0e822816ccc79481bc7">buffer</a>)-&gt;<a class="el" href="../../d5/d56/cjson_8h.html#a03c83e0884e2e3a1783db79f2d67101f">length</a>))</td></tr>
+<tr class="memitem:ae210aa01f1afe7510658c392f0f6e128"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d49/cjson_8c.html#ae210aa01f1afe7510658c392f0f6e128">can_access_at_index</a>(<a class="el" href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a>,  <a class="el" href="../../d5/d56/cjson_8h.html#a750b5d744c39a06bfb13e6eb010e35d0">index</a>)&#160;&#160;&#160;((<a class="el" href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a> != NULL) &amp;&amp; (((<a class="el" href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a>)-&gt;offset + <a class="el" href="../../d5/d56/cjson_8h.html#a750b5d744c39a06bfb13e6eb010e35d0">index</a>) &lt; (<a class="el" href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a>)-&gt;<a class="el" href="../../d5/d56/cjson_8h.html#a03c83e0884e2e3a1783db79f2d67101f">length</a>))</td></tr>
 <tr class="separator:ae210aa01f1afe7510658c392f0f6e128"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c873a43d8a78ce9a6d9e8eb41d65d2d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d49/cjson_8c.html#a5c873a43d8a78ce9a6d9e8eb41d65d2d">cannot_access_at_index</a>(<a class="el" href="../../dc/d3b/show__config_8c.html#a6c5957148428c0e822816ccc79481bc7">buffer</a>,  <a class="el" href="../../d5/d56/cjson_8h.html#a750b5d744c39a06bfb13e6eb010e35d0">index</a>)&#160;&#160;&#160;(!<a class="el" href="../../d6/d49/cjson_8c.html#ae210aa01f1afe7510658c392f0f6e128">can_access_at_index</a>(<a class="el" href="../../dc/d3b/show__config_8c.html#a6c5957148428c0e822816ccc79481bc7">buffer</a>, <a class="el" href="../../d5/d56/cjson_8h.html#a750b5d744c39a06bfb13e6eb010e35d0">index</a>))</td></tr>
+<tr class="memitem:a5c873a43d8a78ce9a6d9e8eb41d65d2d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d49/cjson_8c.html#a5c873a43d8a78ce9a6d9e8eb41d65d2d">cannot_access_at_index</a>(<a class="el" href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a>,  <a class="el" href="../../d5/d56/cjson_8h.html#a750b5d744c39a06bfb13e6eb010e35d0">index</a>)&#160;&#160;&#160;(!<a class="el" href="../../d6/d49/cjson_8c.html#ae210aa01f1afe7510658c392f0f6e128">can_access_at_index</a>(<a class="el" href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a>, <a class="el" href="../../d5/d56/cjson_8h.html#a750b5d744c39a06bfb13e6eb010e35d0">index</a>))</td></tr>
 <tr class="separator:a5c873a43d8a78ce9a6d9e8eb41d65d2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac538057ef78677344d222b763251af5e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d49/cjson_8c.html#ac538057ef78677344d222b763251af5e">buffer_at_offset</a>(<a class="el" href="../../dc/d3b/show__config_8c.html#a6c5957148428c0e822816ccc79481bc7">buffer</a>)&#160;&#160;&#160;((<a class="el" href="../../dc/d3b/show__config_8c.html#a6c5957148428c0e822816ccc79481bc7">buffer</a>)-&gt;content + (<a class="el" href="../../dc/d3b/show__config_8c.html#a6c5957148428c0e822816ccc79481bc7">buffer</a>)-&gt;offset)</td></tr>
+<tr class="memitem:ac538057ef78677344d222b763251af5e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d49/cjson_8c.html#ac538057ef78677344d222b763251af5e">buffer_at_offset</a>(<a class="el" href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a>)&#160;&#160;&#160;((<a class="el" href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a>)-&gt;content + (<a class="el" href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a>)-&gt;offset)</td></tr>
 <tr class="separator:ac538057ef78677344d222b763251af5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a13f540fa846f658531751b5ccb78f303"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d49/cjson_8c.html#a13f540fa846f658531751b5ccb78f303">cjson_min</a>(a,  <a class="el" href="../../d5/d56/cjson_8h.html#a1a175e87536301df98c805ac0636ad7c">b</a>)&#160;&#160;&#160;(((a) &lt; (<a class="el" href="../../d5/d56/cjson_8h.html#a1a175e87536301df98c805ac0636ad7c">b</a>)) ? (a) : (<a class="el" href="../../d5/d56/cjson_8h.html#a1a175e87536301df98c805ac0636ad7c">b</a>))</td></tr>
 <tr class="separator:a13f540fa846f658531751b5ccb78f303"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -230,8 +230,8 @@ Functions</h2></td></tr>
           <td class="memname">#define buffer_at_offset</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><a class="el" href="../../dc/d3b/show__config_8c.html#a6c5957148428c0e822816ccc79481bc7">buffer</a></td><td>)</td>
-          <td>&#160;&#160;&#160;((<a class="el" href="../../dc/d3b/show__config_8c.html#a6c5957148428c0e822816ccc79481bc7">buffer</a>)-&gt;content + (<a class="el" href="../../dc/d3b/show__config_8c.html#a6c5957148428c0e822816ccc79481bc7">buffer</a>)-&gt;offset)</td>
+          <td class="paramname"><a class="el" href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a></td><td>)</td>
+          <td>&#160;&#160;&#160;((<a class="el" href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a>)-&gt;content + (<a class="el" href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a>)-&gt;offset)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -250,7 +250,7 @@ Functions</h2></td></tr>
           <td class="memname">#define can_access_at_index</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><a class="el" href="../../dc/d3b/show__config_8c.html#a6c5957148428c0e822816ccc79481bc7">buffer</a>, </td>
+          <td class="paramname"><a class="el" href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -261,7 +261,7 @@ Functions</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;((<a class="el" href="../../dc/d3b/show__config_8c.html#a6c5957148428c0e822816ccc79481bc7">buffer</a> != NULL) &amp;&amp; (((<a class="el" href="../../dc/d3b/show__config_8c.html#a6c5957148428c0e822816ccc79481bc7">buffer</a>)-&gt;offset + <a class="el" href="../../d5/d56/cjson_8h.html#a750b5d744c39a06bfb13e6eb010e35d0">index</a>) &lt; (<a class="el" href="../../dc/d3b/show__config_8c.html#a6c5957148428c0e822816ccc79481bc7">buffer</a>)-&gt;<a class="el" href="../../d5/d56/cjson_8h.html#a03c83e0884e2e3a1783db79f2d67101f">length</a>))</td>
+          <td></td><td>&#160;&#160;&#160;((<a class="el" href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a> != NULL) &amp;&amp; (((<a class="el" href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a>)-&gt;offset + <a class="el" href="../../d5/d56/cjson_8h.html#a750b5d744c39a06bfb13e6eb010e35d0">index</a>) &lt; (<a class="el" href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a>)-&gt;<a class="el" href="../../d5/d56/cjson_8h.html#a03c83e0884e2e3a1783db79f2d67101f">length</a>))</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -280,7 +280,7 @@ Functions</h2></td></tr>
           <td class="memname">#define can_read</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><a class="el" href="../../dc/d3b/show__config_8c.html#a6c5957148428c0e822816ccc79481bc7">buffer</a>, </td>
+          <td class="paramname"><a class="el" href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -291,7 +291,7 @@ Functions</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;((<a class="el" href="../../dc/d3b/show__config_8c.html#a6c5957148428c0e822816ccc79481bc7">buffer</a> != NULL) &amp;&amp; (((<a class="el" href="../../dc/d3b/show__config_8c.html#a6c5957148428c0e822816ccc79481bc7">buffer</a>)-&gt;offset + size) &lt;= (<a class="el" href="../../dc/d3b/show__config_8c.html#a6c5957148428c0e822816ccc79481bc7">buffer</a>)-&gt;<a class="el" href="../../d5/d56/cjson_8h.html#a03c83e0884e2e3a1783db79f2d67101f">length</a>))</td>
+          <td></td><td>&#160;&#160;&#160;((<a class="el" href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a> != NULL) &amp;&amp; (((<a class="el" href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a>)-&gt;offset + size) &lt;= (<a class="el" href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a>)-&gt;<a class="el" href="../../d5/d56/cjson_8h.html#a03c83e0884e2e3a1783db79f2d67101f">length</a>))</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -310,7 +310,7 @@ Functions</h2></td></tr>
           <td class="memname">#define cannot_access_at_index</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><a class="el" href="../../dc/d3b/show__config_8c.html#a6c5957148428c0e822816ccc79481bc7">buffer</a>, </td>
+          <td class="paramname"><a class="el" href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -321,7 +321,7 @@ Functions</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;(!<a class="el" href="../../d6/d49/cjson_8c.html#ae210aa01f1afe7510658c392f0f6e128">can_access_at_index</a>(<a class="el" href="../../dc/d3b/show__config_8c.html#a6c5957148428c0e822816ccc79481bc7">buffer</a>, <a class="el" href="../../d5/d56/cjson_8h.html#a750b5d744c39a06bfb13e6eb010e35d0">index</a>))</td>
+          <td></td><td>&#160;&#160;&#160;(!<a class="el" href="../../d6/d49/cjson_8c.html#ae210aa01f1afe7510658c392f0f6e128">can_access_at_index</a>(<a class="el" href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a>, <a class="el" href="../../d5/d56/cjson_8h.html#a750b5d744c39a06bfb13e6eb010e35d0">index</a>))</td>
         </tr>
       </table>
 </div><div class="memdoc">

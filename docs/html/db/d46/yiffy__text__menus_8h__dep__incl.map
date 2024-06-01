@@ -1,9 +1,8 @@
 <map id="src/menus/yiffy_text_menus.h" name="src/menus/yiffy_text_menus.h">
-<area shape="rect" id="node1" title="This header file is used to generate text based information menus for yiffy." alt="" coords="466,5,621,47"/>
+<area shape="rect" id="node1" title="This header file is used to generate text based information menus for yiffy." alt="" coords="365,5,519,47"/>
 <area shape="rect" id="node2" href="$dc/dc0/yiffy_8c.html" title="This is the main file and used to handle the arguments and execute the program by using external func..." alt="" coords="5,95,116,121"/>
 <area shape="rect" id="node3" href="$dc/d3b/show__config_8c.html" title="This file is used to show current configurations of the app to the user." alt="" coords="141,95,325,121"/>
 <area shape="rect" id="node4" href="$d4/d65/show__github_8c.html" title="This file is used to show project github URL, current issues to the user." alt="" coords="349,95,535,121"/>
 <area shape="rect" id="node5" href="$de/d0c/show__help_8c.html" title="This file is used to show general help to the user by showing how to use the cli options." alt="" coords="559,95,733,121"/>
 <area shape="rect" id="node6" href="$de/d22/show__version_8c.html" title="This file is used to show version of the app to the user." alt="" coords="757,95,951,121"/>
-<area shape="rect" id="node7" href="$d6/dd1/show__website_8c.html" title="This file is used to show yiffy website to the user." alt="" coords="975,95,1171,121"/>
 </map>

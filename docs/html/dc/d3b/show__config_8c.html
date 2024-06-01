@@ -109,8 +109,7 @@ $(document).ready(function(){initNavTree('dc/d3b/show__config_8c.html','../../')
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">show_config.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -157,18 +156,6 @@ Functions</h2></td></tr>
 <tr class="memitem:aca4794b6b6172dc0b0e6d6fba2297c58"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3b/show__config_8c.html#aca4794b6b6172dc0b0e6d6fba2297c58">show_config</a> ()</td></tr>
 <tr class="memdesc:aca4794b6b6172dc0b0e6d6fba2297c58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shows the yiffy configurations to user.  <a href="../../dc/d3b/show__config_8c.html#aca4794b6b6172dc0b0e6d6fba2297c58">More...</a><br /></td></tr>
 <tr class="separator:aca4794b6b6172dc0b0e6d6fba2297c58"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:a2578dc9925546a74dee65cac9b45064d"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3b/show__config_8c.html#a2578dc9925546a74dee65cac9b45064d">home_directory</a></td></tr>
-<tr class="memdesc:a2578dc9925546a74dee65cac9b45064d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores the home directory as string.  <a href="../../dc/d3b/show__config_8c.html#a2578dc9925546a74dee65cac9b45064d">More...</a><br /></td></tr>
-<tr class="separator:a2578dc9925546a74dee65cac9b45064d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33e70132d21c8bbc1fe8550f5e3bce05"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3b/show__config_8c.html#a33e70132d21c8bbc1fe8550f5e3bce05">file_path</a> [<a class="el" href="../../dc/dec/search_8c.html#a263efd24d550124313df51247f07457a">MAX_FILE_PATH</a>]</td></tr>
-<tr class="memdesc:a33e70132d21c8bbc1fe8550f5e3bce05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores the file path for config and credentials files.  <a href="../../dc/d3b/show__config_8c.html#a33e70132d21c8bbc1fe8550f5e3bce05">More...</a><br /></td></tr>
-<tr class="separator:a33e70132d21c8bbc1fe8550f5e3bce05"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c5957148428c0e822816ccc79481bc7"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3b/show__config_8c.html#a6c5957148428c0e822816ccc79481bc7">buffer</a> [<a class="el" href="../../dc/dec/search_8c.html#ad4d796b98c583d49e83adabd74a63bf6">MAX_BUFFER_SIZE</a>]</td></tr>
-<tr class="memdesc:a6c5957148428c0e822816ccc79481bc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores the configs and credentials one by one, used for parsing them by using fgets.  <a href="../../dc/d3b/show__config_8c.html#a6c5957148428c0e822816ccc79481bc7">More...</a><br /></td></tr>
-<tr class="separator:a6c5957148428c0e822816ccc79481bc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >This file is used to show current configurations of the app to the user. </p>
@@ -295,61 +282,6 @@ Variables</h2></td></tr>
 <p>Reads the credentials file and writes the credentials one by one. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d3b/show__config_8c_source.html#l00067">67</a> of file <a class="el" href="../../dc/d3b/show__config_8c_source.html">show_config.c</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="a6c5957148428c0e822816ccc79481bc7" name="a6c5957148428c0e822816ccc79481bc7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6c5957148428c0e822816ccc79481bc7">&#9670;&nbsp;</a></span>buffer</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char buffer[<a class="el" href="../../dc/dec/search_8c.html#ad4d796b98c583d49e83adabd74a63bf6">MAX_BUFFER_SIZE</a>]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Stores the configs and credentials one by one, used for parsing them by using fgets. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../dc/d3b/show__config_8c_source.html#l00017">17</a> of file <a class="el" href="../../dc/d3b/show__config_8c_source.html">show_config.c</a>.</p>
-
-</div>
-</div>
-<a id="a33e70132d21c8bbc1fe8550f5e3bce05" name="a33e70132d21c8bbc1fe8550f5e3bce05"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a33e70132d21c8bbc1fe8550f5e3bce05">&#9670;&nbsp;</a></span>file_path</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char file_path[<a class="el" href="../../dc/dec/search_8c.html#a263efd24d550124313df51247f07457a">MAX_FILE_PATH</a>]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Stores the file path for config and credentials files. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../dc/d3b/show__config_8c_source.html#l00016">16</a> of file <a class="el" href="../../dc/d3b/show__config_8c_source.html">show_config.c</a>.</p>
-
-</div>
-</div>
-<a id="a2578dc9925546a74dee65cac9b45064d" name="a2578dc9925546a74dee65cac9b45064d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2578dc9925546a74dee65cac9b45064d">&#9670;&nbsp;</a></span>home_directory</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char* home_directory</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Stores the home directory as string. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../dc/d3b/show__config_8c_source.html#l00014">14</a> of file <a class="el" href="../../dc/d3b/show__config_8c_source.html">show_config.c</a>.</p>
 
 </div>
 </div>

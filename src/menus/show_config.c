@@ -11,10 +11,10 @@
 #define MAX_FILE_PATH 256   ///< This macro is used to set the default size for getting the home directory file.
 #define MAX_BUFFER_SIZE 512 ///< This macro is used to set the default size for reading the config file.
 
-char *home_directory; ///< Stores the home directory as string.
+static char *home_directory; ///< Stores the home directory as string.
 
-char file_path[MAX_FILE_PATH]; ///< Stores the file path for config and credentials files.
-char buffer[MAX_BUFFER_SIZE]; ///< Stores the configs and credentials one by one, used for parsing them by using fgets.
+static char file_path[MAX_FILE_PATH]; ///< Stores the file path for config and credentials files.
+static char buffer[MAX_BUFFER_SIZE]; ///< Stores the configs and credentials one by one, used for parsing them by using fgets.
 
 #include "yiffy_text_menus.h"
 

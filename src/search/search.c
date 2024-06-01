@@ -31,13 +31,13 @@ WINDOW *post_tags_window;
 WINDOW *controls_window;
 
 /// @brief Indicates whether the NSFW option is enabled.
-bool is_nsfw;
+static bool is_nsfw;
 
 /// @brief Height of the posts panel in the user interface.
-int posts_panel_height;
+static int posts_panel_height;
 
 /// @brief The string for storing posts.json data.
-char json_string[CONTENT_SIZE];
+static char json_string[CONTENT_SIZE];
 
 /// @brief Creates a ncurses-based user interface to show, download, search and travel the e621/e926 by using curl api calls and aria2c tool.
 /// @param tags These are the e621-e926 tags prompted by the user as an argument value. Example: yiffy --search "anthro+fur+male+smile".
