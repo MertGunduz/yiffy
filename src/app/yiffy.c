@@ -65,6 +65,7 @@ static struct general_option general_options[] =
     {"--ivcommand", conf_img_viewer_command},
     {"--nsfw", conf_nsfw},
     {"--uname", conf_uname},
+    {"--apikey", conf_apikey},
     {"--search", search_urls}
 };
 
@@ -95,7 +96,7 @@ int main(int argc, char *argv[])
             {
                 void (*menu_func)(char *argv) = general_options[i].function;
 
-                if (strcmp(general_options[i].option, "--search") == 0 || strcmp(general_options[i].option, "--nsfw") == 0 || strcmp(general_options[i].option, "--ivcommand") == 0 || strcmp(general_options[i].option, "--uname") == 0) /* THIRD ARGUMENT: tags [yiffy --search "blush+fox+male"]*/
+                if (strcmp(general_options[i].option, "--search") == 0 || strcmp(general_options[i].option, "--nsfw") == 0 || strcmp(general_options[i].option, "--ivcommand") == 0 || strcmp(general_options[i].option, "--uname") == 0 || strcmp(general_options[i].option, "--apikey") == 0) /* THIRD ARGUMENT: tags [yiffy --search "blush+fox+male"]*/
                 {
                     menu_func(argv[2]);
                 }
@@ -127,7 +128,7 @@ int main(int argc, char *argv[])
 static bool argument_verify(int argument_count, char *arguments[])
 {
     char *one_arguments[] = {"--help", "--version", "--github", "--config", "--export", "--import"};
-    char *two_arguments[] = {"--uname", "--ivcommand", "--nsfw", "--dfetch", "--fetch", "--search"};
+    char *two_arguments[] = {"--apikey", "--uname", "--ivcommand", "--nsfw", "--dfetch", "--fetch", "--search"};
 
 
     if (argument_count == 3)
@@ -147,7 +148,7 @@ static bool argument_verify(int argument_count, char *arguments[])
         {
             if (strcmp(arguments[1], two_arguments[i]) == 0)
             {
-                if (strcmp(arguments[2], "on") == 0 || strcmp(arguments[2], "off") == 0 || strcmp(arguments[1], "--dfetch") == 0 || strcmp(arguments[1], "--fetch") == 0 || strcmp(arguments[1], "--search") == 0 || strcmp(arguments[1], "--ivcommand") == 0 || strcmp(arguments[1], "--uname") == 0)
+                if (strcmp(arguments[2], "on") == 0 || strcmp(arguments[2], "off") == 0 || strcmp(arguments[1], "--dfetch") == 0 || strcmp(arguments[1], "--fetch") == 0 || strcmp(arguments[1], "--search") == 0 || strcmp(arguments[1], "--ivcommand") == 0 || strcmp(arguments[1], "--uname") == 0 || strcmp(arguments[1], "--apikey") == 0)
                 {
                     return RECOGNIZED_ARGUMENT; /* Return true. */
                 }

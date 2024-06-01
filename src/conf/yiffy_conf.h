@@ -19,5 +19,6 @@
 void conf_nsfw(char *argv);
 void conf_img_viewer_command(char *argv);
 void conf_uname(char *argv);
+void conf_apikey(char *argv);
 
 #endif /* YIFFY_CONF_H */
