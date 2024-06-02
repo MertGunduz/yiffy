@@ -33,7 +33,7 @@ install(TARGETS yiffy DESTINATION /usr/local/bin)
 install(CODE "
     file(MAKE_DIRECTORY \"${dest_path}\")
     file(WRITE \"${dest_path}/yiffy-config.txt\" \"IS_NSFW=NO\nIMG_DISPLAY_COMMAND=ascii-image-converter\n\")
-    file(WRITE \"${dest_path}/yiffy-credentials.txt\" \"USERNAME=\nAPI-KEY=\n\")
+    file(WRITE \"${dest_path}/yiffy-credentials.txt\" \"USERNAME=NULL\nAPI-KEY=NULL\n\")
     execute_process(COMMAND chmod 755 \"${dest_path}\")
     execute_process(COMMAND chmod 755 \"${dest_path}/yiffy-config.txt\")
     execute_process(COMMAND chmod 755 \"${dest_path}/yiffy-credentials.txt\")
