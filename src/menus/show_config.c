@@ -52,8 +52,8 @@ void write_configuration()
     }
 
     /* Write the configurations to terminal. */
-    fprintf(stdout, "current yiffy configurations\n");
-    fprintf(stdout, "----------------------------\n");
+    fprintf(stdout, "yiffy configurations (config.txt)\n");
+    fprintf(stdout, "---------------------------------\n");
 
     while (fgets(buffer, MAX_BUFFER_SIZE - 1, config_file))
     {
@@ -78,8 +78,8 @@ void write_credentials()
     }
 
     /* Write the credentials to terminal. */
-    fprintf(stdout, "current yiffy credentials\n");
-    fprintf(stdout, "-------------------------\n");
+    fprintf(stdout, "yiffy credentials (credentials.txt)\n");
+    fprintf(stdout, "-----------------------------------\n");
 
     while (fgets(buffer, MAX_BUFFER_SIZE - 1, credentials_file))
     {
