@@ -8,6 +8,6 @@ var searchData=
   ['argc_5ferror_5fmsg_5',['argc_error_msg',['../d3/de0/argc__error__msg_8c.html#a020d66de7fd128881c8398247a0d0bdd',1,'argc_error_msg(int argc):&#160;argc_error_msg.c'],['../d0/de2/yiffy__messages_8h.html#a020d66de7fd128881c8398247a0d0bdd',1,'argc_error_msg(int argc):&#160;argc_error_msg.c']]],
   ['argc_5ferror_5fmsg_2ec_6',['argc_error_msg.c',['../d3/de0/argc__error__msg_8c.html',1,'']]],
   ['argc_5fqty_5ferror_7',['ARGC_QTY_ERROR',['../dc/dc0/yiffy_8c.html#a667329addeab5d6f7d3f18fc38bd9b90',1,'yiffy.c']]],
-  ['aria2_5fdownload_8',['aria2_download',['../d6/d60/aria2__download_8c.html#a5d6732ce337f794d14f9f2b835a0d2ef',1,'aria2_download(char *tags, int page, bool is_nsfw, int lim):&#160;aria2_download.c'],['../d5/d05/yiffy__fetch_8h.html#a5d6732ce337f794d14f9f2b835a0d2ef',1,'aria2_download(char *tags, int page, bool is_nsfw, int lim):&#160;aria2_download.c']]],
+  ['aria2_5fdownload_8',['aria2_download',['../d6/d60/aria2__download_8c.html#a89f12219462c5d1dd6d1d1dc2896914d',1,'aria2_download(char *tags, bool is_nsfw, char *uname, char *apikey, int page, int lim):&#160;aria2_download.c'],['../d5/d05/yiffy__fetch_8h.html#a5d6732ce337f794d14f9f2b835a0d2ef',1,'aria2_download(char *tags, int page, bool is_nsfw, int lim):&#160;yiffy_fetch.h']]],
   ['aria2_5fdownload_2ec_9',['aria2_download.c',['../d6/d60/aria2__download_8c.html',1,'']]]
 ];

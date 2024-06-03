@@ -141,9 +141,9 @@ Include dependency graph for aria2_download.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a5d6732ce337f794d14f9f2b835a0d2ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d60/aria2__download_8c.html#a5d6732ce337f794d14f9f2b835a0d2ef">aria2_download</a> (char *tags, int page, bool is_nsfw, int lim)</td></tr>
-<tr class="memdesc:a5d6732ce337f794d14f9f2b835a0d2ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">downloads the API response by using aria2c, works with a system call  <a href="../../d6/d60/aria2__download_8c.html#a5d6732ce337f794d14f9f2b835a0d2ef">More...</a><br /></td></tr>
-<tr class="separator:a5d6732ce337f794d14f9f2b835a0d2ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89f12219462c5d1dd6d1d1dc2896914d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d60/aria2__download_8c.html#a89f12219462c5d1dd6d1d1dc2896914d">aria2_download</a> (char *tags, bool is_nsfw, char *uname, char *apikey, int page, int lim)</td></tr>
+<tr class="memdesc:a89f12219462c5d1dd6d1d1dc2896914d"><td class="mdescLeft">&#160;</td><td class="mdescRight">downloads the API response by using aria2c, works with a system call  <a href="../../d6/d60/aria2__download_8c.html#a89f12219462c5d1dd6d1d1dc2896914d">More...</a><br /></td></tr>
+<tr class="separator:a89f12219462c5d1dd6d1d1dc2896914d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Downloads the JSON file by using aria2c, works with the system function. </p>
@@ -153,8 +153,8 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition in file <a class="el" href="../../d6/d60/aria2__download_8c_source.html">aria2_download.c</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a5d6732ce337f794d14f9f2b835a0d2ef" name="a5d6732ce337f794d14f9f2b835a0d2ef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5d6732ce337f794d14f9f2b835a0d2ef">&#9670;&nbsp;</a></span>aria2_download()</h2>
+<a id="a89f12219462c5d1dd6d1d1dc2896914d" name="a89f12219462c5d1dd6d1d1dc2896914d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89f12219462c5d1dd6d1d1dc2896914d">&#9670;&nbsp;</a></span>aria2_download()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -168,14 +168,26 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>page</em>, </td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>is_nsfw</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>is_nsfw</em>, </td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>uname</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>apikey</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>page</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
