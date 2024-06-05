@@ -12,8 +12,6 @@
  * @date 21/07/2023
 */
 
-#define MAX_FILE_PATH 256   ///< This macro is used to set the default size for getting the home directory file.
-#define MAX_BUFFER_SIZE 512 ///< This macro is used to set the default size for reading the config file
 #define CONTENT_SIZE 262144 ///< This macro is used to set the default size for reading the JSON file that comes as a response from the API.
 
 #include "yiffy_fetch.h"
@@ -31,50 +29,8 @@ static int total_downloads = 0;
 */
 void fetch(char *tags, int page, char *command)
 {
-    char config_path[MAX_FILE_PATH];
-    char buffer[MAX_BUFFER_SIZE];
-
-    bool is_nsfw = false;
-
-    char *home = getenv("HOME");
-
-    if (home == NULL) 
-    {
-        no_home_error_msg();
-        exit(EXIT_FAILURE);
-    }
-
-    sprintf(config_path, "%s/.yiffy/yiffy-config.txt", home);
-
-    /* Read the configuration file (home/user/.yiffy/yiffy-config.txt) to execute the wanted process. */
-    FILE *config = fopen(config_path, "r");
-
-    if (config == NULL) 
-    {
-        file_open_error_msg();
-        exit(EXIT_FAILURE);
-    }
-
-    size_t config_bytes = fread(buffer, 1, MAX_BUFFER_SIZE - 1, config); 
-    buffer[config_bytes] = '\0';
-
-    fclose(config);
-
-    char *token = strtok(buffer, ":");
-
-    while (token != NULL) 
-    {
-        if (strcmp(token, "nsfw") == 0) 
-        {
-            is_nsfw = true;
-            break;
-        }
-
-        token = strtok(NULL, ":");
-    }
-
     /* Download the JSON response. */
-    aria2_download(tags, page, is_nsfw, 20);
+    aria2_download(tags, page, 20);
 
     /* Check if the JSON response downloaded. */
     FILE *response_json = fopen("posts.json", "r");
@@ -86,28 +42,28 @@ void fetch(char *tags, int page, char *command)
     }
 
     /* Allocate memory to store the JSON response content. */
-    char *json_control_content = (char*)malloc(CONTENT_SIZE * sizeof(char));
+    char *posts_json = (char*)malloc(CONTENT_SIZE * sizeof(char));
 
-    if (json_control_content == NULL)
+    if (posts_json == NULL)
     {
         malloc_error_msg();
         exit(EXIT_FAILURE);
     }
     
-    size_t bytes_read = fread(json_control_content, 1, CONTENT_SIZE - 1, response_json);
-    json_control_content[bytes_read] = '\0';
+    size_t bytes_read = fread(posts_json, 1, CONTENT_SIZE - 1, response_json);
+    posts_json[bytes_read] = '\0';
 
     fclose(response_json);
 
     /* Check if the JSON response is empty. */
-    if (strcmp(json_control_content, "{\"posts\":[]}") == 0) 
+    if (strcmp(posts_json, "{\"posts\":[]}") == 0) 
     {
         if (total_downloads == 0)
         {
             no_results_error_msg();
         }
         
-        free(json_control_content);
+        free(posts_json);
 
         remove("posts.json");
         
@@ -115,7 +71,7 @@ void fetch(char *tags, int page, char *command)
     }
 
     /* Output the URLs by using the current JSON file. */
-    output(json_control_content, command);
+    output(posts_json, command);
 }
 
 /**

@@ -113,40 +113,171 @@ $(document).ready(function(){initNavTree('d6/d60/aria2__download_8c_source.html'
 <a href="../../d6/d60/aria2__download_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="../../d5/d05/yiffy__fetch_8h.html">yiffy_fetch.h</a>&quot;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="../../d6/d60/aria2__download_8c.html#a89f12219462c5d1dd6d1d1dc2896914d">   19</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d6/d60/aria2__download_8c.html#a89f12219462c5d1dd6d1d1dc2896914d">aria2_download</a>(<span class="keywordtype">char</span> *tags, <span class="keywordtype">bool</span> is_nsfw, <span class="keywordtype">char</span> *uname, <span class="keywordtype">char</span> *apikey, <span class="keywordtype">int</span> page, <span class="keywordtype">int</span> lim)</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>{</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordtype">char</span> *request_string = (<span class="keywordtype">char</span>*)malloc(256 * <span class="keyword">sizeof</span>(<span class="keywordtype">char</span>));</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordflow">if</span> (request_string == NULL)</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    {</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <a class="code hl_function" href="../../d4/ddf/malloc__error__msg_8c.html#a8f2c3050fed77b86a432d485cde3ade1">malloc_error_msg</a>();</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        exit(EXIT_FAILURE);</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    }</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="../../d6/d60/aria2__download_8c.html#af783caa0ab3eaa291b0af58fcb59d2b3">   15</a></span><span class="preprocessor">#define FILE_PATH 256   </span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="../../d6/d60/aria2__download_8c.html#a6b20d41d6252e9871430c242cb1a56e7">   16</a></span><span class="preprocessor">#define BUFFER_SIZE 512 </span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="../../d6/d60/aria2__download_8c.html#a8312c2c0e4c1ea19c2dd324f623d91e4">   17</a></span><span class="preprocessor">#define HOME_SIZE 512 </span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="../../d6/d60/aria2__download_8c.html#a27ad396a87c1bba9a9fe061544824c0c">   18</a></span><span class="preprocessor">#define CREDENTIAL_SIZE 128 </span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">static</span> <span class="keywordtype">char</span> config_file_path[<a class="code hl_define" href="../../d6/d60/aria2__download_8c.html#af783caa0ab3eaa291b0af58fcb59d2b3">FILE_PATH</a>]; </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">static</span> <span class="keywordtype">char</span> credentials_file_path[<a class="code hl_define" href="../../d6/d60/aria2__download_8c.html#af783caa0ab3eaa291b0af58fcb59d2b3">FILE_PATH</a>]; </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">static</span> <span class="keywordtype">char</span> <a class="code hl_variable" href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a>[<a class="code hl_define" href="../../d6/d60/aria2__download_8c.html#a6b20d41d6252e9871430c242cb1a56e7">BUFFER_SIZE</a>]; </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">static</span> <span class="keywordtype">char</span> uname[<a class="code hl_define" href="../../d6/d60/aria2__download_8c.html#a27ad396a87c1bba9a9fe061544824c0c">CREDENTIAL_SIZE</a>]; </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">static</span> <span class="keywordtype">char</span> api_key[<a class="code hl_define" href="../../d6/d60/aria2__download_8c.html#a27ad396a87c1bba9a9fe061544824c0c">CREDENTIAL_SIZE</a>]; </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">static</span> FILE *config_file; </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">static</span> FILE *credentials_file; </div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="comment">/* Set the string for NSFW or SFW option by checking the isNsfw parameter. */</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordflow">if</span> (is_nsfw)</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    {</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        sprintf(request_string, <span class="stringliteral">&quot;aria2c \&quot;https://e621.net/posts.json?login=%s&amp;api_key=%s&amp;limit=%d&amp;page=%d&amp;tags=%s\&quot; -o posts.json &gt;/dev/null 2&gt;&amp;1&quot;</span>, uname, apikey, lim, page, tags);</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    }</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    {</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        sprintf(request_string, <span class="stringliteral">&quot;aria2c \&quot;https://e926.net/posts.json?login=%s&amp;api_key=%s&amp;limit=%d&amp;page=%d&amp;tags=%s\&quot; -o posts.json &gt;/dev/null 2&gt;&amp;1&quot;</span>, uname, apikey, lim, page, tags);</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    }</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="comment">/* Download the JSON and set a sleep(1) for signals. */</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordtype">int</span> success = system(request_string);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    sleep(1);</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    free(request_string);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">static</span> <span class="keywordtype">bool</span> get_nsfw();</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">static</span> <span class="keywordtype">char</span> *get_credential(<span class="keywordtype">char</span> *credential);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="../../d6/d60/aria2__download_8c.html#a7b3f8210580125356d3487d53f345cbf">   36</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d6/d60/aria2__download_8c.html#a7b3f8210580125356d3487d53f345cbf">aria2_download</a>(<span class="keywordtype">char</span> *tags, <span class="keywordtype">int</span> page, <span class="keywordtype">int</span> lim)</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>{</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="comment">/* NSFW option for the API request. */</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordtype">bool</span> is_nsfw = get_nsfw();</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="comment">/* Credentials for the API request. */</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    strcpy(uname, get_credential(<span class="stringliteral">&quot;USERNAME&quot;</span>));</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    strcpy(api_key, get_credential(<span class="stringliteral">&quot;API-KEY&quot;</span>));</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordflow">if</span> (success == <a class="code hl_define" href="../../d5/d05/yiffy__fetch_8h.html#acbd50aa1f19ce68034a26b45b0aaed69">BAD_SYSTEM_FUNC_CALL</a>)</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    {</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <a class="code hl_function" href="../../dc/d8f/system__func__error__msg_8c.html#acc21d14c9f9a59987f07615415759325">system_func_error_msg</a>();</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        exit(EXIT_FAILURE);</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    }</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>}</div>
-<div class="ttc" id="aaria2__download_8c_html_a89f12219462c5d1dd6d1d1dc2896914d"><div class="ttname"><a href="../../d6/d60/aria2__download_8c.html#a89f12219462c5d1dd6d1d1dc2896914d">aria2_download</a></div><div class="ttdeci">void aria2_download(char *tags, bool is_nsfw, char *uname, char *apikey, int page, int lim)</div><div class="ttdoc">downloads the API response by using aria2c, works with a system call</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d60/aria2__download_8c_source.html#l00019">aria2_download.c:19</a></div></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="comment">/* Allocate space for request string. */</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordtype">char</span> *request_string = (<span class="keywordtype">char</span>*)malloc(256 * <span class="keyword">sizeof</span>(<span class="keywordtype">char</span>));</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordflow">if</span> (request_string == NULL)</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <a class="code hl_function" href="../../d4/ddf/malloc__error__msg_8c.html#a8f2c3050fed77b86a432d485cde3ade1">malloc_error_msg</a>();</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        exit(EXIT_FAILURE);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    }</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="comment">/* Set the string for NSFW or SFW option by checking the isNsfw parameter. */</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordflow">if</span> (is_nsfw)</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        sprintf(request_string, <span class="stringliteral">&quot;aria2c \&quot;https://e621.net/posts.json?login=%s&amp;api_key=%s&amp;limit=%d&amp;page=%d&amp;tags=%s\&quot; -o posts.json &gt;/dev/null 2&gt;&amp;1&quot;</span>, uname, api_key, lim, page, tags);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    }</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    {</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        sprintf(request_string, <span class="stringliteral">&quot;aria2c \&quot;https://e926.net/posts.json?login=%s&amp;api_key=%s&amp;limit=%d&amp;page=%d&amp;tags=%s\&quot; -o posts.json &gt;/dev/null 2&gt;&amp;1&quot;</span>, uname, api_key, lim, page, tags);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    }</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="comment">/* Download the JSON and set a sleep(1) for signals. */</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordtype">int</span> success = system(request_string);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    sleep(1);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    free(request_string);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keywordflow">if</span> (success == <a class="code hl_define" href="../../d5/d05/yiffy__fetch_8h.html#acbd50aa1f19ce68034a26b45b0aaed69">BAD_SYSTEM_FUNC_CALL</a>)</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <a class="code hl_function" href="../../dc/d8f/system__func__error__msg_8c.html#acc21d14c9f9a59987f07615415759325">system_func_error_msg</a>();</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        exit(EXIT_FAILURE);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    }</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>}</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="keyword">static</span> <span class="keywordtype">bool</span> get_nsfw()</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>{</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="comment">/* Get the home environment. */</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordtype">char</span> *home = getenv(<span class="stringliteral">&quot;HOME&quot;</span>);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keywordflow">if</span> (home == NULL) </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    {</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <a class="code hl_function" href="../../d5/de7/no__home__error__msg_8c.html#ab360dcc8796de6e212175d6c4c77477d">no_home_error_msg</a>();</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        exit(EXIT_FAILURE);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    }</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    sprintf(config_file_path, <span class="stringliteral">&quot;%s/.yiffy/yiffy-config.txt&quot;</span>, home);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="comment">/* Read the configuration file (home/user/.yiffy/yiffy-config.txt) to execute the wanted process. */</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    config_file = fopen(config_file_path, <span class="stringliteral">&quot;r&quot;</span>);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keywordflow">if</span> (config_file == NULL) </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    {</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <a class="code hl_function" href="../../db/df9/file__open__error__msg_8c.html#a86dae457f49acffe2f59c6072cdec928">file_open_error_msg</a>();</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        exit(EXIT_FAILURE);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    }</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keywordflow">while</span> (fgets(<a class="code hl_variable" href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a>, <a class="code hl_define" href="../../d6/d60/aria2__download_8c.html#a6b20d41d6252e9871430c242cb1a56e7">BUFFER_SIZE</a> - 1, config_file))</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    {</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        <span class="keywordflow">if</span> (strcmp(<a class="code hl_variable" href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a>, <span class="stringliteral">&quot;IS_NSFW=YES\n&quot;</span>) == 0)</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        {</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>            <span class="comment">/* Close the config_file. */</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>            fclose(config_file);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            <span class="comment">/* Return true if the IS_NSFW is YES. */</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        }</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    }</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="comment">/* Close the config_file. */</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    fclose(config_file);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="comment">/* Return false if the IS_NSFW is NO. */</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>}</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="keyword">static</span> <span class="keywordtype">char</span> *get_credential(<span class="keywordtype">char</span> *option)</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>{</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="comment">/* Credential string to return. */</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="keywordtype">char</span> *credential;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <span class="comment">/* Get the home environment. */</span></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    <span class="keywordtype">char</span> *home = getenv(<span class="stringliteral">&quot;HOME&quot;</span>);</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <span class="keywordflow">if</span> (home == NULL) </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    {</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        <a class="code hl_function" href="../../d5/de7/no__home__error__msg_8c.html#ab360dcc8796de6e212175d6c4c77477d">no_home_error_msg</a>();</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        exit(EXIT_FAILURE);</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    }</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    sprintf(credentials_file_path, <span class="stringliteral">&quot;%s/.yiffy/yiffy-credentials.txt&quot;</span>, home);</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    <span class="comment">/* Read the credentials file (home/user/.yiffy/yiffy-credentials.txt) to execute the wanted process. */</span></div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    credentials_file = fopen(credentials_file_path, <span class="stringliteral">&quot;r&quot;</span>);</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    <span class="keywordflow">if</span> (credentials_file == NULL) </div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    {</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        <a class="code hl_function" href="../../db/df9/file__open__error__msg_8c.html#a86dae457f49acffe2f59c6072cdec928">file_open_error_msg</a>();</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        exit(EXIT_FAILURE);</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    }</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <span class="comment">/* Read the credential. */</span></div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    <span class="keywordflow">while</span> (fgets(<a class="code hl_variable" href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a>, <a class="code hl_define" href="../../d6/d60/aria2__download_8c.html#a6b20d41d6252e9871430c242cb1a56e7">BUFFER_SIZE</a> - 1, credentials_file))</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    {</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        <span class="keywordflow">if</span> (strstr(<a class="code hl_variable" href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a>, option))</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        {</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>            <span class="comment">/* Get the credential. */</span></div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>            credential = strstr(<a class="code hl_variable" href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a>, <span class="stringliteral">&quot;=&quot;</span>);</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>            <span class="comment">/* Increase the r_credential pointer index by 1 to get rid of equal sign. */</span></div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>            credential++;</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        }</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    }</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <span class="comment">/* Close the credentials file. */</span></div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    fclose(credentials_file);</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    <span class="comment">/* If the credential not null, return it. */</span></div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    <span class="keywordflow">if</span> (strcmp(credential, <span class="stringliteral">&quot;NULL\n&quot;</span>) != 0)</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    {</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        <span class="comment">/* Set the last \n to \0. */</span></div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        credential[strlen(credential) - 1] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span> </div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>        <span class="keywordflow">return</span> credential;</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    }</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    {</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        <a class="code hl_function" href="../../d8/dbe/set__credentials__error__msg_8c.html#aa9576ed018648983c9c2745abf7dde31">set_credentials_error_msg</a>();</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        exit(EXIT_FAILURE);</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    }</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>}</div>
+<div class="ttc" id="aaria2__download_8c_html_a27ad396a87c1bba9a9fe061544824c0c"><div class="ttname"><a href="../../d6/d60/aria2__download_8c.html#a27ad396a87c1bba9a9fe061544824c0c">CREDENTIAL_SIZE</a></div><div class="ttdeci">#define CREDENTIAL_SIZE</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d60/aria2__download_8c_source.html#l00018">aria2_download.c:18</a></div></div>
+<div class="ttc" id="aaria2__download_8c_html_a6b20d41d6252e9871430c242cb1a56e7"><div class="ttname"><a href="../../d6/d60/aria2__download_8c.html#a6b20d41d6252e9871430c242cb1a56e7">BUFFER_SIZE</a></div><div class="ttdeci">#define BUFFER_SIZE</div><div class="ttdoc">This macro is used to set the default size for reading the config file.</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d60/aria2__download_8c_source.html#l00016">aria2_download.c:16</a></div></div>
+<div class="ttc" id="aaria2__download_8c_html_a7b3f8210580125356d3487d53f345cbf"><div class="ttname"><a href="../../d6/d60/aria2__download_8c.html#a7b3f8210580125356d3487d53f345cbf">aria2_download</a></div><div class="ttdeci">void aria2_download(char *tags, int page, int lim)</div><div class="ttdoc">downloads the API response by using aria2c, works with a system call</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d60/aria2__download_8c_source.html#l00036">aria2_download.c:36</a></div></div>
+<div class="ttc" id="aaria2__download_8c_html_af783caa0ab3eaa291b0af58fcb59d2b3"><div class="ttname"><a href="../../d6/d60/aria2__download_8c.html#af783caa0ab3eaa291b0af58fcb59d2b3">FILE_PATH</a></div><div class="ttdeci">#define FILE_PATH</div><div class="ttdoc">This macro is used to set the default size for getting the home directory file.</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d60/aria2__download_8c_source.html#l00015">aria2_download.c:15</a></div></div>
+<div class="ttc" id="acjson_8h_html_aff2566f4c366b48d73479bef43ee4d2e"><div class="ttname"><a href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a></div><div class="ttdeci">char * buffer</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d56/cjson_8h_source.html#l00170">cjson.h:170</a></div></div>
+<div class="ttc" id="afile__open__error__msg_8c_html_a86dae457f49acffe2f59c6072cdec928"><div class="ttname"><a href="../../db/df9/file__open__error__msg_8c.html#a86dae457f49acffe2f59c6072cdec928">file_open_error_msg</a></div><div class="ttdeci">void file_open_error_msg()</div><div class="ttdoc">Shows some information about file permissions when yiffy is not able to read file.</div><div class="ttdef"><b>Definition:</b> <a href="../../db/df9/file__open__error__msg_8c_source.html#l00016">file_open_error_msg.c:16</a></div></div>
 <div class="ttc" id="amalloc__error__msg_8c_html_a8f2c3050fed77b86a432d485cde3ade1"><div class="ttname"><a href="../../d4/ddf/malloc__error__msg_8c.html#a8f2c3050fed77b86a432d485cde3ade1">malloc_error_msg</a></div><div class="ttdeci">void malloc_error_msg()</div><div class="ttdoc">Shows some information when yiffy cannot allocate memory.</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/ddf/malloc__error__msg_8c_source.html#l00016">malloc_error_msg.c:16</a></div></div>
+<div class="ttc" id="ano__home__error__msg_8c_html_ab360dcc8796de6e212175d6c4c77477d"><div class="ttname"><a href="../../d5/de7/no__home__error__msg_8c.html#ab360dcc8796de6e212175d6c4c77477d">no_home_error_msg</a></div><div class="ttdeci">void no_home_error_msg()</div><div class="ttdoc">Outputs the home not found error when application can not access the $HOME environment variable.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/de7/no__home__error__msg_8c_source.html#l00016">no_home_error_msg.c:16</a></div></div>
+<div class="ttc" id="aset__credentials__error__msg_8c_html_aa9576ed018648983c9c2745abf7dde31"><div class="ttname"><a href="../../d8/dbe/set__credentials__error__msg_8c.html#aa9576ed018648983c9c2745abf7dde31">set_credentials_error_msg</a></div><div class="ttdeci">void set_credentials_error_msg()</div><div class="ttdoc">Gives message if the credentials are not set in the credentials file.</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dbe/set__credentials__error__msg_8c_source.html#l00016">set_credentials_error_msg.c:16</a></div></div>
 <div class="ttc" id="asystem__func__error__msg_8c_html_acc21d14c9f9a59987f07615415759325"><div class="ttname"><a href="../../dc/d8f/system__func__error__msg_8c.html#acc21d14c9f9a59987f07615415759325">system_func_error_msg</a></div><div class="ttdeci">void system_func_error_msg()</div><div class="ttdoc">Shows some information when system function not works.</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d8f/system__func__error__msg_8c_source.html#l00016">system_func_error_msg.c:16</a></div></div>
 <div class="ttc" id="ayiffy__fetch_8h_html"><div class="ttname"><a href="../../d5/d05/yiffy__fetch_8h.html">yiffy_fetch.h</a></div></div>
 <div class="ttc" id="ayiffy__fetch_8h_html_acbd50aa1f19ce68034a26b45b0aaed69"><div class="ttname"><a href="../../d5/d05/yiffy__fetch_8h.html#acbd50aa1f19ce68034a26b45b0aaed69">BAD_SYSTEM_FUNC_CALL</a></div><div class="ttdeci">#define BAD_SYSTEM_FUNC_CALL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d05/yiffy__fetch_8h_source.html#l00025">yiffy_fetch.h:25</a></div></div>

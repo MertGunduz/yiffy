@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['true_0',['true',['../d6/d49/cjson_8c.html#a41f9c5fb8b08eb5dc3edce4dcb37fee7',1,'cjson.c']]]
+  ['static_5fstrlen_0',['static_strlen',['../d6/d49/cjson_8c.html#a5714bac836668a1b9af55465b78531ef',1,'cjson.c']]]
 ];

@@ -19,6 +19,7 @@ set(SOURCES
     window_create_error_msg.c
     posts_not_array_error_msg.c
     post_error_msg.c
+    set_credentials_error_msg.c
 )
 
 add_library(yiffy-messages STATIC ${SOURCES})

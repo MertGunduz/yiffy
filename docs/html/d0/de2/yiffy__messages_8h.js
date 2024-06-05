@@ -17,6 +17,7 @@ var yiffy__messages_8h =
     [ "on_off_msg", "d0/de2/yiffy__messages_8h.html#a60eb77988fcf4ce24e3108507945e543", null ],
     [ "post_error_msg", "d0/de2/yiffy__messages_8h.html#accdcb97e0bdaf97ee30a5d59dc176de6", null ],
     [ "posts_not_array_error_msg", "d0/de2/yiffy__messages_8h.html#a90abb5c30aae8756dfcd7b5bce9af349", null ],
+    [ "set_credentials_error_msg", "d0/de2/yiffy__messages_8h.html#aa9576ed018648983c9c2745abf7dde31", null ],
     [ "system_func_error_msg", "d0/de2/yiffy__messages_8h.html#acc21d14c9f9a59987f07615415759325", null ],
     [ "unrecognized_arg_msg", "d0/de2/yiffy__messages_8h.html#ae1e70d303bd9115115ecb22cb13459c5", null ],
     [ "window_create_error_msg", "d0/de2/yiffy__messages_8h.html#aa2139f028bdd1f14dcd7c65eabf8a14f", null ]

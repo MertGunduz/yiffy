@@ -17,6 +17,7 @@ var dir_92db932c96b71876a62b1386c1d468d9 =
     [ "on_off_msg.c", "d9/d8a/on__off__msg_8c.html", "d9/d8a/on__off__msg_8c" ],
     [ "post_error_msg.c", "d4/d42/post__error__msg_8c.html", "d4/d42/post__error__msg_8c" ],
     [ "posts_not_array_error_msg.c", "d0/d05/posts__not__array__error__msg_8c.html", "d0/d05/posts__not__array__error__msg_8c" ],
+    [ "set_credentials_error_msg.c", "d8/dbe/set__credentials__error__msg_8c.html", "d8/dbe/set__credentials__error__msg_8c" ],
     [ "system_func_error_msg.c", "dc/d8f/system__func__error__msg_8c.html", "dc/d8f/system__func__error__msg_8c" ],
     [ "unrecognized_arg_msg.c", "d7/de2/unrecognized__arg__msg_8c.html", "d7/de2/unrecognized__arg__msg_8c" ],
     [ "window_create_error_msg.c", "d8/d12/window__create__error__msg_8c.html", "d8/d12/window__create__error__msg_8c" ],

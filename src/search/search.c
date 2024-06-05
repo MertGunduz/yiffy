@@ -99,7 +99,7 @@ void search(char *tags)
     create_controls_window(controls_window, &posts_panel_height, controls, sizeof(controls) / sizeof(controls[0]));
 
     /* Download the first page of posts with prompted tags. */
-    aria2_download(tags, 1, is_nsfw, posts_panel_height);
+    aria2_download(tags, 1, posts_panel_height);
 
     /* Read the posts.json file. */
     FILE *posts_json_file = fopen("posts.json", "r");

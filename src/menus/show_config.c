@@ -8,13 +8,13 @@
  * @date 05/08/2023
 */
 
-#define MAX_FILE_PATH 256   ///< This macro is used to set the default size for getting the home directory file.
-#define MAX_BUFFER_SIZE 512 ///< This macro is used to set the default size for reading the config file.
+#define FILE_PATH 256   ///< This macro is used to set the default size for getting the home directory file.
+#define BUFFER_SIZE 512 ///< This macro is used to set the default size for reading the config file.
 
 static char *home_directory; ///< Stores the home directory as string.
 
-static char file_path[MAX_FILE_PATH]; ///< Stores the file path for config and credentials files.
-static char buffer[MAX_BUFFER_SIZE]; ///< Stores the configs and credentials one by one, used for parsing them by using fgets.
+static char file_path[FILE_PATH]; ///< Stores the file path for config and credentials files.
+static char buffer[BUFFER_SIZE]; ///< Stores the configs and credentials one by one, used for parsing them by using fgets.
 
 #include "yiffy_text_menus.h"
 
@@ -55,7 +55,7 @@ void write_configuration()
     fprintf(stdout, "yiffy configurations (config.txt)\n");
     fprintf(stdout, "---------------------------------\n");
 
-    while (fgets(buffer, MAX_BUFFER_SIZE - 1, config_file))
+    while (fgets(buffer, BUFFER_SIZE - 1, config_file))
     {
         fprintf(stdout, "- %s", buffer);
     }
@@ -81,7 +81,7 @@ void write_credentials()
     fprintf(stdout, "yiffy credentials (credentials.txt)\n");
     fprintf(stdout, "-----------------------------------\n");
 
-    while (fgets(buffer, MAX_BUFFER_SIZE - 1, credentials_file))
+    while (fgets(buffer, BUFFER_SIZE - 1, credentials_file))
     {
         fprintf(stdout, "- %s", buffer);
     }

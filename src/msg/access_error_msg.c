@@ -1,7 +1,7 @@
 /**
  * @file access_error_msg.c
  * 
- * @brief This file is used to check the accessibility to the e621/e926 api.
+ * @brief This file is used to give message about the accessibility to the e621/e926 api.
  * 
  * @author Mehmet Mert Gunduz (merttgg@gmail.com)
  * 
@@ -11,7 +11,7 @@
 #include "yiffy_messages.h"
 
 /**
- * @brief Checks the accessibility to the e621/e926 api.
+ * @brief Gives message about the accessibility to the e621/e926 api.
 */ 
 void access_error_msg()
 {

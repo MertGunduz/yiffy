@@ -25,6 +25,6 @@
 #define BAD_SYSTEM_FUNC_CALL -1
 
 void fetch(char *tags, int page, char *command);
-void aria2_download(char *tags, int page, bool is_nsfw, int lim);
+void aria2_download(char *tags, int page, int lim);
 
 #endif /* YIFFY_SEARCH_H */
