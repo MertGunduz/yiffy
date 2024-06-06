@@ -1,8 +1,6 @@
 var search_8c =
 [
     [ "CONTENT_SIZE", "dc/dec/search_8c.html#aff9b7f6d81297248bf0ad06d725c8cbb", null ],
-    [ "MAX_BUFFER_SIZE", "dc/dec/search_8c.html#ad4d796b98c583d49e83adabd74a63bf6", null ],
-    [ "MAX_FILE_PATH", "dc/dec/search_8c.html#a263efd24d550124313df51247f07457a", null ],
     [ "search", "dc/dec/search_8c.html#ab899bd069f8d6db7339eba31c3ad7a02", null ],
     [ "controls", "dc/dec/search_8c.html#af0d0e693c574c3bfb0fcdcca37cbd745", null ],
     [ "controls_window", "dc/dec/search_8c.html#ac105778d4687c921d3749c0e825d529d", null ],

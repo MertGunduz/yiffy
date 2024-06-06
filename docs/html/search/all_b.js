@@ -4,7 +4,5 @@ var searchData=
   ['malloc_5ferror_5fmsg_1',['malloc_error_msg',['../d4/ddf/malloc__error__msg_8c.html#a8f2c3050fed77b86a432d485cde3ade1',1,'malloc_error_msg():&#160;malloc_error_msg.c'],['../d0/de2/yiffy__messages_8h.html#a8f2c3050fed77b86a432d485cde3ade1',1,'malloc_error_msg():&#160;malloc_error_msg.c']]],
   ['malloc_5ferror_5fmsg_2ec_2',['malloc_error_msg.c',['../d4/ddf/malloc__error__msg_8c.html',1,'']]],
   ['malloc_5ffn_3',['malloc_fn',['../dc/d55/structcJSON__Hooks.html#ae8fc738005f553ff03bc725c58d3188f',1,'cJSON_Hooks']]],
-  ['max_5fbuffer_5fsize_4',['MAX_BUFFER_SIZE',['../dc/dec/search_8c.html#ad4d796b98c583d49e83adabd74a63bf6',1,'search.c']]],
-  ['max_5ffile_5fpath_5',['MAX_FILE_PATH',['../dc/dec/search_8c.html#a263efd24d550124313df51247f07457a',1,'search.c']]],
-  ['missing_5fon_5foff_6',['MISSING_ON_OFF',['../dc/dc0/yiffy_8c.html#a9e8078dd597c541b6090e1e1ffd437e5',1,'yiffy.c']]]
+  ['missing_5fon_5foff_4',['MISSING_ON_OFF',['../dc/dc0/yiffy_8c.html#a9e8078dd597c541b6090e1e1ffd437e5',1,'yiffy.c']]]
 ];

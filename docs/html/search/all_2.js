@@ -61,7 +61,7 @@ var searchData=
   ['create_5fpost_5ftags_5fwindow_2ec_58',['create_post_tags_window.c',['../d9/d28/create__post__tags__window_8c.html',1,'']]],
   ['create_5fposts_5fwindow_59',['create_posts_window',['../d3/d45/create__posts__window_8c.html#ad1975f63b7ab6049822e7b85a4bd40ee',1,'create_posts_window(WINDOW **window, int *posts_panel_height):&#160;create_posts_window.c'],['../de/d29/yiffy__search_8h.html#ad1975f63b7ab6049822e7b85a4bd40ee',1,'create_posts_window(WINDOW **window, int *posts_panel_height):&#160;create_posts_window.c']]],
   ['create_5fposts_5fwindow_2ec_60',['create_posts_window.c',['../d3/d45/create__posts__window_8c.html',1,'']]],
-  ['create_5ftop_5fwindow_61',['create_top_window',['../dd/d93/create__top__window_8c.html#a090b2242d6c27461b6d72b4c69c3255f',1,'create_top_window(WINDOW *window, bool is_nsfw):&#160;create_top_window.c'],['../de/d29/yiffy__search_8h.html#a090b2242d6c27461b6d72b4c69c3255f',1,'create_top_window(WINDOW *window, bool is_nsfw):&#160;create_top_window.c']]],
+  ['create_5ftop_5fwindow_61',['create_top_window',['../dd/d93/create__top__window_8c.html#a5b2a6a6ce54a02a47d025adba6d325d7',1,'create_top_window(WINDOW *window):&#160;create_top_window.c'],['../de/d29/yiffy__search_8h.html#a5b2a6a6ce54a02a47d025adba6d325d7',1,'create_top_window(WINDOW *window):&#160;create_top_window.c']]],
   ['create_5ftop_5fwindow_2ec_62',['create_top_window.c',['../dd/d93/create__top__window_8c.html',1,'']]],
   ['credential_5fsize_63',['CREDENTIAL_SIZE',['../d6/d60/aria2__download_8c.html#a27ad396a87c1bba9a9fe061544824c0c',1,'aria2_download.c']]]
 ];

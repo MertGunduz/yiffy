@@ -32,7 +32,7 @@ void search(char *tags);
 void init_ncurses();
 
 /* User Interface creation functions. */
-void create_top_window(WINDOW *window, bool is_nsfw);
+void create_top_window(WINDOW *window);
 void create_posts_window(WINDOW **window, int *posts_panel_height);
 void create_post_tags_window(WINDOW *window, int *posts_panel_height);
 void create_controls_window(WINDOW *window, int *posts_panel_height, control *controls, int total_controls);

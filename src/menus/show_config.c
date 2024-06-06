@@ -66,7 +66,7 @@ void write_configuration()
 /// @brief Reads the credentials file and writes the credentials one by one.
 void write_credentials()
 {
-    /* Create the configuration file path. */
+    /* Create the credentials file path. */
     sprintf(file_path, "%s/.yiffy/yiffy-credentials.txt", home_directory);
 
     FILE *credentials_file = fopen(file_path, "r");
