@@ -109,45 +109,76 @@ void search(char *tags)
         /* Take the url of the of the specified post by parsing the data from file object. */
         cJSON *url = cJSON_GetObjectItem(file_object, "url");
 
-        if (post_i == 0)
+    if (post_i == 0)
+    {
+        /* The tags object parsing. */
+        cJSON *tags_object = cJSON_GetObjectItem(post, "tags");
+
+        if (tags_object == NULL)
         {
-            /* The tags object parsing. */
-            cJSON *tags_object = cJSON_GetObjectItem(post, "tags");
+            fprintf(stderr, "Tags object not found in post %d\n", i);
+            goto END;
+        }
 
-            if (tags_object == NULL)
+        /* The general tags array parsing. */
+        cJSON *general_tags = cJSON_GetObjectItem(tags_object, "general");
+        
+        wmove(post_tags_window, 1, 1);
+
+        int line_counter = 0;
+        int max_width = getmaxx(post_tags_window) - 2; // Get the window width, minus 2 for borders
+        int max_height = 6; // Fixed height for the window
+        int line_to_write = 1;
+
+        if (cJSON_IsArray(general_tags))
+        {   
+            for (size_t j = 0; j < cJSON_GetArraySize(general_tags); j++)
             {
-                fprintf(stderr, "Tags object not found in post %d\n", i);
-                goto END;
-            }
+                cJSON *tag = cJSON_GetArrayItem(general_tags, j);
 
-            /* The general tags array parsing. */
-            cJSON *general_tags = cJSON_GetObjectItem(tags_object, "general");
-            
-            wmove(post_tags_window, 1, 1);
-
-            int line_counter = 0;
-            int line_to_write = 1;
-
-            if (cJSON_IsArray(general_tags))
-            {   
-                for (size_t j = 0; j < cJSON_GetArraySize(general_tags); j++)
+                for (size_t k = 0; k < strlen(tag->valuestring); k++)
                 {
-                    cJSON *tag = cJSON_GetArrayItem(general_tags, j);
-
-                    for (size_t k = 0; k < strlen(tag->valuestring); k++)
+                    /* Implement an algorithm where it prints the tag chars so i don't want the tags to overfill window border. */
+                    if (line_counter >= max_width)
                     {
-                        /* Implement an algorithm where it prints the tag chars so i don't want the tags to overflow window border. */
-                        
-                        wprintw(post_tags_window, "%c", tag->valuestring[k]);
-                        wrefresh(post_tags_window);  
-                        line_counter++;
+                        line_to_write++;
+                        if (line_to_write >= max_height) // Check for vertical overflow
+                        {
+                            break;
+                        }
+                        wmove(post_tags_window, line_to_write, 1);
+                        line_counter = 0;
                     }
 
-                    wprintw(post_tags_window, ", ");
+                    wprintw(post_tags_window, "%c", tag->valuestring[k]);
+                    wrefresh(post_tags_window);  
                     line_counter++;
+                }
+
+                if (line_counter + 2 >= max_width) // Check if ", " will overflow
+                {
+                    line_to_write++;
+                    if (line_to_write >= max_height) // Check for vertical overflow
+                    {
+                        break;
+                    }
+                    wmove(post_tags_window, line_to_write, 1);
+                    line_counter = 0;
+                }
+                else
+                {
+                    wprintw(post_tags_window, ", ");
+                    line_counter += 2;
+                }
+
+                if (line_to_write >= max_height) // Check for vertical overflow
+                {
+                    break;
                 }
             }
         }
+    }
+
 
         if (url != NULL && cJSON_IsString(url) && post_i != posts_panel_height - 2)
         {
