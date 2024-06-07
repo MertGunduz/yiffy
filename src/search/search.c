@@ -138,7 +138,6 @@ void search(char *tags)
 
                 for (size_t k = 0; k < strlen(tag->valuestring); k++)
                 {
-                    /* Implement an algorithm where it prints the tag chars so i don't want the tags to overfill window border. */
                     if (line_counter >= max_width)
                     {
                         line_to_write++;

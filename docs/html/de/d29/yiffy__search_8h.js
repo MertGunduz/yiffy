@@ -2,7 +2,7 @@ var yiffy__search_8h =
 [
     [ "control", "dd/dee/structcontrol.html", "dd/dee/structcontrol" ],
     [ "create_controls_window", "de/d29/yiffy__search_8h.html#a0a856b187dbd59a65a8bc9ffe5a597b1", null ],
-    [ "create_post_tags_window", "de/d29/yiffy__search_8h.html#a800291b89cb5eebec38a251c0ea0a24f", null ],
+    [ "create_post_tags_window", "de/d29/yiffy__search_8h.html#afa5859b14c57e819f651888724030194", null ],
     [ "create_posts_window", "de/d29/yiffy__search_8h.html#ad1975f63b7ab6049822e7b85a4bd40ee", null ],
     [ "create_top_window", "de/d29/yiffy__search_8h.html#a5b2a6a6ce54a02a47d025adba6d325d7", null ],
     [ "init_ncurses", "de/d29/yiffy__search_8h.html#a85769112d75b553ce8125bfda23f32bc", null ],
