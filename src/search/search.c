@@ -44,7 +44,7 @@ void search(char *tags)
     /* Create the ncurses-based user interfaces. */
     create_top_window(top_window);
     create_posts_window(&posts_window, &posts_panel_height);
-    create_post_tags_window(post_tags_window, &posts_panel_height);
+    create_post_tags_window(&post_tags_window, &posts_panel_height);
     create_controls_window(controls_window, &posts_panel_height, controls, sizeof(controls) / sizeof(controls[0]));
 
     /* Download the first page of posts with prompted tags. */
@@ -109,17 +109,56 @@ void search(char *tags)
         /* Take the url of the of the specified post by parsing the data from file object. */
         cJSON *url = cJSON_GetObjectItem(file_object, "url");
 
+        if (post_i == 0)
+        {
+            /* The tags object parsing. */
+            cJSON *tags_object = cJSON_GetObjectItem(post, "tags");
+
+            if (tags_object == NULL)
+            {
+                fprintf(stderr, "Tags object not found in post %d\n", i);
+                goto END;
+            }
+
+            /* The general tags array parsing. */
+            cJSON *general_tags = cJSON_GetObjectItem(tags_object, "general");
+            
+            wmove(post_tags_window, 1, 1);
+
+            int line_counter = 0;
+            int line_to_write = 1;
+
+            if (cJSON_IsArray(general_tags))
+            {   
+                for (size_t j = 0; j < cJSON_GetArraySize(general_tags); j++)
+                {
+                    cJSON *tag = cJSON_GetArrayItem(general_tags, j);
+
+                    for (size_t k = 0; k < strlen(tag->valuestring); k++)
+                    {
+                        /* Implement an algorithm where it prints the tag chars so i don't want the tags to overflow window border. */
+                        
+                        wprintw(post_tags_window, "%c", tag->valuestring[k]);
+                        wrefresh(post_tags_window);  
+                        line_counter++;
+                    }
+
+                    wprintw(post_tags_window, ", ");
+                    line_counter++;
+                }
+            }
+        }
+
         if (url != NULL && cJSON_IsString(url) && post_i != posts_panel_height - 2)
         {
             write_post(posts_window, post_i, url);
-
             wrefresh(posts_window);
 
             /* Increase post_i. */
             post_i++;
         }
     }
-    
+
     wrefresh(posts_window);
     refresh();
 

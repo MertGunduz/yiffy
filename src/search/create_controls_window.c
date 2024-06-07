@@ -17,7 +17,7 @@
 /// @param total_controls The total number of controls to be displayed. 
 void create_controls_window(WINDOW *window, int *posts_panel_height, control *controls, int total_controls) 
 {
-    window = newwin(3, COLS, 9 + *posts_panel_height, 0);
+    window = newwin(3, COLS, 10 + *posts_panel_height, 0);
     box(window, 0, 0);
 
     set_window_title(window, "CONTROLS");

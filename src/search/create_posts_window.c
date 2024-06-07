@@ -16,7 +16,7 @@
 void create_posts_window(WINDOW **window, int *posts_panel_height) 
 {
     /* Create the posts window until information, taking 12 lines from it because the info and controls window line is 12. */
-    *posts_panel_height = LINES - 12;
+    *posts_panel_height = LINES - 13;
 
     *window = newwin(*posts_panel_height, COLS, 3, 0);
     box(*window, 0, 0);
