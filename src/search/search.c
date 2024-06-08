@@ -6,7 +6,7 @@
  * @author Mehmet Mert Gunduz (merttgg@gmail.com)
  * 
  * @date 31/10/2023
-*/
+ */
 
 #include <ncurses.h>
 
@@ -53,7 +53,7 @@ void search(char *tags)
     /* Read the posts.json file. */
     FILE *posts_json_file = fopen("posts.json", "r");
 
-    if (posts_json_file == NULL)
+    if (posts_json_file == NULL) 
     {
         no_json_error_msg();
         goto END;
@@ -67,7 +67,7 @@ void search(char *tags)
     /* Parse the JSON. */
     cJSON *json = cJSON_Parse(json_string);
 
-    if (json == NULL)
+    if (json == NULL) 
     {
         json_parse_error_msg();
         goto END;
@@ -76,7 +76,7 @@ void search(char *tags)
     /* Get the posts array. */
     cJSON *posts = cJSON_GetObjectItem(json, "posts");
 
-    if (!cJSON_IsArray(posts))
+    if (!cJSON_IsArray(posts)) 
     {
         posts_not_array_error_msg();
         goto END;
@@ -86,12 +86,12 @@ void search(char *tags)
     size_t post_i = 0;
 
     /* Write the posts and tags to windows. */
-    for (size_t i = 0; i < cJSON_GetArraySize(posts); i++)
+    for (size_t i = 0; i < cJSON_GetArraySize(posts); i++) 
     {
         /* Take the post with specified index. */
         cJSON *post = cJSON_GetArrayItem(posts, i);
 
-        if (post == NULL)
+        if (post == NULL) 
         {
             post_error_msg();
             goto END;
@@ -100,7 +100,7 @@ void search(char *tags)
         /* Take the file object of the specified post. */
         cJSON *file_object = cJSON_GetObjectItem(post, "file");
 
-        if (file_object == NULL)
+        if (file_object == NULL) 
         {
             fprintf(stderr, "File object not found in post %d\n", i);
             goto END;
@@ -109,77 +109,78 @@ void search(char *tags)
         /* Take the url of the of the specified post by parsing the data from file object. */
         cJSON *url = cJSON_GetObjectItem(file_object, "url");
 
-    if (post_i == 0)
-    {
-        /* The tags object parsing. */
-        cJSON *tags_object = cJSON_GetObjectItem(post, "tags");
-
-        if (tags_object == NULL)
+        if (post_i == 0) 
         {
-            fprintf(stderr, "Tags object not found in post %d\n", i);
-            goto END;
-        }
+            /* The tags object parsing. */
+            cJSON *tags_object = cJSON_GetObjectItem(post, "tags");
 
-        /* The general tags array parsing. */
-        cJSON *general_tags = cJSON_GetObjectItem(tags_object, "general");
-        
-        wmove(post_tags_window, 1, 1);
-
-        int line_counter = 0;
-        int max_width = getmaxx(post_tags_window) - 2; // Get the window width, minus 2 for borders
-        int max_height = 6; // Fixed height for the window
-        int line_to_write = 1;
-
-        if (cJSON_IsArray(general_tags))
-        {   
-            for (size_t j = 0; j < cJSON_GetArraySize(general_tags); j++)
+            if (tags_object == NULL) 
             {
-                cJSON *tag = cJSON_GetArrayItem(general_tags, j);
+                fprintf(stderr, "Tags object not found in post %d\n", i);
+                goto END;
+            }
 
-                for (size_t k = 0; k < strlen(tag->valuestring); k++)
+            /* The general tags array parsing. */
+            cJSON *general_tags = cJSON_GetObjectItem(tags_object, "general");
+
+            wmove(post_tags_window, 1, 1);
+
+            int line_counter = 0;
+            int max_width = getmaxx(post_tags_window) - 2; // Get the window width, minus 2 for borders
+            int max_height = 6; // Fixed height for the window
+            int line_to_write = 1;
+
+            if (cJSON_IsArray(general_tags)) 
+            {
+                for (size_t j = 0; j < cJSON_GetArraySize(general_tags); j++) 
                 {
-                    if (line_counter >= max_width)
+                    cJSON *tag = cJSON_GetArrayItem(general_tags, j);
+
+                    for (size_t k = 0; k < strlen(tag->valuestring); k++) 
+                    {
+                        if (line_counter >= max_width) 
+                        {
+                            line_to_write++;
+                            if (line_to_write >= max_height) // Check for vertical overflow
+                            {
+                                break;
+                            }
+                            wmove(post_tags_window, line_to_write, 1);
+                            line_counter = 0;
+                        }
+
+                        wprintw(post_tags_window, "%c", tag->valuestring[k]);
+                        wrefresh(post_tags_window);
+                        line_counter++;
+                    }
+
+                    if (line_counter + 2 >= max_width) // Check if ", " will overflow
                     {
                         line_to_write++;
+
                         if (line_to_write >= max_height) // Check for vertical overflow
                         {
                             break;
                         }
+
                         wmove(post_tags_window, line_to_write, 1);
                         line_counter = 0;
+                    } 
+                    else 
+                    {
+                        wprintw(post_tags_window, ", ");
+                        line_counter += 2;
                     }
 
-                    wprintw(post_tags_window, "%c", tag->valuestring[k]);
-                    wrefresh(post_tags_window);  
-                    line_counter++;
-                }
-
-                if (line_counter + 2 >= max_width) // Check if ", " will overflow
-                {
-                    line_to_write++;
                     if (line_to_write >= max_height) // Check for vertical overflow
                     {
                         break;
                     }
-                    wmove(post_tags_window, line_to_write, 1);
-                    line_counter = 0;
-                }
-                else
-                {
-                    wprintw(post_tags_window, ", ");
-                    line_counter += 2;
-                }
-
-                if (line_to_write >= max_height) // Check for vertical overflow
-                {
-                    break;
                 }
             }
         }
-    }
 
-
-        if (url != NULL && cJSON_IsString(url) && post_i != posts_panel_height - 2)
+        if (url != NULL && cJSON_IsString(url) && post_i != posts_panel_height - 2) 
         {
             write_post(posts_window, post_i, url);
             wrefresh(posts_window);
