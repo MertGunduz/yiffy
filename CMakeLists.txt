@@ -18,13 +18,22 @@ target_compile_options(yiffy PRIVATE
     -std=c17
     -pthread
     -fstrict-aliasing
-    -fstack-protector-strong
+    -fstack-protector-all
+    -fstack-clash-protection
+    -fcf-protection
     -fno-strict-overflow
     -fno-delete-null-pointer-checks
     -fvisibility=hidden
     -Wformat=2
+    -Wformat-security
     -Wstrict-overflow=5
     -Wcast-align
+    -D_FORTIFY_SOURCE=3
+    -fPIE
+    -pie
+    -Wl,-z,relro
+    -Wl,-z,now
+    -fno-plt
 )
 
 # C STANDARD
