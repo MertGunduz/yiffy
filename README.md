@@ -69,14 +69,10 @@ sudo cmake --install .
   - `--website`: Explore the official [Yiffy website](https://yiffy-cli.com/).
   - `--config`: Open the configuration menu.
 
-### Data Management
-*Manage your data within the Yiffy application*
-- **yiffy data import-export arguments:**
-  - `--import`: Import data into Yiffy.
-  - `--export`: Export data from Yiffy.
-
-### Configuration and Settings
+### Configuration
 *Adjust settings and configurations as per your preference*
-- **yiffy configuration and settings arguments:** 
-  - `--nsfw on/off`: Toggle NSFW (Not Safe for Work) and SFW (Safe For Work) content.
-  - `--plog on/off`: Switch between PLOG (Print Log) for search.c and dfetch/fetch.c.
+- **yiffy configuration and credential arguments:** 
+  - `--nsfw "on/off"`: Toggle NSFW (Not Safe for Work) and SFW (Safe For Work) content.
+  - `--ivcommand "command"`: Sets the command used to view images in search system.
+  - `--uname "uname"`: Sets the uname used to send API requests.
+  - `--apikey "apikey"`: Sets the API key used to send API requests. 
