@@ -39,8 +39,8 @@ void aria2_download(char *tags, int page, int lim)
     bool is_nsfw = get_nsfw();
 
     /* Credentials for the API request. */
-    strcpy(uname, get_credential("USERNAME"));
-    strcpy(api_key, get_credential("API-KEY"));
+    strcpy(uname, get_credential("UNAME"));
+    strcpy(api_key, get_credential("API_KEY"));
 
     /* Allocate space for request string. */
     char *request_string = (char*)malloc(256 * sizeof(char));

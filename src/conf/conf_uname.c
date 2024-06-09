@@ -31,7 +31,7 @@ static char uname[256]; ///< Stores the username credential data string.
 void conf_uname(char *argv)
 {
     /* Create the username option string. */
-    sprintf(uname, "USERNAME=%s\n", argv);
+    sprintf(uname, "UNAME=%s\n", argv);
 
     /* Get the home directory of the current user. */
     home_directory = getenv("HOME");
@@ -60,7 +60,7 @@ void conf_uname(char *argv)
 
     while (fgets(buffer, BUFFER_SIZE - 1, config_file))
     {
-        if (strstr(buffer, "USERNAME=") != NULL)
+        if (strstr(buffer, "UNAME=") != NULL)
         {
             strcpy(buffer, uname);
         }

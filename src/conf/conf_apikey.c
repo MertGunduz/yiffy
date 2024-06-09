@@ -31,7 +31,7 @@ static char apikey[256]; ///< Stores the api key credential data string.
 void conf_apikey(char *argv)
 {
     /* Create the api key option string. */
-    sprintf(apikey, "API-KEY=%s\n", argv);
+    sprintf(apikey, "API_KEY=%s\n", argv);
 
     /* Get the home directory of the current user. */
     home_directory = getenv("HOME");
@@ -60,7 +60,7 @@ void conf_apikey(char *argv)
 
     while (fgets(buffer, BUFFER_SIZE - 1, config_file))
     {
-        if (strstr(buffer, "API-KEY=") != NULL)
+        if (strstr(buffer, "API_KEY=") != NULL)
         {
             strcpy(buffer, apikey);
         }

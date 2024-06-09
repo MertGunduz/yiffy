@@ -127,7 +127,7 @@ $(document).ready(function(){initNavTree('d4/df4/conf__uname_8c_source.html','..
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="../../d4/df4/conf__uname_8c.html#af781b61b940b009361bf3c30a99637b3">   31</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d4/df4/conf__uname_8c.html#af781b61b940b009361bf3c30a99637b3">conf_uname</a>(<span class="keywordtype">char</span> *argv)</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>{</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="comment">/* Create the username option string. */</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    sprintf(uname, <span class="stringliteral">&quot;USERNAME=%s\n&quot;</span>, argv);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    sprintf(uname, <span class="stringliteral">&quot;UNAME=%s\n&quot;</span>, argv);</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="comment">/* Get the home directory of the current user. */</span></div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    home_directory = getenv(<span class="stringliteral">&quot;HOME&quot;</span>);</div>
@@ -156,7 +156,7 @@ $(document).ready(function(){initNavTree('d4/df4/conf__uname_8c_source.html','..
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordflow">while</span> (fgets(<a class="code hl_variable" href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a>, <a class="code hl_define" href="../../d4/df4/conf__uname_8c.html#a6b20d41d6252e9871430c242cb1a56e7">BUFFER_SIZE</a> - 1, config_file))</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    {</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="keywordflow">if</span> (strstr(<a class="code hl_variable" href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a>, <span class="stringliteral">&quot;USERNAME=&quot;</span>) != NULL)</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="keywordflow">if</span> (strstr(<a class="code hl_variable" href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a>, <span class="stringliteral">&quot;UNAME=&quot;</span>) != NULL)</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        {</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            strcpy(<a class="code hl_variable" href="../../d5/d56/cjson_8h.html#aff2566f4c366b48d73479bef43ee4d2e">buffer</a>, uname);</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        }</div>
