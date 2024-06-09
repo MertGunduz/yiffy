@@ -72,6 +72,6 @@ sudo cmake --install .
 *Adjust settings and configurations as per your preference*
 - **yiffy configuration and credential arguments:** 
   - `--nsfw "on/off"`: Toggle NSFW (Not Safe for Work) and SFW (Safe For Work) content.
-  - `--ivcommand "cmd"`: Sets the command used to view images in search system.
-  - `--uname "uname"`: Sets the uname used to send API requests.
-  - `--apikey "apikey"`: Sets the API key used to send API requests. 
+  - `--ivcommand "cmd"`: Set the command used to view images in search system.
+  - `--uname "uname"`: Set the uname used to send API requests.
+  - `--apikey "apikey"`: Set the API key used to send API requests. 
