@@ -33,12 +33,7 @@ void show_help()
     fprintf(stdout, "--version          outputs the version\n");
     fprintf(stdout, "--github           outputs the github url\n");
     fprintf(stdout, "--config           outputs the configs-credentials\n\n");
-
-    fprintf(stdout, "yiffy data import-export arguments\n");
-    fprintf(stdout, "----------------------------------\n");
-    fprintf(stdout, "--import           imports the data to program\n");
-    fprintf(stdout, "--export           exports the data from program\n\n");
-
+    
     fprintf(stdout, "yiffy config and credential arguments\n");
     fprintf(stdout, "-------------------------------------\n");
     fprintf(stdout, "--nsfw [on/off]    switches to nsfw/sfw options\n");

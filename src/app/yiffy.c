@@ -31,8 +31,6 @@
 
 static bool argument_verify(int argument_count, char *arguments[]);
 static bool is_api_accessible();
-static void export_local_data();
-static void import_local_data();
 static void search_urls(char *tags);
 static void fetch_urls(char *tags, char *command);
 
@@ -60,8 +58,6 @@ static struct general_option general_options[] =
     {"--version", show_version},
     {"--github", show_github},
     {"--config", show_config},
-    {"--export", export_local_data},
-    {"--import", import_local_data},
     {"--ivcommand", conf_img_viewer_command},
     {"--nsfw", conf_nsfw},
     {"--uname", conf_uname},
@@ -127,7 +123,7 @@ int main(int argc, char *argv[])
 */
 static bool argument_verify(int argument_count, char *arguments[])
 {
-    char *one_arguments[] = {"--help", "--version", "--github", "--config", "--export", "--import"};
+    char *one_arguments[] = {"--help", "--version", "--github", "--config"};
     char *two_arguments[] = {"--apikey", "--uname", "--ivcommand", "--nsfw", "--dfetch", "--fetch", "--search"};
 
 
@@ -239,18 +235,6 @@ static bool is_api_accessible()
         access_error_msg();
         exit(EXIT_FAILURE);
     }
-}
-
-/// @brief exports the app data as a string
-static void export_local_data() 
-{
-    fprintf(stdout, "EXPORT MENU\n");
-}
-
-/// @brief imports the string and creates app data
-static void import_local_data() 
-{
-    fprintf(stdout, "IMPORT MENU\n");
 }
 
 /**
