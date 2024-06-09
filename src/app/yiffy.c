@@ -126,7 +126,6 @@ static bool argument_verify(int argument_count, char *arguments[])
     char *one_arguments[] = {"--help", "--version", "--github", "--config"};
     char *two_arguments[] = {"--apikey", "--uname", "--ivcommand", "--nsfw", "--dfetch", "--fetch", "--search"};
 
-
     if (argument_count == 3)
     {
         /**
@@ -217,7 +216,6 @@ static bool argument_verify(int argument_count, char *arguments[])
     }
 }
 
-
 /**
  * @brief Sends ping to the e621/e926 to check if it accessible.
 */
@@ -245,7 +243,7 @@ static bool is_api_accessible()
 static void search_urls(char *tags)
 {   if (is_api_accessible())
     {
-        search(tags);        
+        search(tags);
     }
 }
 
