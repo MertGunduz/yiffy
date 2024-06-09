@@ -66,13 +66,12 @@ sudo cmake --install .
   - `--help`: Access a guide and list of commands.
   - `--version`: Check the current version of Yiffy.
   - `--github`: Visit the [Yiffy GitHub repository](https://github.com/MertGunduz/yiffy).
-  - `--website`: Explore the official [Yiffy website](https://yiffy-cli.com/).
   - `--config`: Open the configuration menu.
 
 ### Configuration
 *Adjust settings and configurations as per your preference*
 - **yiffy configuration and credential arguments:** 
   - `--nsfw "on/off"`: Toggle NSFW (Not Safe for Work) and SFW (Safe For Work) content.
-  - `--ivcommand "command"`: Sets the command used to view images in search system.
+  - `--ivcommand "cmd"`: Sets the command used to view images in search system.
   - `--uname "uname"`: Sets the uname used to send API requests.
   - `--apikey "apikey"`: Sets the API key used to send API requests. 
