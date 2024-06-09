@@ -15,7 +15,6 @@ target_compile_options(yiffy PRIVATE
     -Werror
     -O2
     -g
-    -std=c17
     -pthread
     -fstrict-aliasing
     -fstack-protector-all
