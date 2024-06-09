@@ -22,13 +22,6 @@
 #include "../menus/yiffy_text_menus.h"
 #include "../conf/yiffy_conf.h"
 
-#define RECOGNIZED_ARGUMENT   true  ///< 
-#define UNRECOGNIZED_ARGUMENT false ///< 
-#define MISSING_ON_OFF        false ///< 
-#define ARGC_QTY_ERROR        false ///< 
-#define NO_ARG_VALUE          false ///< 
-#define EXTRA_ARG_VALUE       false ///<
-
 static bool argument_verify(int argument_count, char *arguments[]);
 static bool is_api_accessible();
 static void search_urls(char *tags);
@@ -132,11 +125,11 @@ static bool argument_verify(int argument_count, char *arguments[])
         * @section Two Arguments Handling
         *
         * It checks if the passed argument exists in the two_arguments array.
-        * If the passed option is --dfetch, --fetch, --search or --ivcommand it returns true.
+        * If the passed option is --dfetch, --fetch, --search or --ivcommand, --uname it returns true.
         * Also, if the passed option is one of the twoArgument options and includes on/off as the second option returns true.
         * If not, returns false and shows the user that the second option can only be on/off.
         * 
-        * two_arguments they don't take on/off: --dfetch, --fetch, --search, --ivcommand.
+        * two_arguments they don't take on/off: --dfetch, --fetch, --search, --ivcommand, --uname.
         * two_arguments they take on/off: --nsfw.
         */
         for (size_t i = 0; i < sizeof(two_arguments) / sizeof(two_arguments[0]); i++)
@@ -145,12 +138,12 @@ static bool argument_verify(int argument_count, char *arguments[])
             {
                 if (strcmp(arguments[2], "on") == 0 || strcmp(arguments[2], "off") == 0 || strcmp(arguments[1], "--dfetch") == 0 || strcmp(arguments[1], "--fetch") == 0 || strcmp(arguments[1], "--search") == 0 || strcmp(arguments[1], "--ivcommand") == 0 || strcmp(arguments[1], "--uname") == 0 || strcmp(arguments[1], "--apikey") == 0)
                 {
-                    return RECOGNIZED_ARGUMENT; /* Return true. */
+                    return true;
                 }
                 else
                 {
                     on_off_msg(arguments[2]);
-                    return MISSING_ON_OFF; /* Return false. */
+                    return false;
                 }
             }
         }
@@ -165,12 +158,12 @@ static bool argument_verify(int argument_count, char *arguments[])
             if (strcmp(arguments[1], one_arguments[i]) == 0)
             {
                 extra_arg_error_msg(arguments[1]);
-                return EXTRA_ARG_VALUE; /* Return false. */
+                return false;
             }
         }
 
         unrecognized_arg_msg(arguments[1]);
-        return UNRECOGNIZED_ARGUMENT; /* Return false. */
+        return false;
     }
     else if (argument_count == 2)
     {
@@ -183,7 +176,7 @@ static bool argument_verify(int argument_count, char *arguments[])
         {
             if (strcmp(arguments[1], one_arguments[i]) == 0)
             {
-                return RECOGNIZED_ARGUMENT; /* Return true. */
+                return true;
             }
         }
 
@@ -197,12 +190,12 @@ static bool argument_verify(int argument_count, char *arguments[])
             if (strcmp(arguments[1], two_arguments[i]) == 0)
             {
                 no_arg_value_msg(arguments[1]);
-                return NO_ARG_VALUE; /* Return false. */
+                return false;
             }
         }
         
         unrecognized_arg_msg(arguments[1]);
-        return UNRECOGNIZED_ARGUMENT; /* Return false. */
+        return false;
     }
     else
     {
@@ -212,7 +205,7 @@ static bool argument_verify(int argument_count, char *arguments[])
          * When user entered no options or more than 2 arguments, it will return false and generate an error message.
         */
         argc_error_msg(argument_count);
-        return ARGC_QTY_ERROR; /* Return false. */
+        return false;
     }
 }
 

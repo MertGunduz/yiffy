@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['extra_5farg_5fvalue_0',['EXTRA_ARG_VALUE',['../dc/dc0/yiffy_8c.html#a6520bb9916f161d340bb3aea747415db',1,'yiffy.c']]]
+  ['home_5fsize_0',['HOME_SIZE',['../d6/d60/aria2__download_8c.html#a8312c2c0e4c1ea19c2dd324f623d91e4',1,'aria2_download.c']]]
 ];

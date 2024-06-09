@@ -7,7 +7,6 @@ var searchData=
   ['already_5fconf_5fmsg_2ec_4',['already_conf_msg.c',['../da/d03/already__conf__msg_8c.html',1,'']]],
   ['argc_5ferror_5fmsg_5',['argc_error_msg',['../d3/de0/argc__error__msg_8c.html#a020d66de7fd128881c8398247a0d0bdd',1,'argc_error_msg(int argc):&#160;argc_error_msg.c'],['../d0/de2/yiffy__messages_8h.html#a020d66de7fd128881c8398247a0d0bdd',1,'argc_error_msg(int argc):&#160;argc_error_msg.c']]],
   ['argc_5ferror_5fmsg_2ec_6',['argc_error_msg.c',['../d3/de0/argc__error__msg_8c.html',1,'']]],
-  ['argc_5fqty_5ferror_7',['ARGC_QTY_ERROR',['../dc/dc0/yiffy_8c.html#a667329addeab5d6f7d3f18fc38bd9b90',1,'yiffy.c']]],
-  ['aria2_5fdownload_8',['aria2_download',['../d6/d60/aria2__download_8c.html#a7b3f8210580125356d3487d53f345cbf',1,'aria2_download(char *tags, int page, int lim):&#160;aria2_download.c'],['../d5/d05/yiffy__fetch_8h.html#a7b3f8210580125356d3487d53f345cbf',1,'aria2_download(char *tags, int page, int lim):&#160;aria2_download.c']]],
-  ['aria2_5fdownload_2ec_9',['aria2_download.c',['../d6/d60/aria2__download_8c.html',1,'']]]
+  ['aria2_5fdownload_7',['aria2_download',['../d6/d60/aria2__download_8c.html#a7b3f8210580125356d3487d53f345cbf',1,'aria2_download(char *tags, int page, int lim):&#160;aria2_download.c'],['../d5/d05/yiffy__fetch_8h.html#a7b3f8210580125356d3487d53f345cbf',1,'aria2_download(char *tags, int page, int lim):&#160;aria2_download.c']]],
+  ['aria2_5fdownload_2ec_8',['aria2_download.c',['../d6/d60/aria2__download_8c.html',1,'']]]
 ];
