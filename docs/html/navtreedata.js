@@ -36,8 +36,7 @@ var NAVTREE =
       [ "Search and TUI (Text User Interface)", "index.html#autotoc_md8", null ],
       [ "API Fetch and Download", "index.html#autotoc_md9", null ],
       [ "Information and Help", "index.html#autotoc_md10", null ],
-      [ "Data Management", "index.html#autotoc_md11", null ],
-      [ "Configuration and Settings", "index.html#autotoc_md12", null ]
+      [ "Configuration", "index.html#autotoc_md11", null ]
     ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
